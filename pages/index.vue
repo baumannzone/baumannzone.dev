@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <ProfileSection />
-    <BlogSection />
+    <BlogSection :posts="posts" />
     <FormSuscribeSection />
     <CssArtSection />
   </div>
@@ -19,6 +19,17 @@ export default {
     BlogSection,
     FormSuscribeSection,
     CssArtSection,
+  },
+  async asyncData({ $content, error }) {
+    const posts = await $content('posts')
+      .without(['toc', 'body'])
+      .limit(4)
+      .sortBy('updatedAt', 'desc')
+      .fetch()
+
+    return {
+      posts,
+    }
   },
 }
 </script>
