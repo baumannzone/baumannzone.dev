@@ -34,6 +34,7 @@
             <input
               id="member_email"
               type="email"
+              required
               name="member[email]"
               autocomplete="email"
               placeholder="Email"

@@ -216,12 +216,19 @@
           <p class="mt-4 text-base text-purple-300">
             Las últimas noticias, artículos y recursos, directo a tu email.
           </p>
-          <form class="mt-4 sm:flex sm:max-w-md">
-            <label for="emailAddress" class="sr-only">Email address</label>
+          <form
+            id="revue-form"
+            class="mt-4 sm:flex sm:max-w-md"
+            action="https://www.getrevue.co/profile/baumannzone/add_subscriber"
+            method="post"
+            name="revue-form"
+            target="_blank"
+          >
+            <label for="member_email" class="sr-only">Email address</label>
             <input
-              id="emailAddress"
+              id="member_email"
+              name="member[email]"
               type="email"
-              name="emailAddress"
               autocomplete="email"
               required
               class="
