@@ -82,10 +82,7 @@
                 focus:ring-offset-2
                 focus:ring-offset-purple-700
                 focus:ring-white
-                sm:mt-0
-                sm:ml-3
-                sm:w-auto
-                sm:flex-shrink-0
+                sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0
               "
             >
               Suscríbete

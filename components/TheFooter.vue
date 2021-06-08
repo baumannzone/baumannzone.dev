@@ -280,9 +280,7 @@
           mt-8
           border-t border-purple-800
           pt-8
-          md:flex
-          md:items-center
-          md:justify-between
+          md:flex md:items-center md:justify-between
         "
       >
         <div class="flex space-x-6 md:order-2">

@@ -23,8 +23,7 @@
               class="
                 border-transparent
                 text-gray-500
-                hover:border-gray-300
-                hover:text-gray-700
+                hover:border-gray-300 hover:text-gray-700
                 inline-flex
                 items-center
                 px-1
@@ -43,8 +42,7 @@
             items-center
             justify-center
             px-2
-            lg:ml-6
-            lg:justify-end
+            lg:ml-6 lg:justify-end
           "
         >
           <div class="max-w-lg w-full lg:max-w-xs">
@@ -92,7 +90,8 @@
                   placeholder-gray-500
                   focus:outline-none
                   focus:placeholder-gray-400
-                  focus:ring-1 focus:ring-purple-500
+                  focus:ring-1
+                  focus:ring-purple-500
                   focus:border-purple-500
                   sm:text-sm
                 "
@@ -113,10 +112,11 @@
               p-2
               rounded-md
               text-gray-400
-              hover:text-gray-500
-              hover:bg-gray-100
+              hover:text-gray-500 hover:bg-gray-100
               focus:outline-none
-              focus:ring-2 focus:ring-inset focus:ring-purple-500
+              focus:ring-2
+              focus:ring-inset
+              focus:ring-purple-500
             "
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -182,9 +182,7 @@
           class="
             border-transparent
             text-gray-600
-            hover:bg-gray-50
-            hover:border-gray-300
-            hover:text-gray-800
+            hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800
             block
             pl-3
             pr-4
