@@ -3,7 +3,7 @@
     <ProfileSection />
     <BlogSection :latest-posts="latestPosts" />
     <FormSuscribeSection />
-    <CssArtSection />
+    <CssArtSection :latest-posts="latestCssArt" />
   </div>
 </template>
 
@@ -27,8 +27,15 @@ export default {
       .sortBy('updatedAt', 'desc')
       .fetch()
 
+    const latestCssArt = await $content('css-art')
+      .without(['toc', 'body'])
+      .limit(4)
+      .sortBy('updatedAt', 'desc')
+      .fetch()
+
     return {
       latestPosts,
+      latestCssArt,
     }
   },
 }

@@ -23,9 +23,7 @@
           </p>
           <a href="#" class="mt-2 block">
             <p class="text-xl font-semibold text-gray-900">
-              <NuxtLink :to="`blog/${post.slug}`">
-                {{ post.title }}
-              </NuxtLink>
+              {{ post.title }}
             </p>
             <p class="mt-3 text-base text-gray-500">
               {{ post.description }}
