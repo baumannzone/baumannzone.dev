@@ -269,7 +269,7 @@
                   focus:ring-purple-500
                 "
               >
-                Subscribe
+                Suscríbete
               </button>
             </div>
           </form>
@@ -365,7 +365,7 @@
           </a>
         </div>
         <p class="mt-8 text-base text-purple-400 md:mt-0 md:order-1">
-          &copy; 2020 Workflow, Inc. All rights reserved.
+          &copy; 2021 Baumannzone - Desarrollo Full Stack JavaScript.
         </p>
       </div>
     </div>
@@ -724,5 +724,94 @@
 </template>
 
 <script>
-export default {}
+const items = [
+  {
+    title: 'Secciones',
+    items: [
+      {
+        name: 'Inicio',
+        to: '/',
+      },
+      {
+        name: 'Blog',
+        to: '/blog',
+      },
+      {
+        name: 'Usos',
+        to: '/uses',
+      },
+      {
+        name: 'Sobre mí',
+        to: '/about',
+      },
+      {
+        name: 'Links',
+        to: '/links',
+      },
+    ],
+  },
+  {
+    title: 'Sígueme',
+    items: [
+      {
+        name: 'Twitter',
+        to: 'https://twitter.com/baumannzone',
+      },
+      {
+        name: 'Twitch',
+        to: 'https://www.twitch.tv/baumannzone',
+      },
+      {
+        name: 'Instagram',
+        to: 'https://www.instagram.com/baumannzone/',
+      },
+      {
+        name: 'GitHub',
+        to: 'https://github.com/baumannzone',
+      },
+      {
+        name: 'YouTube',
+        to: 'https://www.youtube.com/channel/UCTTj5ztXnGeDRPFVsBp7VMA',
+      },
+    ],
+  },
+  {
+    title: 'Apóyame',
+    items: [
+      {
+        name: 'Buy me a coffee',
+        to: 'https://www.buymeacoffee.com/baumannzone',
+      },
+      {
+        name: 'GitHub Sponsors',
+        to: 'https://github.com/sponsors/baumannzone',
+      },
+      {
+        name: 'Twitch Prime',
+        to: 'https://www.twitch.com/baumannzone/',
+      },
+    ],
+  },
+  {
+    title: 'Legal',
+    items: [
+      {
+        name: 'Política de Privacidad',
+        to: '/privacy',
+      },
+      {
+        name: 'Cookies',
+        to: '/cookies',
+      },
+    ],
+  },
+]
+
+export default {
+  data() {
+    return {
+      footerItems: items,
+    }
+  },
+}
 </script>
