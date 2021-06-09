@@ -3,7 +3,7 @@
     <div class="-mt-px w-1/2 flex">
       <NuxtLink
         v-if="prev"
-        :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
+        :to="{ name: slugNameType, params: { slug: prev.slug } }"
         class="
           pt-4
           pr-1
@@ -38,7 +38,7 @@
     <div class="-mt-px w-1/2 flex justify-end">
       <NuxtLink
         v-if="next"
-        :to="{ name: 'blog-slug', params: { slug: next.slug } }"
+        :to="{ name: slugNameType, params: { slug: next.slug } }"
         class="
           pt-4
           pl-1
@@ -74,6 +74,11 @@
 </template>
 
 <script>
+const TYPES = {
+  blog: 'blog',
+  cssArt: 'css-art',
+}
+
 export default {
   props: {
     prev: {
@@ -83,6 +88,19 @@ export default {
     next: {
       type: Object,
       default: () => null,
+    },
+    type: {
+      type: String,
+      required: true,
+      default: TYPES.blog,
+      validator: (val) => {
+        return [TYPES.blog, TYPES.cssArt].includes(val)
+      },
+    },
+  },
+  computed: {
+    slugNameType() {
+      return `${this.type}-slug`
     },
   },
 }

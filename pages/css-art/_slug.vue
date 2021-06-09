@@ -83,7 +83,7 @@
         <p class="text-sm font-medium text-gray-500 text-right">
           {{ formatDate(post.updatedAt) }}
         </p>
-        <prev-next :prev="prev" :next="next" />
+        <prev-next :prev="prev" :next="next" type="css-art" />
       </div>
     </div>
   </article>
@@ -98,6 +98,11 @@ export default {
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
+
+    console.log('<<<prev>>>')
+    console.log(prev)
+    console.log('<<<<next>>>>')
+    console.log(next)
     return {
       post,
       prev,
