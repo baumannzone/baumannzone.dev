@@ -99,10 +99,6 @@ export default {
       .surround(params.slug)
       .fetch()
 
-    console.log('<<<prev>>>')
-    console.log(prev)
-    console.log('<<<<next>>>>')
-    console.log(next)
     return {
       post,
       prev,
