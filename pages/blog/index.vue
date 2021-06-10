@@ -1,15 +1,7 @@
-<template>
-  <div>Blog</div>
-</template>
-
 <script>
-export default {}
-</script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+export default {
+  middleware({ redirect }) {
+    return redirect('301', '/blog/page/1')
+  },
 }
-*/
-</style>
+</script>
