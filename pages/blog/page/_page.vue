@@ -14,12 +14,12 @@
       >
         <BlogHeader />
 
-        <p class="font-xl">Total de posts: {{ allPosts.length }}</p>
+        <!--        <p class="font-xl">Total de posts: {{ allPosts.length }}</p>-->
 
         <BlogPostList :posts="paginatedPosts" />
       </div>
       <div class="relative max-w-lg mx-auto lg:max-w-7xl">
-        <ThePagination />
+        <ThePagination :current-page="currentPage" :last-page="lastPage" />
       </div>
     </section>
   </div>
@@ -66,6 +66,8 @@ export default {
     // }
 
     return {
+      currentPage,
+      lastPage,
       allPosts,
       paginatedPosts,
     }

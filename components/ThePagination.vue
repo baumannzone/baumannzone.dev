@@ -10,8 +10,9 @@
     "
   >
     <div class="-mt-px w-0 flex-1 flex">
-      <a
-        href="#"
+      <NuxtLink
+        v-show="!isFirstPage"
+        :to="prevUrl"
         class="
           border-t-2 border-transparent
           pt-4
@@ -24,7 +25,6 @@
           hover:text-purple-700 hover:border-purple-300
         "
       >
-        <!-- Heroicon name: solid/arrow-narrow-left -->
         <svg
           class="mr-3 h-5 w-5 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +39,10 @@
           />
         </svg>
         Previous
-      </a>
+      </NuxtLink>
     </div>
 
-    <div class="flex">
+    <div class="hidden lg:flex">
       <a
         href="#"
         class="
@@ -121,8 +121,9 @@
     </div>
 
     <div class="-mt-px w-0 flex-1 flex justify-end">
-      <a
-        href="#"
+      <NuxtLink
+        v-show="!isLastPage"
+        :to="nextUrl"
         class="
           border-t-2 border-transparent
           pt-4
@@ -136,7 +137,6 @@
         "
       >
         Next
-        <!-- Heroicon name: solid/arrow-narrow-right -->
         <svg
           class="ml-3 h-5 w-5 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
@@ -150,11 +150,36 @@
             clip-rule="evenodd"
           />
         </svg>
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    currentPage: {
+      type: Number,
+      required: true,
+    },
+    lastPage: {
+      type: Number,
+      required: true,
+    },
+  },
+  computed: {
+    prevUrl() {
+      return `/blog/page/${this.currentPage - 1}`
+    },
+    nextUrl() {
+      return `/blog/page/${this.currentPage + 1}`
+    },
+    isFirstPage() {
+      return this.currentPage === 1
+    },
+    isLastPage() {
+      return this.currentPage === this.lastPage
+    },
+  },
+}
 </script>
