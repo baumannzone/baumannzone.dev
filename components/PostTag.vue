@@ -17,7 +17,6 @@ const variants = {
   indigo: 'indigo',
   purple: 'purple',
   pink: 'pink',
-  asd: 'asd',
 }
 
 export default {
