@@ -3,9 +3,14 @@
     <h2 id="footerHeading" class="sr-only">Footer</h2>
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <!-- Enlaces -->
         <div class="grid grid-cols-2 gap-8 xl:col-span-2">
           <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div>
+            <div
+              v-for="(item, index) in footerItems"
+              :key="item.title"
+              :class="{ 'mt-12 md:mt-0': index === 1 }"
+            >
               <h3
                 class="
                   text-sm
@@ -15,98 +20,21 @@
                   uppercase
                 "
               >
-                Solutions
+                {{ item.title }}
               </h3>
               <ul class="mt-4 space-y-4">
-                <li>
+                <li v-for="{ to, name } in item.items" :key="to">
                   <a
-                    href="#"
+                    :href="to"
                     class="text-base text-purple-300 hover:text-white"
                   >
-                    Marketing
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Analytics
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Commerce
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Insights
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="mt-12 md:mt-0">
-              <h3
-                class="
-                  text-sm
-                  font-semibold
-                  text-white
-                  tracking-wider
-                  uppercase
-                "
-              >
-                Support
-              </h3>
-              <ul class="mt-4 space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Pricing
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Documentation
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    Guides
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    class="text-base text-purple-300 hover:text-white"
-                  >
-                    API Status
+                    {{ name }}
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="md:grid md:grid-cols-2 md:gap-8">
+          <!-- <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
               <h3
                 class="
@@ -208,7 +136,10 @@
               </ul>
             </div>
           </div>
+          -->
         </div>
+
+        <!-- Formulario-->
         <div class="mt-8 xl:mt-0">
           <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
             Suscríbete a la newsletter
@@ -662,59 +593,18 @@
 </template>
 
 <script>
-import { socialIcons } from '@/constants'
+import { socialIcons, navItems } from '@/constants'
 import SvgIcon from '@/components/SvgIcon'
+
+const sectionItems = navItems.map((i) => ({
+  name: i.text,
+  to: i.to,
+}))
 
 const footerItems = [
   {
     title: 'Secciones',
-    items: [
-      {
-        name: 'Inicio',
-        to: '/',
-      },
-      {
-        name: 'Blog',
-        to: '/blog',
-      },
-      {
-        name: 'Usos',
-        to: '/uses',
-      },
-      {
-        name: 'Sobre mí',
-        to: '/about',
-      },
-      {
-        name: 'Links',
-        to: '/links',
-      },
-    ],
-  },
-  {
-    title: 'Sígueme',
-    items: [
-      {
-        name: 'Twitter',
-        to: 'https://twitter.com/baumannzone',
-      },
-      {
-        name: 'Twitch',
-        to: 'https://www.twitch.tv/baumannzone',
-      },
-      {
-        name: 'Instagram',
-        to: 'https://www.instagram.com/baumannzone/',
-      },
-      {
-        name: 'GitHub',
-        to: 'https://github.com/baumannzone',
-      },
-      {
-        name: 'YouTube',
-        to: 'https://www.youtube.com/channel/UCTTj5ztXnGeDRPFVsBp7VMA',
-      },
-    ],
+    items: sectionItems,
   },
   {
     title: 'Apóyame',
@@ -733,19 +623,44 @@ const footerItems = [
       },
     ],
   },
-  {
-    title: 'Legal',
-    items: [
-      {
-        name: 'Política de Privacidad',
-        to: '/privacy',
-      },
-      {
-        name: 'Cookies',
-        to: '/cookies',
-      },
-    ],
-  },
+  // {
+  //   title: 'Sígueme',
+  //   items: [
+  //     {
+  //       name: 'Twitter',
+  //       to: 'https://twitter.com/baumannzone',
+  //     },
+  //     {
+  //       name: 'Twitch',
+  //       to: 'https://www.twitch.tv/baumannzone',
+  //     },
+  //     {
+  //       name: 'Instagram',
+  //       to: 'https://www.instagram.com/baumannzone/',
+  //     },
+  //     {
+  //       name: 'GitHub',
+  //       to: 'https://github.com/baumannzone',
+  //     },
+  //     {
+  //       name: 'YouTube',
+  //       to: 'https://www.youtube.com/channel/UCTTj5ztXnGeDRPFVsBp7VMA',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Legal',
+  //   items: [
+  //     {
+  //       name: 'Política de Privacidad',
+  //       to: '/privacy',
+  //     },
+  //     {
+  //       name: 'Cookies',
+  //       to: '/cookies',
+  //     },
+  //   ],
+  // },
 ]
 
 export default {
