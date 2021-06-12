@@ -35,7 +35,7 @@
         </header>
         <div class="flex justify-center px-4 pt-4 pb-8">
           <a
-            v-for="{ ico, url } in icons"
+            v-for="{ ico, url } in socialItems"
             :key="ico"
             class="mx-2 text-gray-200"
             :href="url"
@@ -49,33 +49,9 @@
 </template>
 
 <script>
+import { socialItems } from '@/constants'
 import SocialIcon from '../SocialIcon'
-const icons = [
-  {
-    ico: 'ig',
-    url: '',
-  },
-  {
-    ico: 'twitch',
-    url: '',
-  },
-  {
-    ico: 'twitter',
-    url: '',
-  },
-  {
-    ico: 'yt',
-    url: '',
-  },
-  {
-    ico: 'gh',
-    url: '',
-  },
-  {
-    ico: 'codepen',
-    url: '',
-  },
-]
+
 export default {
   name: 'ProfileSection',
   components: {
@@ -83,7 +59,7 @@ export default {
   },
   data() {
     return {
-      icons,
+      socialItems,
     }
   },
 }
