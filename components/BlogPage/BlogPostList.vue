@@ -14,7 +14,7 @@
       </a>
       <div class="mt-3">
         <NuxtLink
-          :to="`blog/${post.slug}`"
+          :to="`/blog/${post.slug}`"
           class="text-base font-semibold text-purple-600 hover:text-purple-500"
         >
           Ver más →
@@ -23,6 +23,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'BlogPostList',
