@@ -38,7 +38,7 @@
             clip-rule="evenodd"
           />
         </svg>
-        Previous
+        Anterior
       </NuxtLink>
     </div>
 
@@ -136,7 +136,7 @@
           hover:text-purple-700 hover:border-purple-300
         "
       >
-        Next
+        Siguiente
         <svg
           class="ml-3 h-5 w-5 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
