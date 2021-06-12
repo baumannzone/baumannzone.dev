@@ -15,26 +15,15 @@
 </template>
 
 <script>
-import { socialIconsPath } from '@/constants'
-
-const icons = {
-  codepen: 'codepen',
-  devTo: 'dev-dot-to',
-  facebook: 'facebook',
-  github: 'github',
-  instagram: 'instagram',
-  twitch: 'twitch',
-  twitter: 'twitter',
-  youtube: 'youtube',
-}
+import { socialIcons, socialNames } from '@/constants'
 
 export default {
   props: {
     iconName: {
       type: String,
-      default: 'box',
+      required: true,
       validator: (val) => {
-        return Object.keys(icons).includes(val)
+        return Object.keys(socialNames).includes(val)
       },
     },
     width: {
@@ -52,7 +41,7 @@ export default {
   },
   computed: {
     pathIcon() {
-      return socialIconsPath[this.iconName]
+      return socialIcons[this.iconName].path
     },
   },
 }

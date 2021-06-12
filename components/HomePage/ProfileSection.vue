@@ -35,12 +35,13 @@
         </header>
         <div class="flex justify-center px-4 pt-4 pb-8">
           <a
-            v-for="{ ico, url } in socialItems"
-            :key="ico"
-            class="mx-2 text-gray-200"
+            v-for="{ name, url } in socialIconsParsed"
+            :key="name"
+            class="text-black hover:text-gray-500 mx-2"
             :href="url"
           >
-            <SocialIcon :ico-name="ico" w="25" h="25" />
+            <span class="sr-only">{{ name }}</span>
+            <SvgIcon :icon-name="name" width="25" height="25" />
           </a>
         </div>
       </div>
@@ -49,18 +50,19 @@
 </template>
 
 <script>
-import { socialItems } from '@/constants'
-import SocialIcon from '../SocialIcon'
+import { socialIcons } from '@/constants'
+import SvgIcon from '@/components/SvgIcon'
 
 export default {
   name: 'ProfileSection',
   components: {
-    SocialIcon,
+    SvgIcon,
   },
-  data() {
-    return {
-      socialItems,
-    }
+  computed: {
+    socialIconsParsed() {
+      const { linkedin, facebook, ...items } = socialIcons
+      return items
+    },
   },
 }
 </script>

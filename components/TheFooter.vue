@@ -292,13 +292,14 @@
       >
         <div class="flex space-x-6 md:order-2">
           <a
-            v-for="{ ico, url } in socialItems"
-            :key="ico"
+            v-for="{ name, url } in socialIcons"
+            :key="name"
             class="text-purple-400 hover:text-purple-300"
             :href="url"
           >
-            <span class="sr-only">{{ ico }}</span>
-            <SocialIcon :ico-name="ico" w="300" h="300" />
+            <span class="sr-only">{{ name }}</span>
+
+            <SvgIcon :icon-name="name" />
           </a>
         </div>
         <p class="mt-8 text-base text-purple-400 md:mt-0 md:order-1">
@@ -661,9 +662,10 @@
 </template>
 
 <script>
-import SocialIcon from '@/components/SocialIcon'
-import { socialItems } from '@/constants'
-const items = [
+import { socialIcons } from '@/constants'
+import SvgIcon from '@/components/SvgIcon'
+
+const footerItems = [
   {
     title: 'Secciones',
     items: [
@@ -748,12 +750,12 @@ const items = [
 
 export default {
   components: {
-    SocialIcon,
+    SvgIcon,
   },
   data() {
     return {
-      footerItems: items,
-      socialItems,
+      footerItems,
+      socialIcons,
     }
   },
 }
