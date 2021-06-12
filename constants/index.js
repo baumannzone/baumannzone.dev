@@ -19,4 +19,31 @@ const navItems = [
   },
 ]
 
-export { routes, navItems }
+const socialItems = [
+  {
+    ico: 'ig',
+    url: 'https://instagram.com/baumannzone',
+  },
+  {
+    ico: 'twitch',
+    url: 'https://twitch.tv/baumannzone',
+  },
+  {
+    ico: 'twitter',
+    url: 'https://twitter.com/baumannzone',
+  },
+  {
+    ico: 'yt',
+    url: 'https://youtube.com/RambitoJS',
+  },
+  {
+    ico: 'gh',
+    url: 'https://github.com/baumannzone',
+  },
+  {
+    ico: 'codepen',
+    url: 'https://codepen.com/baumannzone',
+  },
+]
+
+export { routes, navItems, socialItems }
