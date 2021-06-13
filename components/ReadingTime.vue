@@ -30,11 +30,9 @@ export default {
   computed: {
     readingTime() {
       const wordsPerMinute = 250
-      let minutes = 0
       const contentString = JSON.stringify(this.content)
       const words = contentString.split(' ').length
-      minutes = Math.ceil(words / wordsPerMinute)
-      return minutes
+      return Math.ceil(words / wordsPerMinute)
     },
   },
 }
