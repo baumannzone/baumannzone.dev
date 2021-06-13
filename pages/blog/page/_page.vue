@@ -34,7 +34,7 @@ export default {
   components: { BlogPostList, BlogHeader, ThePagination },
   async asyncData({ $content, params, error }) {
     const currentPage = parseInt(params.page)
-    const perPage = 2
+    const perPage = 4
     const allPosts = await $content('posts').fetch()
     const totalPosts = allPosts.length
 
@@ -61,6 +61,29 @@ export default {
       .skip(skipNumber())
       .fetch()
 
+    const paginatedSorted = paginatedPosts.map((post) => {
+      const months = [
+        'Enero',
+        'Febrero',
+        'Marzo',
+        'Abril',
+        'Mayo',
+        'Junio',
+        'Julio',
+        'Agosto',
+        'Septiembre',
+        'Octubre',
+        'Noviembre',
+        'Diciembre',
+      ]
+      const date = new Date(post.created)
+
+      const displayDate = `${date.getDate()} de ${
+        months[date.getMonth()]
+      }, ${date.getFullYear()}`
+      return { ...post, displayDate }
+    })
+
     // if (currentPage === 0 || !paginatedPosts.length) {
     //   return error({ statusCode: 404, message: 'No articles found!' })
     // }
@@ -69,7 +92,7 @@ export default {
       currentPage,
       lastPage,
       allPosts,
-      paginatedPosts,
+      paginatedPosts: paginatedSorted,
     }
   },
 }

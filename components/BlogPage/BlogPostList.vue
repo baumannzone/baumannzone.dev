@@ -2,7 +2,7 @@
   <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
     <div v-for="post in posts" :key="post.slug">
       <p class="text-sm text-gray-500">
-        <time datetime="2020-03-16">{{ post.created }}</time>
+        <time :datetime="post.created">{{ post.displayDate }}</time>
       </p>
       <a href="#" class="mt-2 block">
         <p class="text-xl font-semibold text-gray-900">
