@@ -7,7 +7,6 @@ tags:
 - html
 - css
 - javascript
-- custom-tag
 ---
 
 En esta publicación vamos a dibujar con CSS, la mítica Game Boy Original que tan buenos recuerdos nos trae a algunos, ¡mi primera consola!

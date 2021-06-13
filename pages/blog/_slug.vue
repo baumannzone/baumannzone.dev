@@ -81,7 +81,7 @@
 
       <div class="article-width mx-auto">
         <p class="text-sm font-medium text-gray-500 text-right">
-          {{ formatDate(post.updatedAt) }}
+          {{ post.updatedAt }}
         </p>
         <prev-next :prev="prev" :next="next" type="blog" />
       </div>
@@ -95,20 +95,15 @@ export default {
     const post = await $content('posts', params.slug).fetch()
     const [prev, next] = await $content('posts')
       .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('created', 'asc')
       .surround(params.slug)
       .fetch()
+
     return {
       post,
       prev,
       next,
     }
-  },
-  methods: {
-    formatDate(date) {
-      const options = { year: 'numeric', month: '2-digit', day: 'numeric' }
-      return new Date(date).toLocaleDateString('es', options)
-    },
   },
 }
 </script>
