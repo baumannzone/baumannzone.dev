@@ -1,14 +1,13 @@
 ---
 title: Cake 2
 description: Dibujando una tartita sabrosita 🎂
-created: 22-04-2021
+created: 2019-04-22
 category: desarrollo
 tags:
 - html
 - css
-- javascript
 ---
 
-# Cake
+# Cake 2
 
 Post de la tarta en **CSS**.

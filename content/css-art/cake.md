@@ -1,14 +1,13 @@
 ---
-title: Cake
+title: Cake 0
 description: Dibujando una tartita sabrosita 🎂
-created: 22-04-2021
+created: 2017-04-22
 category: desarrollo
 tags:
-- html
-- css
-- javascript
+  - html
+  - css
 ---
 
-# Cake
+# Cake 0
 
 Post de la tarta en **CSS**.

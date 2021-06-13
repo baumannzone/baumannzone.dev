@@ -1,41 +1,42 @@
 <template>
   <div class="home-page">
     <ProfileSection />
-    <BlogSection :latest-posts="latestPosts" />
+    <ArticleSection :articles="latestBlog" title="Blog" />
     <FormSuscribeSection />
-    <CssArtSection :latest-posts="latestCssArt" />
+    <ArticleSection :articles="latestCssArt" title="CSS Art" />
   </div>
 </template>
 
 <script>
+import { addDisplayDate } from 'assets/functions'
+
 import ProfileSection from '@/components/HomePage/ProfileSection'
-import BlogSection from '@/components/HomePage/BlogSection'
+import ArticleSection from '@/components/ArticleSection'
 import FormSuscribeSection from '@/components/HomePage/FormSuscribeSection'
-import CssArtSection from '@/components/HomePage/CssArtSection'
 
 export default {
   components: {
     ProfileSection,
-    BlogSection,
+    ArticleSection,
     FormSuscribeSection,
-    CssArtSection,
   },
   async asyncData({ $content }) {
-    const latestPosts = await $content('blog')
-      .without(['toc', 'body'])
-      .limit(4)
-      .sortBy('updatedAt', 'desc')
+    const articleToShow = 4
+    const latestBlog = await $content('blog')
+      .only(['title', 'description', 'slug', 'created', 'body'])
+      .limit(articleToShow)
+      .sortBy('created', 'desc')
       .fetch()
 
     const latestCssArt = await $content('css-art')
-      .without(['toc', 'body'])
-      .limit(4)
-      .sortBy('updatedAt', 'desc')
+      .only(['title', 'description', 'slug', 'created', 'body'])
+      .limit(articleToShow)
+      .sortBy('created', 'desc')
       .fetch()
 
     return {
-      latestPosts,
-      latestCssArt,
+      latestBlog: addDisplayDate(latestBlog),
+      latestCssArt: addDisplayDate(latestCssArt),
     }
   },
 }

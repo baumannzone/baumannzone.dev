@@ -1,14 +1,13 @@
 ---
 title: Cake 3
 description: Dibujando una tartita sabrosita 🎂
-created: 22-04-2021
+created: 2020-04-22
 category: desarrollo
 tags:
 - html
 - css
-- javascript
 ---
 
-# Cake
+# Cake 3
 
 Post de la tarta en **CSS**.
