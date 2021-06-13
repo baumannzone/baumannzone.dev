@@ -1,37 +1,19 @@
 <template>
   <div class="blog-page">
-    <section
-      class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
-    >
-      <div
-        class="
-          relative
-          max-w-lg
-          mx-auto
-          divide-y-2 divide-gray-200
-          lg:max-w-7xl
-        "
-      >
-        <BlogHeader />
+    <ArticleSection :articles="paginatedPosts" title="Blog" />
 
-        <ArticleCardList :posts="paginatedPosts" />
-      </div>
-      <div class="relative max-w-lg mx-auto lg:max-w-7xl">
-        <ThePagination :current-page="currentPage" :last-page="lastPage" />
-      </div>
-    </section>
+    <ThePagination :current-page="currentPage" :last-page="lastPage" />
   </div>
 </template>
 
 <script>
 import { addDisplayDate } from 'assets/functions'
 
-import BlogHeader from '@/components/BlogPage/BlogHeader'
-import ArticleCardList from '@/components/ArticleCard/ArticleCardList'
+import ArticleSection from '@/components/ArticleSection'
 import ThePagination from '@/components/ThePagination'
 
 export default {
-  components: { ArticleCardList, BlogHeader, ThePagination },
+  components: { ArticleSection, ThePagination },
   async asyncData({ $content, params, error }) {
     const currentPage = parseInt(params.page)
     const perPage = 4
