@@ -36,6 +36,7 @@ export default {
     const currentPage = parseInt(params.page)
     const perPage = 4
     const allPosts = await $content('posts').fetch()
+    console.log(allPosts[0])
     const totalPosts = allPosts.length
 
     // use Math.ceil to round up to the nearest whole number
@@ -55,7 +56,7 @@ export default {
     }
 
     const paginatedPosts = await $content('posts')
-      .only(['title', 'description', 'slug', 'created'])
+      .only(['title', 'description', 'slug', 'created', 'body'])
       .sortBy('created', 'desc')
       .limit(perPage)
       .skip(skipNumber())

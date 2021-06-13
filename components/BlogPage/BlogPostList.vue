@@ -3,6 +3,8 @@
     <div v-for="post in posts" :key="post.slug">
       <p class="text-sm text-gray-500">
         <time :datetime="post.created">{{ post.displayDate }}</time>
+        <span class="mx-2">·</span>
+        <ReadingTime :content="post.body" />
       </p>
       <a href="#" class="mt-2 block">
         <p class="text-xl font-semibold text-gray-900">
