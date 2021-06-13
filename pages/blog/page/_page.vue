@@ -14,9 +14,7 @@
       >
         <BlogHeader />
 
-        <!--        <p class="font-xl">Total de posts: {{ allPosts.length }}</p>-->
-
-        <BlogPostList :posts="paginatedPosts" />
+        <ArticleCardList :posts="paginatedPosts" />
       </div>
       <div class="relative max-w-lg mx-auto lg:max-w-7xl">
         <ThePagination :current-page="currentPage" :last-page="lastPage" />
@@ -26,17 +24,18 @@
 </template>
 
 <script>
+import { addDisplayDate } from 'assets/functions'
+
 import BlogHeader from '@/components/BlogPage/BlogHeader'
-import BlogPostList from '@/components/BlogPage/BlogPostList'
+import ArticleCardList from '@/components/ArticleCard/ArticleCardList'
 import ThePagination from '@/components/ThePagination'
 
 export default {
-  components: { BlogPostList, BlogHeader, ThePagination },
+  components: { ArticleCardList, BlogHeader, ThePagination },
   async asyncData({ $content, params, error }) {
     const currentPage = parseInt(params.page)
     const perPage = 4
-    const allPosts = await $content('posts').fetch()
-    console.log(allPosts[0])
+    const allPosts = await $content('blog').fetch()
     const totalPosts = allPosts.length
 
     // use Math.ceil to round up to the nearest whole number
@@ -55,45 +54,18 @@ export default {
       return (currentPage - 1) * perPage
     }
 
-    const paginatedPosts = await $content('posts')
+    const paginatedPosts = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
       .sortBy('created', 'desc')
       .limit(perPage)
       .skip(skipNumber())
       .fetch()
 
-    const paginatedSorted = paginatedPosts.map((post) => {
-      const months = [
-        'Enero',
-        'Febrero',
-        'Marzo',
-        'Abril',
-        'Mayo',
-        'Junio',
-        'Julio',
-        'Agosto',
-        'Septiembre',
-        'Octubre',
-        'Noviembre',
-        'Diciembre',
-      ]
-      const date = new Date(post.created)
-
-      const displayDate = `${date.getDate()} de ${
-        months[date.getMonth()]
-      }, ${date.getFullYear()}`
-      return { ...post, displayDate }
-    })
-
-    // if (currentPage === 0 || !paginatedPosts.length) {
-    //   return error({ statusCode: 404, message: 'No articles found!' })
-    // }
-
     return {
       currentPage,
       lastPage,
       allPosts,
-      paginatedPosts: paginatedSorted,
+      paginatedPosts: addDisplayDate(paginatedPosts),
     }
   },
 }

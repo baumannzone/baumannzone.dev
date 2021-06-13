@@ -21,7 +21,7 @@ export default {
     CssArtSection,
   },
   async asyncData({ $content }) {
-    const latestPosts = await $content('posts')
+    const latestPosts = await $content('blog')
       .without(['toc', 'body'])
       .limit(4)
       .sortBy('updatedAt', 'desc')
