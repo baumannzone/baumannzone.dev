@@ -5,6 +5,7 @@
       <span class="mx-2">·</span>
       <ArticleReadingTime :content="post.body" />
     </p>
+
     <NuxtLink :to="post.path" class="mt-2 block">
       <p class="text-xl font-semibold text-gray-900">
         {{ post.title }}
@@ -13,6 +14,7 @@
         {{ post.description }}
       </p>
     </NuxtLink>
+
     <div class="mt-3">
       <NuxtLink
         :to="post.path"
