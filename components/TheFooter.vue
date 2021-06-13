@@ -221,11 +221,19 @@
           md:flex md:items-center md:justify-between
         "
       >
-        <div class="flex space-x-6 md:order-2">
+        <div
+          class="
+            flex flex-wrap
+            space-x-6
+            sm:order-2
+            justify-start
+            sm:justify-end
+          "
+        >
           <a
             v-for="{ name, url } in socialIcons"
             :key="name"
-            class="text-purple-400 hover:text-purple-300"
+            class="text-purple-400 hover:text-purple-300 mb-2"
             :href="url"
           >
             <span class="sr-only">{{ name }}</span>
