@@ -16,7 +16,7 @@
           {{ title }}
         </h2>
       </div>
-      <ArticleCardList :posts="articles" />
+      <ArticleCardList :posts="articles" :content-path="contentPath" />
     </div>
   </section>
 </template>
@@ -37,6 +37,11 @@ export default {
     articles: {
       type: Array,
       required: true,
+    },
+    contentPath: {
+      type: String,
+      required: true,
+      validator: (val) => ['blog', 'css-art'].includes(val),
     },
   },
 }

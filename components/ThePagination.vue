@@ -14,7 +14,7 @@
     >
       <div class="-mt-px w-0 flex-1 flex">
         <NuxtLink
-          v-show="!isFirstPage"
+          v-if="!isFirstPage"
           :to="prevUrl"
           class="
             border-t-2 border-transparent
@@ -125,7 +125,7 @@
 
       <div class="-mt-px w-0 flex-1 flex justify-end">
         <NuxtLink
-          v-show="!isLastPage"
+          v-if="!isLastPage"
           :to="nextUrl"
           class="
             border-t-2 border-transparent

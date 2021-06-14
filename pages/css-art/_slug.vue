@@ -83,7 +83,7 @@
         <p class="text-sm font-medium text-gray-500 text-right">
           {{ formatDate(post.updatedAt) }}
         </p>
-        <prev-next :prev="prev" :next="next" type="css-art" />
+        <prev-next :prev="prev" :next="next" content-path="css-art" />
       </div>
     </div>
   </article>

@@ -1,9 +1,13 @@
 <template>
   <div class="home-page">
     <ProfileSection />
-    <ArticleSection :articles="latestBlog" title="Blog" />
+    <ArticleSection :articles="latestBlog" title="Blog" content-path="blog" />
     <FormSuscribeSection />
-    <ArticleSection :articles="latestCssArt" title="CSS Art" />
+    <ArticleSection
+      :articles="latestCssArt"
+      title="CSS Art"
+      content-path="css-art"
+    />
   </div>
 </template>
 
