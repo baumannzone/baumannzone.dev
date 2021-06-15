@@ -4,20 +4,39 @@
       <div class="flex justify-between h-16">
         <div class="flex px-2 lg:px-0">
           <div class="flex-shrink-0 flex items-center">
-            <img
-              class="block lg:hidden h-8 w-auto"
-              src="/logo.png"
-              alt="Baumannzone's logo"
-            />
-            <img
-              class="hidden lg:block h-8 w-auto"
-              src="/logo-with-name.png"
-              alt="Baumannzone's logo"
-            />
+            <a href="/">
+              <img
+                class="block lg:hidden h-8 w-auto"
+                src="/logo.png"
+                alt="Baumannzone's logo"
+              />
+              <img
+                class="hidden lg:block h-8 w-auto"
+                src="/logo-with-name.png"
+                alt="Baumannzone's logo"
+              />
+            </a>
           </div>
           <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+            <a
+              :href="navItems[0].to"
+              class="
+                border-transparent
+                text-gray-500
+                hover:border-gray-300 hover:text-gray-700
+                inline-flex
+                items-center
+                px-1
+                pt-1
+                border-t-2
+                text-sm
+                font-medium
+              "
+              :class="{ 'nuxt-link-active': $route.name === 'index' }"
+              >{{ navItems[0].text }}</a
+            >
             <NuxtLink
-              v-for="item in navItems"
+              v-for="item in customNavItems"
               :key="item.to"
               :to="item.to"
               class="
@@ -32,10 +51,6 @@
                 text-sm
                 font-medium
               "
-              :class="{
-                'nuxt-link-exact-active':
-                  isBlogPage && item.text.toLowerCase() === 'blog',
-              }"
               >{{ item.text }}
             </NuxtLink>
           </div>
@@ -127,13 +142,7 @@
             @click="onClickBtn"
           >
             <span class="sr-only">Abrir menu</span>
-            <!--
-              Icon when menu is closed.
 
-              Heroicon name: outline/menu
-
-              Menu open: "hidden", Menu closed: "block"
-            -->
             <svg
               class="block h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"
@@ -149,13 +158,6 @@
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-            <!--
-              Icon when menu is open.
-
-              Heroicon name: outline/x
-
-              Menu open: "block", Menu closed: "hidden"
-            -->
             <svg
               class="hidden h-6 w-6"
               xmlns="http://www.w3.org/2000/svg"
@@ -179,8 +181,25 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div id="mobile-menu" class="lg:hidden" :class="{ hidden: isCollapsed }">
       <div class="pt-2 pb-3 space-y-1">
+        <a
+          :href="navItems[0].to"
+          class="
+            border-transparent
+            text-gray-600
+            hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800
+            block
+            pl-3
+            pr-4
+            py-2
+            border-l-4
+            text-base
+            font-medium
+          "
+          :class="{ 'nuxt-link-active': $route.name === 'index' }"
+          >{{ navItems[0].text }}</a
+        >
         <NuxtLink
-          v-for="item in navItems"
+          v-for="item in customNavItems"
           :key="item.to"
           :to="item.to"
           class="
@@ -195,10 +214,6 @@
             text-base
             font-medium
           "
-          :class="{
-            'nuxt-link-exact-active':
-              isBlogPage && item.text.toLowerCase() === 'blog',
-          }"
           >{{ item.text }}
         </NuxtLink>
       </div>
@@ -209,8 +224,6 @@
 <script>
 import { navItems } from '@/constants'
 
-const BlogPageName = 'blog-page-page'
-
 export default {
   data() {
     return {
@@ -219,8 +232,8 @@ export default {
     }
   },
   computed: {
-    isBlogPage() {
-      return this.$nuxt.$route.name === BlogPageName
+    customNavItems() {
+      return this.navItems.filter((item) => item.to !== '/')
     },
   },
   methods: {
@@ -232,7 +245,7 @@ export default {
 </script>
 
 <style scoped>
-.nuxt-link-exact-active {
+.nuxt-link-active {
   @apply bg-purple-50 border-purple-500 text-purple-700;
 }
 </style>

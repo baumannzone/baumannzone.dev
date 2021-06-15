@@ -1,54 +1,43 @@
 <template>
-  <div class="blog-page">
+  <div class="css-art-page">
     <ArticleSection
       :articles="paginatedPosts"
-      title="Blog"
-      content-path="blog"
+      title="CSS Art"
+      :content-path="contentPath"
     />
 
     <ThePagination
       :current-page="currentPage"
       :last-page="lastPage"
-      content-path="blog"
+      :content-path="contentPath"
     />
   </div>
 </template>
 
 <script>
-import { addDisplayDate } from 'assets/functions'
+import { addDisplayDate, skipNumber } from 'assets/functions'
 
 import ArticleSection from '@/components/ArticleSection'
 import ThePagination from '@/components/ThePagination'
 
+const contentPath = 'css-art'
+
 export default {
   components: { ArticleSection, ThePagination },
-  async asyncData({ $content, params, error }) {
+  async asyncData({ $content, params }) {
     const currentPage = parseInt(params.page)
-    const perPage = 4
-    const allPosts = await $content('blog').fetch()
+    const perPage = 2
+    const allPosts = await $content(contentPath).fetch()
     const totalPosts = allPosts.length
 
     // use Math.ceil to round up to the nearest whole number
     const lastPage = Math.ceil(totalPosts / perPage)
 
-    // use the % (modulus) operator to get a whole remainder
-    const lastPageCount = totalPosts % perPage
-
-    const skipNumber = () => {
-      if (currentPage === 1) {
-        return 0
-      }
-      if (currentPage === lastPage) {
-        return totalPosts - lastPageCount
-      }
-      return (currentPage - 1) * perPage
-    }
-
-    const paginatedPosts = await $content('blog')
+    const paginatedPosts = await $content(contentPath)
       .only(['title', 'description', 'slug', 'created', 'body'])
       .sortBy('created', 'desc')
       .limit(perPage)
-      .skip(skipNumber())
+      .skip(skipNumber({ currentPage, perPage }))
       .fetch()
 
     return {
@@ -56,6 +45,11 @@ export default {
       lastPage,
       allPosts,
       paginatedPosts: addDisplayDate(paginatedPosts),
+    }
+  },
+  data() {
+    return {
+      contentPath,
     }
   },
 }

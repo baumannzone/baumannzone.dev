@@ -45,6 +45,7 @@
         </NuxtLink>
       </div>
 
+      <!--
       <div class="hidden lg:flex">
         <a
           href="#"
@@ -122,6 +123,7 @@
           >6</a
         >
       </div>
+      -->
 
       <div class="-mt-px w-0 flex-1 flex justify-end">
         <NuxtLink
@@ -162,6 +164,11 @@
 <script>
 export default {
   props: {
+    contentPath: {
+      type: String,
+      required: true,
+      validator: (val) => ['blog', 'css-art'].includes(val),
+    },
     currentPage: {
       type: Number,
       required: true,
@@ -173,10 +180,10 @@ export default {
   },
   computed: {
     prevUrl() {
-      return `/blog/page/${this.currentPage - 1}`
+      return `/${this.contentPath}/page/${this.currentPage - 1}`
     },
     nextUrl() {
-      return `/blog/page/${this.currentPage + 1}`
+      return `/${this.contentPath}/page/${this.currentPage + 1}`
     },
     isFirstPage() {
       return this.currentPage === 1

@@ -30,4 +30,14 @@ const addDisplayDate = (articles) => {
   })
 }
 
-export { addDisplayDate }
+/**
+ * Number of articles to skip. Used for pagination
+ * @param currentPage {number}
+ * @param perPage {number}
+ * @returns {number|number}
+ */
+const skipNumber = ({ currentPage, perPage }) => {
+  return currentPage === 1 ? 0 : (currentPage - 1) * perPage
+}
+
+export { addDisplayDate, skipNumber }

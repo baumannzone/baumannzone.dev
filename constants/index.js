@@ -1,6 +1,7 @@
 const routes = {
   HOME: '/',
   BLOG: '/blog',
+  CSS_ART: '/css-art',
   USES: '/uses',
 }
 
@@ -12,6 +13,10 @@ const navItems = [
   {
     text: 'Blog',
     to: routes.BLOG,
+  },
+  {
+    text: 'CSS Art',
+    to: routes.CSS_ART,
   },
   {
     text: 'Usos',
