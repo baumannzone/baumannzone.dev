@@ -1,6 +1,10 @@
 <template>
   <div class="blog-page">
-    <ArticleSection :articles="paginatedPosts" title="Blog" />
+    <ArticleSection
+      :articles="paginatedPosts"
+      title="Blog"
+      content-path="blog"
+    />
 
     <ThePagination :current-page="currentPage" :last-page="lastPage" />
   </div>

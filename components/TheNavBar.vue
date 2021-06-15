@@ -32,6 +32,10 @@
                 text-sm
                 font-medium
               "
+              :class="{
+                'nuxt-link-exact-active':
+                  isBlogPage && item.text.toLowerCase() === 'blog',
+              }"
               >{{ item.text }}
             </NuxtLink>
           </div>
@@ -191,6 +195,10 @@
             text-base
             font-medium
           "
+          :class="{
+            'nuxt-link-exact-active':
+              isBlogPage && item.text.toLowerCase() === 'blog',
+          }"
           >{{ item.text }}
         </NuxtLink>
       </div>
@@ -201,12 +209,19 @@
 <script>
 import { navItems } from '@/constants'
 
+const BlogPageName = 'blog-page-page'
+
 export default {
   data() {
     return {
       navItems,
       isCollapsed: true,
     }
+  },
+  computed: {
+    isBlogPage() {
+      return this.$nuxt.$route.name === BlogPageName
+    },
   },
   methods: {
     onClickBtn() {
