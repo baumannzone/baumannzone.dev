@@ -18,27 +18,11 @@
             </a>
           </div>
           <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
-            <a
-              :href="navItems[0].to"
-              class="
-                border-transparent
-                text-gray-500
-                hover:border-gray-300 hover:text-gray-700
-                inline-flex
-                items-center
-                px-1
-                pt-1
-                border-t-2
-                text-sm
-                font-medium
-              "
-              :class="{ 'nuxt-link-active': $route.name === 'index' }"
-              >{{ navItems[0].text }}</a
-            >
             <NuxtLink
-              v-for="item in customNavItems"
+              v-for="item in navItems"
               :key="item.to"
               :to="item.to"
+              :exact="item.exact"
               class="
                 border-transparent
                 text-gray-500
@@ -181,25 +165,8 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div id="mobile-menu" class="lg:hidden" :class="{ hidden: isCollapsed }">
       <div class="pt-2 pb-3 space-y-1">
-        <a
-          :href="navItems[0].to"
-          class="
-            border-transparent
-            text-gray-600
-            hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800
-            block
-            pl-3
-            pr-4
-            py-2
-            border-l-4
-            text-base
-            font-medium
-          "
-          :class="{ 'nuxt-link-active': $route.name === 'index' }"
-          >{{ navItems[0].text }}</a
-        >
         <NuxtLink
-          v-for="item in customNavItems"
+          v-for="item in navItems"
           :key="item.to"
           :to="item.to"
           class="
@@ -230,11 +197,6 @@ export default {
       navItems,
       isCollapsed: true,
     }
-  },
-  computed: {
-    customNavItems() {
-      return this.navItems.filter((item) => item.to !== '/')
-    },
   },
   methods: {
     onClickBtn() {

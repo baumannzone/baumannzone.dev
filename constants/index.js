@@ -9,6 +9,7 @@ const navItems = [
   {
     text: 'Inicio',
     to: routes.HOME,
+    exact: true,
   },
   {
     text: 'Blog',
