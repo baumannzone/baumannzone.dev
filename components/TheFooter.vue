@@ -155,9 +155,12 @@
             name="revue-form"
             target="_blank"
           >
-            <label for="member_email" class="sr-only">Email address</label>
+            <label for="member_email_footer" class="sr-only"
+              >Introduce tu email en este campo si te quieres suscribir a la
+              newsletter.</label
+            >
             <input
-              id="member_email"
+              id="member_email_footer"
               name="member[email]"
               type="email"
               autocomplete="email"
