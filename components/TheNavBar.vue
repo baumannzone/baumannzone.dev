@@ -169,6 +169,7 @@
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
+          :exact="item.exact"
           class="
             border-transparent
             text-gray-600
