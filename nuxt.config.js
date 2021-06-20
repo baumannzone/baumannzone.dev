@@ -38,6 +38,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://image.nuxtjs.org/getting-started/
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,7 +54,9 @@ export default {
   axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    liveEdit: false,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

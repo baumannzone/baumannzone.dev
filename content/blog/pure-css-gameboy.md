@@ -592,11 +592,9 @@ btnOFF.onclick = function () {
 };
 ```
 
-## Video: Dibujando la Game Boy
+## Video: Dibujando la Game Boy con HTML y CSS
 
-No tenía pensado hacer el video, pero fue de lo más divertido 👇.
-
-<center><iframe width="80%" height="300px" src="https://www.youtube.com/embed/Drj78FhXz5U" frameborder="0" allowfullscreen></iframe></center>
+<iframe width="80%" height="300px" src="https://www.youtube.com/embed/Drj78FhXz5U" frameborder="0" allowfullscreen></iframe>
 
 ## Código
 
