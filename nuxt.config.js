@@ -56,6 +56,7 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
     liveEdit: false,
+    fullTextSearchFields: ['title', 'description'],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

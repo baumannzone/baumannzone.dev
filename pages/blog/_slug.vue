@@ -30,14 +30,15 @@
         </h1>
         <div class="text-center mt-2 mb-4">
           <!-- <small class="font-semibold text-gray-600">{{ post.created }}</small>-->
-          <post-tag
+          <NuxtLink
             v-for="tag in post.tags"
             :key="tag"
-            class="inline-flex items-center mx-1"
-            variant="purple"
+            :to="{ name: 'search', query: { tag: tag } }"
           >
-            {{ tag }}
-          </post-tag>
+            <post-tag class="inline-flex items-center mx-1" variant="purple">
+              {{ tag }}
+            </post-tag>
+          </NuxtLink>
           <!--
             <template v-if="post.showUpdatedAt">
               <small>Actualizado el {{ formatDate(post.updatedAt) }} </small>

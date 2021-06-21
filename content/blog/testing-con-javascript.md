@@ -1,7 +1,12 @@
 ---
+title: Testing con Javascript
 created: 2021-01-01
-title: Testing con Javascript 🔥
 description: 'Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con ejemplos en javascript puro. Finaliza usando Jest, un framework de testing para JavaScript'
+category: desarrollo
+tags:
+- node
+- testing
+- javascript
 ---
 
 Introducción práctica a los tests con JavaScript (a través de Node.js) guiada por ejemplos progresivos: “_de 0 a framework_”.
