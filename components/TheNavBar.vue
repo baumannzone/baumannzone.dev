@@ -207,6 +207,7 @@ export default {
       this.isCollapsed = !this.isCollapsed
     },
     onEnter() {
+      if (this.searchText === '') return
       this.$router.push({ name: 'search', query: { q: this.searchText } })
     },
   },

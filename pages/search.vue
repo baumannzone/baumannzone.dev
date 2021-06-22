@@ -1,36 +1,30 @@
 <template>
   <div class="search-page">
-    <pre>{{ articles }}</pre>
-    <!--    <ArticleSection :articles="articles" title="Search" content-path="blog" />-->
+    <ArticleSection :articles="articles" title="Search" content-path="blog" />
   </div>
 </template>
 
 <script>
+import { addDisplayDate } from 'assets/functions'
+
 export default {
   name: 'SearchPage',
   async asyncData({ $content, query, redirect }) {
-    // Si no hay query params, redirect a la home
-    if (Object.keys(query).length === 0) {
+    // Si no hay query params,
+    // O si está vacía la query o si la clave no es `q`
+    // redirect a la home
+    if (Object.keys(query).length === 0 || !query.q) {
       redirect('/')
     }
 
-    const queryType = Object.keys(query)[0]
-    const queryValue = Object.values(query)[0]
-
-    console.log('queryType')
-    console.log(queryType)
-
     const articles = await $content('blog')
-      .only(['title', 'description'])
+      .only(['title', 'description', 'body', 'created', 'slug'])
       .sortBy('createdAt', 'desc')
-      .search(queryValue)
+      .search(query.q)
       .fetch()
 
-    console.log('<<<articles>>>')
-    console.log(articles)
-
     return {
-      articles,
+      articles: addDisplayDate(articles),
     }
   },
 }
