@@ -8,29 +8,29 @@
 <script>
 export default {
   name: 'SearchPage',
-  async asyncData({ $content, query, redirect }) {
-    // Si no hay query params, redirect a la home
-    if (Object.keys(query).length === 0) {
-      redirect('/')
-    }
-
-    const queryType = Object.keys(query)[0]
-    const queryValue = Object.values(query)[0]
-
-    console.log('queryType')
-    console.log(queryType)
+  async asyncData({ $content, params }) {
+    const tag = 'hola'
 
     const articles = await $content('blog')
       .only(['title', 'description'])
       .sortBy('createdAt', 'desc')
-      .search(queryValue)
+      .where({ tags: { $containsAny: tag } })
       .fetch()
+
+    // const allPosts = await $content('blog').fetch()
+    // const totalArticles = allPosts.length
 
     console.log('<<<articles>>>')
     console.log(articles)
 
+    // const articles = await $content('blog')
+    //   .only(['title', 'description', 'slug', 'created', 'body'])
+    //   .sortBy('created', 'desc')
+    //   .fetch()
+
     return {
       articles,
+      // totalArticles,
     }
   },
 }

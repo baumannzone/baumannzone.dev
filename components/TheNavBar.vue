@@ -79,6 +79,7 @@
               </div>
               <input
                 id="search"
+                v-model="searchText"
                 name="search"
                 class="
                   block
@@ -100,6 +101,7 @@
                 "
                 placeholder="Buscar"
                 type="search"
+                @keyup.enter="onEnter"
               />
             </div>
           </div>
@@ -195,6 +197,7 @@ import { navItems } from '@/constants'
 export default {
   data() {
     return {
+      searchText: '',
       navItems,
       isCollapsed: true,
     }
@@ -202,6 +205,9 @@ export default {
   methods: {
     onClickBtn() {
       this.isCollapsed = !this.isCollapsed
+    },
+    onEnter() {
+      this.$router.push({ name: 'search', query: { q: this.searchText } })
     },
   },
 }
