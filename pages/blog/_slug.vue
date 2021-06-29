@@ -33,7 +33,7 @@
           <NuxtLink
             v-for="tag in post.tags"
             :key="tag"
-            :to="{ name: 'search', query: { tag: tag } }"
+            :to="{ name: 'tags-tag', params: { tag: tag } }"
           >
             <post-tag class="inline-flex items-center mx-1" variant="purple">
               {{ tag }}

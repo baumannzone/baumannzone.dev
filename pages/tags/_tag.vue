@@ -1,36 +1,26 @@
 <template>
   <div class="search-page">
-    <pre>{{ articles }}</pre>
-    <!--    <ArticleSection :articles="articles" title="Search" content-path="blog" />-->
+    <ArticleSection :articles="articles" title="Search" content-path="blog" />
   </div>
 </template>
 
 <script>
+import { addDisplayDate } from 'assets/functions'
+
 export default {
   name: 'SearchPage',
-  async asyncData({ $content, params }) {
-    const tag = 'hola'
+  async asyncData({ $content, params, route }) {
+    console.log('ROUTE')
+    console.log(route)
 
     const articles = await $content('blog')
-      .only(['title', 'description'])
+      .only(['title', 'description', 'body', 'created', 'slug'])
       .sortBy('createdAt', 'desc')
-      .where({ tags: { $containsAny: tag } })
+      .where({ tags: { $containsAny: 'node' } })
       .fetch()
 
-    // const allPosts = await $content('blog').fetch()
-    // const totalArticles = allPosts.length
-
-    console.log('<<<articles>>>')
-    console.log(articles)
-
-    // const articles = await $content('blog')
-    //   .only(['title', 'description', 'slug', 'created', 'body'])
-    //   .sortBy('created', 'desc')
-    //   .fetch()
-
     return {
-      articles,
-      // totalArticles,
+      articles: addDisplayDate(articles),
     }
   },
 }
