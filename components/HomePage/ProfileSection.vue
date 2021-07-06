@@ -39,6 +39,7 @@
             :key="name"
             class="text-black hover:text-gray-500 mx-2"
             :href="url"
+            target="_blank"
           >
             <span class="sr-only">{{ name }}</span>
             <SvgIcon :icon-name="name" width="25" height="25" />
@@ -60,7 +61,7 @@ export default {
   },
   computed: {
     socialIconsParsed() {
-      const { linkedin, facebook, ...items } = socialIcons
+      const { linkedin, facebook, devTo, codepen, ...items } = socialIcons
       return items
     },
   },

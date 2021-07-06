@@ -10,9 +10,6 @@ import { addDisplayDate } from 'assets/functions'
 export default {
   name: 'SearchPage',
   async asyncData({ $content, params, route }) {
-    console.log('ROUTE')
-    console.log(route)
-
     const articles = await $content('blog')
       .only(['title', 'description', 'body', 'created', 'slug'])
       .sortBy('createdAt', 'desc')
