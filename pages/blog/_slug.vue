@@ -30,15 +30,16 @@
         </h1>
         <div class="text-center mt-2 mb-4">
           <!-- <small class="font-semibold text-gray-600">{{ post.created }}</small>-->
-          <NuxtLink
+          <!-- <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">
+          </NuxtLink>-->
+          <post-tag
             v-for="tag in post.tags"
             :key="tag"
-            :to="{ name: 'tags-tag', params: { tag: tag } }"
+            class="inline-flex items-center mx-1"
+            variant="purple"
           >
-            <post-tag class="inline-flex items-center mx-1" variant="purple">
-              {{ tag }}
-            </post-tag>
-          </NuxtLink>
+            {{ tag }}
+          </post-tag>
           <!--
             <template v-if="post.showUpdatedAt">
               <small>Actualizado el {{ formatDate(post.updatedAt) }} </small>
@@ -113,9 +114,11 @@ export default {
 .nuxt-content .nuxt-content-highlight {
   @apply relative;
 }
+
 .nuxt-content .nuxt-content-highlight .filename {
   @apply absolute right-0 mr-3 -mt-3 font-light text-sm bg-purple-100 px-2 pt-0 rounded text-purple-600;
 }
+
 .article-width {
   font-size: 1.125rem;
   max-width: 65ch;
