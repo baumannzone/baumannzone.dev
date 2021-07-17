@@ -2,11 +2,11 @@
 title: 👾 Pure CSS Game Boy
 description: Dibujando una Game Boy con HTML y CSS. Animación y sonido con JavaScript.
 created: 2017-04-22
-category: desarrollo
+category: css-art
 tags:
-- html
-- css
-- javascript
+  - html
+  - css
+  - javascript
 ---
 
 En esta publicación vamos a dibujar con CSS, la mítica Game Boy Original que tan buenos recuerdos nos trae a algunos, ¡mi primera consola!
@@ -354,7 +354,7 @@ Le damos un efecto de borde a estos botones con `box-shadow`, fíjate que tenemo
 
 ## Sonido
 
-Las ranuras para la salida del sonido, que corresponden a la capa `.speakers`, también son bastante sencillas de hacer con CSS, muy parecidas a los botones anteriores. 
+Las ranuras para la salida del sonido, que corresponden a la capa `.speakers`, también son bastante sencillas de hacer con CSS, muy parecidas a los botones anteriores.
 Vamos a crear un elemento y lo duplicaremos con repeticiones de sombras con `box-shadow`.
 
 ```stylus[main.styl]
@@ -460,6 +460,7 @@ _Game Boy Terminada_
 Pero aún no hemos terminado, ¡llega el momento más divertido! Es hora de darle vida a este proyecto de CSS haciendo uso de JavaScript.
 
 ## JavaScript
+
 ¿Recuerdas las clases de CSS `.end` y `.power-on`? ¡Ahora es el momento de usarlas!
 
 Vamos a hacer uso de JavaScript — _Make JavaScript great again_ — para simular la animación que hacía la Game Boy cuando la encendías. Compruébalo ahora mismo [aquí](https://baumannzone.github.io/gameboy-css/).
@@ -596,7 +597,6 @@ btnOFF.onclick = function () {
 ## Código
 
 Puedes ver el código completo en este repositorio de github: [https://github.com/baumannzone/gameboy-css](https://github.com/baumannzone/gameboy-css).
-
 
 ¡Esto es todo, developers! Hay muchas formas de dibujar una Game Boy con CSS, en esta ocasión hemos optado por hacerlo así, pero no es la única.
 ¿Cuál es la tuya?
