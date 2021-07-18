@@ -11,8 +11,9 @@
               tracking-wide
               uppercase
             "
-            >{{ post.category }}</span
           >
+            {{ post.category }}
+          </span>
           <span
             class="
               mt-2
@@ -29,9 +30,6 @@
           </span>
         </h1>
         <div class="text-center mt-2 mb-4">
-          <!-- <small class="font-semibold text-gray-600">{{ post.created }}</small>-->
-          <!-- <NuxtLink :to="{ name: 'tags-tag', params: { tag: tag } }">
-          </NuxtLink>-->
           <post-tag
             v-for="tag in post.tags"
             :key="tag"
@@ -40,42 +38,8 @@
           >
             {{ tag }}
           </post-tag>
-          <!--
-            <template v-if="post.showUpdatedAt">
-              <small>Actualizado el {{ formatDate(post.updatedAt) }} </small>
-              <small class="mx-1">·</small>
-            </template>
-            <small> {{ Math.trunc(article.readingTime) }} minutos lectura</small>
-            <small class="mx-1">·</small>
-          -->
         </div>
       </div>
-
-      <!--
-      <pre>{{ post.img }}</pre>
-      <p>{{ post.description }}</p>
-      <p>Actualizado: {{ formatDate(post.updatedAt) }}</p>
-      -->
-
-      <!-- // Show table of contents -->
-      <!--
-      <nav v-if="post.showToc">
-        <ul>
-          <li
-            v-for="link of post.toc"
-            :key="link.id"
-            :class="{
-              toc2: link.depth === 2,
-              'ml-4 list-none': link.depth === 3,
-            }"
-          >
-            <NuxtLink :to="`#${link.id}`">
-              {{ link.text }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </nav>
-      -->
 
       <div class="prose prose-purple prose-lg mx-auto">
         <nuxt-content :document="post" />

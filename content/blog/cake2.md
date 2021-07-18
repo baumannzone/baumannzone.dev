@@ -2,7 +2,7 @@
 title: Cake 2
 description: Dibujando una tartita sabrosita 🎂
 created: 2019-04-22
-category: css-art
+type: css-art
 tags:
   - html
   - css

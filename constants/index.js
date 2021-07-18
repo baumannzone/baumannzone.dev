@@ -16,10 +16,6 @@ const navItems = [
     to: routes.BLOG,
   },
   {
-    text: 'CSS Art',
-    to: routes.CSS_ART,
-  },
-  {
     text: 'Usos',
     to: routes.USES,
   },

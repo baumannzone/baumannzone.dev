@@ -28,14 +28,14 @@ export default {
     const articleToShow = 4
     const latestBlog = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
-      .where({ category: { $containsAny: 'blog' } })
+      .where({ type: { $containsAny: 'blog' } })
       .limit(articleToShow)
       .sortBy('created', 'desc')
       .fetch()
 
     const latestCssArt = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
-      .where({ category: { $containsAny: 'css-art' } })
+      .where({ type: { $containsAny: 'css-art' } })
       .limit(articleToShow)
       .sortBy('created', 'desc')
       .fetch()

@@ -2,7 +2,7 @@
 title: 👾 Pure CSS Game Boy
 description: Dibujando una Game Boy con HTML y CSS. Animación y sonido con JavaScript.
 created: 2017-04-22
-category: css-art
+type: css-art
 tags:
   - html
   - css

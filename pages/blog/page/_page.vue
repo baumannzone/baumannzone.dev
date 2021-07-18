@@ -28,10 +28,8 @@ export default {
     const allPosts = await $content('blog').fetch()
     const totalPosts = allPosts.length
 
-    // use Math.ceil to round up to the nearest whole number
     const lastPage = Math.ceil(totalPosts / perPage)
 
-    // use the % (modulus) operator to get a whole remainder
     const lastPageCount = totalPosts % perPage
 
     const skipNumber = () => {

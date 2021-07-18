@@ -2,7 +2,7 @@
 title: Cake 0
 description: Dibujando una tartita sabrosita 🎂
 created: 2017-04-22
-category: css-art
+type: css-art
 tags:
   - html
   - css

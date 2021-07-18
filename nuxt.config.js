@@ -48,6 +48,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/markdownit',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -55,7 +56,7 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
-    liveEdit: false,
+    liveEdit: true,
     fullTextSearchFields: ['title', 'description'],
   },
 
