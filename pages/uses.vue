@@ -119,7 +119,7 @@
               mt-5
               prose
               text-gray-500
-              prose-indigo
+              prose-purple
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "
           >
@@ -132,12 +132,9 @@
               tenemos la opción de ser <span class="italic">full remote</span>.
             </p>
 
-            <h2>Hardware</h2>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div v-html="hardware"></div>
 
-            <h3>Portátil</h3>
-            <ul>
-              <li></li>
-            </ul>
             <p>
               Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit
               nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum et et et
@@ -182,7 +179,15 @@
 </template>
 
 <script>
-export default {}
+import hardware from '@/components/UsesPage/hardware.md'
+
+export default {
+  computed: {
+    hardware() {
+      return hardware
+    },
+  },
+}
 </script>
 
 <style>
