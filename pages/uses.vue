@@ -110,7 +110,7 @@
             <p class="text-lg text-gray-500">
               Todas las semanas me llegan mensajes en los que me pregutan acerca
               de alguna aplicación de software que utilizo o alguna pieza de
-              hardware que tengo.
+              uses que tengo.
             </p>
           </div>
           <div
@@ -125,7 +125,7 @@
           >
             <p>
               Soy un fiel defensor del trabajo remoto. Llevo trabajando en
-              remoto desde el 2015, aunque no siempre he tenido la oportunidad
+              remoto desde el 2013, aunque no siempre he tenido la oportunidad
               de hacerlo, pero sí la mayor parte del tiempo.
               <br />
               En DCSL Guidesmiths, la empresa para la que trabajo actualmente,
@@ -133,7 +133,7 @@
             </p>
 
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <div v-html="hardware"></div>
+            <div v-html="uses"></div>
           </div>
         </div>
       </div>
@@ -142,12 +142,12 @@
 </template>
 
 <script>
-import hardware from '@/components/UsesPage/hardware.md'
+import uses from '@/components/UsesPage/uses.md'
 
 export default {
   computed: {
-    hardware() {
-      return hardware
+    uses() {
+      return uses
     },
   },
 }
