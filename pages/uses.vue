@@ -108,9 +108,9 @@
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto text-base max-w-prose lg:max-w-none">
             <p class="text-lg text-gray-500">
-              Todas las semanas me llegan mensajes en los que me pregutan acerca
-              de alguna aplicación de software que utilizo o alguna pieza de
-              uses que tengo.
+              Todas las semanas me pregutan acerca de alguna aplicación de
+              software que utilizo o alguna pieza o gadget de hardware que
+              tengo.
             </p>
           </div>
           <div
@@ -125,8 +125,8 @@
           >
             <p>
               Soy un fiel defensor del trabajo remoto. Llevo trabajando en
-              remoto desde el 2013, aunque no siempre he tenido la oportunidad
-              de hacerlo, pero sí la mayor parte del tiempo.
+              remoto desde el 2015. Aunque no de manera ininterrumpida, pero sí
+              la mayor parte del tiempo.
               <br />
               En DCSL Guidesmiths, la empresa para la que trabajo actualmente,
               tenemos la opción de ser <span class="italic">full remote</span>.
