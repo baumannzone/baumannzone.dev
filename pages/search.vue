@@ -24,5 +24,6 @@ export default {
       articles: addDisplayDate(articles),
     }
   },
+  watchQuery: true,
 }
 </script>

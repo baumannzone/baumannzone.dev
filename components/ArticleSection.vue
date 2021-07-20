@@ -16,18 +16,21 @@
           {{ title }}
         </h2>
       </div>
-      <ArticleCardList :posts="articles" />
+      <ArticleCardList v-if="articles.length > 0" :posts="articles" />
+      <ArticleCardListNoResults v-else :search-text="getSearchText" />
     </div>
   </section>
 </template>
 
 <script>
 import ArticleCardList from '@/components/ArticleCard/ArticleCardList'
+import ArticleCardListNoResults from '@/components/ArticleCard/ArticleCardListNoResults'
 
 export default {
   name: 'LastArticles',
   components: {
     ArticleCardList,
+    ArticleCardListNoResults,
   },
   props: {
     title: {
@@ -37,6 +40,11 @@ export default {
     articles: {
       type: Array,
       required: true,
+    },
+  },
+  computed: {
+    getSearchText() {
+      return this.$route.query.q || ''
     },
   },
 }
