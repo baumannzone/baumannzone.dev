@@ -49,7 +49,7 @@
         <p class="text-sm font-medium text-gray-500 text-right">
           {{ post.updatedAt }}
         </p>
-        <prev-next :prev="prev" :next="next" content-path="blog" />
+        <prev-next :prev="prev" :next="next" />
       </div>
     </div>
   </article>

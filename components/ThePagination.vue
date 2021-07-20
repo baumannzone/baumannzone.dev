@@ -15,7 +15,7 @@
       <div class="-mt-px w-0 flex-1 flex">
         <NuxtLink
           v-if="!isFirstPage"
-          :to="prevUrl"
+          :to="prevPage"
           class="
             border-t-2 border-transparent
             pt-4
@@ -45,90 +45,10 @@
         </NuxtLink>
       </div>
 
-      <!--
-      <div class="hidden lg:flex">
-        <a
-          href="#"
-          class="
-            border-transparent
-            text-gray-500
-            border-t-2
-            pt-4
-            px-4
-            inline-flex
-            items-center
-            text-sm
-            font-medium
-          "
-          >1</a
-        >
-        <a
-          href="#"
-          class="
-            border-purple-500
-            text-purple-600
-            border-t-2
-            pt-4
-            px-4
-            inline-flex
-            items-center
-            text-sm
-            font-medium
-          "
-          >2</a
-        >
-        <span
-          class="
-            border-transparent
-            text-gray-500
-            border-t-2
-            pt-4
-            px-4
-            inline-flex
-            items-center
-            text-sm
-            font-medium
-          "
-        >
-          ...
-        </span>
-        <a
-          href="#"
-          class="
-            border-transparent
-            text-gray-500
-            border-t-2
-            pt-4
-            px-4
-            inline-flex
-            items-center
-            text-sm
-            font-medium
-          "
-          >5</a
-        >
-        <a
-          href="#"
-          class="
-            border-transparent
-            text-gray-500
-            border-t-2
-            pt-4
-            px-4
-            inline-flex
-            items-center
-            text-sm
-            font-medium
-          "
-          >6</a
-        >
-      </div>
-      -->
-
       <div class="-mt-px w-0 flex-1 flex justify-end">
         <NuxtLink
           v-if="!isLastPage"
-          :to="nextUrl"
+          :to="nextPage"
           class="
             border-t-2 border-transparent
             pt-4
@@ -164,11 +84,6 @@
 <script>
 export default {
   props: {
-    contentPath: {
-      type: String,
-      required: true,
-      validator: (val) => ['blog', 'css-art'].includes(val),
-    },
     currentPage: {
       type: Number,
       required: true,
@@ -179,11 +94,11 @@ export default {
     },
   },
   computed: {
-    prevUrl() {
-      return `/${this.contentPath}/page/${this.currentPage - 1}`
+    prevPage() {
+      return `/blog/page/${this.currentPage - 1}`
     },
-    nextUrl() {
-      return `/${this.contentPath}/page/${this.currentPage + 1}`
+    nextPage() {
+      return `/blog/page/${this.currentPage + 1}`
     },
     isFirstPage() {
       return this.currentPage === 1
