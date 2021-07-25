@@ -53,4 +53,17 @@ const skipNumber = ({ currentPage, perPage }) => {
   return currentPage === 1 ? 0 : (currentPage - 1) * perPage
 }
 
-export { addDisplayDate, skipNumber, formatDate }
+/**
+ * Link to edit post on GitHub
+ */
+const editPostOnGithub = ({
+  postSlug,
+  branch = 'main',
+  contentFolder = 'content',
+  contentType = 'blog',
+}) => {
+  const githubRepo = 'https://github.com/baumannzone/baumannzone.dev'
+  return `${githubRepo}/edit/${branch}/${contentFolder}/${contentType}/${postSlug}.md`
+}
+
+export { addDisplayDate, skipNumber, formatDate, editPostOnGithub }

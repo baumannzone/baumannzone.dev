@@ -38,6 +38,11 @@
           >
             {{ tag }}
           </post-tag>
+
+          <div class="mt-5 text-sm text-gray-500">
+            <time :datetime="post.created">{{ formatDateCreated }}</time> ·
+            <ArticleReadingTime :content="post.body" />
+          </div>
         </div>
       </div>
 
@@ -46,16 +51,16 @@
       </div>
 
       <div class="article-width mx-auto">
-        <div class="flex">
+        <div class="flex justify-between mb-10 mt-16">
           <p class="text-sm font-medium text-gray-500 text-left">
-            Editado el {{ formatDate(post.updatedAt) }}
+            Editado el {{ formatDateUpdatedAt }}
           </p>
           <p class="text-sm font-medium text-right">
             <a
-              href="#"
+              :href="editPostOnGithub"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm text-gray-500 text-right"
+              class="text-sm text-purple-700 text-right"
             >
               Editar en GitHub
             </a>
@@ -68,7 +73,7 @@
 </template>
 
 <script>
-import { formatDate } from 'assets/functions'
+import { formatDate, editPostOnGithub } from 'assets/functions'
 
 export default {
   async asyncData({ $content, params }) {
@@ -85,9 +90,15 @@ export default {
       next,
     }
   },
-  methods: {
-    formatDate(date) {
-      return formatDate(date)
+  computed: {
+    formatDateUpdatedAt() {
+      return formatDate(this.post.updatedAt)
+    },
+    formatDateCreated() {
+      return formatDate(this.post.created)
+    },
+    editPostOnGithub() {
+      return editPostOnGithub({ postSlug: this.post.slug })
     },
   },
 }
