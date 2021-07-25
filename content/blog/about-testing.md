@@ -109,27 +109,12 @@ A modo resumen, quédate con esto:
 
 Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](https://twitter.com/baumannzone/status/1093427647336640512).
 
-Y hasta aquí llega esta lectura, apreciado developer. Espero que te haya gustado. Deja tus 👏 por aquí o tus 💚 por [twitter](https://twitter.com/baumannzone) o compártelo si te ha sido útil.
+![No test, no fail](no-test-no-fail.jpg)
 
-Existe un gigantesco mundo alrededor del testing. _Librerías, runners, herramientas, plugins, frameworks, …_  
-Respecto a mí, en futuros escritos me gustaría hablar de los tipos de pruebas _(unitarias, integración, snapshot, etc)_ que podemos hacer en nuestras aplicaciones.
+Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc..._
 
-Espero que, después de leer esto, te hayas motivado y estés convencido de que los _tests_ o pruebas son siempre bien, estimado lector.
+Seguramente que en futuros artículos, seguiremos hablando de testing. Ahora solo espero que, después de leer esto, te hayas motivado y tengas el convencimiento de que los tests automáticos son siempre bien.
 
-Si te interesa el mundo del testing, en especial con **javascript**, deberías revisar este otro artículo que escribí a posteriori, que está muy chulo:
+Y hasta aquí llega esta lectura, apreciado developer. Espero que te haya gustado. Si te gustó, déjame tus likes por [instagram](https://instagram.com/baumannzone) o por [twitter](https://twitter.com/baumannzone) o compártelo si te ha sido útil.
 
-[**Introducción al Testing con Javascript**  
-\_Introducción práctica a los tests con javascript guiada por ejemplos progresivos: “de 0 a framework” 🎉_medium.com](https://medium.com/@baumannsito/testing-con-javascript-tutorial-bb85745f2b6e 'https://medium.com/@baumannsito/testing-con-javascript-tutorial-bb85745f2b6e')[](https://medium.com/@baumannsito/testing-con-javascript-tutorial-bb85745f2b6e)
-
-Si trabajas con tecnologías web como `javascript`, `html` o `css` te recomiendo que revises este otro post que escribí hace tiempo:   
-[**Pure CSS · Nintendo Gameboy**](https://medium.com/@baumannsito/dibujando-una-gameboy-con-css-b78e5f148eff)
-
-[**Dibujando una Gameboy con CSS**  
-\_Y animándola con Javascript_medium.com](https://medium.com/@baumannsito/dibujando-una-gameboy-con-css-b78e5f148eff 'https://medium.com/@baumannsito/dibujando-una-gameboy-con-css-b78e5f148eff')[](https://medium.com/@baumannsito/dibujando-una-gameboy-con-css-b78e5f148eff)
-
-### Puedes encontrarme en …
-
-Mi perfil de Github: [https://github.com/baumannzone](https://github.com/baumannzone)   
-Mi perfil de Twitter: [https://twitter.com/baumannzone](https://twitter.com/baumannzone)
-
-Ahora, a disfrutar del veranito 🏖 ¡Nos vemos por las redes! 👋
+¡Hasta la próxima! 👋 👋
