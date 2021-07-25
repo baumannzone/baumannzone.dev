@@ -99,7 +99,7 @@
                   focus:border-purple-500
                   sm:text-sm
                 "
-                placeholder="Buscar"
+                placeholder="Buscar en el blog"
                 type="search"
                 @keyup.enter="onEnter"
               />

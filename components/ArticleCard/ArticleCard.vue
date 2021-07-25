@@ -7,7 +7,7 @@
     </p>
 
     <NuxtLink
-      :to="{ name: routeName, params: { slug: post.slug } }"
+      :to="{ name: 'blog-slug', params: { slug: post.slug } }"
       class="mt-2 block"
     >
       <p class="text-xl font-semibold text-gray-900">
@@ -20,7 +20,7 @@
 
     <div class="mt-3">
       <NuxtLink
-        :to="{ name: routeName, params: { slug: post.slug } }"
+        :to="{ name: 'blog-slug', params: { slug: post.slug } }"
         class="text-base font-semibold text-purple-600 hover:text-purple-500"
       >
         Ver más →
@@ -39,16 +39,6 @@ export default {
     post: {
       type: Object,
       required: true,
-    },
-    contentPath: {
-      type: String,
-      required: true,
-      validator: (val) => ['blog', 'css-art'].includes(val),
-    },
-  },
-  computed: {
-    routeName() {
-      return `${this.contentPath}-slug`
     },
   },
 }

@@ -46,16 +46,30 @@
       </div>
 
       <div class="article-width mx-auto">
-        <p class="text-sm font-medium text-gray-500 text-right">
-          {{ post.updatedAt }}
-        </p>
-        <prev-next :prev="prev" :next="next" content-path="blog" />
+        <div class="flex">
+          <p class="text-sm font-medium text-gray-500 text-left">
+            Editado el {{ formatDate(post.updatedAt) }}
+          </p>
+          <p class="text-sm font-medium text-right">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-gray-500 text-right"
+            >
+              Editar en GitHub
+            </a>
+          </p>
+        </div>
+        <prev-next :prev="prev" :next="next" />
       </div>
     </div>
   </article>
 </template>
 
 <script>
+import { formatDate } from 'assets/functions'
+
 export default {
   async asyncData({ $content, params }) {
     const post = await $content('blog', params.slug).fetch()
@@ -70,6 +84,11 @@ export default {
       prev,
       next,
     }
+  },
+  methods: {
+    formatDate(date) {
+      return formatDate(date)
+    },
   },
 }
 </script>

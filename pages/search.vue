@@ -1,6 +1,6 @@
 <template>
   <div class="search-page">
-    <ArticleSection :articles="articles" title="Search" content-path="blog" />
+    <ArticleSection :articles="articles" title="Buscar" />
   </div>
 </template>
 
@@ -10,10 +10,7 @@ import { addDisplayDate } from 'assets/functions'
 export default {
   name: 'SearchPage',
   async asyncData({ $content, query, redirect }) {
-    // Si no hay query params,
-    // O si está vacía la query o si la clave no es `q`
-    // redirect a la home
-    if (Object.keys(query).length === 0 || !query.q) {
+    if (!query.q) {
       redirect('/')
     }
 
@@ -27,5 +24,6 @@ export default {
       articles: addDisplayDate(articles),
     }
   },
+  watchQuery: true,
 }
 </script>

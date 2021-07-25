@@ -40,6 +40,7 @@
             class="text-black hover:text-gray-500 mx-2"
             :href="url"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <span class="sr-only">{{ name }}</span>
             <SvgIcon :icon-name="name" width="25" height="25" />

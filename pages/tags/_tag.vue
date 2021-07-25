@@ -1,6 +1,6 @@
 <template>
   <div class="search-page">
-    <ArticleSection :articles="articles" title="Search" content-path="blog" />
+    <ArticleSection :articles="articles" title="Search" />
   </div>
 </template>
 
