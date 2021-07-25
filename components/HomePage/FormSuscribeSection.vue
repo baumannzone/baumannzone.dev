@@ -95,6 +95,7 @@
               target="_blank"
               href="https://www.getrevue.co/terms"
               class="text-white font-medium underline"
+              rel="noopener noreferrer"
             >
               Términos</a
             >
@@ -103,6 +104,7 @@
               target="_blank"
               href="https://www.getrevue.co/privacy"
               class="text-white font-medium underline"
+              rel="noopener noreferrer"
             >
               Política de Privacidad</a
             >

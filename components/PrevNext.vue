@@ -3,7 +3,7 @@
     <div class="-mt-px w-1/2 flex">
       <NuxtLink
         v-if="prev"
-        :to="{ name: routeName, params: { slug: prev.slug } }"
+        :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
         class="
           pt-4
           pr-1
