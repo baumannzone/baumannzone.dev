@@ -110,10 +110,10 @@ Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](h
 
 ![No test, no fail](no-test-no-fail.jpg)
 
-Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc..._
+Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc_... En futuros artículos me gustaría seguir hablando de testing.
 
-En futuros artículos me gustaría seguir hablando de testing. Ahora solo espero que, después de leer esto, te hayas motivado y tengas el convencimiento de que los tests automáticos son siempre bien.
+Ahora solo espero que, después de leer esto, haberte motivado y que tengas el convencimiento de que los tests automáticos son siempre bien.
 
-Y hasta aquí llega esta lectura, apreciado developer. Si te gustó, déjame tus impresiones por [instagram](https://instagram.com/baumannzone) compártelo si te ha sido útil. Recuerda, _sharing is caring_.
+Hasta aquí llega esta lectura, apreciado developer. Si te gustó, déjame tus impresiones por [instagram](https://instagram.com/baumannzone) compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
 ¡Hasta la próxima! 👋 👋
