@@ -9,8 +9,7 @@ tags:
   - javascript
 ---
 
-¿Haces pruebas en tus aplicaciones?
-
+¿Haces pruebas en tus aplicaciones?  
 Hola querido/a dev. En este escrito vamos a intentar redactar de manera amigable algunos aspectos del **testing** de aplicaciones.
 
 Tú, como developer, cuando haces una entrega, quieres que el código entregado sea lo más robusto posible y sin errores.
@@ -113,8 +112,8 @@ Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](h
 
 Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc..._
 
-Seguramente que en futuros artículos, seguiremos hablando de testing. Ahora solo espero que, después de leer esto, te hayas motivado y tengas el convencimiento de que los tests automáticos son siempre bien.
+En futuros artículos me gustaría seguir hablando de testing. Ahora solo espero que, después de leer esto, te hayas motivado y tengas el convencimiento de que los tests automáticos son siempre bien.
 
-Y hasta aquí llega esta lectura, apreciado developer. Espero que te haya gustado. Si te gustó, déjame tus likes por [instagram](https://instagram.com/baumannzone) o por [twitter](https://twitter.com/baumannzone) o compártelo si te ha sido útil.
+Y hasta aquí llega esta lectura, apreciado developer. Si te gustó, déjame tus impresiones por [instagram](https://instagram.com/baumannzone) compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
 ¡Hasta la próxima! 👋 👋
