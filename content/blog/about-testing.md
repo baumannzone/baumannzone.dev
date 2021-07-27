@@ -1,6 +1,6 @@
 ---
 title: About Testing
-description: ¿Haces pruebas en tus aplicaciones web?
+description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? En este artículo trataremos este tema a fondo. 
 created: 2019-07-13
 type: blog
 tags:
@@ -17,10 +17,7 @@ Tú, como developer, cuando haces una entrega, quieres que el código entregado 
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera.  
 Has estado 3 días con tu aplicación rota ☠️..
 
-1:
-![Friday push to production](blog/about-testing/friday-push.jpg)
-2:
-![Friday push to production](/blog/about-testing/testing-meme.jpg)
+![Friday push to production](/blog/about-testing/friday-push.jpg)
 
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, probando (_testeando_) tu código.
@@ -57,7 +54,7 @@ Un proyecto donde sea complicado seguir el flujo de la lógica de la aplicación
 🐛 Ahora resulta que tu proyecto ha crecido tanto que necesitas un equipo que se dedique exclusivamente a probar que todo funciona como es debido cada vez que se añade una nueva funcionalidad.  
 Porque, como todo software, tiene bugs. Bugs que no quieres que lleguen al usuario o cliente final, bugs que quieres detectar antes de que se desplieguen en pro con la nueva funcionalidad.
 
-![Testing Meme](testing-meme.jpg)
+![Testing Meme](/blog/about-testing/testing-meme.jpg)
 
 Y aun así, con un equipo que se dedique exclusivamente a testear, no tienes la garantía de que se vayan a detectar todos los posibles errores que pueda tener tu aplicación.  
 Sobre todo porque las pruebas manuales requieren mucha concentración y es fácil despistarse, por lo que es probable que tu código no esté funcionando como es debido.
@@ -94,7 +91,7 @@ Y que, en el supuesto y (muy) probable caso de que eso ocurra, dicho fallo se va
 Antes de seguir, me gustaría hacer un pequeño break para revisar este concepto.  
 **Test-Driven Development**, TDD para los amigos, es una práctica (o flujo de trabajo) en la cual tú escribes tus pruebas (suelen ser pruebas unitarias) antes de escribir el código de la aplicación.
 
-![TDD flow](tdd-flow.jpg)
+![TDD flow](/blog/about-testing/tdd-flow.jpg)
 
 En primer lugar, se escriben las pruebas y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente, si es posible, se refactoriza el código escrito. Y así con cada nueva funcionalidad.
 
@@ -112,7 +109,7 @@ A modo resumen, quédate con esto:
 
 Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](https://twitter.com/baumannzone/status/1093427647336640512).
 
-![No test, no fail](/no-test-no-fail.jpg)
+![No test, no fail](/blog/about-testing/no-test-no-fail.jpg)
 
 Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc_... En futuros seguiremos hablando de testing.
 
