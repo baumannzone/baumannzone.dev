@@ -17,7 +17,11 @@ Tú, como developer, cuando haces una entrega, quieres que el código entregado 
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera.  
 Has estado 3 días con tu aplicación rota ☠️..
 
-![Friday push to production](~/assets/blog/about-testing/friday-push.jpg)
+1:
+![Friday push to production](blog/about-testing/friday-push.jpg)
+2:
+![Friday push to production](/blog/about-testing/testing-meme.jpg)
+
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, probando (_testeando_) tu código.
 
