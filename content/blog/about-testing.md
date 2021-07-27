@@ -17,7 +17,7 @@ Tú, como developer, cuando haces una entrega, quieres que el código entregado 
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera.  
 Has estado 3 días con tu aplicación rota ☠️..
 
-![Friday push to production](friday-push.jpg)
+![Friday push to production](~/assets/blog/about-testing/friday-push.jpg)
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, probando (_testeando_) tu código.
 
@@ -104,15 +104,15 @@ A modo resumen, quédate con esto:
 - No siempre hace falta tener pruebas automáticas (_Madre mía... ¿en qué quedamos?_)
 - No necesitas tests si pasas más tiempo re-escribiendo tests que desarrollando funcionalidades (Ej: prototipos, proyectos cortos e inestables)
 - Tu objetivo no es obtener el 100% de cobertura en tus tests. En serio, no eres mejor tester por tener todo al 100%.
-- TDD es bien. TDD a rajatabla puede ser un dolor de cabeza.
+- TDD es bien. Sin embargo, cualquier metodología a rajatabla puede ser un dolor de cabeza.
 
 Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](https://twitter.com/baumannzone/status/1093427647336640512).
 
-![No test, no fail](no-test-no-fail.jpg)
+![No test, no fail](/no-test-no-fail.jpg)
 
-Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc_... En futuros artículos me gustaría seguir hablando de testing.
+Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc_... En futuros seguiremos hablando de testing.
 
-Ahora solo espero que, después de leer esto, haberte motivado y que tengas el convencimiento de que los tests automáticos son siempre bien.
+Ahora solo espero que, después de leer esto, estés motivado y que tengas el convencimiento de que los tests son siempre bien y que el testing es un mundo fantástico.
 
 Hasta aquí llega esta lectura, apreciado developer. Si te gustó, déjame tus impresiones por [instagram](https://instagram.com/baumannzone) compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
