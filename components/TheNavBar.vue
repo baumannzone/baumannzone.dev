@@ -5,12 +5,12 @@
         <div class="flex px-2 lg:px-0">
           <div class="flex-shrink-0 flex items-center">
             <a href="/">
-              <img
+              <nuxt-img
                 class="block lg:hidden h-8 w-auto"
                 src="/logo.png"
                 alt="Baumannzone's logo"
               />
-              <img
+              <nuxt-img
                 class="hidden lg:block h-8 w-auto"
                 src="/logo-with-name.png"
                 alt="Baumannzone's logo"

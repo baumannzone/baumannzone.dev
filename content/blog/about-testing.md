@@ -3,6 +3,7 @@ title: About Testing
 description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? En este artículo trataremos este tema a fondo. 
 created: 2019-07-13
 type: blog
+author: Jorge Baumann
 tags:
   - nodejs
   - testing

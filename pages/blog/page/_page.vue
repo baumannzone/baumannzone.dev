@@ -17,7 +17,9 @@ export default {
   async asyncData({ $content, params, error }) {
     const currentPage = parseInt(params.page)
     const perPage = 4
-    const allPosts = await $content('blog').fetch()
+    const allPosts = await $content('blog')
+      .where({ isDraft: { $ne: true } })
+      .fetch()
     const totalPosts = allPosts.length
 
     const lastPage = Math.ceil(totalPosts / perPage)
@@ -36,6 +38,7 @@ export default {
 
     const paginatedPosts = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
+      .where({ isDraft: { $ne: true } })
       .sortBy('created', 'desc')
       .limit(perPage)
       .skip(skipNumber())

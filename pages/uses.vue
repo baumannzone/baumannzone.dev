@@ -77,12 +77,12 @@
           <div class="relative mx-auto text-base max-w-prose lg:max-w-none">
             <figure>
               <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
-                <img
+                <nuxt-img
                   class="object-cover object-center rounded-lg shadow-lg"
-                  src="/uses/desktop.jpg"
-                  alt="Whitney leaning against a railing on a downtown street"
-                  width="1184"
-                  height="1376"
+                  src="/uses/desktop.png"
+                  alt="Escritorio de trabajo de Baumannzone: Portatil, pantalla curva de 34, teclado externo y ratón"
+                  width="3454"
+                  height="2250"
                 />
               </div>
               <figcaption class="flex mt-3 text-sm text-gray-500">

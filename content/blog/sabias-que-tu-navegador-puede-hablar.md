@@ -3,6 +3,7 @@ title: ¿Sabías que tu navegador puede hablar?
 description: 'La API de Web Speech (API de voz) te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!'
 created: 2018-10-22
 type: blog
+author: Jorge Baumann
 tags:
   - HTML
   - Web Speech API
