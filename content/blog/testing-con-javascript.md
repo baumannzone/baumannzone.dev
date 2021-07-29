@@ -1,6 +1,6 @@
 ---
 title: Testing con Javascript
-created: 2021-01-01
+created: 2019-09-02
 description: 'Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con ejemplos en javascript puro. Finaliza usando Jest, un framework de testing para JavaScript'
 type: blog
 author: Jorge Baumann
@@ -12,7 +12,7 @@ tags:
 
 Introducción práctica a los tests con JavaScript (a través de Node.js) guiada por ejemplos progresivos: “_de 0 a framework_”.
 
-![Pollito con fondo rosa](header.jpg)
+![Pollito con fondo rosa](/blog/testing-con-javascript/header.jpg)
 
 > Photo by [Toni Cuenca](https://unsplash.com/@tonicuenca?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/1130879/pink-background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -62,7 +62,7 @@ console.log( '¡Todo OK! 👌' )
 
 Puedes ejecutar este test corriendo `node test-0.js` desde la terminal. Y ya lo tienes, ¡tu primer test con javascript! 🎉
 
-![Test 0 running](test-0.png)
+![Test 0 running](/blog/testing-con-javascript/test-0.png)
 Resultado de error tras ejecutar el test-0.js
 
 Cuando lo ejecutes, debería saltarte un error. Puedes probar a cambiar las variables `resultado` y `esperado` para dejarlas con el mismo valor.  
@@ -136,7 +136,7 @@ console.log( '¡Test1 OK! 👌' )
 
 Ejecutamos el test desde la terminal con `node test-1.js` y podemos ver que la ejecución ha terminado con éxito.
 
-![Test 1 running](test-1.png)
+![Test 1 running](/blog/testing-con-javascript/test-1.png)
 test-1.js running
 
 Ahora probemos a _romper_ la función `suma`. Quitamos el signo de suma (`+`) y ponemos el de resta (`-`).  
@@ -258,7 +258,7 @@ console.log( '¡Test3 OK! 👌' )
 Vamos a repetir el procedimiento que hicimos anteriormente. Rompemos la función `suma` cambiando el `+` por el `-` y ejecutamos el test 3 con el siguiente comando `node test-3.js`.
 Si todo va bien, deberíamos seguir viendo que el test nos alerta de que algo anda mal.
 
-![](test-3-error.png)
+![error-3](/blog/testing-con-javascript/test-3-error.png)
 
 Error al ejecutar test-3.js
 
@@ -312,11 +312,11 @@ Hemos logrado aislar el código de nuestras pruebas y, además, tenemos mensajes
 
 Ejecutemos el test `test-4.js` y veamos cómo queda.
 
-![test 4](test-4.png)
+![test 4](/blog/testing-con-javascript/test-4.png)
 
 Salida de ejecutar test-4.js
 
-Tenemos un [listado](test-4.mp4) de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.  
+Tenemos un [listado](/blog/testing-con-javascript/test-4.mp4) de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.  
 Antes, en caso de fallo, nos aparecía el mensaje de error pero no sabíamos de dónde provenía el fallo.  
 Ahora, en caso de error, se nos muestra el propio error, por lo tanto sabremos exactamente qué es lo que tenemos que rectificar.
 
@@ -330,7 +330,7 @@ Pero incluso después de realizar esta funcionalidad, nos seguiría quedando muc
 
 Actualmente existen en el “mercado” bastantes frameworks o librerías de este tipo, mucho más robustas que la nuestra. Por lo tanto, lo primero que tenemos que hacer es elegir con cuál queremos trabajar.
 
-![Listado de frameworks de testing](testing-frameworks.png)
+![Listado de frameworks de testing](/blog/testing-con-javascript/testing-frameworks.png)
 
 En un principio pensé en usar [AVA](https://github.com/avajs/ava) 🚀, que me gusta porque es bastante simple y moderno. Sin embargo, desde mi punto de vista tiene una pequeña deficiencia: la documentación.
 Por lo tanto, la segunda opción, sin duda alguna es [Jest](https://jestjs.io/) 🃏. En el entorno profesional es el framework de testing que más utilizo y su documentación me parece bastante buena y es más intuitiva.
@@ -378,7 +378,7 @@ Ran all test suites.
 
 Probemos ahora a romper la función `resta` cambiando el `-` por el `+`. Ejecutemos de nuevo Jest.
 
-![Error de jest](error-test.png)
+![Error de jest](/blog/testing-con-javascript/error-test.png)
 
 En esta imagen se ve mucho más claro qué está fallando. Tiene colores y además nos dice qué y dónde ha fallado junto con mucha más información de ayuda. ¡Bastante descriptivo!
 
@@ -393,6 +393,6 @@ Antes de empezar a escribir este artículo lancé en twitter un par de encuestas
 Este escrito es el motivo que hay detrás de estas encuestas.
 
 Si después de leer este artículo tuvieras que votar... _¿Qué votarías?_
-Imagino que responderías "sí" a ambas preguntas, ¿verdad?
+Imagino que ahora responderías "sí" a ambas preguntas.
 
 Y tú, ¿con qué herramientas testeas tus aplicaciones javascript?
