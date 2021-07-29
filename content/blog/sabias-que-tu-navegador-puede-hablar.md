@@ -3,6 +3,7 @@ title: ¿Sabías que tu navegador puede hablar?
 description: 'La API de Web Speech (API de voz) te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!'
 created: 2018-10-22
 type: blog
+author: Jorge Baumann
 tags:
   - HTML
   - Web Speech API
@@ -26,7 +27,7 @@ Lo primero que tienes que hacer para usar esta web API es comprobar la compatibi
 Si estás usando un navegador moderno y actualizado (como Chrome, Firefox o Safari) no deberías tener problema. A no ser que estés en un dispositivo móvil.  
 Comprueba la compatibilidad de tu navegador en este enlace: [https://caniuse.com/#feat=speech-synthesis](https://caniuse.com/#feat=speech-synthesis).
 
-![Captura de pantalla de Can I Use de la Web Speech API](can-i-use.png)
+![Captura de pantalla de Can I Use de la Web Speech API](/blog/sabias-que-tu-navegador-puede-hablar/can-i-use.png)
 
 A simple vista parece que el soporte es bastante amplio, sin embargo, tiene truco, ya que el soporte completo es limitado.  
 Esto quiere decir que algunas de las _features_ como la _voz_, el _tono_ o la _velocidad_ no están disponibles según el dispositivo, el navegador o el sistema operativo que estés utilizando.
@@ -135,7 +136,7 @@ speechSynthesis.onvoiceschanged = () => {
 
 Este es un listado con algunas de las voces disponibles en Chrome en un Macbook Pro:
 
-![Lista de voces disponibles en el Macbook Pro](voices-list.png)
+![Lista de voces disponibles en el Macbook Pro](/blog/sabias-que-tu-navegador-puede-hablar/voices-list.png)
 
 ## Briconsejos 🔧
 

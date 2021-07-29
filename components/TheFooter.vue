@@ -148,7 +148,7 @@
             Las últimas noticias, artículos y recursos, directo a tu email.
           </p>
           <form
-            id="revue-form"
+            id="revue-form-footer"
             class="mt-4 sm:flex sm:max-w-md"
             action="https://www.getrevue.co/profile/baumannzone/add_subscriber"
             method="post"
@@ -238,9 +238,9 @@
             :key="name"
             class="text-purple-400 hover:text-purple-300 mb-2"
             :href="url"
+            target="_blank"
           >
             <span class="sr-only">{{ name }}</span>
-
             <SvgIcon :icon-name="name" />
           </a>
         </div>

@@ -15,7 +15,7 @@
         "
       >
         <div class="flex justify-center">
-          <img
+          <nuxt-img
             src="/baumannzone-140.png"
             alt="Baumannzone picture"
             width="140"

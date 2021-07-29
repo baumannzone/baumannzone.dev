@@ -3,6 +3,7 @@ title: 👾 Pure CSS Game Boy
 description: Dibujando una Game Boy con HTML y CSS. Animación y sonido con JavaScript.
 created: 2017-04-22
 type: css-art
+author: Jorge Baumann
 tags:
   - html
   - css
@@ -16,7 +17,7 @@ Utilizaremos solo **CSS** y **HTML** (sin hacer uso de imágenes) para dibujar l
 
 [https://baumannzone.github.io/gameboy-css/](https://baumannzone.github.io/gameboy-css/)
 
-![GameBoy Pure CSS](main-gb.png)
+![GameBoy Pure CSS](/blog/pure-css-gameboy/main-gb.png)
 _Pure CSS Game Boy_
 
 Empezaremos con la estructura del documento HTML. En este caso estoy usando _Pug_ (antiguamente conocido llamado _Jade_) como preprocesador HTML y _Stylus_ para el CSS.
@@ -85,7 +86,7 @@ La clase `.gameboy`, que es la clase que engloba todos los demás elementos, cor
     margin-right 40px
 ```
 
-![Carcasa Game Boy](gb-case.png)
+![Carcasa Game Boy](/blog/pure-css-gameboy/gb-case.png)
 
 ### Pantalla
 
@@ -187,7 +188,7 @@ La clase `.power-on` es una clase que le vamos a agregar al elemento del led y q
 
 Si has visto la demo, habrás visto que hay un texto animado junto con otros efectos como la luz de la batería o el botón de apagar.
 
-![Pantalla Game Boy](gb-screen.png)
+![Pantalla Game Boy](/blog/pure-css-gameboy/gb-screen.png)
 
 ### Texto Nintendo
 
@@ -350,7 +351,7 @@ Le damos un efecto de borde a estos botones con `box-shadow`, fíjate que tenemo
   box-shadow 57px 27px #999, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf
 ```
 
-![Game Boy Buttons](gb-buttons.png)
+![Game Boy Buttons](/blog/pure-css-gameboy/gb-buttons.png)
 
 ## Sonido
 
@@ -454,7 +455,7 @@ Lo mismo para el indicador de On/Off, pero en la parte superior izquierda y con 
 
 Este es el resultado de juntarlo todo:
 
-![Pure CSS Game Boy](gb.png)
+![Pure CSS Game Boy](/blog/pure-css-gameboy/gb.png)
 _Game Boy Terminada_
 
 Pero aún no hemos terminado, ¡llega el momento más divertido! Es hora de darle vida a este proyecto de CSS haciendo uso de JavaScript.
@@ -465,7 +466,7 @@ Pero aún no hemos terminado, ¡llega el momento más divertido! Es hora de darl
 
 Vamos a hacer uso de JavaScript — _Make JavaScript great again_ — para simular la animación que hacía la Game Boy cuando la encendías. Compruébalo ahora mismo [aquí](https://baumannzone.github.io/gameboy-css/).
 
-![Pure CSS Game Boy Animation](gb-animation.gif)
+![Pure CSS Game Boy Animation](/blog/pure-css-gameboy/gb-animation.gif)
 
 Vamos a incluir dos botones, uno de encendido y otro de apagado, al inicio de nuestro documento HTML. El de apagado por defecto va a estar oculto.
 
@@ -596,7 +597,7 @@ btnOFF.onclick = function () {
 
 ## Código
 
-Puedes ver el código completo en este repositorio de github: [https://github.com/baumannzone/gameboy-css](https://github.com/baumannzone/gameboy-css).
+Puedes ver el código completo en este repositorio de GitHub: [https://github.com/baumannzone/gameboy-css](https://github.com/baumannzone/gameboy-css).
 
 ¡Esto es todo, developers! Hay muchas formas de dibujar una Game Boy con CSS, en esta ocasión hemos optado por hacerlo así, pero no es la única.
 ¿Cuál es la tuya?

@@ -2,30 +2,32 @@
 
 ### Portátil
 
-- [MacBook Pro](https://www.apple.com/macbook-pro-13/) (13-inch, M1, 2020) - El portátil para trabajar. Es el que uso diariamente desde casa. Va como un tiro.
+- [MacBook Pro](https://www.apple.com/macbook-pro-13/) (13-inch, M1, 2020) - El portátil que uso diariamente para trabajar.
 
   - Procesador: Apple M1 chip
   - Memoria: 16 GB
   - Almacenamiento: 512 GB SSD
 
-- [MacBook Pro](https://www.apple.com/macbook-pro-13/) (13-inch, i5, 2015) - Mi portátil personal. Está viejito, pero hace lo que se le pide.
+- [MacBook Pro](https://www.apple.com/macbook-pro-13/) (13-inch, i5, 2015) - Mi portátil personal.
   - Procesador: Intel i5 2,7 GHz
   - Memoria: 8 GB
   - Almacenamiento: 256 GB SSD
 
 ### Pantallas
 
-- [Samsung C34H890 34" Ultra Wide curvo](https://amzn.to/3z9zGsf) - Actualmente es mi pantalla principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas. _Uso un enchufe menos_.
-- BenQ Gaming 24" RL2460HT - La compré en 2011 pero ya está descatalogada. 10 años después, funciona como el primer día. Es la que tengo en el pc de sobremesa.
+- [Samsung C34H890 34" Ultra Wide curvo](https://amzn.to/3z9zGsf) - Actualmente es mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas.
+- **BenQ Gaming 24" RL2460HT** - La compré en 2011 pero ya está descatalogada. Sin embargo, 10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.
 
 ### Ratón o Mouse
 
 - [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Barato y funcional.
-- [Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X) - Era el que usaba hasta que dejó de funcionar el click de la rueda central. Exceptuando eso, funciona perfectamente.
+- [Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X) - Era el que usaba hasta que dejó de funcionar el click de la rueda central. Excepto eso, funciona perfectamente.
+
+### Alfombrilla ratón
+- [Alfombrilla de Amazon Basics](https://amzn.to/3l6JmQv) - Cumple perfectamente con su función. Si se mancha por el uso, puedes pasarle un paño húmedo para limpiarla y queda como nueva.
 
 ### Teclado Externo
-
-- Teclado Apple con teclado numérico - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
+- **Teclado Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
 
 ### Auriculares
 
@@ -33,8 +35,8 @@
 
 ### Altavoces
 
-- [Altavoces Logitech Z130 Negros](https://amzn.to/3xQmrwf) - Los uso, sobre todo, para escuchar música. Aunque no son muy grandes, suenan bastante más que los del portátil. Además, son los que uso para el ordenador de sobremesa.
-- [Altavoces Logitech Z623](https://amzn.to/3kxcJLG) - Esto si que suena. Eran los que usaba antes, pero se quemó la placa electrónica del subwoofer y se volvieron _useless_.
+- [Altavoces Logitech Z130 Negros](https://amzn.to/3xQmrwf) - Los uso, sobre todo, para escuchar música. Aunque no son muy grandes, suenan bastante más que los del portátil.
+- [Altavoces Logitech Z623](https://amzn.to/3kxcJLG) - Esto si que suena. Eran los altavoces que tenía antes, pero se quemó la placa electrónica del subwoofer y se volvieron _useless_.
 
 ### Adaptadores
 
@@ -50,7 +52,7 @@ Usa este código `R-cssdev` para obtener un descuento.
 
 - [Patas regulables - Estructura THYGE](https://www.ikea.com/es/es/p/thyge-estructura-tablero-gris-plata-50293779/) - Se puede regular la altura manualmente. Puedes poner el tablero que quieras.
 
-- Tablero de madera blanco - 160cm x 60cm x 2cm. Lo tenía de antes y no sé de dónde salió, no hay link.
+- **Tablero de madera** - Un buen tablón de color blanco del IKEA. Mide 160cm x 80cm x 2cm.
 
 ### Streaming
 
@@ -65,9 +67,9 @@ Usa este código `R-cssdev` para obtener un descuento.
 
 ## Fuente
 
-- [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero me gusta mucho.
+- [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero gusta mucho.
 - [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
-- [Fira Code](https://github.com/tonsky/FiraCode) - La fuente que usaba antes de estas dos.
+- [Fira Code](https://github.com/tonsky/FiraCode) - Hace mucho que no la uso. Fue la primera fuente _custom_ que usé en un editor.
 
 ## Terminal
 
@@ -76,10 +78,10 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [iTerm2](https://iterm2.com/)
 - [Oh My Zsh](https://ohmyz.sh/)
 
-### Temas
+### Temas terminal
 
 - [robbyrussell](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#robbyrussell) - El tema de _Oh My Zsh_ que estoy usando actualmente, simple y funcional.
-- [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster) - Antes usaba mucho este tema, pero necesita más configuración.
+- [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster) - Lo he usado durante mucho tiempo. Me gusta mucho, pero necesita más configuración que el anterior.
 
 ## Navegador
 
@@ -89,7 +91,7 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 ### Extensiones
 
 - [Vue Devtools](https://github.com/vuejs/vue-devtools)
-- [Octotree](https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc)
+- [Octotree](https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc) - Para ver el código fuente de GitHub con el árbol de directorios.
 - [Redefined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)
 - [Color Tab](https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es) - Nueva pestaña.
-- AdBlocker
+- **AdBlocker**

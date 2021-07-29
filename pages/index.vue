@@ -24,14 +24,14 @@ export default {
     const articleToShow = 4
     const latestBlog = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
-      .where({ type: { $containsAny: 'blog' } })
+      .where({ type: { $containsAny: 'blog' }, isDraft: { $ne: true } })
       .limit(articleToShow)
       .sortBy('created', 'desc')
       .fetch()
 
     const latestCssArt = await $content('blog')
       .only(['title', 'description', 'slug', 'created', 'body'])
-      .where({ type: { $containsAny: 'css-art' } })
+      .where({ type: { $containsAny: 'css-art' }, isDraft: { $ne: true } })
       .limit(articleToShow)
       .sortBy('created', 'desc')
       .fetch()

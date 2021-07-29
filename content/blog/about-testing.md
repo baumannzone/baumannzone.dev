@@ -1,16 +1,16 @@
 ---
 title: About Testing
-description: ¿Haces pruebas en tus aplicaciones web?
+description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? En este artículo trataremos este tema a fondo. 
 created: 2019-07-13
 type: blog
+author: Jorge Baumann
 tags:
   - nodejs
   - testing
   - javascript
 ---
 
-¿Haces pruebas en tus aplicaciones?
-
+¿Haces pruebas en tus aplicaciones?  
 Hola querido/a dev. En este escrito vamos a intentar redactar de manera amigable algunos aspectos del **testing** de aplicaciones.
 
 Tú, como developer, cuando haces una entrega, quieres que el código entregado sea lo más robusto posible y sin errores.
@@ -18,7 +18,8 @@ Tú, como developer, cuando haces una entrega, quieres que el código entregado 
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera.  
 Has estado 3 días con tu aplicación rota ☠️..
 
-![Friday push to production](friday-push.jpg)
+![Friday push to production](/blog/about-testing/friday-push.jpg)
+
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, probando (_testeando_) tu código.
 
@@ -54,7 +55,7 @@ Un proyecto donde sea complicado seguir el flujo de la lógica de la aplicación
 🐛 Ahora resulta que tu proyecto ha crecido tanto que necesitas un equipo que se dedique exclusivamente a probar que todo funciona como es debido cada vez que se añade una nueva funcionalidad.  
 Porque, como todo software, tiene bugs. Bugs que no quieres que lleguen al usuario o cliente final, bugs que quieres detectar antes de que se desplieguen en pro con la nueva funcionalidad.
 
-![Testing Meme](testing-meme.jpg)
+![Testing Meme](/blog/about-testing/testing-meme.jpg)
 
 Y aun así, con un equipo que se dedique exclusivamente a testear, no tienes la garantía de que se vayan a detectar todos los posibles errores que pueda tener tu aplicación.  
 Sobre todo porque las pruebas manuales requieren mucha concentración y es fácil despistarse, por lo que es probable que tu código no esté funcionando como es debido.
@@ -91,7 +92,7 @@ Y que, en el supuesto y (muy) probable caso de que eso ocurra, dicho fallo se va
 Antes de seguir, me gustaría hacer un pequeño break para revisar este concepto.  
 **Test-Driven Development**, TDD para los amigos, es una práctica (o flujo de trabajo) en la cual tú escribes tus pruebas (suelen ser pruebas unitarias) antes de escribir el código de la aplicación.
 
-![TDD flow](tdd-flow.jpg)
+![TDD flow](/blog/about-testing/tdd-flow.jpg)
 
 En primer lugar, se escriben las pruebas y se verifica que las pruebas fallan. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente, si es posible, se refactoriza el código escrito. Y así con cada nueva funcionalidad.
 
@@ -105,16 +106,16 @@ A modo resumen, quédate con esto:
 - No siempre hace falta tener pruebas automáticas (_Madre mía... ¿en qué quedamos?_)
 - No necesitas tests si pasas más tiempo re-escribiendo tests que desarrollando funcionalidades (Ej: prototipos, proyectos cortos e inestables)
 - Tu objetivo no es obtener el 100% de cobertura en tus tests. En serio, no eres mejor tester por tener todo al 100%.
-- TDD es bien. TDD a rajatabla puede ser un dolor de cabeza.
+- TDD es bien. Sin embargo, cualquier metodología a rajatabla puede ser un dolor de cabeza.
 
 Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](https://twitter.com/baumannzone/status/1093427647336640512).
 
-![No test, no fail](no-test-no-fail.jpg)
+![No test, no fail](/blog/about-testing/no-test-no-fail.jpg)
 
-Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc..._
+Existe un gigantesco mundo alrededor del testing: _librerías, frameworks, test runners, herramientas, plugins, etc_... En futuros seguiremos hablando de testing.
 
-Seguramente que en futuros artículos, seguiremos hablando de testing. Ahora solo espero que, después de leer esto, te hayas motivado y tengas el convencimiento de que los tests automáticos son siempre bien.
+Ahora solo espero que, después de leer esto, estés motivado y que tengas el convencimiento de que los tests son siempre bien y que el testing es un mundo fantástico.
 
-Y hasta aquí llega esta lectura, apreciado developer. Espero que te haya gustado. Si te gustó, déjame tus likes por [instagram](https://instagram.com/baumannzone) o por [twitter](https://twitter.com/baumannzone) o compártelo si te ha sido útil.
+Hasta aquí llega esta lectura, apreciado developer. Si te gustó, déjame tus impresiones por [instagram](https://instagram.com/baumannzone) compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
 ¡Hasta la próxima! 👋 👋

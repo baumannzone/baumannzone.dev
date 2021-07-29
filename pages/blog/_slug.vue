@@ -40,7 +40,23 @@
           </post-tag>
 
           <div class="mt-5 text-sm text-gray-500">
-            <time :datetime="post.created">{{ formatDateCreated }}</time> ·
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 inline"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <time :datetime="post.created">{{ formatDateCreated }}</time> ·
+            </span>
             <ArticleReadingTime :content="post.body" />
           </div>
         </div>
@@ -63,6 +79,20 @@
               class="text-sm text-purple-700 text-right"
             >
               Editar en GitHub
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 inline"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
             </a>
           </p>
         </div>
