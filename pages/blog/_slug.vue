@@ -110,6 +110,7 @@ export default {
     const post = await $content('blog', params.slug).fetch()
     const [prev, next] = await $content('blog')
       .only(['title', 'slug'])
+      .where({ isDraft: { $ne: true } })
       .sortBy('created', 'asc')
       .surround(params.slug)
       .fetch()
