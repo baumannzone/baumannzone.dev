@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'baumannzone.dev',
+    title: 'Baumannzone.dev - Desarrollo Web JavaScript',
     htmlAttrs: {
       lang: 'es',
     },
@@ -16,6 +16,16 @@ export default {
         name: 'description',
         content:
           'Artículos, guías y vídeos sobre Desarrollo Web y contenido FullStack con JavaScript',
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://baumannzone.dev',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
