@@ -1,4 +1,6 @@
-# baumannzone.dev
+# BAUMANNZONE.DEV
+
+My personal website and blog made with [Nuxt.js](https://nuxtjs.org/) and [TailwindCSS](https://tailwindcss.com/).
 
 ## Build Setup
 

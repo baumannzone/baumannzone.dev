@@ -40,6 +40,7 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://image.nuxtjs.org/getting-started/
     '@nuxt/image',
+    '@nuxtjs/robots',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
