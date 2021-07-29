@@ -27,6 +27,11 @@ export default {
         property: 'og:url',
         content: 'https://baumannzone.dev',
       },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/baumannzone.dev.png',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

@@ -145,6 +145,11 @@
 import uses from '@/components/UsesPage/uses.md'
 
 export default {
+  head() {
+    return {
+      title: 'Baumannzone.dev - Uses - Mi setup y herramientas de trabajo',
+    }
+  },
   computed: {
     uses() {
       return uses
