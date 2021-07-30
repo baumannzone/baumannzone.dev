@@ -168,7 +168,7 @@ export default {
     },
     url() {
       if (this.post) return `/blog/${this.post.slug}`
-      return process.env.BASE_URL + this.$route.fullPath
+      return this.$route.fullPath
     },
   },
 }
