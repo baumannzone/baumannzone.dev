@@ -17,6 +17,15 @@
         "maintenance",
         "design"
       ]
+    },
+    {
+      "login": "nelodev",
+      "name": "NeloDev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21993984?v=4",
+      "profile": "https://www.linkedin.com/in/manuel-puchades-bresó-115a58179/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
