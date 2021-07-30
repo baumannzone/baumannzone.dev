@@ -103,3 +103,4 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Lo bueno de este dron es que puedes prgramarlo con JavaScript o con Scratch.
 - [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
 - [Xiaomi Mi 9](https://amzn.to/37piIKN) - Mi móvil desde el 2019.
+- [Amazon Kindle eBook](https://amzn.to/3xkVSys)
