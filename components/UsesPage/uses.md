@@ -15,7 +15,7 @@
 
 ### Pantallas
 
-- [Samsung C34H890 34" Ultra Wide curvo](https://amzn.to/3z9zGsf) - Actualmente es mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas.
+- [Samsung C34H890 34" Ultra Wide curvo](https://amzn.to/3zPFVlh) - Actualmente es mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas.
 - **BenQ Gaming 24" RL2460HT** - La compré en 2011 pero ya está descatalogada. Sin embargo, 10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.
 
 ### Ratón o Mouse
