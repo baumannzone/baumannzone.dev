@@ -24,9 +24,11 @@
 - [Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X) - Era el que usaba hasta que dejó de funcionar el click de la rueda central. Excepto eso, funciona perfectamente.
 
 ### Alfombrilla ratón
+
 - [Alfombrilla de Amazon Basics](https://amzn.to/3l6JmQv) - Cumple perfectamente con su función. Si se mancha por el uso, puedes pasarle un paño húmedo para limpiarla y queda como nueva.
 
 ### Teclado Externo
+
 - **Teclado Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
 
 ### Auriculares
@@ -95,3 +97,9 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [Redefined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)
 - [Color Tab](https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es) - Nueva pestaña.
 - **AdBlocker**
+
+## Gadgets & Tools
+
+- [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Lo bueno de este dron es que puedes prgramarlo con JavaScript o con Scratch.
+- [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
+- [Xiaomi Mi 9](https://amzn.to/37piIKN) - Mi móvil desde el 2019.
