@@ -27,6 +27,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "HorusGoul",
+      "name": "Horus Lugo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6759612?v=4",
+      "profile": "https://horus.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

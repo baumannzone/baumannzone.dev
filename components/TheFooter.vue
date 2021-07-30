@@ -239,6 +239,7 @@
             class="text-purple-400 hover:text-purple-300 mb-2"
             :href="url"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <span class="sr-only">{{ name }}</span>
             <SvgIcon :icon-name="name" />
