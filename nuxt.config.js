@@ -78,4 +78,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Router config
+  router: {
+    middleware: ['fathom'],
+  },
+
+  // Script tags
+  script: [
+    {
+      src: 'https://cdn.usefathom.com/script.js',
+      'data-site': 'IMNYHNZI',
+      defer: true,
+    },
+  ],
 }
