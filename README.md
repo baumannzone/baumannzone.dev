@@ -1,4 +1,4 @@
-# BAUMANNZONE.DEV
+# Baumannzone.dev
 
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/baumannzone/baumannzone.dev/main)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
