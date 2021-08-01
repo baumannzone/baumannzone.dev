@@ -86,6 +86,7 @@ export default {
 
   // Script tags
   script: [
+    // Fathom Analytics
     {
       src: 'https://cdn.usefathom.com/script.js',
       'data-site': 'IMNYHNZI',
