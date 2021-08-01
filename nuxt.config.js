@@ -34,6 +34,15 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    // Script tags
+    script: [
+      // Fathom Analytics
+      {
+        src: 'https://cdn.usefathom.com/script.js',
+        'data-site': 'IMNYHNZI',
+        defer: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -83,14 +92,4 @@ export default {
   router: {
     middleware: ['fathom'],
   },
-
-  // Script tags
-  script: [
-    // Fathom Analytics
-    {
-      src: 'https://cdn.usefathom.com/script.js',
-      'data-site': 'IMNYHNZI',
-      defer: true,
-    },
-  ],
 }
