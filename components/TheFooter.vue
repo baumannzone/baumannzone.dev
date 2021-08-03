@@ -26,7 +26,7 @@
                 <li v-for="{ to, name } in item.items" :key="to">
                   <a
                     :href="to"
-                    class="text-base text-purple-300 hover:text-white"
+                    class="text-base hover:text-purple-300 text-white"
                   >
                     {{ name }}
                   </a>
@@ -242,10 +242,10 @@
             rel="noopener noreferrer"
           >
             <span class="sr-only">{{ name }}</span>
-            <SvgIcon :icon-name="name" />
+            <SvgIcon :id="`${name}-footer`" :icon-name="name" />
           </a>
         </div>
-        <p class="mt-8 text-base text-purple-400 md:mt-0 md:order-1">
+        <p class="mt-8 text-base text-purple-100 md:mt-0 md:order-1">
           &copy; 2021 Baumannzone - Desarrollo Full Stack JavaScript.
         </p>
       </div>

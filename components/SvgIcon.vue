@@ -38,6 +38,10 @@ export default {
       type: String,
       default: 'currentColor',
     },
+    id: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
     pathIcon() {

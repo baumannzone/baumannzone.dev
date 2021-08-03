@@ -69,15 +69,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/markdownit',
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
