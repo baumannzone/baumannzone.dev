@@ -3,5 +3,9 @@ export default function (context) {
     return
   }
 
-  window.fathom.trackPageview()
+  try {
+    window.fathom.trackPageview()
+  } catch (e) {
+    // ignore
+  }
 }
