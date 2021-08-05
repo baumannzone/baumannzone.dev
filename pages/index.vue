@@ -41,5 +41,16 @@ export default {
       latestCssArt: addDisplayDate(latestCssArt),
     }
   },
+  head: {
+    title: 'Baumannzone.dev - Inicio',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Contenido FullStack con JavaScript. Artículos y guías sobre desarrollo Web',
+      },
+    ],
+  },
 }
 </script>
