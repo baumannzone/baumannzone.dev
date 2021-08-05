@@ -153,7 +153,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'El setup y las herramientas de trabajo de Baumannzone. La configuracion de mi editor, la terminal, el tema y más.',
+            'El setup y las herramientas de trabajo de Baumannzone. La configuración del editor, la terminal, la fuente y mucho más.',
         },
       ],
     }
