@@ -42,7 +42,7 @@ export default {
     }
   },
   head: {
-    title: 'Baumannzone.dev - Inicio',
+    title: 'Baumannzone.dev - Desarrollo Web JavaScript',
     meta: [
       {
         hid: 'description',
