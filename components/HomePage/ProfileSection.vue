@@ -19,6 +19,7 @@
             src="/baumannzone-140.png"
             alt="Baumannzone picture"
             width="140"
+            height="135"
             class="-mt-20 rounded-full ring-8 ring-purple-700 ring-opacity-100"
           />
         </div>

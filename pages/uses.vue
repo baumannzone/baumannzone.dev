@@ -147,7 +147,15 @@ import uses from '@/components/UsesPage/uses.md'
 export default {
   head() {
     return {
-      title: 'Baumannzone.dev - Uses - Mi setup y herramientas de trabajo',
+      title: 'Uses · Mi setup y mis herramientas de trabajo',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'El setup y las herramientas de trabajo de Baumannzone. La configuracion de mi editor, la terminal, el tema y más.',
+        },
+      ],
     }
   },
   computed: {
@@ -157,11 +165,3 @@ export default {
   },
 }
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-</style>
