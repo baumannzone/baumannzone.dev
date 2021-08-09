@@ -1,9 +1,7 @@
 <template>
   <div class="overflow-hidden bg-white">
     <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div
-        class="absolute top-0 bottom-0 hidden w-screen lg:block left-3/4"
-      ></div>
+      <div class="absolute top-0 bottom-0 hidden w-screen lg:block left-3/4" />
       <div
         class="
           mx-auto

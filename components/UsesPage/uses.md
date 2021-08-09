@@ -87,7 +87,7 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 
 ## Navegador
 
-- [Google Chrome](https://www.google.com/chrome/) - Desde que salió, mi navegador por defecto.
+- [Google Chrome](https://www.google.com/chrome/) - Mi navegador principal.
 - [Firefox Developer](https://www.mozilla.org/es-ES/firefox/developer/) - Lo uso como navegador web secundario.
 
 ### Extensiones
@@ -100,7 +100,7 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 
 ## Gadgets & Tools
 
-- [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Lo bueno de este dron es que puedes prgramarlo con JavaScript o con Scratch.
+- [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Se puede prgramar con `JavaScript`.
 - [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
 - [Xiaomi Mi 9](https://amzn.to/37piIKN) - Mi móvil desde el 2019.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)

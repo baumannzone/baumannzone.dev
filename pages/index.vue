@@ -1,9 +1,17 @@
 <template>
   <div class="home-page">
     <ProfileSection />
-    <ArticleSection :articles="latestBlog" title="Blog" />
+    <ArticleSection
+      :articles="latestBlog"
+      title="Blog"
+      :show-reading-time="false"
+    />
     <FormSuscribeSection />
-    <ArticleSection :articles="latestCssArt" title="CSS Art" />
+    <ArticleSection
+      :articles="latestCssArt"
+      title="CSS Art"
+      :show-reading-time="false"
+    />
   </div>
 </template>
 

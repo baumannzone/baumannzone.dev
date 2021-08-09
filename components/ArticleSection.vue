@@ -16,7 +16,11 @@
           {{ title }}
         </h2>
       </div>
-      <ArticleCardList v-if="articles.length > 0" :posts="articles" />
+      <ArticleCardList
+        v-if="articles.length > 0"
+        :posts="articles"
+        :show-reading-time="showReadingTime"
+      />
       <ArticleCardListNoResults v-else :search-text="getSearchText" />
     </div>
   </section>
@@ -40,6 +44,10 @@ export default {
     articles: {
       type: Array,
       required: true,
+    },
+    showReadingTime: {
+      type: Boolean,
+      default: true,
     },
   },
   computed: {
