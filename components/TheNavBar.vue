@@ -101,6 +101,7 @@
                 "
                 placeholder="Buscar en el blog"
                 type="search"
+                autocomplete="off"
                 @keyup.enter="onEnter"
               />
             </div>
