@@ -27,7 +27,7 @@
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.1",
-    "core-js": "^3.9.1",
+    "core-js": "^3.18.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
