@@ -20,6 +20,7 @@
 
 ### Ratón o Mouse
 
+- [Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3i186r4) - Ratón vertical inalámbrico de última generación.
 - [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Barato y funcional.
 - [Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X) - Era el que usaba hasta que dejó de funcionar el click de la rueda central. Excepto eso, funciona perfectamente.
 
@@ -104,3 +105,4 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
 - [Xiaomi Mi 9](https://amzn.to/37piIKN) - Mi móvil desde el 2019.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)
+- [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_.
