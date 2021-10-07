@@ -100,7 +100,16 @@
               "
             >
               <span class="block mb-2">Rambito Conf</span>
-              <span class="block text-purple-600">Hacktoberfest Edition</span>
+              <span
+                class="
+                  text-transparent
+                  bg-clip-text bg-gradient-to-r
+                  from-cyan-400
+                  to-fuchsia-600
+                "
+              >
+                Hacktoberfest Edition
+              </span>
             </h1>
             <p
               class="
@@ -120,13 +129,13 @@
                 class="
                   px-8
                   py-3
-                  border border-transparent
+                  border
                   text-base
                   font-medium
                   rounded-md
-                  text-white
-                  bg-purple-600
-                  hover:bg-purple-700
+                  text-purple-700
+                  bg-white
+                  hover:bg-gray-50
                 "
               >
                 twitch.tv/baumannzone
@@ -221,12 +230,205 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-gradient-to-r from-purple-600 to-purple-900">
+      <div
+        class="
+          max-w-4xl
+          mx-auto
+          px-4
+          py-16
+          sm:px-6 sm:pt-20 sm:pb-24
+          lg:max-w-7xl lg:pt-24 lg:px-8
+        "
+      >
+        <h2 class="text-3xl font-extrabold text-white tracking-tight">
+          La Rambito Conf
+        </h2>
+        <p class="mt-4 max-w-3xl text-lg text-purple-200">
+          La Rambito Conf es una conferencia online sobre tecnología,
+          programación, open source y Hacktoberfest. Se trata de una conferencia
+          totalmente gratuita que podrás ver en vivo y en directo desde
+          <a href="twitch.tv/baumannzone" class="underline">twitch</a>. Apta
+          para todos los niveles, tanto si te consideras junior, como si tienes
+          años de experiencia... ¡te esperamos!
+        </p>
+        <p class="mt-4 max-w-3xl text-lg text-purple-200">
+          Esta conferencia no sería lo mismo sin el apoyo de la comunidad en el
+          chat. Por lo tanto, te invitamos a que te crees una cuenta en Twitch y
+          que participes en el chat.
+        </p>
+        <div
+          class="
+            mt-12
+            grid grid-cols-1
+            gap-x-6 gap-y-12
+            sm:grid-cols-2
+            lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16
+          "
+        >
+          <div>
+            <div>
+              <span
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  h-12
+                  w-12
+                  rounded-md
+                  bg-white bg-opacity-10
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">100% Gratuita</h3>
+              <p class="mt-2 text-base text-purple-200">
+                La Rambito Conf es una conferencia tech online totalmente
+                gratuita. No hay costo alguno.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <span
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  h-12
+                  w-12
+                  rounded-md
+                  bg-white bg-opacity-10
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">
+                Para todos los públicos
+              </h3>
+              <p class="mt-2 text-base text-purple-200">
+                La conferencia es apta para todo el mundo. Seas junior o senior,
+                en la Rambito Conf hay un lugar para ti.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <span
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  h-12
+                  w-12
+                  rounded-md
+                  bg-white bg-opacity-10
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Covid Free</h3>
+              <p class="mt-2 text-base text-purple-200">
+                En nuestra conferencia estarás a salvo. Solo te contagiarás del
+                buen rollo.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <span
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  h-12
+                  w-12
+                  rounded-md
+                  bg-white bg-opacity-10
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Snack Time</h3>
+              <p class="mt-2 text-base text-purple-200">
+                Está permitido comer y beber durante toda la Rambito Conf. No
+                hay restricciones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'RambitoConf',
+  name: 'RambitoConfPage',
   data() {
     return {
       team: [
