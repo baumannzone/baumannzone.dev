@@ -19,6 +19,10 @@ const navItems = [
     text: 'Usos',
     to: routes.USES,
   },
+  {
+    text: 'Rambito Conf',
+    to: '/rambito-conf',
+  },
 ]
 
 const socialNames = {
