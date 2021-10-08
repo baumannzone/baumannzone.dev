@@ -125,7 +125,8 @@
             </p>
             <div class="mt-16 mx-auto sm:flex sm:justify-center md:mt-8">
               <a
-                href="twitch.tv/baumannzone"
+                href="https://twitch.tv/baumannzone"
+                target="_blank"
                 class="
                   px-8
                   py-3
