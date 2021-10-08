@@ -129,13 +129,13 @@
                 class="
                   px-8
                   py-3
-                  border
+                  border border-transparent
                   text-base
                   font-medium
                   rounded-md
                   text-purple-700
-                  bg-white
-                  hover:bg-gray-50
+                  bg-purple-100
+                  hover:bg-purple-200
                 "
               >
                 twitch.tv/baumannzone
