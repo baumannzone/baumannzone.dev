@@ -129,13 +129,13 @@
                 class="
                   px-8
                   py-3
-                  border
+                  border border-transparent
                   text-base
                   font-medium
                   rounded-md
                   text-purple-700
-                  bg-white
-                  hover:bg-gray-50
+                  bg-purple-100
+                  hover:bg-purple-200
                 "
               >
                 twitch.tv/baumannzone
@@ -423,6 +423,72 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-gray-50">
+      <div
+        class="
+          max-w-2xl
+          mx-auto
+          px-4
+          py-16
+          sm:px-6 sm:pt-20 sm:pb-24
+          lg:pt-24 lg:px-8
+        "
+      >
+        <h2 class="text-3xl font-extrabold tracking-tight mb-10">Agenda</h2>
+        <div class="flow-root">
+          <ul role="list" class="-mb-8">
+            <li v-for="item in agenda" :key="item.title">
+              <div class="relative pb-8">
+                <!-- Vertical line -->
+                <span
+                  v-if="!item.isLastItem"
+                  class="absolute top-4 left-2 -ml-px h-full w-0.5 bg-gray-200"
+                  aria-hidden="true"
+                ></span>
+                <div class="relative flex space-x-3">
+                  <div>
+                    <span
+                      class="
+                        mt-1.5
+                        h-4
+                        w-4
+                        rounded-full
+                        bg-purple-500
+                        border-4 border-purple-200
+                        flex
+                        items-center
+                        justify-center
+                        ring-4 ring-gray-50
+                      "
+                    >
+                    </span>
+                  </div>
+                  <div class="min-w-0 flex-1 flex justify-between space-x-4">
+                    <div>
+                      <p class="text-lg text-gray-500 ml-1">
+                        {{ item.title }}
+                      </p>
+                    </div>
+                    <div
+                      class="
+                        text-right
+                        whitespace-nowrap
+                        text-gray-500
+                        mt-0.5
+                        font-mono
+                      "
+                    >
+                      <time datetime="2020-09-20">{{ item.time }} h</time>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -431,6 +497,37 @@ export default {
   name: 'RambitoConfPage',
   data() {
     return {
+      agenda: [
+        {
+          title: 'Presentación y bienvenida 🎃',
+          time: '18:00',
+        },
+        {
+          title: 'Repasando GitHub',
+          time: '18:20',
+        },
+        {
+          title: 'Empezar en Open Source',
+          time: '18:40',
+        },
+        {
+          title: 'Tu web gratis con GitHub y GitHub Pages',
+          time: '19:00',
+        },
+        {
+          title: 'Hacktoberfest',
+          time: '19:20',
+        },
+        {
+          title: 'Buscamos una Pull Request',
+          time: '19:40',
+        },
+        {
+          title: 'Sorteos y despedida 🎁',
+          time: '20:00',
+          isLastItem: true,
+        },
+      ],
       team: [
         {
           name: 'Rambito JS',
