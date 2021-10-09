@@ -916,8 +916,8 @@ export default {
           ],
         },
         {
-          displayName: 'Ari',
-          role: 'Reinventada',
+          displayName: 'Ariane De Bilbao (Ari Reinventada)',
+          role: 'Frontend developer | Sngular',
           image: '/rambito-conf/ari.jpg',
           social: [
             {
@@ -927,6 +927,13 @@ export default {
             {
               name: 'twitch',
               url: 'https://www.twitch.tv/ari_reinventada',
+            },
+              name: 'youtube',
+              url: 'https://www.youtube.com/c/AriReinventada',
+            },
+            {
+              name: 'instagram',
+              url: 'https://www.instagram.com/ari_reinventada',
             },
           ],
         },
