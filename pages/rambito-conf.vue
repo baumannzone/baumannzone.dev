@@ -1066,7 +1066,7 @@ export default {
           isOpen: false,
           question: '¿Hay código de conducta?',
           answer:
-            'Por supuesto que sí tenemos <a href="https://github.com/baumannzone/baumannzone.dev/blob/master/CODE_OF_CONDUCT.md" target="_blank" class="font-medium text-purple-500">Código de Conducta</a>. Al participar en la Rambito Conf estás aceptando seguir el código de conducta.',
+            'Por supuesto que sí tenemos <a href="https://github.com/baumannzone/baumannzone.dev/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="font-medium text-purple-500">Código de Conducta</a>. Al participar en la Rambito Conf estás aceptando seguir el código de conducta.',
         },
         {
           isOpen: false,
