@@ -840,6 +840,82 @@
         </div>
       </div>
     </section>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="bg-gray-50">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+          <h2
+            class="
+              text-center text-3xl
+              font-extrabold
+              text-gray-900
+              sm:text-4xl
+            "
+          >
+            What the FAQ?
+          </h2>
+          <dl
+            v-for="faq in faqs"
+            :key="faq.question"
+            class="mt-6 space-y-6 divide-y divide-gray-200"
+          >
+            <div class="pt-6">
+              <dt class="text-lg">
+                <!-- Expand/collapse question button -->
+                <button
+                  type="button"
+                  class="
+                    text-left
+                    w-full
+                    flex
+                    justify-between
+                    items-start
+                    text-gray-400
+                  "
+                  aria-controls="faq-0"
+                  aria-expanded="false"
+                >
+                  <span class="font-medium text-gray-900">
+                    {{ faq.question }}
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <!--
+                  Expand/collapse icon, toggle classes based on question open state.
+
+                  Heroicon name: outline/chevron-down
+
+                  Open: "-rotate-180", Closed: "rotate-0"
+                -->
+                    <svg
+                      class="rotate-0 h-6 w-6 transform"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd id="faq-0" class="mt-2 pr-12">
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <p class="text-base text-gray-500" v-html="faq.answer" />
+              </dd>
+            </div>
+
+            <!-- More questions... -->
+          </dl>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -928,6 +1004,7 @@ export default {
               name: 'twitch',
               url: 'https://www.twitch.tv/ari_reinventada',
             },
+            {
               name: 'youtube',
               url: 'https://www.youtube.com/c/AriReinventada',
             },
@@ -936,6 +1013,57 @@ export default {
               url: 'https://www.instagram.com/ari_reinventada',
             },
           ],
+        },
+      ],
+      faqs: [
+        {
+          isOpen: true,
+          question: '¿Qué es la Rambito Conf?',
+          answer:
+            'La Rambito Conf es una conferencia tech online gratuita que se puede ver en twitch desde el canal de baumannzone: <a href="https://www.twitch.tv/baumannzone" class="font-medium text-purple-500">twitch.tv/baumannzone</a>.',
+        },
+        {
+          isOpen: false,
+          question: '¿Quién es Rambito?',
+          answer:
+            'Rambo Mambo, RambitoJS o Rambito es el perro mas techi (y bueno) que existe en la actualidad. Es un <span class="italic">Braco Húngaro</span> que en el 2012 fue adoptado por @baumannzone y desde entonces son inseparables. En la época pre-covid, le acompañaba a la mayoría de los eventos tech presenciales.',
+        },
+        {
+          isOpen: false,
+          question: '¿Cómo puedo colaborar con la Rambito Conf?',
+          answer:
+            'La mejor manera de ayudar a la Rambito Conf es ayudando a difundir el evento. Comparte el evento en las redes y deja comentarios, like, haz retweet... A ti no te cuesta nada y a la organización le ayuda mucho.',
+        },
+        {
+          isOpen: false,
+          question: 'He visto un error en el código, ¿cómo lo reporto?',
+          answer:
+            'Si ves algún error en el código, puedes hacer una Pull Request en este <a href="https://github.com/baumannzone/baumannzone.dev" target="_blank" class="font-medium text-purple-500">repositorio</a>, crear una issue o avisar a @baumannzone.',
+        },
+        {
+          isOpen: false,
+          question: 'Quiero aportar económicamente a la Rambito Conf',
+          answer:
+            'Si quieres aportar económicamente, contacta con <a href="https://instagram.com/baumannzone" target="_blank" class="font-medium text-purple-500">@baumannzone</a> o manda un mail a <code>jorge.baumann.aguilar [at] gmail [dot] com</code>.',
+        },
+        {
+          isOpen: false,
+          question: '¿Cómo puedo ver la conferencia?',
+          answer:
+            'Puedes verla desde cualquier dispositivo con acceso a internet en <a href="https://twitch.tv/baumannzone" target="_blank" class="font-medium text-purple-500">twitch.tv/baumannzone</a>.',
+        },
+        {
+          isOpen: false,
+          question: '¿Hay código de conducta?',
+          answer:
+            'Por supuesto que sí tenemos <a href="https://github.com/baumannzone/baumannzone.dev/blob/master/CODE_OF_CONDUCT.md" target="_blank" class="font-medium text-purple-500">Código de Conducta</a>. Al participar en la Rambito Conf estás aceptando seguir el código de conducta.',
+        },
+        {
+          isOpen: false,
+          question:
+            '¿Cómo puedo denunciar un mal comportamiento durante la conferencia?',
+          answer:
+            'Si alguna persona te está molestando o ves que alguien está incumpliendo las reglas y no está siguiendo el código de conducta, avisa a @baumannzone inmediatamente. Queremos que este sea un lugar seguro. <span class="font-medium">Tomaremos medidas primero, preguntaremos después.</span>',
         },
       ],
     }
