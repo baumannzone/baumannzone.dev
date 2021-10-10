@@ -2,7 +2,7 @@
 
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/baumannzone/baumannzone.dev/main)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 My personal website and blog made with [Nuxt.js](https://nuxtjs.org/) and [TailwindCSS](https://tailwindcss.com/).
@@ -39,6 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/manuel-puchades-bresó-115a58179/"><img src="https://avatars.githubusercontent.com/u/21993984?v=4?s=100" width="100px;" alt=""/><br /><sub><b>NeloDev</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Anelodev" title="Bug reports">🐛</a> <a href="https://github.com/baumannzone/baumannzone.dev/commits?author=nelodev" title="Code">💻</a></td>
     <td align="center"><a href="https://horus.dev"><img src="https://avatars.githubusercontent.com/u/6759612?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Horus Lugo</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3AHorusGoul" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://pablosirera.com"><img src="https://avatars.githubusercontent.com/u/25353031?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pablo Sirera</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Apablosirera" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://escapes-online.com"><img src="https://avatars.githubusercontent.com/u/991738?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jordi Marti</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Ajmarti-theinit" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
