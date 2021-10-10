@@ -425,8 +425,12 @@
         <h2 class="text-3xl font-extrabold tracking-tight mb-10">Agenda</h2>
         <div class="flow-root">
           <ul role="list" class="-mb-8">
-            <li v-for="item in agenda" :key="item.title">
-              <div class="relative pb-8">
+            <li
+              v-for="item in agenda"
+              :key="item.title"
+              class="hover:bg-purple-50 p-2 rounded-md"
+            >
+              <div class="relative pb-6">
                 <!-- Vertical line -->
                 <span
                   v-if="!item.isLastItem"
