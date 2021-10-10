@@ -928,6 +928,7 @@ export default {
               name: 'twitch',
               url: 'https://www.twitch.tv/ari_reinventada',
             },
+            {
               name: 'youtube',
               url: 'https://www.youtube.com/c/AriReinventada',
             },
