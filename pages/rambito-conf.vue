@@ -511,7 +511,7 @@
                   hover:bg-purple-200
                 "
               >
-                Conctactar
+                Contactar
               </a>
             </div>
           </div>
