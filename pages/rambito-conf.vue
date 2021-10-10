@@ -840,12 +840,22 @@
                 />
               </div>
             </a>
+
+            <a
+              href="https://escapes-online.com?ref=baumannzone.dev"
+              target="_blank"
+              rel="noopener"
+              class="font-bold text-3xl"
+            >
+              <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
+                ESCAPES ONLINE
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <section class="bg-gray-50">
       <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
@@ -866,7 +876,6 @@
           >
             <div class="pt-6">
               <dt class="text-lg">
-                <!-- Expand/collapse question button -->
                 <button
                   type="button"
                   class="
@@ -887,13 +896,6 @@
                     {{ faq.question }}
                   </span>
                   <span class="ml-6 h-7 flex items-center">
-                    <!--
-                  Expand/collapse icon, toggle classes based on question open state.
-
-                  Heroicon name: outline/chevron-down
-
-                  Open: "-rotate-180", Closed: "rotate-0"
-                -->
                     <svg
                       class="h-6 w-6 transform transition-transform"
                       :class="faq.isOpen ? '-rotate-180' : 'rotate-0'"
@@ -1074,6 +1076,12 @@ export default {
             '¿Cómo puedo denunciar un mal comportamiento durante la conferencia?',
           answer:
             'Si alguna persona te está molestando o ves que alguien está incumpliendo las reglas y no está siguiendo el código de conducta, avisa a @baumannzone inmediatamente. Queremos que este sea un lugar seguro. <span class="font-medium">Tomaremos medidas primero, preguntaremos después.</span>',
+        },
+        {
+          isOpen: false,
+          question: '¿Qué se va a sortear?',
+          answer:
+            'Habrá dos sorteos, que incluyen un total de 3 elementos. Por un lado, una <span class="font-bold">camiseta de Vercel</span> (talla L). Por otro lado, <span class="font-bold">dos suscripciones</span> de 1 mes gratis a CodelyTV (sujeto a <a href="https://codely.tv/pro/rambitoconf" target="_blank" class="font-medium text-purple-500">condiciones</a>). <br> La camiseta de Vercel se enviará solo a territorio español. 🇪🇸 Si no resides en España, no se puede garantizar el envío. Las dos suscripciones a CodelyTV no tienen restricción geográfica.',
         },
       ],
     }
