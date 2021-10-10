@@ -842,8 +842,8 @@
     </section>
 
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <div class="bg-gray-50">
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <section class="bg-gray-50">
+      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
           <h2
             class="
@@ -856,7 +856,7 @@
             What the FAQ?
           </h2>
           <dl
-            v-for="faq in faqs"
+            v-for="(faq, index) in faqs"
             :key="faq.question"
             class="mt-6 space-y-6 divide-y divide-gray-200"
           >
@@ -872,9 +872,12 @@
                     justify-between
                     items-start
                     text-gray-400
+                    focus:outline-none focus:ring focus:ring-purple-300
+                    rounded-md
                   "
-                  aria-controls="faq-0"
+                  :aria-controls="`faq-${index}`"
                   aria-expanded="false"
+                  @click="faq.isOpen = !faq.isOpen"
                 >
                   <span class="font-medium text-gray-900">
                     {{ faq.question }}
@@ -888,7 +891,8 @@
                   Open: "-rotate-180", Closed: "rotate-0"
                 -->
                     <svg
-                      class="rotate-0 h-6 w-6 transform"
+                      class="h-6 w-6 transform transition-transform"
+                      :class="faq.isOpen ? '-rotate-180' : 'rotate-0'"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -905,17 +909,19 @@
                   </span>
                 </button>
               </dt>
-              <dd id="faq-0" class="mt-2 pr-12">
+              <dd
+                :id="`faq-${index}`"
+                class="mt-2 pr-12"
+                :class="faq.isOpen ? 'block' : 'hidden'"
+              >
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <p class="text-base text-gray-500" v-html="faq.answer" />
               </dd>
             </div>
-
-            <!-- More questions... -->
           </dl>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -1032,11 +1038,11 @@ export default {
           isOpen: false,
           question: '¿Cómo puedo colaborar con la Rambito Conf?',
           answer:
-            'La mejor manera de ayudar a la Rambito Conf es ayudando a difundir el evento. Comparte el evento en las redes y deja comentarios, like, haz retweet... A ti no te cuesta nada y a la organización le ayuda mucho.',
+            'La mejor manera de ayudar a la Rambito Conf es ayudando a difundir el evento. Comparte el evento en las redes y deja comentarios, like, haz retweet... A ti no te cuesta nada y a nosotros nos ayuda mucho.',
         },
         {
           isOpen: false,
-          question: 'He visto un error en el código, ¿cómo lo reporto?',
+          question: '¿Cómo reporto un error en el código?',
           answer:
             'Si ves algún error en el código, puedes hacer una Pull Request en este <a href="https://github.com/baumannzone/baumannzone.dev" target="_blank" class="font-medium text-purple-500">repositorio</a>, crear una issue o avisar a @baumannzone.',
         },
