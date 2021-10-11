@@ -1086,5 +1086,50 @@ export default {
       ],
     }
   },
+  head: {
+    title: 'Rambito Conf · Hacktoberfest Edition',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '⚡️ La Rambito Conf es una conferencia online sobre tecnología, programación y desarrollo web, open source y hacktoberfest.',
+      },
+      {
+        property: 'twitter:account_id',
+        content: '1019585395',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:site',
+        content: '@baumannzone',
+      },
+      {
+        name: 'twitter:title',
+        content: 'Rambito Conf · Hacktoberfest Edition 🎁',
+      },
+      {
+        name: 'twitter:description',
+        content:
+          'La Rambito Conf es una conferencia online sobre tecnología, programación web, open source y hacktoberfest.',
+      },
+      {
+        name: 'twitter:creator',
+        content: '@baumannzone',
+      },
+      {
+        name: 'twitter:img:src',
+        content:
+          'https://raw.githubusercontent.com/baumannzone/baumannzone.dev/main/static/rambito-conf/og.png',
+      },
+      {
+        name: 'twitter:domain',
+        content: 'https://baumannzone.dev/rambito-conf',
+      },
+    ],
+  },
 }
 </script>
