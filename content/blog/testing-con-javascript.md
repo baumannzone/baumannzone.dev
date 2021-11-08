@@ -1,7 +1,7 @@
 ---
 title: Testing con Javascript
 created: 2019-09-02
-description: 'Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con ejemplos en javascript puro. Finaliza usando Jest, un framework de testing para JavaScript'
+description: 'Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript'
 type: blog
 author: Jorge Baumann
 tags:
@@ -60,7 +60,7 @@ if ( resultado !== esperado ) {
 console.log( '¡Todo OK! 👌' )
 ```
 
-Puedes ejecutar este test corriendo `node test-0.js` desde la terminal. Y ya lo tienes, ¡tu primer test con javascript! 🎉
+Puedes ejecutar este test corriendo `node test-0.js` desde la terminal. Y ya lo tienes, ¡tu primer test con JavaScript! 🎉
 
 ![Test 0 running](/blog/testing-con-javascript/test-0.png)
 Resultado de error tras ejecutar el test-0.js
@@ -104,7 +104,7 @@ tiempoMilisegundos() // => 1566762448192
 tiempoMilisegundos() // => 1566762450684
 ```
 
-Recapitulemos. Sabemos cómo testear con javascript y tenemos una función pura deseosa de ser testeada.  
+Recapitulemos. Sabemos cómo testear con JavaScript y tenemos una función pura deseosa de ser testeada.  
 Me imagino que ya sabes cuál es el siguiente paso, ¿verdad?
 
 # Paso 1
@@ -386,13 +386,13 @@ En esta imagen se ve mucho más claro qué está fallando. Tiene colores y adem�
 
 Antes de empezar a escribir este artículo lancé en twitter un par de encuestas:
 
-- ¿[Has escrito alguna vez tests para tus aplicaciones javascript](https://twitter.com/baumannzone/status/1165178014579273728)?
+- ¿[Has escrito alguna vez tests para tus aplicaciones JavaScript](https://twitter.com/baumannzone/status/1165178014579273728)?
 
-- [¿Serías capaz de testear una aplicación javascript sin usar frameworks?](https://twitter.com/baumannzone/status/1165178021273395200)
+- [¿Serías capaz de testear una aplicación JavaScript sin usar frameworks?](https://twitter.com/baumannzone/status/1165178021273395200)
 
 Este escrito es el motivo que hay detrás de estas encuestas.
 
 Si después de leer este artículo tuvieras que votar... _¿Qué votarías?_
 Imagino que ahora responderías "sí" a ambas preguntas.
 
-Y tú, ¿con qué herramientas testeas tus aplicaciones javascript?
+Y tú, ¿con qué herramientas testeas tus aplicaciones JavaScript?
