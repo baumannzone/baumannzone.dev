@@ -145,6 +145,21 @@ export default {
           content: this.url,
           property: 'og:url',
         },
+        {
+          hid: 'twitter:title',
+          content: this.title,
+          name: 'twitter:title',
+        },
+        {
+          hid: 'twitter:description',
+          content: this.description,
+          name: 'twitter:description',
+        },
+        {
+          hid: 'og:type',
+          content: 'article',
+          property: 'og:type',
+        },
       ],
     }
   },
