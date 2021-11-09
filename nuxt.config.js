@@ -32,6 +32,31 @@ export default {
         property: 'og:image',
         content: 'https://www.baumannzone.dev/baumannzone.dev.png',
       },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:site',
+        content: '@baumannzone',
+      },
+      {
+        name: 'twitter:creator',
+        content: '@baumannzone',
+      },
+      {
+        name: 'twitter:title',
+        content: 'Baumannzone.dev - Desarrollo Web JavaScript',
+      },
+      {
+        name: 'twitter:description',
+        content:
+          'Artículos, guías y vídeos sobre Desarrollo Web y contenido FullStack con JavaScript',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://www.baumannzone.dev/baumannzone.dev.png',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     // Script tags
