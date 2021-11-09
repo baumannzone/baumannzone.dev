@@ -127,7 +127,7 @@ export default {
       meta: [
         {
           hid: 'description',
-          content: this.description,
+          content: this.post.description,
           name: 'description',
         },
         {
@@ -137,7 +137,7 @@ export default {
         },
         {
           hid: 'og:description',
-          content: this.description,
+          content: this.post.description,
           property: 'og:description',
         },
         {
