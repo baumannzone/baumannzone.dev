@@ -30,7 +30,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/baumannzone.dev.png',
+        content: 'https://www.baumannzone.dev/baumannzone.dev.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
