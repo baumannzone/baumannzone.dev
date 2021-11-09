@@ -9,7 +9,7 @@ tags:
   - ES2020
 ---
 
-Si quieres saber como funciona el operador de doble signo de interrogación `??` (también conocido como operador de **Fusión Nula** o **Nullish Coalescing** operator) en JavaScript, esta guía es para ti.
+Si quieres saber cómo funciona el operador de doble signo de interrogación `??` (también conocido como operador de **Fusión Nula** o **Nullish Coalescing** operator) en JavaScript, esta guía es para ti.
 
 El operador de doble signo de interrogación `??` es un operador de JavaScript que devuelve la expresión del lado derecho del operador cuando la expresión del lado izquierdo es `null` o `undefined`. En caso contrario, devuelve la expresión del lado izquierdo.  
 Aunque el operador de Nullish Coalescing se parece al operador ternario `?` de JavaScript, no tiene nada que ver, son operadores totalmente diferentes.
