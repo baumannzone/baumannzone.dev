@@ -1,7 +1,7 @@
 ---
 title: Operador de doble signo de interrogación en JavaScript
 description: 'Una guía de como funciona el operador de doble interrogación (??) en JavaScript, también conocido como operador de Nullish Coalescing.'
-created: 2021-11-09
+created: 2021-11-10
 type: blog
 author: Jorge Baumann
 tags:
@@ -82,4 +82,4 @@ Cuando le añades los paréntesis, el operador de fusión nula funciona correcta
 (null && undefined) ?? 'RambitoJs' // ==> 'RambitoJs'
 ```
 
-Y esto es todo lo que necesitas saber del operador de de doble interrogación (`??`) en JavaScript, también conocido como operador de Nullish Coalescing u operador de Fusión Nula.
+Esto es todo lo que necesitas saber del operador de de doble interrogación (`??`) en JavaScript, también conocido como operador de Nullish Coalescing u operador de Fusión Nula.
