@@ -24,7 +24,7 @@ console.log(userName) // ==> 'Guest'
 
 Fue añadido en la versión **ES2020** de JavaScript, y es una forma de evitar el uso de `if` anidados en JavaScript. Es muy útil cuando queremos obtener el valor de una expresión, pero no sabemos si el valor de la expresión es `null` o `undefined`.
 
-Se diferencia del operador lógico _OR_ `||` en que que los resultados _falsy_ son ignorados, excepto los recién mencionados valores `null` y `undefined`.
+Se diferencia del operador lógico _OR_ `||` en que los resultados _falsy_ son ignorados, excepto los recién mencionados valores `null` y `undefined`.
 
 Los valores falsy son:
 
@@ -82,4 +82,4 @@ Cuando le añades los paréntesis, el operador de fusión nula funciona correcta
 (null && undefined) ?? 'RambitoJs' // ==> 'RambitoJs'
 ```
 
-Esto es todo lo que necesitas saber del operador de de doble interrogación (`??`) en JavaScript, también conocido como operador de Nullish Coalescing u operador de Fusión Nula.
+Esto es todo lo que necesitas saber del operador de doble interrogación (`??`) en JavaScript, también conocido como operador de Nullish Coalescing u operador de Fusión Nula.
