@@ -92,4 +92,13 @@ Cuando le añades los paréntesis, el operador de fusión nula funciona correcta
 (null && undefined) ?? 'RambitoJs' // ==> 'RambitoJs'
 ```
 
+Al igual que con el operador lógico _OR_ (`||`) y con el operador lógico _AND_ (`&&`), el operador de fusión nula puede usarse varias veces en una misma expresión:
+
+```javascript
+const nickName = null
+const fullName = null
+const company = null
+const userName = nickname ?? fullName ?? company ?? 'Anonymous'  // ==> 'Anonymous'
+```
+
 Esto es todo lo que necesitas saber del operador de doble interrogación (`??`) en JavaScript, también conocido como operador de Nullish Coalescing u operador de Fusión Nula.
