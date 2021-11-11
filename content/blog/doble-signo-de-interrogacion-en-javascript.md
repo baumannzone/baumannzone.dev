@@ -12,17 +12,27 @@ tags:
 Si quieres saber cómo funciona el operador de doble signo de interrogación `??` (también conocido como operador de **Fusión Nula** o **Nullish Coalescing** operator) en JavaScript, esta guía es para ti.
 
 El operador de doble signo de interrogación `??` es un operador de JavaScript que devuelve la expresión del lado derecho del operador cuando la expresión del lado izquierdo es `null` o `undefined`. En caso contrario, devuelve la expresión del lado izquierdo.  
-Aunque el operador de Nullish Coalescing se parece al operador ternario `?` de JavaScript, no tiene nada que ver, son operadores totalmente diferentes.
+
+![Nullish coalescing u operador de fusión nula](/blog/doble-signo-de-interrogacion-en-javascript/nullish-operator.png)
+
+Si `name` (_izquierda_) es `null` o `undefined`, devuelve `Guest` (_derecha_); en caso contrario, devuelve `name` (_izquierda_).
+
+Aunque el operador de Nullish Coalescing se parece al operador ternario (`?`) de JavaScript, no tiene nada que ver, son operadores totalmente diferentes.
 
 ```javascript
 const name = null
 const userName = name ?? 'Guest'
-
-// `name` es null, por lo tanto `userName` es `Guest`
-console.log(userName) // ==> 'Guest'
 ```
 
-Fue añadido en la versión **ES2020** de JavaScript, y es una forma de evitar el uso de `if` anidados en JavaScript. Es muy útil cuando queremos obtener el valor de una expresión, pero no sabemos si el valor de la expresión es `null` o `undefined`.
+Fue añadido en la versión **ES2020** de JavaScript, y es una forma de evitar el uso de `if` anidados en JavaScript. Es muy útil cuando queremos obtener el valor de una expresión, pero no sabemos si el valor de la expresión es `null` o `undefined`. Además, nos permite asignar un valor por defecto a una expresión.
+
+Este operador es relativamente nuevo, sin embargo este operador solo es una forma más amigable de escribir lo siguiente:
+
+```javascript
+const userName = (name !== null && name !== undefined) ? name : 'Guest';
+```
+
+Desde mi punto de vista, el operador de nullish coalescing es más útil que el operador ternario, porque nos permite escribir menos código y es más fácil de leer.
 
 Se diferencia del operador lógico _OR_ `||` en que los resultados _falsy_ son ignorados, excepto los recién mencionados valores `null` y `undefined`.
 
