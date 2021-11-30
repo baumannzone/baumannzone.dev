@@ -4,7 +4,6 @@ description: 'Creando un juego con CSS desde cero. El juego del unicornio es un 
 created: 2021-12-01
 type: blog
 author: Jorge Baumann
-isDraft: true
 tags:
   - CSS
   - HTML
@@ -92,7 +91,7 @@ Es decir que cuando llegas al final de la mazmorra ha pasado el tiempo necesario
 }
 ```
 
-Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece super potente!
+Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece super potente esta función de CSS!
 
 ```css
 .gg::after,
@@ -102,4 +101,5 @@ Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) co
 }
 ```
 
-¡Esto es todo lo que necesitas saber para crear un juego con CSS!
+Esto es todo lo que necesitas saber para crear un juego con CSS. Ahora te toca jugar y ver qué pasa.  
+¡Que lo disfrutes!
