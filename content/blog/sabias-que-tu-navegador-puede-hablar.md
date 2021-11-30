@@ -6,7 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - HTML
-  - Web Speech API
+  - Web APIs
   - JavaScript
 ---
 

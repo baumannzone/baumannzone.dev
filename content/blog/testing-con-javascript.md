@@ -5,16 +5,16 @@ description: 'Introducción al testing con Javascript a través de ejemplos prog
 type: blog
 author: Jorge Baumann
 tags:
-  - nodejs
-  - testing
-  - javascript
+  - Node.js
+  - Testing
+  - JavaScript
 ---
 
 Introducción práctica a los tests con JavaScript (a través de Node.js) guiada por ejemplos progresivos: “_de 0 a framework_”.
 
 ![Pollito con fondo rosa](/blog/testing-con-javascript/header.jpg)
 
-> Photo by [Toni Cuenca](https://unsplash.com/@tonicuenca?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/collections/1130879/pink-background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> Photo by [Toni Cuenca](https://unsplash.com/@tonicuenca?ref=baumannzone.dev) on [Unsplash](https://unsplash.com/collections/1130879/pink-background?ref=baumannzone.dev)
 
 Hola de nuevo, querido/a developer.
 

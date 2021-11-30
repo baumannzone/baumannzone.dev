@@ -97,7 +97,8 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [Octotree](https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc) - Para ver el código fuente de GitHub con el árbol de directorios.
 - [Redefined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)
 - [Color Tab](https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es) - Nueva pestaña.
-- **AdBlocker**
+- [30 Seconds of Knowledge](https://30secondsofknowledge.com/) - Snippets de código en cada nueva pestaña.
+- [AdBlock Plus](https://adblockplus.org/es/)
 
 ## Gadgets & Tools
 

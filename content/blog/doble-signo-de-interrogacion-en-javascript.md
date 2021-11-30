@@ -1,6 +1,6 @@
 ---
 title: Operador de doble signo de interrogación en JavaScript
-description: 'Una guía de como funciona el operador de doble interrogación (??) en JavaScript, también conocido como operador de Nullish Coalescing.'
+description: 'Una guía de cómo funciona el operador de doble interrogación (??) en JavaScript, también conocido como operador de Nullish Coalescing.'
 created: 2021-11-10
 type: blog
 author: Jorge Baumann

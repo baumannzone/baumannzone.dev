@@ -5,9 +5,9 @@ created: 2017-04-22
 type: css-art
 author: Jorge Baumann
 tags:
-  - html
-  - css
-  - javascript
+  - HTML
+  - CSS
+  - JavaScript
 ---
 
 En esta publicación vamos a dibujar con CSS, la mítica Game Boy Original que tan buenos recuerdos nos trae a algunos, ¡mi primera consola!

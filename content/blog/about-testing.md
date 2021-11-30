@@ -5,9 +5,9 @@ created: 2019-07-13
 type: blog
 author: Jorge Baumann
 tags:
-  - nodejs
-  - testing
-  - javascript
+  - Node.js
+  - Testing
+  - JavaScript
 ---
 
 ¿Haces pruebas en tus aplicaciones?  
