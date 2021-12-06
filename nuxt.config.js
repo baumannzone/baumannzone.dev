@@ -30,7 +30,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://www.baumannzone.dev/baumannzone.dev.png',
+        content: 'https://www.baumannzone.dev/opengraph.png',
       },
       {
         name: 'twitter:card',
@@ -55,7 +55,7 @@ export default {
       },
       {
         name: 'twitter:image',
-        content: 'https://www.baumannzone.dev/baumannzone.dev.png',
+        content: 'https://www.baumannzone.dev/opengraph.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
