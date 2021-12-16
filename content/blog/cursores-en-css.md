@@ -1,7 +1,7 @@
 ---
 title: Cursores en CSS
 description: Conoce todos los cursores en CSS. Aprende a cambiar los cursores y mejora la experiencia de usuario de tu sitio web. ¿Los conoces todos?
-created: 2021-12-03
+created: 2021-12-20
 type: blog
 author: Jorge Baumann
 isDraft: true
@@ -16,8 +16,8 @@ tags:
 La propiedad `cursor` en CSS controla cómo se [verá](https://baumannzone.github.io/cursores-css/) el cursor del ratón cuando esté posicionado sobre el elemento en el que se ha establecido esta propiedad.  
 Obviamente, solo funcionará en navegadores o sistemas operativos en los que haya un ratón o un cursor. Por lo tanto, en la mayoría de dispositivos móviles no funcionará.
 
-Básicamente, los cursores se utilizan para mejorar la UX de un sitio y para transmitir la idea de cierta funcionalidad.  
-El ejemplo más sencillo es el de un enlace, que cuando pasas el ratón por encima de él, se muestra un cursor de mano 👆. Esto nos avisa que dicho elemento se puede pulsar.
+Los cursores se utilizan, básicamente, para mejorar la UX (experiencia de usuario) de un sitio web y para transmitir la idea de cierta funcionalidad.  
+El ejemplo más sencillo es el de un _enlace_, que cuando pasas el ratón por encima de él, se muestra un cursor de mano 👆. Esto nos avisa que dicho elemento es clicable y se puede pulsar.
 
 Sin embargo, podrías hacer que el cursor se convierta en una mano cuando pasas el ratón por encima de algo que no es clicable. Estarías confundiendo al usuario y creando una mala experiencia de usuario. Por lo tanto, tienes que tener cuidado cuando cambies los cursores.
 
@@ -27,7 +27,7 @@ En [este sitio web](https://baumannzone.github.io/cursores-css/) puedes ver todo
 
 ## Por diversión 🤡
 Cuando estoy haciendo alguna app y quiero gastar una broma a quienes la usan, suelo usar mucho el cursor de `none` y el de `wait`.  
-Con el de `none` se genera mucha confusión, pues no ves nada. Con el de `wait` se ve un símbolo de espera o de cargando, que también puede generar confusión cuando no entiendes qué se supone que está cargando. 
+Con `none` se genera mucha confusión, pues no ves nada. Con el de `wait` se ve un símbolo de espera o de cargando, que también puede generar confusión cuando no entiendes qué se supone que está cargando. 
 
 ## Cursores en CSS
 Los cursores por defecto son los siguientes:
@@ -118,3 +118,5 @@ Mira [la demo](https://baumannzone.github.io/cursores-css/) y comprueba cómo fu
 ## Límites de tamaño
 Si bien la especificación no limita el tamaño de la imagen del cursor, los navegadores web si que han puesto restricciones para evitar un posible mal uso.  
 En Firefox y Chromimum, las imágenes de cursor están restringidas a **32x32** píxeles. Si el emoji o la imagen es mas grande, el cursor se recortará.
+
+Esto es todo lo que necesitas saber de los cursores en CSS. Ahora, ¡a ponerlo en práctica!
