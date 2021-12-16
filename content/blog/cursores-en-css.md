@@ -1,10 +1,9 @@
 ---
 title: Cursores en CSS
 description: Conoce todos los cursores en CSS. Aprende a cambiar los cursores y mejora la experiencia de usuario de tu sitio web. ¿Los conoces todos?
-created: 2021-12-20
+created: 2021-12-17
 type: blog
 author: Jorge Baumann
-isDraft: true
 tags:
   - html
   - css
@@ -21,7 +20,7 @@ El ejemplo más sencillo es el de un _enlace_, que cuando pasas el ratón por en
 
 Sin embargo, podrías hacer que el cursor se convierta en una mano cuando pasas el ratón por encima de algo que no es clicable. Estarías confundiendo al usuario y creando una mala experiencia de usuario. Por lo tanto, tienes que tener cuidado cuando cambies los cursores.
 
-En [este sitio web](https://baumannzone.github.io/cursores-css/) puedes ver todos los cursores disponibles que hay en CSS.
+En [este sitio web](https://baumannzone.github.io/cursores-css/) tienes una guía de referencia completa y puedes ver todos los cursores disponibles que hay en CSS.
 
 [![Cursores en CSS por Baumannzone](https://raw.githubusercontent.com/baumannzone/cursores-css/main/img/og.png)](https://baumannzone.github.io/cursores-css/)
 
