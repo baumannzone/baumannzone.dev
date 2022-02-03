@@ -21,7 +21,7 @@
 ### Ratón o Mouse
 
 - [Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3i186r4) - Ratón vertical inalámbrico de última generación.
-- ~~[Ratón Logitech USB M100](https://amzn.to/3ipTnoL)~~ - Barato y funcional.
+- [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Barato y funcional.
 - ~~[Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X)~~ - Era el que usaba hasta que se rompió el click de la rueda central.
 
 ### Alfombrilla ratón
@@ -30,7 +30,8 @@
 
 ### Teclado Externo
 
-- **Teclado Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
+- [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth.
+- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
 
 ### Auriculares
 
@@ -39,7 +40,6 @@
 ### Altavoces
 
 - [Altavoces Logitech Z130 Negros](https://amzn.to/3xQmrwf) - Los uso, sobre todo, para escuchar música. Aunque no son muy grandes, suenan bastante más que los del portátil.
-- [Altavoces Logitech Z623](https://amzn.to/3kxcJLG) - Esto si que suena. Eran los altavoces que tenía antes, pero se quemó la placa electrónica del subwoofer y se volvieron _useless_.
 
 ### Adaptadores
 
@@ -68,7 +68,7 @@ Usa este código `R-cssdev` para obtener un descuento.
 - [Webstorm](https://www.jetbrains.com/es-es/webstorm/) - El IDE por excelencia. Es la herramienta que más uso como desarrollador web.
 - [Code](https://code.visualstudio.com/) - El editor por excelencia. Más ligero que el anterior. Ahora lo uso para poder trabajar con [GitHub Copilot](https://copilot.github.com/).
 
-## Fuente
+## Fuente / Tipografía
 
 - [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero gusta mucho.
 - [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
@@ -76,7 +76,7 @@ Usa este código `R-cssdev` para obtener un descuento.
 
 ## Terminal
 
-Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My Zsh_ puedes cambiar fácilmente de temas y elegir el que más te guste.
+Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh My Zsh puedes cambiar fácilmente de temas y elegir el que más te guste.
 
 - [iTerm2](https://iterm2.com/)
 - [Oh My Zsh](https://ohmyz.sh/)
@@ -105,5 +105,5 @@ Actualmente utilizo iTerm2 con Oh My Zsh con el tema `robbyrussell`. Con _Oh My 
 - [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_.
 - [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Se puede programar con `JavaScript`.
 - [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
-- [Xiaomi Mi 9](https://amzn.to/37piIKN) - Mi móvil desde el 2019.
+- [iPhone 12 Mini Púrpura](https://www.apple.com/es/iphone-12/key-features/) - Mi primer móvil de Apple. Me encanta que sea tan pequeño. Más portable y manejable.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)

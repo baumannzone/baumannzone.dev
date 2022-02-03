@@ -1,6 +1,6 @@
 ---
-title: Cursores en CSS
-description: Conoce todos los cursores en CSS. Aprende a cambiar los cursores y mejora la experiencia de usuario de tu sitio web. ¿Los conoces todos?
+title: "Mejora la UX: cursores en CSS"
+description: Mejora la UX en tu sitio web. Conoce todos los cursores en CSS. Aprende a cambiar los cursores y mejora la experiencia de usuario de tu sitio web. ¿Los conoces todos?
 created: 2021-12-17
 type: blog
 author: Jorge Baumann
