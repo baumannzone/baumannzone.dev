@@ -20,8 +20,9 @@
 
 ### Ratón o Mouse
 
-- [Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3i186r4) - Ratón vertical inalámbrico de última generación.
-- [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Barato y funcional.
+- [Ratón Logitech MX Master 3](https://amzn.to/3wmuumT) - Ratón inalámbrico de última generación. Me gusta el diseño y que puedes personalizar los botones.
+-  ~~[Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3IaT3oW)~~ - Ratón vertical inalámbrico de última generación. Lo cambié por que se desconectaba muy a menudo.
+- [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Ratón secundario. Barato y funcional.
 - ~~[Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X)~~ - Era el que usaba hasta que se rompió el click de la rueda central.
 
 ### Alfombrilla ratón
