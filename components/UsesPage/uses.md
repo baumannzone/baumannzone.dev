@@ -21,7 +21,7 @@
 ### Ratón o Mouse
 
 - [Ratón Logitech MX Master 3](https://amzn.to/3wmuumT) - Ratón inalámbrico de última generación. Me gusta el diseño y que puedes personalizar los botones.
--  ~~[Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3IaT3oW)~~ - Ratón vertical inalámbrico de última generación. Lo cambié por que se desconectaba muy a menudo.
+-  ~~[Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3IaT3oW)~~ - Ratón vertical inalámbrico. Lo cambié por que se desconectaba muy a menudo.
 - [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Ratón secundario. Barato y funcional.
 - ~~[Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X)~~ - Era el que usaba hasta que se rompió el click de la rueda central.
 
@@ -31,12 +31,12 @@
 
 ### Teclado Externo
 
-- [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth.
-- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
+- [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** Teclado mecánico inal RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth.
+- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link. Lo uso como teclado secundario.
 
 ### Auriculares
 
-- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Lo que más me gusta es que puedo silenciar el mic o subir el volumen desde el panel de botones.
+- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Lo que más me gusta es que puedo silenciar el mic o subir/bajar el volumen desde el panel de botones.
 
 ### Altavoces
 
@@ -45,18 +45,18 @@
 ### Adaptadores
 
 - [Adaptador multipuerto de USB-C](https://amzn.to/3ikUZjP) - El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.
-- [HUB USB C (8 en 1)](https://amzn.to/3kxiucg) - Más completo que el anterior, pero también más grande. Es el que uso cuando estoy en casa para poder conectar varios cables USB y el cable de red ethernet.
+- [HUB USB C (8 en 1)](https://amzn.to/3MYaTPr) - Es el que uso para poder conectar varios cables USB y el cable de red ethernet.
 
 ### Silla
 
-[ErgoChair Pro](https://bit.ly/2JiNkEG) - La silla de trabajo definitiva. Me gusta que se puede regular _casi_ todo.  
-Usa este código `R-cssdev` para obtener un descuento.
+[ErgoChair Pro](https://bit.ly/2JiNkEG) - La silla de trabajo definitiva. Me gusta que se puede regular casi todo. La silla es muy fácil de usar y tiene una buena estructura.
+¿Quieres un descuento? Usa este código: **`R-cssdev`**
 
 ### Mesa
 
 - [Patas regulables - Estructura THYGE](https://www.ikea.com/es/es/p/thyge-estructura-tablero-gris-plata-50293779/) - Se puede regular la altura manualmente. Puedes poner el tablero que quieras.
 
-- **Tablero de madera** - Un buen tablón de color blanco del IKEA. Mide 160cm x 80cm x 2cm.
+- **Tablero de madera** - Un buen tablón de color blanco del IKEA. Mide 160cm x 80cm x 2cm, lo suficientemente grande para poder poner todo lo que necesitas.
 
 ### Streaming
 
@@ -66,11 +66,18 @@ Usa este código `R-cssdev` para obtener un descuento.
 
 ## Editor
 
-- [Webstorm](https://www.jetbrains.com/es-es/webstorm/) - El IDE por excelencia. Es la herramienta que más uso como desarrollador web.
 - [Code](https://code.visualstudio.com/) - El editor por excelencia. Más ligero que el anterior. Ahora lo uso para poder trabajar con [GitHub Copilot](https://copilot.github.com/).
+- [Webstorm](https://www.jetbrains.com/es-es/webstorm/) - El IDE por excelencia. Es la herramienta que más usaba como desarrollador web. Ahora ya no lo uso, porque la integración con [GitHub Copilot](https://copilot.github.com/) no es tan buena.
+
+### Plugins VS Code
+- [GitHub Copilot](https://copilot.github.com/) - Ya no sé programar sin esto.
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - Cierra automáticamente los tags de HTML.
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - Reemplaza automáticamente los tags de HTML.
+- [Dracula Official](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula) - Tema de color oscuro.
+- [GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme) - Conjunto de temas de GitHub. Uso GitHub Light Default como tema claro.
+- ...
 
 ## Fuente / Tipografía
-
 - [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero gusta mucho.
 - [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
 - [Fira Code](https://github.com/tonsky/FiraCode) - Hace mucho que no la uso. Fue la primera fuente _custom_ que usé en un editor.
