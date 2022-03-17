@@ -1,15 +1,13 @@
 ---
-title: Cake 2
-description: Dibujando una tartita sabrosita 🎂
-created: 2019-04-22
-type: css-art
+title: Package.json - La guía definitiva
+description: Qué es y cómo se usa el package.json de Node.js
+created: 2022-03-10
+type: blog
 author: Jorge Baumann
 isDraft: true
 tags:
-  - html
-  - css
+  - javascript
+  - node.js
 ---
 
-# Cake 2
-
-Post de la tarta en **CSS**.
+## `package.json`

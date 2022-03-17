@@ -35,8 +35,8 @@
                 text-sm
                 font-medium
               "
-              >{{ item.text }}
-            </NuxtLink>
+              >{{ item.text }}</NuxtLink
+            >
           </div>
         </div>
         <div
