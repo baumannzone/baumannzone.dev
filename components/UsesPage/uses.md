@@ -115,3 +115,7 @@ Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh 
 - [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
 - [iPhone 12 Mini Púrpura](https://www.apple.com/es/iphone-12/key-features/) - Mi primer móvil de Apple. Me encanta que sea tan pequeño. Más portable y manejable.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)
+
+---
+
+Hola. Has llegado al final de la página. Gracias por leerme. Que tengas un muy muy buen día 🤗.
