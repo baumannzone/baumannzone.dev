@@ -77,7 +77,7 @@
               <div class="aspect-w-12 aspect-h-7 lg:aspect-none">
                 <nuxt-img
                   class="object-cover object-center rounded-lg shadow-lg"
-                  src="/uses/desktop.png"
+                  src="/uses/desktop.jpg"
                   alt="Escritorio de trabajo de Baumannzone: Portatil, pantalla curva de 34, teclado externo y ratón"
                   width="3454"
                   height="2250"
@@ -122,12 +122,12 @@
             "
           >
             <p>
-              Soy un fiel defensor del trabajo remoto. Llevo trabajando en
-              remoto desde el 2015. Aunque no de manera ininterrumpida, pero sí
-              la mayor parte del tiempo.
+              Me encanta el trabajo remoto. Llevo trabajando en remoto desde el
+              2015.
               <br />
-              En DCSL Guidesmiths, la empresa para la que trabajo actualmente,
-              tenemos la opción de ser <span class="italic">full remote</span>.
+              En la empresa en la que trabajo actualmente, tenemos la opción de
+              ser <span class="italic">full remote</span>, aunque también hay
+              oficinas, por si quieres hacer uso de ellas.
             </p>
 
             <!-- eslint-disable-next-line vue/no-v-html -->

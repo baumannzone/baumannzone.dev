@@ -21,9 +21,7 @@
 ### Ratón o Mouse
 
 - [Ratón Logitech MX Master 3](https://amzn.to/3wmuumT) - Ratón inalámbrico de última generación. Me gusta el diseño y que puedes personalizar los botones.
--  ~~[Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3IaT3oW)~~ - Ratón vertical inalámbrico. Lo cambié por que se desconectaba muy a menudo.
-- [Ratón Logitech USB M100](https://amzn.to/3ipTnoL) - Ratón secundario. Barato y funcional.
-- ~~[Sharkoon DRAKONIA - Ratón Gaming Láser](https://amzn.to/3BbWE3X)~~ - Era el que usaba hasta que se rompió el click de la rueda central.
+- ~~[Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3IaT3oW)~~ - Ratón vertical inalámbrico. Lo cambié por que se desconectaba muy a menudo.
 
 ### Alfombrilla ratón
 
@@ -32,7 +30,16 @@
 ### Teclado Externo
 
 - [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** Teclado mecánico inal RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth.
-- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link. Lo uso como teclado secundario.
+- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
+
+### Cámara
+- [Panasonic Lumix DMC G80M 4K](https://amzn.to/36yCeHb) - Cámara en 4K.
+- [El Gato Cam Link 4K](https://amzn.to/3wnAsn9) - Capturadora 4k para conectar la cámara al MacBook.
+
+### Micrófono
+- [Micrófono AT2020](https://amzn.to/3JvuuEO) - Micrófono de condensador de estudio para streaming y grabación.
+- [Brazo para micrófono](https://amzn.to/3KXsrtk) - Brazo para el micrófono ajustable en ángulo y altura.
+- [Behringer UMC22](https://amzn.to/3N8Cu0H) - Interfaz de audio USB para conectar el micrófono al MacBook.
 
 ### Auriculares
 
@@ -40,16 +47,12 @@
 
 ### Altavoces
 
+- Actualmente uso los altavoces del MacBook Pro M1. He quitado los altavoces externos para tener más hueco y mas limpieza en la mesa, para tener menos cables y para usar menos enchufes. No es lo mejor para escuchar música, pero lo prefiero así.
 - [Altavoces Logitech Z130 Negros](https://amzn.to/3xQmrwf) - Los uso, sobre todo, para escuchar música. Aunque no son muy grandes, suenan bastante más que los del portátil.
-
-### Adaptadores
-
-- [Adaptador multipuerto de USB-C](https://amzn.to/3ikUZjP) - El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.
-- [HUB USB C (8 en 1)](https://amzn.to/3MYaTPr) - Es el que uso para poder conectar varios cables USB y el cable de red ethernet.
 
 ### Silla
 
-[ErgoChair Pro](https://bit.ly/2JiNkEG) - La silla de trabajo definitiva. Me gusta que se puede regular casi todo. La silla es muy fácil de usar y tiene una buena estructura.
+- [ErgoChair Pro](https://bit.ly/2JiNkEG) - La silla de trabajo definitiva. Me gusta que se puede regular casi todo. La silla es muy fácil de usar y tiene una buena estructura.
 ¿Quieres un descuento? Usa este código: **`R-cssdev`**
 
 ### Mesa
@@ -58,11 +61,16 @@
 
 - **Tablero de madera** - Un buen tablón de color blanco del IKEA. Mide 160cm x 80cm x 2cm, lo suficientemente grande para poder poner todo lo que necesitas.
 
-### Streaming
-
+### Luces
+- [El Gato KeyLight](https://amzn.to/3Jvq28M) - El foco de luz definitivo. Lo controlo (intensidad / color) via WiFi desde una app del MacBook.
 - [Luces led con trípode](https://amzn.to/3esJntJ) - Las uso para iluminarme mientras hago streaming o estoy en videollamada. Las compré por necesidad, la luz natural no siempre es posible. Me gustan porque las puedes regular en altura con el trípode y en intensidad con los botones. Funcionan muy bien. Guardadas y plegadas en la caja ocupan muy poco.
 
 - [Tira de luces led](https://es.aliexpress.com/item/33017875866.html?spm=a2g0s.9042311.0.0.149c63c0d3h1Wl) - Multi color de 3m. Las más baratas que encontré en AliExpress.
+
+### Adaptadores
+
+- [Adaptador multipuerto de USB-C](https://amzn.to/3ikUZjP) - El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.
+- [HUB USB C (8 en 1)](https://amzn.to/3MYaTPr) - Es el que uso para poder conectar varios cables USB y el cable de red ethernet.
 
 ## Editor
 
@@ -101,6 +109,8 @@ Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh 
 
 ### Extensiones
 
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es) - Para poder ver los componentes de React en el navegador.
+- [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es) - Para poder ver los cambios de Redux en el navegador.
 - [Vue Devtools](https://github.com/vuejs/vue-devtools)
 - [Octotree](https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc) - Para ver el código fuente de GitHub con el árbol de directorios.
 - [Redefined GitHub](https://chrome.google.com/webstore/detail/refined-github/hlepfoohegkhhmjieoechaddaejaokhf)
@@ -118,4 +128,5 @@ Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh 
 
 ---
 
-Hola. Has llegado al final de la página. Gracias por leerme. Que tengas un muy muy buen día 🤗.
+Hola. Has llegado al final de la página. Gracias por leerme. Que tengas un muy muy buen día. 🤗
+> ¿Quieres ver cómo ha ido cambiando esta página? [Ver historial de cambios](https://github.com/baumannzone/baumannzone.dev/blame/main/components/UsesPage/uses.md)
