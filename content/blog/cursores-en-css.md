@@ -5,9 +5,9 @@ created: 2021-12-17
 type: blog
 author: Jorge Baumann
 tags:
-  - html
-  - css
-  - ux
+  - HTML
+  - CSS
+  - UX
 ---
 
 ## El cursor en CSS
