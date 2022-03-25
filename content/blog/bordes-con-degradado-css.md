@@ -1,7 +1,7 @@
 ---
 title: Bordes con degradado en CSS
 description: Guía completa para saber cómo crear bordes con degradados y con imágenes en CSS
-created: 2022-03-22
+created: 2022-03-24
 type: blog
 author: Jorge Baumann
 tags:
