@@ -2,7 +2,7 @@
 
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/baumannzone/baumannzone.dev/main)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 My personal website and blog made with [Nuxt.js](https://nuxtjs.org/) and [TailwindCSS](https://tailwindcss.com/).
@@ -42,6 +42,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://escapes-online.com"><img src="https://avatars.githubusercontent.com/u/991738?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jordi Marti</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Ajmarti-theinit" title="Bug reports">🐛</a> <a href="https://github.com/baumannzone/baumannzone.dev/commits?author=jmarti-theinit" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/itziarZG"><img src="https://avatars.githubusercontent.com/u/70289074?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Itziar ZG</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/commits?author=itziarZG" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/uRuiz"><img src="https://avatars.githubusercontent.com/u/19885713?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Urko Ruiz</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3AuRuiz" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/eliutdev"><img src="https://avatars.githubusercontent.com/u/63687573?v=4?s=100" width="100px;" alt=""/><br /><sub><b>R. Eliut</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Aeliutdev" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
