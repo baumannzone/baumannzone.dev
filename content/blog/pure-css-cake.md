@@ -21,7 +21,7 @@ Se acercaba la fecha de mi cumpleaños, por lo que decidí crear este delicioso 
 
 ### Enlaces de interés:
 
-- Video: [https://www.instagram.com/tv/CKgQoMnI_PZ/](https://www.instagram.com/tv/CKgQoMnI_PZ/)
+- Instagram Video: [https://www.instagram.com/tv/CKgQoMnI_PZ/](https://www.instagram.com/tv/CKgQoMnI_PZ/)
 - GitHub: [github.com/baumannzone/pure-css-cake](https://github.com/baumannzone/pure-css-cake)
 - CodePen: [https://codepen.io/baumannzone/pen/LYRwGQq](https://codepen.io/baumannzone/pen/LYRwGQq)
 - Live Demo: [https://pure-css-cake.vercel.app/](https://pure-css-cake.vercel.app/)
