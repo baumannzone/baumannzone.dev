@@ -129,4 +129,4 @@ En este artículo aprendiste a crear bordes con degradados y con imágenes en CS
 
 A día de hoy (Marzo de 2022), [Can I Use](https://caniuse.com/border-image) te muestra que un 97% de los navegadores web soportan las propiedades `border-image` y `border-image-slice`, necesarias para hacer bordes con degradados de colores o bordes con imágenes.
 
-Los bordes con degradados e imágenes son muy divertidos, pero tiene una desventaja: por el momento no funcionan bien con `border-radius`.
+Los bordes con degradados e imágenes son muy divertidos, pero tienen una desventaja: de momento no funcionan bien con `border-radius`.
