@@ -98,6 +98,17 @@
         </div>
         <prev-next :prev="prev" :next="next" />
       </div>
+
+      <script
+        type="application/javascript"
+        src="https://utteranc.es/client.js"
+        repo="baumannzone/baumannzonedev-comments"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async
+      ></script>
     </div>
   </article>
 </template>
