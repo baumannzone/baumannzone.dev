@@ -179,46 +179,12 @@ const footerItems = [
         name: 'Twitch Prime',
         to: 'https://www.twitch.com/baumannzone/',
       },
+      {
+        name: 'Patrocinio',
+        to: '/patrocinio',
+      },
     ],
   },
-  // {
-  //   title: 'Sígueme',
-  //   items: [
-  //     {
-  //       name: 'Twitter',
-  //       to: 'https://twitter.com/baumannzone',
-  //     },
-  //     {
-  //       name: 'Twitch',
-  //       to: 'https://www.twitch.tv/baumannzone',
-  //     },
-  //     {
-  //       name: 'Instagram',
-  //       to: 'https://www.instagram.com/baumannzone/',
-  //     },
-  //     {
-  //       name: 'GitHub',
-  //       to: 'https://github.com/baumannzone',
-  //     },
-  //     {
-  //       name: 'YouTube',
-  //       to: 'https://www.youtube.com/channel/UCTTj5ztXnGeDRPFVsBp7VMA',
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: 'Legal',
-  //   items: [
-  //     {
-  //       name: 'Política de Privacidad',
-  //       to: '/privacy',
-  //     },
-  //     {
-  //       name: 'Cookies',
-  //       to: '/cookies',
-  //     },
-  //   ],
-  // },
 ]
 
 export default {
