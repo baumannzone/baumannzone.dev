@@ -21,7 +21,7 @@ Puedes escribir un comentario aquí abajo o puedes hacerlo desde el repo de GitH
 
 Digo que es **sencillo** y **rápido** porque tardas menos de 10 minutos en configurarlo y ponerlo en marcha. Lo único que necesitas es una cuenta de GitHub, un [repositorio](https://github.com/baumannzone/baumannzonedev-comments) y colocar un `<script>` en lugar que quieras que se muestren los comentarios.
 
-Y digo que es **seguro** porque depende de GitHub. No es la solución perfecta, pero me parece un buen filtro para combatir el spam.
+Y digo que es **seguro** (entre comillas) porque depende de GitHub. No es la solución perfecta, pero me parece un buen filtro para combatir el spam.
 
 Lo que más me gusta es que, al igual que las issues de GitHub, soporta _MarkDown_.
 Esto en sí es una gran ventaja, ya que puedes escribir en MarkDown y tener una vista previa de los comentarios.  
