@@ -16,7 +16,7 @@ Sin embargo, puede ser que algunos de los comentarios no sean relevantes, o que 
 
 Hace tiempo que conozco [Utterances](https://utteranc.es/), una librería Open Source de comentarios para developers que te permite, rápidamente, añadir comentarios a tu blog de forma sencilla y "segura".
 
-Digo que es para **developers** porque está basado en GitHub. Utiliza las _issues_ de GitHub de un repositorio para gestionar los comentarios.  
+Digo que es para **developers** porque está basado en GitHub. Utiliza la API de GitHub, en concreto las _issues_ de un repositorio para gestionar los comentarios.  
 Puedes escribir un comentario aquí abajo o puedes hacerlo desde el repo de GitHub, si la _issue_ existe.
 
 Digo que es **sencillo** y **rápido** porque tardas menos de 10 minutos en configurarlo y ponerlo en marcha. Lo único que necesitas es una cuenta de GitHub, un [repositorio](https://github.com/baumannzone/baumannzonedev-comments) y colocar un `<script>` en lugar que quieras que se muestren los comentarios.
