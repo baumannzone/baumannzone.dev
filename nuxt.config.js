@@ -66,7 +66,7 @@ export default {
         src: 'https://cdn.usefathom.com/script.js',
         'data-site': 'IMNYHNZI',
         defer: true,
-        'data-included-domains': 'baumannzone.dev',
+        'data-included-domains': 'www.baumannzone.dev,baumannzone.dev',
       },
     ],
   },
