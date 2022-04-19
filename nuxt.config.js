@@ -64,7 +64,7 @@ export default {
       // Fathom Analytics
       {
         src: 'https://cdn.usefathom.com/script.js',
-        'data-site': 'IMNYHNZI',
+        'data-site': process.env.FATHOM_SITE_ID,
         defer: true,
         'data-included-domains': 'www.baumannzone.dev,baumannzone.dev',
       },
