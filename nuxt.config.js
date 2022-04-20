@@ -63,7 +63,7 @@ export default {
     script: [
       // Fathom Analytics
       {
-        src: 'https://cdn.usefathom.com/script.js',
+        src: 'https://planet-honey.baumannzone.dev/script.js',
         'data-site': process.env.FATHOM_SITE_ID,
         defer: true,
         'data-included-domains': 'www.baumannzone.dev,baumannzone.dev',
