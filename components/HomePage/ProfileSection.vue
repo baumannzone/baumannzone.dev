@@ -26,7 +26,7 @@
         <header class="text-center p-4">
           <h1 class="font-bold text-3xl">Jorge Baumann</h1>
           <p class="text-gray-500 font-light">
-            Senior Full Stack Developer en DCSL GuideSmiths
+            Senior Full Stack Developer en One Beyond
           </p>
           <p class="font-light text-xl mt-4 mx-8 md:mx-16">
             Ingeniero de software y creador de contenido. Apasionado del open
