@@ -83,6 +83,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "kevinjuanjacque",
+      "name": "kevin juan jacque castillo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42586140?v=4",
+      "profile": "https://github.com/kevinjuanjacque",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -90,5 +100,6 @@
   "projectOwner": "baumannzone",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
