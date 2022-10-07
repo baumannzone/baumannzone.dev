@@ -124,9 +124,8 @@
         <div
           class="
             flex flex-wrap
-            space-x-6
-            sm:order-2
-            justify-start
+            sm:space-x-6 sm:order-2
+            justify-between
             sm:justify-end
           "
         >
