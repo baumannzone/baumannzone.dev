@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden bg-white">
+  <div class="overflow-hidden bg-white dark:bg-gray-800 dark:text-gray-300">
     <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="absolute top-0 bottom-0 hidden w-screen lg:block left-3/4" />
       <div
@@ -17,6 +17,7 @@
               font-semibold
               tracking-wide
               text-indigo-600
+              dark:text-indigo-400
               uppercase
             "
           >
@@ -30,6 +31,7 @@
               leading-8
               tracking-tight
               text-gray-900
+              dark:text-gray-200
               sm:text-4xl
             "
           >
@@ -61,7 +63,7 @@
                   y="0"
                   width="4"
                   height="4"
-                  class="text-gray-200"
+                  class="text-gray-200 dark:text-gray-300"
                   fill="currentColor"
                 />
               </pattern>
@@ -83,10 +85,12 @@
                   height="2250"
                 />
               </div>
-              <figcaption class="flex mt-3 text-sm text-gray-500">
+              <figcaption
+                class="flex mt-3 text-sm text-gray-500 dark:text-gray-300"
+              >
                 <!-- Heroicon name: solid/camera -->
                 <svg
-                  class="flex-none w-5 h-5 text-gray-400"
+                  class="flex-none w-5 h-5 text-gray-400 dark:text-gray-300"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -105,7 +109,7 @@
         </div>
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto text-base max-w-prose lg:max-w-none">
-            <p class="text-lg text-gray-500">
+            <p class="text-lg text-gray-500 dark:text-gray-300">
               Todas las semanas me pregutan acerca de alguna aplicación de
               software que utilizo o alguna pieza o gadget de hardware que
               tengo.
@@ -115,8 +119,9 @@
             class="
               mx-auto
               mt-5
-              prose
+              prose prose-invert
               text-gray-500
+              dark:text-gray-300
               prose-purple
               lg:max-w-none lg:row-start-1 lg:col-start-1
             "
@@ -130,8 +135,10 @@
               oficinas, por si quieres hacer uso de ellas.
             </p>
 
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div v-html="uses"></div>
+            <div class="font-color-md">
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <div v-html="uses"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -163,3 +170,23 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.font-color-md >>> h2,
+.font-color-md >>> h3,
+.font-color-md >>> h4,
+.font-color-md >>> h5,
+.font-color-md >>> h6,
+.font-color-md >>> strong {
+  @apply text-gray-900 dark:text-gray-200;
+}
+.font-color-md >>> a {
+  @apply dark:text-purple-400;
+}
+.font-color-md >>> blockquote {
+  @apply text-gray-900 dark:text-gray-200;
+}
+.font-color-md >>> code {
+  @apply text-gray-900 dark:text-gray-200;
+}
+</style>

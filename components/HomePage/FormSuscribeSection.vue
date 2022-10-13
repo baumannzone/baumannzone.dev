@@ -40,7 +40,9 @@
               placeholder="Email"
               class="
                 w-full
+                dark:text-gray-100 dark:bg-gray-800
                 border-white
+                dark:border-gray-500
                 px-5
                 py-3
                 placeholder-gray-500
@@ -49,6 +51,7 @@
                 focus:ring-offset-2
                 focus:ring-offset-purple-700
                 focus:ring-white
+                dark:focus:ring-gray-400
                 rounded-md
               "
             />

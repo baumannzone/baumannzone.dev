@@ -1,5 +1,5 @@
 <template>
-  <article class="mt-8">
+  <article class="pt-8 bg-gray-800">
     <div class="container mx-auto max-w- px-2 md:px-8">
       <div class="text-lg mx-auto mb-12">
         <h1>
@@ -23,6 +23,7 @@
               font-extrabold
               tracking-tight
               text-gray-900
+              dark:text-gray-200
               sm:text-4xl
             "
           >
@@ -33,13 +34,18 @@
           <post-tag
             v-for="tag in post.tags"
             :key="tag"
-            class="inline-flex items-center mx-1"
+            class="
+              inline-flex
+              items-center
+              mx-1
+              dark:bg-gray-700 dark:text-gray-300
+            "
             variant="purple"
           >
             {{ tag }}
           </post-tag>
 
-          <div class="mt-5 text-sm text-gray-500">
+          <div class="mt-5 text-sm text-gray-500 dark:text-gray-300">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,13 +68,21 @@
         </div>
       </div>
 
-      <div class="prose prose-purple prose-lg mx-auto">
-        <nuxt-content :document="post" />
+      <div class="prose prose-purple prose-lg mx-auto dark:text-gray-300">
+        <nuxt-content class="font-color-md" :document="post" />
       </div>
 
       <div class="article-width mx-auto">
         <div class="flex justify-between mb-10 mt-16">
-          <p class="text-sm font-medium text-gray-500 text-left">
+          <p
+            class="
+              text-sm
+              font-medium
+              text-gray-500
+              dark:text-gray-300
+              text-left
+            "
+          >
             Editado el {{ formatDateUpdatedAt }}
           </p>
           <p class="text-sm font-medium text-right">
@@ -76,7 +90,7 @@
               :href="editPostOnGithub"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm text-purple-700 text-right"
+              class="text-sm text-purple-700 dark:text-purple-500 text-right"
             >
               Editar en GitHub
               <svg
@@ -105,7 +119,7 @@
         repo="baumannzone/baumannzonedev-comments"
         issue-term="pathname"
         label="comment"
-        theme="github-light"
+        theme="preferred-color-scheme"
         crossorigin="anonymous"
         async
       ></script>
@@ -212,5 +226,27 @@ export default {
 .article-width {
   font-size: 1.125rem;
   max-width: 65ch;
+}
+
+.font-color-md h2,
+.font-color-md h3,
+.font-color-md h4,
+.font-color-md h5,
+.font-color-md h6,
+.font-color-md strong {
+  @apply text-gray-900 dark:text-gray-200;
+}
+.font-color-md a {
+  @apply dark:text-purple-400;
+}
+.font-color-md blockquote {
+  @apply text-gray-900 dark:text-gray-200;
+}
+.font-color-md code {
+  @apply text-gray-900 dark:text-gray-200;
+}
+.font-color-md pre {
+  text-shadow: none;
+  @apply dark:bg-gray-900 dark:text-gray-200;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white px-4 sm:px-6 lg:px-8 mb-14">
+  <div class="bg-white dark:bg-gray-800 px-4 sm:px-6 lg:px-8 pb-14">
     <div
       class="
         relative
@@ -7,6 +7,7 @@
         mx-auto
         lg:max-w-7xl
         border-t border-grey-200
+        dark:border-gray-500
         flex
         items-center
         justify-between
