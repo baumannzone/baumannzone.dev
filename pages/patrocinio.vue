@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-gray-50 overflow-hidden">
+  <div class="relative bg-gray-50 dark:bg-gray-800 overflow-hidden">
     <div
       class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
       aria-hidden="true"
@@ -98,7 +98,9 @@
               md:text-6xl
             "
           >
-            <span class="block xl:inline">¿Quieres patrocinar </span>
+            <span class="block xl:inline dark:text-gray-200"
+              >¿Quieres patrocinar
+            </span>
             <span class="block text-purple-600 xl:inline">mi contenido?</span>
           </h1>
           <p
@@ -107,6 +109,7 @@
               max-w-md
               mx-auto
               text-base text-gray-500
+              dark:text-gray-300
               sm:text-lg
               md:mt-5 md:text-xl md:max-w-3xl
             "

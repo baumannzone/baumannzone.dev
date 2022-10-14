@@ -1,5 +1,5 @@
 <template>
-  <div class="py-40 flex flex-col bg-white">
+  <div class="py-40 flex flex-col bg-white dark:bg-gray-800">
     <main
       class="
         flex-grow flex flex-col
@@ -31,13 +31,14 @@
               text-4xl
               font-extrabold
               text-gray-900
+              dark:text-gray-200
               tracking-tight
               sm:text-5xl
             "
           >
             Página no encontrada
           </h1>
-          <p class="mt-2 text-base text-gray-500">
+          <p class="mt-2 text-base text-gray-500 dark:text-gray-300">
             Oops, la página que estás buscando no existe.
           </p>
           <div class="mt-6">
