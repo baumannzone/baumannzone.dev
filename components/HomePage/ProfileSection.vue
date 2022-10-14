@@ -1,11 +1,12 @@
 <template>
-  <section class="d-block bg-gray-100 pb-16">
+  <section class="d-block bg-gray-100 dark:bg-gray-800 pb-16">
     <div class="bg-gradient-to-r from-purple-800 to-purple-700 h-44"></div>
     <div class="px-2 sm:px-4 lg:px-8">
       <div
         class="
           max-w-7xl
           bg-white
+          dark:bg-gray-900 dark:text-gray-100
           mx-auto
           px-2
           sm:px-4
@@ -25,7 +26,7 @@
         </div>
         <header class="text-center p-4">
           <h1 class="font-bold text-3xl">Jorge Baumann</h1>
-          <p class="text-gray-500 font-light">
+          <p class="text-gray-500 dark:text-gray-400 font-light">
             Senior Full Stack Developer en One Beyond
           </p>
           <p class="font-light text-xl mt-4 mx-8 md:mx-16">
@@ -38,7 +39,13 @@
           <a
             v-for="{ name, url } in socialIconsParsed"
             :key="name"
-            class="text-black hover:text-gray-500 mx-2"
+            class="
+              text-black
+              dark:text-gray-300
+              hover:text-gray-500
+              dark:hover:text-gray-400
+              mx-2
+            "
             :href="url"
             target="_blank"
             rel="noopener noreferrer"

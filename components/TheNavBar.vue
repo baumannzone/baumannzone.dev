@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white shadow sticky top-0 z-10 sm:static">
+  <nav class="bg-white dark:bg-gray-800 shadow sticky top-0 z-10 sm:static">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex px-2 lg:px-0">
@@ -11,10 +11,20 @@
                 alt="Baumannzone's logo"
               />
               <nuxt-img
-                class="hidden lg:block h-8 w-auto"
+                class="hidden lg:block h-8 w-auto lg:dark:hidden"
                 src="/logo-with-name.png"
                 alt="Baumannzone's logo"
               />
+              <div
+                class="hidden lg:dark:flex gap-2 items-center justify-center"
+              >
+                <nuxt-img
+                  class="h-8 w-auto"
+                  src="/logo.png"
+                  alt="Baumannzone's logo dark"
+                />
+                <h1 class="text-2xl font-bold text-white">BAUMANNZONE</h1>
+              </div>
             </a>
           </div>
           <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
@@ -27,6 +37,7 @@
                 border-transparent
                 text-gray-500
                 hover:border-gray-300 hover:text-gray-700
+                dark:hover:text-gray-300
                 inline-flex
                 items-center
                 px-1
@@ -91,12 +102,12 @@
                   rounded-md
                   leading-5
                   bg-white
+                  dark:bg-gray-700 dark:text-gray-300
                   placeholder-gray-500
-                  focus:outline-none
-                  focus:placeholder-gray-400
-                  focus:ring-1
-                  focus:ring-purple-500
-                  focus:border-purple-500
+                  dark:placeholder-gray-400
+                  focus:outline-none focus:placeholder-gray-400
+                  dark:focus:placeholder-gray-300
+                  focus:ring-1 focus:ring-purple-500 focus:border-purple-500
                   sm:text-sm
                 "
                 placeholder="Buscar en el blog"
@@ -177,6 +188,7 @@
             border-transparent
             text-gray-600
             hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800
+            dark:hover:bg-gray-700 dark:hover:text-gray-300
             block
             pl-3
             pr-4
@@ -217,6 +229,6 @@ export default {
 
 <style scoped>
 .nuxt-link-active {
-  @apply bg-purple-50 border-purple-500 text-purple-700;
+  @apply bg-purple-50 border-purple-500 text-purple-700 dark:bg-gray-700 dark:border-purple-700 dark:text-gray-200;
 }
 </style>

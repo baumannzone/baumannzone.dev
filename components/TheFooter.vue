@@ -72,6 +72,7 @@
                 py-2
                 px-4
                 text-base text-gray-900
+                dark:text-gray-100
                 placeholder-gray-500
                 focus:outline-none
                 focus:ring-2
@@ -80,6 +81,9 @@
                 focus:ring-purple-300
                 focus:border-purple-300
                 focus:placeholder-purple-700
+                dark:focus:placeholder-gray-300 dark:bg-gray-800
+                border-white
+                dark:border-gray-500 dark:focus:ring-gray-400
               "
               placeholder="Enter your email"
             />
