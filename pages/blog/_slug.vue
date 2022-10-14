@@ -220,7 +220,7 @@ export default {
 }
 
 .nuxt-content .nuxt-content-highlight .filename {
-  @apply absolute right-0 mr-3 -mt-3 font-light text-sm bg-purple-100 px-2 pt-0 rounded text-purple-600;
+  @apply absolute right-0 mr-3 -mt-3 font-light text-sm bg-purple-100 px-2 pt-0 rounded text-purple-600 dark:bg-purple-800 dark:text-purple-100;
 }
 
 .article-width {
@@ -249,5 +249,8 @@ export default {
 .font-color-md pre {
   text-shadow: none;
   @apply dark:bg-gray-900 dark:text-gray-200;
+}
+span.token.operator {
+  @apply bg-transparent;
 }
 </style>
