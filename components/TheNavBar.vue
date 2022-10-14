@@ -102,7 +102,7 @@
                   rounded-md
                   leading-5
                   bg-white
-                  dark:bg-gray-700
+                  dark:bg-gray-700 dark:text-gray-300
                   placeholder-gray-500
                   dark:placeholder-gray-400
                   focus:outline-none focus:placeholder-gray-400

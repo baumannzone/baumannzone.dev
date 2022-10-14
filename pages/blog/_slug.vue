@@ -228,6 +228,7 @@ export default {
   max-width: 65ch;
 }
 
+.font-color-md h1,
 .font-color-md h2,
 .font-color-md h3,
 .font-color-md h4,
