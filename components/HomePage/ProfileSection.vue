@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     socialIconsParsed() {
-      const { linkedin, facebook, devTo, codepen, github, ...items } =
+      const { linkedin, facebook, devTo, codepen, github, tiktok, ...items } =
         socialIcons
       return items
     },
