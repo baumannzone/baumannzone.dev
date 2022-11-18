@@ -44,6 +44,8 @@ Incialmente fue un curso interno de Google. Lanzado al público en 2021.
 🎯 Mejor si sabes Python y/o álgebra  
 📒 Machine learning práctico  
 
+https://developers.google.com/machine-learning/crash-course
+
 Muy práctico, gran parte del código de ML está centrado en las APIs de TensorFlow 👌  
 
 ### Practical deep learning for coders
@@ -51,6 +53,8 @@ Muy práctico, gran parte del código de ML está centrado en las APIs de Tensor
 ⏳ 7 semanas  
 🎯 Si sabes Python, mejor que mejor  
 📒 Deep learning  
+
+https://course.fast.ai/
 
 Curso creado con el objetivo de hacer que el deep learning sea lo más accesible posible para el mundo. Es una muy buena introducción al deep learning y a las redes neuronales en particular.
 
@@ -71,3 +75,6 @@ En este post de Inteligencia Artificial y Machine Learning, te he compartido 5 c
 Si estás empezando en este mundillo de la IA, seguir el material presentado en este artículo te dará unas bases muy sólidas para que luego puedas continuar tu formación con un roadmap personalizado. Hay muchos recursos gratuitos, o de muy bajo coste, disponibles en línea que ampliarán tus conocimientos sobre las ciencias de datos y el machine learning.
 
 Si estás interesado en saber más sobre los recursos que están disponibles, también he publicado previamente una lista completa de materiales gratuitos que están ampliamente disponibles en línea.
+
+
+¡Gracias por leerme!
