@@ -1,26 +1,24 @@
 ---
-title: Cursos de Machine Learning Gratis
+title: 4 cursos de Machine Learning Gratis
 description: 4 cursos de Machine Learning, totalmente gratuitos, que deberías empezar a hacer ahora mismo.
-created: 2022-06-13
+created: 2022-11-22
 type: blog
 author: Jorge Baumann
 tags:
   - Machine Learning
-  - Deep Learning
-  - Inteligencia Artificial
+  - Python
+  - IA
 ---
 
-Hay muchas formas de empezar a estudiar Machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
+Hay muchas formas de empezar a estudiar machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
 
-Sin embargo, si acabas de sumergirte en el mundo del aprendizaje automático (esto aplica a cualquier tecnología) puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta o _roadmap_.
+Sin embargo, si acabas de sumergirte en el mundo del aprendizaje automático (esto aplica a cualquier tecnología) puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta de estudio o _roadmap_ más adelante.
 
-Hay muchos cursos de Machine Learning o Inteligencia Artificial disponibles en la red. En YouTube, FreeCodeCamp, etc, puedes encontrar cursos cortos o MOOCs (_Massive Open Online Courses_) con precios variados.
-
-Por eso, en este artículo, te voy a compartir mis **5 cursos de Machine Learning gratuitos favoritos**. Cada uno de ellos es enriquecedor y te da su punto de vista acerca del machine learning o deep learning. Contienen una variedad de tipos de contenido, desde vídeos hasta ejercicios prácticos de código. 
+Por eso, en este artículo, te voy a compartir mis **4 cursos de machine learning gratuitos favoritos**. Cada uno de ellos te aportará valor de una forma distinta y te dará su punto de vista acerca del machine learning o deep learning. Contienen una variedad de tipos de contenido, desde vídeos hasta ejercicios prácticos de código. 
 
 **Leyenda**
 
-- ➡️ Título  
+- Título  
 - 🧑‍🏫 Autor/a  
 - ⏳ Duración  
 - 🎯 A quién va dirigido  
@@ -66,15 +64,13 @@ Curso creado con el objetivo de hacer que el deep learning sea lo más accesible
 
 https://microsoft.github.io/ML-For-Beginners
 
-Este curso cubre los conceptos básicos de aprendizaje automático que una persona que se inicia debe conocer. Lo que comunmente se conoce como "machine learning clásico" a través de `Scikit-learn`.
+Este curso cubre los conceptos básicos de aprendizaje automático que una persona que se inicia debe conocer. Lo que comunmente se conoce como "machine learning clásico" a través de la herramienta `Scikit-learn`.
 
 --- 
 
-En este post de Inteligencia Artificial y Machine Learning, te he compartido 5 cursos online gratuitos para estudiar a fondo esta materia. Cada curso cubre diversos aspectos del campo, lo que actúa como una introducción perfecta al ML.
+En este post de inteligencia artificial y machine learning, te he compartido mis 4 cursos (favoritos) online gratuitos para estudiar a fondo esta materia. Cada curso cubre diversos aspectos del campo, lo que actúa como una introducción perfecta al ML. Además, te dará unas bases muy sólidas para poder continuar con cursos avanzados.
 
-Si estás empezando en este mundillo de la IA, seguir el material presentado en este artículo te dará unas bases muy sólidas para que luego puedas continuar tu formación con un roadmap personalizado. Hay muchos recursos gratuitos, o de muy bajo coste, disponibles en línea que ampliarán tus conocimientos sobre las ciencias de datos y el machine learning.
-
-Si estás interesado en saber más sobre los recursos que están disponibles, también he publicado previamente una lista completa de materiales gratuitos que están ampliamente disponibles en línea.
-
+Si tienes alguna pregunta, déjamela en los comentarios.
+Si tienes alguna pregunta, déjamela en los comentarios. Si te ha gustado este post, compártelo con tus amigos en las redes sociales. Si quieres aprender más sobre inteligencia artificial, machine learning o programación, te invito a que conectemos en [Instagram](https://www.instagram.com/baumannzone/).
 
 ¡Gracias por leerme!
