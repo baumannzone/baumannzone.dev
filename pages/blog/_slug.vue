@@ -1,5 +1,5 @@
 <template>
-  <article class="pt-8 bg-gray-800">
+  <article class="pt-8 dark:bg-gray-800">
     <div class="container mx-auto max-w- px-2 md:px-8">
       <div class="text-lg mx-auto mb-12">
         <h1>
