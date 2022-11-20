@@ -8,6 +8,7 @@ tags:
   - Machine Learning
   - Python
   - IA
+isDraft: true
 ---
 
 Hay muchas formas de empezar a estudiar machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
