@@ -139,7 +139,7 @@
             class="text-purple-400 hover:text-purple-300 mb-2"
             :href="url"
             target="_blank"
-            rel="noopener noreferrer"
+            :rel="`noopener noreferrer ${name === 'mastodon' ? 'me' : ''}`"
           >
             <span class="sr-only">{{ name }}</span>
             <SvgIcon :id="`${name}-footer`" :icon-name="name" />
