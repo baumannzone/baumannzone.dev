@@ -4,7 +4,6 @@ description: Guía completa para saber cómo programar publicaciones en Mastodon
 created: 2022-11-21
 type: blog
 author: Jorge Baumann
-isDraft: true
 tags:
   - Mastodon
   - Redes Sociales
