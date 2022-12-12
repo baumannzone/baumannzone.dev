@@ -8,12 +8,11 @@ tags:
   - Machine Learning
   - Python
   - IA
-isDraft: true
 ---
 
-Hay muchas formas de empezar a estudiar machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
+Hay muchas formas de empezar a aprender Machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
 
-Sin embargo, si acabas de sumergirte en el mundo del aprendizaje automático (esto aplica a cualquier tecnología) puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta de estudio o _roadmap_ más adelante.
+Sin embargo, si acabas de zambullirte en el mundo del aprendizaje automático (esto aplica a cualquier tecnología) puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta de estudio o _roadmap_ más adelante.
 
 Por eso, en este artículo, te voy a compartir mis **4 cursos de machine learning gratuitos favoritos**. Cada uno de ellos te aportará valor de una forma distinta y te dará su punto de vista acerca del machine learning o deep learning. Contienen una variedad de tipos de contenido, desde vídeos hasta ejercicios prácticos de código. 
 
