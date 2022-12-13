@@ -1,7 +1,7 @@
 ---
 title: 4 cursos de Machine Learning Gratis
 description: 4 cursos de Machine Learning, totalmente gratuitos, que deberías empezar a hacer ahora mismo.
-created: 2022-11-22
+created: 2022-12-13
 type: blog
 author: Jorge Baumann
 tags:
