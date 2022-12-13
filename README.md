@@ -5,7 +5,12 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+
+### https://baumannzone.dev
 My personal website and blog made with [Nuxt.js](https://nuxtjs.org/) and [TailwindCSS](https://tailwindcss.com/).
+
+
+
 
 ## Build Setup
 
