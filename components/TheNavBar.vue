@@ -99,6 +99,7 @@
                   pr-3
                   py-2
                   border border-gray-300
+                  dark:border-gray-600
                   rounded-md
                   leading-5
                   bg-white

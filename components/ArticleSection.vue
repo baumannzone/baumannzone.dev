@@ -16,7 +16,7 @@
         max-w-lg
         mx-auto
         divide-y-2 divide-gray-200
-        dark:divide-gray-500
+        dark:divide-gray-700
         lg:max-w-7xl
       "
     >

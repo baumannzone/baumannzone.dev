@@ -81,6 +81,7 @@
               text-gray-500
               dark:text-gray-300
               text-left
+              mr-2
             "
           >
             Editado el {{ formatDateUpdatedAt }}
@@ -220,7 +221,7 @@ export default {
 }
 
 .nuxt-content .nuxt-content-highlight .filename {
-  @apply absolute right-0 mr-3 -mt-3 font-light text-sm bg-purple-100 px-2 pt-0 rounded text-purple-600 dark:bg-purple-800 dark:text-purple-100;
+  @apply absolute right-0 mr-1 mt-1 font-light text-sm bg-gray-200 px-2 pt-0 rounded text-purple-500 dark:bg-gray-700 dark:text-purple-400 font-mono;
 }
 
 .article-width {

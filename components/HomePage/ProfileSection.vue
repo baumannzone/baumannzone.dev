@@ -6,7 +6,7 @@
         class="
           max-w-7xl
           bg-white
-          dark:bg-gray-900 dark:text-gray-100
+          dark:bg-gray-700 dark:text-gray-100
           mx-auto
           px-2
           sm:px-4
@@ -30,9 +30,9 @@
             Senior Full Stack Developer en One Beyond
           </p>
           <p class="font-light text-xl mt-4 mx-8 md:mx-16">
-            Ingeniero de software y creador de contenido. Apasionado del open
-            source y de las comunidades. Disfruta haciendo live-coding en
-            twitch.
+            Ingeniero de software y creador de contenido tech. Apasionado del
+            desarrollo web y de las comunidades. Disfruta enseñando y
+            aprendiendo.
           </p>
         </header>
         <div class="flex justify-center px-4 pt-4 pb-8">
@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     socialIconsParsed() {
-      const { linkedin, facebook, devTo, codepen, github, ...items } =
+      const { linkedin, facebook, devTo, codepen, github, mastodon, ...items } =
         socialIcons
       return items
     },
