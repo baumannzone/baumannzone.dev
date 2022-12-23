@@ -100,8 +100,6 @@ Una IIFE se compone de dos partes:
 Para crear una IIFE, lo primero que vas a hacer es crear una expresión de función, como sueles hacerlo normalmente:
 
 ```js[JavaScript]
-
-```js[JavaScript]
 const myFunction = function () {
   console.log('Hello, Developer! 👋');
 };
