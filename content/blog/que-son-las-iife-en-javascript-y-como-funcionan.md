@@ -86,6 +86,7 @@ Los paréntesis `()` juegan un papel importante en el patrón IIFE. En JavaScrip
 
 // Válido
 (2 + 2)
+(!false)
 (alert('baumannzone.dev'))
 ```
 
@@ -181,13 +182,13 @@ Al agrupar código relacionado dentro de una IIFE, puedes mejorar la legibilidad
 
 Las IIFE son útiles en diversos casos, pero hay algunas situaciones en las que es recomendable evitar su uso:
 
-- Cuando no se necesita aislar el ámbito de las variables: Si la función no utiliza variables que puedan entrar en conflicto con otras del mismo nombre, o si no se requiere crear un ámbito privado para evitar el acceso a ciertas variables, entonces no tiene sentido utilizar una IIFE.
+- **Cuando no se necesita aislar el ámbito de las variables**: Si la función no utiliza variables que puedan entrar en conflicto con otras del mismo nombre, o si no se requiere crear un ámbito privado para evitar el acceso a ciertas variables, entonces no tiene sentido utilizar una IIFE.
 
-- Cuando se necesita reutilizar la función: Si la intención es utilizar la función en más de un lugar del código, es mejor definirla de manera explícita y luego invocarla cuando sea necesario, en lugar de utilizar una IIFE.
+- **Cuando se necesita reutilizar la función**: Si la intención es utilizar la función en más de un lugar del código, es mejor definirla de manera explícita y luego invocarla cuando sea necesario, en lugar de utilizar una IIFE.
 
-- Cuando se necesita pasar parámetros a la función: Aunque es posible pasar parámetros a una IIFE, es más sencillo hacerlo cuando la función está definida de manera explícita.
+- **Cuando se necesita pasar parámetros a la función**: Aunque es posible pasar parámetros a una IIFE, es más sencillo hacerlo cuando la función está definida de manera explícita.
 
-- Cuando se quiere crear una función de manera más legible: Aunque las IIFE son útiles para minimizar el código, pueden dificultar la lectura y entendimiento del mismo, especialmente cuando la función es larga o complicada. En estos casos, es mejor definir la función de manera explícita.
+- **Cuando se quiere crear una función de manera más legible**: Aunque las IIFE son útiles para minimizar el código, pueden dificultar la lectura y entendimiento del mismo, especialmente cuando la función es larga o complicada. En estos casos, es mejor definir la función de manera explícita.
 
 Es importante tener en cuenta que las IIFE son una herramienta más en el arsenal de un programador JavaScript, y deben utilizarse cuando se ajusten a las necesidades del código en cuestión.
 
@@ -256,12 +257,13 @@ new function (){}();
 
 true && function (){}();
 42,function (){}();
-// ...
+
+// etc
 ```
 
 Podríamos seguir con más formas de escribir una IIFE, pero con estas ya tienes suficiente para entender el concepto. Lo importante aquí es que entiendas cómo funciona JavaScript y la **coerción de tipos**.
 
-La mayoría de formas alternativas no las vas a usar, ya que son formas de escribir código confusas, usadas cuando haces **golfing**, o minificar código JavaScript.
+La mayoría de formas alternativas no las vas a usar, ya que son formas de escribir código bastante confusas, pero usadas a menudo cuando haces **code golfing** o para minificar código.
 
 
 ## ¿Quieres seguir aprendiendo?
