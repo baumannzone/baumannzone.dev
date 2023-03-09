@@ -10,7 +10,7 @@ tags:
   - Design Patterns
 ---
 
-Cuando estas desarrollando con JavaScript, existe la posibilidad de que haya una función o variable con el mismo nombre en otros archivos JavaScript escritos por otros desarrolladores o en librerías de terceros. Si incluyes estos archivos en una sola página web, puede ser que se contamine el _scope global_ teniendo varias funciones o variables con el mismo nombre.
+Cuando estás desarrollando con JavaScript, existe la posibilidad de que haya una función o variable con el mismo nombre en otros archivos JavaScript escritos por otros desarrolladores o en librerías de terceros. Si incluyes estos archivos en una sola página web, puede ser que se contamine el _scope global_ teniendo varias funciones o variables con el mismo nombre.
 
 Tomemos como ejemplo dos archivos JavaScript que contienen una función con el mismo nombre:
 
