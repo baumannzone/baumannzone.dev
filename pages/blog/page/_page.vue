@@ -16,7 +16,7 @@ export default {
   components: { ArticleSection, ThePagination },
   async asyncData({ $content, params, error }) {
     const currentPage = parseInt(params.page)
-    const perPage = 4
+    const perPage = 10
     const allPosts = await $content('blog')
       .where({ isDraft: { $ne: true } })
       .fetch()
