@@ -1,5 +1,5 @@
 ---
-title: El juego del unicornio 🦄
+title: El juego del unicornio 🦄 - Solo CSS
 description: 'Creando un juego con CSS desde cero. El juego del unicornio es un mini juego creado completamente con CSS y HTML. ¿Es posible crear un juego con CSS? ¿Cuáles son los límites del lenguaje?'
 created: 2021-12-01
 type: blog
