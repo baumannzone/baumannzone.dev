@@ -98,7 +98,32 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    hostname: 'https://baumannzone.dev',
+    exclude: [
+      '/admin/**',
+      '/admin',
+      '/openbootcamp',
+      '/patrocinio',
+      '/tags',
+      '/tags/**',
+    ],
+    routes: async () => {
+      const routes = []
+      const { $content } = require('@nuxt/content')
+      const posts = await $content('blog').fetch()
+      const blogRoutes = posts.map((post) => `/blog/${post.slug}`)
+      const blogPages = Math.ceil(blogRoutes.length / 10)
+      const blogPagination = Array.from({ length: blogPages }).map(
+        (_, index) => `/blog/page/${index + 1}`
+      )
+      routes.push(...blogRoutes, ...blogPagination)
+      return routes
+    },
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
