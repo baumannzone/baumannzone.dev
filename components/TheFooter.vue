@@ -165,7 +165,13 @@ const sectionItems = navItems.map((i) => ({
 const footerItems = [
   {
     title: 'Secciones',
-    items: sectionItems,
+    items: [
+      ...sectionItems,
+      {
+        name: 'Sitemap',
+        to: '/sitemap.xml',
+      },
+    ],
   },
   {
     title: 'Apóyame',
