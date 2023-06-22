@@ -254,4 +254,8 @@ export default {
 span.token.operator {
   @apply bg-transparent;
 }
+
+.prose hr {
+  @apply dark:border-gray-700;
+}
 </style>
