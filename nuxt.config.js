@@ -103,14 +103,7 @@ export default {
 
   sitemap: {
     hostname: 'https://baumannzone.dev',
-    exclude: [
-      '/admin/**',
-      '/admin',
-      '/openbootcamp',
-      '/patrocinio',
-      '/tags',
-      '/tags/**',
-    ],
+    exclude: ['/patrocinio', '/tags', '/tags/**'],
     routes: async () => {
       const routes = []
       const { $content } = require('@nuxt/content')

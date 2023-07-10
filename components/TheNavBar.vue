@@ -202,6 +202,7 @@
         </NuxtLink>
       </div>
     </div>
+    <div class="border-b-purple-50 border-b-2"></div>
   </nav>
 </template>
 

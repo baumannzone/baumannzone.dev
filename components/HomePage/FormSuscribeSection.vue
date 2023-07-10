@@ -36,11 +36,12 @@
               type="email"
               required
               name="member[email]"
+              disabled
               autocomplete="email"
               placeholder="Email"
               class="
                 w-full
-                dark:text-gray-100 dark:bg-gray-800
+                dark:text-gray-100 dark:bg-gray-400
                 border-white
                 dark:border-gray-500
                 px-5
@@ -65,6 +66,7 @@
               type="submit"
               value="Subscribe"
               name="subscribe"
+              disabled
               class="
                 mt-3
                 w-full
@@ -74,26 +76,26 @@
                 px-5
                 py-3
                 border border-transparent
-                shadow
                 text-base
                 font-medium
                 rounded-md
                 text-white
-                bg-purple-500
-                hover:bg-purple-400
+                bg-gray-500
                 focus:outline-none
                 focus:ring-2
                 focus:ring-offset-2
                 focus:ring-offset-purple-700
                 focus:ring-white
                 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0
+                cursor-not-allowed
               "
             >
               Suscríbete
             </button>
           </form>
           <p class="mt-3 text-sm text-purple-200 xl:text-right">
-            Al suscribirse, acepta los
+            Temporalmente desactivado. Seguiremos informando.
+            <!-- Al suscribirse, acepta los
             <a
               target="_blank"
               href="https://www.getrevue.co/terms"
@@ -111,7 +113,7 @@
             >
               Política de Privacidad</a
             >
-            de Revue.
+            de Revue. -->
           </p>
         </div>
       </div>
