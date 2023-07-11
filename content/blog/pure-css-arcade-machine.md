@@ -12,7 +12,7 @@ tags:
 
 Tengo algo especial para compartir contigo. Por un momento, deja a un lado las herramientas gráficas y las técnicas de dibujo modernas. Acompáñame, vamos a retroceder en el tiempo y dar un paseo por los pasillos de las salas de juegos de los años 80. ¿Lo mejor? Todo esto es posible gracias a nuestro querido y versátil lenguaje: **CSS**. ✨
 
-En esta aventura, he creado nada más y nada menos que una máquina de arcade, completamente elaborada con CSS. Cada pixel, cada matiz de color y cada minúscula animación se ha construido desde cero usando solo CSS. Creéme, no hay imágenes ni SVGs. Solo CSS.
+En esta aventura, he creado nada más y nada menos que una máquina de arcade, completamente elaborada con CSS. Cada pixel, cada matiz de color y cada minúscula animación se ha construido desde cero usando solo CSS. Creéme, no hay imágenes ni SVGs. ¡Solo CSS! 🤯
 
 ![Máquina arcade CSS](/blog/pure-css-arcade-machine/arcade.png)
 
@@ -24,3 +24,11 @@ No se trata solo de las horas dedicadas a este proyecto, sino también de la inn
 Aunque el camino no fue fácil, el resultado final fue muy satisfactorio. ¡Mira cómo se ve la máquina arcade en acción! 
 
 ![Máquina arcade CSS](/blog/pure-css-arcade-machine/arcade.gif)
+
+## Enlaces de interés
+- Código fuente en Codepen de la [máquina arcade CSS](https://codepen.io/baumannzone/pen/OJWddaa)
+- Publicación en Instagram: https://www.instagram.com/p/CQ9Z3Y7o9Zo/
+- Ilustración original en Dribbble: https://dribbble.com/shots/3394419-Pacman/
+
+## ¿Por qué hago dibujos con CSS?
+Si quieres saber **por qué hago dibujos** con CSS, te lo explico en este [artículo](/blog/dibujar-con-css/).
