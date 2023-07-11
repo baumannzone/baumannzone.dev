@@ -1,7 +1,7 @@
 ---
 title: Pure CSS Arcade Machine 🕹️
 description: Dibujando una máquina arcade con CSS puro y duro. Sin imágenes ni SVGs. Solo CSS. ¿Te ves capaz de hacerlo? Incluye pacman animado. 👾
-created: 2022-07-10
+created: 2023-07-10
 type: css-art
 author: Jorge Baumann
 tags:
