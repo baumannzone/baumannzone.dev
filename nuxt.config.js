@@ -15,7 +15,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Artículos, guías y vídeos sobre Desarrollo Web y contenido FullStack con JavaScript',
+          'Artículos, trucos y recursos sobre desarrollo web y contenido FullStack con JavaScript',
       },
       {
         hid: 'og:type',
