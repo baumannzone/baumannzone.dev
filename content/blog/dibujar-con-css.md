@@ -76,6 +76,7 @@ Aquí tienes algunos ejemplos de dibujos con CSS que he hecho a lo largo de los 
 
 - Pure CSS Arcade Machine: https://www.instagram.com/p/CPMQztrD05t/
   ![Pure CSS Arcade Machine](/blog/dibujar-con-css/arcade.png)
+  Lee el artículo completo aquí: (Pure CSS Arcade Machine)[/blog/pure-css-arcade-machine/]
 
 - Pure CSS Portal Cube: https://www.instagram.com/p/CR3TOJXqmni/
   ![Pure CSS Portal Cube](/blog/dibujar-con-css/portal-cube.png)
