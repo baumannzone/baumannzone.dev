@@ -40,7 +40,7 @@ Si tus tests tardan más en escribirse y en mantenerse que el tiempo que te ahor
 
 Sin embargo, en proyectos estables, grandes y de larga duración, tener pruebas automáticas da sus frutos. Pero te aviso, seguramente no necesites tantos tests como crees.
 
-![Bugs have feelings too](/blog/la-falacia-del-100-code-coverage/feelings.jpg)
+[![Bugs have feelings too](/blog/la-falacia-del-100-code-coverage/feelings.jpg)](http://cartoontester.blogspot.com/2010/03/bug-advocacy.html)
 
 
 ## El mito del 100% Code Coverage
