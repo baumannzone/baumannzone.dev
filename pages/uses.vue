@@ -110,7 +110,7 @@
         <div class="mt-8 lg:mt-0">
           <div class="mx-auto text-base max-w-prose lg:max-w-none">
             <p class="text-lg text-gray-500 dark:text-gray-300">
-              Todas las semanas me pregutan acerca de alguna aplicación de
+              Todas las semanas me preguntan acerca de alguna aplicación de
               software que utilizo o alguna pieza o gadget de hardware que
               tengo.
             </p>
