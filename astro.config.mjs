@@ -9,6 +9,11 @@ export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
-    theme: 'github-light',
+    shikiConfig: {
+      themes: {
+        dark: 'catppuccin-frappe',
+        light: 'one-light',
+      },
+    },
   },
 });
