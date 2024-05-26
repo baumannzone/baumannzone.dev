@@ -9,30 +9,32 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <DefaultLayout>
-  <section>
-    <ul>
+  <section class='mx-auto max-w-7xl px-6 lg:px-8'>
+    <ul class='mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12'>
       {
         posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}/`}>
-              {/* <img
+            <article>
+              <a href={`/blog/${post.slug}/`}>
+                {/* <img
                     width={720}
                     height={360}
                     src={post.data.heroImage}
                     alt=''
                   /> */}
-              <h4 class='title'>{post.data.title}</h4>
-              <p class='date'>
-                <FormattedDate date={post.data.pubDate} />
-              </p>
-              <ul>
-                {post.data.tags &&
-                  post.data.tags.map((tag) => (
-                    <li class='inline-block mr-2'>{tag}</li>
-                  ))}
-              </ul>
-            </a>
-            <div class='mb-10' />
+                <h4 class='title'>{post.data.title}</h4>
+                <p class='date'>
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+                <ul>
+                  {post.data.tags &&
+                    post.data.tags.map((tag) => (
+                      <li class='inline-block mr-2'>{tag}</li>
+                    ))}
+                </ul>
+                <p class='description'>{post.data.description}</p>
+              </a>
+            </article>
           </li>
         ))
       }

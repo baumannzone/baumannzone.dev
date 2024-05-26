@@ -57,32 +57,32 @@ Estás viendo las huellas de un ser indomable, una mente que se negó a aceptar 
 Aquí tienes algunos ejemplos de dibujos con CSS que he hecho a lo largo de los años. La mayoria son animados, así que te recomiendo que los veas en Instagram:
 
 - Pure CSS Alpaca: https://www.instagram.com/p/CLAmQbwqsdl/
-  ![Pure CSS Alpaca](/blog/dibujar-con-css/alpaca.png)
+  ![Pure CSS Alpaca](../../assets/blog/dibujar-con-css/alpaca.png)
 
 - Pure CSS Baby Yoda: https://www.instagram.com/p/CL4wOUisfzz/
-  ![Pure CSS Baby Yoda](/blog/dibujar-con-css/baby-yoda.png)
+  ![Pure CSS Baby Yoda](../../assets/blog/dibujar-con-css/baby-yoda.png)
 
 - Pure CSS Baby Groot: https://www.instagram.com/p/CMMFY6rI7XB/
-  ![Pure CSS Baby Root](/blog/dibujar-con-css/baby-groot.gif)
+  ![Pure CSS Baby Root](../../assets/blog/dibujar-con-css/baby-groot.gif)
 
 - Pure CSS Deadpool: https://www.instagram.com/p/CMvH7xsqubq/
-  ![Pure CSS Deadpool](/blog/dibujar-con-css/deadpool.png)
+  ![Pure CSS Deadpool](../../assets/blog/dibujar-con-css/deadpool.png)
 
 - Pure CSS Totoro: https://www.instagram.com/p/CNn2TizKMx3/
-  ![Pure CSS Totoro](/blog/dibujar-con-css/totoro.png)
+  ![Pure CSS Totoro](../../assets/blog/dibujar-con-css/totoro.png)
 
 - Pure CSS Viking: https://www.instagram.com/p/COLCLo5qPH1/
-  ![Pure CSS Viking](/blog/dibujar-con-css/viking.png)
+  ![Pure CSS Viking](../../assets/blog/dibujar-con-css/viking.png)
 
 - Pure CSS Arcade Machine: https://www.instagram.com/p/CPMQztrD05t/
-  ![Pure CSS Arcade Machine](/blog/dibujar-con-css/arcade.png)
+  ![Pure CSS Arcade Machine](../../assets/blog/dibujar-con-css/arcade.png)
   Lee el artículo completo aquí: (Pure CSS Arcade Machine)[/blog/pure-css-arcade-machine/]
 
 - Pure CSS Portal Cube: https://www.instagram.com/p/CR3TOJXqmni/
-  ![Pure CSS Portal Cube](/blog/dibujar-con-css/portal-cube.png)
+  ![Pure CSS Portal Cube](../../assets/blog/dibujar-con-css/portal-cube.png)
 
 - Pure CSS Squid Game Soldier: https://codepen.io/baumannzone/full/NWvyZgy
-  ![Pure CSS Squid Game Soldier](/blog/dibujar-con-css/squid-game.png)
+  ![Pure CSS Squid Game Soldier](../../assets/blog/dibujar-con-css/squid-game.png)
 
 Por ultimo, un listado de proyectos en codepen con algunos de los mejores dibujos con CSS que he hecho: https://codepen.io/collection/AOYoNV
 
