@@ -1,0 +1,105 @@
+---
+title: El juego del unicornio 🦄 - Solo CSS
+description: 'Creando un juego con CSS desde cero. El juego del unicornio es un mini juego creado completamente con CSS y HTML. ¿Es posible crear un juego con CSS? ¿Cuáles son los límites del lenguaje?'
+pubDate: 2021-12-01
+type: blog
+author: Jorge Baumann
+tags:
+  - CSS
+  - HTML
+  - Juego
+---
+
+CSS no es un lenguaje de programación como lo es, por ejemplo, JavaScript. A nadie se le ocurriría crear un juego con CSS; no es algo muy sensato. Sin embargo, esta es la parte divertida. Al igual que cuando hacemos dibujos con CSS en [twitch](https://twitch.tv/baumannzone), se trata de experimentar y exprimir el lenguaje.
+  
+En este artículo me gustaría explorar los límites del lenguaje CSS. Quiero ver si es posible crear un juego con CSS sin usar JavaScript, escribiendo solo HTML y CSS. ¿Qué te parece?
+
+## 🦄 Antonio, el unicornio
+
+[Antonio](https://youtu.be/x2kLLNFh-1k) es el nombre con el que la comunidad, a través de una encuesta, bautizó al unicornio que fue creado durante un streaming en mi canal de [twitch](https://twitch.tv/baumannzone) usando solo HTML y CSS.
+
+Antonio buscaba una vida llena de alegría y color. Le gustaba explorar el mundo y dar largos paseos por las nubes; contemplar las estrellas y sentir la brisa en la cara era algo que le encantaba.  
+En uno de esos paseos, se despistó y se desorientó. De repende no sabía dónde estaba, no entendía que estaba pasando. Cuando se dio cuenta, vio que estaba atrapado en una mazmorra de la que no sabía salir.
+
+## Objetivo del juego
+El objetivo del juego es guiar al unicornio hasta el final de la mazmorra, usando el _ratón_ de tu ordenador. El único inconveniente es que las paredes de la mazmorra están malditas y el unicornio morirá si las toca.  
+Estoy seguro de que no quieres que la culpa de la muerte del unicornio recaiga sobre ti.
+  
+## Controles del juego
+Para jugar al _juego del unicornio_ solo necesitas el ratón, una mente fría y un poco de destreza. En cuanto pongas el cursor sobre el triangulo verde, la pantalla empezará a moverse y el juego habrá empezado.  
+Recuerda, no se pueden tocar las paredes.
+
+## El juego
+
+<blog-unicorn-game></blog-unicorn-game>
+
+## HTML
+La estructura HTML del juego es la siguiente:
+
+```html
+<div class="game">
+  <div class="dungeon">
+    <div class="dungeon-wall-left"></div>
+    <div class="dungeon-wall-right"></div>
+    <div
+      class="n00b"
+      data-text="El pobre unicornio ha muerto por tu culpa ☠️ ☠️ ☠️"
+    />
+    <div
+      class="gg"
+      data-text="¡Bien hecho! 🎉 El unicornio ha escapado 🌈 🌈 🌈"
+    />
+  </div>
+</div>
+```
+
+La capa `.game`, es la capa contenedora del juego. Dentro de esta es donde estará la magia ✨.  
+La capa `.dungeon` es la capa principal, la que le da perspectiva 3D al juego, queriendo simular un efecto de punto de fuga.  
+Las capas `.dungeon-wall-left` y `.dungeon-wall-right` son las capas que representan las paredes de la mazmorra.  
+La capa `.n00b` es la capa que se verá cuando pierdas. Contiene el texto que se muestra cuando tocas las paredes malditas.  
+La capa `.gg` es la capa que verás si ganas. Contiene el texto que se muestra cuando el unicornio consigue salir de la mazmorra.  
+
+
+## CSS
+
+Para crear el juego usaremos, entre otras cosas:
+
+- `clip-path` para darle la forma a las paredes.
+- `transform` para el desplazamiento y efecto 3D.
+- `animation` y `@keyframes` para mover y animar los elementos.
+- Pseudo-elementos y funciones de CSS. 🤯
+
+
+La capa `.game` es solo el contenedor del juego. La capa `.dungeon` le da ese toque de perspectiva al juego.  
+Las paredes de la mazmorra usan `background-image` con SVG para simular los ladrillos, que hemos recortado y dado forma con `clip-path`.
+
+El juego comienza cuando pones el ratón en el triángulo verde: las paredes empiezan a moverse, [el cursor](https://baumannzone.github.io/cursores-css/) se convierte en un unicornio y se inicia la animación que muestra la pantalla de victoria. 
+
+El truco del juego es sencillo. Si tocas las paredes de la mazmorra (`:hover`), se muestra la pantalla de derrota. Si consigues salir de la mazmorra, se muestra la pantalla de victoria. Es así porque la animación de mostrar pantalla de victoria tiene 5 segundos de _delay_, que coincide con la duración del juego.  
+Es decir que cuando llegas al final de la mazmorra ha pasado el tiempo necesario para que se muestre la pantalla de victoria.
+
+```css
+/* Mueve las paredes durante 5 segundos */
+.dungeon:hover .dungeon-wall-left,
+.dungeon:hover .dungeon-wall-right {
+  animation: move-walls 5s linear;
+}
+
+/* Muestra la pantalla de victoria despues de 5 segundos */
+.dungeon:hover .gg {
+  animation: show-gg 0s 5s linear forwards;
+}
+```
+
+Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece super potente esta función de CSS!
+
+```css
+.gg::after,
+.n00b::after {
+  /* ... */
+  content: attr(data-text);
+}
+```
+
+Esto es todo lo que necesitas saber para crear un juego con CSS. Ahora te toca jugar y ver qué pasa.  
+¡Que lo disfrutes!
