@@ -89,11 +89,12 @@ Por ultimo, un listado de proyectos en codepen con algunos de los mejores dibujo
 ## ¿Quién más dibuja con CSS?
 Somos pocos, pero aquí tienes algunas cuentas que te recomiendo seguir si te interesan los dibujos con CSS (**SPOILER**: lo vas a flipar):
 
-- Jhey: https://twitter.com/jh3yy
-- Carmen Ansio: https://twitter.com/carmenansio
-- T. Afif: https://twitter.com/ChallengesCss
-- Alvaro Montoro: https://twitter.com/alvaro_montoro
-- Kass: https://twitter.com/KassandraSanch
+- Jhey: https://x.com/jh3yy
+- Carmen Ansio: https://x.com/carmenansio
+- T. Afif: https://x.com/ChallengesCss
+- Alvaro Montoro: https://x.com/alvaro_montoro
+- Kass: https://x.com/KassandraSanch
+- Baumannzone: https://x.com/baumannzone
 
 ¿Conoces a alguien más? ¡Déjalo en los comentarios!
 

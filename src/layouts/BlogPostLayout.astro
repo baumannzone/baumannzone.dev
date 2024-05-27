@@ -7,7 +7,13 @@ import NavBar from '../components/NavBar.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  // heroImage
+} = Astro.props;
 ---
 
 <html lang='es'>
@@ -19,32 +25,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <NavBar />
     <main class=''>
       <article class='prose prose-xl'>
-        <div class='hero-image'>
+        <!-- <div class='hero-image'>
           {
             heroImage && (
               <img width={1020} height={510} src={heroImage} alt='' />
             )
-          }
-        </div>
-        <div class=''>
-          <div class='title'>
-            <div class='date'>
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class='last-updated-on'>
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-            <hr />
-          </div>
-          <slot />
-        </div>
+          } -->
       </article>
+      <div class=''>
+        <div class='title'>
+          <div class='date'>
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class='last-updated-on'>
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1>{title}</h1>
+          <hr />
+        </div>
+        <slot />
+      </div>
     </main>
+
     <Footer />
   </body>
 </html>
