@@ -12,7 +12,8 @@ const {
   description,
   pubDate,
   updatedDate,
-  // heroImage
+  // heroImage,
+  tags,
 } = Astro.props;
 ---
 
@@ -23,32 +24,40 @@ const {
 
   <body>
     <NavBar />
-    <main class=''>
-      <article class='prose prose-xl'>
-        <!-- <div class='hero-image'>
+    <main class='px-4 py-8'>
+      <header class='max-w-prose mx-auto'>
+        <div class='text-gray-500 text-xs'>
+          <FormattedDate date={pubDate} />
           {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt='' />
+            updatedDate && (
+              <div>
+                Actualizado el <FormattedDate date={updatedDate} />
+              </div>
             )
-          } -->
-      </article>
-      <div class=''>
-        <div class='title'>
-          <div class='date'>
-            <FormattedDate date={pubDate} />
-            {
-              updatedDate && (
-                <div class='last-updated-on'>
-                  Last updated on <FormattedDate date={updatedDate} />
-                </div>
-              )
-            }
-          </div>
-          <h1>{title}</h1>
-          <hr />
+          }
         </div>
+        <h1 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+          {title}
+        </h1>
+        {
+          tags && (
+            <ul class='flex gap-x-4 text-xs mt-4 mb-8'>
+              {tags.map((tag) => (
+                <li>
+                  <a href={`/tags/${tag}`}>
+                    <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'>
+                      {tag}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </header>
+      <article class='prose prose-violet prose-lg mx-auto mb-16'>
         <slot />
-      </div>
+      </article>
     </main>
 
     <Footer />

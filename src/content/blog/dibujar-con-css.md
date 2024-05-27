@@ -4,9 +4,7 @@ description: "¿Dibujar con CSS? Eso me preguntan a menudo. ¿En serio? ¿Por qu
 pubDate: 2023-07-11
 type: blog
 author: Jorge Baumann
-tags:
-  - CSS
-  - Personal
+tags: ["CSS", "personal"]
 ---
 
 Oh, **"dibujar con CSS"**, sí, por supuesto. Esa grandiosa idea de hacer que tu navegador se parezca más a un lienzo de Picasso que a un sitio web. Es básicamente como coger un martillo para ajustar un reloj. Puede funcionar, pero ¿es realmente la herramienta correcta para el trabajo?
@@ -47,7 +45,7 @@ Pero, por supuesto, no olvidemos el verdadero espíritu detrás de este desafío
 
 Se trata de coger este humilde instrumento y decir: "_No, no te conformes con tus fronteras, CSS. Puedes ser más que un color de fondo, puedes ser arte_".
 
-Llevamos CSS más allá de sus convencionalismos mundanos y sumergiéndolo en la euforia de lo absurdo. Cada `<div>`, cada línea de código, se convierte en una prueba de los límites de tu creatividad. 
+Llevamos CSS más allá de sus convencionalismos mundanos y lo sumergimos en la euforia de lo absurdo. Cada `<div>`, cada línea de código, se convierte en una prueba de los límites de tu creatividad. 
 Es el enfoque de un hacker, desafiando las reglas, explorando las posibilidades, forzando a un lenguaje diseñado para lo mundano a convertirse en algo extraordinario, mágico.
 
 Así que, cuando veas una ilustración de _La Gioconda_ hecha con puro CSS, recuerda, no estás viendo solo una imagen.
@@ -102,7 +100,7 @@ Así que ya sabes, **dibujar con CSS**: una excelente forma de demostrar tus hab
 
 
 ## Nota final
-Espero que este post te haya inspirado a adentrarte en el arte de "dibujar con CSS" y te motive a embarcarte en tu propia aventura creativa. Y recuerda, en el mundo del código, ¡las únicas limitaciones son las que te impones tú mismo!
+Espero que este post te haya inspirado a adentrarte en el arte de "dibujar con CSS" y te motive a embarcarte en tu propia aventura creativa. Recuerda, en el mundo del código, ¡las únicas limitaciones son las que tú mismo te impones!
 
 
 <small>**Extra**: enlace a La Gioconda en CSS: https://codepen.io/jaysalvat/full/kazzOj</small>

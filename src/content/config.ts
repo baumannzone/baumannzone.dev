@@ -12,8 +12,9 @@ const blog = defineCollection({
     // heroImage: z.string().optional(),
     pubslished: z.boolean().optional().default(true),
     tags: z.array(z.string()).optional(),
-    category: z.string().optional(),
+    category: z.string().max(1).optional(),
     author: z.string().optional().default('Jorge Baumann'),
+    authorImage: z.string().optional(),
   }),
 });
 

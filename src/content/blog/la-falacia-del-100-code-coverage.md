@@ -1,6 +1,6 @@
 ---
 title: La falacia del 100% Code Coverage
-description: ¿Quieres saber la que relación tiene el queso Emmental con la generación Z, los unicornios, la IA y el testing con JavaScript? Sigue leyendo y lo descubrirás.
+description: ¿Qué relación tiene el queso Emmental con la generación Z, los unicornios, la IA y el testing con JavaScript? Te lo cuento.
 pubDate: 2023-07-18
 type: blog
 author: Jorge Baumann
@@ -10,7 +10,7 @@ tags:
   - Code Coverage
 ---
 
-En el escrito de hoy te voy a hablar de la cobertura de código (más conocida como Code Coverage en inglés) y por qué es tan importante.
+En este escrito te hablo de la cobertura de código (más conocida como Code Coverage en inglés) y de por qué es tan importante.
 
 ## Code Coverage, ¿qué es?
 
