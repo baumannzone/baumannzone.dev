@@ -19,15 +19,18 @@ const posts = (await getCollection('blog')).sort(
             <article class='min-h-full'>
               <div class='group relative max-w-xl'>
                 <div class='flex items-center gap-x-4 text-xs'>
-                  <time datetime='2020-03-16' class='text-gray-500'>
+                  <time
+                    datetime={post.data.pubDate.toISOString()}
+                    class='text-gray-500'
+                  >
                     <FormattedDate date={post.data.pubDate} />
                   </time>
-                  {post.data.tags &&
+                  <!-- {post.data.tags &&
                     post.data.tags.map((tag) => (
                       <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'>
                         {tag}
                       </span>
-                    ))}
+                    ))} -->
                 </div>
                 <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
                   <a href={`/blog/${post.slug}/`}>

@@ -1,6 +1,6 @@
 ---
 title: ¿Sabías que tu navegador puede hablar?
-description: 'La API de Web Speech (API de voz) te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!'
+description: 'La API de voz del navegador te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!'
 pubDate: 2018-10-22
 type: blog
 author: Jorge Baumann
@@ -10,13 +10,13 @@ tags:
   - JavaScript
 ---
 
-La **Web Speech API** (API de Voz) te permite incorporar datos de voz a tus aplicaciones web, directamente desde el navegador.  
+La **Web Speech API** (API de Voz) te permite incorporar datos de voz a tus aplicaciones web, directamente desde el navegador.
 La Web Speech API tiene dos partes:
 
 - **SpeechSynthesis**: texto a voz.
 - **SpeechRecognition**: reconocimiento de voz.
 
-En este artículo vamos a explorar la parte de **SpeechSynthesis,** o API de pronunciación del navegador, o de voz, o de habla, o de…  
+En este artículo vamos a explorar la parte de **SpeechSynthesis,** o API de pronunciación del navegador, o de voz, o de habla, o de…
 Para familiarizarte con esta tecnología te recomiendo que hagas algunas pruebas en esta web: https://web-speech-api-js.netlify.com.
 
 ## API de Pronunciación del Navegador 🗣
@@ -24,12 +24,12 @@ Para familiarizarte con esta tecnología te recomiendo que hagas algunas pruebas
 No me gusta hablar de navegador modernos como si estuvieramos en 2005, pero la mayoría de navegadores modernos ya tienen implementada la **API de voz**. Usaremos esta Web API para hacer que el navegador hable.
 
 Lo primero que tienes que hacer para usar esta web API es comprobar la compatibilidad de tu navegador con dicha API.
-Si estás usando un navegador moderno y actualizado (como Chrome, Firefox o Safari) no deberías tener problema. A no ser que estés en un dispositivo móvil.  
+Si estás usando un navegador moderno y actualizado (como Chrome, Firefox o Safari) no deberías tener problema. A no ser que estés en un dispositivo móvil.
 Comprueba la compatibilidad de tu navegador en este enlace: [https://caniuse.com/#feat=speech-synthesis](https://caniuse.com/#feat=speech-synthesis).
 
 ![Captura de pantalla de Can I Use de la Web Speech API](/blog/sabias-que-tu-navegador-puede-hablar/can-i-use.png)
 
-A simple vista parece que el soporte es bastante amplio, sin embargo, tiene truco, ya que el soporte completo es limitado.  
+A simple vista parece que el soporte es bastante amplio, sin embargo, tiene truco, ya que el soporte completo es limitado.
 Esto quiere decir que algunas de las _features_ como la _voz_, el _tono_ o la _velocidad_ no están disponibles según el dispositivo, el navegador o el sistema operativo que estés utilizando.
 
 ## Demo Time
@@ -84,7 +84,7 @@ De nuevo, es tu turno. Prueba a cambiar los valores de `pitch` y `rate`.
 
 Si has intentado cambiar los valores de velocidad o tono es probable que hayas tenido algún problema, o que los valores no funcionaran como te esperabas.
 
-¿Qué pasa si intentas establecer un valor de `3` al tono (_pitch_)?  
+¿Qué pasa si intentas establecer un valor de `3` al tono (_pitch_)?
 Lo que pasa es que no funciona como es debido. Esto se debe a que te has salido del rango de valores que soporta esa propiedad.
 
 Entonces… ¿cuáles son los rangos soportados por cada una de las propiedades?
@@ -101,7 +101,7 @@ La especificación dice que los valores soportados para la velocidad van de `0.1
 
 En esta sección, verás cómo cambiar la voz del navegador con **JavaScript**.
 
-Para poder cambiar la voz por defecto de la API de voz necesitas tener cargado el listado de voces disponibles.  
+Para poder cambiar la voz por defecto de la API de voz necesitas tener cargado el listado de voces disponibles.
 Para ello tienes que acceder al método `getVoices()`.
 
 ```javascript
@@ -140,10 +140,10 @@ Este es un listado con algunas de las voces disponibles en Chrome en un Macbook 
 
 ## Briconsejos 🔧
 
-- Algunos motores de síntesis de voz pueden cambiar los valores mínimos o máximos de las propiedades.   
+- Algunos motores de síntesis de voz pueden cambiar los valores mínimos o máximos de las propiedades. 
   Por ejemplo, puede darse el caso en el que el _tono_ en vez de tener un valor máximo de `2`, solo llegue hasta `1.8`.
-- Si asignas un valor que se sale del umbral soportado por dicho atributo, se cogerá el valor por defecto.   
-  Es decir que si en el caso anterior (dónde el valor máx. del tono es `1.8`), asignamos un valor de `1.9` se cogerá el valor por defecto (`1`).  
+- Si asignas un valor que se sale del umbral soportado por dicho atributo, se cogerá el valor por defecto. 
+  Es decir que si en el caso anterior (dónde el valor máx. del tono es `1.8`), asignamos un valor de `1.9` se cogerá el valor por defecto (`1`).
   Lo mismo para la velocidad.
 - Si en algún momento la aplicación deja de funcionar, reinicia el navegador. Hay algunos problemas que no están bien documentados aún.
 - Los elementos del array de voces no son un simple objeto. Son objetos de tipo `SpeechSynthesisVoice`, ten cuidado cuando los utilices.
