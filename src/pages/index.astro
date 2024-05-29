@@ -1,10 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import BlogSection from '../components/HomePage/BlogSection.astro';
 import ProfileSection from '../components/HomePage/ProfileSection.astro';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+// Get the blog posts
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Seleccionar los tres primeros artículos
+const recentPosts = posts.slice(0, 3);
 ---
 
 <DefaultLayout>
   <ProfileSection />
-  <BlogSection />
+  <BlogSection recentPosts={recentPosts} />
 </DefaultLayout>

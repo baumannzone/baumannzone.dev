@@ -1,6 +1,6 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import { getCollection } from 'astro:content';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
@@ -18,19 +18,11 @@ const posts = (await getCollection('blog')).sort(
           <li>
             <article class='min-h-full'>
               <div class='group relative max-w-xl'>
-                <div class='flex items-center gap-x-4 text-xs'>
-                  <time
-                    datetime={post.data.pubDate.toISOString()}
-                    class='text-gray-500'
-                  >
-                    <FormattedDate date={post.data.pubDate} />
-                  </time>
-                  <!-- {post.data.tags &&
-                    post.data.tags.map((tag) => (
-                      <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'>
-                        {tag}
-                      </span>
-                    ))} -->
+                <div class='flex items-center gap-x-4'>
+                  <FormattedDate
+                    date={post.data.pubDate}
+                    className='text-gray-500 text-xs'
+                  />
                 </div>
                 <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
                   <a href={`/blog/${post.slug}/`}>
