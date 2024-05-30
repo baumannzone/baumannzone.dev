@@ -10,7 +10,9 @@ tags:
   - Juego
 ---
 
-CSS no es un lenguaje de programación como lo es, por ejemplo, JavaScript. A nadie se le ocurriría crear un juego con CSS; no es algo muy sensato. Sin embargo, esta es la parte divertida. Al igual que cuando hacemos dibujos con CSS en [twitch](https://twitch.tv/baumannzone), se trata de experimentar y exprimir el lenguaje.
+import TheUnicornGame from '../../components/blog-demo/UnicornGame.astro'
+
+CSS no es un lenguaje de programación como lo es, por ejemplo, JavaScript. A nadie se le ocurriría crear un juego con CSS. No es algo muy sensato. Sin embargo, esta es la parte divertida. Al igual que cuando hacemos dibujos con CSS en [Twitch](https://twitch.tv/baumannzone), se trata de experimentar y exprimir el lenguaje.
   
 En este artículo me gustaría explorar los límites del lenguaje CSS. Quiero ver si es posible crear un juego con CSS sin usar JavaScript, escribiendo solo HTML y CSS. ¿Qué te parece?
 
@@ -18,20 +20,18 @@ En este artículo me gustaría explorar los límites del lenguaje CSS. Quiero ve
 
 [Antonio](https://youtu.be/x2kLLNFh-1k) es el nombre con el que la comunidad, a través de una encuesta, bautizó al unicornio que fue creado durante un streaming en mi canal de [twitch](https://twitch.tv/baumannzone) usando solo HTML y CSS.
 
-Antonio buscaba una vida llena de alegría y color. Le gustaba explorar el mundo y dar largos paseos por las nubes; contemplar las estrellas y sentir la brisa en la cara era algo que le encantaba.  
+Antonio buscaba una vida llena de alegría y color. Le gustaba explorar el mundo y dar largos paseos por las nubes. Contemplar las estrellas y sentir la brisa en la cara era algo que le encantaba.  
 En uno de esos paseos, se despistó y se desorientó. De repende no sabía dónde estaba, no entendía que estaba pasando. Cuando se dio cuenta, vio que estaba atrapado en una mazmorra de la que no sabía salir.
 
 ## Objetivo del juego
-El objetivo del juego es guiar al unicornio hasta el final de la mazmorra, usando el _ratón_ de tu ordenador. El único inconveniente es que las paredes de la mazmorra están malditas y el unicornio morirá si las toca.  
-Estoy seguro de que no quieres que la culpa de la muerte del unicornio recaiga sobre ti.
+El objetivo del juego es guiar al unicornio hasta el final de la mazmorra, usando el _ratón_ de tu ordenador. El único inconveniente es que las paredes de la mazmorra están malditas y el unicornio morirá si las toca. Estoy seguro de que no quieres que la culpa de la muerte del unicornio recaiga sobre ti.
   
 ## Controles del juego
-Para jugar al _juego del unicornio_ solo necesitas el ratón, una mente fría y un poco de destreza. En cuanto pongas el cursor sobre el triangulo verde, la pantalla empezará a moverse y el juego habrá empezado.  
-Recuerda, no se pueden tocar las paredes.
+Para jugar al _juego del unicornio_ solo necesitas el ratón, una mente fría y un poco de destreza. En cuanto pongas el cursor sobre el triangulo verde, la pantalla empezará a moverse y el juego habrá empezado. Recuerda, no se pueden tocar las paredes.
 
 ## El juego
+<TheUnicornGame />
 
-<blog-unicorn-game></blog-unicorn-game>
 
 ## HTML
 La estructura HTML del juego es la siguiente:
