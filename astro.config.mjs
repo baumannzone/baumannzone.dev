@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://baumannzone.dev',
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {

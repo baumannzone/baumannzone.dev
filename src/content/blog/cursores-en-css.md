@@ -25,7 +25,7 @@ En [este sitio web](https://baumannzone.github.io/cursores-css/) tienes una guí
 [![Cursores en CSS por Baumannzone](https://raw.githubusercontent.com/baumannzone/cursores-css/main/img/og.png)](https://baumannzone.github.io/cursores-css/)
 
 ## Por diversión 🤡
-Cuando estoy haciendo alguna app y quiero gastar una broma a quienes la usan, suelo usar mucho el cursor de `none` y el de `wait`.  
+Cuando estoy haciendo alguna web y quiero gastar una broma a quienes la usan, suelo usar mucho el cursor de `none` y el de `wait`.  
 Con `none` se genera mucha confusión, pues no ves nada. Con el de `wait` se ve un símbolo de espera o de cargando, que también puede generar confusión cuando no entiendes qué se supone que está cargando. 
 
 ## Cursores en CSS
@@ -119,3 +119,5 @@ Si bien la especificación no limita el tamaño de la imagen del cursor, los nav
 En Firefox y Chromimum, las imágenes de cursor están restringidas a **32x32** píxeles. Si el emoji o la imagen es mas grande, el cursor se recortará.
 
 Esto es todo lo que necesitas saber de los cursores en CSS. Ahora, ¡a ponerlo en práctica!
+
+¡Happy cursoring! 👆

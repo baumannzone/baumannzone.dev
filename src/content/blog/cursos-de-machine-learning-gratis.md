@@ -10,13 +10,14 @@ tags:
   - IA
 ---
 
-Hay muchas formas de empezar a aprender Machine Learning (ML para los amigos). Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
+Hay muchas formas de empezar a aprender Machine Learning. Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.
 
-Sin embargo, si acabas de zambullirte en el mundillo del la IA (esto aplica a cualquier tecnología) puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta de estudio o _roadmap_ más adelante.
+Sin embargo, si acabas de zambullirte en el mundillo del la IA puede ser útil seguir un curso introductorio que te guíe a través de los conceptos básicos. Esto te dará una visión general del área en cuestión y te facilitará el poder diseñar tu propia ruta de estudio o _roadmap_ más adelante.
 
-Por eso, en este artículo, te voy a compartir mis **4 cursos de machine learning gratuitos favoritos**. Cada uno de ellos te aportará valor de una forma distinta y te dará su punto de vista acerca del machine learning o deep learning. Contienen una variedad de tipos de contenido, desde vídeos hasta ejercicios prácticos de código. 
+En este artículo, te comparto mis **4 cursos de machine learning gratuitos favoritos**. Cada uno de ellos te aportará valor de una forma distinta y te dará su punto de vista acerca del machine learning o deep learning. Contienen una variedad de tipos de contenido, desde vídeos hasta ejercicios prácticos de código. 
 
 **Leyenda**
+La leyenda que he utilizado para describir los cursos es la siguiente:
 
 - Título  
 - 🧑‍🏫 Autor/a  
@@ -72,4 +73,4 @@ En este post de inteligencia artificial y machine learning, te he compartido mis
 
 Si tienes alguna pregunta, déjamela en los comentarios. Si te ha gustado este post, compártelo con tus amigos en las redes sociales. Si quieres aprender más sobre inteligencia artificial, machine learning o programación, te invito a que conectemos en [Instagram](https://www.instagram.com/baumannzone/).
 
-¡Gracias por leerme!
+¡Happy Artificial Learning! 🤖

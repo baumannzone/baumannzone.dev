@@ -13,7 +13,7 @@ Si quieres saber cómo funciona el operador de doble signo de interrogación `??
 
 El operador de doble signo de interrogación `??` es un operador de JavaScript que devuelve la expresión del lado derecho del operador cuando la expresión del lado izquierdo es `null` o `undefined`. En caso contrario, devuelve la expresión del lado izquierdo.  
 
-![Nullish coalescing u operador de fusión nula](/blog/doble-signo-de-interrogacion-en-javascript/nullish-operator.png)
+![Nullish coalescing u operador de fusión nula](../../assets/blog/doble-signo-de-interrogacion-en-javascript/nullish-operator.png)
 
 Si `name` (_izquierda_) es `null` o `undefined`, devuelve `Guest` (_derecha_); en caso contrario, devuelve `name` (_izquierda_).
 

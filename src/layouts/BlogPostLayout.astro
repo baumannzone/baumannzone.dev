@@ -7,14 +7,7 @@ import NavBar from '../components/NavBar.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  // heroImage,
-  tags,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = Astro.props;
 ---
 
 <html lang='es'>
@@ -22,7 +15,7 @@ const {
     <BaseHead title={title} description={description} />
   </head>
 
-  <body>
+  <body class='dark:bg-gray-700'>
     <NavBar />
     <main class='px-4 py-8'>
       <header class='max-w-prose mx-auto'>
@@ -55,7 +48,9 @@ const {
           )
         }
       </header>
-      <article class='prose prose-violet prose-lg mx-auto mb-16'>
+      <article
+        class='prose prose-violet dark:prose-invert prose-lg mx-auto mb-16'
+      >
         <slot />
       </article>
     </main>

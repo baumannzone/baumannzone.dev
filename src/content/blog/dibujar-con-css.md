@@ -2,6 +2,7 @@
 title: "Dibujar con CSS"
 description: "¿Dibujar con CSS? Eso me preguntan a menudo. ¿En serio? ¿Por qué? ¿Quién lo necesita? ¿Quién lo quiere? ¿Quién lo pidió? No lo sé, pero aquí tienes mi opinión desde mi perspectiva personal y profesional."
 pubDate: 2023-07-11
+updatedDate: 2024-05-30
 type: blog
 author: Jorge Baumann
 tags: ["CSS", "personal"]
@@ -14,7 +15,7 @@ Entonces, ¿qué significa "dibujar con CSS"? Bueno, es sencillo: haces arte con
 Claro, porque cuando piensas en CSS lo primero que se te viene a la cabeza es "_arte_" y no "_ayuda, ¿por qué este `<div>` no está centrado?_".
 
 ## ¿Cómo dibujas con CSS?
-Imagínate crear un cuadrado. En vez de usar una herramienta de diseño gráfico donde puedes dibujar un cuadrado en unos segundos, te lanzas al abismo de las propiedades de CSS. Entonces acabas con algo así:
+Imagínate crear un cuadrado. En vez de usar una herramienta de diseño gráfico donde puedes dibujar un cuadrado en unos segundos, te lanzas al sin fin de las propiedades de CSS. Entonces acabas con algo así:
 
 ```html
 <style>
@@ -36,20 +37,31 @@ Cuando finalmente termines, te darás cuenta de que no puedes cambiar el tamaño
 
 ---
 
-Sin embargo, algunas personas por razones aún desconocidas por la ciencia, deciden crear maravillas artísticas con CSS. He de confesar que yo soy una de esas personas.
+A pesar de todo, hay personas que disfrutan de este proceso. Les gusta crear arte con CSS. Debo confesar que yo soy una de esas personas.
 
-¡Además, es super fácil! Solo necesitas dominar un millón de diferentes propiedades y funciones de CSS, entender completamente cómo interactúan entre sí y luego, solo entonces, podrás dibujar una ilustración sencilla que podría haberse hecho en 2 minutos con cualquier programa de diseño. ¿Fácil, verdad?
+Dibujar con CSS ¡es super fácil! Solo necesitas dominar un millón de propiedades y funciones de CSS diferentes, entender completamente cómo interactúan entre sí y luego, solo entonces, podrás dibujar una ilustración sencilla que podría haberse hecho en 5 minutos con cualquier programa de diseño. Molón, ¿verdad?
 
 ## ¿Por qué dibujas con CSS?
-Pero, por supuesto, no olvidemos el verdadero espíritu detrás de este desafío, la razón por la que nuestros audaces developers deciden enfrentar la tempestad de divs y selectores: **se trata de hackear el lenguaje**.  
+No olvidemos el verdadero espíritu detrás de este desafío, la razón principal por la 
+que decidimos enfrentarnos a latempestad de divs y selectores: **se trata de hackear el lenguaje**.
 
-Se trata de coger este humilde instrumento y decir: "_No, no te conformes con tus fronteras, CSS. Puedes ser más que un color de fondo, puedes ser arte_".
+Se trata de coger este humilde instrumento y decir: "_puedes ser más que un color de fondo, puedes ser arte_". No te conformes con tus fronteras, CSS.
 
-Llevamos CSS más allá de sus convencionalismos mundanos y lo sumergimos en la euforia de lo absurdo. Cada `<div>`, cada línea de código, se convierte en una prueba de los límites de tu creatividad. 
-Es el enfoque de un hacker, desafiando las reglas, explorando las posibilidades, forzando a un lenguaje diseñado para lo mundano a convertirse en algo extraordinario, mágico.
+Como artistas de CSS, llevamos el lenguaje más allá de sus convencionalismos y lo sumergimos en la euforia de lo absurdo. Cada `<div>` se convierte en una prueba para los límites de tu creatividad.
 
-Así que, cuando veas una ilustración de _La Gioconda_ hecha con puro CSS, recuerda, no estás viendo solo una imagen.
-Estás viendo las huellas de un ser indomable, una mente que se negó a aceptar las limitaciones. Un ser irónico, absurdo e incluso masoquista (sobre todo masoquista), pero también audaz, valiente y deslumbrante. Así es cómo veo yo realmente el arte de "dibujar con CSS".
+Somos hackers desafiando las reglas, explorando las posibilidades y forzando a un lenguaje diseñado para lo mundano a convertirse en algo mágico.
+
+Cuando veas una ilustración de _La Gioconda_ hecha con puro CSS, recuerda, no estás viendo solo una imagen. Estás viendo las huellas de un hacker, una mente que se negó a aceptar los límites. Un ser irónico e incluso masoquista (sobre todo eso), pero también valiente y deslumbrante. 
+
+Así es cómo veo yo realmente el arte de "dibujar con CSS".
+
+## Estrategias para dibujar con CSS
+- **Sin restricciones**: dibuja como quieras. No hay reglas. Solo hazlo.
+- **Code Golfing**: intenta hacer la ilustración con la menor cantidad de código posible. Por lo general es el más usado.
+- **1 Div**: intenta hacer la ilustración con un solo `<div>`.
+- **No Div**: un paso más. Intenta hacer la ilustración sin usar ningún `div`, solo con el elemento `<body>`.
+
+---
 
 ## Algunos ejemplos
 Aquí tienes algunos ejemplos de dibujos con CSS que he hecho a lo largo de los años. La mayoria son animados, así que te recomiendo que los veas en Instagram:
@@ -74,7 +86,7 @@ Aquí tienes algunos ejemplos de dibujos con CSS que he hecho a lo largo de los 
 
 - Pure CSS Arcade Machine: https://www.instagram.com/p/CPMQztrD05t/
   ![Pure CSS Arcade Machine](../../assets/blog/dibujar-con-css/arcade.png)
-  Lee el artículo completo aquí: (Pure CSS Arcade Machine)[/blog/pure-css-arcade-machine/]
+  Lee el artículo completo aquí: [Pure CSS Arcade Machine](/blog/pure-css-arcade-machine/)
 
 - Pure CSS Portal Cube: https://www.instagram.com/p/CR3TOJXqmni/
   ![Pure CSS Portal Cube](../../assets/blog/dibujar-con-css/portal-cube.png)
@@ -92,15 +104,16 @@ Somos pocos, pero aquí tienes algunas cuentas que te recomiendo seguir si te in
 - T. Afif: https://x.com/ChallengesCss
 - Alvaro Montoro: https://x.com/alvaro_montoro
 - Kass: https://x.com/KassandraSanch
+- Manz: https://x.com/manz
 - Baumannzone: https://x.com/baumannzone
 
 ¿Conoces a alguien más? ¡Déjalo en los comentarios!
 
-Así que ya sabes, **dibujar con CSS**: una excelente forma de demostrar tus habilidades de CSS, volverte loco en el proceso y probablemente cuestionarte tus decisiones de vida. 🤪
+Dibujar con CSS: una excelente forma de demostrar tus habilidades de CSS, volverte loco en el proceso y probablemente cuestionarte tus decisiones de vida. Pero, al final del día, es una forma de arte y una forma de expresión. ¡Así que sigue dibujando!
 
+--- 
 
-## Nota final
-Espero que este post te haya inspirado a adentrarte en el arte de "dibujar con CSS" y te motive a embarcarte en tu propia aventura creativa. Recuerda, en el mundo del código, ¡las únicas limitaciones son las que tú mismo te impones!
+Espero que este post te haya inspirado a adentrarte en el arte de "dibujar con CSS" y te motive a embarcarte en tu propia aventura creativa. Recuerda, ¡CSS Art no tiene límites!
 
 
 <small>**Extra**: enlace a La Gioconda en CSS: https://codepen.io/jaysalvat/full/kazzOj</small>

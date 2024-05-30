@@ -24,11 +24,11 @@ Mastodon Scheduler no es tan user friendly como otras herramientas de programaci
 
 Para poder programar publicaciones en Mastodon, lo primero que tienes que hacer es crear una aplicación en Mastodon. Para ello, accede a sección de **Desarrollo** en la página de preferencias de tu cuenta de Mastodon.
 
-![Página de preferencias de Mastodon](/blog/como-programar-publicaciones-en-mastodon/1.png)
+![Página de preferencias de Mastodon](../../assets/blog/como-programar-publicaciones-en-mastodon/1.png)
 
 Una vez en la sección de desarrollo, haz clic en **Nueva aplicación**.
 
-![Nueva aplicación en Mastodon](/blog/como-programar-publicaciones-en-mastodon/2.png)
+![Nueva aplicación en Mastodon](../../assets/blog/como-programar-publicaciones-en-mastodon/2.png)
 
 Rellena el campo **Nombre de aplicación** con el nombre que quieras. Yo he puesto "_Publicaciones-Automaticas_".
 
@@ -36,7 +36,7 @@ En el campo **Sitio web** pon la dirección del servidor de Mastodon con el que 
 
 El campo **URI para redirección** déjalo como está. Baja y dale al botón de **Envíar**.
 
-![Rellenar formulario de nueva aplicación en Mastodon](/blog/como-programar-publicaciones-en-mastodon/3.png)
+![Rellenar formulario de nueva aplicación en Mastodon](../../assets/blog/como-programar-publicaciones-en-mastodon/3.png)
 
 Una vez creada la aplicación, verás el siguiente mensaje: "_La aplicación se ha creado correctamente_".  
 Haz clic en el nombre de la aplicación que acabas de crear para entrar y ver los detalles. 
@@ -45,7 +45,7 @@ Haz clic en el nombre de la aplicación que acabas de crear para entrar y ver lo
 
 En la página de detalles de la aplicación, verás un campo llamado **Token de acceso**. Cópialo y guárdalo en un lugar seguro. 🔓 ¡No lo compartas con nadie! De lo contrario, podrían publicar contenido en tu nombre.
 
-![Token de acceso de la aplicación](/blog/como-programar-publicaciones-en-mastodon/4.png)
+![Token de acceso de la aplicación](../../assets/blog/como-programar-publicaciones-en-mastodon/4.png)
 
 ## Configurar Mastodon Scheduler
 
@@ -56,7 +56,7 @@ En la página de inicio, verás un formulario con los siguientes campos:
 - **Instance URL**: el dominio de tu servidor de Mastodon. En mi caso `techhub.social`.
 - **Access Token**: el token de acceso que acabas de copiar de la aplicación de Mastodon.
 
-![Formulario de configuración de Mastodon Scheduler](/blog/como-programar-publicaciones-en-mastodon/5.png)
+![Formulario de configuración de Mastodon Scheduler](../../assets/blog/como-programar-publicaciones-en-mastodon/5.png)
 
 Rellena los campos con los datos que has obtenido en los pasos anteriores. Una vez rellenados, haz clic en el botón **Sign in**.
 
@@ -64,7 +64,7 @@ Una vez hayas iniciado sesión, ya tendrás todo configurado para programar publ
 
 Ahora solo tienes que escribir el contenido de tu publicación y programarla para que se publique en la fecha y hora que quieras.
 
-![Programar publicación en Mastodon](/blog/como-programar-publicaciones-en-mastodon/6.png)
+![Programar publicación en Mastodon](../../assets/blog/como-programar-publicaciones-en-mastodon/6.png)
 
 Repite este proceso tantas veces como quieras para programar todas las publicaciones que necesites.
 
