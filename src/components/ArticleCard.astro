@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+import FormattedDate from './FormattedDate.astro';
+import { convertToValidURLFormat } from '../utils/index';
+
+interface Props {
+  isFeatured?: boolean;
+  isBlog?: boolean;
+  post: {
+    slug: string;
+    data: any;
+  };
+}
+
+const { post, isFeatured = false, isBlog = false } = Astro.props;
+const authorParsed = convertToValidURLFormat(post.data.author);
+console.log('🚀 ~ authorParsed:', authorParsed);
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/authors/*.avif'
+);
+
+if (!images[`/src/assets/authors/${authorParsed}.avif`])
+  throw new Error(
+    `Image does not exist in glob: "src/assets/authors/${authorParsed}*.avif"`
+  );
+---
+
+{
+  isBlog && (
+    <article class='min-h-full'>
+      <div class='group relative max-w-xl'>
+        <div class='flex items-center gap-x-4'>
+          <FormattedDate
+            date={post.data.pubDate}
+            className='text-gray-500 text-xs'
+          />
+        </div>
+        <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
+          <a href={`/blog/${post.slug}/`}>
+            <span class='absolute inset-0' />
+            {post.data.title}
+          </a>
+        </h2>
+        <p class='mt-4 text-sm leading-6 text-gray-600'>
+          {post.data.description}
+        </p>
+      </div>
+
+      <div class='mt-4 flex'>
+        {/* <a
+          href='#'
+          class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
+        >
+          <img
+            src='https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+            alt=''
+            class='h-6 w-6 flex-none rounded-full bg-gray-50'
+          />
+          {post.data.author}
+        </a> */}
+        <a
+          href='`{/blog/${post.slug}/`}'
+          class='text-sm font-semibold leading-6 text-violet-700 hover:text-violet-600'
+        >
+          Ver más &rarr;
+        </a>
+      </div>
+    </article>
+  )
+}
+
+{
+  isFeatured ? (
+    <article class='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'>
+      <div class='flex items-center gap-x-4'>
+        <FormattedDate
+          date={post.data.pubDate}
+          className='text-gray-500 text-xs'
+        />
+      </div>
+      <h2
+        id='featured-post'
+        class='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+      >
+        {post.data.title}
+      </h2>
+      <p class='mt-4 text-xl leading-8 text-gray-600'>
+        {post.data.description}
+      </p>
+      <div class='mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col'>
+        <div class='flex'>
+          <a
+            href={`/blog/${post.slug}`}
+            class='text-sm font-semibold leading-6 text-violet-600'
+            aria-describedby='featured-post'
+          >
+            Sigue leyendo <span aria-hidden='true'>&rarr;</span>
+          </a>
+        </div>
+        <div class='flex lg:border-t lg:border-gray-900/10 lg:pt-8'>
+          <span class='flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'>
+            <Image
+              src={images[`/src/assets/authors/${authorParsed}.avif`]()}
+              alt={`Author ${post.data.author}`}
+              class='h-6 w-6 flex-none rounded-full bg-gray-50'
+            />
+            {post.data.author}
+          </span>
+        </div>
+      </div>
+    </article>
+  ) : (
+    <article class='py-12'>
+      <div class='group relative max-w-xl'>
+        <div class='flex items-center gap-x-4 text-xs'>
+          <FormattedDate date={post.data.pubDate} className='text-gray-500' />
+        </div>
+        <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
+          <a href={`/blog/${post.slug}`}>
+            <span class='absolute inset-0' />
+            {post.data.title}
+          </a>
+        </h2>
+        <p class='mt-4 text-sm leading-6 text-gray-600'>
+          {post.data.description}
+        </p>
+      </div>
+      <div class='mt-4 flex'>
+        <span class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'>
+          <Image
+            src={images[`/src/assets/authors/${authorParsed}.avif`]()}
+            alt={`Author ${post.data.author}`}
+            class='h-6 w-6 flex-none rounded-full bg-gray-50'
+          />
+          {post.data.author}
+        </span>
+      </div>
+    </article>
+  )
+}

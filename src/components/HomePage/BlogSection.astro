@@ -1,11 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import FormattedDate from '../FormattedDate.astro';
-import jorgeBaumannImg from '../../assets/authors/jorge-baumann.avif';
+// import jorgeBaumannImg from '../../assets/authors/Jorge Baumann.avif';
+import ArticleCard from '../ArticleCard.astro';
+
 const { recentPosts } = Astro.props;
 const firstPost = recentPosts[0];
 const otherPosts = recentPosts.slice(1);
-
-import { Image } from 'astro:assets';
 ---
 
 <div class='bg-white py-24 sm:py-32'>
@@ -21,86 +22,13 @@ import { Image } from 'astro:assets';
     <div
       class='mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2'
     >
-      <article class='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'>
-        <div class='flex items-center gap-x-4'>
-          <FormattedDate
-            date={firstPost.data.pubDate}
-            className='text-gray-500 text-xs'
-          />
-        </div>
-        <h2
-          id='featured-post'
-          class='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
-        >
-          {firstPost.data.title}
-        </h2>
-        <p class='mt-4 text-xl leading-8 text-gray-600'>
-          {firstPost.data.description}
-        </p>
-        <div
-          class='mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col'
-        >
-          <div class='flex'>
-            <a
-              href={`/blog/${firstPost.slug}`}
-              class='text-sm font-semibold leading-6 text-violet-600'
-              aria-describedby='featured-post'
-            >
-              Sigue leyendo <span aria-hidden='true'>&rarr;</span>
-            </a>
-          </div>
-          <div class='flex lg:border-t lg:border-gray-900/10 lg:pt-8'>
-            <span
-              class='flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
-            >
-              <Image
-                src={jorgeBaumannImg}
-                alt={`Author ${firstPost.data.author}`}
-                class='h-6 w-6 flex-none rounded-full bg-gray-50'
-              />
-              {firstPost.data.author}
-            </span>
-          </div>
-        </div>
-      </article>
+      <ArticleCard isFeatured post={firstPost} />
 
       <div
         class='mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0'
       >
         <div class='-my-12 divide-y divide-gray-900/10'>
-          {
-            otherPosts.map((post) => (
-              <article class='py-12'>
-                <div class='group relative max-w-xl'>
-                  <div class='flex items-center gap-x-4 text-xs'>
-                    <FormattedDate
-                      date={post.data.pubDate}
-                      className='text-gray-500'
-                    />
-                  </div>
-                  <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
-                    <a href={`/blog/${post.slug}`}>
-                      <span class='absolute inset-0' />
-                      {post.data.title}
-                    </a>
-                  </h2>
-                  <p class='mt-4 text-sm leading-6 text-gray-600'>
-                    {post.data.description}
-                  </p>
-                </div>
-                <div class='mt-4 flex'>
-                  <span class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'>
-                    <Image
-                      src={jorgeBaumannImg}
-                      alt={`Author ${post.data.author}`}
-                      class='h-6 w-6 flex-none rounded-full bg-gray-50'
-                    />
-                    {post.data.author}
-                  </span>
-                </div>
-              </article>
-            ))
-          }
+          {otherPosts.map((post) => <ArticleCard post={post} />)}
         </div>
       </div>
     </div>
