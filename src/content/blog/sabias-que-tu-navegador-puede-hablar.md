@@ -26,36 +26,38 @@ Lo primero que tienes que hacer para usar esta web API es comprobar la compatibi
 Si estás usando un navegador moderno y actualizado (como Chrome, Firefox o Safari) no deberías tener problema. A no ser que estés en un dispositivo móvil.
 Comprueba la compatibilidad de tu navegador en este enlace: [https://caniuse.com/#feat=speech-synthesis](https://caniuse.com/#feat=speech-synthesis).
 
-![Captura de pantalla de Can I Use de la Web Speech API](/blog/sabias-que-tu-navegador-puede-hablar/can-i-use.png)
+![Captura de pantalla de Can I Use de la Web Speech API](../../assets/blog/sabias-que-tu-navegador-puede-hablar/can-i-use.png)
 
 A simple vista parece que el soporte es bastante amplio, sin embargo, tiene truco, ya que el soporte completo es limitado.
 Esto quiere decir que algunas de las _features_ como la _voz_, el _tono_ o la _velocidad_ no están disponibles según el dispositivo, el navegador o el sistema operativo que estés utilizando.
 
 ## Demo Time
 
-**Disclaimer**: Todos los ejemplos se han probado en Chrome.
+Todos los ejemplos se han probado en Chrome.
 
 ```javascript
-// Lo primero es utilizar el sintetizador de voz
+// Lo primero es obtener el sintetizador de voz
 const synth = window.speechSynthesis
 
-// Creamos la unidad de habla con el texto que queremos
-const text = '✅ Suscribirme al canal de YouTube de Rambito JS'
+// Ahora creamos un nuevo objeto de tipo SpeechSynthesisUtterance
+const text = 'Soy Jorge Baumann, @baumannzone en Twitter'
 const utterThis = new SpeechSynthesisUtterance(text)
 
-// hacemos que el sintetizador _hable_.
+// Finalmente, le decimos al navegador que hable
 synth.speak(utterThis)
 ```
 
-Fácil, ¿verdad? Lo bueno de esto que lo puedes probar ahora mismo en la consola del navegador.
+Fácil, ¿verdad? Ahora es tu turno. Prueba a cambiar el texto y a hacer que el navegador hable.
 
-### En una línea 😎
+### En una línea
 
+Copia y pega este código en la consola del navegador y verás cómo habla el navegador. ¡Es mágico! 🎩
+
+```js
+window.speechSynthesis.speak(new SpeechSynthesisUtterance('¡Hola! Soy Jorge Baumann (@baumannzone en Instagram)'))
 ```
-window.speechSynthesis.speak(new SpeechSynthesisUtterance('¡Hola! Soy Jorge Baumann (@baumannzone en Twitch)'))
-```
 
-## Controles adicionales ⚙️
+## Controles adicionales
 
 Hasta ahora has conseguido hacer que el navegador hable con los valores por defecto. A continuación vas a ver cómo modificar los atributos de voz, velocidad y tono.
 
@@ -64,7 +66,7 @@ Hasta ahora has conseguido hacer que el navegador hable con los valores por defe
 Por defecto, la velocidad y el tono tienen valor `1`. Puedes cambiar estos valores de manera muy sencilla de la siguiente forma:
 
 ```javascript
-const text = 'Suscribirme al canal de YouTube de Rambito JS ✅'
+const text = 'Sígueme en Instagram para más desarrollo web pro: @baumannzone"
 
 const synth = window.speechSynthesis
 const utterThis = new SpeechSynthesisUtterance(text)
@@ -79,24 +81,25 @@ synth.speak(utterThis)
 
 De nuevo, es tu turno. Prueba a cambiar los valores de `pitch` y `rate`.
 
-## Houston, tenemos un problema 👨‍🚀
+## Houston, tenemos un problema
 
-Si has intentado cambiar los valores de velocidad o tono es probable que hayas tenido algún problema, o que los valores no funcionaran como te esperabas.
+Si has tenido algún problema al cambiar la velocidad o el tono, probablemente usaste valores fuera del rango permitido.
 
-¿Qué pasa si intentas establecer un valor de `3` al tono (_pitch_)?
-Lo que pasa es que no funciona como es debido. Esto se debe a que te has salido del rango de valores que soporta esa propiedad.
+Por ejemplo, un tono (_pitch_) de `3` no funciona correctamente.
 
-Entonces… ¿cuáles son los rangos soportados por cada una de las propiedades?
+Entonces, ¿cuáles son los rangos permitidos para cada propiedad?
 
-### Pitch (tono)
+### Pitch: valores permitidos
 
 La especificación dice que los valores soportados para el tono van de `0` (grave) a `2` (agudo) siendo `1` el valor por defecto.
 
-### Rate (velocidad)
+### Rate: valores permitidos
 
 La especificación dice que los valores soportados para la velocidad van de `0.1` a `10` siendo `1` el valor por defecto.
 
-## ¡Cambia la voz! 🗣
+---
+
+## ¡Cambia la voz!
 
 En esta sección, verás cómo cambiar la voz del navegador con **JavaScript**.
 
@@ -114,11 +117,11 @@ speechSynthesis.onvoiceschanged = () => {
 }
 ```
 
-### Rambito Tip
+### Hot tip 🌶️ 
 
 La lista de voces se carga de forma asíncrona a la página. Tienes que esperar a que el evento `onvoiceschanged` se dispare para poder obtener el listado de voces disponibles.
 
-¡Pero qué coincidencia! Resulta que una de las voces en español se llama **Jorge**. Venga, ¡a usarla!
+Casualmente, una de las voces en español se llama **Jorge**. Venga, ¡vamos a usarla!
 
 El ejemplo con el evento `onvoiceschanged` y seleccionando la voz de `Jorge` quedaría así:
 
@@ -135,38 +138,22 @@ speechSynthesis.onvoiceschanged = () => {
 
 Este es un listado con algunas de las voces disponibles en Chrome en un Macbook Pro:
 
-![Lista de voces disponibles en el Macbook Pro](/blog/sabias-que-tu-navegador-puede-hablar/voices-list.png)
+![Lista de voces disponibles en el Macbook Pro](../../assets/blog/sabias-que-tu-navegador-puede-hablar/voices-list.png)
 
-## Briconsejos 🔧
+## Notas finales
 
 - Algunos motores de síntesis de voz pueden cambiar los valores mínimos o máximos de las propiedades. 
   Por ejemplo, puede darse el caso en el que el _tono_ en vez de tener un valor máximo de `2`, solo llegue hasta `1.8`.
 - Si asignas un valor que se sale del umbral soportado por dicho atributo, se cogerá el valor por defecto. 
-  Es decir que si en el caso anterior (dónde el valor máx. del tono es `1.8`), asignamos un valor de `1.9` se cogerá el valor por defecto (`1`).
-  Lo mismo para la velocidad.
-- Si en algún momento la aplicación deja de funcionar, reinicia el navegador. Hay algunos problemas que no están bien documentados aún.
+  Es decir que si en el caso anterior (dónde el valor máx. del tono es `1.8`), asignamos un valor de `2` se cogerá el valor por defecto (`1`).
 - Los elementos del array de voces no son un simple objeto. Son objetos de tipo `SpeechSynthesisVoice`, ten cuidado cuando los utilices.
 - ¿Sabías que puede leer los **emojis**? Usa alguno y fíjate qué ocurre… (🦄 😂 👌 🐶).
 - Hay símbolos o caracteres especiales que no se van a reproducir, como por ejemplo este `⍾` o este `⌘`.
 
-> Si has leído hasta aquí y has jugado con la [demo](https://web-speech-api-js.netlify.com/), entenderás porque los valores de la velocidad van de `0.46` a `3.6` en vez de `0.1` a `10`.
+Si has leído hasta aquí y has jugado con la [demo](https://web-speech-api-js.netlify.app/), entenderás porque los valores de la velocidad van de `0.46` a `3.6` en vez de `0.1` a `10`.
 
-Seguramente que cuando lo pruebes obtengas resultados diferentes respecto a los valores máximos y mínimos que hay en la [app](https://github.com/baumannzone/2awesome4u).
+Recuerda que la API de voz es una API experimental y puede cambiar en el futuro.
 
-Cuando estés en la [demo](https://web-speech-api-js.netlify.com/#/custom), ves subiendo o bajando los valores poco a poco de manera progresiva para ver hasta que valor llegas. Tanto por arriba como por abajo. 
-Prueba a hacer un fork del [repositorio](https://github.com/baumannzone/2awesome4u) en Github y probar cuales son los rangos máximos y mínimos que obtienes en tu dispositivo o navegador.
+¿Te ha gustado el artículo? ¿Has aprendido algo nuevo? Compárte para que lleguemos a más gente. Recuerda, _sharing is caring_.
 
-## Conclusiones
-
-- Tecnología experimental. Soporte limitado
-- En este artículo, faltan por investigar otras _features_ como la de `cancel`, el `pause` o el `resume` de la reproducción.
-- Hay alternativas Cloud más fiables, como la de [google](https://cloud.google.com/speech-to-text/).
-
-Si te ha gustado lo que has leído, compártelo para que lleguemos a más gente. Recuerda, _sharing is caring_.
-
-## Enlaces de interés
-
-- Repositorio GitHub [github.com/baumannzone/2awesome4u](https://github.com/baumannzone/2awesome4u/)
-- Slides: [slides.com/baumannzone/text-to-speech](https://slides.com/baumannzone/text-to-speech/)
-
-¡Hasta la próxima! 👋 👋
+¡Happy speaking! 🗣
