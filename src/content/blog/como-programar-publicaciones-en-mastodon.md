@@ -4,9 +4,7 @@ description: Guía completa para saber cómo programar publicaciones en Mastodon
 pubDate: 2022-11-21
 type: blog
 author: Jorge Baumann
-tags:
-  - Mastodon
-  - Redes Sociales
+tags: ["Social Media"]
 ---
 
 Una de las cosas que más extraño en Mastodon, que sí tiene Twitter, es la funcionalidad de programar publicaciones de manera nativa, es decir, publicaciones que se publiquen automáticamente en una fecha determinada.

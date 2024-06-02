@@ -2,13 +2,15 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
+import { stringToKebabCase } from '../../utils/index';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   const tags = new Set(posts.flatMap((post) => post.data.tags || []));
+  console.log('🚀 ~ getStaticPaths ~ tags:', tags);
 
   return Array.from(tags).map((tag) => ({
-    params: { tag: tag.replace(/\s+/g, '-') },
+    params: { tag: stringToKebabCase(tag) },
   }));
 }
 

@@ -3,8 +3,11 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 import FormattedDate from './FormattedDate.astro';
-import { convertToValidURLFormat } from '../utils/index';
+import { stringToKebabCase } from '../utils/index';
 
+// isBlog: blog post in the blog page
+// isFeatured: featured post in the home page
+// Otherwise, blog post in the home page
 interface Props {
   isFeatured?: boolean;
   isBlog?: boolean;
@@ -15,8 +18,7 @@ interface Props {
 }
 
 const { post, isFeatured = false, isBlog = false } = Astro.props;
-const authorParsed = convertToValidURLFormat(post.data.author);
-console.log('🚀 ~ authorParsed:', authorParsed);
+const authorParsed = stringToKebabCase(post.data.author);
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/authors/*.avif'
 );
@@ -72,7 +74,7 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
 }
 
 {
-  isFeatured ? (
+  isFeatured && (
     <article class='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'>
       <div class='flex items-center gap-x-4'>
         <FormattedDate
@@ -111,7 +113,11 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
         </div>
       </div>
     </article>
-  ) : (
+  )
+}
+
+{
+  !isFeatured && !isBlog && (
     <article class='py-12'>
       <div class='group relative max-w-xl'>
         <div class='flex items-center gap-x-4 text-xs'>

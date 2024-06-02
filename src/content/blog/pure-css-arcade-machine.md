@@ -7,7 +7,6 @@ author: Jorge Baumann
 tags:
   - HTML
   - CSS
-  - Ilustración
 ---
 
 Tengo algo especial para compartir contigo. Por un momento, deja a un lado las herramientas gráficas y las técnicas de dibujo modernas. Acompáñame, vamos a retroceder en el tiempo y dar un paseo por los pasillos de las salas de juegos de los años 80. ¿Lo mejor? Todo esto es posible gracias a nuestro querido y versátil lenguaje: **CSS**. ✨

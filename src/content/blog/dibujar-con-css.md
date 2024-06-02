@@ -5,7 +5,7 @@ pubDate: 2023-07-11
 updatedDate: 2024-05-30
 type: blog
 author: Jorge Baumann
-tags: ["CSS", "personal"]
+tags: ["CSS", "Personal"]
 ---
 
 Oh, **"dibujar con CSS"**, sí, por supuesto. Esa grandiosa idea de hacer que tu navegador se parezca más a un lienzo de Picasso que a un sitio web. Es básicamente como coger un martillo para ajustar un reloj. Puede funcionar, pero ¿es realmente la herramienta correcta para el trabajo?

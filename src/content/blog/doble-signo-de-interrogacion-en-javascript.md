@@ -6,7 +6,6 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
-  - ES2020
 ---
 
 Si quieres saber cómo funciona el operador de doble signo de interrogación `??` (también conocido como operador de **Fusión Nula** o **Nullish Coalescing** operator) en JavaScript, esta guía es para ti.

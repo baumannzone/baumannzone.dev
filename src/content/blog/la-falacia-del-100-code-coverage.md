@@ -8,7 +8,6 @@ author: Jorge Baumann
 tags:
   - Testing
   - JavaScript
-  - Code Coverage
 ---
 
 En este escrito te hablo de la cobertura de código (más conocida como _Code Coverage_) y de por qué es tan importante.

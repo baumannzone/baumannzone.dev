@@ -17,45 +17,7 @@ const posts = (await getCollection('blog')).sort(
       {
         posts.map((post) => (
           <li>
-            <article class='min-h-full'>
-              <div class='group relative max-w-xl'>
-                <div class='flex items-center gap-x-4'>
-                  <FormattedDate
-                    date={post.data.pubDate}
-                    className='text-gray-500 text-xs'
-                  />
-                </div>
-                <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
-                  <a href={`/blog/${post.slug}/`}>
-                    <span class='absolute inset-0' />
-                    {post.data.title}
-                  </a>
-                </h2>
-                <p class='mt-4 text-sm leading-6 text-gray-600'>
-                  {post.data.description}
-                </p>
-              </div>
-
-              <div class='mt-4 flex'>
-                {/* <a
-                  href='#'
-                  class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
-                >
-                  <img
-                    src='https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                    alt=''
-                    class='h-6 w-6 flex-none rounded-full bg-gray-50'
-                  />
-                  {post.data.author}
-                </a> */}
-                <a
-                  href='`{/blog/${post.slug}/`}'
-                  class='text-sm font-semibold leading-6 text-violet-700 hover:text-violet-600'
-                >
-                  Ver más &rarr;
-                </a>
-              </div>
-            </article>
+            <ArticleCard isBlog post={post} />
           </li>
         ))
       }

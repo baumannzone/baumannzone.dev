@@ -6,8 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
-  - meta
-  - API
+  - Tools
 ---
 
 Los comentarios aportan mucho valor a los artículos de un blog. Son una forma de generar debate, de comunicar ideas y compartir conocimiento entre developers.

@@ -5,10 +5,7 @@ pubDate: 2019-07-13
 updatedDate: 2024-05-30
 type: blog
 author: Jorge Baumann
-tags:
-  - Node.js
-  - Testing
-  - JavaScript
+tags: ["Testing", "JavaScript"]
 ---
 
 ¿Tienes tests en tus desarrollos de software?

@@ -12,6 +12,7 @@ const blog = defineCollection({
     category: z.string().max(1).optional(),
     author: z.string().default('Jorge Baumann'),
     authorImage: z.string().optional(),
+    type: z.enum(['blog', 'css-art']).default('blog'),
   }),
 });
 

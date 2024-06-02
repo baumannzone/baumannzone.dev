@@ -4,5 +4,5 @@
  * @returns string
  * @example "Jorge Baumann" => "jorge-baumann"
  */
-export const convertToValidURLFormat = (str) =>
+export const stringToKebabCase = (str) =>
   str.toLowerCase().replace(/\s+/g, '-');

@@ -6,7 +6,6 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
-  - IIFE
   - Design Patterns
 ---
 

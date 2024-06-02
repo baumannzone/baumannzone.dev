@@ -5,7 +5,6 @@ pubDate: 2018-10-22
 type: blog
 author: Jorge Baumann
 tags:
-  - HTML
   - Web APIs
   - JavaScript
 ---

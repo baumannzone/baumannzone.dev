@@ -7,7 +7,6 @@ author: Jorge Baumann
 tags:
   - HTML
   - CSS
-  - Animaciones
 ---
 
 ## Tarta de cumpleaños con CSS
