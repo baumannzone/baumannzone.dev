@@ -38,11 +38,11 @@ const { title, description, pubDate, updatedDate, tags } = Astro.props;
             <ul class='flex gap-x-4 text-xs mt-4 mb-8'>
               {tags.map((tag) => (
                 <li>
-                  <a href={`/tags/${stringToKebabCase(tag)}`}>
-                    <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'>
-                      {tag}
-                    </span>
-                  </a>
+                  {/* <a href={`/tags/${stringToKebabCase(tag)}`}> */}
+                  <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'>
+                    {tag}
+                  </span>
+                  {/* </a> */}
                 </li>
               ))}
             </ul>

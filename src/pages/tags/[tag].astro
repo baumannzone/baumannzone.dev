@@ -7,7 +7,7 @@ import { stringToKebabCase } from '../../utils/index';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   const tags = new Set(posts.flatMap((post) => post.data.tags || []));
-  console.log('🚀 ~ getStaticPaths ~ tags:', tags);
+  // console.log('🚀 ~ getStaticPaths ~ tags:', tags);
 
   return Array.from(tags).map((tag) => ({
     params: { tag: stringToKebabCase(tag) },

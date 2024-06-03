@@ -82,22 +82,23 @@
 - [GitHub Copilot](https://copilot.github.com/) - Ya no sé programar sin esto.
 - [Bearded Theme](https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme) - 32 variaciones de colores para el editor. Oscuro y claro.
 - [Tokio Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - 3 variaciones de colores para el editor. 2 oscuros y 1 claro.
-- ...
 
-## Fuentes / Tipografías
+## Fuentes / Tipografías para programar
 - [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero a mí me merece la pena.
-- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
 - [Monaspace](https://monaspace.githubnext.com/) - Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.
 - [Geist Mono](https://vercel.com/font) - Fuente monoespaciada de Vercel. Es gratuita y open source.
+- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
 
 ## Terminal
 
-Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh My Zsh puedes cambiar fácilmente de temas y elegir el que más te guste.
+Actualmente utilizo iTerm2 y Warp.
 
 - [Warp](https://app.warp.dev/referral/2EJGKR)
 - [iTerm2](https://iterm2.com/) + [Oh My Zsh](https://ohmyz.sh/)
 
+
 ### Temas iTerm2
+Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te guste.
 
 - [robbyrussell](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#robbyrussell) - El tema de _Oh My Zsh_ que estoy usando actualmente, simple y funcional.
 - [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster) - Lo he usado durante mucho tiempo. Me gusta mucho, pero necesita más configuración que el anterior.
@@ -131,4 +132,4 @@ Actualmente utilizo iTerm2 con **Oh My Zsh** con el tema `robbyrussell`. Con Oh 
 
 Has llegado al final de la página. Gracias por leer hasta aquí. Que tengas un muy muy ✨ buen día ✨.
 
-[Ver historial de cambios](https://github.com/baumannzone/baumannzone.dev/blame/main/components/UsesPage/uses.md)
+<!-- [Ver historial de cambios](https://github.com/baumannzone/baumannzone.dev/blame/main/components/UsesPage/uses.md) -->
