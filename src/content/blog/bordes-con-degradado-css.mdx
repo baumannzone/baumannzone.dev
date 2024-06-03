@@ -2,12 +2,18 @@
 title: Bordes con degradado en CSS
 description: Guía completa para saber cómo crear bordes con degradados y con imágenes en CSS
 pubDate: 2022-03-25
+updatedDate: 2024-06-03
 type: blog
 author: Jorge Baumann
 tags:
   - HTML
   - CSS
 ---
+
+import BorderWithImage from '../../components/demos-blog/bordes-con-degradado-css/1.astro'
+import BorderWithLinearGradient from '../../components/demos-blog/bordes-con-degradado-css/2.astro'
+import BorderWithRadialGradient from '../../components/demos-blog/bordes-con-degradado-css/3.astro'
+import BorderWithConicGradient from '../../components/demos-blog/bordes-con-degradado-css/4.astro'
 
 ## Bordes con degradados e imágenes en CSS
 
@@ -42,8 +48,9 @@ Lo primero que hay que hacer es crear otra clase CSS y luego usarla en el elemen
   border-image-source: url(/image/path/file.png);
   border-image-slice: 1;
 
-  // También podemos usar el shorthand
-  // border-image: url(/image/path/file.png) 1;
+  /* También podemos usar el shorthand
+   * border-image: url(/image/path/file.png) 1; 
+   */
 }
 ```
 
@@ -52,19 +59,19 @@ Lo primero que hay que hacer es crear otra clase CSS y luego usarla en el elemen
 ```
 
 El resultado es el siguiente:
-<blog-border-with-image></blog-border-with-image>
+<BorderWithImage />
 
 Te muestro también la imagen que se está usando para que entiendas mejor el funcionamiento de la propiedad CSS `border-image`.
 
-## Bordes con degradados o gradientes
+## Bordes con degradados
 
-Hay 3 formas de crear bordes con degradados o gradientes de colores en CSS: usando `linear-gradient`, `radial-gradient` o `conic-gradient`.
+Hay 3 formas de crear bordes con degradados de colores en CSS: usando `linear-gradient`, `radial-gradient` o `conic-gradient`.
 
 ### Linear gradient
 
 Creamos la nueva clase de CSS y después la usamos nuestro elemento HTML.
 
-En este caso concreto, podemos indicar el ángulo que queremos que tenga el gradiente. Por defecto, el gradiente tiene un ángulo de 0 grados.  
+En este caso concreto, podemos indicar el ángulo que queremos que tenga el degradado. Por defecto, el degradado en CSS tiene un ángulo de 0 grados.  
 
 Para este ejemplo, usamos un ángulo de 45 grados. Con el segundo cuadrado se ve mejor el ángulo y se entiende mejor el concepto de borde degradado.
 ```css
@@ -78,7 +85,7 @@ Para este ejemplo, usamos un ángulo de 45 grados. Con el segundo cuadrado se ve
 ```
 
 Se verá así:
-<blog-border-with-linear-gradient></blog-border-with-linear-gradient>
+<BorderWithLinearGradient />
 
 Ya tienes un `div` con el borde degradado usando `linear-gradient`.
 
@@ -97,9 +104,9 @@ Lo mismo que el anterior, pero usamos `radial-gradient` en vez de `linear-gradie
 ```
 
 El resultado sería el siguiente:
-<blog-border-with-radial-gradient></blog-border-with-radial-gradient>
+<BorderWithRadialGradient />
   
-El motivo por el que se ve así es que el gradiente empieza en el centro del `div` y en las esquinas casi no se ve el degradado del rojo. Lo que más se ve es el color azul `cyan`. 
+El motivo por el que se ve así es que el degradado empieza en el centro del `div` y en las esquinas casi no se ve el degradado del rojo. Lo que más se ve es el color azul `cyan`. 
 
 Esta es la segunda forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `radial-gradient`. 
 
@@ -118,10 +125,9 @@ Es muy parecido al anterior, pero usamos `conic-gradient` en vez de `radial-grad
 ```
 
 El resultado sería el siguiente:
-<blog-border-with-conic-gradient></blog-border-with-conic-gradient>
+<BorderWithConicGradient />
 
-Al igual que el caso anterior, te dejo los 2 ejemplos con `border` y con `background`, para que entiendas mejor el concepto.  
-Esta es la tercera forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `conic-gradient`.
+Esta es la tercera forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `conic-gradient`. Te dejo los 2 ejemplos con `border` y con `background`, para que entiendas mejor el concepto.
 
 ## Conclusiones
 
@@ -130,3 +136,7 @@ En este artículo aprendiste a crear bordes con degradados y con imágenes en CS
 A día de hoy (Marzo de 2022), [Can I Use](https://caniuse.com/border-image) te muestra que un 97% de los navegadores web soportan las propiedades `border-image` y `border-image-slice`, necesarias para hacer bordes con degradados de colores o bordes con imágenes.
 
 Los bordes con degradados e imágenes son muy divertidos, pero tienen una desventaja: de momento no funcionan bien con `border-radius`.
+
+Si te gustó este artículo, compártelo en tus redes sociales y déjame un comentario con tus dudas o sugerencias.
+
+¡Happy Colorful Coding! 🌈🎨

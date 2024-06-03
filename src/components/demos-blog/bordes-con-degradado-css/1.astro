@@ -1,0 +1,30 @@
+<div class='flex -mt-4'>
+  <div>
+    <small>Con borde</small>
+    <div class='box border-image mr-4'></div>
+  </div>
+
+  <div>
+    <small>Imagen original</small>
+    <div class='box img'></div>
+  </div>
+</div>
+
+<style>
+  .box {
+    width: 150px;
+    height: 100px;
+  }
+
+  .border-image {
+    border-style: solid;
+    border-width: 10px;
+    border-image-source: url('../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg');
+    border-image-slice: 1;
+  }
+
+  .img {
+    background-image: url('../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg');
+    background-size: cover;
+  }
+</style>

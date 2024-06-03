@@ -1,0 +1,28 @@
+<div class='flex space-x-4 -mt-4'>
+  <div>
+    <small> Con borde </small>
+    <div class='box linear-gradient'></div>
+  </div>
+  <div>
+    <small> Degradado original</small>
+    <div class='box linear-bg'></div>
+  </div>
+</div>
+
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 10px;
+  }
+
+  .linear-gradient {
+    border-image: linear-gradient(45deg, red, lime, blue) 1;
+  }
+
+  .linear-bg {
+    background: linear-gradient(45deg, red, lime, blue);
+    border-width: 0;
+  }
+</style>

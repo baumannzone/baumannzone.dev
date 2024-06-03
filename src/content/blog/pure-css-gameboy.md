@@ -2,6 +2,7 @@
 title: 👾 Pure CSS Game Boy
 description: Dibujando una Game Boy con HTML y CSS. Animación y sonido con JavaScript.
 pubDate: 2017-04-22
+editedDate: 2024-06-01
 type: css-art
 author: Jorge Baumann
 tags:
@@ -17,11 +18,12 @@ Utilizaremos solo **CSS** y **HTML** (sin hacer uso de imágenes) para dibujar l
 
 [https://baumannzone.github.io/gameboy-css/](https://baumannzone.github.io/gameboy-css/)
 
-![GameBoy Pure CSS](/blog/pure-css-gameboy/main-gb.png)
-_Pure CSS Game Boy_
+![Pure CSS Game Boy](../../assets/blog/pure-css-gameboy/main-gb.png)
 
 Empezaremos con la estructura del documento HTML. En este caso estoy usando _Pug_ (antiguamente conocido llamado _Jade_) como preprocesador HTML y _Stylus_ para el CSS.
 Si no conoces [Pug](https://github.com/pugjs/pug) o [Stylus](http://stylus-lang.com/) te recomiendo que vayas a su página web y empieces a usarlos ya mismo.
+
+_A día de hoy (2024) ya no recomendaría usar Stylys, ya que CSS ha evolucionado mucho y tiene muchas de las características que Stylus ofrecía._
 
 Hemos dividido el código por bloques de elementos, como pueden ser la carcasa, la pantalla, los botones, etc.
 
@@ -31,7 +33,9 @@ Para crear la Game Boy Original solo con HTML y CSS vamos a hacer uso, entre otr
 
 Esta es la estructura HTML de nuestra futura Game Boy. Recuerda que estamos usando Pug en vez de HTML:
 
-```pug[index.pug]
+```pug
+<!-- index.pug -->
+
 .gameboy
   .screen-cont
     .power
@@ -48,7 +52,7 @@ Esta es la estructura HTML de nuestra futura Game Boy. Recuerda que estamos usan
     .speakers
 ```
 
-## CSS (con stylus)
+## CSS (con Stylus)
 
 ### Carcasa
 
@@ -56,7 +60,8 @@ En primer lugar creamos la carcasa que va a contener todos los elementos.
 
 La clase `.gameboy`, que es la clase que engloba todos los demás elementos, corresponde a la carcasa de nuestra Game Boy. Con `:before` y `:after` creamos las líneas superiores.
 
-```stylus[main.styl]
+```stylus
+// main.styl
 .gameboy
   position relative
   display block
@@ -86,7 +91,7 @@ La clase `.gameboy`, que es la clase que engloba todos los demás elementos, cor
     margin-right 40px
 ```
 
-![Carcasa Game Boy](/blog/pure-css-gameboy/gb-case.png)
+![Carcasa Game Boy](../../assets/blog/pure-css-gameboy/gb-case.png)
 
 ### Pantalla
 
@@ -94,8 +99,9 @@ A continuación, vamos a crear la pantalla. Tenemos varias capas que en conjunto
 Agregamos otra capa `.power` que simulará el led indicador de encendido y de batería 🔋.  
 Con la capa `.header` y el texto escrito en HTML, conseguimos la parte superior de la pantalla. Las líneas paralelas a ambos lados del texto las generamos con los pseudo-elementos `before` y `after` (uno para cada lado) y combinando una capa de un determinado tamaño con el fondo de color azul de la cual proyectamos una sombra de color morado, dando el efecto de 2 líneas. El código es el siguiente:
 
-```stylus[main.styl]
-// Screen container
+```stylus
+// main.styl
+
 .screen-cont
   position relative
   top 60px
@@ -106,7 +112,6 @@ Con la capa `.header` y el texto escrito en HTML, conseguimos la parte superior 
   background-color #777
   border-radius 13px 13px 50px 13px
 
-  // Screen
   .screen
     position relative
     top 30px
@@ -154,11 +159,13 @@ Con la capa `.header` y el texto escrito en HTML, conseguimos la parte superior 
 
 ### Led de encendido 🚨
 
-Tenemos la capa principal `.power` que simula el led cuando está apagado. Haciendo uso de la propiedad `content` en el elemento `:before` correspondiente a la clase del led, le metemos el texto y lo posicionamos.  
+Tenemos la capa principal `.power` que simula el led cuando está apagado. Haciendo uso de la propiedad `content` en el elemento `:before` correspondiente a la clase del led, le metemos el texto y lo posicionamos.
+
 La clase `.power-on` es una clase que le vamos a agregar al elemento del led y que va a simular que se enciende, poniendo un rojo más intenso de color de fondo, y dándole un poco de resplandor de color rojizo también con `box-shadow`.
 
-```stylus[main.styl]
-// Led
+```stylus
+// main.styl
+
 .power
   content ""
   position absolute
@@ -188,14 +195,17 @@ La clase `.power-on` es una clase que le vamos a agregar al elemento del led y q
 
 Si has visto la demo, habrás visto que hay un texto animado junto con otros efectos como la luz de la batería o el botón de apagar.
 
-![Pantalla Game Boy](/blog/pure-css-gameboy/gb-screen.png)
+![Pantalla Game Boy](../../assets/blog/pure-css-gameboy/gb-screen.png)
 
 ### Texto Nintendo
 
-Vamos a crear una capa que va a contener el texto que más adelante animaremos. La fuente más similar a la tipografía de Nintendo que he encontrado se llama **Pretendo** y la puedes descargar desde [aquí](http://www.abstractfonts.com/font/11800).  
+Vamos a crear una capa que va a contener el texto que más adelante animaremos. La fuente más similar a la tipografía de Nintendo que existe se llama **Pretendo** y la puedes descargar desde [aquí](http://www.abstractfonts.com/font/11800).
+
 Vamos a crear el CSS necesario con Stylus:
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 .animated-text
   opacity 0
   display inline
@@ -229,8 +239,9 @@ La fuente de _Pretendo_ no tiene el carácter de copyright (©), por lo que tene
 
 Tenemos tres grupos de botones, todos ellos agrupados en una capa maestra llamada `.controls-cont`.
 
-```stylus[main.styl]
-// Buttons container
+```stylus
+// main.styl
+
 .controls-cont
   display block
   position relative
@@ -244,9 +255,12 @@ El botón con forma de cruz, tiene en el centro un círculo ligeramente visible,
 
 La capa horizontal es una copia exacta de la capa vertical, la única diferencia es que la hemos girado 90 grados ⤵️ sobre su centro consiguiendo así formar una cruz que da lugar al botón de movimiento.  
 En cada extremo hay unos pequeños triángulos que indican dirección. Dichos triángulos los hemos conseguido utilizando bordes en elementos de cero `px` de tamaño dentro de los pseudo-elementos `:before` y `:after`.
+
 Se entiende mejor si ves el código utilizado:
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 // Pad
 .btn-direction
   position relative
@@ -306,7 +320,9 @@ Primero creamos una capa (`.btnAB`) que solo va a tener un color de fondo gris y
 Dentro del `:after` de dicha capa creamos un círculo de un color granate y una sombra de dicho círculo del mismo color, _duplicando_ así el contenido de manera sencilla.  
 En ambos casos, le damos la inclinación adecuada con `transform rotate`.
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 // Background
 .btn-AB
   position absolute
@@ -337,7 +353,9 @@ En ambos casos, le damos la inclinación adecuada con `transform rotate`.
 Los botones de _start_ y _select_, son los más sencillos de conseguir, solo constan de una capa de color gris con una sombra del mismo color para duplicar dicho botón y así obtener los dos. Luego le damos la inclinación deseada ¡y listo!  
 Le damos un efecto de borde a estos botones con `box-shadow`, fíjate que tenemos el duplicado del botón y dos sombras más que simulan el borde.
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 // Start Select buttons
 .btn-start-select
   position absolute
@@ -351,14 +369,15 @@ Le damos un efecto de borde a estos botones con `box-shadow`, fíjate que tenemo
   box-shadow 57px 27px #999, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf
 ```
 
-![Game Boy Buttons](/blog/pure-css-gameboy/gb-buttons.png)
+![Game Boy Buttons](../../assets/blog/pure-css-gameboy/gb-buttons.png)
 
 ## Sonido
 
-Las ranuras para la salida del sonido, que corresponden a la capa `.speakers`, también son bastante sencillas de hacer con CSS, muy parecidas a los botones anteriores.
-Vamos a crear un elemento y lo duplicaremos con repeticiones de sombras con `box-shadow`.
+Las ranuras para la salida del sonido, que corresponden a la capa `.speakers`, también son bastante sencillas de hacer con CSS, muy parecidas a los botones anteriores. Vamos a crear un elemento y lo duplicaremos con repeticiones de sombras usando `box-shadow`.
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 .speakers
   content ""
   position relative
@@ -378,7 +397,9 @@ Vamos a crear un elemento y lo duplicaremos con repeticiones de sombras con `box
 
 Por último tenemos `.phones`, que es donde se supone que podemos enchufar los auriculares y tiene un pequeño relieve que conseguimos con una capa de tamaño pequeño y la duplicamos con una sombra.
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 .phones
   position: absolute;
   bottom: 4px;
@@ -415,10 +436,11 @@ Por último tenemos `.phones`, que es donde se supone que podemos enchufar los a
 
 ### Encendido / Apagado
 
-Lo mismo para el indicador de On/Off, pero en la parte superior izquierda y con algún que otro cambio en cuanto a posiciones:
+Lo mismo para el indicador de _on/off_, pero en la parte superior izquierda y con algún que otro cambio en cuanto a posiciones:
 
-```stylus[main.styl]
-// On/Off indicator
+```stylus
+// main.styl
+
 .on-off
   position: absolute;
   top: 2px;
@@ -455,8 +477,7 @@ Lo mismo para el indicador de On/Off, pero en la parte superior izquierda y con 
 
 Este es el resultado de juntarlo todo:
 
-![Pure CSS Game Boy](/blog/pure-css-gameboy/gb.png)
-_Game Boy Terminada_
+![Pure CSS Game Boy](../../assets/blog/pure-css-gameboy/gb.png)
 
 Pero aún no hemos terminado, ¡llega el momento más divertido! Es hora de darle vida a este proyecto de CSS haciendo uso de JavaScript.
 
@@ -466,24 +487,30 @@ Pero aún no hemos terminado, ¡llega el momento más divertido! Es hora de darl
 
 Vamos a hacer uso de JavaScript — _Make JavaScript great again_ — para simular la animación que hacía la Game Boy cuando la encendías. Compruébalo ahora mismo [aquí](https://baumannzone.github.io/gameboy-css/).
 
-![Pure CSS Game Boy Animation](/blog/pure-css-gameboy/gb-animation.gif)
+![Pure CSS Game Boy Animation](../../assets/blog/pure-css-gameboy/gb-animation.gif)
 
 Vamos a incluir dos botones, uno de encendido y otro de apagado, al inicio de nuestro documento HTML. El de apagado por defecto va a estar oculto.
 
-```pug[index.pug]
+```pug
+<!-- index.pug -->
+
 input.btn-on(type="button", value="Encender")
 input.btn-off.btn-hide(type="button", value="Apagar")
 ```
 
 Además, para que sea mucho más molón, vamos a incluir un archivo de audio en el HTML, con la etiqueta `<audio>` de HTML5.
 
-```pug[index.pug]
+```pug
+<!-- index.pug -->
+
 audio(src="sound/gameboy-sound.mp3")
 ```
 
 Dos botones, el de encendido y el de apagado. Este último con la clase `.btn-hide`, para que el botón no se muestre mientras tenga esa clase. El código CSS es el siguiente:
 
-```stylus[main.styl]
+```stylus
+// main.styl
+
 input
   &.btn-on,
   &.btn-off
@@ -498,7 +525,9 @@ input
 
 Ya tenemos todos los elementos (botones, clases y elemento de audio) listos para ser usados. Ahora sí, es el turno de JavaScript:
 
-```js{1, 2}[main.js]
+```js
+// main.js
+
 const audio = document.querySelector( `audio` );
 const btnON = document.querySelector( `.btn-on` );
 const btnOFF = document.querySelector( `.btn-off` );
@@ -508,13 +537,15 @@ const text = document.querySelector( `.animated-text` );
 
 ### Encender
 
-Lo que vamos a hacer es ocultar el botón de encendido (`.btn-on`) y mostrar el botón de apagado (`.btn-off`) cuando se haga click en el botón de encender.  
+Lo que vamos a hacer es ocultar el botón de encendido (`.btn-on`) y mostrar el botón de apagado (`.btn-off`) cuando se haga click en el botón de encender.
+
 También tenemos que encender el led de la batería, cosa que conseguimos agregando al elemento power la clase `.power-on`.  
 Por último, hay que agregarle la clase `.end` a la capa que tiene el texto de **Nintendo** y esperar a que termine la animación y hacer sonar el elemento de audio.
+
 Por lo tanto, en el `onclick` del botón de encender tendríamos algo parecido a esto:
 
-```javascript[main.js]
-// Turn ON
+```js
+// Turn on
 btnON.onclick = function () {
 
   // Button
@@ -533,8 +564,9 @@ btnON.onclick = function () {
 
 `wichTransitionEvent` y `playSound` son funciones que hemos creado previamente:
 
-```javascript[main.js]
-// From Modernizr
+```js
+// main.js
+
 function whichTransitionEvent () {
   let t;
   const el = document.createElement( 'fake' );
@@ -559,24 +591,23 @@ function playSound () {
 }
 ```
 
-- La primera función, `whichTransitionEvent` es para determinar el nombre del _listener_, ya que depende del navegador, pues cada uno tiene uno distinto.
+- `whichTransitionEvent` es para determinar el nombre del _listener_, ya que depende del navegador, pues cada uno tiene uno distinto.
 
 - La función de `playSound` es muy fácil. Lo único que hace es coger el elemento de audio que creamos antes, y hacerlo sonar.
-  Para una mejor experiencia, reseteamos el "cursor" del elemento de audio a cero antes de hacerlo sonar, con la propiedad `currentTime`.  
-  De este modo, si el audio está sonando y vuelves a invocar a la función de `playSound` el audio va a sonar inmediatamente desde el principio, sin tener que esperar que termine el audio invocado anteriormente.
+  Para una mejor experiencia, reseteamos el "cursor" del elemento de audio a cero antes de hacerlo sonar, con la propiedad `currentTime`. De este modo, si el audio está sonando y vuelves a invocar a la función de `playSound` el audio va a sonar inmediatamente desde el principio, sin tener que esperar que termine el audio invocado anteriormente.
 
 ### Apagar
 
 Ahora hay que deshacer estos cambios cuando pulsemos el botón de apagar.
 
-- Mostrar el botón de encender (quitándole la clase `.btn-hide`)
-- Ocultar el botón de apagar (agregándole la clase `.btn-hide`)
-- Apagar el led (quitándole la clase `.power-on`)
-- Ocultar el texto de Nintendo (quitando la clase `.end`)
+- Mostrar el botón de encender, quitándole la clase `.btn-hide`.
+- Ocultar el botón de apagar, agregándole la clase `.btn-hide`.
+- Apagar el led, quitándole la clase `.power-on`.
+- Ocultar el texto de Nintendo, quitando la clase `.end`.
 
-Se entiende mejor con el código:
+```js
+// main.js
 
-```javascript[main.js]
 btnOFF.onclick = function () {
 
   // Button
@@ -600,4 +631,7 @@ btnOFF.onclick = function () {
 Puedes ver el código completo en este repositorio de GitHub: [https://github.com/baumannzone/gameboy-css](https://github.com/baumannzone/gameboy-css).
 
 ¡Esto es todo, developers! Hay muchas formas de dibujar una Game Boy con CSS, en esta ocasión hemos optado por hacerlo así, pero no es la única.
-¿Cuál es la tuya?
+
+¿Cuál es la tuya? ¿Has hecho alguna vez algo parecido? ¡Cuéntamelo en los comentarios!
+
+¡Happy coding! 🚀

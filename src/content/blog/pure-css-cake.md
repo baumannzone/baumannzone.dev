@@ -1,6 +1,6 @@
 ---
 title: Pure CSS Cake 🎂
-description: Dibujando una tarta de cumpleaños solo con HTML y CSS. ¡Incluye animaciones en la velita! ¿Has visto cómo se mueve?
+description: Dibujando una tarta de cumpleaños solo con HTML y CSS. ¡Incluye animaciones mágicas en la velita! ¿Has visto cómo se mueve?
 pubDate: 2022-03-23
 type: css-art
 author: Jorge Baumann
@@ -16,7 +16,7 @@ Estaba empezando a experimentar con los live coding de `CSS-art` en [Twitch](htt
 
 Se acercaba la fecha de mi cumpleaños, por lo que decidí crear este delicioso pastel con puro CSS, sin calorías, sin gluten, vegano, ecológico e increíblemente apetitoso. Espero que la disfrutes 🎉.
 
-![pure css cake](/blog/pure-css-cake/cake.png)
+![Pure CSS cake](../../assets/blog/pure-css-cake/cake.png)
 
 ### Enlaces de interés:
 
@@ -24,3 +24,5 @@ Se acercaba la fecha de mi cumpleaños, por lo que decidí crear este delicioso 
 - GitHub: [github.com/baumannzone/pure-css-cake](https://github.com/baumannzone/pure-css-cake)
 - CodePen: [https://codepen.io/baumannzone/pen/LYRwGQq](https://codepen.io/baumannzone/pen/LYRwGQq)
 - Live Demo: [https://pure-css-cake.vercel.app/](https://pure-css-cake.vercel.app/)
+
+Comparte tu tarta de cumpleaños conmigo en [Twitter](https://twitter.com/baumannzone) o [Instagram](https://instagram.com/baumannzone). ¡Me encantaría verla! 🎂
