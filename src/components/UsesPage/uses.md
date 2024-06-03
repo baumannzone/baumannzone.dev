@@ -16,7 +16,7 @@
 ### Pantallas
 
 - [Samsung C34H890 34" Ultra Wide curvo](https://amzn.to/4c0otOi) - Mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas.
-- [Brazo ](https://amzn.to/3Vl9NDF) - Brazo
+- [Brazo ](https://amzn.to/3Vl9NDF) - Brazo para monitor de 34". Soporta hasta 10kg. Es robusto y estable.
 - **BenQ Gaming 24" RL2460HT** - La compré en 2011 pero ya está descatalogada. Sin embargo, +10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.
 
 ### Ratón o Mouse
