@@ -1,5 +1,6 @@
 ---
 const currentPath = Astro.url.pathname;
+console.log('🚀 ~ currentPath:', currentPath);
 
 const links = [
   { href: '/', text: 'Inicio' },
@@ -136,7 +137,7 @@ const links = [
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
   });
 </script>
