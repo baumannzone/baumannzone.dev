@@ -1,4 +1,7 @@
 # Baumannzone.dev
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/baumannzone/baumannzone.dev/main)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -30,6 +33,21 @@ For detailed explanation on how things work, check out [Astro.build/](https://as
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://rrdev-me.vercel.app/"><img src="https://avatars.githubusercontent.com/u/59400168?v=4?s=100" width="100px;" alt="Richard Ramírez"/><br /><sub><b>Richard Ramírez</b></sub></a><br /><a href="https://github.com/baumannzone/baumannzone.dev/issues?q=author%3Arr69sport" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
