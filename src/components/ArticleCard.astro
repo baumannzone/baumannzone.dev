@@ -40,7 +40,7 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
           />
         </div>
         <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
-          <a href={`/blog/${post.slug}/`}>
+          <a href={`/blog/${post.slug}`}>
             <span class='absolute inset-0' />
             {post.data.title}
           </a>
@@ -63,7 +63,7 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
           {post.data.author}
         </a> */}
         <a
-          href='`{/blog/${post.slug}/`}'
+          href={`/blog/${post.slug}`}
           class='text-sm font-semibold leading-6 text-violet-700 hover:text-violet-600'
         >
           Ver más &rarr;

@@ -1,6 +1,5 @@
 ---
 const currentPath = Astro.url.pathname;
-console.log('🚀 ~ currentPath:', currentPath);
 
 const links = [
   { href: '/', text: 'Inicio' },
@@ -37,17 +36,12 @@ const links = [
           >
         </div>
 
-        <div class='hidden sm:ml-6 sm:flex sm:space-x-8'>
-          <!-- Current: "border-violet-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+        <div class='hidden sm:ml-6 sm:flex sm:space-x-8' id='desktop-menu'>
           {
             links.map((link) => (
               <a
                 href={link.href}
-                class={`relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium ${
-                  currentPath === link.href
-                    ? 'border-violet-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                class='relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
               >
                 {link.text}
                 {/* {link.showDot && (
@@ -70,11 +64,6 @@ const links = [
         >
           <span class='absolute -inset-0.5'></span>
           <span class='sr-only'>Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
           <svg
             class='block h-6 w-6'
             fill='none'
@@ -111,19 +100,13 @@ const links = [
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
   <div class='hidden sm:hidden' id='mobile-menu'>
     <div class='space-y-1 pb-3 pt-2'>
-      <!-- Current: "bg-violet-50 border-violet-500 text-violet-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
       {
         links.map((link) => (
           <a
             href={link.href}
-            class={`block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium ${
-              currentPath === link.href
-                ? 'border-violet-500 bg-violet-50 text-violet-700'
-                : 'text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
-            }`}
+            class='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
           >
             {link.text}
           </a>
@@ -134,10 +117,24 @@ const links = [
 </nav>
 
 <script>
+  // Toggle mobile menu
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
   mobileMenuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Add active class to current link
+  const navLinks = document.querySelectorAll('nav a');
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if ((link as HTMLAnchorElement).href === currentURL) {
+      if (link.parentElement?.id === 'desktop-menu') {
+        link.classList.add('active-link');
+      } else {
+        link.classList.add('active-link-mobile');
+      }
+    }
   });
 </script>

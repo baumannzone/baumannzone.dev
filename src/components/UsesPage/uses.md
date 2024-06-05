@@ -120,13 +120,15 @@ Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te gu
 
 ## Gadgets & Tools
 
-- [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_.
+- [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_. Si te mola grabar vídeos con el móvil, este es tu gadget.
 - [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Se puede programar con `JavaScript`.
-- [Fidget Cube](https://www.kickstarter.com/projects/antsylabs/fidget-cube-a-vinyl-desk-toy)
+- [Fidget Cube](https://amzn.to/3RgkwwV) - Cubo antiestrés. Un vicio. Tiene botones, ruedas, interruptores y bolitas para jugar.
 - [iPhone 12 Mini Púrpura](https://www.apple.com/es/iphone-12/key-features/) - Mi primer móvil de Apple. Me encanta que sea tan pequeño. Más portable y manejable.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)
 - [Power Ball](https://amzn.to/4bYITH4) - Bola Giratoria para mover un poco las muñecas.
 - [DYMO Label Maker](https://amzn.to/4dX1OUB) - Impresora de etiquetas para tener todo bien organizado.
+- [Raspberry Pi 3 B](https://amzn.to/3x4XkL6) - La uso para hacer pruebas y experimentos. Es un mini ordenador que actualmente tiene instalado [Retropie](https://retropie.org.uk/).
+- [Mandos Super Nintendo USB](https://amzn.to/3x28pg0) - Versión no original de los mandos de la Super Nintendo. Los uso con la Raspberry Pi para jugar a los juegos de mi infancia.
 
 ---
 

@@ -23,4 +23,13 @@
     @apply sm:px-6;
     @apply lg:px-8;
   }
+
+  .active-link {
+    @apply border-violet-500 text-gray-900 !important;
+  }
+
+  .active-link-mobile {
+    @apply border-violet-500 bg-violet-50 text-violet-700 !important;
+  }
 }
+
