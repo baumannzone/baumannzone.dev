@@ -44,8 +44,9 @@
 
 ### Auriculares
 
+- [Bose QuietComfort 45](https://amzn.to/3VtFtXr) - Auriculares inalámbricos Bluetooth con cancelación de ruido y micrófono para llamadas, de color negro. Son muy cómodos y tienen una buena calidad de sonido.
 - [Beats Fit Pro](https://amzn.to/3x3nTQH) - Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido.
-- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Auriculares con cable USB. Los uso sobre todo para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.
+- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Auriculares con cable USB. Los usaba sobre todo para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.
 
 ### Altavoces
 
@@ -53,9 +54,9 @@
 
 ### Silla
 
-- [ErgoChair Pro](https://www.autonomous.ai/en-ES/office-chairs/ergonomic-chair) - La silla de trabajo qu más he usado en mi vida. Me gusta que se puede regular casi todo. Es fácil de usar y tiene una buena estructura.
+- [ErgoChair Pro](https://www.autonomous.ai/en-ES/office-chairs/ergonomic-chair) - La silla de trabajo que más he usado en mi vida. Me gusta que se puede regular casi todo. Es fácil de usar y tiene una buena estructura.
 - [Silla de oficina MARKUS](https://amzn.to/3V4K4OJ) - La primera silla que compré. Tiene un buen respaldo.
-- [Ruedas de silicona para silla de oficina](https://amzn.to/3X2Qb8G) - El mejor upgrade que le puedes meter a tu silla. Son ruedas de silicona que giran muy bien, no hacen ruido y no rayan el suelo.
+- [Ruedas de silicona para silla de oficina](https://amzn.to/3X2Qb8G) - El mejor upgrade que le puedes meter a tu silla. Son ruedas de silicona que giran muy bien, no hacen ruido y no rayan el suelo. No como las horribles ruedas de plástico que traen las sillas de serie.
 
 ### Mesa
 
@@ -73,6 +74,7 @@
 - [Adaptador multipuerto de USB-C](https://amzn.to/3UZBOzn) - El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.
 - [HUB USB C (8 en 1)](https://amzn.to/3wXnXSa) - Es el que uso para poder conectar varios cables USB y el cable de red ethernet.
 
+
 ## Editor
 
 - [Code](https://code.visualstudio.com/) - El editor más usado por los desarrolladores web. Más ligero que el anterior. Empecé a usarlo para poder usar [GitHub Copilot](https://copilot.github.com/).
@@ -83,7 +85,7 @@
 - [Bearded Theme](https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme) - 32 variaciones de colores para el editor. Oscuro y claro.
 - [Tokio Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - 3 variaciones de colores para el editor. 2 oscuros y 1 claro.
 
-## Fuentes / Tipografías para programar
+## Fuentes o Tipografías para programar
 - [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero a mí me merece la pena.
 - [Monaspace](https://monaspace.githubnext.com/) - Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.
 - [Geist Mono](https://vercel.com/font) - Fuente monoespaciada de Vercel. Es gratuita y open source.
@@ -93,8 +95,8 @@
 
 Actualmente utilizo iTerm2 y Warp.
 
-- [Warp](https://app.warp.dev/referral/2EJGKR)
-- [iTerm2](https://iterm2.com/) + [Oh My Zsh](https://ohmyz.sh/)
+- [Warp](https://app.warp.dev/referral/2EJGKR) - Tremenda terminal con IA integrada.
+- [iTerm2](https://iterm2.com/) + [Oh My Zsh](https://ohmyz.sh/) - Terminal para que no uses la que viene de serie con macOS.
 
 
 ### Temas iTerm2
@@ -109,7 +111,7 @@ Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te gu
 - [Brave](https://brave.com/es/) - Lo uso principalmente desde el móvil.
 - [Firefox Developer](https://www.mozilla.org/es-ES/firefox/developer/) - Lo uso como navegador web secundario.
 
-### Extensiones
+### Extensiones Navegador
 
 - [GIFs for GitHub](https://chromewebstore.google.com/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep) - Si solo puedes elegir una, esta es la única extensión que deberías tener instalada.
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Para poner en modo oscuro cualquier página web y no quemarte los ojos.
@@ -127,8 +129,13 @@ Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te gu
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)
 - [Power Ball](https://amzn.to/4bYITH4) - Bola Giratoria para mover un poco las muñecas.
 - [DYMO Label Maker](https://amzn.to/4dX1OUB) - Impresora de etiquetas para tener todo bien organizado.
-- [Raspberry Pi 3 B](https://amzn.to/3x4XkL6) - La uso para hacer pruebas y experimentos. Es un mini ordenador que actualmente tiene instalado [Retropie](https://retropie.org.uk/).
+- [Raspberry Pi 3 B](https://amzn.to/3x4XkL6) - Es un mini ordenador, y la uso para hacer pruebas y experimentos. Actualmente tiene instalado [Retropie](https://retropie.org.uk/).
 - [Mandos Super Nintendo USB](https://amzn.to/3x28pg0) - Versión no original de los mandos de la Super Nintendo. Los uso con la Raspberry Pi para jugar a los juegos de mi infancia.
+
+### Cables y conexiones
+
+- [Cable Ethernet CAT 6 20m](https://amzn.to/3yZKoqg) - Cable de red de 20 metros que sale de la caja de fibra óptica y llega hasta el estudio. _Tu conexión está limitada por el cable más lento de la cadena_. Si tienes contratado 1000MB de fibra, pero usas un cable CAT 5, no vas a poder disfrutar de la máxima velocidad contratada.
+- [Switch Ethernet 5 puertos](https://amzn.to/3wSHL9q) - Para tener conexión por cable a internet en el estudio. Necesario para hacer streaming o para jugar competitivo online.
 
 ---
 
