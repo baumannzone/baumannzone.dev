@@ -6,7 +6,7 @@
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/baumannzone/baumannzone.dev/main)
 
 ### https://baumannzone.dev
-My personal website and blog made Astro and Tailwind CSS. Hosted on Vercel.
+My personal website and blog made with Astro and Tailwind CSS. Hosted on Vercel.
 
 
 ## Build Setup
