@@ -7,11 +7,17 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  canonical?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const {
+  title,
+  description,
+  image = '/opengraph.avif',
+  canonical,
+} = Astro.props;
 
-const { title, description, image = '/opengraph.avif' } = Astro.props;
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!-- Global Metadata -->

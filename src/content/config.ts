@@ -13,6 +13,7 @@ const blog = defineCollection({
     author: z.string().default('Jorge Baumann'),
     authorImage: z.string().optional(),
     type: z.enum(['blog', 'css-art']).default('blog'),
+    canonical: z.string().optional(),
   }),
 });
 
