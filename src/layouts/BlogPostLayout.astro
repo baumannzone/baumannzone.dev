@@ -19,19 +19,21 @@ const { title, description, pubDate, updatedDate, tags, canonical } =
 
   <body class='dark:bg-gray-700'>
     <NavBar />
-    <main class='px-4 py-8'>
+    <main class='px-4 py-8' itemscope itemtype='https://schema.org/Article'>
       <header class='max-w-prose mx-auto'>
         <div class='text-gray-500 text-xs dark:text-gray-400'>
-          <FormattedDate date={pubDate} />
+          <FormattedDate date={pubDate} type='pubDate' />
           {
             updatedDate && (
               <div>
-                Actualizado el <FormattedDate date={updatedDate} />
+                Actualizado el{' '}
+                <FormattedDate date={updatedDate} type='updatedDate' />
               </div>
             )
           }
         </div>
         <h1
+          itemprop='headline'
           class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white'
         >
           {title}
@@ -52,7 +54,10 @@ const { title, description, pubDate, updatedDate, tags, canonical } =
           )
         }
       </header>
-      <article class='prose dark:prose-invert prose-lg mx-auto mb-16'>
+      <article
+        class='prose dark:prose-invert prose-lg mx-auto mb-16'
+        itemprop='articleBody'
+      >
         <slot />
       </article>
     </main>

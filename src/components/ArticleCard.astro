@@ -31,21 +31,25 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
 
 {
   isBlog && (
-    <article class='min-h-full'>
+    <article class='min-h-full' itemscope itemtype='https://schema.org/Article'>
       <div class='group relative max-w-xl'>
         <div class='flex items-center gap-x-4'>
           <FormattedDate
             date={post.data.pubDate}
             className='text-gray-500 text-xs'
+            type='pubDate'
           />
         </div>
-        <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
+        <h2
+          class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'
+          itemprop='headline'
+        >
           <a href={`/blog/${post.slug}`}>
             <span class='absolute inset-0' />
             {post.data.title}
           </a>
         </h2>
-        <p class='mt-4 text-sm leading-6 text-gray-600'>
+        <p class='mt-4 text-sm leading-6 text-gray-600' itemprop='description'>
           {post.data.description}
         </p>
       </div>
@@ -75,20 +79,26 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
 
 {
   isFeatured && (
-    <article class='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'>
+    <article
+      class='mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg'
+      itemscope
+      itemtype='https://schema.org/Article'
+    >
       <div class='flex items-center gap-x-4'>
         <FormattedDate
           date={post.data.pubDate}
           className='text-gray-500 text-xs'
+          type='pubDate'
         />
       </div>
       <h2
         id='featured-post'
+        itemprop='headline'
         class='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
       >
         {post.data.title}
       </h2>
-      <p class='mt-4 text-xl leading-8 text-gray-600'>
+      <p class='mt-4 text-xl leading-8 text-gray-600' itemprop='description'>
         {post.data.description}
       </p>
       <div class='mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col'>
@@ -102,13 +112,18 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
           </a>
         </div>
         <div class='flex lg:border-t lg:border-gray-900/10 lg:pt-8'>
-          <span class='flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'>
+          <span
+            class='flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
+            itemprop='author'
+            itemscope
+            itemtype='https://schema.org/Person'
+          >
             <Image
               src={images[`/src/assets/authors/${authorParsed}.avif`]()}
               alt={`Author ${post.data.author}`}
               class='h-6 w-6 flex-none rounded-full bg-gray-50'
             />
-            {post.data.author}
+            <span itemprop='name'>{post.data.author}</span>
           </span>
         </div>
       </div>
@@ -118,29 +133,41 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
 
 {
   !isFeatured && !isBlog && (
-    <article class='py-12'>
+    <article class='py-12' itemscope itemtype='https://schema.org/Article'>
       <div class='group relative max-w-xl'>
         <div class='flex items-center gap-x-4 text-xs'>
-          <FormattedDate date={post.data.pubDate} className='text-gray-500' />
+          <FormattedDate
+            date={post.data.pubDate}
+            className='text-gray-500'
+            type='pubDate'
+          />
         </div>
-        <h2 class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'>
+        <h2
+          class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'
+          itemprop='headline'
+        >
           <a href={`/blog/${post.slug}`}>
             <span class='absolute inset-0' />
             {post.data.title}
           </a>
         </h2>
-        <p class='mt-4 text-sm leading-6 text-gray-600'>
+        <p class='mt-4 text-sm leading-6 text-gray-600' itemprop='description'>
           {post.data.description}
         </p>
       </div>
       <div class='mt-4 flex'>
-        <span class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'>
+        <span
+          class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
+          itemprop='author'
+          itemscope
+          itemtype='https://schema.org/Person'
+        >
           <Image
             src={images[`/src/assets/authors/${authorParsed}.avif`]()}
             alt={`Author ${post.data.author}`}
             class='h-6 w-6 flex-none rounded-full bg-gray-50'
           />
-          {post.data.author}
+          <span itemprop='name'>{post.data.author}</span>
         </span>
       </div>
     </article>
