@@ -9,10 +9,10 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      customPages: [
-        'https://baumannzone.dev/patrocinio',
-        'https://baumannzone.dev/uses',
-        'https://baumannzone.dev/blog',
+      pages: [
+        'https://www.baumannzone.dev/blog',
+        'https://www.baumannzone.dev/uses',
+        'https://baumannzone.dev/patrocinio/',
       ],
     }),
     tailwind(),
