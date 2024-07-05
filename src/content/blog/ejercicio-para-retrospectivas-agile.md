@@ -20,6 +20,8 @@ Si alguna vez te dan la oportunidad de dirigir una retrospectiva, plantea la sig
 Es una pregunta simple, pero poderosa. Te sorprenderá la cantidad de respuestas que obtendrás. 
 Algunos dirán que las retrospectivas que no sirven para nada. Otros dirán que son una pérdida de tiempo y que preferirían estar haciendo otra cosa o que simplemente se hacen porque es la norma. Pero también habrá quienes digan que las retrospectivas son una oportunidad para mejorar la comunicación, identificar problemas y buscar soluciones.
 
+El año pasado tuve la oportunidad de hacerlo y los resultados fueron sorprendentes. La pregunta generó una discusión animada y abrió la puerta a nuevas ideas y perspectivas.
+
 ## La reflexión
 
 Después de escuchar las respuestas de tu equipo, invítalos a reflexionar sobre lo que han dicho. Pregúntales por qué piensan de esa manera y qué podrían hacer para cambiar su percepción.
@@ -44,4 +46,4 @@ Este ejercicio es solo un ejemplo de cómo una simple pregunta puede transformar
 
 Recuerda que **las retrospectivas son una oportunidad para mejorar** y crecer como equipo. Aprovecha esta oportunidad al máximo y verás cómo tu equipo se convierte en un equipo de alto rendimiento.
 
-¿Vas a probar este ejercicio en tu próxima retrospectiva? Dime cómo te fue en los comentarios!
+¿Vas a probar este ejercicio en tu próxima retrospectiva? ¡Dime cómo te fue en los comentarios!

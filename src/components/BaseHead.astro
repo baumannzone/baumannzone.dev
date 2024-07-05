@@ -10,12 +10,7 @@ interface Props {
   canonical?: string;
 }
 
-const {
-  title,
-  description,
-  image = '/opengraph.avif',
-  canonical,
-} = Astro.props;
+const { title, description, image = '/opengraph.png', canonical } = Astro.props;
 
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
 ---
