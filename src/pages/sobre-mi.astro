@@ -1,0 +1,838 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { calculateCoffees } from '../utils/';
+import jorgeBaumann from '../assets/sobre-mi/bmn.avif';
+import img1 from '../assets/sobre-mi/team/1.avif';
+import img2 from '../assets/sobre-mi/team/2.avif';
+import img3 from '../assets/sobre-mi/team/3.avif';
+import img4 from '../assets/sobre-mi/team/4.avif';
+import img6 from '../assets/sobre-mi/team/6.avif';
+import img7 from '../assets/sobre-mi/team/7.avif';
+import img9 from '../assets/sobre-mi/team/8.avif';
+import img12 from '../assets/sobre-mi/team/12.avif';
+
+import rambito1 from '../assets/sobre-mi/rambito1.jpg';
+import rambito2 from '../assets/sobre-mi/rambito2.jpg';
+import rambito3 from '../assets/sobre-mi/rambito3.jpg';
+import rambito4 from '../assets/sobre-mi/rambito4.jpg';
+
+import clickSound from '../assets/sobre-mi/sound/clickSound.mp3';
+import hoverSound from '../assets/sobre-mi/sound/hoverSound.mp3';
+
+const teamMembers = [
+  {
+    name: 'Rambo Mambo',
+    role: 'Co-Founder / CEO',
+    img: img1,
+  },
+  {
+    name: 'Jorge Baumann',
+    role: 'Co-Founder / CTO',
+    img: img12,
+  },
+  {
+    name: 'Jorge B.',
+    role: 'UX/UI Designer',
+    img: img4,
+  },
+  {
+    name: 'Rambito The Dog',
+    role: 'Snack Manager / Cuteness Officer',
+    img: img2,
+  },
+  {
+    name: 'Rambito.js',
+    role: 'QA Engineer',
+    img: img6,
+  },
+  {
+    name: 'Batmann',
+    role: 'DevOps Engineer',
+    img: img3,
+  },
+  {
+    name: 'Baumanndroid',
+    role: 'Software Engineer',
+    img: img9,
+  },
+  {
+    name: 'B-Mann',
+    role: 'Cybersecurity Analyst',
+    img: img7,
+  },
+];
+
+// Get the blog posts
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Seleccionar los tres primeros artículos
+const recentPosts = posts.slice(0, 3);
+
+// Calcular el número de cafés consumidos
+const totalCoffees = calculateCoffees().toLocaleString();
+
+// Calcular la edad en milisegundos
+const birthDate = new Date('1988-01-21');
+const currentDate = new Date();
+const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
+
+// Calcular el numero de repositorios de GitHub
+// const githubUsername = 'baumannzone';
+// const githubToken = import.meta.env.GITHUB_TOKEN;
+
+// const githubResponse = await fetch(
+//   `https://api.github.com/users/${githubUsername}`,
+//   {
+//     headers: { Authorization: `token ${githubToken}` },
+//   }
+// );
+
+// const githubData = await githubResponse.json();
+// const githubPublicRepos = githubData.public_repos;
+
+const githubPublicRepos = 151;
+---
+
+<DefaultLayout>
+  <audio id='click-sound' src={clickSound}></audio>
+  <audio id='hover-sound' src={hoverSound}></audio>
+
+  <div class='bg-white'>
+    <div class='isolate'>
+      <!-- Hero section -->
+      <div class='relative isolate -z-10'>
+        <svg
+          class='absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]'
+          aria-hidden='true'
+        >
+          <defs>
+            <pattern
+              id='1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84'
+              width='200'
+              height='200'
+              x='50%'
+              y='-1'
+              patternUnits='userSpaceOnUse'
+            >
+              <path d='M.5 200V.5H200' fill='none'></path>
+            </pattern>
+          </defs>
+          <svg x='50%' y='-1' class='overflow-visible fill-gray-50'>
+            <path
+              d='M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z'
+              stroke-width='0'></path>
+          </svg>
+          <rect
+            width='100%'
+            height='100%'
+            stroke-width='0'
+            fill='url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)'></rect>
+        </svg>
+        <div
+          class='absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48'
+          aria-hidden='true'
+        >
+          <div
+            class='aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-pink-500 to-violet-400 opacity-30'
+            style='clip-path: polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)'
+          >
+          </div>
+        </div>
+
+        <div class='mx-auto max-w-7xl pt-10 px-6 pb-32 sm:pb-40 lg:px-8'>
+          <div class='grid grid-cols-5 gap-8'>
+            <div class='col-span-5 sm:col-span-3'>
+              <h1
+                class='text-4xl font-bold tracking-tight text-gray-900 md:text-6xl mt-10 sm:mt-20 md:mt-24 lg:mt-44'
+              >
+                Hola, soy Jorge Baumann, Senior Software Engineer
+              </h1>
+              <p
+                class='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'
+              >
+                Transformando la web con cada línea de código.
+              </p>
+            </div>
+            <div class='col-span-5 sm:col-span-2'>
+              <Image
+                src={jorgeBaumann}
+                alt='Jorge Baumann - Full Stack Developer. Fotografía de Jorge Baumann, un hombre de complexión atlética con barba espesa y cabeza rapada. Jorge viste un polo blanco de manga corta con cuello mao y está de pie con los brazos cruzados, mostrando una expresión de confianza y serenidad en su rostro. La imagen es en blanco y negro, lo que resalta los contrastes y detalles del retrato. El fondo sugiere un entorno moderno con grandes ventanas que dejan entrever una estructura arquitectónica contemporánea. La iluminación y el enfoque están centrados en Baumann, destacando su presencia y actitud profesional.'
+                class='aspect-[2/2] object-top sm:aspect-[2/3] sm:object-cover w-full max-w-lg rounded-2xl object-cover mx-auto sm:mx-0 bg-slate-50 hover:shadow-xl transition duration-200 ease-in-out hover:sepia hover:cursor-crosshair'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content section -->
+      <div class='mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8'>
+        <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+          <h2
+            class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+          >
+            Más sobre mí
+          </h2>
+          <div class='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
+            <div class='lg:w-full lg:max-w-2xl lg:flex-auto'>
+              <p class='text-xl leading-8 text-gray-600 text-balance'>
+                Soy un full stack developer con más de 10 años de experiencia.
+                Hago dibujos con <span
+                  class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+                  >CSS</span
+                >, disfruto dando charlas y siendo speaker, y me encanta
+                compartir lo que aprendo con la comunidad.
+              </p>
+              <div class='mt-10 max-w-xl text-base leading-7 text-gray-700'>
+                <p>
+                  Nací hace
+                  <span class='tabular-nums' id='milliseconds' title='1988'>
+                    {ageInMilliseconds}
+                  </span>
+                  milisegundos. Me crié en <span
+                    class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500'
+                    >Madrid</span
+                  >, ciudad en la que actualmente resido. Despues de finalizar
+                  un grado superior en sistemas informaticos, estuve trabajando
+                  como administrador de sistemas. Un par de años después me
+                  matriculé en la universidad rey Juan Carlos para estudiar
+                  ingeniería informática.
+                </p>
+                <p class='mt-6'>
+                  Soy un web developer y creador de contenido con más de una
+                  década de experiencia. Me considero un <span
+                    class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+                    >hacker</span
+                  > en el sentido de que siempre estoy utilizando la tecnología para
+                  resolver mis problemas y necesidades diarias o para experimentar
+                  con nuevas ideas.
+                </p>
+                <p class='mt-6'>
+                  Tengo varios hobbies. Además del mundo tech, soy un apasionado
+                  del
+                  <span
+                    class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-violet-500'
+                    >fitness</span
+                  >. También me encantan los juegos de mesa y los videojuegos.
+                  Tengo una larga <span title='sin usar 😂'>lista</span> de ambos.
+                </p>
+              </div>
+            </div>
+            <div class='lg:flex lg:flex-auto lg:justify-center'>
+              <dl class='w-64 space-y-8 xl:w-80'>
+                <div class='flex flex-col-reverse gap-y-4'>
+                  <dt class='text-base leading-7 text-gray-600'>
+                    Artículos publicados
+                  </dt>
+                  <dd
+                    class='text-5xl font-semibold tracking-tight text-gray-900'
+                  >
+                    {posts.length}
+                  </dd>
+                </div>
+                <div class='flex flex-col-reverse gap-y-4'>
+                  <dt class='text-base leading-7 text-gray-600'>
+                    Repositorios en GitHub <span class='text-gray-400'
+                      >(públicos)</span
+                    >
+                  </dt>
+                  <dd
+                    class='text-5xl font-semibold tracking-tight text-gray-900'
+                  >
+                    {githubPublicRepos}
+                  </dd>
+                </div>
+                <div class='flex flex-col-reverse gap-y-4'>
+                  <dt class='text-base leading-7 text-gray-600'>
+                    Cafés consumidos desde 2015
+                  </dt>
+                  <dd
+                    class='text-5xl font-semibold tracking-tight text-gray-900'
+                  >
+                    ± {totalCoffees}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image section -->
+      <!-- <div class='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
+        <img
+          src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80'
+          alt=''
+          class='aspect-[5/2] w-full object-cover xl:rounded-3xl hover:shadow-xl transition duration-200 ease-in-out hover:cursor-crosshair'
+        />
+      </div> -->
+
+      <div class='mt-32 overflow-hidden sm:mt-40'>
+        <div class='mx-auto max-w-7xl px-6 lg:flex lg:px-8'>
+          <div
+            class='mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'
+          >
+            <div class='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
+              <h2
+                class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+              >
+                Mi compañero
+              </h2>
+              <p class='mt-6 text-xl leading-8 text-gray-600 prose'>
+                Rambo Mambo también conocido como Rambito.js, es mi fiel
+                compañero desde que lo adopté en 2012
+              </p>
+              <p class='mt-6 text-base leading-7 text-gray-600'>
+                Aunque no conocemos su fecha exacta de nacimiento, se estima que
+                nació en 2010. Rambo es un braco húngaro (Vizsla), una raza
+                conocida por su energía y afecto.
+              </p>
+              <p class='mt-2 text-base leading-7 text-gray-600'>
+                Además, Rambo ha asistido a muchos eventos tecnológicos conmigo,
+                convirtiéndose en una figura querida en la comunidad tech. Y por
+                supuesto, siempre tiene hambre, lo que lo hace aún más adorable.
+              </p>
+            </div>
+            <div
+              class='flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'
+            >
+              <div
+                class='w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end'
+              >
+                <Image
+                  src={rambito1}
+                  alt=''
+                  class='aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover grayscale hover:grayscale-0 transition-all duration-300 ease-in-out -scale-x-100'
+                />
+              </div>
+              <div
+                class='contents
+                  lg:col-span-2
+                  lg:col-end-2
+                  lg:ml-auto
+                  lg:flex
+                  lg:w-[37rem]
+                  lg:items-start
+                  lg:justify-end
+                  lg:gap-x-8'
+              >
+                <div
+                  class='order-first flex w-64 flex-none justify-end self-end lg:w-auto'
+                >
+                  <Image
+                    src={rambito3}
+                    alt=''
+                    class='aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover grayscale hover:grayscale-0 transition-all duration-300 ease-in-out'
+                    '
+                  />
+                </div>
+                <div
+                  class='flex w-96 flex-auto justify-end lg:w-auto lg:flex-none'
+                >
+                  <Image
+                    src={rambito4}
+                    alt=''
+                    class='aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover transition-all duration-300 ease-in-out -hue-rotate-90 hover:hue-rotate-0'
+                    '
+                  />
+                </div>
+                <div
+                  class='hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none'
+                >
+                  <Image
+                    src={rambito2}
+                    alt=''
+                    class='aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover -scale-x-100 grayscale hover:grayscale-0 transition-all duration-300 ease-in-out'
+                    '
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values section -->
+      <div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
+        <div class='mx-auto max-w-2xl lg:mx-0'>
+          <h2
+            class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+          >
+            Mi enfoque
+          </h2>
+          <p class='mt-6 text-lg leading-8 text-gray-600'>
+            No te voy a decir como tienes que vivir tu vida, pero si te puedo
+            contar como vivo la mía.
+          </p>
+        </div>
+        <dl
+          class='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'
+        >
+          <div>
+            <dt class='font-semibold text-gray-900'>
+              Share everything you know
+            </dt>
+            <dd class='mt-1 text-gray-600'>
+              Creo firmemente en la importancia de compartir conocimiento. A
+              través de mis publicaciones en redes, artículos y livestreams,
+              busco difundir todo lo que aprendo para ayudar a otros developers
+              a crecer.
+            </dd>
+          </div>
+
+          <div>
+            <dt class='font-semibold text-gray-900'>Always learning</dt>
+            <dd class='mt-1 text-gray-600'>
+              El aprendizaje continuo es una parte fundamental de mi vida.
+              Siempre estoy explorando nuevas tecnologías y métodos para mejorar
+              mis habilidades y mantenerme actualizado en un campo que
+              evoluciona rápidamente.
+            </dd>
+          </div>
+
+          <div>
+            <dt class='font-semibold text-gray-900'>
+              Embrace a Healthy Lifestyle
+            </dt>
+            <dd class='mt-1 text-gray-600'>
+              Llevo un estilo de vida saludable y activo, combinando una
+              nutrición equilibrada con una rutina de ejercicios diaria. Intento
+              ir al gim 5 veces por semana para mantenerme en forma.
+            </dd>
+          </div>
+
+          <div>
+            <dt class='font-semibold text-gray-900'>Be world-class</dt>
+            <dd class='mt-1 text-gray-600'>
+              Me esfuerzo constantemente por alcanzar la cima en todo lo que
+              hago, aplicando las mejores prácticas y tecnologías de actualidad
+              en el desarrollo web.
+            </dd>
+          </div>
+
+          <div>
+            <dt class='font-semibold text-gray-900'>Be supportive</dt>
+            <dd class='mt-1 text-gray-600'>
+              Apoyo a la comunidad de desarrolladores ofreciendo ayuda y
+              colaborando en proyectos. Valoro mucho el trabajo en equipo y el
+              crecimiento conjunto.
+            </dd>
+          </div>
+
+          <div>
+            <dt class='font-semibold text-gray-900'>Enjoy downtime</dt>
+            <dd class='mt-1 text-gray-600'>
+              Me gusta pasar tiempo con la familia y los amigos. Disfruto de los
+              juegos de mesa, la música, los videojuegos y la lectura.
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Logo cloud -->
+      <div class='relative isolate -z-10 mt-32 sm:mt-48'>
+        <div
+          class='absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]'
+        >
+          <svg
+            class='h-[40rem] w-[80rem] flex-none stroke-gray-100'
+            aria-hidden='true'
+          >
+            <defs>
+              <pattern
+                id='e9033f3e-f665-41a6-84ef-756f6778e6fe'
+                width='150'
+                height='150'
+                x='50%'
+                y='50%'
+                patternUnits='userSpaceOnUse'
+                patternTransform='translate(-100 0)'
+              >
+                <path d='M.5 200V.5H200' fill='none'></path>
+              </pattern>
+            </defs>
+            <svg
+              x='50%'
+              y='50%'
+              class='overflow-visible fill-gray-50 opacity-60'
+            >
+              <path
+                d='M-300 0h201v201h-201Z M300 200h201v201h-201Z'
+                stroke-width='0'></path>
+            </svg>
+            <rect
+              width='100%'
+              height='100%'
+              stroke-width='0'
+              fill='url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)'></rect>
+          </svg>
+        </div>
+        <div class='mx-auto max-w-7xl px-6 lg:px-8'>
+          <h2 class='text-center text-lg font-semibold leading-8 text-gray-900'>
+            Clientes y proyectos con los que he colaborado
+          </h2>
+          <div
+            class='mx-auto mt-10 flex flex-wrap justify-center items-center gap-8 sm:gap-12 lg:mx-0 lg:max-w-none'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 155 38'
+              class='h-10 opacity-50 hover:opacity-100 transition-opacity duration-300'
+            >
+              <g clip-path='url(#baA)'>
+                <path
+                  d='M5.548 11.465a5.55 5.55 0 005.548-5.548A5.55 5.55 0 005.548.369 5.55 5.55 0 000 5.917a5.55 5.55 0 005.548 5.548zm13.037 0a5.55 5.55 0 005.548-5.548A5.55 5.55 0 0018.584.369a5.55 5.55 0 00-5.548 5.548 5.55 5.55 0 005.548 5.548zM37.17 5.917a5.55 5.55 0 01-5.548 5.548 5.55 5.55 0 01-5.548-5.548A5.55 5.55 0 0131.622.369a5.55 5.55 0 015.548 5.548zM18.584 24.503a5.55 5.55 0 005.548-5.548 5.55 5.55 0 00-5.548-5.548 5.55 5.55 0 00-5.548 5.548 5.55 5.55 0 005.548 5.548zm5.548 7.49a5.55 5.55 0 01-5.548 5.548 5.55 5.55 0 01-5.548-5.548 5.55 5.55 0 015.548-5.548 5.55 5.55 0 015.548 5.548zm102.922-17.566a1.822 1.822 0 000-3.643 1.822 1.822 0 100 3.643zm-36.359 4.758h-2.092v-2.954h2.092v-1.848c0-1.871 1.207-3.078 3.078-3.078h2.709v2.709h-1.848a.84.84 0 00-.802.527.84.84 0 00-.06.333v1.355h2.709v2.954h-2.709v9.603h-3.078l.002-9.603zM43.832 14.63h5.164v14.156h3.2V14.63h5.178v-3.076H43.832v3.076zm18.557 14.403c3.963 0 5.514-2.954 5.785-3.939h-3.2c-.246.517-1.132 1.354-2.585 1.354-1.749 0-3.053-1.206-3.324-2.954h9.355l.05-.345a6.99 6.99 0 00.074-.886c0-3.57-2.709-6.277-6.155-6.277-3.692 0-6.401 2.707-6.401 6.524s2.709 6.524 6.401 6.524zm0-10.462c1.747 0 2.807 1.23 3.078 2.831h-6.401c.369-1.601 1.453-2.831 3.324-2.831zm8-7.016h3.078v17.232h-3.078V11.554zM81.71 29.032c3.965 0 5.515-2.954 5.786-3.939h-3.201c-.246.517-1.132 1.354-2.585 1.354-1.747 0-3.053-1.206-3.324-2.954h9.356l.048-.345c.044-.293.068-.589.074-.886 0-3.57-2.707-6.277-6.155-6.277-3.692 0-6.4 2.707-6.4 6.524s2.707 6.524 6.4 6.524zm0-10.462c1.749 0 2.807 1.23 3.078 2.831h-6.401c.37-1.601 1.453-2.831 3.324-2.831zm21.633 10.47c3.692 0 6.401-2.707 6.401-6.524 0-3.824-2.709-6.524-6.401-6.524s-6.401 2.715-6.401 6.524 2.709 6.524 6.401 6.524zm0-10.216c1.846 0 3.324 1.476 3.324 3.692 0 2.209-1.478 3.692-3.324 3.692s-3.324-1.476-3.324-3.692 1.478-3.692 3.324-3.692zm8.246-2.593h2.831l.246 1.239h.123a4.09 4.09 0 01.837-.739 4.7 4.7 0 012.61-.739c2.832 0 4.924 2.092 4.924 5.292v7.509h-3.078v-7.27c0-1.6-1.107-2.707-2.708-2.707s-2.708 1.107-2.708 2.707v7.262h-3.077V16.231zm25.249 12.801c3.965 0 5.515-2.954 5.908-4.924l-3.08.008c-.271.863-.987 2.093-2.833 2.093s-3.324-1.468-3.324-3.692 1.481-3.699 3.329-3.699 2.561 1.254 2.832 1.969h3.076c-.393-1.848-1.943-4.801-5.908-4.801-3.693 0-6.4 2.707-6.4 6.524s2.707 6.524 6.4 6.524zm15.214-1.476h-.123a3.64 3.64 0 01-.862.737 4.937 4.937 0 01-2.708.739c-2.856 0-4.555-1.747-4.555-3.815 0-2.463 1.724-4.182 5.17-4.182h2.831v-.246c0-1.378-.836-2.339-2.216-2.339s-2.092.887-2.215 1.601h-3.077c.271-2.069 1.945-4.063 5.292-4.063 3.201 0 5.294 2.117 5.294 4.801v8.001h-2.585l-.246-1.236zm-.247-4.182h-2.585c-1.599 0-2.338.619-2.338 1.601s.714 1.6 1.97 1.6c1.871 0 2.953-1.084 2.953-2.831v-.37zm-23.212-7.143h-3.077v12.555h3.077V16.231zm-20.941-5.294h-3.202l-2.339 3.57h2.585l2.956-3.57z'
+                ></path>
+              </g>
+              <defs>
+                <clipPath id='baA'>
+                  <path transform='translate(0 .369)' d='M0 0h155v37.263H0z'
+                  ></path>
+                </clipPath>
+              </defs>
+            </svg>
+
+            <svg
+              viewBox='0 0 210 181'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+              class='h-10 opacity-50 hover:opacity-100 transition-opacity duration-300'
+            >
+              <path
+                d='M45.2522 98.5839C60.4405 73.3627 74.706 47.5745 91.5442 23.369C94.9056 18.5383 98.4217 13.7848 101.087 8.51581C102.654 5.4173 102.263 3.0148 100.102 1.42172C97.9783 -0.145577 95.1634 -0.0888664 93.3125 0.0864234C46.902 3.81907 0.697689 34.8712 0.269775 79.5443C0.383198 95.8617 9.50342 115.613 16.9429 120.82C22.5161 124.728 27.4809 124.207 33.0438 117.438C37.8179 111.622 41.3855 104.997 45.2522 98.5839Z'
+                fill='currentColor'></path>
+              <path
+                d='M177.22 117.438C182.783 124.207 187.743 124.728 193.321 120.82C200.755 115.608 209.875 95.8566 209.994 79.5443C209.561 34.8712 163.357 3.81907 116.946 0.0864234C115.095 -0.0888664 112.28 -0.145577 110.156 1.42172C108.001 3.0148 107.604 5.4173 109.171 8.51581C111.837 13.7848 115.353 18.5383 118.714 23.369C135.558 47.5745 149.818 73.3627 165.006 98.5839C168.873 104.997 172.441 111.622 177.22 117.438Z'
+                fill='currentColor'></path>
+              <path
+                d='M113.847 79.3432C109.47 78.6832 106.098 78.6214 105.129 78.6162C104.16 78.6214 100.788 78.6884 96.4111 79.3432C70.9065 83.1738 53.1713 97.5269 42.2207 120.366C36.6217 132.044 39.1067 140.071 49.2169 148.036C49.8098 148.505 50.4079 148.959 51.0059 149.418C52.8671 150.666 54.7025 151.867 56.4863 153.032C82.9293 170.293 92.6012 176.418 96.5039 178.212C98.128 178.954 100.984 180.341 104.913 180.439V180.444C104.985 180.444 105.052 180.439 105.124 180.439C105.196 180.439 105.263 180.444 105.335 180.444V180.434C109.264 180.341 112.12 178.954 113.744 178.207C117.647 176.418 127.319 170.288 153.762 153.027C155.551 151.856 157.391 150.65 159.258 149.402C159.851 148.949 160.444 148.495 161.031 148.036C171.141 140.071 173.626 132.038 168.027 120.366C157.087 97.5269 139.352 83.1686 113.847 79.3432Z'
+                fill='currentColor'></path>
+            </svg>
+
+            <svg
+              preserveAspectRatio='xMidYMid meet'
+              version='1.1'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlns:xlink='http://www.w3.org/1999/xlink'
+              viewBox='0 0 58 23'
+              class='h-10 opacity-50 hover:opacity-100 transition-opacity duration-300'
+            >
+              <g
+                id='Page-1'
+                stroke='none'
+                stroke-width='1'
+                fill='none'
+                fill-rule='evenodd'
+              >
+                <g id='ibm-8-bar-logo--h15-copy' fill='currentColor'>
+                  <path
+                    d='M58,21.4666667 L58,23 L50.3684211,23 L50.3684211,21.4666667 L58,21.4666667 Z M39.6842105,21.4666667 L39.6842105,23 L32.0526316,23 L32.0526316,21.4666667 L39.6842105,21.4666667 Z M45.6385329,21.4666667 L45.0245693,23 L44.41871,21.4666667 L45.6385329,21.4666667 Z M28.5421053,21.4666667 C27.4471432,22.4188667 26.0029202,23 24.3905263,23 L24.3905263,23 L12.2105263,23 L12.2105263,21.4666667 Z M10.6842105,21.4666667 L10.6842105,23 L0,23 L0,21.4666667 L10.6842105,21.4666667 Z M39.6842105,18.4 L39.6842105,19.9333333 L32.0526316,19.9333333 L32.0526316,18.4 L39.6842105,18.4 Z M46.8318522,18.4 L46.2377311,19.9333333 L43.8212353,19.9333333 L43.2226426,18.4 L46.8318522,18.4 Z M30.0684211,18.4 C29.9306437,18.9451697 29.7105614,19.4599515 29.4273684,19.9333333 L29.4273684,19.9333333 L12.2105263,19.9333333 L12.2105263,18.4 Z M10.6842105,18.4 L10.6842105,19.9333333 L0,19.9333333 L0,18.4 L10.6842105,18.4 Z M58,18.4 L58,19.9333333 L50.3684211,19.9333333 L50.3684211,18.4 L58,18.4 Z M54.9473684,15.3333333 L54.9473684,16.8666667 L50.3684211,16.8666667 L50.3684211,15.3333333 L54.9473684,15.3333333 Z M39.6842105,15.3333333 L39.6842105,16.8666667 L35.1052632,16.8666667 L35.1052632,15.3333333 L39.6842105,15.3333333 Z M48.0292704,15.3333333 L47.4295831,16.8666667 L42.6233978,16.8666667 L42.019006,15.3333333 L48.0292704,15.3333333 Z M29.8547368,15.3333333 C29.991899,15.8221879 30.0684211,16.3357152 30.0684211,16.8666667 L30.0684211,16.8666667 L24.4210526,16.8666667 L24.4210526,15.3333333 Z M19.8421053,15.3333333 L19.8421053,16.8666667 L15.2631579,16.8666667 L15.2631579,15.3333333 L19.8421053,15.3333333 Z M7.63157895,15.3333333 L7.63157895,16.8666667 L3.05263158,16.8666667 L3.05263158,15.3333333 L7.63157895,15.3333333 Z M54.9473684,12.2666667 L54.9473684,13.8 L50.3684211,13.8 L50.3684211,12.2666667 L54.9473684,12.2666667 Z M39.6842105,12.2666667 L39.6842105,13.8 L35.1052632,13.8 L35.1052632,12.2666667 L39.6842105,12.2666667 Z M49.2252679,12.2666667 L48.6284686,13.8 L41.4089474,13.8 L40.8168134,12.2666667 L49.2252679,12.2666667 Z M27.9773684,12.2666667 C28.5037637,12.6994848 28.9570701,13.2181697 29.3052632,13.8 L29.3052632,13.8 L15.2631579,13.8 L15.2631579,12.2666667 Z M7.63157895,12.2666667 L7.63157895,13.8 L3.05263158,13.8 L3.05263158,12.2666667 L7.63157895,12.2666667 Z M44.5987396,9.2 L45.0263158,10.4393515 L45.4535426,9.2 L54.9473684,9.2 L54.9473684,10.7333333 L50.3684211,10.7333333 L50.3684211,9.32433939 L49.8494737,10.7333333 L40.1878947,10.7333333 L39.6842105,9.3242 L39.6842105,10.7333333 L35.1052632,10.7333333 L35.1052632,9.2 L44.5987396,9.2 Z M7.63157895,9.2 L7.63157895,10.7333333 L3.05263158,10.7333333 L3.05263158,9.2 L7.63157895,9.2 Z M29.3052632,9.2 C28.9570701,9.7818303 28.5037637,10.3003758 27.9773684,10.7333333 L27.9773684,10.7333333 L15.2631579,10.7333333 L15.2631579,9.2 Z M54.9473684,6.13333333 L54.9473684,7.66666667 L45.9831118,7.66666667 L46.5234001,6.13333333 L54.9473684,6.13333333 Z M43.534302,6.13333333 L44.0745993,7.66666667 L35.1052632,7.66666667 L35.1052632,6.13333333 L43.534302,6.13333333 Z M30.0684211,6.13333333 C30.0684211,6.66414545 29.991899,7.17767273 29.8547368,7.66666667 L29.8547368,7.66666667 L24.4210526,7.66666667 L24.4210526,6.13333333 Z M19.8421053,6.13333333 L19.8421053,7.66666667 L15.2631579,7.66666667 L15.2631579,6.13333333 L19.8421053,6.13333333 Z M7.63157895,6.13333333 L7.63157895,7.66666667 L3.05263158,7.66666667 L3.05263158,6.13333333 L7.63157895,6.13333333 Z M42.4774196,3.06666667 L43.0079113,4.6 L32.0527757,4.6 L32.0526316,3.06666667 L42.4774196,3.06666667 Z M58,3.06666667 L58,4.6 L47.0390632,4.6 L47.5903678,3.06666667 L58,3.06666667 Z M29.4273684,3.06666667 C29.7105614,3.54004848 29.9306437,4.0548303 30.0684211,4.6 L30.0684211,4.6 L12.2105263,4.6 L12.2105263,3.06666667 Z M10.6842105,3.06666667 L10.6842105,4.6 L0,4.6 L0,3.06666667 L10.6842105,3.06666667 Z M41.4056725,0 L41.9462722,1.53333333 L32.05278,1.53333333 L32.0526316,0 L41.4056725,0 Z M58,0 L58,1.53333333 L48.1188427,1.53333333 L48.6466706,0 L58,0 Z M24.3905263,0 C25.9912083,0 27.4472798,0.581133333 28.5421053,1.53333333 L28.5421053,1.53333333 L12.2105263,1.53333333 L12.2105263,0 Z M10.6842105,0 L10.6842105,1.53333333 L0,1.53333333 L0,0 L10.6842105,0 Z'
+                    id='Combined-Shape'></path>
+                </g>
+              </g>
+            </svg>
+
+            <svg
+              viewBox='0 0 155 28'
+              version='1.1'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlns:xlink='http://www.w3.org/1999/xlink'
+              class='h-10 opacity-50 hover:opacity-100 transition-opacity duration-300'
+            >
+              <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+                <g
+                  transform='translate(-162.000000, -528.000000)'
+                  fill='currentColor'
+                >
+                  <path
+                    d='M317,540.576456 C317,541.488841 316.892809,542.594442 316.732023,543.174872 C316.035093,543.091786 315.337972,543.064156 314.506863,543.064156 C313.783135,543.064156 313.059217,543.119612 312.335489,543.229937 L312.335489,555.060376 L309.386602,555.060376 L309.386602,541.239973 C310.646664,540.797693 312.764443,540.466131 314.42647,540.466131 C315.337972,540.466131 316.356665,540.493761 317,540.576456 Z M297.215313,546.602196 L303.863804,546.602196 C303.863804,544.335734 302.684325,543.008895 300.64675,543.008895 C298.555769,543.008895 297.456683,544.252843 297.215313,546.602196 Z M306.678323,549.145157 L297.268909,549.145157 C297.644267,551.605227 299.038127,552.793718 301.665252,552.793718 C303.273875,552.793718 304.909295,552.434329 306.383549,551.743378 C306.276358,552.545046 306.115572,553.595191 305.927798,554.507184 C304.587342,555.143071 303.166684,555.391743 301.584859,555.391743 C296.652372,555.391743 294.266616,552.57248 294.266616,547.846144 C294.266616,543.727673 296.116418,540.466131 300.807536,540.466131 C305.016296,540.466131 306.8393,543.312828 306.8393,546.795804 C306.8393,547.652733 306.785704,548.343684 306.678323,549.145157 Z M288.931212,551.853703 L288.931212,543.340654 C288.153889,543.174872 287.349578,543.064156 286.572064,543.064156 C283.649975,543.064156 282.256114,544.943991 282.256114,548.095012 C282.256114,550.914079 283.35539,552.904435 285.982515,552.904435 C287.161994,552.904435 288.127091,552.48959 288.931212,551.853703 Z M291.853112,535.711772 L291.853112,555.060376 L289.145594,555.060376 L288.984998,553.291258 C288.234092,554.590467 287.081411,555.391743 285.151406,555.391743 C281.612969,555.391743 279.253631,552.738262 279.253631,548.095012 C279.253631,543.229937 281.773565,540.466131 286.733041,540.466131 C287.510364,540.466131 288.234092,540.549021 288.931212,540.687172 L288.931212,536.126422 C289.842714,535.794859 290.888015,535.711772 291.853112,535.711772 Z M276.893723,545.773093 L276.893723,555.060376 L273.945215,555.060376 L273.945215,546.298264 C273.945215,544.114692 273.248095,543.064156 270.299207,543.064156 C269.602277,543.064156 268.771168,543.147242 267.967047,543.285393 L267.967047,555.060376 L265.018159,555.060376 L265.018159,541.239973 C266.894569,540.770063 268.958752,540.466131 270.3796,540.466131 C275.312278,540.466131 276.893723,542.428464 276.893723,545.773093 Z M258.851647,551.909159 L258.851647,543.229937 C258.2353,543.119612 257.564787,543.064156 256.734058,543.064156 C253.67779,543.064156 252.257132,544.999251 252.257132,548.095012 C252.257132,550.914079 253.356408,552.904435 255.983343,552.904435 C257.135834,552.904435 258.074514,552.517416 258.851647,551.909159 Z M261.800535,541.239973 L261.800535,555.060376 L259.093016,555.060376 L258.93242,553.401975 C258.181514,554.618097 257.028833,555.391743 255.152424,555.391743 C251.613797,555.391743 249.254839,552.738262 249.254839,548.095012 C249.254839,543.229937 251.774583,540.466131 256.734058,540.466131 C258.664063,540.466131 260.245888,540.687172 261.800535,541.239973 Z M245.983428,552.793718 C246.841145,552.793718 247.645646,552.627741 248.288981,552.379265 C248.208588,553.208171 248.101207,554.148187 247.940421,554.949464 C247.13611,555.281222 246.278393,555.391743 245.447284,555.391743 C242.57898,555.391743 240.755976,554.03747 240.755976,550.665407 L240.755976,536.154052 C241.667478,535.850119 242.793362,535.711772 243.705054,535.711772 L243.705054,540.935844 L248.369374,540.935844 C248.315779,541.875664 248.235386,542.732593 248.101207,543.534065 L243.705054,543.534065 L243.705054,550.306214 C243.705054,552.102767 244.56277,552.793718 245.983428,552.793718 Z M237.806328,545.773093 L237.806328,555.060376 L234.857631,555.060376 L234.857631,546.298264 C234.857631,544.114692 234.16051,543.064156 231.211813,543.064156 C230.514692,543.064156 229.683774,543.147242 228.879462,543.285393 L228.879462,555.060376 L225.930765,555.060376 L225.930765,541.239973 C227.807174,540.770063 229.871358,540.466131 231.292206,540.466131 C236.224884,540.466131 237.806328,542.428464 237.806328,545.773093 Z M219.764253,551.909159 L219.764253,543.229937 C219.147715,543.119612 218.477583,543.064156 217.646474,543.064156 C214.590395,543.064156 213.169737,544.999251 213.169737,548.095012 C213.169737,550.914079 214.268823,552.904435 216.895948,552.904435 C218.048629,552.904435 218.986929,552.517416 219.764253,551.909159 Z M222.71314,541.239973 L222.71314,555.060376 L220.005622,555.060376 L219.844836,553.401975 C219.09412,554.618097 217.941249,555.391743 216.064839,555.391743 C212.526212,555.391743 210.167254,552.738262 210.167254,548.095012 C210.167254,543.229937 212.686998,540.466131 217.646474,540.466131 C219.576669,540.466131 221.158303,540.687172 222.71314,541.239973 Z M195.931783,554.45212 C195.985378,553.318888 196.146164,552.545046 196.440939,551.660487 C197.94218,552.379265 199.872375,552.738262 201.346819,552.738262 C203.839956,552.738262 205.234006,551.909159 205.234006,550.278388 C205.234006,548.675247 204.215313,547.928839 201.695379,546.795804 L200.328126,546.187743 C197.808192,545.054316 196.092569,543.589326 196.092569,540.659542 C196.092569,537.508717 198.210538,535.49073 202.553286,535.49073 C204.295707,535.49073 205.930937,535.739598 207.458976,536.292399 C207.378583,537.398 207.190999,538.254929 206.922832,539.056401 C205.475186,538.503601 203.759563,538.254929 202.526298,538.254929 C200.194138,538.254929 199.12185,539.194748 199.12185,540.659542 C199.12185,542.096902 200.16734,542.926004 202.043749,543.755499 L203.491585,544.390994 C206.896034,545.883614 208.316692,547.459125 208.316692,550.140237 C208.316692,553.318888 205.984532,555.50246 201.427212,555.50246 C199.22904,555.50246 197.433024,555.170897 195.931783,554.45212 Z M181.634353,537.910433 L177.165409,529.929609 C176.824641,529.32096 176.589163,528.668808 176.458406,528 L176.271772,528.333522 C175.165654,530.308985 175.165654,532.742405 176.271582,534.717868 L179.84689,541.102802 C180.952817,543.078069 180.952817,545.51188 179.84689,547.487343 L179.660066,547.820865 C179.529308,547.152057 179.293831,546.499906 178.953063,545.891257 L173.590291,536.31415 C173.249523,535.705502 173.014236,535.05335 172.883288,534.384542 L172.696654,534.718064 C171.594338,536.686864 171.590917,539.110682 172.685821,541.082618 L176.271772,547.487343 C177.37789,549.46261 177.37789,551.896422 176.271772,553.871885 L176.084948,554.205407 C175.954191,553.536599 175.718713,552.884447 175.377945,552.275994 L170.909191,544.294974 C170.309758,543.224646 170.03589,542.019694 170.086064,540.825911 C165.302009,542.114734 162,544.851106 162,548.019372 C162,552.426883 168.389637,556 176.271772,556 C184.153717,556 190.543354,552.426883 190.543354,548.019372 C190.543354,544.85091 187.241725,542.113754 182.45729,540.825128 C182.414908,539.816134 182.141039,538.815176 181.634353,537.910433 Z'
+                    id='Fill-1'></path>
+                </g>
+              </g>
+            </svg>
+
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              version='1.2'
+              viewBox='0 0 123.283 123.284'
+              xml:space='preserve'
+              class='h-12 opacity-50 hover:opacity-100 transition-opacity duration-300'
+            >
+              <defs id='defs23'></defs>
+              <g display='none' transform='translate(-48.644,0.045)'></g>
+              <g transform='translate(-48.644,0.045)'></g>
+              <g transform='translate(-48.644,0.045)'></g>
+              <g transform='translate(-48.644,0.045)'></g>
+              <g transform='translate(-48.644,0.045)'>
+                <g id='Capa_1_1_'>
+                  <g id='g15'>
+                    <path
+                      fill-rule='evenodd'
+                      fill='currentColor'
+                      d='m 171.927,39.201 v 84.038 H 48.644 V 57.045 c 1.646,6.657 6.347,11.91 14.231,11.91 4.976,0 8.274,-3.048 11.349,-7.128 l 1.655,-0.002 v 0 h 10.406 v -1.332 c -3.808,0 -4.405,-0.78 -4.405,-5.368 v -11.84 l 18.994,22.672 h 1.147 V 44.341 c 0,-4.547 0.542,-5.354 4.304,-5.368 l 0.868,10e-4 c 3.597,0.033 4.125,0.875 4.125,5.367 v 14.131 c 0,4.588 -0.55,5.367 -4.358,5.367 v 1.332 h 10.827 v -1.332 c -3.808,0 -4.404,-0.779 -4.404,-5.367 V 45.258 l 9.222,20.7 h 1.009 l 8.993,-20.747 v 13.26 c 0,4.588 -0.597,5.367 -4.404,5.367 v 1.332 h 14.314 v -1.332 c -3.854,0 -4.404,-0.779 -4.404,-5.367 v -14.13 c 0,-4.474 0.524,-5.327 4.123,-5.366 3.474,0.045 4.104,1.122 5.374,4.035 l 10.002,22.949 h 0.963 l 9.956,-22.949 c 1.017,-2.331 1.846,-3.393 3.396,-3.809 z m -34.531,73.315 v 0 0.002 0.003 0 c -10e-4,0.548 -0.219,1.007 -0.565,1.329 -0.347,0.323 -0.822,0.507 -1.336,0.507 v 0 h -0.002 c -0.346,0 -0.659,-0.082 -0.915,-0.186 -0.223,-0.09 -0.404,-0.197 -0.526,-0.274 -0.031,0.038 -0.064,0.085 -0.096,0.141 -0.043,0.075 -0.083,0.167 -0.102,0.269 l -0.009,0.051 h -0.052 -0.233 -0.062 v -0.061 -2.232 -0.061 h 0.062 0.259 0.056 l 0.005,0.055 c 0.072,0.766 0.439,1.291 0.986,1.527 0.107,0.046 0.221,0.08 0.341,0.104 0.121,0.025 0.248,0.038 0.378,0.038 v 0 h 0.01 0.004 v 0 c 0.263,0 0.498,-0.074 0.666,-0.213 0.166,-0.136 0.267,-0.336 0.268,-0.593 v 0 -0.002 c 0,-0.21 -0.085,-0.396 -0.252,-0.572 -0.173,-0.183 -0.434,-0.355 -0.777,-0.527 v 0 l -0.882,-0.452 v 0 c -0.355,-0.187 -0.659,-0.439 -0.857,-0.757 v 0 c -0.039,-0.062 -0.073,-0.127 -0.104,-0.192 -0.094,-0.206 -0.147,-0.436 -0.147,-0.686 v 0 -0.002 -0.002 0 c 0,-0.428 0.18,-0.813 0.479,-1.09 0.299,-0.276 0.719,-0.448 1.201,-0.451 v 0 h 0.002 c 0.402,0 0.736,0.105 0.997,0.236 v 0 c 0.051,0.027 0.099,0.053 0.144,0.081 0.027,0.017 0.054,0.034 0.08,0.051 0.057,-0.069 0.125,-0.171 0.145,-0.325 l 0.006,-0.056 h 0.055 0.259 0.063 v 0.063 2.19 0.063 h -0.063 -0.259 -0.056 l -0.005,-0.058 c -0.054,-0.541 -0.243,-1.152 -0.674,-1.454 v 0 c -0.083,-0.058 -0.175,-0.104 -0.276,-0.136 -0.102,-0.032 -0.214,-0.051 -0.337,-0.051 v 0 h -0.013 -0.003 v 0 c -0.238,0 -0.457,0.063 -0.616,0.182 -0.154,0.117 -0.252,0.287 -0.252,0.506 v 0 0.002 c 0,0.208 0.078,0.369 0.248,0.526 0.178,0.166 0.457,0.329 0.847,0.533 l 0.869,0.454 c 0.317,0.162 0.552,0.362 0.717,0.576 0.033,0.043 0.062,0.085 0.089,0.13 0.164,0.266 0.235,0.551 0.235,0.814 z m -7.232,1.015 h 0.155 c 0.578,0 0.905,-0.051 1.104,-0.177 0.19,-0.12 0.267,-0.315 0.341,-0.606 v 0 l 0.064,-0.26 0.012,-0.046 h 0.048 0.259 0.066 l -0.004,0.065 -0.104,1.569 -0.004,0.058 h -0.058 -4.85 -0.063 v -0.062 -0.26 -0.062 h 0.063 c 0.413,0 0.654,-0.049 0.787,-0.244 0.139,-0.206 0.176,-0.576 0.176,-1.21 v 0 -2.075 0 c 0,-0.637 -0.037,-1.003 -0.176,-1.204 -0.132,-0.191 -0.374,-0.238 -0.787,-0.238 h -0.063 v -0.063 -0.259 -0.062 h 0.063 2.866 1.672 0.058 l 0.004,0.058 0.104,1.556 0.004,0.066 h -0.066 -0.272 -0.048 l -0.012,-0.047 -0.064,-0.26 v 0 c -0.068,-0.283 -0.141,-0.479 -0.33,-0.601 -0.196,-0.127 -0.524,-0.182 -1.101,-0.182 h -0.807 v 1.809 h 0.015 c 0.634,0 0.974,-0.035 1.148,-0.174 v 0 c 0.167,-0.13 0.19,-0.374 0.19,-0.788 v -0.064 h 0.062 0.259 0.062 v 0.064 2.527 0.062 h -0.062 -0.259 -0.062 v -0.062 c 0,-0.408 -0.023,-0.652 -0.19,-0.784 -0.175,-0.138 -0.515,-0.179 -1.148,-0.179 h -0.015 v 0.69 H 129.2 c 0,0.635 0.038,1.003 0.176,1.205 0.133,0.193 0.375,0.24 0.788,0.24 z m -5.659,-1.922 c -0.093,0.027 -0.191,0.053 -0.293,0.069 l 0.735,0.891 v 0 c 0.256,0.299 0.532,0.575 0.819,0.785 0.284,0.208 0.579,0.354 0.88,0.397 l 0.053,0.008 v 0.054 0.26 0.062 h -0.062 -1.66 -0.031 l -0.019,-0.026 -1.745,-2.385 h -0.27 v 0.574 0 c 0,0.634 0.037,1.004 0.177,1.21 0.132,0.195 0.374,0.244 0.786,0.244 h 0.063 v 0.062 0.26 0.062 h -0.063 -2.97 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.655,-0.049 0.788,-0.244 0.139,-0.206 0.175,-0.576 0.175,-1.21 v 0 -2.075 0 c 0,-0.637 -0.036,-1.003 -0.175,-1.204 -0.133,-0.191 -0.375,-0.238 -0.788,-0.238 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.685 0.004 v 0 c 0.681,0 1.211,0.178 1.573,0.471 0.367,0.3 0.56,0.719 0.56,1.197 v 0 0 c 0,0.593 -0.32,1.107 -0.874,1.4 -0.107,0.056 -0.223,0.104 -0.348,0.144 z m 0.085,-1.541 v 0 -0.004 -0.002 0 c 0,-0.295 -0.08,-0.564 -0.244,-0.76 -0.164,-0.193 -0.413,-0.315 -0.755,-0.315 v 0 h -0.002 -0.677 v 2.132 h 0.677 0.003 v 0 c 0.342,0 0.59,-0.118 0.754,-0.306 0.165,-0.191 0.244,-0.455 0.244,-0.745 z m -5.856,1.194 v 0 -0.003 -0.004 0 c 0,-0.547 -0.14,-1.164 -0.465,-1.645 -0.323,-0.475 -0.831,-0.816 -1.571,-0.816 v 0 h -0.002 -0.003 v 0 c -0.739,0 -1.247,0.342 -1.57,0.816 -0.326,0.48 -0.466,1.102 -0.466,1.646 v 0 0.002 0.005 0 c 0,0.552 0.14,1.169 0.466,1.647 0.322,0.476 0.831,0.813 1.57,0.815 v 0 h 0.003 0.002 v 0 c 0.74,-0.002 1.247,-0.34 1.57,-0.813 v 0 c 0.327,-0.479 0.466,-1.099 0.466,-1.65 z m 1.187,-0.003 v 0 0 l 10e-4,0.003 h -10e-4 c 0,0.853 -0.364,1.626 -0.948,2.187 -0.585,0.561 -1.391,0.908 -2.275,0.908 v 0 h -10e-4 -0.003 v 0 c -0.884,0 -1.688,-0.348 -2.273,-0.906 -0.585,-0.56 -0.949,-1.336 -0.95,-2.188 v 0 -0.003 -0.002 0 c 0,-0.839 0.364,-1.609 0.949,-2.17 0.584,-0.56 1.391,-0.912 2.275,-0.912 v 0 h 0.001 0.002 v 0 c 0.884,0.002 1.689,0.351 2.273,0.912 0.586,0.559 0.95,1.33 0.95,2.171 z m -11.604,1.039 v 0 -2.075 0 c 0,-0.637 -0.037,-1.003 -0.175,-1.204 -0.133,-0.191 -0.375,-0.238 -0.787,-0.238 h -0.063 v -0.063 -0.259 -0.062 h 0.063 2.969 0.062 v 0.062 0.259 0.063 h -0.062 c -0.413,0 -0.654,0.047 -0.787,0.238 -0.138,0.201 -0.176,0.567 -0.176,1.204 v 0 1.866 0 c 0,0.635 0.038,1.003 0.176,1.205 0.133,0.19 0.374,0.237 0.787,0.237 h 0.454 c 0.584,0 0.912,-0.053 1.108,-0.177 0.189,-0.118 0.262,-0.315 0.336,-0.606 l 0.065,-0.26 0.011,-0.046 h 0.049 0.272 0.065 l -0.004,0.065 -0.09,1.569 -0.003,0.058 h -0.059 -5.173 -0.063 v -0.062 -0.26 -0.062 h 0.063 c 0.412,0 0.653,-0.049 0.786,-0.244 0.139,-0.204 0.176,-0.574 0.176,-1.208 z m -5.825,-0.621 h 1.523 l -0.762,-1.765 z m 1.784,0.603 h -2.045 l -0.244,0.562 v 0 c -0.155,0.362 -0.233,0.594 -0.159,0.721 0.074,0.13 0.315,0.177 0.802,0.177 h 0.062 v 0.062 0.272 0.062 h -0.062 -2.427 -0.062 v -0.062 -0.272 -0.062 h 0.062 c 0.379,0 0.572,-0.036 0.739,-0.185 0.172,-0.151 0.306,-0.43 0.516,-0.906 l 1.906,-4.435 0.016,-0.039 h 0.041 0.182 0.041 l 0.016,0.039 1.906,4.435 c 0.21,0.477 0.353,0.755 0.523,0.908 0.164,0.146 0.363,0.183 0.691,0.183 h -0.011 v 0.062 0.272 0.062 h 0.011 -2.905 -0.062 v -0.062 -0.272 -0.062 h 0.062 c 0.444,0 0.685,-0.049 0.77,-0.179 v 0 c 0.085,-0.129 0.027,-0.358 -0.126,-0.719 v 0 z m -2.149,-5.986 v 0.272 0.061 h -0.062 c -1.011,0 -1.094,0.191 -1.459,1.028 l -0.027,0.063 -2.829,6.603 -0.016,0.035 h -0.041 -0.169 -0.041 l -0.016,-0.035 -2.865,-6.603 v 0 l -0.027,-0.063 c -0.365,-0.837 -0.448,-1.028 -1.461,-1.028 h -0.063 v -0.061 -0.272 -0.063 h 0.063 3.593 0.063 v 0.063 0.272 0.061 h -0.063 c -0.521,0 -0.838,0.063 -0.982,0.206 v 0.002 c -0.135,0.135 -0.116,0.358 0.028,0.69 l 2.147,4.915 2.122,-4.915 v 0 c 0.145,-0.324 0.164,-0.55 0.027,-0.686 -0.144,-0.147 -0.46,-0.213 -0.981,-0.213 h -0.063 v -0.061 -0.272 -0.063 h 0.063 2.997 0.062 z m -14.133,7.237 h 0.156 c 0.578,0 0.904,-0.051 1.103,-0.177 0.191,-0.12 0.267,-0.315 0.341,-0.606 v 0 l 0.065,-0.26 0.012,-0.046 h 0.048 0.26 0.065 l -0.004,0.065 -0.103,1.569 -0.004,0.058 h -0.058 -4.85 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.654,-0.049 0.787,-0.244 0.14,-0.206 0.176,-0.576 0.176,-1.21 v 0 -2.075 0 c 0,-0.637 -0.036,-1.003 -0.176,-1.204 -0.132,-0.191 -0.374,-0.238 -0.787,-0.238 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.866 1.672 0.058 l 0.004,0.058 0.104,1.556 0.004,0.066 h -0.066 -0.272 -0.049 l -0.011,-0.047 -0.064,-0.26 v 0 c -0.068,-0.283 -0.141,-0.479 -0.33,-0.601 -0.196,-0.127 -0.524,-0.182 -1.101,-0.182 h -0.807 v 1.809 h 0.016 c 0.633,0 0.974,-0.035 1.148,-0.174 v 0 c 0.167,-0.13 0.189,-0.374 0.189,-0.788 v -0.064 h 0.063 0.259 0.063 v 0.064 2.527 0.062 h -0.063 -0.259 -0.063 v -0.062 c 0,-0.408 -0.022,-0.652 -0.19,-0.784 -0.174,-0.138 -0.515,-0.179 -1.148,-0.179 h -0.016 v 0.69 0 c 0,0.635 0.037,1.003 0.176,1.205 0.132,0.193 0.374,0.24 0.786,0.24 z m -7.456,0.604 h -2.749 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.654,-0.049 0.787,-0.244 0.139,-0.206 0.175,-0.576 0.175,-1.21 v 0 -2.075 0 c 0,-0.637 -0.036,-1.003 -0.175,-1.204 -0.132,-0.191 -0.374,-0.238 -0.787,-0.238 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.749 v 0 h 0.003 v 0 c 1.118,0 1.922,0.324 2.449,0.843 0.527,0.522 0.773,1.238 0.774,2.018 v 0 0.002 0.005 0 c 0,0.785 -0.247,1.503 -0.773,2.025 -0.526,0.52 -1.332,0.846 -2.45,0.846 v 0 h -0.003 z m 1.654,-1.354 c 0.29,-0.442 0.372,-1.013 0.372,-1.522 v -0.007 0 c 0,-0.499 -0.084,-1.067 -0.373,-1.51 -0.288,-0.439 -0.782,-0.753 -1.61,-0.755 v 0 h -0.004 -0.781 v 3.62 c 0,0.407 0.021,0.646 0.114,0.773 0.089,0.12 0.26,0.15 0.563,0.15 h 0.104 c 0.831,0.001 1.327,-0.311 1.615,-0.749 z m 66.854,-13.38 v 0 -0.003 -0.004 0 c 0,-0.547 -0.14,-1.164 -0.465,-1.645 -0.323,-0.475 -0.831,-0.816 -1.57,-0.818 v 0 h -0.002 -0.003 v 0 c -0.738,0.002 -1.247,0.344 -1.569,0.816 -0.326,0.482 -0.466,1.103 -0.466,1.648 v 0 0.002 0.005 0 c 0,0.552 0.14,1.169 0.466,1.647 0.322,0.474 0.831,0.813 1.57,0.813 v 0 h 0.003 0.002 v 0 c 0.739,0 1.247,-0.338 1.57,-0.813 0.324,-0.477 0.464,-1.096 0.464,-1.648 z m 1.188,-0.005 v 0 0.002 0.003 0 c -0.001,0.853 -0.365,1.626 -0.949,2.187 -0.585,0.561 -1.392,0.908 -2.276,0.908 v 0 h -10e-4 -0.003 v 0 c -0.883,0 -1.688,-0.348 -2.273,-0.908 -0.584,-0.561 -0.949,-1.336 -0.949,-2.189 v 0 0 -0.002 0 c 0,-0.841 0.364,-1.609 0.948,-2.17 0.585,-0.562 1.392,-0.912 2.276,-0.912 v 0 h 0.002 0.002 v 0 c 0.883,0 1.689,0.351 2.273,0.91 0.584,0.559 0.949,1.333 0.95,2.171 z m -11.019,2.878 h -2.749 -0.063 v -0.062 -0.26 -0.062 h 0.063 c 0.413,0 0.654,-0.051 0.787,-0.246 0.139,-0.204 0.176,-0.573 0.176,-1.21 v 0 -2.074 0 c 0,-0.635 -0.037,-1.001 -0.175,-1.202 -0.133,-0.193 -0.375,-0.24 -0.788,-0.24 h -0.063 v -0.062 -0.259 -0.062 h 0.063 2.749 v 0 h 0.003 v 0 c 1.118,0 1.922,0.324 2.447,0.843 0.529,0.52 0.774,1.238 0.775,2.018 v 0 0.002 0.003 0 c -0.001,0.787 -0.247,1.505 -0.774,2.027 -0.526,0.52 -1.331,0.846 -2.45,0.846 v 0 h -0.001 z m 1.653,-1.353 c 0.291,-0.441 0.372,-1.015 0.372,-1.522 v -0.006 0 c -0.001,-0.502 -0.083,-1.07 -0.373,-1.513 -0.287,-0.438 -0.782,-0.753 -1.609,-0.753 v 0 h -0.005 -0.781 v 3.62 c 0,0.407 0.021,0.646 0.115,0.773 0.088,0.118 0.259,0.15 0.563,0.15 h 0.104 c 0.831,0.001 1.327,-0.312 1.614,-0.749 z m -9.313,-1.105 h 1.523 l -0.761,-1.767 z m 1.783,0.604 h -2.045 l -0.243,0.559 v 0 c -0.154,0.365 -0.233,0.597 -0.159,0.724 0.074,0.128 0.315,0.175 0.802,0.175 h 0.062 v 0.063 0.272 0.062 h -0.062 -2.45 -0.063 v -0.062 -0.272 -0.063 h 0.063 c 0.379,0 0.596,-0.034 0.763,-0.183 0.172,-0.153 0.306,-0.43 0.516,-0.907 l 1.906,-4.434 0.016,-0.039 h 0.041 0.182 0.041 l 0.016,0.039 1.907,4.434 c 0.21,0.478 0.353,0.754 0.522,0.907 0.164,0.148 0.364,0.185 0.691,0.185 h 0.062 v 0.062 0.272 0.062 h -0.062 -2.905 -0.062 v -0.062 -0.272 -0.063 h 0.062 c 0.444,0 0.685,-0.047 0.77,-0.177 v 0 c 0.085,-0.129 0.026,-0.358 -0.126,-0.722 h -0.001 z m -4.915,-0.465 v 2.258 0.062 h -0.063 -0.246 -0.049 l -0.011,-0.049 c -0.036,-0.164 -0.092,-0.366 -0.153,-0.497 -0.007,-0.02 -0.017,-0.036 -0.025,-0.051 -0.159,0.182 -0.362,0.346 -0.586,0.479 v 0 c -0.047,0.03 -0.097,0.059 -0.148,0.084 -0.31,0.158 -0.65,0.256 -0.971,0.256 v 0 h -0.001 -0.003 v 0 c -0.826,0 -1.574,-0.348 -2.115,-0.908 -0.54,-0.561 -0.875,-1.336 -0.875,-2.187 v 0 -0.003 -0.002 0 c 0,-0.839 0.335,-1.609 0.875,-2.168 0.54,-0.562 1.29,-0.914 2.117,-0.914 v 0 h 0.001 c 0.46,0 0.962,0.193 1.355,0.489 0.077,0.059 0.15,0.121 0.217,0.185 0.047,0.045 0.091,0.092 0.133,0.141 0.026,-0.051 0.054,-0.12 0.079,-0.193 v 0 c 0.04,-0.12 0.076,-0.251 0.101,-0.353 l 0.012,-0.047 h 0.048 0.246 0.063 v 0.062 2.242 0.064 h -0.063 -0.259 -0.051 l -0.01,-0.051 c -0.168,-0.822 -0.543,-1.434 -1.082,-1.727 -0.104,-0.059 -0.214,-0.103 -0.33,-0.135 -0.143,-0.04 -0.295,-0.061 -0.456,-0.061 v 0 h -0.004 -0.004 v 0 c -0.696,0.002 -1.149,0.348 -1.427,0.822 -0.282,0.487 -0.387,1.107 -0.388,1.643 v 0 0.002 0.005 0 c 0.001,0.541 0.106,1.159 0.387,1.641 0.278,0.477 0.73,0.82 1.428,0.82 v 0 h 0.004 c 0.691,0 1.23,-0.382 1.567,-1.032 v 0 c 0.065,-0.126 0.125,-0.264 0.175,-0.412 v 0 c 0.051,-0.149 0.094,-0.306 0.128,-0.471 l 0.001,-0.005 0.01,-0.051 h 0.051 0.259 0.062 z m -8.014,-0.208 c -0.094,0.029 -0.192,0.053 -0.294,0.071 l 0.735,0.888 v 0 c 0.256,0.302 0.532,0.578 0.819,0.788 0.284,0.208 0.58,0.353 0.88,0.397 l 0.053,0.008 v 0.054 0.26 0.062 h -0.062 -1.66 -0.031 l -0.019,-0.026 -1.744,-2.387 h -0.27 v 0.574 0 c 0,0.637 0.037,1.006 0.176,1.21 0.132,0.195 0.374,0.246 0.787,0.246 l 0.062,-0.002 v 0.063 0.26 0.062 h -0.062 -2.97 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.654,-0.051 0.787,-0.246 0.139,-0.204 0.176,-0.573 0.176,-1.21 v 0 -2.075 0 c 0,-0.635 -0.037,-1.001 -0.176,-1.202 -0.132,-0.193 -0.374,-0.24 -0.787,-0.24 h -0.062 v -0.062 -0.259 -0.062 h 0.062 2.685 0.004 v 0 c 0.68,0 1.211,0.176 1.572,0.471 0.367,0.3 0.56,0.719 0.56,1.195 v 0 0.002 c 0,0.591 -0.32,1.107 -0.874,1.398 -0.108,0.059 -0.224,0.108 -0.347,0.146 z m 0.084,-1.539 v 0 -0.004 -0.004 0 c 0,-0.295 -0.081,-0.564 -0.245,-0.76 -0.163,-0.193 -0.413,-0.313 -0.755,-0.313 v 0 h -0.002 -0.677 v 2.132 h 0.677 0.002 v 0 c 0.342,0 0.591,-0.12 0.754,-0.308 0.166,-0.189 0.246,-0.456 0.246,-0.743 z m -6.876,3.463 h 0.156 v 0 c 0.577,0 0.904,-0.053 1.103,-0.177 0.191,-0.12 0.267,-0.317 0.341,-0.606 l 0.065,-0.26 0.012,-0.046 h 0.048 0.259 0.066 l -0.004,0.065 -0.103,1.569 -0.004,0.058 h -0.058 -4.85 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.655,-0.051 0.787,-0.246 0.14,-0.204 0.176,-0.573 0.176,-1.21 v 0 -2.074 0 c 0,-0.635 -0.036,-1.001 -0.175,-1.202 -0.132,-0.193 -0.374,-0.24 -0.787,-0.24 h -0.062 v -0.062 -0.259 -0.062 h 0.062 2.866 1.673 0.058 l 0.003,0.058 0.104,1.556 0.003,0.066 h -0.066 -0.271 -0.049 l -0.012,-0.047 -0.065,-0.259 v -0.003 c -0.067,-0.281 -0.14,-0.479 -0.329,-0.601 -0.197,-0.125 -0.524,-0.18 -1.102,-0.18 h -0.807 v 1.807 h 0.016 c 0.634,0 0.974,-0.036 1.148,-0.172 0.167,-0.132 0.189,-0.374 0.189,-0.79 v -0.06 h 0.063 0.259 0.063 v 0.062 2.529 0.062 h -0.063 -0.259 -0.063 v -0.062 c 0,-0.41 -0.023,-0.652 -0.189,-0.786 -0.175,-0.139 -0.515,-0.177 -1.148,-0.177 h -0.016 v 0.69 0 c 0,0.635 0.037,1.001 0.175,1.202 0.133,0.194 0.375,0.241 0.787,0.241 z m -9.237,0.788 -2.76,-6.354 v 4.317 0 c 0,0.635 0.039,1.003 0.205,1.207 0.162,0.199 0.46,0.248 0.978,0.248 h 0.062 v 0.063 0.272 0.062 h -0.062 -2.957 -0.062 v -0.062 -0.272 -0.063 h 0.062 c 0.518,0 0.813,-0.049 0.971,-0.248 v 0 c 0.162,-0.202 0.199,-0.572 0.199,-1.207 v 0 -4.213 0 c 0,-0.636 -0.037,-1 -0.199,-1.2 -0.158,-0.195 -0.453,-0.242 -0.971,-0.242 H 99.784 V 94.704 94.433 94.37 h 0.062 2.205 0.041 l 0.017,0.036 2.692,6.186 2.679,-6.184 0.017,-0.038 h 0.041 2.036 0.062 v 0.062 0.271 0.063 h -0.062 c -0.525,0 -0.823,0.047 -0.982,0.242 -0.165,0.2 -0.201,0.564 -0.201,1.2 v 0 4.213 0 c 0,0.635 0.037,1.003 0.201,1.207 0.16,0.199 0.458,0.25 0.982,0.25 h 0.062 v 0.062 0.272 0.062 h -0.062 -3.501 -0.062 v -0.062 -0.272 -0.063 h 0.062 c 0.519,0 0.813,-0.049 0.971,-0.248 v 0 c 0.162,-0.202 0.198,-0.572 0.198,-1.207 v 0 -3.929 l -2.578,5.966 -0.017,0.037 h -0.04 -0.168 -0.041 z m -12.233,-2.023 v 0 -2.076 0 c 0,-0.635 -0.037,-1.001 -0.176,-1.202 -0.133,-0.193 -0.375,-0.24 -0.787,-0.24 h -0.062 v -0.062 -0.259 -0.062 h 0.062 2.969 0.062 v 0.062 0.259 0.062 h -0.062 c -0.413,0 -0.655,0.047 -0.787,0.24 -0.139,0.201 -0.175,0.567 -0.175,1.202 v 0 1.868 0 c 0,0.635 0.037,1.001 0.175,1.202 0.132,0.193 0.374,0.24 0.787,0.24 h 0.454 v 0 c 0.584,0 0.912,-0.053 1.108,-0.177 0.189,-0.12 0.261,-0.317 0.336,-0.606 l 0.064,-0.26 0.012,-0.046 h 0.048 0.272 0.065 l -0.003,0.065 -0.091,1.567 -0.003,0.06 h -0.058 -5.174 -0.062 v -0.062 -0.26 -0.063 l 0.062,0.002 c 0.412,0 0.654,-0.051 0.786,-0.246 0.141,-0.203 0.178,-0.572 0.178,-1.208 z m -4.153,1.235 h 0.156 c 0.578,0 0.904,-0.053 1.103,-0.177 0.191,-0.12 0.267,-0.317 0.341,-0.606 v 0 l 0.065,-0.26 0.012,-0.046 h 0.048 0.26 0.065 l -0.004,0.065 -0.103,1.569 -0.004,0.058 h -0.058 -4.85 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.654,-0.051 0.787,-0.246 0.14,-0.204 0.176,-0.573 0.176,-1.21 v 0 -2.074 0 c 0,-0.635 -0.036,-1.001 -0.176,-1.202 -0.132,-0.193 -0.374,-0.24 -0.787,-0.24 h -0.062 v -0.062 -0.259 -0.062 h 0.062 2.866 1.672 0.058 l 0.004,0.058 0.104,1.556 0.004,0.066 H 89.667 89.395 89.346 L 89.335,98.168 89.27,97.91 v -0.003 c -0.068,-0.281 -0.141,-0.478 -0.33,-0.601 -0.196,-0.125 -0.524,-0.18 -1.101,-0.18 h -0.807 v 1.807 h 0.016 c 0.633,0 0.974,-0.036 1.148,-0.172 v 0 c 0.167,-0.132 0.189,-0.374 0.189,-0.79 V 97.91 h 0.063 0.259 0.063 v 0.062 2.529 0.062 h -0.063 -0.259 -0.063 v -0.062 c 0,-0.41 -0.023,-0.652 -0.19,-0.786 -0.174,-0.139 -0.515,-0.177 -1.148,-0.177 h -0.016 v 0.69 0 c 0,0.635 0.037,1.001 0.176,1.202 0.133,0.194 0.375,0.241 0.787,0.241 z m -7.456,0.603 h -2.749 -0.062 v -0.062 -0.26 -0.062 h 0.062 c 0.413,0 0.654,-0.051 0.787,-0.246 0.139,-0.204 0.175,-0.573 0.175,-1.21 v 0 -2.074 0 c 0,-0.635 -0.036,-1.001 -0.175,-1.202 -0.132,-0.193 -0.374,-0.24 -0.787,-0.24 h -0.062 v -0.062 -0.259 -0.062 h 0.062 2.749 v 0 h 0.003 v 0 c 1.118,0 1.922,0.324 2.449,0.843 0.527,0.52 0.773,1.238 0.774,2.018 v 0 0.002 0.003 0 c 0,0.787 -0.247,1.505 -0.773,2.027 -0.526,0.52 -1.332,0.846 -2.45,0.846 v 0 h -0.003 z m 1.654,-1.353 c 0.29,-0.441 0.372,-1.015 0.372,-1.522 v -0.006 0 c 0,-0.502 -0.084,-1.07 -0.373,-1.513 -0.288,-0.438 -0.782,-0.753 -1.61,-0.753 v 0 h -0.004 -0.781 v 3.62 c 0,0.407 0.021,0.646 0.114,0.773 0.089,0.118 0.26,0.15 0.563,0.15 h 0.104 c 0.831,0.001 1.327,-0.312 1.615,-0.749 z m 45.174,-12.346 v 0 -2.075 0 c 0,-0.635 -0.037,-1.003 -0.175,-1.205 -0.133,-0.191 -0.375,-0.237 -0.787,-0.237 h -0.063 v -0.062 -0.259 -0.063 h 0.063 2.969 0.062 v 0.063 0.259 0.062 h -0.062 c -0.413,0 -0.655,0.046 -0.787,0.237 -0.139,0.202 -0.176,0.57 -0.176,1.205 v 0 1.866 0 c 0,0.637 0.037,1.003 0.176,1.204 0.132,0.191 0.375,0.238 0.787,0.238 h 0.454 v 0.002 c 0.584,0 0.912,-0.053 1.108,-0.179 0.189,-0.118 0.262,-0.315 0.336,-0.604 l 0.064,-0.259 0.012,-0.049 h 0.049 0.272 0.065 l -0.003,0.065 -0.09,1.569 -0.004,0.06 h -0.059 -5.173 -0.063 v -0.062 -0.262 -0.062 h 0.063 c 0.412,0 0.654,-0.049 0.787,-0.244 0.138,-0.202 0.175,-0.574 0.175,-1.208 z m -5.874,-0.621 h 1.523 l -0.762,-1.765 z m 1.784,0.606 h -2.045 l -0.243,0.559 v 0 c -0.154,0.363 -0.232,0.597 -0.159,0.724 0.074,0.128 0.315,0.175 0.803,0.175 h 0.062 v 0.062 0.274 0.062 h -0.062 -2.452 -0.062 V 90.354 90.08 90.018 h 0.062 c 0.38,0 0.597,-0.036 0.764,-0.183 0.172,-0.153 0.306,-0.43 0.516,-0.909 l 1.906,-4.435 0.017,-0.036 h 0.041 0.181 0.041 l 0.016,0.036 1.906,4.435 c 0.21,0.479 0.354,0.756 0.523,0.909 0.164,0.146 0.363,0.183 0.691,0.183 h 0.062 v 0.062 0.274 0.062 h -0.062 -2.906 -0.062 l 0.001,-0.062 V 90.08 90.018 h 0.061 c 0.444,0 0.685,-0.047 0.771,-0.179 0.084,-0.129 0.026,-0.356 -0.126,-0.72 v 0 z m -9.993,0.015 v 0 -2.075 0 c 0,-0.635 -0.037,-1.003 -0.175,-1.205 -0.133,-0.191 -0.374,-0.237 -0.787,-0.237 h -0.063 v -0.062 -0.259 -0.063 h 0.063 1.595 0.028 l 0.019,0.022 3.34,3.967 v -2.163 0 c 0,-0.635 -0.037,-1.003 -0.176,-1.205 -0.132,-0.191 -0.374,-0.237 -0.787,-0.237 h -0.063 v -0.062 -0.259 -0.063 h 0.063 2.528 0.062 v 0.063 0.259 0.062 h -0.062 c -0.413,0 -0.655,0.046 -0.787,0.237 -0.139,0.202 -0.175,0.57 -0.175,1.205 v 0 4.061 0.063 h -0.063 -0.247 -0.029 l -0.019,-0.023 -3.664,-4.396 v 2.37 0 c 0,0.634 0.038,1.006 0.176,1.21 0.133,0.195 0.374,0.244 0.787,0.244 h 0.062 v 0.062 0.262 0.062 h -0.062 -2.528 -0.063 v -0.062 -0.262 -0.062 h 0.063 c 0.413,0 0.654,-0.049 0.787,-0.244 0.141,-0.204 0.177,-0.576 0.177,-1.21 z m -3.423,-1.037 v 0 -0.002 -0.002 0 c 0,-0.546 -0.14,-1.164 -0.466,-1.645 -0.322,-0.477 -0.831,-0.819 -1.569,-0.819 v 0 h -0.003 -0.003 v 0 c -0.739,0 -1.247,0.343 -1.569,0.817 -0.327,0.482 -0.467,1.101 -0.467,1.646 v 0 0.002 0.005 0 c 0,0.552 0.14,1.169 0.465,1.649 0.323,0.474 0.831,0.813 1.571,0.813 v 0 h 0.003 0.003 v 0 c 0.739,0 1.247,-0.34 1.569,-0.813 0.326,-0.479 0.465,-1.096 0.466,-1.651 z m 1.186,-0.002 v 0 0 0.005 0 c 0,0.851 -0.364,1.626 -0.948,2.187 -0.585,0.559 -1.391,0.906 -2.276,0.906 v 0.002 h -0.001 -0.003 v -0.002 c -0.883,0 -1.689,-0.346 -2.273,-0.906 -0.585,-0.561 -0.949,-1.336 -0.95,-2.189 v 0 -0.002 -0.002 0 c 0.001,-0.839 0.364,-1.61 0.949,-2.168 0.584,-0.562 1.391,-0.912 2.275,-0.912 v 0 h 10e-4 0.002 v 0 c 0.884,0 1.689,0.351 2.274,0.91 0.587,0.559 0.95,1.33 0.95,2.171 z m -7.675,2.555 v 0.262 0.062 h -0.063 -2.969 -0.063 v -0.062 -0.262 -0.062 h 0.063 c 0.413,0 0.655,-0.049 0.788,-0.244 0.138,-0.204 0.175,-0.576 0.175,-1.21 v 0 -2.075 0 c 0,-0.635 -0.037,-1.003 -0.175,-1.205 -0.132,-0.191 -0.375,-0.237 -0.788,-0.237 h -0.063 v -0.062 -0.259 -0.063 h 0.063 2.969 0.063 v 0.063 0.259 0.062 h -0.063 c -0.413,0 -0.654,0.046 -0.787,0.237 -0.139,0.202 -0.176,0.57 -0.176,1.205 v 0 2.075 0 c 0,0.634 0.037,1.006 0.176,1.21 0.133,0.195 0.375,0.244 0.787,0.244 h 0.063 z m -4.41,-1.996 v 2.258 0.062 H 98.9 98.653 98.604 L 98.593,90.366 C 98.556,90.202 98.501,90 98.44,89.867 c -0.008,-0.018 -0.016,-0.034 -0.025,-0.052 -0.16,0.183 -0.362,0.349 -0.587,0.481 -0.047,0.028 -0.097,0.059 -0.148,0.083 -0.31,0.157 -0.65,0.255 -0.971,0.255 v 0.002 h -0.002 -0.002 v -0.002 c -0.827,0 -1.575,-0.348 -2.115,-0.908 -0.54,-0.561 -0.875,-1.334 -0.875,-2.188 v 0 -0.002 -0.002 0 c 0,-0.839 0.335,-1.608 0.874,-2.168 0.541,-0.562 1.29,-0.912 2.117,-0.912 v 0 h 10e-4 c 0.461,0 0.962,0.191 1.356,0.489 v 0 c 0.077,0.057 0.149,0.119 0.217,0.185 0.046,0.045 0.09,0.092 0.132,0.139 0.027,-0.052 0.054,-0.12 0.079,-0.193 0.04,-0.118 0.075,-0.249 0.101,-0.351 l 0.012,-0.049 h 0.048 0.248 0.062 v 0.063 2.242 0.063 H 98.9 98.641 98.59 l -0.01,-0.049 c -0.168,-0.822 -0.542,-1.434 -1.082,-1.727 -0.104,-0.059 -0.215,-0.103 -0.331,-0.135 -0.143,-0.04 -0.295,-0.062 -0.456,-0.062 v 0 h -0.004 -0.003 v 0 c -0.697,0.003 -1.15,0.349 -1.427,0.823 -0.282,0.485 -0.388,1.105 -0.388,1.641 v 0 0.002 0.007 0 c 0,0.539 0.105,1.158 0.387,1.641 0.277,0.477 0.729,0.82 1.428,0.82 v 0 h 0.003 c 0.693,0 1.231,-0.383 1.568,-1.032 v 0 C 98.34,88.843 98.4,88.705 98.45,88.559 v 0 c 0.051,-0.151 0.094,-0.308 0.127,-0.472 l 0.001,-0.006 0.01,-0.049 h 0.051 0.261 0.062 v 0.063 z M 88.944,87.954 h 1.523 l -0.762,-1.765 z m 1.785,0.606 h -2.045 l -0.243,0.559 v 0 c -0.154,0.363 -0.232,0.597 -0.159,0.724 0.075,0.128 0.316,0.175 0.803,0.175 h 0.063 v 0.062 0.274 0.062 H 89.086 86.635 86.57 l 0.001,-0.062 V 90.08 90.018 h 0.061 c 0.38,0 0.596,-0.036 0.763,-0.183 0.172,-0.153 0.306,-0.43 0.516,-0.909 l 1.906,-4.435 0.016,-0.036 h 0.042 0.181 0.042 l 0.016,0.036 1.906,4.435 c 0.21,0.479 0.354,0.756 0.522,0.909 0.164,0.146 0.364,0.183 0.691,0.183 h 0.062 v 0.062 0.274 0.062 H 93.233 90.328 90.265 V 90.354 90.08 90.018 h 0.063 c 0.444,0 0.685,-0.047 0.771,-0.179 0.084,-0.129 0.026,-0.356 -0.126,-0.72 v 0 z m -11.167,-6.03 4.869,6.037 v -4.221 0 c 0,-0.634 -0.036,-0.998 -0.198,-1.198 -0.159,-0.195 -0.453,-0.244 -0.972,-0.244 H 83.199 V 82.842 82.57 82.51 h 0.062 2.957 0.062 v 0.061 0.272 0.062 h -0.062 c -0.519,0 -0.816,0.049 -0.979,0.244 v 0 c -0.165,0.2 -0.205,0.564 -0.205,1.198 v 0 6.226 0.063 h -0.063 -0.298 -0.029 l -0.02,-0.022 -5.167,-6.39 v 4.338 0 c 0,0.633 0.04,1.003 0.205,1.207 0.162,0.197 0.46,0.248 0.979,0.248 h 0.062 v 0.062 0.274 0.062 h -0.062 -2.957 -0.063 v -0.062 -0.274 -0.062 h 0.063 c 0.518,0 0.813,-0.051 0.971,-0.248 0.162,-0.204 0.199,-0.574 0.199,-1.207 v 0 -4.215 0 c 0,-0.634 -0.036,-0.998 -0.198,-1.198 -0.159,-0.195 -0.454,-0.244 -0.972,-0.244 H 77.622 V 82.843 82.57 82.51 h 0.062 1.828 0.029 z m 46.079,-5.815 v 0 -2.075 0 c 0,-0.638 -0.037,-1.003 -0.176,-1.205 -0.132,-0.191 -0.374,-0.237 -0.787,-0.237 h -0.063 v -0.063 -0.259 -0.062 h 0.063 1.595 0.028 l 0.018,0.021 3.341,3.969 V 74.64 c 0,-0.638 -0.037,-1.003 -0.176,-1.205 -0.133,-0.191 -0.375,-0.237 -0.787,-0.237 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.529 0.062 v 0.062 0.259 0.063 h -0.062 c -0.414,0 -0.654,0.046 -0.788,0.237 -0.138,0.202 -0.175,0.567 -0.175,1.205 v 0 4.06 0.061 h -0.062 -0.247 -0.03 l -0.018,-0.021 -3.665,-4.397 v 2.372 0 c 0,0.635 0.037,1.004 0.176,1.21 0.132,0.193 0.374,0.244 0.787,0.244 h 0.062 v 0.062 0.26 0.061 h -0.062 -2.528 -0.063 V 78.49 78.23 78.168 h 0.063 c 0.413,0 0.654,-0.051 0.787,-0.244 0.141,-0.205 0.178,-0.574 0.178,-1.209 z m -3.423,-1.037 v 0 -0.002 -0.004 0 c 0,-0.547 -0.141,-1.164 -0.466,-1.645 -0.322,-0.475 -0.831,-0.817 -1.57,-0.817 v 0 h -0.003 -0.002 v 0 c -0.739,0 -1.247,0.343 -1.57,0.817 -0.326,0.48 -0.467,1.101 -0.467,1.646 v 0 0.002 0.004 0 c 0.001,0.553 0.141,1.17 0.466,1.648 0.322,0.476 0.831,0.813 1.57,0.815 v 0 h 0.002 0.003 v 0 c 0.739,-0.002 1.247,-0.34 1.57,-0.813 0.327,-0.479 0.466,-1.099 0.467,-1.651 z m 1.187,-0.002 v 0 0 0.002 0 c -0.001,0.854 -0.364,1.627 -0.949,2.188 -0.584,0.561 -1.39,0.908 -2.275,0.908 v 0 h -10e-4 -0.002 v 0 c -0.884,0 -1.689,-0.348 -2.273,-0.906 -0.585,-0.561 -0.95,-1.336 -0.95,-2.189 v 0 -0.002 -0.002 0 c 0,-0.839 0.364,-1.61 0.95,-2.17 0.583,-0.56 1.39,-0.912 2.275,-0.912 v 0 h 10e-4 0.003 v 0 c 0.884,0.002 1.689,0.353 2.273,0.912 0.584,0.557 0.947,1.33 0.948,2.171 z m -1.776,-4.929 v 0.002 c 0,0.161 -0.112,0.291 -0.218,0.371 v 0 c -0.019,0.016 -0.04,0.028 -0.06,0.04 v 0 c -0.018,0.014 -0.036,0.024 -0.052,0.03 v 0 l -0.002,0.002 -0.003,0.003 -1.776,0.764 -0.046,0.02 -0.028,-0.04 -0.065,-0.092 -0.031,-0.043 0.04,-0.037 1.206,-1.128 0.001,-0.002 0.008,-0.006 c 0.226,-0.2 0.363,-0.321 0.603,-0.321 h 0.002 v 0.002 c 0.144,0 0.25,0.063 0.32,0.15 v 0 c 0.066,0.085 0.1,0.195 0.101,0.285 z m -5.9,7.483 v 0.26 0.061 h -0.063 -2.969 -0.062 V 78.49 78.23 78.168 h 0.062 c 0.413,0 0.655,-0.051 0.787,-0.244 0.14,-0.206 0.176,-0.575 0.176,-1.21 v 0 -2.074 0 c 0,-0.638 -0.037,-1.003 -0.176,-1.205 -0.132,-0.191 -0.374,-0.237 -0.787,-0.237 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.969 0.063 v 0.062 0.259 0.063 h -0.063 c -0.412,0 -0.654,0.046 -0.787,0.237 -0.138,0.202 -0.176,0.567 -0.176,1.205 h 10e-4 v 2.075 h -10e-4 c 0,0.635 0.038,1.004 0.176,1.21 0.133,0.193 0.375,0.244 0.787,0.244 h 0.063 z m -4.15,-1.297 v 0 0 0.004 0 c 0,0.548 -0.219,1.008 -0.565,1.33 -0.347,0.323 -0.822,0.507 -1.336,0.507 v 0 h -10e-4 c -0.346,0 -0.659,-0.082 -0.914,-0.186 -0.224,-0.09 -0.405,-0.198 -0.526,-0.276 -0.031,0.04 -0.064,0.087 -0.096,0.142 -0.044,0.074 -0.083,0.168 -0.101,0.27 l -0.01,0.051 h -0.051 -0.233 -0.063 V 78.713 76.48 76.417 h 0.063 0.259 0.056 l 0.006,0.058 c 0.071,0.766 0.439,1.291 0.986,1.526 0.106,0.047 0.22,0.08 0.34,0.104 0.121,0.024 0.248,0.038 0.379,0.038 v 0 h 0.01 0.004 v 0 c 0.263,-0.002 0.497,-0.075 0.665,-0.213 0.166,-0.136 0.267,-0.336 0.268,-0.593 v 0 -0.002 c 0,-0.21 -0.085,-0.397 -0.252,-0.572 -0.173,-0.184 -0.434,-0.355 -0.777,-0.527 h -0.001 l -0.882,-0.454 v 0 c -0.356,-0.186 -0.659,-0.438 -0.858,-0.754 v 0 c -0.039,-0.063 -0.074,-0.128 -0.104,-0.195 -0.094,-0.205 -0.146,-0.434 -0.147,-0.684 v 0 -0.003 -0.004 0 c 0,-0.425 0.179,-0.81 0.479,-1.087 0.299,-0.278 0.719,-0.448 1.202,-0.45 v 0 h 10e-4 c 0.402,0 0.736,0.104 0.996,0.234 v 0 c 0.051,0.028 0.099,0.054 0.144,0.082 0.028,0.017 0.054,0.034 0.08,0.051 0.057,-0.07 0.125,-0.17 0.145,-0.326 l 0.006,-0.055 h 0.055 0.26 0.063 v 0.062 2.192 0.063 h -0.063 -0.26 -0.056 l -0.005,-0.058 c -0.054,-0.541 -0.243,-1.152 -0.674,-1.454 v 0 c -0.083,-0.059 -0.174,-0.104 -0.276,-0.136 -0.103,-0.032 -0.215,-0.052 -0.338,-0.052 v 0 h -0.013 -0.004 v 0 c -0.238,0 -0.457,0.063 -0.615,0.183 -0.155,0.117 -0.252,0.286 -0.252,0.506 v 0 0.003 c 0,0.208 0.078,0.369 0.248,0.526 0.178,0.166 0.457,0.327 0.847,0.533 l 0.869,0.454 c 0.317,0.162 0.552,0.361 0.717,0.576 0.032,0.042 0.061,0.085 0.089,0.13 0.164,0.266 0.235,0.551 0.236,0.814 z m -5.187,1.297 v 0.26 0.061 h -0.062 -2.97 -0.062 V 78.49 78.23 78.168 h 0.062 c 0.413,0 0.655,-0.051 0.787,-0.244 0.139,-0.206 0.175,-0.575 0.175,-1.21 v 0 -2.074 0 c 0,-0.638 -0.037,-1.003 -0.175,-1.205 -0.132,-0.191 -0.374,-0.237 -0.787,-0.237 h -0.062 v -0.063 -0.259 -0.062 h 0.062 2.97 0.062 v 0.062 0.259 0.063 h -0.062 c -0.413,0 -0.655,0.046 -0.787,0.237 -0.139,0.202 -0.176,0.567 -0.176,1.205 h 10e-4 v 2.075 h -10e-4 c 0,0.635 0.038,1.004 0.177,1.21 0.132,0.193 0.375,0.244 0.787,0.244 h 0.062 v 0.061 z m -8.353,0.508 -1.904,-4.324 v 2.301 c 0,0.635 0.036,1.004 0.176,1.21 0.132,0.193 0.374,0.244 0.787,0.244 h 0.062 v 0.062 0.26 0.061 H 97.098 94.57 94.507 V 78.49 78.23 78.168 h 0.063 c 0.412,0 0.654,-0.051 0.786,-0.244 0.14,-0.206 0.176,-0.575 0.176,-1.21 v 0 -2.074 0 c 0,-0.638 -0.036,-1.003 -0.176,-1.205 -0.132,-0.191 -0.374,-0.237 -0.786,-0.237 h -0.063 v -0.063 -0.259 -0.062 h 0.063 1.944 0.04 l 0.017,0.035 1.875,4.206 1.863,-4.206 0.016,-0.035 h 0.041 1.816 0.062 v 0.062 0.259 0.063 h -0.062 c -0.413,0 -0.658,0.046 -0.794,0.237 -0.142,0.202 -0.182,0.57 -0.182,1.205 v 0 2.075 0 c 0,0.635 0.041,1.004 0.182,1.207 0.136,0.196 0.381,0.247 0.794,0.247 h 0.062 v 0.062 0.26 0.061 h -0.062 -2.97 -0.062 V 78.49 78.23 78.168 h 0.062 c 0.413,0 0.654,-0.051 0.787,-0.244 0.139,-0.206 0.176,-0.575 0.176,-1.21 h -10e-4 v -2.133 l -1.838,4.156 -0.017,0.035 h -0.04 -0.182 -0.04 z m -5.737,-3.06 v 0 -0.002 -0.004 0 c 0,-0.547 -0.141,-1.164 -0.466,-1.645 -0.323,-0.475 -0.831,-0.817 -1.571,-0.817 v 0 H 90.263 90.26 v 0 c -0.739,0 -1.247,0.343 -1.57,0.817 -0.326,0.48 -0.466,1.101 -0.466,1.646 v 0 0.002 0.004 0 c 10e-4,0.553 0.14,1.17 0.466,1.648 0.322,0.476 0.83,0.813 1.57,0.815 v 0 h 0.002 0.002 v 0 c 0.739,-0.002 1.248,-0.34 1.57,-0.813 0.327,-0.479 0.468,-1.099 0.468,-1.651 z m 1.187,-0.002 v 0 0 0.002 0 c 0,0.854 -0.364,1.627 -0.949,2.188 -0.584,0.561 -1.391,0.908 -2.276,0.908 v 0 H 90.263 90.26 v 0 c -0.884,0 -1.689,-0.348 -2.273,-0.906 -0.585,-0.561 -0.949,-1.336 -0.95,-2.189 v 0 -0.002 -0.002 0 c 0,-0.839 0.364,-1.61 0.949,-2.17 0.584,-0.56 1.39,-0.912 2.275,-0.912 v 0 h 0.001 0.002 v 0 c 0.884,0.002 1.69,0.353 2.273,0.912 0.587,0.557 0.951,1.33 0.952,2.171 z m -8.221,-0.181 v 2.853 0.062 h -0.062 -0.26 -0.05 l -0.01,-0.049 c -0.044,-0.213 -0.159,-0.426 -0.279,-0.57 v 0 C 84.584,77.762 84.56,77.736 84.539,77.716 l -0.027,-0.024 c -0.271,0.274 -0.571,0.506 -0.892,0.682 -0.064,0.037 -0.132,0.071 -0.2,0.101 -0.414,0.195 -0.861,0.301 -1.323,0.301 v 0 h -0.002 -0.002 v 0 c -1.111,0 -2.122,-0.471 -2.854,-1.229 -0.732,-0.756 -1.186,-1.798 -1.186,-2.942 H 78.052 V 74.602 74.6 h 10e-4 c 0,-1.142 0.454,-2.185 1.185,-2.941 0.733,-0.756 1.744,-1.228 2.856,-1.229 v 0 h 0.001 c 0.666,0 1.297,0.213 1.85,0.597 0.106,0.074 0.211,0.158 0.313,0.244 0.086,0.075 0.171,0.156 0.253,0.24 0.104,-0.094 0.216,-0.24 0.295,-0.414 0.017,-0.038 0.033,-0.079 0.046,-0.121 v 0 c 0.014,-0.042 0.025,-0.085 0.035,-0.127 v 0 l 0.001,-0.004 0.009,-0.052 h 0.051 0.26 0.062 v 0.063 2.853 0.062 h -0.062 -0.26 -0.05 l -0.01,-0.049 c -0.245,-1.134 -0.78,-1.965 -1.544,-2.374 -0.147,-0.079 -0.304,-0.143 -0.47,-0.189 v 0 c -0.226,-0.063 -0.467,-0.098 -0.722,-0.098 v 0 h -0.004 -0.003 v 0 c -1.011,0 -1.7,0.488 -2.136,1.17 -0.441,0.688 -0.626,1.578 -0.626,2.37 v 0 0.002 0.005 0 c 0,0.792 0.186,1.678 0.626,2.361 0.436,0.679 1.125,1.163 2.137,1.165 v 0 h 0.003 c 1.01,0 1.799,-0.523 2.295,-1.425 0.097,-0.174 0.183,-0.365 0.256,-0.568 0.075,-0.204 0.137,-0.421 0.188,-0.65 v 0 l 10e-4,-0.006 0.01,-0.049 h 0.05 0.26 0.062 v 0.059 z M 48.644,-0.045 c 40.626,0 79.529,0 123.283,0 v 37.688 h -8.855 v 1.331 c 3.808,0 4.496,1.01 3.441,3.487 l -6.469,14.912 -6.423,-14.912 c -1.055,-2.431 -0.597,-3.487 3.441,-3.487 v -1.331 c -7.83,0 -15.66,0 -23.49,0 l -8.579,19.867 -8.855,-19.867 c -6.861,0 -13.722,0 -20.583,0 v 1.331 c 3.808,0 4.405,0.781 4.405,5.368 V 55.903 L 84.636,37.643 H 75.46 v 1.331 c 3.808,0 4.359,0.781 4.359,5.368 v 10.785 c 0,4.587 -0.551,5.368 -4.359,5.368 v 0.001 l -1.267,-0.001 c -3.602,4.646 -7.448,6.312 -10.141,6.25 -7.841,-0.177 -9.88,-9.649 -9.88,-15.337 0,-5.689 1.789,-12.342 8.075,-12.342 3.579,0 6.646,1.995 8.391,5.76 h 2.437 V 37.59 h -1.093 c -0.275,1.148 -0.597,3.225 -1.193,3.685 -1.958,-2.924 -5.513,-4.41 -8.725,-4.41 -6.263,0 -11.597,4.281 -13.417,10.134 V -0.045 Z'
+                      id='path13'></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              version='1.1'
+              x='0px'
+              y='0px'
+              class='h-12 opacity-50 hover:opacity-100 transition-opacity duration-300'
+              viewBox='
+              0
+              0
+              999.99999
+              332.02601'
+              enable-background='new 0 0 91.026 30.223'
+              xml:space='preserve'
+              id='svg2'
+            >
+              <metadata id='metadata34'>
+                <rdf:RDF
+                  ><cc:Work rdf:about=''
+                    ><dc:format>image/svg+xml</dc:format><dc:type
+                      rdf:resource='http://purl.org/dc/dcmitype/StillImage'
+                    ></dc:type><dc:title></dc:title></cc:Work
+                  ></rdf:RDF
+                >
+              </metadata>
+
+              <g id='g8882' transform='translate(0,115.62801)'
+                ><path
+                  d='M 999.37988,-36.576795 C 1013.0024,41.489166 800.47976,143.72416 524.64523,191.76559 248.84366,239.80703 14.217322,215.42927 0.61675033,137.33035 -12.972835,59.253402 199.60476,-42.94863 475.40633,-90.979081 751.21889,-139.04249 985.80128,-114.66473 999.37988,-36.576795 Z'
+                  id='path10'
+                  style='fill:black'></path><g id='g8872'
+                  ><polygon
+                    points='67.34,17.745 67.211,10.356 69.541,10.356 69.541,19.669 66.191,19.669 63.866,12.026 63.816,12.026 63.945,19.669 61.63,19.669 61.63,10.356 65.125,10.356 67.288,17.745 '
+                    id='polygon16'
+                    style='fill:#ffffff'
+                    transform='matrix(10.985922,0,0,10.985922,0.0015387,-115.63149)'
+                  ></polygon><polygon
+                    points='24.987,11.228 23.698,19.767 21.157,19.767 22.902,10.356 27.088,10.356 28.825,19.767 26.294,19.767 25.04,11.228 '
+                    id='polygon18'
+                    style='fill:#ffffff'
+                    transform='matrix(10.985922,0,0,10.985922,0.0015387,-115.63149)'
+                  ></polygon><polygon
+                    points='34.743,19.767 33.169,11.306 33.118,11.306 33.059,19.767 30.702,19.767 30.91,10.356 34.75,10.356 35.912,17.55 35.962,17.55 37.125,10.356 40.963,10.356 41.167,19.767 38.815,19.767 38.753,11.306 38.704,11.306 37.131,19.767 '
+                    id='polygon20'
+                    style='fill:#ffffff'
+                    transform='matrix(10.985922,0,0,10.985922,0.0015387,-115.63149)'
+                  ></polygon><path
+                    d='m 188.89348,72.359607 c 1.01071,2.50479 0.7031,5.723666 0.23071,7.668174 -0.86789,3.438593 -3.19691,6.943103 -10.07409,6.943103 -6.4817,0 -10.41466,-3.713242 -10.41466,-9.392964 l 0,-10.008175 -27.72847,0 -0.022,8.008737 c 0,23.048465 18.14875,30.002558 37.59383,30.002558 18.69804,0 34.1003,-6.393811 36.55016,-23.619737 1.2524,-8.931554 0.31859,-14.776065 -0.10986,-16.984235 -4.36141,-21.642267 -43.60312,-28.101989 -46.52538,-40.208475 -0.49437,-2.076339 -0.35155,-4.273523 -0.10986,-5.449017 0.71409,-3.295777 2.97719,-6.932117 9.44789,-6.932117 6.04226,0 9.61269,3.735214 9.61269,9.381977 0,1.900565 0,6.382821 0,6.382821 l 25.78396,0 0,-7.261694 c 0,-22.5211404 -20.2141,-26.0366354 -34.85834,-26.0366354 -18.39043,0 -33.41917,6.07521482 -36.16565,22.9056474 -0.74704,4.647045 -0.8569,8.788738 0.2307,13.974093 4.51522,21.125928 41.24116,27.245086 46.55834,40.625939 z'
+                    id='path22'
+                    style='fill:#ffffff'></path><path
+                    d='m 525.08467,72.172847 c 1.02169,2.482818 0.69211,5.613806 0.2307,7.558314 -0.84592,3.427608 -3.15296,6.877187 -9.9862,6.877187 -6.39381,0 -10.29381,-3.713242 -10.29381,-9.261132 l -0.022,-9.920288 -27.44284,0 -0.033,7.898878 c 0,22.81776 17.98395,29.705934 37.23129,29.705934 18.50029,0 33.75973,-6.30592 36.16565,-23.378043 1.2524,-8.865639 0.36254,-14.633248 -0.0879,-16.797474 -4.33944,-21.44452 -43.18566,-27.838327 -46.07495,-39.823968 -0.49437,-2.065353 -0.35155,-4.240566 -0.0989,-5.350144 0.73606,-3.317748 2.95522,-6.866201 9.36001,-6.866201 5.98733,0 9.48085,3.647326 9.48085,9.250146 0,1.878593 0,6.316905 0,6.316905 l 25.58621,0 0,-7.184792 c 0,-22.2794503 -20.04931,-25.7729735 -34.55072,-25.7729735 -18.1817,0 -33.0896,5.9983134 -35.78115,22.7079005 -0.74704,4.58113 -0.82394,8.645921 0.24169,13.809304 4.4493,20.90621 40.8127,26.981425 46.07496,40.230447 z'
+                    id='path24'
+                    style='fill:#ffffff'></path><path
+                    d='m 611.92838,86.059052 c 7.17381,0 9.41494,-4.965637 9.9093,-7.503385 0.20873,-1.120564 0.26366,-2.614649 0.24169,-3.954932 l 0,-76.5059605 26.1465,0 0,74.1659595 c 0.0549,1.900564 -0.13183,5.811553 -0.21972,6.7893 -1.83465,19.302265 -17.0941,25.564236 -36.08876,25.564236 -19.01663,0 -34.28706,-6.261971 -36.09974,-25.564236 -0.0879,-0.977747 -0.27464,-4.888736 -0.21971,-6.7893 l 0,-74.1659595 26.12452,0 0,76.5059605 c 0,1.340283 0.0439,2.845354 0.24169,3.954932 0.56028,2.537748 2.73549,7.503385 9.96423,7.503385 z'
+                    id='path26'
+                    style='fill:#ffffff'></path><path
+                    d='m 827.604,84.971446 c 7.4924,0 10.10705,-4.734933 10.59043,-7.492399 0.18676,-1.18648 0.24169,-2.625635 0.2307,-3.93296 l 0,-15.00677 -10.6124,0 0,-15.094656 36.66002,0 0,27.750439 c -0.022,1.933522 -0.0659,3.361692 -0.37352,6.811271 -1.72479,18.807899 -18.03888,25.520299 -36.3634,25.520299 -18.35747,0 -34.6496,-6.7124 -36.39636,-25.520299 -0.29662,-3.449579 -0.34056,-4.877749 -0.37352,-6.811271 l 0.022,-43.537209 c 0,-1.834649 0.23071,-5.086482 0.42845,-6.811272 2.29606,-19.3242368 17.96199,-25.5422686 36.31946,-25.5422686 18.33551,0 34.38594,6.185074 36.2865,25.5422686 0.34057,3.295777 0.23071,6.811272 0.23071,6.811272 l 0,3.449579 -26.0696,0 0,-5.789581 c 0.022,0.01099 -0.033,-2.460846 -0.34056,-3.93296 -0.43944,-2.285072 -2.42789,-7.536342 -10.30479,-7.536342 -7.53635,0 -9.74452,4.965636 -10.29381,7.536342 -0.3186,1.362255 -0.43944,3.207889 -0.43944,4.87775 l 0,47.283408 c -0.022,1.307325 0.0549,2.74648 0.26366,3.93296 0.45042,2.768452 3.05409,7.492399 10.5355,7.492399 z'
+                    id='path28'
+                    style='fill:#ffffff'></path></g
+                ></g
+              >
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team section -->
+      <!-- <div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8'>
+        <div class='flex justify-between items-start'>
+          <div class='mx-auto max-w-2xl lg:mx-0'>
+            <h2
+              class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+            >
+              El equipo
+            </h2>
+
+            <p class='mt-6 text-lg leading-8 text-gray-600'>
+              Conoce a todos los miembros de nuestro equipo que hacen posible
+              que todo esto funcione.
+            </p>
+          </div>
+          <button
+            type='button'
+            class='rounded bg-white px-2 py-1 text-xs font-semibold text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke-width='1.5'
+              stroke='currentColor'
+              class='size-5'
+            >
+              <path
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                d='M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z'
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          role='list'
+          class='mx-auto mt-20 grid max-w-2xl grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center lg:mx-0 lg:max-w-none'
+        >
+          {
+            teamMembers.map((member, index) => (
+              <li>
+                <button class='rounded-full border-4 border-gray-500'>
+                  <Image
+                    class='mx-auto h-24 w-24 rounded-full grayscale blur-sm hover:shadow-lg'
+                    src={member.img}
+                    alt={`foto de ${member.name}`}
+                    id={`team-member-${index}`}
+                  />
+                </button>
+                <h3 class='mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900'>
+                  {member.name}
+                </h3>
+                <p class='text-sm leading-6 text-gray-600'>{member.role}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div> -->
+
+      <!-- Blog section -->
+      <div class='mx-auto my-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
+        <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+          <h2
+            class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
+          >
+            Desde el blog
+          </h2>
+          <p class='mt-2 text-lg leading-8 text-gray-600'>
+            Esto es lo último que hemos escrito en el blog.
+          </p>
+        </div>
+        <div
+          class='mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3'
+        >
+          {
+            recentPosts.map((post) => (
+              <article class='relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-700 px-8 pb-8 pt-8 hover:shadow-2xl transition-shadow duration-300'>
+                <div class='absolute inset-0 -z-10 h-full w-full object-cover' />
+                <div class='absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40' />
+                <div class='absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10' />
+
+                <div class='flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300'>
+                  <time datetime={post.data.pubDate.toISOString()} class='mr-8'>
+                    {post.data.pubDate.toLocaleDateString('es-ES', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: '2-digit',
+                    })}
+                  </time>
+                  <div class='-ml-4 flex items-center gap-x-4'>
+                    <svg
+                      viewBox='0 0 2 2'
+                      class='-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50'
+                    >
+                      <circle cx='1' cy='1' r='1' />
+                    </svg>
+                    <div class='flex gap-x-2.5'>
+                      <Image
+                        src={img1}
+                        alt='Jorge Baumann'
+                        class='h-6 w-6 flex-none rounded-full bg-white/10'
+                      />
+                      Jorge Baumann
+                    </div>
+                  </div>
+                </div>
+                <h3 class='mt-3 text-lg font-semibold leading-6 text-white'>
+                  <a href={`/blog/${post.slug}`}>
+                    <span class='absolute inset-0' />
+                    {post.data.title}
+                  </a>
+                </h3>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</DefaultLayout>
+
+<script>
+  const birthDate = new Date('1988-01-21');
+  const ms = document.getElementById('milliseconds') as HTMLSpanElement;
+
+  function updateAgeInMilliseconds() {
+    const currentDate = new Date();
+    const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
+    ms.textContent = ageInMilliseconds.toLocaleString();
+  }
+
+  setInterval(updateAgeInMilliseconds, 100);
+
+  const clickSoundEl = document.getElementById(
+    'click-sound'
+  ) as HTMLAudioElement;
+  const hoverSoundEl = document.getElementById(
+    'hover-sound'
+  ) as HTMLAudioElement;
+
+  const getTeamMembersImages = () => {
+    const imageNodes = document.querySelectorAll('img');
+    // Filter images that have a id starting with 'team-member-'
+    const images = Array.from(imageNodes).filter((image) =>
+      image.id.startsWith('team-member-')
+    );
+
+    // Add an onClick event listener (only once) to each image to see if each image has been clicked or not and save a state for it
+    images.forEach((image) => {
+      image.addEventListener('click', (ev) => {
+        if (image.getAttribute('data-clicked') === 'true') {
+          console.log(ev);
+          console.log(
+            '%c JavaScript!!',
+            'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)'
+          );
+        } else {
+          image.setAttribute('data-clicked', 'true');
+          // Reset time of the sound to play it from the beginning
+          clickSoundEl.currentTime = 0;
+          clickSoundEl.play();
+
+          // Remove the grayscale and blur effect and add a ring effect
+          image.classList.remove('blur-sm');
+          image.classList.add(
+            'grayscale-0',
+            'ring-4',
+            'ring-violet-200',
+            'transition-all',
+            'duration-300',
+            'hover:ring-4',
+            'hover:ring-offset-white',
+            'hover:ring-offset-4'
+          );
+        }
+      });
+    });
+
+    // Add an event for each image to play a sound on hover
+    images.forEach((image) => {
+      image.addEventListener('mouseenter', () => {
+        if (image.getAttribute('data-clicked') === 'true') {
+          hoverSoundEl.currentTime = 0;
+          hoverSoundEl.play();
+        }
+      });
+    });
+  };
+
+  getTeamMembersImages();
+</script>
