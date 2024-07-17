@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-import { calculateCoffees } from '../utils/';
+import { calculateCoffees } from '../utils/index.js';
 import jorgeBaumann from '../assets/sobre-mi/bmn.avif';
 import img1 from '../assets/sobre-mi/team/1.avif';
 import img2 from '../assets/sobre-mi/team/2.avif';
@@ -216,8 +216,13 @@ const githubPublicRepos = 151;
                   <span
                     class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-violet-500'
                     >fitness</span
-                  >. También me encantan los juegos de mesa y los videojuegos.
-                  Tengo una larga <span title='sin usar 😂'>lista</span> de ambos.
+                  >. También me encantan los <a
+                    href='https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B/'
+                    class='font-medium text-violet-800 underline underline-offset-1 hover:text-violet-600 transition-all duration-200 ease-in-out hover:underline-offset-2'
+                    >juegos de mesa</a
+                  > y los videojuegos. Tengo una larga <span title='sin usar 😂'
+                    >lista</span
+                  > de ambos.
                 </p>
               </div>
             </div>

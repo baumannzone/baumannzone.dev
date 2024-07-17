@@ -7,7 +7,10 @@
 export const stringToKebabCase = (str) =>
   str.toLowerCase().replace(/\s+/g, '-');
 
-
+/**
+ * Calculate the number of coffees consumed since 2015
+ * @returns number
+ */
 export const calculateCoffees = () => {
   const startYear = 2015;
   const endYear = new Date().getFullYear();
