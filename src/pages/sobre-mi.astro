@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
-import { calculateCoffees } from '../utils/index.js';
+import { calculateCoffees } from '../utils/main';
+
 import jorgeBaumann from '../assets/sobre-mi/bmn.avif';
 import img1 from '../assets/sobre-mi/team/1.avif';
 import img2 from '../assets/sobre-mi/team/2.avif';
@@ -73,7 +74,8 @@ const posts = (await getCollection('blog')).sort(
 const recentPosts = posts.slice(0, 3);
 
 // Calcular el número de cafés consumidos
-const totalCoffees = calculateCoffees().toLocaleString();
+const totalCoffees = calculateCoffees();
+// const totalCoffees = 0;
 
 // Calcular la edad en milisegundos
 const birthDate = new Date('1988-01-21');
@@ -233,6 +235,8 @@ const githubPublicRepos = 151;
                     Artículos publicados
                   </dt>
                   <dd
+                    id='totalPosts'
+                    data-value={posts.length}
                     class='text-5xl font-semibold tracking-tight text-gray-900'
                   >
                     {posts.length}
@@ -245,6 +249,8 @@ const githubPublicRepos = 151;
                     >
                   </dt>
                   <dd
+                    id='totalRepos'
+                    data-value={githubPublicRepos}
                     class='text-5xl font-semibold tracking-tight text-gray-900'
                   >
                     {githubPublicRepos}
@@ -257,7 +263,9 @@ const githubPublicRepos = 151;
                   <dd
                     class='text-5xl font-semibold tracking-tight text-gray-900'
                   >
-                    ± {totalCoffees}
+                    ± <span id='totalCoffees' data-value={totalCoffees}
+                      >{totalCoffees}</span
+                    >
                   </dd>
                 </div>
               </dl>
@@ -650,7 +658,7 @@ const githubPublicRepos = 151;
       </div>
 
       <!-- Team section -->
-      <!-- <div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8'>
+      <div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8'>
         <div class='flex justify-between items-start'>
           <div class='mx-auto max-w-2xl lg:mx-0'>
             <h2
@@ -707,7 +715,7 @@ const githubPublicRepos = 151;
             ))
           }
         </ul>
-      </div> -->
+      </div>
 
       <!-- Blog section -->
       <div class='mx-auto my-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
@@ -840,4 +848,59 @@ const githubPublicRepos = 151;
   };
 
   getTeamMembersImages();
+
+  // ----
+
+  function easeOut(t) {
+    return t * (2 - t); // Function to apply an ease-out effect
+  }
+
+  function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id) as HTMLElement;
+    const range = end - start;
+    const startTime = new Date().getTime();
+    const endTime = startTime + duration;
+
+    function run() {
+      const now = new Date().getTime();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1); // Ensure that the progress is between 0 and 1
+      const easeProgress = easeOut(progress); // Apply the ease-out function to the progress
+      const value = Math.floor(start + range * easeProgress); // Calculate the current value
+      obj.innerHTML = value.toLocaleString();
+
+      if (now < endTime) {
+        requestAnimationFrame(run);
+      }
+    }
+
+    requestAnimationFrame(run);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const targetId = entry.target.id;
+          const targetValue = Number(entry.target.dataset.value);
+
+          animateValue(targetId, 0, targetValue, 1500);
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.5, // Trigger the callback when the target is 50% visible
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    observer.observe(document.getElementById('totalPosts') as HTMLElement);
+    observer.observe(document.getElementById('totalRepos') as HTMLElement);
+    observer.observe(document.getElementById('totalCoffees') as HTMLElement);
+  });
 </script>

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
-import { stringToKebabCase } from '../../utils/index';
+import { stringToKebabCase } from '../../utils/main;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');

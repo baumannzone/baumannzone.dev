@@ -4,14 +4,14 @@
  * @returns string
  * @example "Jorge Baumann" => "jorge-baumann"
  */
-export const stringToKebabCase = (str) =>
+const stringToKebabCase = (str) =>
   str.toLowerCase().replace(/\s+/g, '-');
 
 /**
  * Calculate the number of coffees consumed since 2015
  * @returns number
  */
-export const calculateCoffees = () => {
+const calculateCoffees = () => {
   const startYear = 2015;
   const endYear = new Date().getFullYear();
   const month = new Date().getMonth() + 1; // JavaScript months are 0-11
@@ -46,3 +46,5 @@ export const calculateCoffees = () => {
 
   return Math.floor(totalCoffees);
 };
+
+export { stringToKebabCase, calculateCoffees };
