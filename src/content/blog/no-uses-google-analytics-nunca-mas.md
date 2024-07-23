@@ -48,9 +48,9 @@ Fathom tiene un plan inicial de **15$** al mes por 100,000 páginas vistas. Aunq
 
 Este es el plan que uso actualmente desde agosto de 2022 y estoy muy contento con él.
 
-➡️ [Registrate con 10$ de crédito en Fathom Analytics](https://usefathom.com/ref/RAWNZT)
+➡️ [Regístrate con 10$ de crédito en Fathom Analytics](https://usefathom.com/ref/RAWNZT)
 
-Si no quieres los 10$ de descuento:[Fathom Analytics](https://usefathom.com/)
+Si no quieres los 10$ de descuento: [click aquí](https://usefathom.com/)
 
 ## Conclusión
 

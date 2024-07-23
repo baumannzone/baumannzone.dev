@@ -16,5 +16,86 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       <slot />
     </main>
     <Footer />
+
+    <script>
+      const message = 'baumannzone.dev';
+      const timeout = 15000;
+
+      window.addEventListener(
+        'load',
+        function () {
+          const id = `s${Date.now()}`;
+          const el = document.body.appendChild(document.createElement('div'));
+          el.id = id;
+          el.style.position = 'fixed';
+          el.className = 'screen-saver';
+          el.innerHTML = `<div><div>${message}</div></div>`;
+
+          const width = el.offsetWidth + 10;
+          const height = el.offsetHeight;
+
+          const style = document.body.appendChild(
+            document.createElement('style')
+          );
+          style.textContent = `
+            #${id} {
+              left: 0; 
+              top: 0; 
+              right: 0; 
+              bottom: 0;
+              color: #eee;
+              z-index: 100000;
+              background-color: #444;
+            }
+            #${id} div {
+              width: ${width}px;
+              height: ${height}px;
+            }
+            #${id} > div {
+              animation: x${id} 5s linear infinite alternate;
+            }
+            #${id} > div > div {
+              animation: y${id} 9s linear infinite alternate;
+            }
+            @keyframes x${id} {
+              100% {
+                transform: translateX(calc(100vw - ${width}px));
+              }
+            }
+            @keyframes y${id} {
+              100% {
+                transform: translateY(calc(100vh - ${height}px));
+              }
+            }
+`;
+
+          let timeoutId = null as any;
+
+          function disable() {
+            el.style.display = 'none';
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+              el.style.display = 'block';
+            }, timeout);
+          }
+
+          function handleEvent() {
+            disable();
+          }
+
+          disable();
+          document.addEventListener('mousemove', handleEvent);
+          document.addEventListener('keydown', handleEvent);
+          document.addEventListener('scroll', handleEvent);
+
+          window.addEventListener('unload', () => {
+            document.removeEventListener('mousemove', handleEvent);
+            document.removeEventListener('keydown', handleEvent);
+            document.removeEventListener('scroll', handleEvent);
+          });
+        },
+        { once: true }
+      );
+    </script>
   </body>
 </html>
