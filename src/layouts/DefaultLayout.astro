@@ -18,8 +18,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <Footer />
 
     <script>
-      const message = 'baumannzone.dev';
-      const timeout = 15000;
+      const millisecondsToWait = 15000;
+      const bannerText = 'baumannzone.dev';
 
       window.addEventListener(
         'load',
@@ -29,7 +29,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
           el.id = id;
           el.style.position = 'fixed';
           el.className = 'screen-saver';
-          el.innerHTML = `<div><div>${message}</div></div>`;
+          el.innerHTML = `<div><div>${bannerText}</div></div>`;
 
           const width = el.offsetWidth + 10;
           const height = el.offsetHeight;
@@ -76,7 +76,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             if (timeoutId) clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
               el.style.display = 'block';
-            }, timeout);
+            }, millisecondsToWait);
           }
 
           function handleEvent() {
