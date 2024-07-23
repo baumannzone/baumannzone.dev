@@ -7,7 +7,7 @@ author: Jorge Baumann
 tags: ["Privacidad", "Tools"] 
 ---
 
-Durante años, Google Analytics ha sido mi herramienta favorita para analizar el tráfico de mi blog. Sin embargo, he decidido abandonarlo en favor de una alternativa más respetuosa con la privacidad: **Fathom Analytics**. Aquí te cuento por qué.
+Durante años, Google Analytics ha sido mi herramienta favorita para analizar el tráfico de mis webs. Sin embargo, he decidido abandonarlo en favor de una alternativa más respetuosa con la privacidad: **Fathom Analytics**. Aquí te cuento por qué.
 
 ## El lado oscuro de Google Analytics
 Google Analytics es popular por una razón: es gratuito y ofrece una gran cantidad de datos. Pero, ¿a qué precio? Cuando algo es gratis, **usualmente tú y tus usuarios sois el producto**. En el caso de Google Analytics, la privacidad de tus usuarios es el precio que pagas por usar la herramienta.
@@ -58,4 +58,4 @@ Desde que uso Fathom Analytics, mantener la web me cuesta 15$ al mes, pero la tr
 
 GA es una herramienta poderosa, pero también es invasiva y poco ética. Si te preocupa la privacidad de tus usuarios, te recomiendo que consideres alternativas como Fathom Analytics. Proteger la privacidad de tus usuarios no solo es lo correcto, sino que también puede mejorar el rendimiento de tu web. 
 
-Si puedes... ¡no uses Google Analytics nunca más!
+¡No uses Google Analytics nunca más!
