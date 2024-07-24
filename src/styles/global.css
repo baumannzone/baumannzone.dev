@@ -33,3 +33,40 @@
   }
 }
 
+/* Screen Saver */
+#screen-saver {
+  background-image: linear-gradient(
+    45deg,
+    hsl(300deg 100% 57%) 0%,
+    hsl(298deg 100% 56%) 19%,
+    hsl(296deg 100% 54%) 26%,
+    hsl(295deg 100% 53%) 31%,
+    hsl(293deg 100% 51%) 35%,
+    hsl(291deg 100% 50%) 38%,
+    hsl(290deg 100% 50%) 41%,
+    hsl(288deg 100% 50%) 43%,
+    hsl(286deg 100% 50%) 46%,
+    hsl(284deg 100% 50%) 48%,
+    hsl(282deg 100% 50%) 50%,
+    hsl(280deg 100% 50%) 53%,
+    hsl(277deg 100% 50%) 56%,
+    hsl(275deg 100% 50%) 58%,
+    hsl(272deg 100% 50%) 62%,
+    hsl(270deg 100% 50%) 66%,
+    hsl(267deg 100% 50%) 71%,
+    hsl(263deg 100% 50%) 77%,
+    hsl(259deg 100% 50%) 86%,
+    hsl(254deg 100% 50%) 100%
+  );
+  background-size: 300% 200%;
+  animation: moveGradient 6s linear infinite alternate;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
