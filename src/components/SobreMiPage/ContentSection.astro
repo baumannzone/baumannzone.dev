@@ -1,0 +1,197 @@
+---
+import { calculateCoffees } from '../../utils/main';
+
+// Calcular el número de cafés consumidos
+const totalCoffees = calculateCoffees();
+// const totalCoffees = 0;
+
+// Calcular la edad en milisegundos
+const birthDate = new Date('1988-01-21');
+const currentDate = new Date();
+const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
+
+const githubPublicRepos = 151;
+// Calcular el numero de repositorios de GitHub
+// const githubUsername = 'baumannzone';
+// const githubToken = import.meta.env.GITHUB_TOKEN;
+
+// const githubResponse = await fetch(
+//   `https://api.github.com/users/${githubUsername}`,
+//   {
+//     headers: { Authorization: `token ${githubToken}` },
+//   }
+// );
+
+// const githubData = await githubResponse.json();
+// const githubPublicRepos = githubData.public_repos;
+
+const { posts } = Astro.props;
+---
+
+<!-- Content section -->
+<div class='mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8'>
+  <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
+    <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+      Más sobre mí
+    </h2>
+    <div class='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
+      <div class='lg:w-full lg:max-w-2xl lg:flex-auto'>
+        <p class='text-xl leading-8 text-gray-600 text-balance'>
+          Soy un full stack developer con más de 10 años de experiencia. Hago
+          dibujos con <span
+            class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+            >CSS</span
+          >, disfruto dando charlas y siendo speaker, y me encanta compartir lo
+          que aprendo con la comunidad.
+        </p>
+        <div class='mt-10 max-w-xl text-base leading-7 text-gray-700'>
+          <p>
+            Nací hace
+            <span class='tabular-nums' id='milliseconds' title='1988'>
+              {ageInMilliseconds}
+            </span>
+            milisegundos. Me crié en <span
+              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500'
+              >Madrid</span
+            >, ciudad en la que actualmente resido. Despues de finalizar un
+            grado superior en sistemas informaticos, estuve trabajando como
+            administrador de sistemas. Un par de años después me matriculé en la
+            universidad rey Juan Carlos para estudiar ingeniería informática.
+          </p>
+          <p class='mt-6'>
+            Soy un web developer y creador de contenido con más de una década de
+            experiencia. Me considero un <span
+              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+              >hacker</span
+            > en el sentido de que siempre estoy utilizando la tecnología para resolver
+            mis problemas y necesidades diarias o para experimentar con nuevas ideas.
+          </p>
+          <p class='mt-6'>
+            Tengo varios hobbies. Además del mundo tech, soy un apasionado del
+            <span
+              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-violet-500'
+              >fitness</span
+            >. También me encantan los <a
+              href='https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B/'
+              class='font-medium text-violet-800 underline underline-offset-1 hover:text-violet-600 transition-all duration-200 ease-in-out hover:underline-offset-2'
+              >juegos de mesa</a
+            > y los videojuegos. Tengo una larga <span title='sin usar 😂'
+              >lista</span
+            > de ambos.
+          </p>
+        </div>
+      </div>
+      <div class='lg:flex lg:flex-auto lg:justify-center'>
+        <dl class='w-64 space-y-8 xl:w-80'>
+          <div class='flex flex-col-reverse gap-y-4'>
+            <dt class='text-base leading-7 text-gray-600'>
+              Artículos publicados
+            </dt>
+            <dd
+              id='totalPosts'
+              data-value={posts.length}
+              class='text-5xl font-semibold tracking-tight text-gray-900'
+            >
+              {posts.length}
+            </dd>
+          </div>
+          <div class='flex flex-col-reverse gap-y-4'>
+            <dt class='text-base leading-7 text-gray-600'>
+              Repositorios en GitHub <span class='text-gray-400'
+                >(públicos)</span
+              >
+            </dt>
+            <dd
+              id='totalRepos'
+              data-value={githubPublicRepos}
+              class='text-5xl font-semibold tracking-tight text-gray-900'
+            >
+              {githubPublicRepos}
+            </dd>
+          </div>
+          <div class='flex flex-col-reverse gap-y-4'>
+            <dt class='text-base leading-7 text-gray-600'>
+              Cafés consumidos desde 2015
+            </dt>
+            <dd class='text-5xl font-semibold tracking-tight text-gray-900'>
+              ± <span id='totalCoffees' data-value={totalCoffees}
+                >{totalCoffees}</span
+              >
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Update the age in milliseconds every 100ms
+  // ------------------------------------------
+  const birthDate = new Date('1988-01-21');
+  const ms = document.getElementById('milliseconds') as HTMLSpanElement;
+
+  function updateAgeInMilliseconds() {
+    const currentDate = new Date();
+    const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
+    ms.textContent = ageInMilliseconds.toLocaleString();
+  }
+
+  setInterval(updateAgeInMilliseconds, 100);
+
+  // Animate numbers when they are visible
+  // -------------------------------------
+
+  function easeOut(t) {
+    return t * (2 - t); // Function to apply an ease-out effect
+  }
+
+  function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id) as HTMLElement;
+    const range = end - start;
+    const startTime = new Date().getTime();
+    const endTime = startTime + duration;
+
+    function run() {
+      const now = new Date().getTime();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1); // Ensure that the progress is between 0 and 1
+      const easeProgress = easeOut(progress); // Apply the ease-out function to the progress
+      const value = Math.floor(start + range * easeProgress); // Calculate the current value
+      obj.innerHTML = value.toLocaleString();
+
+      if (now < endTime) {
+        requestAnimationFrame(run);
+      }
+    }
+
+    requestAnimationFrame(run);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const targetId = entry.target.id;
+          const targetValue = Number(entry.target.dataset.value);
+
+          animateValue(targetId, 0, targetValue, 1500);
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.5, // Trigger the callback when the target is 50% visible
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    observer.observe(document.getElementById('totalPosts') as HTMLElement);
+    observer.observe(document.getElementById('totalRepos') as HTMLElement);
+    observer.observe(document.getElementById('totalCoffees') as HTMLElement);
+  });
+</script>

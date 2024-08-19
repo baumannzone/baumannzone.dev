@@ -1,0 +1,218 @@
+---
+import { Image } from 'astro:assets';
+
+import img1 from '../../assets/sobre-mi/team/1.avif';
+import img2 from '../../assets/sobre-mi/team/2.avif';
+import img3 from '../../assets/sobre-mi/team/3.avif';
+import img4 from '../../assets/sobre-mi/team/4.avif';
+import img6 from '../../assets/sobre-mi/team/6.avif';
+import img7 from '../../assets/sobre-mi/team/7.avif';
+import img9 from '../../assets/sobre-mi/team/8.avif';
+import img12 from '../../assets/sobre-mi/team/12.avif';
+
+import clickSound from '../../assets/sobre-mi/sound/clickSound.mp3';
+import hoverSound from '../../assets/sobre-mi/sound/hoverSound.mp3';
+
+const teamMembers = [
+  {
+    name: 'Rambo Mambo',
+    role: 'Co-Founder / CEO',
+    img: img1,
+    hasBeenRevealed: true,
+  },
+  {
+    name: 'Jorge Baumann',
+    role: 'Co-Founder / CTO',
+    img: img12,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'Jorge B.',
+    role: 'UX/UI Designer',
+    img: img4,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'Rambito The Dog',
+    role: 'Snack Manager / Cuteness Officer',
+    img: img2,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'Rambito.js',
+    role: 'QA Engineer',
+    img: img6,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'Batmann',
+    role: 'DevOps Engineer',
+    img: img3,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'Baumanndroid',
+    role: 'Software Engineer',
+    img: img9,
+    hasBeenRevealed: false,
+  },
+  {
+    name: 'B-Mann',
+    role: 'Cybersecurity Analyst',
+    img: img7,
+    hasBeenRevealed: false,
+  },
+];
+---
+
+<audio id='click-sound' src={clickSound}></audio>
+<audio id='hover-sound' src={hoverSound}></audio>
+
+<!-- Team section -->
+<div class='mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8'>
+  <div class='flex justify-between items-start'>
+    <div class='mx-auto max-w-2xl lg:mx-0'>
+      <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+        El equipo
+      </h2>
+
+      <p class='mt-6 text-lg leading-8 text-gray-600'>
+        Conoce a los miembros de nuestro equipo que hacen posible que todo esto
+        funcione.
+      </p>
+    </div>
+    <button
+      type='button'
+      class='rounded bg-white px-4 py-1 text-xs font-semibold text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+      aria-label='Silenciar efectos de sonido'
+      id='mute-button'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='currentColor'
+        viewBox='0 0 256 256'
+        class='size-6 hidden'
+        id='speaker-icon'
+        ><path
+          d='M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,207.64,88,164.09V91.91l56-43.55Zm54-106.08a40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.58,24,24,0,0,0,0-31.72,8,8,0,0,1,12-10.58ZM248,128a79.9,79.9,0,0,1-20.37,53.34,8,8,0,0,1-11.92-10.67,64,64,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67A79.83,79.83,0,0,1,248,128Z'
+        ></path>
+      </svg>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='currentColor'
+        viewBox='0 0 256 256'
+        class='size-6'
+        id='speaker-icon-mute'
+      >
+        <path
+          d='
+              M53.92,34.62A8,8,0,1,0,42.08,45.38L73.55,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V175.09l42.08,46.29a8,8,0,1,0,11.84-10.76ZM32,96H72v64H32ZM144,207.64,88,164.09V95.89l56,61.6Zm42-63.77a24,24,0,0,0,0-31.72,8,8,0,1,1,12-10.57,40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.59Zm-80.16-76a8,8,0,0,1,1.4-11.23l39.85-31A8,8,0,0,1,160,32v74.83a8,8,0,0,1-16,0V48.36l-26.94,21A8,8,0,0,1,105.84,67.91ZM248,128a79.9,79.9,0,0,1-20.37,53.34,8,8,0,0,1-11.92-10.67,64,64,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67A79.83,79.83,0,0,1,248,128Z'
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    role='list'
+    class='mx-auto mt-20 grid max-w-2xl grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16 text-center lg:mx-0 lg:max-w-none'
+  >
+    {
+      teamMembers.map((member, index) => (
+        <li>
+          {member.hasBeenRevealed ? (
+            <button class='rounded-full border-4 border-gray-500'>
+              <Image
+                class='team-member-img mx-auto size-24 rounded-full grayscale blur-sm hover:shadow-lg'
+                src={member.img}
+                alt={`foto de ${member.name}`}
+                id={`team-member-${index}`}
+              />
+            </button>
+          ) : (
+            <div class='mx-auto grid place-items-center items-center rounded-full bg-violet-200 size-24 hover:shadow-lg ring-4 ring-violet-200 transition-all duration-300 hover:ring-4 hover:ring-offset-white hover:ring-offset-4 cursor-help  text-violet-300 hover:text-violet-400'>
+              <span class='text-5xl select-none'>?</span>
+            </div>
+          )}
+          {member.hasBeenRevealed && (
+            <>
+              <h3 class='mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900'>
+                {member.name}
+              </h3>
+              <p class='text-sm leading-6 text-gray-600'>{member.role}</p>
+            </>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  // Images
+  // ------------------------------------------------
+
+  const clickSoundEl = document.getElementById(
+    'click-sound'
+  ) as HTMLAudioElement;
+  const hoverSoundEl = document.getElementById(
+    'hover-sound'
+  ) as HTMLAudioElement;
+
+  const getTeamMembersImages = () => {
+    const imageNodes = document.getElementsByClassName('team-member-img');
+    const images = Array.from(imageNodes);
+
+    // let clickedIndex: null | number = null;
+
+    images.forEach((image, index) => {
+      image.addEventListener('click', (ev) => {
+        image.classList.remove('blur-sm');
+        image.classList.add(
+          'grayscale-0',
+          'ring-4',
+          'ring-violet-200',
+          'transition-all',
+          'duration-300',
+          'hover:ring-4',
+          'hover:ring-offset-white',
+          'hover:ring-offset-4'
+        );
+
+        const imageId = image.id;
+        console.log('🚀 ~ image.addEventListener ~ imageId:', imageId);
+        localStorage.setItem('baumannzone.dev:imageId', 'true');
+      });
+    });
+
+    // // Save to local storage the list of images that have been clicked on
+    // const saveToLocalStorage = images.map((image, index) => {
+    //   return {
+    //     hasBeenClicked: index === clickedIndex,
+    //   };
+    // });
+    // console.log(
+    //   '🚀 ~ saveToLocalStorage ~ saveToLocalStorage:',
+    //   saveToLocalStorage
+    // );
+  };
+
+  getTeamMembersImages();
+
+  // Mute and unmute the sounds
+  // ---------------------------
+
+  // const muteButton = document.getElementById(
+  //   'mute-button'
+  // ) as HTMLButtonElement;
+  // const speakerIcon = document.getElementById('speaker-icon') as HTMLElement;
+  // const speakerIconMute = document.getElementById(
+  //   'speaker-icon-mute'
+  // ) as HTMLElement;
+
+  // muteButton.addEventListener('click', () => {
+  //   clickSoundEl.muted = !clickSoundEl.muted;
+  //   hoverSoundEl.muted = !hoverSoundEl.muted;
+
+  //   speakerIcon.classList.toggle('hidden');
+  //   speakerIconMute.classList.toggle('hidden');
+  // });
+</script>

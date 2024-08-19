@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+
+import rambito1 from '../../assets/sobre-mi/rambito1.avif';
+import rambito2 from '../../assets/sobre-mi/rambito2.avif';
+import rambito3 from '../../assets/sobre-mi/rambito3.avif';
+import rambito4 from '../../assets/sobre-mi/rambito4.avif';
+---
+
+<!-- Image section --><!-- <div class='mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8'>
+<img
+  src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80'
+  alt=''
+  class='aspect-[5/2] w-full object-cover xl:rounded-3xl hover:shadow-xl transition duration-200 ease-in-out hover:cursor-crosshair'
+/>
+</div> -->
+<div class='mt-32 overflow-hidden sm:mt-40'>
+  <div class='mx-auto max-w-7xl px-6 lg:flex lg:px-8'>
+    <div
+      class='mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'
+    >
+      <div class='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
+        <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+          Mi compañero
+        </h2>
+        <p class='mt-6 text-xl leading-8 text-gray-600 prose'>
+          Rambo Mambo también conocido como Rambito.js, es mi fiel compañero
+          desde que lo adopté en 2012
+        </p>
+        <p class='mt-6 text-base leading-7 text-gray-600'>
+          Aunque no conocemos su fecha exacta de nacimiento, se estima que nació
+          en 2010. Rambo es un braco húngaro (Vizsla), una raza conocida por su
+          energía y afecto.
+        </p>
+        <p class='mt-2 text-base leading-7 text-gray-600'>
+          Además, Rambo ha asistido a muchos eventos tecnológicos conmigo,
+          convirtiéndose en una figura querida en la comunidad tech. Y por
+          supuesto, siempre tiene hambre, lo que lo hace aún más adorable.
+        </p>
+      </div>
+      <div
+        class='flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'
+      >
+        <div
+          class='w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end'
+        >
+          <Image
+            src={rambito1}
+            alt='Rambo, un Braco Húngaro de color marrón, lleva un arnés Julius K9 negro. Está sentado en un campo de hierba con una leve inclinación. Al fondo, se puede ver un lago rodeado de montañas, y un pueblo en la distancia. El cielo está parcialmente nublado, con algunas nubes blancas dispersas. La luz del sol ilumina a Rambo, destacando su expresión tranquila y alerta mientras mira hacia un lado, con la boca ligeramente abierta y mostrando los colmillos.'
+            class='aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover grayscale hover:grayscale-0 transition-all duration-300 ease-in-out -scale-x-100 hover:cursor-crosshair'
+          />
+        </div>
+        <div
+          class='contents
+                  lg:col-span-2
+                  lg:col-end-2
+                  lg:ml-auto
+                  lg:flex
+                  lg:w-[37rem]
+                  lg:items-start
+                  lg:justify-end
+                  lg:gap-x-8'
+        >
+          <div
+            class='order-first flex w-64 flex-none justify-end self-end lg:w-auto'
+          >
+            <Image
+              src={rambito3}
+              alt='Rambo, un Braco Húngaro de color marrón, está sentado junto a una estructura de piedra en un mirador con vistas panorámicas de Galicia. Lleva un collar y está jadeando, con la boca abierta y la lengua fuera. Detrás de él, se puede ver un árbol torcido y las colinas onduladas que se extienden hasta el horizonte. El cielo es despejado y azul, y la luz del sol ilumina la escena, resaltando la vegetación verde y las estructuras de piedra envejecida.'
+              class='aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:cursor-crosshair'
+            />
+          </div>
+          <div class='flex w-96 flex-auto justify-end lg:w-auto lg:flex-none'>
+            <Image
+              src={rambito4}
+              alt='Rambo, un Braco Húngaro de color marrón, está sentado frente a un gran letrero luminoso que dice "CAMPUS MADRID". El letrero está compuesto por letras blancas con bombillas y está montado sobre una estructura de madera clara. La pared de fondo es de ladrillo visto. Rambo lleva un arnés Julius K9 negro y tiene una expresión tranquila mientras mira directamente a la cámara. Este espacio es parte del Campus Madrid, un lugar de Google utilizado para eventos.'
+              class='aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover transition-all duration-300 ease-in-out -hue-rotate-90 hover:hue-rotate-0 hover:cursor-crosshair'
+            />
+          </div>
+          <div
+            class='hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none'
+          >
+            <Image
+              src={rambito2}
+              alt='Rambo, un Braco Húngaro de color marrón, está durmiendo plácidamente. Se puede ver su cara de perfil y sus patas delanteras en primer plano. La imagen captura la textura de su pelaje y la suavidad de su respiración mientras descansa sobre una superficie acolchada. Sus patas están relajadas y se puede apreciar el detalle de sus uñas. La escena transmite tranquilidad y confort.'
+              class='aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover -scale-x-100 grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:cursor-crosshair'
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
