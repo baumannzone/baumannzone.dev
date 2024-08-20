@@ -15,16 +15,11 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPostLayout {...post.data}>
+<BlogPostLayout
+  id={post.id}
+  slug={post.slug}
+  collection={post.collection}
+  {...post.data}
+>
   <Content />
-
-  <script
-    type='application/javascript'
-    src='https://utteranc.es/client.js'
-    repo='baumannzone/baumannzonedev-comments'
-    issue-term='pathname'
-    label='comment'
-    theme='preferred-color-scheme'
-    crossorigin='anonymous'
-    async></script>
 </BlogPostLayout>

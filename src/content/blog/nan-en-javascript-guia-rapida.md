@@ -80,7 +80,7 @@ NaN / NaN
 ```
 
 ### Forma indeterminada
-Operaciones que están en formas indeterminadas producen `NaN`.
+Operaciones que están en formas indefinidas producen `NaN`.
   
 ```javascript
 undefined * 2

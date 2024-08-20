@@ -70,3 +70,36 @@
     background-position: 100% 100%;
   }
 }
+
+
+/* Underlined - Effect */
+.underlined {
+	position: relative;
+	text-decoration: none !important;
+	white-space: nowrap;
+}
+
+.underlined:focus {
+	outline: none;
+	text-decoration: none !important;
+}
+
+.underlined:after {
+	content: '';
+	height: 2px;
+	transform: scaleX(0);
+	transition: transform 0.25s ease;
+	transform-origin: left;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	display: block;
+	position: absolute;
+}
+
+.underlined:hover:after,
+.underlined:focus:after,
+.active.underlined:after {
+	background-color: currentColor;
+	transform: scaleX(1);
+}

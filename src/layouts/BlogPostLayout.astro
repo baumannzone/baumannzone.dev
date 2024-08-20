@@ -3,13 +3,27 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import SharePostBar from '../components/SharePostBar.astro';
 import NavBar from '../components/NavBar.astro';
 import { stringToKebabCase } from '../utils/main';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+  id: string;
+  slug: string;
+  collection: string;
+};
 
-const { title, description, pubDate, updatedDate, tags, canonical } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  tags,
+  canonical,
+  id,
+  slug,
+  collection,
+} = Astro.props;
 ---
 
 <html lang='es'>
@@ -55,11 +69,23 @@ const { title, description, pubDate, updatedDate, tags, canonical } =
         }
       </header>
       <article
-        class='prose dark:prose-invert prose-lg mx-auto mb-16'
+        class='prose dark:prose-invert prose-lg mx-auto mb-24'
         itemprop='articleBody'
       >
         <slot />
       </article>
+
+      <SharePostBar id={id} slug={slug} collection={collection} title={title} />
+
+      <script
+        type='application/javascript'
+        src='https://utteranc.es/client.js'
+        repo='baumannzone/baumannzonedev-comments'
+        issue-term='pathname'
+        label='comment'
+        theme='preferred-color-scheme'
+        crossorigin='anonymous'
+        async></script>
     </main>
 
     <Footer />
