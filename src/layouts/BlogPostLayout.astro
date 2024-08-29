@@ -69,11 +69,23 @@ const {
         }
       </header>
       <article
-        class='prose dark:prose-invert prose-lg mx-auto mb-24'
+        class='prose dark:prose-invert prose-lg mx-auto mb-12'
         itemprop='articleBody'
       >
         <slot />
       </article>
+
+      <div class='prose dark:prose-invert prose-lg mx-auto mb-24'>
+        <b> Un par de cosas que puedes hacer para ayudarme antes de irte: </b>
+        <ul>
+          <li>
+            Comparte en 𝕏 (Twitter) o en Threads, tienes el botón ahí abajo.
+          </li>
+          <li>Deja un comentario, me encanta leerlos y responderlos todos.</li>
+        </ul>
+
+        <p>A ti te cuesta cero y a mi me ayuda un montón. 😊</p>
+      </div>
 
       <SharePostBar id={id} slug={slug} collection={collection} title={title} />
 
