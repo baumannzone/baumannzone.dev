@@ -14,9 +14,13 @@ Afortunadamente, la consola de tu navegador tiene una funcionalidad llamada "liv
 
 Para detectar el elemento con el foco en tiempo real, sigue estos pasos:
 
-- Abre las Developer Tools de tu navegador, en la pestaña de consola. Puedes abrir las DevTools presionando `F12` o `Ctrl` + `Shift` + `I` (en Windows) o `Cmd` + `Option` + `I` (en macOS).
+- Abre las Developer Tools de tu navegador, en la pestaña de consola. Puedes abrir las DevTools presionando `F12` o `Cmd` + `Option` + `I` (en macOS).
 - En la parte superior verás un botón con un icono en forma de ojo. Haz clic en él para crear una expresión en vivo.
 - En el cuadro de texto que aparece, escribe `document.activeElement`. Este código hace referencia al elemento del DOM que tiene el foco en ese momento.
 - Ahora navega por la página haciendo clic o usando la tecla de tabulación (`Tab`) para cambiar el foco entre los elementos interactivos. La expresión en vivo se actualizará automáticamente para reflejar cuál es el elemento que tiene el foco en ese momento.
 
+![Detectar el elemento con el foco en tiempo real](../../assets/blog/como-detectar-el-elemento-con-el-foco-en-tiempo-real/main.webp)
+
 Con esta sencilla técnica, puedes ver de forma dinámica qué elemento tiene el foco en cualquier momento mientras interactúas con tu página web. 
+
+¿Qué otros usos conoces para las "_live expressions_" de la consola de tu navegador? ¡Déjame un comentario abajo!
