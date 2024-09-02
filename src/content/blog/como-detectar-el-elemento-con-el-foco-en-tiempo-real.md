@@ -1,7 +1,7 @@
 ---
 title: "Cómo detectar el elemento con el foco en tiempo real"
 description: Aprende a usar las "live expressions" de la consola de tu navegador para detectar qué elemento HTML tiene el focus en tiempo real.
-pubDate: 2024-08-28
+pubDate: 2024-09-01
 type: blog
 author: Jorge Baumann
 tags: ["consola", "JavaScript"]
