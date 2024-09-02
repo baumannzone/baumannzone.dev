@@ -23,4 +23,4 @@ Para detectar el elemento con el foco en tiempo real, sigue estos pasos:
 
 Con esta sencilla técnica, puedes ver de forma dinámica qué elemento tiene el foco en cualquier momento mientras interactúas con tu página web. 
 
-¿Qué otros usos conoces para las "_live expressions_" de la consola de tu navegador? ¡Déjame un comentario abajo!
+¿Qué otros casos de uso conoces para las "_live expressions_" de la consola de tu navegador? ¡Déjame un comentario abajo!
