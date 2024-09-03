@@ -1,5 +1,58 @@
 ---
 const today = new Date();
+
+const sectionLinks = [
+  {
+    title: 'Inicio',
+    url: '/',
+  },
+  {
+    title: 'Blog',
+    url: '/blog',
+  },
+  {
+    title: 'Setup',
+    url: '/uses',
+  },
+  {
+    title: 'Sobre mí',
+    url: '/sobre-mi',
+  },
+];
+
+const supportMeLinks = [
+  {
+    title: 'Buy me a coffe',
+    url: 'https://www.buymeacoffee.com/baumannzone',
+  },
+  {
+    title: 'GitHub Sponsors',
+    url: 'https://github.com/sponsors/baumannzone',
+  },
+  {
+    title: 'Twitch Prime',
+    url: 'https://www.twitch.tv/baumannzone/',
+  },
+  {
+    title: 'Patrocinio',
+    url: '/patrocinio',
+  },
+];
+
+const otherLinks = [
+  {
+    title: 'RSS',
+    url: '/rss.xml',
+  },
+  {
+    title: 'Sitemap',
+    url: '/sitemap-0.xml',
+  },
+  {
+    title: 'Mis juegos de mesa',
+    url: 'https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B',
+  },
+];
 ---
 
 <footer class='bg-violet-700' aria-labelledby='footer-heading'>
@@ -13,74 +66,36 @@ const today = new Date();
               Secciones
             </h3>
             <ul role='list' class='mt-6 space-y-4'>
-              <li>
-                <a
-                  href='/'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Inicio</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href='/blog'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Blog</a
-                >
-              </li>
-
-              <li>
-                <a
-                  href='/uses'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                >
-                  Setup
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href='/sobre-mi'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                >
-                  Sobre mí
-                </a>
-              </li>
+              {
+                sectionLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class='text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined'
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
           <div class='mt-10 md:mt-0'>
             <h3 class='text-sm font-semibold leading-6 text-white'>Apóyame</h3>
             <ul role='list' class='mt-6 space-y-4'>
-              <li>
-                <a
-                  href='https://www.buymeacoffee.com/baumannzone'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                >
-                  Buy me a coffe
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://github.com/sponsors/baumannzone'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >GitHub Sponsors</a
-                >
-              </li>
-              <li>
-                <a
-                  href='https://www.twitch.tv/baumannzone/'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Twitch Prime</a
-                >
-              </li>
-              <li>
-                <a
-                  href='/patrocinio'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Patrocinio</a
-                >
-              </li>
+              {
+                supportMeLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class='text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined'
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -88,30 +103,18 @@ const today = new Date();
           <div>
             <h3 class='text-sm font-semibold leading-6 text-white'>Links</h3>
             <ul role='list' class='mt-6 space-y-4'>
-              <li>
-                <a
-                  href='/rss.xml'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >RSS</a
-                >
-              </li>
-              <li>
-                <a
-                  href='/sitemap-0.xml'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                >
-                  Sitemap
-                </a>
-              </li>
-              <li>
-                <a
-                  title='Mi lista de juegos de mesa en Amazon'
-                  href='https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                >
-                  Mis juegos de mesa
-                </a>
-              </li>
+              {
+                otherLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class='text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined'
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
