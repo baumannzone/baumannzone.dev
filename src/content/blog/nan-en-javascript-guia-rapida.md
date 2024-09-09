@@ -1,6 +1,6 @@
 ---
 title: "NaN en JavaScript: guía rápida para desarrolladores"
-description: ¿Qué es NaN en JavaScript? En este artículo, te explicamos todo lo que necesitas saber sobre NaN en JavaScript y cómo puedes generar NaN con JavaScript.
+description: ¿Qué es NaN en JavaScript? En esta cheatsheet te explico todo lo que necesitas saber sobre NaN en JavaScript y cómo se generan los valores NaN en JavaScript.
 pubDate: 2024-08-20
 type: blog
 author: Jorge Baumann

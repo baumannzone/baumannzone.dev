@@ -20,12 +20,12 @@ interface Props {
 const { post, isFeatured = false, isBlog = false } = Astro.props;
 const authorParsed = stringToKebabCase(post.data.author);
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/authors/*.avif'
+  '/src/assets/authors/*.avif',
 );
 
 if (!images[`/src/assets/authors/${authorParsed}.avif`])
   throw new Error(
-    `Image does not exist in glob: "src/assets/authors/${authorParsed}*.avif"`
+    `Image does not exist in glob: "src/assets/authors/${authorParsed}*.avif"`,
   );
 ---
 
@@ -84,33 +84,33 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
       itemscope
       itemtype='https://schema.org/Article'
     >
-      <div class='flex items-center gap-x-4'>
-        <FormattedDate
-          date={post.data.pubDate}
-          className='text-gray-500 text-xs'
-          type='pubDate'
-        />
-      </div>
-      <h2
-        id='featured-post'
-        itemprop='headline'
-        class='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'
-      >
-        {post.data.title}
-      </h2>
-      <p class='mt-4 text-xl leading-8 text-gray-600' itemprop='description'>
-        {post.data.description}
-      </p>
-      <div class='mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col'>
-        <div class='flex'>
-          <a
-            href={`/blog/${post.slug}`}
-            class='text-sm font-semibold leading-6 text-violet-600'
-            aria-describedby='featured-post'
-          >
-            Sigue leyendo <span aria-hidden='true'>&rarr;</span>
-          </a>
+      <div class='group relative'>
+        <div class='flex items-center gap-x-4'>
+          <FormattedDate
+            date={post.data.pubDate}
+            className='text-gray-500 text-xs'
+            type='pubDate'
+          />
         </div>
+        <h2
+          id='featured-post'
+          itemprop='headline'
+          class='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-gray-600'
+        >
+          <a href={`/blog/${post.slug}`}>
+            <span class='absolute inset-0' />
+            {post.data.title}
+          </a>
+        </h2>
+        <p
+          class='mt-4 mb-8 text-xl leading-8 text-gray-600'
+          itemprop='description'
+        >
+          {post.data.description}
+        </p>
+      </div>
+
+      <div class='mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col'>
         <div class='flex lg:border-t lg:border-gray-900/10 lg:pt-8'>
           <span
             class='flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
