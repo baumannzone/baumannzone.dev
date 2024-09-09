@@ -31,7 +31,7 @@
 ### Teclado Externo
 
 - [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** Teclado mecánico inal RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth.
-- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. Creo que está descatalogado, no encuentro el link.
+- **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco.
 
 ### Cámara
 - [Panasonic Lumix DMC G80M 4K](https://amzn.to/3X274jL) - Cámara 4K.
@@ -41,10 +41,12 @@
 - [Micrófono AT2020](https://amzn.to/3Vl4pQX) - Micrófono de condensador de estudio para streaming y grabación.
 - [Brazo para micrófono](https://amzn.to/3Vjjum9) - Brazo para el micrófono ajustable en ángulo y altura.
 - [Behringer UMC22](https://amzn.to/3WYwoHl) - Tarjeta de sonido externa para conectar el micrófono al MacBook Pro M1.
+- [Blue Snowball Ice](https://amzn.to/4edF2aq) - Micrófono de condensador USB para streaming y grabación. Lo enchufas y listo.
 
 ### Auriculares
 
-- [Bose QuietComfort 45](https://amzn.to/3VtFtXr) - Auriculares inalámbricos Bluetooth con cancelación de ruido y micrófono para llamadas, de color negro. Son muy cómodos y tienen una buena calidad de sonido.
+- [Bose QuietComfort 45](https://amzn.to/3VtFtXr) - Auriculares inalámbricos Bluetooth de diadema
+ con cancelación de ruido y micrófono para llamadas, de color negro. Son muy cómodos y tienen una buena calidad de sonido.
 - [Beats Fit Pro](https://amzn.to/3x3nTQH) - Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido.
 - [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Auriculares con cable USB. Los usaba sobre todo para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.
 
@@ -136,9 +138,11 @@ Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te gu
 
 - [Cable Ethernet CAT 6 20m](https://amzn.to/3yZKoqg) - Cable de red de 20 metros que sale de la caja de fibra óptica y llega hasta el estudio. _Tu conexión está limitada por el cable más lento de la cadena_. Si tienes contratado 1000MB de fibra, pero usas un cable CAT 5, no vas a poder disfrutar de la máxima velocidad contratada.
 - [Switch Ethernet 5 puertos](https://amzn.to/3wSHL9q) - Para tener conexión por cable a internet en el estudio. Necesario para hacer streaming o para jugar competitivo online.
+- [Repetidor WiFi TP Link](https://amzn.to/3MDQPmH) - Para tener conexión a internet en la otra punta de la casa.
+- [Extensor de red eléctrica TP Link](https://amzn.to/3ATGall) - Para tener conexión a internet en la otra punta de la casa. Funciona a través de la red eléctrica.
 
 ---
 
-Has llegado al final de la página. Gracias por leer hasta aquí. Que tengas un muy muy ✨ buen día ✨.
+Has llegado al final de la página. Gracias por leer hasta aquí.
 
 <!-- [Ver historial de cambios](https://github.com/baumannzone/baumannzone.dev/blame/main/components/UsesPage/uses.md) -->
