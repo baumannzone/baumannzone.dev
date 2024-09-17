@@ -1,6 +1,6 @@
 ---
-title: "Letter spacing está roto en CSS y tú no lo sabías"
-description: "Te revelo por qué el espaciado de letras en CSS no funciona como debería, y cómo este error silencioso puede estar afectando la calidad de tu diseño tipográfico sin que te hayas dado cuenta."
+title: "La gran mentira de letter-spacing en CSS que no sabías"
+description: "Te han mentido sobre letter-spacing en CSS. No funciona como crees. ¿Llevas años usando mal el espaciado de letras? Spoiler: sí. Este error silencioso está arruinando tu tipografía, y ni siquiera te diste cuenta."
 pubDate: 2024-09-16
 type: blog
 author: Jorge Baumann
@@ -8,12 +8,9 @@ tags:
   - TIL
   - CSS
 ---
+El espaciado de letras o letter-spacing en CSS parece una propiedad sencilla, ¿verdad? Ajustar el espacio entre letras no debería ser un problema. Pero te han mentido. Lo que parece inofensivo puede estar desmoronando la estética de tus diseños sin que lo notes.
 
-El espaciado de letras, o letter-spacing en CSS, es una propiedad que muchos desarrolladores usan sin prestar demasiada atención. Su nombre y su funcionalidad son bastante simples: ajustar el espacio entre los caracteres de un texto. 
-
-Pero la realidad es que puede arruinar tu diseño tipográfico si no entiendes bien cómo funciona. ¿Alguna vez has notado que los textos se ven extrañamente desalineados o simplemente "fuera de lugar"? Es probable que el problema esté en cómo estás usando el espaciado de letras.
-
-<!-- En este artículo, te mostraré por qué el espaciado de letras en CSS está roto, cómo evitar sus problemas comunes y qué alternativas puedes considerar. -->
+Es probable que hayas estado usando mal el espaciado de letras todo este tiempo. Y lo peor es que este error pasa desapercibido para la mayoría de los desarrolladores y diseñadores. Pero no te preocupes, hoy entenderás por qué `letter-spacing` está roto en CSS. Este error suele pasar desapercibido, pero sus efectos se manifiestan en la alineación y el ritmo visual de tus textos.
 
 ## ¿Qué es `letter-spacing` en CSS? 
 

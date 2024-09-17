@@ -24,6 +24,9 @@ const {
   slug,
   collection,
 } = Astro.props;
+
+// Dont show comments in dev mode
+const showComments = !import.meta.env.DEV;
 ---
 
 <html lang='es'>
@@ -89,15 +92,20 @@ const {
 
       <SharePostBar id={id} slug={slug} collection={collection} title={title} />
 
-      <script
-        type='application/javascript'
-        src='https://utteranc.es/client.js'
-        repo='baumannzone/baumannzonedev-comments'
-        issue-term='pathname'
-        label='comment'
-        theme='preferred-color-scheme'
-        crossorigin='anonymous'
-        async></script>
+      {
+        showComments && (
+          <script
+            type='application/javascript'
+            src='https://utteranc.es/client.js'
+            repo='baumannzone/baumannzonedev-comments'
+            issue-term='pathname'
+            label='comment'
+            theme='preferred-color-scheme'
+            crossorigin='anonymous'
+            async
+          />
+        )
+      }
     </main>
 
     <Footer />
