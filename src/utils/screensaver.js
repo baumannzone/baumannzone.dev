@@ -1,5 +1,5 @@
 const bannerText = "💻 baumannzone.dev";
-const secondsToWait = 1;
+const secondsToWait = 60;
 const id = "screen-saver";
 const currentTitle = document.title;
 
