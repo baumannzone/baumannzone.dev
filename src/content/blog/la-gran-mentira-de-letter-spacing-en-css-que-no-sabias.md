@@ -10,7 +10,9 @@ tags:
 ---
 El espaciado de letras o letter-spacing en CSS parece una propiedad sencilla, ¿verdad? Ajustar el espacio entre letras no debería ser un problema. Pero te han mentido. Lo que parece inofensivo puede estar desmoronando la estética de tus diseños sin que lo notes.
 
-Es probable que hayas estado usando mal el espaciado de letras todo este tiempo. Y lo peor es que este error pasa desapercibido para la mayoría de los desarrolladores y diseñadores. Pero no te preocupes, hoy entenderás por qué `letter-spacing` está roto en CSS. Este error suele pasar desapercibido, pero sus efectos se manifiestan en la alineación y el ritmo visual de tus textos.
+Es probable que hayas estado usando mal el espaciado de letras todo este tiempo. Y lo peor es que este error pasa desapercibido para la mayoría de los desarrolladores y diseñadores. Sus efectos se manifiestan en la alineación y el ritmo visual de tus textos.
+
+Pero no te preocupes, hoy entenderás por qué `letter-spacing` está roto en CSS.
 
 ## ¿Qué es `letter-spacing` en CSS? 
 
