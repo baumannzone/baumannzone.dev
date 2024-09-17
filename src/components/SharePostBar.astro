@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import baumannzone from '../assets/baumannzone.avif';
+import baumannzone from '../assets/jorge-baumann.avif';
 
 const { id, slug, collection, title } = Astro.props;
 
@@ -71,8 +71,8 @@ const threadsShareUrl = `https://threads.net/intent/post?url=${encodedBlogPostUr
     <div class='col-span-full lg:col-span-3'>
       <Image
         src={baumannzone}
-        class='mb-8 size-32 aspect-radio-1/1 rounded-full'
-        alt='Jorge Baumann'
+        class='mb-8 size-32 aspect-radio-1/1 rounded-full hover:cursor-none'
+        alt='Jorge Baumann aka Baumannzone'
       />
     </div>
     <div class='col-start:5 col-span-9'>

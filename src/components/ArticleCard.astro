@@ -41,36 +41,24 @@ if (!images[`/src/assets/authors/${authorParsed}.avif`])
           />
         </div>
         <h2
-          class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600'
+          class='mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors'
           itemprop='headline'
         >
-          <a href={`/blog/${post.slug}`}>
-            <span class='absolute inset-0' />
-            {post.data.title}
-          </a>
+          {post.data.title}
         </h2>
-        <p class='mt-4 text-sm leading-6 text-gray-600' itemprop='description'>
+        <p class='my-4 text-sm leading-6 text-gray-600' itemprop='description'>
           {post.data.description}
         </p>
-      </div>
 
-      <div class='mt-4 flex'>
-        {/* <a
-          href='#'
-          class='relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900'
-        >
-          <img
-            src='https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-            alt=''
-            class='h-6 w-6 flex-none rounded-full bg-gray-50'
-          />
-          {post.data.author}
-        </a> */}
         <a
           href={`/blog/${post.slug}`}
-          class='text-sm font-semibold leading-6 text-violet-700 hover:text-violet-600'
+          class='text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors'
         >
-          Ver más &rarr;
+          <span class='absolute inset-0' />
+          Ver más
+          <span class='inline-block ms-0 transition-transform group-hover:translate-x-1'>
+            →
+          </span>
         </a>
       </div>
     </article>
