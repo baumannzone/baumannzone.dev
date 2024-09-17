@@ -1,24 +1,24 @@
 const bannerText = "💻 baumannzone.dev";
-const secondsToWait = 60;
+const secondsToWait = 1;
 const id = "screen-saver";
 const currentTitle = document.title;
 
-const zSuperScript = "ᶻ"; // Carácter superíndice de la z
+const zSuperScript = "ᶻ"; // Superscript character for "z"
 let zCount = 0;
-let titleInterval = null; // Para controlar el intervalo de actualización del título
-let increasing = true; // Controla si estamos añadiendo o quitando "z"
+let titleInterval = null; // To control the title update interval
+let increasing = true; // Controls whether we are adding or removing "z"
 
-// Función para actualizar el título con las zzz
+// Function to update the title with "zzz"
 function updateTitle() {
   if (increasing) {
     zCount += 1;
     if (zCount === 3) {
-      increasing = false; // Cambia la dirección cuando llega a "zzz"
+      increasing = false; // Change direction when it reaches "zzz"
     }
   } else {
     zCount -= 1;
-    if (zCount === 1) {
-      increasing = true; // Cambia la dirección cuando llega a "z"
+    if (zCount === 0) {
+      increasing = true; // Change direction when it reaches "z"
     }
   }
   document.title = zSuperScript.repeat(zCount) + " | " + currentTitle;
