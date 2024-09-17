@@ -1,6 +1,28 @@
 const bannerText = "💻 baumannzone.dev";
 const secondsToWait = 60;
 const id = "screen-saver";
+const currentTitle = document.title;
+
+const zSuperScript = "ᶻ"; // Carácter superíndice de la z
+let zCount = 0;
+let titleInterval = null; // Para controlar el intervalo de actualización del título
+let increasing = true; // Controla si estamos añadiendo o quitando "z"
+
+// Función para actualizar el título con las zzz
+function updateTitle() {
+  if (increasing) {
+    zCount += 1;
+    if (zCount === 3) {
+      increasing = false; // Cambia la dirección cuando llega a "zzz"
+    }
+  } else {
+    zCount -= 1;
+    if (zCount === 1) {
+      increasing = true; // Cambia la dirección cuando llega a "z"
+    }
+  }
+  document.title = zSuperScript.repeat(zCount) + " | " + currentTitle;
+}
 
 const millisecondsToWait = secondsToWait * 1000;
 const el = document.body.appendChild(document.createElement("div"));
@@ -54,6 +76,11 @@ let timeoutId = null;
 
 function disable() {
   el.style.display = "none";
+  document.title = currentTitle;
+  zCount = 1;
+  increasing = true; // Resetea la dirección
+  clearInterval(titleInterval); // Detiene la actualización del título
+
   if (timeoutId) clearTimeout(timeoutId);
   timeoutId = setTimeout(() => {
     el.style.display = "block";
@@ -62,6 +89,9 @@ function disable() {
       "padding:1em; border-radius: 4px; background: rgb(221,0,255); background: linear-gradient(90deg, rgba(221,0,255,1) 25%, rgba(253,29,132,1) 75%); color: white; font-weight: bold; font-size: 20px; font-style: italic; text-shadow: 1px 1px 3px #444;",
     );
     console.log("💻 Mi setup: https://baumannzone.dev/uses");
+
+    // Inicia el intervalo para actualizar el título con las zzz
+    titleInterval = setInterval(updateTitle, 1000);
   }, millisecondsToWait);
 }
 
