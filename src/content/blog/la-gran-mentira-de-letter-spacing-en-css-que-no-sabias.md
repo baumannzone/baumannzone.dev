@@ -2,6 +2,7 @@
 title: "La gran mentira de letter-spacing en CSS que no sabías"
 description: "Te han mentido sobre letter-spacing en CSS. No funciona como crees. ¿Llevas años usando mal el espaciado de letras? Spoiler: sí. Este error silencioso está arruinando tu tipografía, y ni siquiera te diste cuenta."
 pubDate: 2024-09-16
+updatedDate: 2024-09-17
 type: blog
 author: Jorge Baumann
 tags:
@@ -36,7 +37,7 @@ h1 {
 
 La especificación dice lo siguiente: "_This property specifies additional spacing between adjacent typographic character units._" (traducido: "Esta propiedad especifica el espaciado adicional entre unidades de caracteres tipográficos adyacentes"). 
 
-Es decir, que si tienes este código HTML:
+Por lo tanto, que si tienes este código HTML:
 
 ```html
 <p>a<span>bc</span>d</p>
@@ -52,20 +53,20 @@ span { letter-spacing: 2rem; }
 
 El resultado debería ser algo así:
 
-![letter-spacing](../../assets/blog/letter-spacing-esta-roto-en-css-y-tu-no-lo-sabias/lo-que-esperas.avif)
+![letter-spacing](../../assets/blog/la-gran-mentira-de-letter-spacing-en-css-que-no-sabias/lo-que-esperas.avif)
 
 Es decir, que el espaciado entre las letras `a` y `b` y entre las letras `c` y `d` debería ser de `1rem` y entre las letras `b` y `c` debería ser de `2rem`.
 
-
-<!-- However, if we run the same code on any browser (e.g., Chrome, Firefox, or Safari), we’ll see the spacing isn’t contained between the “b” letters, but also at the end of the complete word. -->
 Sin embargo, si ejecutas este código en Chrome, verás que el espacio entre las letras `c` y `d` también es de `2rem`:
 
-![letter-spacing](../../assets/blog/letter-spacing-esta-roto-en-css-y-tu-no-lo-sabias/lo-que-obtienes.avif)
+![letter-spacing](../../assets/blog/la-gran-mentira-de-letter-spacing-en-css-que-no-sabias/lo-que-obtienes.avif)
 
 Esto es un error en la implementación de la propiedad `letter-spacing` en los navegadores. En lugar de aplicar el espaciado solo entre las letras adyacentes, también lo aplica al final, por lo que el espaciado entre las letras `c` y `d` es de `2rem` en lugar de `1rem`.
 
+![animated visual example letter-spacing](../../assets/blog/la-gran-mentira-de-letter-spacing-en-css-que-no-sabias/animated.gif)
+
 ## ¿Qué esperar en el futuro?
 
-Desde el [CSSWG](https://github.com/w3c/csswg-drafts/issues/10193) ya han reconocido el problema y se espera que en futuras versiones se realicen mejoras para corregir este comportamiento. Ahora solo queda esperar y estar atentos a las actualizaciones.
+Desde el [CSSWG](https://github.com/w3c/csswg-drafts/issues/10193) ya han reconocido el problema y se espera que en futuras versiones se realicen mejoras para corregir este comportamiento, así que solo queda esperar y estar atentos a las actualizaciones.
 
 Ahora ya sabes por qué `letter-spacing` está roto en CSS.
