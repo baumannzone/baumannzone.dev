@@ -138,7 +138,7 @@ Con **Oh My Zsh** puedes cambiar fácilmente de temas y elegir el que más te gu
 
 - [Cable Ethernet CAT 6 20m](https://amzn.to/3yZKoqg) - Cable de red de 20 metros que sale de la caja de fibra óptica y llega hasta el estudio. _Tu conexión está limitada por el cable más lento de la cadena_. Si tienes contratado 1000MB de fibra, pero usas un cable CAT 5, no vas a poder disfrutar de la máxima velocidad contratada.
 - [Switch Ethernet 5 puertos](https://amzn.to/3wSHL9q) - Para tener conexión por cable a internet en el estudio. Necesario para hacer streaming o para jugar competitivo online.
-- [Repetidor WiFi TP Link](https://amzn.to/3MDQPmH) - Para tener conexión a internet en la otra punta de la casa.
+- [Repetidor WiFi TP Link](https://amzn.to/3MDQPmH) - Repetidor TP Link para tener conexión a internet en la otra punta de la casa.
 - [Extensor de red eléctrica TP Link](https://amzn.to/3ATGall) - Para tener conexión a internet en la otra punta de la casa. Funciona a través de la red eléctrica.
 
 ---
