@@ -1,5 +1,5 @@
 const bannerText = "💻 baumannzone.dev";
-const secondsToWait = 60;
+const secondsToWait = 2;
 const id = "screen-saver";
 const currentTitle = document.title;
 
@@ -74,14 +74,15 @@ style.textContent = `
 
 let timeoutId = null;
 
-function disable() {
+function disableScreenSaver() {
   el.style.display = "none";
   document.title = currentTitle;
   zCount = 1;
-  increasing = true; // Resetea la dirección
-  clearInterval(titleInterval); // Detiene la actualización del título
+  increasing = true; // Reset the direction
 
+  if (titleInterval) clearInterval(titleInterval); // Stop the interval
   if (timeoutId) clearTimeout(timeoutId);
+
   timeoutId = setTimeout(() => {
     el.style.display = "block";
     console.log(
@@ -90,16 +91,16 @@ function disable() {
     );
     console.log("💻 Mi setup: https://baumannzone.dev/uses");
 
-    // Inicia el intervalo para actualizar el título con las zzz
+    // Start the title update interval with "zzz"
     titleInterval = setInterval(updateTitle, 1000);
   }, millisecondsToWait);
 }
 
 function handleEvent() {
-  disable();
+  disableScreenSaver();
 }
 
-disable();
+disableScreenSaver();
 document.addEventListener("mousemove", handleEvent);
 document.addEventListener("keydown", handleEvent);
 document.addEventListener("scroll", handleEvent);
