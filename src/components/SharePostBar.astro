@@ -23,14 +23,14 @@ const threadsShareUrl = `https://threads.net/intent/post?url=${encodedBlogPostUr
   >
     <div class='flex'>
       <a
-        class='underlined hover:text-black focus:text-black focus:outline-none dark:hover:text-white dark:focus:text-white'
+        class='underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white'
         target='_blank'
         rel='noreferrer noopener'
         href={twitterShareUrl}>Compartir en 𝕏</a
       >
       <span class='mx-3 self-center text-xs'>•</span>
       <a
-        class='underlined hover:text-black focus:text-black focus:outline-none dark:hover:text-white dark:focus:text-white'
+        class='underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white'
         target='_blank'
         rel='noreferrer noopener'
         href={threadsShareUrl}
@@ -54,7 +54,7 @@ const threadsShareUrl = `https://threads.net/intent/post?url=${encodedBlogPostUr
     </div>
     <div class='flex'>
       <a
-        class='underlined hover:text-black focus:text-black focus:outline-none dark:hover:text-white dark:focus:text-white'
+        class='underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white'
         target='_blank'
         rel='noreferrer noopener'
         href={githubEditUrl}
@@ -79,22 +79,20 @@ const threadsShareUrl = `https://threads.net/intent/post?url=${encodedBlogPostUr
       <div class='font-medium text-black dark:text-white'>
         Escrito por Jorge Baumann
       </div>
-      <p
-        class='max-w-full text-secondary mb-12 mt-3 prose prose-light dark:prose-dark'
-      >
+      <p class='max-w-full text-secondary mb-12 mt-3 prose dark:prose-invert'>
         Jorge Baumann es JavaScript senior software engineer, creador de
         contenido y speaker. Vive en Madrid, le gusta el trabajo remoto y tiene
         un perro que se llama Rambo.
       </p>
 
       <a
-        class='group inline-flex cursor-pointer items-center text-left font-medium transition focus:outline-none'
+        class='group inline-flex cursor-pointer items-center text-left font-medium transition focus:outline-none dark:text-gray-200'
         href='/sobre-mi'
       >
         <span class='mr-6 font-medium'>Conoce más sobre Baumann</span>
         <span
           aria-hidden='true'
-          class='size-10 flex items-center justify-center border-2 rounded-full border-gray-200 group-hover:border-gray-700 transition-colors'
+          class='size-10 flex items-center justify-center border-2 rounded-full border-gray-200 dark:border-gray-500 group-hover:border-gray-700 dark:group-hover:border-gray-300 transition-colors'
         >
           <span class='transition-transform group-hover:translate-x-1'>→</span>
         </span>
