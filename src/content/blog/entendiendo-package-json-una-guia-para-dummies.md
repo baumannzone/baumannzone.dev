@@ -1,7 +1,7 @@
 ---
-title: "¿Qué es package.json? Conceptos básicos para dummies"
+title: "Entendiendo package.json: una guía para dummies"
 description: "Este artículo te guía a través de los conceptos fundamentales del package.json, revisando sus propiedades esenciales y qué gestores de paquetes puedes usar."
-pubDate: "2024-09-22"
+pubDate: "2024-09-23"
 author: "Jorge Baumann"
 type: "blog"
 tags: ["JavaScript", "Node.js"]
@@ -19,7 +19,7 @@ Piensa en `package.json` como el corazón de tu proyecto. Es donde guardas toda 
 npm init
 ```
 
-![npm init](../../assets/blog/que-es-package-json-conceptos-basicos-para-dummies/npm-init.webp)
+![npm init](../../assets/blog/entendiendo-package-json-una-guia-para-dummies/npm-init.webp)
 
 `npm` te hará un montón de preguntas, como si estuvieras en una cita rápida con tu proyecto. Si no sabes qué responder, puedes usar el flag `-y` para que `npm` rellene automáticamente todas las respuestas por ti:
 
@@ -28,6 +28,21 @@ npm init -y
 ```
 
 _¡Boom!_ Tienes un `package.json` instantáneo con los valores predeterminados.
+
+```json
+{
+  "name": "super-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
 
 ## Partes de un `package.json`
 
@@ -50,7 +65,6 @@ La versión sigue el formato de _SemVer_ (Semantic Versioning), que consta de tr
 
 ```json
 {
-  // ...
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -67,13 +81,12 @@ Para ejecutar un script, solo tienes que escribir `npm run` seguido del nombre d
 npm run dev
 ```
 
-![npm run dev](../../assets/blog/que-es-package-json-conceptos-basicos-para-dummies/npm-run-dev.webp)
+![npm run dev](../../assets/blog/entendiendo-package-json-una-guia-para-dummies/npm-run-dev.webp)
 
 - `dependencies` y `devDependencies`: Aquí es donde guardas las librerías que necesita tu proyecto para funcionar. La diferencia entre ambas es que `dependencies` son las librerías que necesita tu proyecto en producción, mientras que `devDependencies` son las librerías que solo necesitas en desarrollo.
 
 ```json
 {
-  // ...
   "dependencies": {
     "express": "^5.0.0",
     "react": "^18.3.1"
@@ -115,6 +128,41 @@ Si quieres saber más sobre las licencias de software, puedes leer <a href="http
   }
 }
 ```
+
+## Ejemplo completo
+
+Este es un ejemplo completo del `package.json` de esta web que estás leyendo ahora mismo, que es un proyecto Astro:
+
+```json
+{
+  "name": "baumannzone-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.6",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "astro": "^4.15.6",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.4"
+  }
+}
+```
+
+Aquí puedes ver las dependencias que usa este proyecto y qué versiones se están utilizando.
+
+---
 
 Existen muchas más propiedades (como `homepage`, `engines`, `peerDependencies`, etc.) que puedes añadir a tu `package.json`, pero estas son las más comunes y las que deberías conocer para empezar.
 
