@@ -8,7 +8,6 @@ author: Jorge Baumann
 tags:
   - JavaScript
   - Testing
-canonical: "https://www.europe-samsung.com/smsdev/Noticias/Detalle/el_arte_del_testing_una_oda_a_las_pruebas_automaticas_/5e77fcd1-5a2b-4b4e-9d95-7e02222520cc"
 ---
 
 ¿Quieres escuchar un secreto? **La mayoría de los desarrolladores no tienen tests en sus aplicaciones**. ¡Sí, has oído bien! Parece que prefieren vivir peligrosamente, como si programar sin una buena cobertura de tests fuera la norma.

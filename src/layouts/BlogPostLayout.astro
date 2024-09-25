@@ -13,17 +13,8 @@ type Props = CollectionEntry<'blog'>['data'] & {
   collection: string;
 };
 
-const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  tags,
-  canonical,
-  id,
-  slug,
-  collection,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, tags, id, slug, collection } =
+  Astro.props;
 
 // Dont show comments in dev mode
 const showComments = !import.meta.env.DEV;
@@ -31,7 +22,7 @@ const showComments = !import.meta.env.DEV;
 
 <html lang='es'>
   <head>
-    <BaseHead title={title} description={description} canonical={canonical} />
+    <BaseHead title={title} description={description} />
   </head>
 
   <body class='dark:bg-gray-700'>
