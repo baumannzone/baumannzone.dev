@@ -25,11 +25,11 @@
   }
 
   .active-link {
-    @apply border-violet-500 text-gray-900 !important;
+    @apply border-violet-500 text-gray-900 dark:text-white !important;
   }
 
   .active-link-mobile {
-    @apply border-violet-500 bg-violet-50 text-violet-700 !important;
+    @apply border-violet-500 bg-violet-50 text-violet-700 dark:text-white dark:bg-gray-900 !important;
   }
 }
 

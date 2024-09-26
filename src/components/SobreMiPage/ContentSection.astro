@@ -10,22 +10,26 @@ const birthDate = new Date('1988-01-21');
 const currentDate = new Date();
 const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
 
-const githubPublicRepos = 151;
-// Calcular el numero de repositorios de GitHub
-// const githubUsername = 'baumannzone';
-// const githubToken = import.meta.env.GITHUB_TOKEN;
+let githubPublicRepos = 0;
 
-// const githubResponse = await fetch(
-//   `https://api.github.com/users/${githubUsername}`,
-//   {
-//     headers: { Authorization: `token ${githubToken}` },
-//   }
-// );
+if (import.meta.env.DEV) {
+  githubPublicRepos = 123;
+} else {
+  // Calcular el numero de repositorios de GitHub
+  const githubUsername = 'baumannzone';
+  const githubToken = import.meta.env.GITHUB_TOKEN;
 
-// const githubData = await githubResponse.json();
-// const githubPublicRepos = githubData.public_repos;
+  const githubResponse = await fetch(
+    `https://api.github.com/users/${githubUsername}`,
+    { headers: { Authorization: `token ${githubToken}` } },
+  );
 
-const { posts } = Astro.props;
+  const githubData = await githubResponse.json();
+  githubPublicRepos = githubData.public_repos;
+}
+
+const { totalPosts } = Astro.props;
+console.log('🚀 ~ totalPosts:', totalPosts);
 ---
 
 <!-- Content section -->
@@ -90,10 +94,10 @@ const { posts } = Astro.props;
             </dt>
             <dd
               id='totalPosts'
-              data-value={posts.length}
+              data-value={totalPosts}
               class='text-5xl font-semibold tracking-tight text-gray-900'
             >
-              {posts.length}
+              {totalPosts}
             </dd>
           </div>
           <div class='flex flex-col-reverse gap-y-4'>
@@ -174,6 +178,7 @@ const { posts } = Astro.props;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const targetId = entry.target.id;
+          console.log('🚀 ~ entries.forEach ~ entry:', entry);
           const targetValue = Number(entry.target.dataset.value);
 
           animateValue(targetId, 0, targetValue, 1500);
@@ -188,7 +193,7 @@ const { posts } = Astro.props;
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
 
     observer.observe(document.getElementById('totalPosts') as HTMLElement);

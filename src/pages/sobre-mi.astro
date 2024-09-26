@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 
@@ -13,10 +12,10 @@ import TeamSection from '../components/SobreMiPage/TeamSection.astro';
 
 // Get the blog posts
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-// Seleccionar los tres primeros artículos
+// Get the last 3 posts
 const recentPosts = posts.slice(0, 3);
 ---
 
@@ -25,7 +24,7 @@ const recentPosts = posts.slice(0, 3);
     <div class='isolate'>
       <HeroSection />
 
-      <ContentSection posts={posts} />
+      <ContentSection totalPosts={posts.length} />
 
       <ImageSection />
 
