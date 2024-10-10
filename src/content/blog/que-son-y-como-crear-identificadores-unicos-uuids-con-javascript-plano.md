@@ -26,7 +26,7 @@ console.log(uuid);
 
 ## Limitaciones
 
-Sin embargo, debido a que las nuevas APIs de los navegadores solo están disponibles en contextos seguros, este método solo está disponible para páginas locales (`localhost` o `127.0.0.1`) o en HTTPS.
+Sin embargo, debido a que las nuevas APIs de los navegadores solo están disponibles en contextos seguros, este método solo está disponible para páginas locales (`localhost` o `127.0.0.1`) o en entornos seguros como HTTPS.
 
 Si necesitas generar UUIDs en un entorno no seguro, te recomiendo utilizar una librería externa como **uuid**.
 
