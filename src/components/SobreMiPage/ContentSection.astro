@@ -29,7 +29,6 @@ if (import.meta.env.DEV) {
 }
 
 const { totalPosts } = Astro.props;
-console.log('🚀 ~ totalPosts:', totalPosts);
 ---
 
 <!-- Content section -->
@@ -178,7 +177,6 @@ console.log('🚀 ~ totalPosts:', totalPosts);
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const targetId = entry.target.id;
-          console.log('🚀 ~ entries.forEach ~ entry:', entry);
           const targetValue = Number(entry.target.dataset.value);
 
           animateValue(targetId, 0, targetValue, 1500);
