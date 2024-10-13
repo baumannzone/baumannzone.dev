@@ -1,0 +1,92 @@
+---
+title: "El bloque finally en JavaScript no es lo que parece"
+description: "Descubre cómo el bloque finally en JavaScript puede alterar el flujo de retorno y manejar excepciones sin que te des cuenta. Aprende a usarlo con cuidado para evitar sorpresas."
+pubDate: 2024-10-13
+tags: ["JavaScript", "TIL"]
+author: "Jorge Baumann"
+type: "blog"
+---
+
+Cuando pensamos en manejo de errores en JavaScript, lo primero que se nos viene a la cabeza es el clásico `try/catch`. Pero hay un tercer componente en este duo que pasamos por alto: el bloque `finally`.
+
+Aunque su propósito principal es asegurarse de que un conjunto de instrucciones siempre se ejecute, independientemente de lo que ocurra en el bloque `try` o `catch`, esconde un detalle que puede cambiar completamente el flujo de una función.
+
+## ¿Qué hace exactamente el bloque finally?
+El bloque `finally` está diseñado para ejecutar código sin importar el resultado de los bloques `try` o `catch`. Es ideal para limpiar recursos, cerrar conexiones, o cualquier tarea que deba ejecutarse de todas formas. Pero lo que realmente sorprende es que `finally` puede incluso sobrescribir valores de retorno o ignorar excepciones, sin que nos demos cuenta.
+
+Vamos a empezar con un ejemplo simple que ilustra lo que ocurre cuando el bloque `finally` retorna un valor:
+
+```javascript
+function ejemplo1() {
+  try {
+    return 'Primero';
+  } finally {
+    return 'Segundo';
+  }
+}
+
+// => 'Segundo'
+```
+
+Se supone que el código debería devolver 'Primero', ya que esa es la instrucción dentro del bloque `try`. Sin embargo, el bloque `finally` toma el control y devuelve 'Segundo'. Esto ocurre porque JavaScript permite que el valor de retorno de `finally` sobrescriba cualquier otro retorno previo.
+
+## ¿Qué pasa con los errores?
+Uno de los usos más comunes del bloque `try` es manejar errores. Veamos cómo se comporta el bloque `finally` cuando hay una excepción:
+
+```javascript
+function ejemplo2() {
+  try {
+    throw new Error('Oppps! :|');
+  } catch (e) {
+    return 'Error capturado :)';
+  } finally {
+    return 'Finally es el que manda :D';
+  }
+}
+
+// => 'Finally es el que manda :D'
+```
+
+Incluso cuando se lanza una excepción y es capturada en el bloque `catch`, `finally` sigue devolviendo su propio valor. El retorno del `catch` queda en el olvido y el bloque `finally` toma el control otra vez.
+
+## Excepciones atrapadas por `finally`
+El comportamiento del bloque `finally` se vuelve aún más interesante cuando hay excepciones que deberían propagarse:
+
+```javascript
+function ejemplo3() {
+  try {
+    throw new Error('Error inicial');
+  } finally {
+    return 'Finally captura todo';
+  }
+}
+
+// => 'Finally captura todo'
+```
+A pesar de que lanzamos un error en el bloque `try`, el bloque `finally` interrumpe el flujo normal de las excepciones. Esto significa que no solo sobrescribe retornos, sino que también bloquea las excepciones. Hay que tener mucho cuidado, porque **podríamos estar ocultando errores** sin darnos cuenta.
+
+## Un caso extremo
+Ahora, pongamos todo junto con un ejemplo más completo:
+
+```javascript
+
+function ejemplo4() {
+  try {
+    throw new Error('Error del try');
+  } catch (e) {
+    throw new Error('Error del catch');
+    return 'Error capturado';
+  } finally {
+    return 'Finally domina';
+  }
+}
+
+// => 'Finally domina'
+```
+En este ejemplo, aunque estamos lanzando un segundo error dentro del bloque `catch`, el bloque `finally` sigue adelante y devuelve su valor, haciendo que los errores pasen desapercibidos.
+
+## Conclusión
+
+El bloque `finally` en JavaScript es útil para asegurarse de que ciertos pasos se ejecuten, pero también tiene el poder de modificar el flujo de la función, ignorar errores y sobrescribir valores de retorno. Este comportamiento puede ser peligroso si no se utiliza correctamente, ya que podríamos perder información importante. 
+
+Bueno saberlo, ¿no crees?
