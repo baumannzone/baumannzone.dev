@@ -1,6 +1,6 @@
 ---
 title: "El bloque finally en JavaScript no es lo que parece"
-description: "Descubre cómo el bloque finally en JavaScript puede alterar el flujo de retorno y manejar excepciones sin que te des cuenta. Aprende a usarlo con cuidado para evitar sorpresas."
+description: "Realmente no sabes usar bien finally en un try catch. Descubre cómo el bloque finally en JavaScript puede alterar el flujo de retorno y manejar excepciones sin que te des cuenta."
 pubDate: 2024-10-13
 tags: ["JavaScript", "TIL"]
 author: "Jorge Baumann"
