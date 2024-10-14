@@ -1,6 +1,6 @@
 ---
 title: "El bloque finally en JavaScript no es lo que parece"
-description: "¿Realmente sabes usar finally en un try catch? Yo creo que no. Descubre cómo funciona el bloque finally en JavaScript y por qué puede ser que lo estés usando mal."
+description: "¿Realmente sabes qué hace el bloque finally en un try catch? Descubre cómo funciona el bloque finally en JavaScript y por qué puede ser que lo estés usando mal."
 pubDate: 2024-10-13
 updatedDate: 2024-10-14
 tags: ["JavaScript", "TIL"]
