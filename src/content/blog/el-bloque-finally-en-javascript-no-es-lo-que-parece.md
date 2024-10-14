@@ -1,13 +1,24 @@
 ---
 title: "El bloque finally en JavaScript no es lo que parece"
-description: "Realmente no sabes usar bien finally en un try catch. Descubre cómo el bloque finally en JavaScript puede alterar el flujo de retorno y manejar excepciones sin que te des cuenta."
+description: "¿Realmente sabes usar finally en un try catch? Yo creo que no. Descubre cómo funciona el bloque finally en JavaScript y por qué puede ser que lo estés usando mal."
 pubDate: 2024-10-13
+updatedDate: 2024-10-14
 tags: ["JavaScript", "TIL"]
 author: "Jorge Baumann"
 type: "blog"
 ---
 
 Cuando pensamos en manejo de errores en JavaScript, lo primero que se nos viene a la cabeza es el clásico `try/catch`. Pero hay un tercer componente en este duo que pasamos por alto: el bloque `finally`.
+
+```js
+try {
+  // Código que puede lanzar un error
+} catch (err) {
+  // Código que maneja el error
+} finally {
+  // Código que siempre se ejecuta 🤔
+}
+```
 
 Aunque su propósito principal es asegurarse de que un conjunto de instrucciones siempre se ejecute, independientemente de lo que ocurra en el bloque `try` o `catch`, esconde un detalle que puede cambiar completamente el flujo de una función.
 
