@@ -67,6 +67,7 @@
 - **Tablero de madera** - Tablón de madera de color blanco de 160cm x 80cm x 2cm. Es lo suficientemente grande para poder poner todo lo que necesitas. Lo uso con la estructura de FlexiSpot.
 
 ### Luces
+
 - [El Gato KeyLight](https://amzn.to/3VmamgL) - El foco de luz definitivo. Controla la intensidad y el color via WiFi desde una app del MacBook Pro.
 - [Luces led con trípode](https://amzn.to/3V5eUqa) - Las uso para streaming o en videollamada. Las puedes regular en altura con el trípode y en intensidad con los botones. Guardadas y plegadas en la caja ocupan muy poco.
 - [Tira de luces LED](https://amzn.to/3KiZM3I) - Tira LED multi color de 3m. Tienen mando a distancia. Las uso para dar ambiente a la habitación.
