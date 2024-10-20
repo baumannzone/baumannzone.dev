@@ -1,7 +1,7 @@
 ---
 title: "Evita que la pantalla se duerma con JavaScript: domina la Screen Wake Lock API"
-description: "Aprende a mantener la pantalla de tu dispositivo activa mientras sigues una receta o ves contenido sin interrupciones, usando la Screen Wake Lock API en JavaScript."
-pubDate: 2024-10-18
+description: "JavaScript te permite mantener la pantalla despierta con la Screen Wake Lock API. Descubre cómo funciona y cómo puedes usarla en tus aplicaciones web. Mejora la UX con este sencillo truco."
+pubDate: 2024-10-20
 type: blog
 author: Jorge Baumann
 tags:
