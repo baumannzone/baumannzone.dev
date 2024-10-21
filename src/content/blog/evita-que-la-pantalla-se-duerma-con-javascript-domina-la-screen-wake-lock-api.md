@@ -22,8 +22,6 @@ La Screen Wake Lock API se encarga de que la pantalla **no se apague**, **no se 
 
 Perfecto para esas apps que no se pueden dar el lujo de que la pantalla se apague, como cuando estás viendo un video o siguiendo una receta (y no quieres dejar el móvil lleno de churretes). Pero no solo eso, la Screen Wake Lock API también es ideal para cuando estás usando un mapa o incluso cuando estás exponiendo una presentación.
 
-<!-- ![Test end to end](../../assets/blog/el-arte-del-testing-una-oda-a-las-pruebas-automaticas/e2e-test.avif) -->
-
 ¿Y qué pasa si tienes una app que funciona con control de voz? Pues te viene de lujo, porque no querrás depender de tocar la pantalla cada dos por tres para que no se duerma.
 
 A día de hoy el soporte es bastante bueno. Tiene soporte para Chrome, Edge, Firefox, Safari. También en sus versiones móviles.
@@ -113,13 +111,13 @@ await requestWakeLock();
 
 El acceso a la Screen Wake Lock API está controlado por la directiva de **Permissions Policy**. Por defecto, solo se permite el uso de esta API para el propio origen de la página (`self`), lo que significa que si tu aplicación tiene iframes del mismo origen, estos podrán usar la API sin problemas. Sin embargo, el contenido de terceros (como iframes de otros dominios) no podrá usar esta funcionalidad, a menos que lo habilites explícitamente.
 
-Si tienes contenido de terceros, como iframes, y quieres que puedan usar la API, necesitarás configurarlo en el servidor con el encabezado `Permissions-Policy`. Por ejemplo, si quiero permitir que la web de **Carlos Azaustre** use la Screen Wake Lock API en mi página, puedo hacerlo de la siguiente manera:
+Aquí te dejo un ejemplo curioso: mi amigo Carlos Azaustre (¡sí, tú, [Carlos](https://x.com/carlosazaustre)!) decidió hackearme amistosamente y colar un iframe en mi web. Si quiero permitir que su página use la Screen Wake Lock API, tengo que configurarlo en mi servidor con el encabezado `Permissions-Policy` de la siguiente manera:
 
 ```http
 Permissions-Policy: screen-wake-lock=(self "https://carlosazaustre.es")
 ```
 
-Después tengo que añadir el atributo `allow="screen-wake-lock"` en el iframe correspondiente para que funcione correctamente:
+Después Carlos tendría que añadir el atributo `allow="screen-wake-lock"` en el iframe correspondiente para que funcione correctamente:
 
 ```html
 <iframe src="https://carlosazaustre.es" allow="screen-wake-lock"></iframe>
