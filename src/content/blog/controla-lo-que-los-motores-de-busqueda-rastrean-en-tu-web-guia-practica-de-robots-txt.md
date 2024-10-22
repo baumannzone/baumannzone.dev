@@ -9,11 +9,12 @@ tags:
   - Web
 ---
 
-Vamos al grano: si tienes un sitio web, seguro que te interesa aparecer en Google. Pero, ¿y si te digo que puedes decidir qué páginas pueden ver los motores de búsqueda y cuáles no? Sí, estoy hablando del `robots.txt`, ese archivo que quizá no terminas de entender pero que puede hacer tu sitio más visible (o completamente invisible) y te ayuda a controlar qué contenido se indexa. Hoy te voy a enseñar cómo usarlo _like a boss_ y con estilo.
+Vamos al grano: si tienes un sitio web, seguro que te interesa aparecer en Google. Pero ¿y si te digo que puedes decidir qué páginas pueden ver los motores de búsqueda y cuáles no? Sí, estoy hablando del `robots.txt`, ese archivo que quizá no terminas de entender pero que puede hacer tu sitio más visible (o completamente invisible) y te ayuda a controlar qué contenido se indexa. Hoy vas a aprender a usarlo _like a boss_.
 
 ## ¿Qué es el archivo robots.txt?
 
-El archivo `robots.txt` es un archivo de texto que se encuentra en la raíz de tu sitio web y que le dice a los motores de búsqueda qué páginas pueden rastrear y cuáles no. Es una forma de controlar qué contenido se indexa y qué contenido no. 
+El archivo `robots.txt` es un archivo de texto que se encuentra en la raíz de tu sitio web y que le dice a los motores de búsqueda qué páginas pueden rastrear y cuáles no.
+Es una forma de controlar qué contenido se indexa y qué contenido no.
 
 Por ejemplo, si tienes una página privada o interna en tu sitio web que no quieres que aparezca en los resultados de búsqueda, puedes bloquearla con el `robots.txt`.
 
@@ -58,7 +59,7 @@ Disallow: /secreto/
 
 ```plaintext
 User-agent: *
-Disallow: /contratos.pdf
+Disallow: /top-secret.pdf
 ```
 
 ## ¿Cómo crear un archivo robots.txt?
@@ -124,7 +125,7 @@ Disallow:
 
 ### Bloquear parámetros específicos de URL
 
-En este caso, bloqueamos el acceso a todas las páginas que contengan el parámetro `?sort=desc`.
+En este caso, bloqueamos el acceso a todas las páginas que contengan el parámetro `sort=desc`.
 
 ```plaintext
 User-agent: *
@@ -186,7 +187,7 @@ Allow: /wp-admin/admin-ajax.php
 ```
 
 ### Magento
-  
+
 ```plaintext
 User-agent: *
 Disallow: /admin/
@@ -208,10 +209,9 @@ Disallow: /_partials/
 
 ¿Conoces algún otro CMS? ¡Déjame un comentario y lo añadiré a la lista!
 
-
 ## Bloquear bots específicos
 
-Si te interesa bloquear el acceso a ciertos bots específicos, puedes hacerlo utilizando directivas `Disallow` para cada uno de ellos. 
+Si te interesa bloquear el acceso a ciertos bots específicos, puedes hacerlo utilizando directivas `Disallow` para cada uno de ellos.
 
 Existen muchos bots que pueden rastrear tu sitio web, algunos de los cuales son muy conocidos. Si no quieres que **ChatGPT** o similares rastreen tu sitio, te muestro cómo bloquear algunos de los bots de **inteligencia artificial** más comunes, como `GPTBot`, `ChatGPT-User`, `Google-Extended` y otros:
 
@@ -286,3 +286,5 @@ El archivo **robots.txt** te ayuda a controlar qué se rastrea en tu sitio web, 
 El archivo **robots.txt** es una herramienta poderosa para controlar qué contenido se rastrea en tu sitio web. Aunque no es una medida de seguridad, es fundamental para mejorar la indexación de tu sitio y evitar que páginas no deseadas aparezcan en los resultados de búsqueda.
 
 Espero que este artículo te haya ayudado a entender mejor cómo funciona el **robots.txt** y cómo puedes sacarle el máximo provecho.
+
+Si tienes preguntas o necesitas ayuda para configurar tu archivo robots.txt, no dudes en dejar un comentario. Estoy aquí para ayudarte.
