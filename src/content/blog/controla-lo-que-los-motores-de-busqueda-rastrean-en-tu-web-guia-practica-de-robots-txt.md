@@ -1,6 +1,6 @@
 ---
-title: "No permitas que todo tu contenido sea rastreado: usa robots.txt"
-description: "Aprende qué es el archivo robots.txt y cómo crearlo para tu sitio web para mejorar su indexación en los motores de búsqueda o evitar que ciertas páginas sean indexadas."
+title: "Controla lo que los motores de búsqueda rastrean en tu web: guía práctica de robots.txt"
+description: "Descubre cómo utilizar el archivo robots.txt para gestionar qué partes de tu sitio web son rastreadas por los motores de búsqueda, optimizando la indexación y protegiendo páginas sensibles."
 pubDate: 2024-10-21
 type: blog
 author: Jorge Baumann

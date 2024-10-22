@@ -3,12 +3,15 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import NavBar from '../components/NavBar.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// Get Title and description from the astro props
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
 <html lang='es'>
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
   <body>
     <NavBar />

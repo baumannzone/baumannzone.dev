@@ -19,7 +19,10 @@ const posts = (await getCollection('blog')).sort(
 const recentPosts = posts.slice(0, 3);
 ---
 
-<DefaultLayout>
+<DefaultLayout
+  title='Baumannzone.dev - Sobre mí'
+  description='Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido.'
+>
   <div class='bg-white'>
     <div class='isolate'>
       <HeroSection />
