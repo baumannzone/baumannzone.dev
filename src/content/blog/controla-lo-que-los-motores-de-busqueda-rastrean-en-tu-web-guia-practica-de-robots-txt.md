@@ -1,7 +1,7 @@
 ---
 title: "Controla lo que los motores de búsqueda rastrean en tu web: guía práctica de robots.txt"
 description: "Descubre cómo utilizar el archivo robots.txt para gestionar qué partes de tu sitio web son rastreadas por los motores de búsqueda, optimizando la indexación y protegiendo páginas sensibles."
-pubDate: 2024-10-21
+pubDate: 2024-10-22
 type: blog
 author: Jorge Baumann
 tags:
