@@ -213,7 +213,7 @@ Disallow: /_partials/
 
 Si te interesa bloquear el acceso a ciertos bots específicos, puedes hacerlo utilizando directivas `Disallow` para cada uno de ellos. 
 
-Existen muchos bots que pueden rastrear tu sitio web, algunos de los cuales son muy conocidos. A continuación, te muestro cómo bloquear algunos de los bots de **inteligencia artificial** más comunes, como `GPTBot`, `ChatGPT-User`, `Google-Extended` y otros:
+Existen muchos bots que pueden rastrear tu sitio web, algunos de los cuales son muy conocidos. Si no quieres que **ChatGPT** o similares rastreen tu sitio, te muestro cómo bloquear algunos de los bots de **inteligencia artificial** más comunes, como `GPTBot`, `ChatGPT-User`, `Google-Extended` y otros:
 
 ```plaintext
 User-agent: GPTBot
@@ -268,11 +268,11 @@ User-agent: YouBot
 Disallow: /
 ```
 
-Estos son solo algunos de los bots más conocidos que puedes bloquear si no quieres que rastreen tu sitio. Si tienes identificados otros bots que prefieras bloquear, simplemente añade una directiva similar en tu archivo.
+Estos son solo algunos de los bots más conocidos de IA que puedes bloquear si no quieres que rastreen tu sitio. Si tienes identificados otros bots que prefieras bloquear, simplemente añade una directiva similar en tu archivo.
 
 ## Limitaciones y recomendaciones
 
-El archivo **robot.txt** te ayuda a controlar qué se rastrea en tu sitio web, pero no es una barrera de seguridad. Es fundamental entender bien sus limitaciones para evitar errores graves. A continuación, te dejo algunas consideraciones importantes:
+El archivo **robots.txt** te ayuda a controlar qué se rastrea en tu sitio web, pero **no es una barrera de seguridad**. Es fundamental entender bien sus limitaciones para evitar errores graves. A continuación, te dejo algunas consideraciones importantes:
 
 - **Visibilidad pública:** El archivo **robots.txt** está disponible para cualquiera que acceda a él, por lo que todo lo que intentes ocultar puede ser descubierto con facilidad.
 - **No bloquea el acceso humano:** Cualquier persona que tenga el enlace directo a una página o recurso puede accederlo, incluso si está bloqueado para los bots.
@@ -280,3 +280,9 @@ El archivo **robot.txt** te ayuda a controlar qué se rastrea en tu sitio web, p
 - **Implementaciones incorrectas:** Incluso los bots bien intencionados podrían tener errores que les hagan pasar por alto tus reglas.
 - **Enlaces desde otros sitios:** Si otras webs enlazan a tus páginas "ocultas", los motores de búsqueda pueden indexarlas aunque estén bloqueadas en **robots.txt**.
 - **Cachés y versiones anteriores:** El contenido previamente indexado puede seguir apareciendo en cachés de los motores de búsqueda aunque lo hayas bloqueado más tarde.
+
+## Conclusión
+
+El archivo **robots.txt** es una herramienta poderosa para controlar qué contenido se rastrea en tu sitio web. Aunque no es una medida de seguridad, es fundamental para mejorar la indexación de tu sitio y evitar que páginas no deseadas aparezcan en los resultados de búsqueda.
+
+Espero que este artículo te haya ayudado a entender mejor cómo funciona el **robots.txt** y cómo puedes sacarle el máximo provecho.
