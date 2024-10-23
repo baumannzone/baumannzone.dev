@@ -2,6 +2,7 @@
 title: "Controla lo que los motores de búsqueda rastrean en tu web: guía práctica de robots.txt"
 description: "Descubre cómo utilizar el archivo robots.txt para gestionar qué partes de tu sitio web son rastreadas por los motores de búsqueda, optimizando la indexación y protegiendo páginas sensibles."
 pubDate: 2024-10-22
+editedDate: 2024-10-23
 type: blog
 author: Jorge Baumann
 tags:
@@ -52,7 +53,7 @@ Disallow:
 
 ```plaintext
 User-agent: *
-Disallow: /secreto/
+Disallow: /earnings/
 ```
 
 ### Bloquear un archivo específico (porque mejor que eso no lo vea nadie)
@@ -67,7 +68,7 @@ Disallow: /top-secret.pdf
 Crear un archivo `robots.txt` es muy sencillo. Solo necesitas cumplir con las siguientes reglas:
 
 - **Texto plano**: el archivo debe ser un archivo de texto plano sin formato especial.
-- **Codificación**: debe estar codificado en UTF-8.
+- **Codificación**: debe estar codificado en `UTF-8`.
 - **Ubicación**: debe estar en la raíz de tu sitio web (por ejemplo, `https://tusitio.com/robots.txt`).
 - **Nombre**: el nombre del archivo debe ser exactamente `robots.txt`, todo en minúsculas.
 
