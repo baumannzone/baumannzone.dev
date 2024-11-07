@@ -23,7 +23,7 @@ Utilizaremos solo **CSS** y **HTML** (sin hacer uso de imágenes) para dibujar l
 Empezaremos con la estructura del documento HTML. En este caso estoy usando _Pug_ (antiguamente conocido llamado _Jade_) como preprocesador HTML y _Stylus_ para el CSS.
 Si no conoces [Pug](https://github.com/pugjs/pug) o [Stylus](http://stylus-lang.com/) te recomiendo que vayas a su página web y empieces a usarlos ya mismo.
 
-_A día de hoy (2024) ya no recomendaría usar Stylys, ya que CSS ha evolucionado mucho y tiene muchas de las características que Stylus ofrecía._
+**Actualización**: _A día de hoy (2024) ya no recomendaría usar Stylus, ya que CSS ha evolucionado mucho y tiene muchas de las características que Stylus ofrecía._
 
 Hemos dividido el código por bloques de elementos, como pueden ser la carcasa, la pantalla, los botones, etc.
 
@@ -528,11 +528,11 @@ Ya tenemos todos los elementos (botones, clases y elemento de audio) listos para
 ```js
 // main.js
 
-const audio = document.querySelector( `audio` );
-const btnON = document.querySelector( `.btn-on` );
-const btnOFF = document.querySelector( `.btn-off` );
-const power = document.querySelector( `.power` );
-const text = document.querySelector( `.animated-text` );
+const audio = document.querySelector(`audio`);
+const btnON = document.querySelector(`.btn-on`);
+const btnOFF = document.querySelector(`.btn-off`);
+const power = document.querySelector(`.power`);
+const text = document.querySelector(`.animated-text`);
 ```
 
 ### Encender
@@ -547,18 +547,17 @@ Por lo tanto, en el `onclick` del botón de encender tendríamos algo parecido a
 ```js
 // Turn on
 btnON.onclick = function () {
-
   // Button
-  btnON.classList.add( 'btn-hide' );
-  btnOFF.classList.remove( 'btn-hide' );
+  btnON.classList.add("btn-hide");
+  btnOFF.classList.remove("btn-hide");
 
   // Power Led
-  power.classList.add( 'power-on' );
+  power.classList.add("power-on");
 
   // Animate text & play sound
   const transitionEvent = whichTransitionEvent();
-  text.classList.add( 'end' );
-  text.addEventListener( transitionEvent, playSound );
+  text.classList.add("end");
+  text.addEventListener(transitionEvent, playSound);
 };
 ```
 
@@ -567,25 +566,25 @@ btnON.onclick = function () {
 ```js
 // main.js
 
-function whichTransitionEvent () {
+function whichTransitionEvent() {
   let t;
-  const el = document.createElement( 'fake' );
+  const el = document.createElement("fake");
   const transitions = {
-    'transition': 'transitionend',
-    'OTransition': 'oTransitionEnd',
-    'MozTransition': 'transitionend',
-    'WebkitTransition': 'webkitTransitionEnd'
+    transition: "transitionend",
+    OTransition: "oTransitionEnd",
+    MozTransition: "transitionend",
+    WebkitTransition: "webkitTransitionEnd",
   };
 
-  for ( t in transitions ) {
-    if ( el.style[ t ] !== undefined ) {
-      return transitions[ t ];
+  for (t in transitions) {
+    if (el.style[t] !== undefined) {
+      return transitions[t];
     }
   }
 }
 
 // Play Sound
-function playSound () {
+function playSound() {
   audio.currentTime = 0;
   audio.play();
 }
@@ -609,16 +608,15 @@ Ahora hay que deshacer estos cambios cuando pulsemos el botón de apagar.
 // main.js
 
 btnOFF.onclick = function () {
-
   // Button
-  btnON.classList.remove( 'btn-hide' );
-  btnOFF.classList.add( 'btn-hide' );
+  btnON.classList.remove("btn-hide");
+  btnOFF.classList.add("btn-hide");
 
   // Power Led
-  power.classList.remove( 'power-on' );
+  power.classList.remove("power-on");
 
   // Text
-  text.classList.remove( 'end' );
+  text.classList.remove("end");
 };
 ```
 
