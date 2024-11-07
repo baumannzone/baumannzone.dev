@@ -137,4 +137,4 @@ Una característica interesante que tiene Google Chrome es que puedes copiar el 
 
 La primera vez que vi los fragmentos de texto fue en los resultados de búsqueda de Google, donde resaltan las palabras clave que buscas. Al principio pensaba que era una característica exclusiva de Google, pero me alegra saber que es una funcionalidad estándar en la web, disponible para cualquier navegador que decida implementarla.
 
-¿Tú la conocías? ¿Te parece útil? ¡Cuéntame!
+¿Tú la conocías? ¿Te parece útil? Te leo.
