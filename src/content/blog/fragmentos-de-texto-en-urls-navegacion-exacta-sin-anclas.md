@@ -129,7 +129,7 @@ El objeto `FragmentDirective` tiene las los valores de las propiedades `prefix`,
 - Por seguridad, es necesario agregar `rel="noopener"` a tus elementos `<a>`.
 - Los fragmentos de texto solo funcionan en el documento principal. No funcionarán dentro de un `<iframe>`.
 
-Una característica interesante que tiene Google Chrome es que puedes copiar el enlace con el fragmento de texto resaltado directamente desde el navegador. Solo tienes que hacer clic derecho en el texto resaltado y seleccionar "Copiar enlace con texto resaltado" o "Copy Link to Highlight".
+Una característica interesante que tiene Google Chrome es que puedes copiar el enlace con el fragmento de texto resaltado directamente desde el navegador. Solo tienes que hacer clic derecho en el texto resaltado y seleccionar "_Copiar enlace al texto destacado_" o "_Copy Link to Highlight_".
 
 ![Copiar enlace con texto resaltado](../../assets/blog/fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas/copy-link.png)
 
