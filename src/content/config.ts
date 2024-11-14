@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
   type: "content",
@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    pubslished: z.boolean().optional().default(true),
+    published: z.boolean().optional().default(true),
     tags: z.array(z.string()).optional(),
     category: z.string().max(1).optional(),
     author: z.string().default("Jorge Baumann"),

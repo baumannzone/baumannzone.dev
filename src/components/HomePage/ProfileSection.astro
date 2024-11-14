@@ -7,8 +7,12 @@ import baumannzoneImg from './baumannzone.webp';
   <div class='bg-gradient-to-r from-violet-800 to-violet-700 h-44'></div>
   <div class='px-2 sm:px-4 lg:px-8'>
     <div
-      class='bmn-container bg-white dark:bg-gray-700 dark:text-gray-100 mx-auto -mt-16 rounded-md'
+      id='profile-box'
+      class='bmn-container relative bg-white dark:bg-gray-700 dark:text-gray-100 mx-auto -mt-16 rounded-md'
     >
+      <div id='party-container' class='absolute top-0 left-0'>
+        <!-- <canvas id='party'></canvas> -->
+      </div>
       <div class='flex justify-center'>
         <Image
           src={baumannzoneImg}
@@ -16,6 +20,7 @@ import baumannzoneImg from './baumannzone.webp';
           class='-mt-20 rounded-full ring-8 ring-violet-700 ring-opacity-100'
           width='140'
           height='135'
+          id='profile-img'
         />
       </div>
       <header class='text-center p-4'>
@@ -144,3 +149,97 @@ import baumannzoneImg from './baumannzone.webp';
     </div>
   </div>
 </section>
+
+<script>
+  import {
+    Engine,
+    Render,
+    World,
+    Bodies,
+    Runner,
+    Body,
+    Mouse,
+    MouseConstraint,
+  } from 'matter-js';
+
+  // Create an engine
+  const engine = Engine.create({
+    gravity: { x: 0, y: 1, scale: 0.001 }, // Añadimos una gravedad suave
+  });
+
+  // const partyCanvas = document.getElementById('party');
+
+  // Create a renderer (#profile-box is the container)
+  // #party is the canvas where the party is happening
+  const render = Render.create({
+    element: document.getElementById('party-container'),
+    engine: engine,
+    options: {
+      wireframes: false,
+      background: 'transparent',
+      width: 1280,
+      height: 295,
+    },
+  });
+
+  // Add mouse control
+  const mouse = Mouse.create(render.canvas);
+  const mouseConstraint = MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+      stiffness: 0.2,
+      render: {
+        visible: false,
+      },
+    },
+  });
+
+  World.add(engine.world, mouseConstraint);
+
+  // Create two boxes and a ground
+  const boxA = Bodies.rectangle(300, 50, 30, 50, {
+    restitution: 0.5,
+    friction: 0.4,
+  });
+  const boxB = Bodies.rectangle(450, 50, 40, 40, {
+    restitution: 0.7,
+    // friction: 1,
+  });
+  const ground = Bodies.rectangle(350, 280, 700, 10, {
+    isStatic: true,
+    render: { fillStyle: '#2ecc71' },
+    friction: 0.1,
+  });
+
+  // Add all of the bodies to the world
+  World.add(engine.world, [boxA, boxB, ground]);
+
+  // Run the engine
+  const runner = Runner.create();
+  Runner.run(runner, engine);
+
+  // Run the renderer
+  Render.run(render);
+
+  // Add click event listener to the profile image
+  document.getElementById('profile-img').addEventListener('click', () => {
+    // Add box to the world
+    const newBox = Bodies.rectangle(350, 50, 40, 40, {
+      restitution: 0.75,
+      friction: 0.02,
+      // sprite img
+      render: {
+        sprite: {
+          texture:
+            'https://www.baumannzone.dev/_astro/baumannzone.43zBh2eO_Z29NM7i.webp',
+          xScale: 0.25,
+          yScale: 0.25,
+        },
+      },
+    });
+    World.add(engine.world, newBox);
+
+    // Add a force to the box
+    Body.applyForce(newBox, { x: 0, y: 0 }, { x: 0.01, y: 0 });
+  });
+</script>
