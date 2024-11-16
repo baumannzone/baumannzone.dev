@@ -23,6 +23,9 @@ dependencies:
   astro:
     specifier: ^4.15.6
     version: 4.15.6(typescript@5.6.2)
+  matter-js:
+    specifier: ^0.20.0
+    version: 0.20.0
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
@@ -2395,6 +2398,10 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: false
+
+  /matter-js@0.20.0:
+    resolution: {integrity: sha512-iC9fYR7zVT3HppNnsFsp9XOoQdQN2tUyfaKg4CHLH8bN+j6GT4Gw7IH2rP0tflAebrHFw730RR3DkVSZRX8hwA==}
     dev: false
 
   /mdast-util-definitions@6.0.0:

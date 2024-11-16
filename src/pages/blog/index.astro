@@ -4,9 +4,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection('blog'))
+  .filter((post) => post.data.published !== false)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <DefaultLayout>
