@@ -17,6 +17,6 @@ para macOS y Windows que te ayuda a trabajar con repositorios Git de forma visua
 
 Usar git desde la terminal es algo que deberías aprender si quieres progresar como desarrollador, pero si prefieres una interfaz gráfica, Git Tower es una excelente opción.
 
-Alguna vez has querido
+Alguna vez has querido hacer o 
 
 ## ¿Qué es Git Tower?
