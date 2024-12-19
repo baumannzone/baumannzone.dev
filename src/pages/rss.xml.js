@@ -16,5 +16,6 @@ export async function GET(context) {
       // Only include published posts
       .filter((post) => post.published),
     customData: `<language>es</language>`,
+    stylesheet: "/rss-styles.xsl",
   });
 }
