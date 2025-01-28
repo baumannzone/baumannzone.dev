@@ -7,12 +7,12 @@
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 			<head>
-				<title>Baumannzone's web feed</title>
+				<title>Baumannzone's RSS page</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 				<style type="text/css">
 					:root {
-						--white: #faf5f6;
+						--white: #fafafa;
 						--transwhite: rgba(250, 245, 246, 0.7);
 						--moretranswhite: rgba(239, 239, 239, 0.1);
 						--black: #252525;
@@ -22,13 +22,13 @@
 						--highlight: #e5ffc3;
 						--red: #e4002b;
 						--green: #24d05a;
-						--purple:#6d28d9;
+						--purple:rgb(128, 61, 235);
 						--blue: #10a2f5;
-						--yellow: #e9bc3f;
+						--yellow:rgb(255, 229, 31);
 					}
 
 					::selection {
-						background-color: var(--highlight);
+						background-color: var(--yellow);
 						color: var(--black);
 					}
 					html,
@@ -53,12 +53,17 @@
 
 					h2, h3,	h4,	h5, h6 {
 						color: var(--gray);
+						margin-bottom: 0;
 					}
 
 					a {
 						color: var(--purple);
 						text-decoration-thickness: 0.3ex;
 						text-underline-offset: 0.3ex;
+					}
+
+					small {
+						margin-bottom: 5px;
 					}
 				</style>
 			</head>
@@ -101,7 +106,7 @@
 								<path d="M184 213A140 140 0 0 0 44 73 V 38a175 175 0 0 1 175 175z" fill="#FFF"/>
 							</svg>
 
-							Web Feed Preview
+							Archivo RSS de Baumannzone
 						</h1>
 						<p><xsl:value-of select="/rss/channel/description"/></p>
 						<a class="head_link" target="_blank">
