@@ -1,7 +1,7 @@
 ---
 title: "Git Tower: el GUI de Git más potente para macOS y Windows"
 description: "Conoce Git Tower, un cliente Git para macOS y Windows que te ayuda a trabajar con repositorios Git de forma sencilla y que te hará ser mejor programador."
-pubDate: 2025-01-31
+pubDate: 2025-01-30
 type: blog
 author: Jorge Baumann
 tags:
@@ -14,7 +14,7 @@ Usar Git desde la terminal es algo que deberías dominar si quieres progresar co
 
 ## ¿Qué es Git Tower?
 
-[![Git Tower](../../assets/blog/tower/logo.png)](https://www.git-tower.com/?via=baumannzone)
+[![Git Tower](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/logo.png)](https://www.git-tower.com/?via=baumannzone)
 
 Git Tower no es simplemente otro cliente Git con interfaz gráfica. Se trata de una herramienta profesional que revoluciona la manera de trabajar con Git. Llevo años utilizándolo y, gracias a esta experiencia, puedo afirmar que ha transformado mi flujo de trabajo y, sobre todo, mi comprensión de Git.
 
@@ -75,10 +75,20 @@ Una vez que ejecutes ese comando, entrarás en el **modo interactivo** y Git te 
 - `e` para editar manualmente qué líneas se incluyen
 - y más opciones que puedes ver en la ayuda (`?`)
 
-[![Git Tower](../../assets/blog/tower/git-add.png)](https://www.git-tower.com/?via=baumannzone)
+[![Git Tower](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/git-add.png)](https://www.git-tower.com/?via=baumannzone)
 
 En la imagen se puede ver la accion que puedes realizar (`Stage this hunk`) y el listado de subcomandos disponibles para cada hunk: `[y, n, q, a, d, s, e, ?]`.
 
 En el modo interactivo, puedes elegir qué líneas quieres agregar a tu commit y cuáles no. Esto es muy útil si, por ejemplo, has editado varias partes de un archivo (como el `<header>` y el `<footer>` de tu `index.html`) y quieres hacer un commit parcial para tener todo organizado y separado por funcionalidades.
 
 Esta funcionalidad viene por defecto con Git, no es algo exclusivo de Tower. Sin embargo, la primera vez que la utilicé fue precisamente gracias a Tower. A partir de ahí, empecé a profundizar más en Git y a interesarme por los comandos que hay detrás de cada acción.
+
+## Conclusiones finales
+
+Para cerrar, no olvides que **existen varias alternativas gratuitas** a Git Tower. Sin embargo, si usas Git y GitHub a diario, Git Tower puede transformarse en tu mejor aliado. Al ser de pago, el equipo invierte recursos en mejoras constantes y soporte de calidad, lo cual se traduce en un producto mucho más robusto.
+
+Además, **si eres estudiante**, puedes solicitar una [licencia gratuita](https://www.git-tower.com/students/mac?via=bmn) y comenzar a sacarle todo el partido sin coste alguno.
+
+¡Y esto es todo! Espero que mis trucazos secretos y experiencias con Git Tower te sirvan para optimizar tu flujo de trabajo y sacarle el máximo provecho a Git.
+
+Si quieres probar Git Tower, puedes descargar una versión de prueba de 30 días desde su [página web](https://www.git-tower.com/?via=baumannzone). Si decides comprar una licencia, puedes hacerlo a través de mi enlace de afiliado y me ayudarás a seguir creando contenido como este. 🫶
