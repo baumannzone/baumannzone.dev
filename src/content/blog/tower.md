@@ -34,7 +34,7 @@ Esta es una de las funcionalidades que más me gustan de Git Tower. La que más 
 
 <figure  >
 <video width="100%" controls loop autoplay muted>
-  <source src="https://res.cloudinary.com/baumannzone/video/upload/v1738190748/git-tower-cmd-z.mp4" type="video/mp4">
+  <source src="https://res.cloudinary.com/baumannzone/video/upload/v1738190748/BlogBaumannzone.dev/git-tower-cmd-z.mp4" type="video/mp4">
 </video>
 <figcaption>En el video se muestra cómo se crea una rama y con <code>⌘ + Z</code> se deshace la acción, haciendo que la rama desaparezca. Si luego cambias de opinión y deseas conservar la rama, puedes pulsar <code>Shift + ⌘ + Z</code> para rehacerla.</figcaption>
 </figure>
