@@ -1,7 +1,7 @@
 ---
 title: "Creando un clon de Hacker News con Alpine.js y Tailwind CSS"
 description: "Aprende a construir un clon minimalista de Hacker News utilizando Alpine.js y Tailwind CSS. Descubre cómo combinar estas herramientas para crear aplicaciones web modernas y sencillas."
-pubDate: 2025-02-01
+pubDate: 2025-02-11
 type: blog
 author: Jorge Baumann
 tags:
