@@ -60,7 +60,17 @@ Dada esta URL, `https://www.baumannzone.dev:8080/blog/post?tag=js#comments`, aqu
 const params = new URLSearchParams(window.location.search)
 const tag = params.get('tag')
 
-console.log(tag) // "js"
+console.log(tag) // => "js"
+```
+
+### Pro Tip
+```js
+// Obtener un parámetro
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id'); // => Devuelve `null` si no existe
+
+// Comprobar si el parámetro existe
+const hasId = urlParams.has('id'); // => Devuelve `true` o `false`
 ```
 
 
@@ -90,7 +100,8 @@ window.location.href = '/uses'
 4. Detectar si estás en localhost
 
 ```js
-const isLocal = window.location.hostname === 'localhost'
+const isLocalhost = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1';
 ```
 
 5. Construir y modificar una URL
@@ -101,7 +112,7 @@ url.pathname = '/patrocinio'
 url.searchParams.set('from', 'blog')
 
 console.log(url.toString())
-// https://www.baumannzone.dev/patrocinio?from=blog
+// => https://www.baumannzone.dev/patrocinio?from=blog
 ```
 
 ### Extra para frameworks modernos:
