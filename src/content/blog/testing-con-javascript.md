@@ -43,7 +43,7 @@ module.exports = { suma, resta }
 
 Podemos empezar. Sabemos lo que hay que hacer y tenemos código que listo para ser testeado.
 
-# Paso 0
+## Paso 0
 
 ¿Cuál es el ejemplo de test más básico que podemos crear? Para mí, sería algo como esto:
 
@@ -68,7 +68,7 @@ Resultado de error tras ejecutar el test-0.js
 Cuando lo ejecutes, debería saltarte un error. Puedes probar a cambiar las variables `resultado` y `esperado` para dejarlas con el mismo valor.  
 Esta vez, si lo ejecutas, verás que el error ya no aparece, y en su lugar está un mensaje: `¡Todo OK! 👌`
 
-## Un test
+### Un test
 
 Básicamente, esto es un test. Un valor de entrada (resultado de una operación) que comparamos con otro valor (valor esperado).
 
@@ -80,13 +80,13 @@ En este caso la condición es que los valores sean iguales, pero puede ser cualq
 La parte del código donde pone `resultado !== esperado` es lo que se conoce como **aserción** o aserto, en inglés _assert_.  
 Es la parte clave de nuestro test, si la aserción falla, lanzaremos un error.
 
-## Testing
+### Testing
 
 ¿Así de fácil? Desde luego que no, apreciado lector. La cosa se puede complicar más, pero tenemos que empezar por el principio.
 
 Aunque se pueda complicar en el futuro, probar las dos funciones de nuestro módulo `funcionesMatematicas.js` es extremadamente fácil, ya que son funciones puras.
 
-## Funciones puras
+### Funciones puras
 
 Si no sabes lo que son, te interesa saber que en las funciones puras dados los mismos valores de entrada (argumentos) siempre retornan el mismo valor de salida.
 Con un ejemplo lo entenderás mejor:
@@ -105,7 +105,7 @@ tiempoMilisegundos() // => 1566762450684
 
 Ya sabemos cómo testear con JavaScript y tenemos una función pura deseosa de ser testeada. Me imagino que ya sabes cuál es el siguiente paso, ¿verdad?
 
-# Paso 1
+## Paso 1
 
 Vamos a crear el test más simple posible para nuestras funciones aritméticas.
 
@@ -160,7 +160,7 @@ Los **mensajes de error** son otro elemento clave de nuestras pruebas.
 Son realmente importantes, pues es lo primero que vemos cuando nuestro test falla y a menudo nos indican **qué** y **dónde** ha fallado.  
 Por lo tanto, querido developer, deberíamos intentar ser lo más específicos posibles a la hora de redactar los mensajes de error y de usar las aserciones correspondientes para cada caso.
 
-# Paso 2
+## Paso 2
 
 Node.js tiene un [módulo](https://nodejs.org/api/assert.html#assert_assert) (_assert_) para hacer aserciones. ¡No necesitamos reinventar la rueda!
 
@@ -211,7 +211,7 @@ He truncado parte de la respuesta para que sea más clara la información. Parec
 
 Si miramos la documentación, podemos ver que `strictEqual` soporta 3 argumentos, sin embargo, nosotros le hemos pasado dos. El tercero nos permite personalizar el mensaje de error.
 
-# Paso 3
+## Paso 3
 
 Llegados a este punto, podríamos empezar a crear nuestro _mini-framework_ o pequeña _librería_ de testing.
 
@@ -270,7 +270,7 @@ Nuestro mensaje de error no es tan descriptivo como debería ser.
 
 Asimismo, nos hemos dado cuenta de que nuestras pruebas no están completamente aisladas unas de otras. 
 
-# Paso 4
+## Paso 4
 
 Vamos a escribir una nueva función que nos permita mantener las pruebas **aisladas** y que, en caso de fallo, nos indique **cuál** es la funcionalidad que está fallando.
 
@@ -317,7 +317,7 @@ Tenemos un [listado](../../assets/blog/testing-con-javascript/test-4.mp4) de tod
 Antes, en caso de fallo, nos aparecía el mensaje de error pero no sabíamos de dónde provenía el fallo.  
 Ahora, en caso de error, se nos muestra el propio error, por lo tanto sabremos exactamente qué es lo que tenemos que rectificar.
 
-# Paso 5
+## Paso 5
 
 Nuestro framework de testing va cogiendo forma.
 Una buena funcionalidad a implementar sería la creación de una interfaz de línea de comandos (_CLI_). Podríamos usar [vorpal](https://vorpal.js.org/) y tratar que se encargara de buscar todas las pruebas de nuestro proyecto y que las ejecutara.
