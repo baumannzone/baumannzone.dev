@@ -119,7 +119,7 @@ console.log(url.toString())
 
 ### Extra para frameworks modernos:
 - En React puedes usar `useLocation()` de React Router
-- En Vuepuedes usar `useRoute()` de Vue Router
+- En Vue puedes usar `useRoute()` de Vue Router
 - Recuerda, `window.location` funciona siempre en todos
 
 ## Conclusión
