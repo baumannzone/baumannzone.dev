@@ -49,6 +49,8 @@ const {
 
 ⚠️ **Ojo**: `host` incluye el puerto, `hostname` no. ¡Detalles como este pueden causar bugs!
 
+![Cómo obtener la URL actual con JavaScript en imagen](../../assets/blog/como-obtener-la-url-actual-con-javascript-y-sacarle-provecho/main.png)
+
 
 ## Ejemplos útiles y reales
 
