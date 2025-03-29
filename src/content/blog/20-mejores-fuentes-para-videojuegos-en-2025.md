@@ -53,7 +53,7 @@ https://www.youworkforthem.com/font/T19474/game-over-brush-svg
 
 ## 7. Arcadia
 
-![Arcadia Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/arcadia.png)
+![Arcadia Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/arcadia-font.jpg)
 
 Tipografía moderna de ciencia ficción con diseño deportivo para logos de esports.
 
