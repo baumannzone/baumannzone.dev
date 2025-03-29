@@ -10,13 +10,12 @@ Elegir la fuente o tipografía adecuada en un videojuego es super importante par
 
 En este artículo, encontrarás 20 fuentes épicas, desde estilos retro pixelados hasta diseños futuristas, que harán que tu juego o tu aplicación luzca increíble.
 
-## 1. Arcadia
+## 1. Gore
+![Gore Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/gore.jpg)
 
-![Arcadia Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/arcadia.png)
+Tipografía para juegos oscuros y de terror, con letras gruesas sin curvas.  
+https://www.tugcu.co/fonts/p/gore
 
-Tipografía moderna de ciencia ficción con diseño deportivo para logos de esports.
-
-https://www.creativefabrica.com/es/product/arcadia/
 
 ## 2. CageWorld
 
@@ -52,12 +51,13 @@ Fuente tipo pincel, ideal para juegos de terror y proyectos artísticos.
 https://www.youworkforthem.com/font/T19474/game-over-brush-svg
 
 
-## 7. Gore
-![Gore Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/gore.jpg)
+## 7. Arcadia
 
-Tipografía para juegos oscuros y de terror, con letras gruesas sin curvas.  
-https://www.tugcu.co/fonts/p/gore
+![Arcadia Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/arcadia.png)
 
+Tipografía moderna de ciencia ficción con diseño deportivo para logos de esports.
+
+https://www.creativefabrica.com/es/product/arcadia/
 
 ## 8. Grind Demolished
 ![Grind Fuente para Videojuegos](../../assets/blog/20-mejores-fuentes-para-videojuegos-en-2025/grind.png)
