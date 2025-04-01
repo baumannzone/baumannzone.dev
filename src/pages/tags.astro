@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const allPosts = await getCollection("blog");
+
+// Get all unique tags
+const tags = [
+  ...new Set(allPosts.flatMap((post) => post.data.tags || [])),
+].sort();
+
+// Group posts by tag
+const postsByTag = tags.reduce((acc, tag) => {
+  acc[tag] = allPosts.filter((post) => post.data.tags?.includes(tag));
+  return acc;
+}, {});
+---
+
+<DefaultLayout
+  title="Tags | Jorge Baumann"
+  description="Lista de todos los tags disponibles en el blog"
+>
+  <section class="bmn-container mx-auto">
+    <h1 class="text-4xl font-bold mb-8">Tags</h1>
+
+    {/* Primera sección: Tags con contador */}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+      {
+        tags.map((tag) => (
+          <a
+            href={`#${tag}`}
+            class="p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+          >
+            <h2 class="text-lg font-semibold">
+              {tag}
+              <span class="text-sm text-gray-500 ml-2">
+                ({postsByTag[tag].length})
+              </span>
+            </h2>
+          </a>
+        ))
+      }
+    </div>
+
+    {/* Segunda sección: Listado de posts por tag */}
+    <div class="space-y-16">
+      {
+        tags.map((tag) => (
+          <section id={tag}>
+            <h2 class="text-2xl font-semibold mb-8">
+              {tag} ({postsByTag[tag].length})
+            </h2>
+            <ul class="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+              {postsByTag[tag].map((post) => (
+                <li>
+                  <article
+                    class="min-h-full"
+                    itemscope
+                    itemtype="https://schema.org/Article"
+                  >
+                    <div class="group relative max-w-xl">
+                      <a
+                        href={`/blog/${post.slug}`}
+                        class="text-sm font-semibold leading-6"
+                      >
+                        <div class="flex items-center gap-x-4">
+                          <FormattedDate
+                            date={post.data.pubDate}
+                            className="text-gray-500 text-xs"
+                            type="pubDate"
+                          />
+                        </div>
+                        <h2
+                          class="mt-2 text-lg font-semibold text-violet-700 group-hover:text-violet-500 transition-colors"
+                          itemprop="headline"
+                        >
+                          {post.data.title}
+                        </h2>
+                      </a>
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</DefaultLayout>

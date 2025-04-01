@@ -1,0 +1,1 @@
+Este proyecto usa Astro y tailwind css.
