@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import ArticleCard from "../components/ArticleCard.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
 const allPosts = await getCollection("blog");
@@ -22,8 +21,8 @@ const postsByTag = tags.reduce((acc, tag) => {
   title="Tags | Jorge Baumann"
   description="Lista de todos los tags disponibles en el blog"
 >
-  <section class="bmn-container mx-auto">
-    <h1 class="text-4xl font-bold mb-8">Tags</h1>
+  <section class="bmn-container mx-auto mt-16 mb-32">
+    <h1 class="text-4xl font-bold mb-8 text-center">Tags</h1>
 
     {/* Primera sección: Tags con contador */}
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
@@ -33,7 +32,7 @@ const postsByTag = tags.reduce((acc, tag) => {
             href={`#${tag}`}
             class="p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
           >
-            <h2 class="text-lg font-semibold">
+            <h2 class="font-semibold text-sm text-zinc-800">
               {tag}
               <span class="text-sm text-gray-500 ml-2">
                 ({postsByTag[tag].length})
@@ -48,39 +47,22 @@ const postsByTag = tags.reduce((acc, tag) => {
     <div class="space-y-16">
       {
         tags.map((tag) => (
-          <section id={tag}>
-            <h2 class="text-2xl font-semibold mb-8">
+          <section id={tag} class="space-y-4">
+            <h2 class="text-2xl font-semibold text-zinc-800">
               {tag} ({postsByTag[tag].length})
             </h2>
-            <ul class="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+            <ul class="space-y-2">
               {postsByTag[tag].map((post) => (
                 <li>
-                  <article
-                    class="min-h-full"
-                    itemscope
-                    itemtype="https://schema.org/Article"
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
                   >
-                    <div class="group relative max-w-xl">
-                      <a
-                        href={`/blog/${post.slug}`}
-                        class="text-sm font-semibold leading-6"
-                      >
-                        <div class="flex items-center gap-x-4">
-                          <FormattedDate
-                            date={post.data.pubDate}
-                            className="text-gray-500 text-xs"
-                            type="pubDate"
-                          />
-                        </div>
-                        <h2
-                          class="mt-2 text-lg font-semibold text-violet-700 group-hover:text-violet-500 transition-colors"
-                          itemprop="headline"
-                        >
-                          {post.data.title}
-                        </h2>
-                      </a>
-                    </div>
-                  </article>
+                    <span class="text-zinc-800">{post.data.title}</span>
+                    <time class="text-sm text-zinc-400">
+                      <FormattedDate date={post.data.pubDate} type="pubDate" />
+                    </time>
+                  </a>
                 </li>
               ))}
             </ul>

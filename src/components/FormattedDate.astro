@@ -2,22 +2,22 @@
 interface Props {
   date: Date;
   className?: string;
-  type?: 'pubDate' | 'updatedDate';
+  type?: "pubDate" | "updatedDate";
 }
 
-const { date, className, type = 'pubDate' } = Astro.props;
+const { date, className, type = "pubDate" } = Astro.props;
 ---
 
 <time
   datetime={date.toISOString()}
   class={className}
-  itemprop={type === 'pubDate' ? 'datePublished' : 'dateModified'}
+  itemprop={type === "pubDate" ? "datePublished" : "dateModified"}
 >
   {
-    date.toLocaleDateString('es-ES', {
-      year: 'numeric',
-      month: 'short',
-      day: '2-digit',
+    date.toLocaleDateString("es-ES", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
     })
   }
 </time>

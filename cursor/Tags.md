@@ -1,1 +1,0 @@
-Para el listado de tags, se debe mostrar el nombre del tag y el número de posts que tiene asociado.

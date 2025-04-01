@@ -2,48 +2,49 @@
 const currentPath = Astro.url.pathname;
 
 const links = [
-  { href: '/', text: 'Inicio' },
-  { href: '/blog', text: 'Blog' },
-  { href: '/uses', text: 'Setup', showDot: true },
-  { href: '/sobre-mi', text: 'Sobre mí' },
+  { href: "/", text: "Inicio" },
+  { href: "/blog", text: "Blog" },
+  { href: "/tags", text: "Tags" },
+  { href: "/uses", text: "Setup", showDot: true },
+  { href: "/sobre-mi", text: "Sobre mí" },
 ];
 ---
 
 <nav
-  class={`bg-white ${currentPath === '/' ? '' : 'border-b border-gray-200 dark:border-gray-600'} dark:bg-gray-800`}
+  class={`bg-white ${currentPath === "/" ? "" : "border-b border-gray-200 dark:border-gray-600"} dark:bg-gray-800`}
 >
-  <div class='mx-auto bmn-container'>
-    <div class='flex h-16 justify-between'>
-      <div class='flex'>
+  <div class="mx-auto bmn-container">
+    <div class="flex h-16 justify-between">
+      <div class="flex">
         <div
-          class='flex flex-shrink-0 items-center text-violet-500 dark:text-violet-400'
+          class="flex flex-shrink-0 items-center text-violet-500 dark:text-violet-400"
         >
           <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.85'
-            stroke='currentColor'
-            class='size-6'
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.85"
+            stroke="currentColor"
+            class="size-6"
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z'
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
             ></path>
           </svg>
           <span
-            class='ml-2 text-xl font-medium text-violet-600 dark:text-violet-400'
+            class="ml-2 text-xl font-medium text-violet-600 dark:text-violet-400"
             >Baumannzone</span
           >
         </div>
 
-        <div class='hidden sm:ml-6 sm:flex sm:space-x-8' id='desktop-menu'>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8" id="desktop-menu">
           {
             links.map((link) => (
               <a
                 href={link.href}
-                class='relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white'
+                class="relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white"
               >
                 {link.text}
                 {/* {link.showDot && (
@@ -55,55 +56,55 @@ const links = [
         </div>
       </div>
 
-      <div class='-mr-2 flex items-center sm:hidden'>
+      <div class="-mr-2 flex items-center sm:hidden">
         <!-- Mobile menu button -->
         <button
-          type='button'
-          class='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-violet-500'
-          aria-controls='mobile-menu'
-          aria-expanded='false'
-          id='mobile-menu-button'
+          type="button"
+          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-violet-500"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          id="mobile-menu-button"
         >
-          <span class='absolute -inset-0.5'></span>
-          <span class='sr-only'>Open main menu</span>
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
           <svg
-            class='block h-6 w-6'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            aria-hidden='true'
+            class="block h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'></path>
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
           <svg
-            class='hidden h-6 w-6'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke-width='1.5'
-            stroke='currentColor'
-            aria-hidden='true'
+            class="hidden h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              d='M6 18L18 6M6 6l12 12'></path>
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <div class='hidden sm:hidden' id='mobile-menu'>
-    <div class='space-y-1 pb-3 pt-2'>
+  <div class="hidden sm:hidden" id="mobile-menu">
+    <div class="space-y-1 pb-3 pt-2">
       {
         links.map((link) => (
           <a
             href={link.href}
-            class='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             {link.text}
           </a>
@@ -115,22 +116,22 @@ const links = [
 
 <script>
   // Toggle mobile menu
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+  mobileMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
   });
 
   // Add active class to current link
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll("nav a");
   const currentURL = window.location.href;
   navLinks.forEach((link) => {
     if ((link as HTMLAnchorElement).href === currentURL) {
-      if (link.parentElement?.id === 'desktop-menu') {
-        link.classList.add('active-link');
+      if (link.parentElement?.id === "desktop-menu") {
+        link.classList.add("active-link");
       } else {
-        link.classList.add('active-link-mobile');
+        link.classList.add("active-link-mobile");
       }
     }
   });
