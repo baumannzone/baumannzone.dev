@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const allPosts = await getCollection("blog");
+
+// Get all unique tags
+const tags = [
+  ...new Set(allPosts.flatMap((post) => post.data.tags || [])),
+].sort();
+
+// Group posts by tag
+const postsByTag = tags.reduce((acc, tag) => {
+  acc[tag] = allPosts.filter((post) => post.data.tags?.includes(tag));
+  return acc;
+}, {});
+---
+
+<DefaultLayout
+  title="Tags | Jorge Baumann"
+  description="Lista de todos los tags disponibles en el blog"
+>
+  <section class="bmn-container mx-auto mt-16 mb-32">
+    <h1 class="text-4xl font-bold mb-8 text-center">Tags</h1>
+
+    {/* Primera sección: Tags con contador */}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+      {
+        tags.map((tag) => (
+          <a
+            href={`#${tag}`}
+            class="p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+          >
+            <h2 class="font-semibold text-sm text-zinc-800">
+              {tag}
+              <span class="text-sm text-gray-500 ml-2">
+                ({postsByTag[tag].length})
+              </span>
+            </h2>
+          </a>
+        ))
+      }
+    </div>
+
+    {/* Segunda sección: Listado de posts por tag */}
+    <div class="space-y-16">
+      {
+        tags.map((tag) => (
+          <section id={tag} class="space-y-4">
+            <h2 class="text-2xl font-semibold text-zinc-800">
+              {tag} ({postsByTag[tag].length})
+            </h2>
+            <ul class="space-y-2">
+              {postsByTag[tag].map((post) => (
+                <li>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
+                  >
+                    <span class="text-zinc-800">{post.data.title}</span>
+                    <time class="text-sm text-zinc-400">
+                      <FormattedDate date={post.data.pubDate} type="pubDate" />
+                    </time>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</DefaultLayout>

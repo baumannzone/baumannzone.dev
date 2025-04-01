@@ -1,18 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
-import DefaultLayout from '../../layouts/DefaultLayout.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from "astro:content";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection("blog"))
   .filter((post) => post.data.published !== false)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <DefaultLayout>
-  <section class='bmn-container mx-auto'>
+  <section class="bmn-container mx-auto">
     <ul
-      class='mt-6 mb-12 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12'
+      class="mt-6 mb-12 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
     >
       {
         posts.map((post) => (

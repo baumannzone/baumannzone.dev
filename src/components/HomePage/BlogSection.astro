@@ -1,33 +1,30 @@
 ---
-import { Image } from 'astro:assets';
-import FormattedDate from '../FormattedDate.astro';
-// import jorgeBaumannImg from '../../assets/authors/Jorge Baumann.avif';
-import ArticleCard from '../ArticleCard.astro';
+import ArticleCard from "../ArticleCard.astro";
 
 const { recentPosts } = Astro.props;
 const firstPost = recentPosts[0];
 const otherPosts = recentPosts.slice(1);
 ---
 
-<div class='bg-white py-24 sm:py-32'>
-  <div class='mx-auto bmn-container'>
-    <div class='mx-auto max-w-2xl lg:mx-0'>
-      <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto bmn-container">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
         Últimos artículos del blog
       </h2>
-      <p class='mt-2 text-lg leading-8 text-gray-600'>
+      <p class="mt-2 text-lg leading-8 text-gray-600">
         Mejora en tu carrera profesional como developer y sube de nivel
       </p>
     </div>
     <div
-      class='mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2'
+      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2"
     >
       <ArticleCard isFeatured post={firstPost} />
 
       <div
-        class='mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0'
+        class="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0"
       >
-        <div class='-my-12 divide-y divide-gray-900/10'>
+        <div class="-my-12 divide-y divide-gray-900/10">
           {otherPosts.map((post) => <ArticleCard post={post} />)}
         </div>
       </div>
