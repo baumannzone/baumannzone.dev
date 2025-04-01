@@ -1,13 +1,14 @@
 ---
 title: Una década con JavaScript y no sabía esto sobre los bucles
-description: Descubre cómo las etiquetas (labels) te permiten controlar mejor el flujo de tus bucles en JavaScript. Aprende a usar break y continue de manera más efectiva con Vegeta 😏.
-pubDate: 2025-04-01
+description: Aprende a usar break y continue de manera más efectiva con Vegeta 😏. Descubre cómo las etiquetas (labels) te permiten mejorar el flujo de tus bucles en JavaScript.
+pubDate: 2025-04-02
 author: Jorge Baumann
 tags:
   - JavaScript
+  - TIL
 ---
 
-Las etiquetas en JavaScript son identificadores seguidos de dos puntos (`:`) que se pueden asociar a bucles o bloques de código. 
+Las etiquetas en JavaScript son identificadores seguidos de dos puntos (`:`) que se pueden asociar a bucles o bloques de código.
 
 Su principal función es proporcionar un punto de referencia para las instrucciones `break` y `continue`, permitiendo un control más preciso sobre el flujo de ejecución en estructuras anidadas.
 
@@ -53,9 +54,10 @@ Este mecanismo recuerda inevitablemente a estructuras de control antiguas, como 
 ```
 
 ![Resultado del ejemplo de BASIC ejecutado en un emulador](../../assets/blog/una-decada-con-javascript-y-no-sabia-esto-sobre-los-bucles/image.png)
+
 <figcaption> Resultado del ejemplo de BASIC ejecutado en un emulador.</figcaption>
 
-Esto funcionaba perfectamente en BASIC por la naturaleza del lenguaje, pero hacerlo hoy en JavaScript sería volver absurdamente 30 años atrás. 
+Esto funcionaba perfectamente en BASIC por la naturaleza del lenguaje, pero hacerlo hoy en JavaScript sería volver absurdamente 30 años atrás.
 
 ## ¿Por qué no usar etiquetas?
 
