@@ -30,7 +30,7 @@ const years = Object.keys(talksByYear)
     <h1 class="text-4xl font-bold mb-8">
       Todas mis charlas, entrevistas y conferencias
     </h1>
-    <p class="mt-6 text-xl leading-8 text-gray-700">
+    <p class="mt-6 mb-12 text-xl leading-8 text-gray-700">
       Listado de todas mis charlas, entrevistas, cursos, podcasts y conferencias
       a lo largo de mi carrera como desarrollador.
     </p>
@@ -41,7 +41,7 @@ const years = Object.keys(talksByYear)
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {talksByYear[year].map((talk) => (
               <a href={`/talks/${talk.slug}`} class="block group h-full">
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 h-full flex flex-col">
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 h-full flex flex-col">
                   <div class="aspect-video w-full relative overflow-hidden">
                     {talk.data.image ? (
                       <img
@@ -50,10 +50,8 @@ const years = Object.keys(talksByYear)
                         class="w-full h-full object-cover"
                       />
                     ) : (
-                      <div class="w-full h-full bg-violet-100 dark:bg-violet-900 flex items-center justify-center">
-                        <span class="text-violet-500 dark:text-violet-300">
-                          No image available
-                        </span>
+                      <div class="w-full h-full bg-violet-100 flex items-center justify-center">
+                        <span class="text-violet-500">No image available</span>
                       </div>
                     )}
                   </div>
@@ -62,16 +60,14 @@ const years = Object.keys(talksByYear)
                       {talk.data.title}
                     </h3>
                     <div class="mt-auto">
-                      <p class="text-gray-600 dark:text-gray-300 mb-2">
+                      <p class="text-gray-400 mb-2">
                         {new Date(talk.data.date).toLocaleDateString("es-ES", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
                         })}
                       </p>
-                      <p class="text-gray-700 dark:text-gray-400">
-                        {talk.data.event}
-                      </p>
+                      <p class="text-gray-700">{talk.data.event}</p>
                     </div>
                   </div>
                 </article>

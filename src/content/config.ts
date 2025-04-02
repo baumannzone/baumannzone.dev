@@ -21,9 +21,10 @@ const talks = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
+    type: z
+      .enum(["conferencia", "podcast", "artículo", "meetup", "curso", "social"])
+      .default("conferencia"),
     event: z.string(),
-    description: z.string(),
-    image: z.string().optional(),
     links: z
       .array(
         z.object({

@@ -16,22 +16,22 @@ const { Content } = await talk.render();
 
 <Layout title={`${talk.data.title} | baumannzone.dev`}>
   <main class="container mx-auto px-4 py-8">
-    <article
-      class="prose prose-lg dark:prose-invert mx-auto prose-img:shadow-lg"
-    >
+    <article class="prose prose-lg mx-auto prose-img:shadow-lg">
       <header class="mb-8">
+        <time
+          datetime={talk.data.date.toISOString()}
+          class="text-gray-500 text-xs"
+        >
+          {
+            new Date(talk.data.date).toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
         <h1 class="text-4xl font-bold mb-4">{talk.data.title}</h1>
-        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-          <time datetime={talk.data.date.toISOString()}>
-            {
-              new Date(talk.data.date).toLocaleDateString("es-ES", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })
-            }
-          </time>
-          <span>·</span>
+        <div class="flex justify-between gap-4 text-gray-600">
           <span>{talk.data.event}</span>
         </div>
       </header>
@@ -52,14 +52,14 @@ const { Content } = await talk.render();
         talk.data.links && talk.data.links.length > 0 && (
           <div class="mt-8">
             <h2 class="text-2xl font-bold mb-4">Links</h2>
-            <ul class="list-none space-y-2">
+            <ul class="space-y-2">
               {talk.data.links.map((link) => (
                 <li>
                   <a
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300"
+                    class="text-violet-500 hover:text-violet-600"
                   >
                     {link.title}
                   </a>
