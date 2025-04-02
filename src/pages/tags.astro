@@ -18,8 +18,8 @@ const postsByTag = tags.reduce((acc, tag) => {
 ---
 
 <DefaultLayout
-  title="Tags | Jorge Baumann"
-  description="Lista de todos los tags disponibles en el blog"
+  title="Tags | Baumannzone.dev"
+  description="Todos los tags disponibles en el blog"
 >
   <section class="bmn-container mx-auto mt-16 mb-32">
     <h1 class="text-4xl font-bold mb-8 text-center">Tags</h1>
@@ -59,9 +59,9 @@ const postsByTag = tags.reduce((acc, tag) => {
                     class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
                   >
                     <span class="text-zinc-800">{post.data.title}</span>
-                    <time class="text-sm text-zinc-400">
+                    <span class="text-sm text-zinc-400">
                       <FormattedDate date={post.data.pubDate} type="pubDate" />
-                    </time>
+                    </span>
                   </a>
                 </li>
               ))}
