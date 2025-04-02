@@ -27,24 +27,24 @@ const years = Object.keys(talksByYear)
 <Layout title="Talks | baumannzone.dev">
   <main class="bmn-container mx-auto pt-16">
     <p class="text-base font-semibold leading-7 text-indigo-600">/talks</p>
-    <h1 class="text-4xl font-bold mb-8">
-      Todas mis charlas, entrevistas y conferencias
-    </h1>
+    <h1 class="text-4xl font-bold mb-8">Charlas, entrevistas, conferencias</h1>
     <p class="mt-6 mb-12 text-xl leading-8 text-gray-700">
-      Listado de todas mis charlas, entrevistas, cursos, podcasts y conferencias
-      a lo largo de mi carrera como desarrollador.
+      Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts y
+      conferencias a lo largo de mi carrera como ingeniero de software.
     </p>
     {
       years.map((year) => (
         <div class="mb-12">
-          <h2 class="text-3xl font-bold mb-6 text-violet-600">{year}</h2>
+          <div class="sticky top-0 z-10 bg-white/60 backdrop-blur-sm py-4">
+            <h2 class="text-xl font-bold text-violet-600">{year}</h2>
+          </div>
           <div class="space-y-6">
             {talksByYear[year].map((talk) => (
               <a href={`/talks/${talk.slug}`} class="block group">
                 <article class="bg-gray-100 rounded-lg shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:bg-gray-200">
                   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                      <h3 class="text-xl font-semibold mb-2">
+                      <h3 class="text-lg font-semibold mb-2">
                         {talk.data.title}
                       </h3>
                       <p class="text-gray-700">{talk.data.event}</p>
