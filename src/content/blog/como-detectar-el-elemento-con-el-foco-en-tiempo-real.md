@@ -4,9 +4,8 @@ description: Aprende a usar las "live expressions" de la consola de tu navegador
 pubDate: 2024-09-01
 type: blog
 author: Jorge Baumann
-tags: ["consola", "JavaScript"]
+tags: ["Developer Tools", "JavaScript"]
 ---
-
 
 Saber qué elemento HTML tiene el foco (`focus`) en tu navegador puede ser un poco complicado, ya que si quieres usar JavaScript para detectarlo, tendrías que estar constantemente revisando si el foco cambió con un evento de escucha.
 
@@ -21,6 +20,6 @@ Para detectar el elemento con el foco en tiempo real, sigue estos pasos:
 
 ![Detectar el elemento con el foco en tiempo real](../../assets/blog/como-detectar-el-elemento-con-el-foco-en-tiempo-real/main.webp)
 
-Con esta sencilla técnica, puedes ver de forma dinámica qué elemento tiene el foco en cualquier momento mientras interactúas con tu página web. 
+Con esta sencilla técnica, puedes ver de forma dinámica qué elemento tiene el foco en cualquier momento mientras interactúas con tu página web.
 
 ¿Qué otros casos de uso conoces para las "_live expressions_" de la consola de tu navegador? ¡Déjame un comentario abajo!

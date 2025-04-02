@@ -10,4 +10,4 @@ links:
     url: "https://www.instagram.com/p/Cxu1Zvjrr67/"
 ---
 
-![Dev Combat 2023 - Malt España](../../assets/talks/malt-dev-combat.png)
+![Dev Combat 2023 - Malt España](../../assets/talks/malt-dev-combat/main.png)

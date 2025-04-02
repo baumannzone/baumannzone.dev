@@ -8,4 +8,4 @@ links:
     url: "https://www.freecodecamp.org/espanol/news/jorge-baumann-dominando-el-frontend-con-vue-js-s3-ep-1/"
 ---
 
-![Entrevista FreeCodeCamp](../../assets/talks/freecodecamp-interview.png)
+![Entrevista FreeCodeCamp](../../assets/talks/freecodecamp-interview/main.png)

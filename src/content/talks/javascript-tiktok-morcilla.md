@@ -10,4 +10,4 @@ links:
     url: "https://www.instagram.com/p/C_IkDSfsKFQ/"
 ---
 
-![JavaScript 🤝 TikTok - MorcillaConf](../../assets/talks/javascript-tiktok-morcilla.png)
+![JavaScript 🤝 TikTok - MorcillaConf](../../assets/talks/javascript-tiktok-morcilla/main.png)

@@ -4,7 +4,7 @@ description: CSS tiene un flujo de diseño por defecto que organiza los elemento
 pubDate: 2024-06-10
 type: blog
 author: Jorge Baumann
-tags: ["CSS", "Fundamentos"]
+tags: ["CSS"]
 ---
 
 En el ámbito del diseño web, CSS funciona más como un conjunto de herramientas flexibles que como un lenguaje monolítico. En su núcleo se encuentra un concepto fundamental, el modo de diseño o flow layout.
@@ -12,6 +12,7 @@ En el ámbito del diseño web, CSS funciona más como un conjunto de herramienta
 En CSS hay 7 flujos de layout. El layout por defecto es el **flow layout**. Este layout es el que se utiliza cuando no se especifica ningún otro layout.
 
 ## El baile del flujo de diseño
+
 Imagina CSS como un director de orquesta que coordina los elementos de una página web. Cada elemento HTML, ya sea un encabezado, un párrafo o un enlace, baila al ritmo del flow layout. Es la coreografía predeterminada.
 
 Flow layout es el modo de diseño predeterminado en CSS. Organiza los elementos en el orden en que aparecen en el documento HTML, de arriba a abajo y de izquierda a derecha.
@@ -19,15 +20,19 @@ Flow layout es el modo de diseño predeterminado en CSS. Organiza los elementos 
 Un documento HTML sin CSS utiliza exclusivamente el flow layout.
 
 ## Elementos en bloque o en línea
+
 Podemos categorizar los elementos HTML en dos tipos principales: elementos en bloque y elementos en línea (inline).
 
 ### Elementos en bloque
+
 Los elementos en bloque son los pilares del flow layout. Se apilan unos sobre otros, creando un flujo vertical. Ejemplos de elementos en bloque incluyen: `<div>`, `<p>`, `<h1>` y `<section>`.
 
 ### Elementos en línea
+
 Los elementos inline fluyen dentro del contenido del texto. No crean saltos de línea y se alinean horizontalmente. Ejemplos de elementos en línea incluyen: `<span>`, `<a>`, `<strong>` y `<em>`.
 
 ## Controlando el flujo
+
 Sin embargo, podemos manipular el flujo de diseño cambiando la propiedad display de un elemento.
 
 ```css

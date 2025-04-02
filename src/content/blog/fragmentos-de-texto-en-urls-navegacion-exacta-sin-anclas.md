@@ -4,7 +4,7 @@ description: "Los Fragmentos de Texto llevan la precisión de los enlaces web al
 pubDate: 2024-11-05
 type: blog
 author: Jorge Baumann
-tags: ["Browser", "Tips"]
+tags: ["Web"]
 ---
 
 ¿Alguna vez has querido compartir un enlace a un artículo o página web y dirigir a tus amigos directamente al fragmento de texto que te parece más interesante? Con los Fragmentos de Texto (Text Fragments) puedes hacerlo.

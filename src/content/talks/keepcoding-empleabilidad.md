@@ -8,4 +8,4 @@ links:
     url: "https://www.youtube.com/watch?v=xkopjmozpKg"
 ---
 
-![Webinar KeepCoding - Mejora tu empleabilidad](../../assets/talks/keepcoding-empleabilidad.png)
+![Webinar KeepCoding - Mejora tu empleabilidad](../../assets/talks/keepcoding-empleabilidad/main.png)

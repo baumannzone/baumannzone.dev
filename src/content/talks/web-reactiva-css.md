@@ -8,4 +8,4 @@ links:
     url: "https://www.webreactiva.com/podcast/dibujando-con-css-con-jorge-baumann"
 ---
 
-![Podcast Web Reactiva - Dibujando con CSS](../../assets/talks/web-reactiva-css.png)
+![Podcast Web Reactiva - Dibujando con CSS](../../assets/talks/web-reactiva-css/main.png)

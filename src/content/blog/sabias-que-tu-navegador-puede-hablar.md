@@ -1,11 +1,11 @@
 ---
 title: ¿Sabías que tu navegador puede hablar?
-description: 'La API de voz del navegador te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!'
+description: "La API de voz del navegador te permite incorporar datos de voz a tus aplicaciones web. ¡Haz que tu navegador hable!"
 pubDate: 2018-10-22
 type: blog
 author: Jorge Baumann
 tags:
-  - Web APIs
+  - Web
   - JavaScript
 ---
 
@@ -37,14 +37,14 @@ Todos los ejemplos se han probado en Chrome.
 
 ```javascript
 // Lo primero es obtener el sintetizador de voz
-const synth = window.speechSynthesis
+const synth = window.speechSynthesis;
 
 // Ahora creamos un nuevo objeto de tipo SpeechSynthesisUtterance
-const text = 'Soy Jorge Baumann, @baumannzone en Twitter'
-const utterThis = new SpeechSynthesisUtterance(text)
+const text = "Soy Jorge Baumann, @baumannzone en Twitter";
+const utterThis = new SpeechSynthesisUtterance(text);
 
 // Finalmente, le decimos al navegador que hable
-synth.speak(utterThis)
+synth.speak(utterThis);
 ```
 
 Fácil, ¿verdad? Ahora es tu turno. Prueba a cambiar el texto y a hacer que el navegador hable.
@@ -54,7 +54,11 @@ Fácil, ¿verdad? Ahora es tu turno. Prueba a cambiar el texto y a hacer que el 
 Copia y pega este código en la consola del navegador y verás cómo habla el navegador. ¡Es mágico! 🎩
 
 ```js
-window.speechSynthesis.speak(new SpeechSynthesisUtterance('¡Hola! Soy Jorge Baumann (@baumannzone en Instagram)'))
+window.speechSynthesis.speak(
+  new SpeechSynthesisUtterance(
+    "¡Hola! Soy Jorge Baumann (@baumannzone en Instagram)",
+  ),
+);
 ```
 
 ## Controles adicionales
@@ -108,16 +112,16 @@ Para ello tienes que acceder al método `getVoices()`.
 
 ```javascript
 speechSynthesis.onvoiceschanged = () => {
-  const text = 'Puedes seguirme en instagram.com/baumannzone'
-  const synth = speechSynthesis
-  const voices = synth.getVoices()
-  const utterThis = new SpeechSynthesisUtterance(text)
-  utterThis.voice = voices.find((voice) => voice.name === 'Jorge')
-  synth.speak(utterThis)
-}
+  const text = "Puedes seguirme en instagram.com/baumannzone";
+  const synth = speechSynthesis;
+  const voices = synth.getVoices();
+  const utterThis = new SpeechSynthesisUtterance(text);
+  utterThis.voice = voices.find((voice) => voice.name === "Jorge");
+  synth.speak(utterThis);
+};
 ```
 
-### Hot tip 🌶️ 
+### Hot tip 🌶️
 
 La lista de voces se carga de forma asíncrona a la página. Tienes que esperar a que el evento `onvoiceschanged` se dispare para poder obtener el listado de voces disponibles.
 
@@ -127,13 +131,13 @@ El ejemplo con el evento `onvoiceschanged` y seleccionando la voz de `Jorge` que
 
 ```javascript
 speechSynthesis.onvoiceschanged = () => {
-  const text = 'Soy Jorge Baumann, @baumannzone en instagram.'
-  const synth = speechSynthesis
-  const voices = synth.getVoices()
-  const utterThis = new SpeechSynthesisUtterance(text)
-  utterThis.voice = voices.find((voice) => voice.name === 'Jorge')
-  synth.speak(utterThis)
-}
+  const text = "Soy Jorge Baumann, @baumannzone en instagram.";
+  const synth = speechSynthesis;
+  const voices = synth.getVoices();
+  const utterThis = new SpeechSynthesisUtterance(text);
+  utterThis.voice = voices.find((voice) => voice.name === "Jorge");
+  synth.speak(utterThis);
+};
 ```
 
 Este es un listado con algunas de las voces disponibles en Chrome en un Macbook Pro:

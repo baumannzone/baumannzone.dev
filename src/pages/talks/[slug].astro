@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths() {
   const talks = await getCollection("talks");
   return talks.map((talk) => ({
-    params: { id: talk.slug },
+    params: { slug: talk.slug },
     props: { talk },
   }));
 }
@@ -16,7 +16,9 @@ const { Content } = await talk.render();
 
 <Layout title={`${talk.data.title} | baumannzone.dev`}>
   <main class="container mx-auto px-4 py-8">
-    <article class="prose dark:prose-invert max-w-none">
+    <article
+      class="prose prose-lg dark:prose-invert mx-auto prose-img:shadow-lg"
+    >
       <header class="mb-8">
         <h1 class="text-4xl font-bold mb-4">{talk.data.title}</h1>
         <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
@@ -29,7 +31,7 @@ const { Content } = await talk.render();
               })
             }
           </time>
-          <span>•</span>
+          <span>·</span>
           <span>{talk.data.event}</span>
         </div>
       </header>

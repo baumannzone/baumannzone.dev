@@ -8,4 +8,4 @@ links:
     url: "https://www.samsungdevday.com/"
 ---
 
-![Charla de Testing en Samsung](../../assets/talks/samsung-testing.png)
+![Charla de Testing en Samsung](../../assets/talks/samsung-testing/main.png)

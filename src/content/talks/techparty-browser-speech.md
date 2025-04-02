@@ -10,4 +10,6 @@ links:
     url: "https://slides.com/baumannzone/sabias-que-tu-navegador-puede-hablar-techparty2019"
 ---
 
-![Charla sobre APIs de voz - TechParty](../../assets/talks/techparty-browser-speech.png)
+![Charla sobre APIs de voz - TechParty](../../assets/talks/techparty-browser-speech/main.png)
+
+![Charla sobre APIs de voz - TechParty](../../assets/talks/techparty-browser-speech/image-1.png)

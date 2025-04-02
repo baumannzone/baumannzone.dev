@@ -10,4 +10,4 @@ links:
     url: "https://slides.com/baumannzone/taller-hugo"
 ---
 
-![Workshop de Hugo en OSWeekends](../../assets/talks/osw-hugo-workshop.png)
+<!-- ![Workshop de Hugo en OSWeekends](../../assets/talks/osw-hugo-workshop/main.png) -->

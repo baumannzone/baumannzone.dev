@@ -12,4 +12,4 @@ links:
     url: "https://www.youtube.com/watch?v=n7E5Go0I2fs"
 ---
 
-![Workshop Alpine.js - Campsite Academy](../../assets/talks/alpine-hacker-news.png)
+![Workshop Alpine.js - Campsite Academy](../../assets/talks/alpine-hacker-news/main.png)

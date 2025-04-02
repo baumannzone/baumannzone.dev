@@ -12,4 +12,4 @@ links:
     url: "https://www.youtube.com/watch?v=ssyY7AdGS_8&t=2730s"
 ---
 
-![Entrevista Jump2Digital](../../assets/talks/jump2digital-interview.png)
+![Entrevista Jump2Digital](../../assets/talks/jump2digital-interview/main.png)

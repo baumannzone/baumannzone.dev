@@ -10,4 +10,4 @@ links:
     url: "https://x.com/baumannzone/status/1126134647077916674"
 ---
 
-![Charla en Google I/O Extended sobre APIs de voz](../../assets/talks/google-io-browser-speech.png)
+![Charla en Google I/O Extended sobre APIs de voz](../../assets/talks/google-io-browser-speech/main.png)

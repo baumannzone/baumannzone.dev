@@ -4,42 +4,82 @@ import { getCollection } from "astro:content";
 
 const talks = await getCollection("talks");
 talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Group talks by year
+const talksByYear = talks.reduce(
+  (acc, talk) => {
+    const year = talk.data.date.getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(talk);
+    return acc;
+  },
+  {} as Record<number, typeof talks>,
+);
+
+// Sort years in descending order
+const years = Object.keys(talksByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
 ---
 
 <Layout title="Talks | baumannzone.dev">
   <main class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">Talks</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {
-        talks.map((talk) => (
-          <a href={`/talks/${talk.slug}`} class="block group">
-            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105">
-              {talk.data.image && (
-                <img
-                  src={talk.data.image}
-                  alt={talk.data.title}
-                  class="w-full h-48 object-cover"
-                />
-              )}
-              <div class="p-6">
-                <h2 class="text-xl font-semibold mb-2 group-hover:text-violet-500">
-                  {talk.data.title}
-                </h2>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">
-                  {new Date(talk.data.date).toLocaleDateString("es-ES", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
-                <p class="text-gray-700 dark:text-gray-400">
-                  {talk.data.event}
-                </p>
-              </div>
-            </article>
-          </a>
-        ))
-      }
-    </div>
+    <p class="text-base font-semibold leading-7 text-indigo-600">/talks</p>
+    <h1 class="text-4xl font-bold mb-8">
+      Todas mis charlas, entrevistas y conferencias
+    </h1>
+    <p class="mt-6 text-xl leading-8 text-gray-700">
+      Listado de todas mis charlas, entrevistas, cursos, podcasts y conferencias
+      a lo largo de mi carrera como desarrollador.
+    </p>
+    {
+      years.map((year) => (
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold mb-6 text-violet-500">{year}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {talksByYear[year].map((talk) => (
+              <a href={`/talks/${talk.slug}`} class="block group h-full">
+                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 h-full flex flex-col">
+                  <div class="aspect-video w-full relative overflow-hidden">
+                    {talk.data.image ? (
+                      <img
+                        src={talk.data.image}
+                        alt={talk.data.title}
+                        class="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div class="w-full h-full bg-violet-100 dark:bg-violet-900 flex items-center justify-center">
+                        <span class="text-violet-500 dark:text-violet-300">
+                          No image available
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="text-xl font-semibold mb-2 group-hover:text-violet-500 flex-grow">
+                      {talk.data.title}
+                    </h3>
+                    <div class="mt-auto">
+                      <p class="text-gray-600 dark:text-gray-300 mb-2">
+                        {new Date(talk.data.date).toLocaleDateString("es-ES", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                      <p class="text-gray-700 dark:text-gray-400">
+                        {talk.data.event}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </main>
 </Layout>

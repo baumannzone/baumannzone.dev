@@ -8,4 +8,5 @@ links:
     url: "https://www.youtube.com/watch?v=U7_2mmaENlk&t=3995s"
 ---
 
-![Charla de dibujo con CSS - Medellin CSS](../../assets/talks/medellin-css-drawing.png)
+![Charla de dibujo con CSS - Medellin CSS](../../assets/talks/medellin-css-drawing/main.png)
+![Charla de dibujo con CSS - Medellin CSS](../../assets/talks/medellin-css-drawing/2.jpg)

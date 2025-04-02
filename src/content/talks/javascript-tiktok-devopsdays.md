@@ -10,4 +10,4 @@ links:
     url: "https://devopsdays.es/ponente/jorge-baumann/"
 ---
 
-![JavaScript 🤝 TikTok - DevOpsDays Cáceres](../../assets/talks/javascript-tiktok-devopsdays.png)
+![JavaScript 🤝 TikTok - DevOpsDays Cáceres](../../assets/talks/javascript-tiktok-devopsdays/main.png)

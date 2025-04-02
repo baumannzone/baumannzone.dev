@@ -8,4 +8,4 @@ links:
     url: "https://youtu.be/TWtyS4kIWXo?si=eWnFON4JyQK3VigC"
 ---
 
-![CSS Battle con Dorian Designs](../../assets/talks/css-battle-dorian.png)
+![CSS Battle con Dorian Designs](../../assets/talks/css-battle-dorian/main.png)

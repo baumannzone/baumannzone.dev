@@ -12,4 +12,4 @@ links:
     url: "https://x.com/Ari_Reinventada/status/1263518030308524033/photo/1"
 ---
 
-![Charla en Almeria.js sobre características del navegador](../../assets/talks/almeria-js-browser.png)
+![Charla en Almeria.js sobre características del navegador](../../assets/talks/almeria-js-browser/main.png)

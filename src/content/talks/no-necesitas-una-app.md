@@ -12,7 +12,7 @@ links:
     url: "https://www.youtube.com/watch?v=7-8D80fG3eg"
 ---
 
-![No necesitas una APP para hacer eso](../../assets/talks/no-necesitas-una-app.png)
+![No necesitas una APP para hacer eso](../../assets/talks/no-necesitas-una-app/main.png)
 
 ¿Apps nativas? ¿En serio? En mi charla te demostraré cómo tu humilde navegador es en realidad un superhéroe disfrazado.
 

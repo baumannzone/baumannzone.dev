@@ -10,4 +10,6 @@ links:
     url: "https://platzi.com/profes/baumannzone/"
 ---
 
-![Curso Vue.js avanzado - Platzi](../../assets/talks/platzi-vue-course.png)
+![Curso Vue.js avanzado - Platzi](../../assets/talks/platzi-vue-course/main.png)
+
+![Curso Vue.js avanzado - Platzi](../../assets/talks/platzi-vue-course/1.png)

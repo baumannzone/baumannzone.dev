@@ -12,4 +12,4 @@ links:
     url: "https://slides.com/baumannzone/lo-que-no-sabias-que-no-sabias-de-tu-navegador/"
 ---
 
-![Charla sobre características del navegador - Codehouse Academy](../../assets/talks/codehouse-browser-features.png)
+![Charla sobre características del navegador - Codehouse Academy](../../assets/talks/codehouse-browser-features/main.png)
