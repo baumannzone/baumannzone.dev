@@ -1,30 +1,30 @@
 ---
-import { getCollection } from 'astro:content';
-import DefaultLayout from '../layouts/DefaultLayout.astro';
+import { getCollection } from "astro:content";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-import HeroSection from '../components/SobreMiPage/HeroSection.astro';
-import ContentSection from '../components/SobreMiPage/ContentSection.astro';
-import ImageSection from '../components/SobreMiPage/ImageSection.astro';
-import ValuesSection from '../components/SobreMiPage/ValuesSection.astro';
-import LogoCloud from '../components/SobreMiPage/LogoCloud.astro';
-import BlogSection from '../components/SobreMiPage/BlogSection.astro';
-import TeamSection from '../components/SobreMiPage/TeamSection.astro';
+import HeroSection from "../components/SobreMiPage/HeroSection.astro";
+import ContentSection from "../components/SobreMiPage/ContentSection.astro";
+import ImageSection from "../components/SobreMiPage/ImageSection.astro";
+import ValuesSection from "../components/SobreMiPage/ValuesSection.astro";
+import LogoCloud from "../components/SobreMiPage/LogoCloud.astro";
+import BlogSection from "../components/SobreMiPage/BlogSection.astro";
+import TeamSection from "../components/SobreMiPage/TeamSection.astro";
 
 // Get the blog posts
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.published)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Get the last 3 posts
 const recentPosts = posts.slice(0, 3);
 ---
 
 <DefaultLayout
-  title='Baumannzone.dev - Sobre mí'
-  description='Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido.'
+  title="Baumannzone.dev - Sobre mí"
+  description="Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido."
 >
-  <div class='bg-white'>
-    <div class='isolate'>
+  <div class="bg-white">
+    <div class="isolate">
       <HeroSection />
 
       <ContentSection totalPosts={posts.length} />
