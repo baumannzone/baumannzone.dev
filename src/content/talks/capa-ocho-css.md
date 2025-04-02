@@ -2,6 +2,7 @@
 title: "Platicando de CSS con Jorge Baumann"
 date: 2021-03-01
 event: "Capa Ocho"
+type: "podcast"
 description: "Entrevista sobre CSS, desarrollo web y buenas prácticas en el podcast de Capa Ocho"
 links:
   - title: "Episodio del Podcast: Platicando de CSS con Jorge Baumann"

@@ -2,6 +2,7 @@
 title: "Dominando el Frontend con Vue.js"
 date: 2024-06-19
 event: "FreeCodeCamp - S3 Ep. 1"
+type: "podcast"
 description: "Entrevista sobre desarrollo frontend y Vue.js en el canal de FreeCodeCamp en español"
 links:
   - title: "Entrevista en FreeCodeCamp"

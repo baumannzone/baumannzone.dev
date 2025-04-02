@@ -2,6 +2,7 @@
 title: "Lazy Load Routes in Vue with Webpack Dynamic Comments"
 date: 2021-02-04
 event: "CSS Tricks"
+type: "artículo"
 description: "Lazy Load Routes in Vue with Webpack Dynamic Comments"
 links:
   - title: "Lazy Load Routes in Vue with webpack Dynamic Comments"

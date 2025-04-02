@@ -2,6 +2,7 @@
 title: "Entrevista Jorge Baumann"
 date: 2023-05-08
 event: "Jump2Digital"
+type: "podcast"
 description: "Entrevista sobre desarrollo web y carrera profesional en el sector tech"
 links:
   - title: "Anuncio en Twitter"

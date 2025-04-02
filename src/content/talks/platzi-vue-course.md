@@ -2,6 +2,7 @@
 title: "Vue.js avanzado"
 date: 2020-03-28
 event: "Platzi"
+type: "curso"
 description: "Curso avanzado de Vue.js donde exploramos conceptos avanzados y mejores prácticas del framework"
 links:
   - title: "Curso en Platzi"

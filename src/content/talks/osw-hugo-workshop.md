@@ -2,6 +2,7 @@
 title: "Hugo Workshop"
 date: 2017-10-01
 event: "OSWeekends"
+type: "meetup"
 description: "Workshop práctico sobre Hugo, el generador de sitios estáticos más rápido del mundo"
 links:
   - title: "Demo del workshop"

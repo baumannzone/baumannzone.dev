@@ -2,6 +2,7 @@
 title: "Construyendo un clon de Hacker News con Alpine.js y Tailwind CSS"
 date: 2023-03-09
 event: "Campsite Academy"
+type: "meetup"
 description: "Workshop práctico donde construimos un clon de Hacker News utilizando Alpine.js y Tailwind CSS"
 links:
   - title: "Tweet del ponente"

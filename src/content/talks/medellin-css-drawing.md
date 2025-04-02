@@ -2,6 +2,7 @@
 title: "Photoshop? Yo dibujo con CSS"
 date: 2021-06-19
 event: "Medellin CSS"
+type: "meetup"
 description: "Una charla sobre cómo crear ilustraciones y dibujos utilizando únicamente CSS"
 links:
   - title: "Grabación de la charla"

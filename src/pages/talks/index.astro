@@ -25,7 +25,7 @@ const years = Object.keys(talksByYear)
 ---
 
 <Layout title="Talks | baumannzone.dev">
-  <main class="container mx-auto px-4 py-8">
+  <main class="bmn-container mx-auto pt-16">
     <p class="text-base font-semibold leading-7 text-indigo-600">/talks</p>
     <h1 class="text-4xl font-bold mb-8">
       Todas mis charlas, entrevistas y conferencias
@@ -37,37 +37,29 @@ const years = Object.keys(talksByYear)
     {
       years.map((year) => (
         <div class="mb-12">
-          <h2 class="text-3xl font-bold mb-6 text-violet-500">{year}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 class="text-3xl font-bold mb-6 text-violet-600">{year}</h2>
+          <div class="space-y-6">
             {talksByYear[year].map((talk) => (
-              <a href={`/talks/${talk.slug}`} class="block group h-full">
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105 h-full flex flex-col">
-                  <div class="aspect-video w-full relative overflow-hidden">
-                    {talk.data.image ? (
-                      <img
-                        src={talk.data.image}
-                        alt={talk.data.title}
-                        class="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div class="w-full h-full bg-violet-100 flex items-center justify-center">
-                        <span class="text-violet-500">No image available</span>
-                      </div>
-                    )}
-                  </div>
-                  <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="text-xl font-semibold mb-2 group-hover:text-violet-500 flex-grow">
-                      {talk.data.title}
-                    </h3>
-                    <div class="mt-auto">
-                      <p class="text-gray-400 mb-2">
+              <a href={`/talks/${talk.slug}`} class="block group">
+                <article class="bg-gray-100 rounded-lg shadow-sm p-6 transition-all duration-200 hover:shadow-md hover:bg-gray-200">
+                  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <h3 class="text-xl font-semibold mb-2">
+                        {talk.data.title}
+                      </h3>
+                      <p class="text-gray-700">{talk.data.event}</p>
+                    </div>
+                    <div class="text-right">
+                      <span class="inline-block px-3 py-1 text-sm font-medium text-violet-900 bg-violet-100 rounded-full mb-2">
+                        {talk.data.type}
+                      </span>
+                      <p class="text-gray-500 text-xs font-mono">
                         {new Date(talk.data.date).toLocaleDateString("es-ES", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
                         })}
                       </p>
-                      <p class="text-gray-700">{talk.data.event}</p>
                     </div>
                   </div>
                 </article>

@@ -2,6 +2,7 @@
 title: "Dev Combat 2023"
 date: 2023-09-17
 event: "Malt España"
+type: "social"
 description: "Participación como jurado en el Dev Combat 2023, un evento de programación competitiva organizado por Malt España"
 links:
   - title: "Video Resumen del evento"

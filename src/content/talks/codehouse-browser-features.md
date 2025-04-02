@@ -2,6 +2,7 @@
 title: "Lo que no sabías que no sabías de tu navegador"
 date: 2021-01-26
 event: "Codehouse Academy"
+type: "meetup"
 description: "Descubre las características ocultas y sorprendentes que tu navegador tiene y que probablemente no conocías"
 links:
   - title: "Video de la charla"

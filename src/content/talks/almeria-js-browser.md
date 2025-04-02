@@ -2,6 +2,7 @@
 title: "No sabía que podía hacer esto con el navegador"
 date: 2020-05-21
 event: "Almeria.js"
+type: "meetup"
 description: "Una charla sobre las características sorprendentes y poco conocidas que ofrece el navegador web moderno"
 links:
   - title: "Evento en Meetup"

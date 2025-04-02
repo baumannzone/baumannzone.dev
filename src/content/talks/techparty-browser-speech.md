@@ -2,6 +2,7 @@
 title: "¿Sabías que tu navegador puede hablar?"
 date: 2019-09-14
 event: "TechParty por HackMadrid"
+type: "conferencia"
 description: "Una charla sobre las APIs de voz y síntesis de habla disponibles en los navegadores modernos"
 links:
   - title: "TechParty"
