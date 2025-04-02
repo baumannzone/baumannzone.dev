@@ -2,9 +2,9 @@
 const currentPath = Astro.url.pathname;
 
 const links = [
-  { href: "/", text: "Inicio" },
+  // { href: "/", text: "Inicio" },
   { href: "/blog", text: "Blog" },
-  { href: "/tags", text: "Tags" },
+  { href: "/talks", text: "Charlas" },
   { href: "/uses", text: "Setup", showDot: true },
   { href: "/sobre-mi", text: "Sobre mí" },
 ];
@@ -16,7 +16,8 @@ const links = [
   <div class="mx-auto bmn-container">
     <div class="flex h-16 justify-between">
       <div class="flex">
-        <div
+        <a
+          href="/"
           class="flex flex-shrink-0 items-center text-violet-500 dark:text-violet-400"
         >
           <svg
@@ -37,7 +38,7 @@ const links = [
             class="ml-2 text-xl font-medium text-violet-600 dark:text-violet-400"
             >Baumannzone</span
           >
-        </div>
+        </a>
 
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8" id="desktop-menu">
           {
@@ -124,7 +125,7 @@ const links = [
   });
 
   // Add active class to current link
-  const navLinks = document.querySelectorAll("nav a");
+  const navLinks = document.querySelectorAll("nav a:not([href='/'])");
   const currentURL = window.location.href;
   navLinks.forEach((link) => {
     if ((link as HTMLAnchorElement).href === currentURL) {

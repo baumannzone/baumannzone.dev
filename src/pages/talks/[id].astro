@@ -1,0 +1,72 @@
+---
+import Layout from "../../layouts/DefaultLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const talks = await getCollection("talks");
+  return talks.map((talk) => ({
+    params: { id: talk.slug },
+    props: { talk },
+  }));
+}
+
+const { talk } = Astro.props;
+const { Content } = await talk.render();
+---
+
+<Layout title={`${talk.data.title} | baumannzone.dev`}>
+  <main class="container mx-auto px-4 py-8">
+    <article class="prose dark:prose-invert max-w-none">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{talk.data.title}</h1>
+        <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+          <time datetime={talk.data.date.toISOString()}>
+            {
+              new Date(talk.data.date).toLocaleDateString("es-ES", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+          <span>•</span>
+          <span>{talk.data.event}</span>
+        </div>
+      </header>
+
+      {
+        talk.data.image && (
+          <img
+            src={talk.data.image}
+            alt={talk.data.title}
+            class="w-full rounded-lg shadow-lg mb-8"
+          />
+        )
+      }
+
+      <Content />
+
+      {
+        talk.data.links && talk.data.links.length > 0 && (
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Links</h2>
+            <ul class="list-none space-y-2">
+              {talk.data.links.map((link) => (
+                <li>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </article>
+  </main>
+</Layout>
