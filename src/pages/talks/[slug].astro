@@ -36,16 +36,6 @@ const { Content } = await talk.render();
         </div>
       </header>
 
-      {
-        talk.data.image && (
-          <img
-            src={talk.data.image}
-            alt={talk.data.title}
-            class="w-full rounded-lg shadow-lg mb-8"
-          />
-        )
-      }
-
       <Content />
 
       {
