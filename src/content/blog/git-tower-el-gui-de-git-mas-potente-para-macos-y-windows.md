@@ -7,7 +7,6 @@ author: Jorge Baumann
 tags:
   - Git
   - Tools
-published: true
 ---
 
 Usar Git desde la terminal es algo que deberías dominar si quieres progresar como desarrollador. Sin embargo, si prefieres una interfaz gráfica, [Git Tower](https://www.git-tower.com/?via=baumannzone) es una excelente alternativa.

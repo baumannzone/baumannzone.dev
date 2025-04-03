@@ -9,7 +9,6 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     published: z.boolean().optional().default(true),
     tags: z.array(z.string()).optional(),
-    category: z.string().max(1).optional(),
     author: z.string().default("Jorge Baumann"),
     authorImage: z.string().optional(),
     type: z.enum(["blog", "css-art"]).default("blog"),
