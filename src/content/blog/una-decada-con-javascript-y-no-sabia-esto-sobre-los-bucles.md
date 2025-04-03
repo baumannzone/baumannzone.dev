@@ -1,9 +1,8 @@
 ---
 title: Una década con JavaScript y no sabía esto sobre los bucles
 description: Aprende a usar break y continue de manera más efectiva con Vegeta 😏. Descubre cómo las etiquetas (labels) te permiten mejorar el flujo de tus bucles en JavaScript.
-pubDate: 2025-04-02
+pubDate: 2025-04-03
 author: Jorge Baumann
-published: false
 tags:
   - JavaScript
   - TIL

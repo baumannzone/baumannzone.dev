@@ -19,38 +19,29 @@
 - [Brazo ](https://amzn.to/3Vl9NDF) - Brazo para monitor de 34". Soporta hasta 10kg. Es robusto y estable.
 - **BenQ Gaming 24" RL2460HT** - La compré en 2011 pero ya está descatalogada. Sin embargo, +10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.
 
-### Ratón o Mouse
+### Ratón
 
 - [Ratón Logitech MX Master 3](https://amzn.to/4bVhmXc) - Ratón inalámbrico de última generación. Me gusta el diseño y que puedes personalizar los botones.
-- [Ratón Logitech MX Vertical Inalámbrico Ergonómico](https://amzn.to/3yBY8HD) - Ratón vertical inalámbrico. Lo cambié porque se desconectaba a menudo.
 
 ### Alfombrilla
 
-- [Alfombrilla de neopreno para el escritorio](https://share.temu.com/r4qknnc2DQA) - Alfombrilla de neopreno de 80cm x 40cm  con el meme de _This is fine_ 🔥. Bastante sorprendido con la caliadd. Es suave y agradable al tacto. La uso para apoyar el teclado y el ratón y que no se raye la mesa.
-- [Alfombrilla para el ratón](https://amzn.to/3l6JmQv) - Cumple perfectamente con su función. Si se mancha por el uso, puedes pasarle un paño húmedo para limpiarla y queda como nueva.
+- [Alfombrilla de neopreno para el escritorio](https://share.temu.com/r4qknnc2DQA) - Alfombrilla de neopreno de 80cm x 40cm con el meme de _This is fine_ 🔥. Bastante sorprendido con la calidad. Es suave y agradable al tacto. La uso para apoyar el teclado, el ratón y el portátil sin que no se raye la mesa.
 
 ### Teclado Externo
 
 - [Keychron K14 inalámbrico](https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329) - **Keychron K14 Wireless Mechanical Keyboard.** Teclado mecánico inal RGB, 70%, _Hot Swappable_, Brown. Funciona con cable USB o con Bluetooth, con layout en inglés.
-- [Teclado mecánico RGB ](https://share.temu.com/S9HYPj5UxtA) - Teclado mecánico RGB de 60% con switchs azules de Temu, bastante mejor de lo que me esperaba. Es compacto y práctico. Layout en inglés también. Lo uso cuando voy de viaje, para no cargarme el Keychron, que es más pro.
+
 - **Teclado USB Apple con teclado numérico** - El teclado oficial de Apple con cable USB, de color blanco. En aluminio.
 
-### Cámara
-- [Panasonic Lumix DMC G80M 4K](https://amzn.to/3X274jL) - Cámara 4K.
-- [El Gato Cam Link 4K](https://amzn.to/4bOYNnA) - Capturadora 4k para conectar la cámara al MacBook Pro M1.
-
 ### Micrófono
+
 - [Blue Snowball Ice](https://amzn.to/4edF2aq) - Micrófono de condensador USB para streaming y grabación. Lo enchufas y listo.
-- [Micrófono AT2020](https://amzn.to/3Vl4pQX) - Micrófono de condensador de estudio para streaming y grabación.
-- [Brazo para micrófono](https://amzn.to/3Vjjum9) - Brazo para el micrófono ajustable en ángulo y altura.
-- [Behringer UMC22](https://amzn.to/3WYwoHl) - Tarjeta de sonido externa para conectar el micrófono al MacBook Pro M1.
 
 ### Auriculares
 
-- [Beats Fit Pro](https://amzn.to/3x3nTQH) - Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Imprescindibles para el gym.
-- [Bose QuietComfort 45](https://amzn.to/3VtFtXr) - Auriculares inalámbricos Bluetooth de diadema
- con cancelación de ruido y micrófono para llamadas, de color negro. Son muy cómodos y tienen una buena calidad de sonido.
-- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Auriculares con cable USB. Los usaba sobre todo para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.
+- [Beats Fit Pro](https://amzn.to/3x3nTQH) - Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Imprescindibles para ir al gym.
+- [Bose QuietComfort 45](https://amzn.to/3VtFtXr) - Auriculares inalámbricos Bluetooth de diadema con cancelación de ruido y micrófono para llamadas, de color negro. Son muy cómodos y tienen muy buena calidad de sonido.
+- [Jabra Evolve 30 II USB](https://amzn.to/3evillN) - Auriculares con cable USB. Los uso para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.
 
 ### Altavoces
 
@@ -68,7 +59,6 @@
 
 ### Luces
 
-- [El Gato KeyLight](https://amzn.to/3VmamgL) - El foco de luz definitivo. Controla la intensidad y el color via WiFi desde una app del MacBook Pro.
 - [Luces led con trípode](https://amzn.to/3V5eUqa) - Las uso para streaming o en videollamada. Las puedes regular en altura con el trípode y en intensidad con los botones. Guardadas y plegadas en la caja ocupan muy poco.
 - [Tira de luces LED](https://amzn.to/3KiZM3I) - Tira LED multi color de 3m. Tienen mando a distancia. Las uso para dar ambiente a la habitación.
 
@@ -77,33 +67,33 @@
 - [Adaptador multipuerto de USB-C](https://amzn.to/3UZBOzn) - El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.
 - [HUB USB C (8 en 1)](https://amzn.to/3wXnXSa) - Es el que uso para poder conectar varios cables USB y el cable de red ethernet.
 
-
 ## Editor
 
-- [Code](https://code.visualstudio.com/) - El editor más usado por los desarrolladores web. Más ligero que el anterior. Empecé a usarlo para poder usar [GitHub Copilot](https://copilot.github.com/).
+- [Cursor](https://www.cursor.com/) - Editor de código con IA integrada.
 
-### Plugins VS Code
+### Plugins Editor
+
 - [GitHub Copilot](https://copilot.github.com/) - Ya no sé programar sin esto.
 - [Bearded Theme](https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme) - 32 variaciones de colores para el editor. Oscuro y claro.
 - [Tokio Night](https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night) - 3 variaciones de colores para el editor. 2 oscuros y 1 claro.
 
 ## Fuentes o Tipografías para programar
+
 - [Operator Mono](https://www.typography.com/fonts/operator/overview) - Es la que más me gusta para el editor. _¿Has visto qué divertida es la cursiva?_ Es de pago, pero a mí me merece la pena.
 - [Monaspace](https://monaspace.githubnext.com/) - Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.
 - [Geist Mono](https://vercel.com/font) - Fuente monoespaciada de Vercel. Es gratuita y open source.
-- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho. Es gratuita y open source.
+- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/) - Esta tipografía también me gusta mucho, del equipo de JetBrains. Es gratuita y open source.
 
 ## Terminal
 
 - [Warp](https://app.warp.dev/referral/2EJGKR) - Tremenda terminal con IA integrada para autocompletar comandos. Es la que uso actualmente.
 
-- [iTerm2](https://iterm2.com/) + [Oh My Zsh](https://ohmyz.sh/) - Es la que usaba antes de descubrir Warp. Terminal para que no uses la que viene de serie con macOS.
-  - [robbyrussell](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#robbyrussell) - El tema de _Oh My Zsh_ que usaba en iTerm2.
-
 ## Navegador
 
+## Desktop
+
 - [Google Chrome](https://www.google.com/chrome/) - Mi navegador principal como developer.
-- [Firefox Developer](https://www.mozilla.org/es-ES/firefox/developer/) - Tiene buenas herramientas para desarrolladores web.
+- [Brave](https://brave.com/es/) - Adiós anuncios.
 
 ### Móvil
 
@@ -114,19 +104,17 @@
 
 - [GIFs for GitHub](https://chromewebstore.google.com/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep) - Si solo puedes elegir una, esta es la única extensión que deberías tener instalada.
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh) - Para poner en modo oscuro cualquier página web y no quemarte los ojos por la noche.
-- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es) - Herramienta para ver los componentes de React en el navegador.
 - [Color Tab](https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es) - Nueva pestaña con colorines.
 - [30 Seconds of Knowledge](https://30secondsofknowledge.com/) - Snippets de código en cada nueva pestaña.
-- [uBlock Origin](https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=es) - Con Brave no lo necesito, pero en los otros sí.
 
 ## Gadgets & Tools
 
-- [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_. Si te mola grabar vídeos con el móvil, este es tu gadget.
-- [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Se puede programar con `JavaScript`.
-- [Fidget Cube](https://amzn.to/3RgkwwV) - Cubo antiestrés. Un vicio. Tiene botones, ruedas, interruptores y bolitas para jugar.
 - [iPhone 12 Mini Púrpura](https://www.apple.com/es/iphone-12/key-features/) - Mi primer móvil de Apple. Me encanta que sea tan pequeño. Más portable y manejable.
+- [Mini Dron Tello](https://amzn.to/3ldFr4l) - Un mini dron de DJI. Se puede programar con `JavaScript`.
 - [Amazon Kindle eBook](https://amzn.to/3xkVSys)
-- [Power Ball](https://amzn.to/4bYITH4) - Bola Giratoria para mover un poco las muñecas.
+- [DJI OM 5](https://amzn.to/2XF7UGz) - Estabilizador para móviles DJI OM 5 de 3 ejes. Color _athen gray_. Si te mola grabar vídeos con el móvil, este es tu gadget.
+- [Fidget Cube](https://amzn.to/3RgkwwV) - Cubo antiestrés. Un vicio. Tiene botones, ruedas, interruptores y bolitas para jugar.
+- [Power Ball](https://amzn.to/4bYITH4) - Bola giratoria para mover un poco las muñecas.
 - [DYMO Label Maker](https://amzn.to/4dX1OUB) - Impresora de etiquetas para tener todo bien organizado.
 - [Raspberry Pi 3 B](https://amzn.to/3x4XkL6) - Es un mini ordenador, y la uso para hacer pruebas y experimentos. Actualmente tiene instalado [Retropie](https://retropie.org.uk/).
 - [Mandos Super Nintendo USB](https://amzn.to/3x28pg0) - Versión no original de los mandos de la Super Nintendo. Los uso con la Raspberry Pi para jugar a los juegos de mi infancia.
@@ -138,6 +126,6 @@
 - [Repetidor WiFi TP Link](https://amzn.to/3MDQPmH) - Repetidor TP Link para tener conexión a internet en la otra punta de la casa.
 - [Extensor de red eléctrica TP Link](https://amzn.to/3ATGall) - Para tener conexión a internet en la otra punta de la casa. Funciona a través de la red eléctrica.
 
---- 
+---
 
 ¿Quieres ver cómo ha ido evolucionando mi setup a lo largo del tiempo? 👉 [Ver historial de cambios](https://github.com/baumannzone/baumannzone.dev/blame/main/components/UsesPage/uses.md)
