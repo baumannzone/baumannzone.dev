@@ -1,13 +1,13 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import SharePostBar from '../components/SharePostBar.astro';
-import NavBar from '../components/NavBar.astro';
-import { stringToKebabCase } from '../utils/main';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import SharePostBar from "../components/SharePostBar.astro";
+import NavBar from "../components/NavBar.astro";
+import { stringToKebabCase } from "../utils/main";
 
-type Props = CollectionEntry<'blog'>['data'] & {
+type Props = CollectionEntry<"blog">["data"] & {
   id: string;
   slug: string;
   collection: string;
@@ -20,39 +20,39 @@ const { title, description, pubDate, updatedDate, tags, id, slug, collection } =
 const showComments = !import.meta.env.DEV;
 ---
 
-<html lang='es'>
+<html lang="es">
   <head>
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class='dark:bg-gray-700'>
+  <body class="dark:bg-gray-700">
     <NavBar />
-    <main class='px-4 py-8' itemscope itemtype='https://schema.org/Article'>
-      <header class='max-w-prose mx-auto'>
-        <div class='text-gray-500 text-xs dark:text-gray-400'>
-          <FormattedDate date={pubDate} type='pubDate' />
+    <main class="px-4 py-8" itemscope itemtype="https://schema.org/Article">
+      <header class="max-w-prose mx-auto">
+        <div class="text-gray-500 text-xs dark:text-gray-400">
+          <FormattedDate date={pubDate} type="pubDate" />
           {
             updatedDate && (
               <div>
-                Actualizado el{' '}
-                <FormattedDate date={updatedDate} type='updatedDate' />
+                Actualizado el{" "}
+                <FormattedDate date={updatedDate} type="updatedDate" />
               </div>
             )
           }
         </div>
         <h1
-          itemprop='headline'
-          class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white'
+          itemprop="headline"
+          class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white"
         >
           {title}
         </h1>
         {
           tags && (
-            <ul class='flex gap-x-4 text-xs mt-4 mb-8'>
+            <ul class="flex gap-x-4 text-xs mt-4 mb-8">
               {tags.map((tag) => (
                 <li>
                   {/* <a href={`/tags/${stringToKebabCase(tag)}`}> */}
-                  <span class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500'>
+                  <span class="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500">
                     {tag}
                   </span>
                   {/* </a> */}
@@ -63,14 +63,18 @@ const showComments = !import.meta.env.DEV;
         }
       </header>
       <article
-        class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-600'
-        itemprop='articleBody'
+        class="prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-600"
+        itemprop="articleBody"
       >
         <slot />
       </article>
 
-      <div class='prose dark:prose-invert prose-lg mx-auto mb-24'>
-        <b> Un par de cosas que puedes hacer antes de irte para ayudarme: </b>
+      <hr
+        class="bg-violet-500 h-[100px] w-[4px] mx-auto my-[80px] rounded-full border-none"
+      />
+
+      <div class="prose dark:prose-invert prose-lg mx-auto mb-24">
+        <h3 class="font-black mt-12 text-4xl mb-8">Antes de irte</h3>
         <ul>
           <li>Comparte en 𝕏 o en Threads, tienes el botón ahí abajo.</li>
           <li>Deja un comentario, ¡los respondo todos!</li>
@@ -84,13 +88,13 @@ const showComments = !import.meta.env.DEV;
       {
         showComments && (
           <script
-            type='application/javascript'
-            src='https://utteranc.es/client.js'
-            repo='baumannzone/baumannzonedev-comments'
-            issue-term='pathname'
-            label='comment'
-            theme='preferred-color-scheme'
-            crossorigin='anonymous'
+            type="application/javascript"
+            src="https://utteranc.es/client.js"
+            repo="baumannzone/baumannzonedev-comments"
+            issue-term="pathname"
+            label="comment"
+            theme="preferred-color-scheme"
+            crossorigin="anonymous"
             async
           />
         )
@@ -98,6 +102,6 @@ const showComments = !import.meta.env.DEV;
     </main>
 
     <Footer />
-    <script src='/src/utils/screensaver.js'></script>
+    <script src="/src/utils/screensaver.js"></script>
   </body>
 </html>
