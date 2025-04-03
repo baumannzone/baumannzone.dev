@@ -34,6 +34,8 @@ En este ejemplo, la etiqueta `externo` permite salir de ambos bucles cuando la m
 También funcionan con bloques de código (pero no lo hagas):
 
 ```javascript
+// Esto no es una variable, ni una función, ni tu salvación.
+// Es una etiqueta.
 bloque: {
   console.log("Inicio del bloque");
   if (true) {
