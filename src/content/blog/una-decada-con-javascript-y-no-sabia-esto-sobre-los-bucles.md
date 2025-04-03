@@ -10,6 +10,10 @@ tags:
 
 Las etiquetas en JavaScript son identificadores seguidos de dos puntos (`:`) que se pueden asociar a bucles o bloques de código.
 
+## TL;DR
+
+![TL;DR](../../assets/blog/una-decada-con-javascript-y-no-sabia-esto-sobre-los-bucles/code.png)
+
 Su principal función es proporcionar un punto de referencia para las instrucciones `break` y `continue`, permitiendo un control más preciso sobre el flujo de ejecución en estructuras anidadas.
 
 ## Ejemplo con bucles anidados
