@@ -1,0 +1,15 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title={title} description="404 - Página no encontrada" />
+  </head>
+  <body class="bg-black">
+    <slot />
+  </body>
+</html>

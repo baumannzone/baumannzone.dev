@@ -1,29 +1,49 @@
-<div title="😵‍💫 404 - Página Perdida en el Multiverso">
-  <div
-    class="fixed inset-0 w-full h-full overflow-hidden bg-black text-white pt-20"
-  >
-    <canvas id="matrixCanvas" class="absolute top-0 left-0 w-full h-full z-0"
-    ></canvas>
+---
+import MatrixLayout from "../layouts/MatrixLayout.astro";
+---
 
-    <div
-      class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 max-w-2xl mx-auto"
-    >
-      <h1 class="pt-20 text-4xl font-bold">404</h1>
-      <p class="text-xl md:text-2xl mt-4 text-balance">
-        Parece que has roto internet. O al menos esta pequeña esquina de mi web.
-      </p>
-      <a
-        href="/"
-        class="text-black mt-6 bg-white px-6 py-2 border rounded-full transition"
+<MatrixLayout title="😵‍💫 404 - Página perdida en el multiverso">
+  <div class="fixed inset-0 text-white">
+    <canvas
+      id="matrixCanvas"
+      class="bg-green-950 absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+    <section class="relative z-10 min-h-full selection:text-green-900">
+      <div
+        class="grid place-items-center text-center text-balance gap-4 md:gap-8"
       >
-        Ir al inicio
-      </a>
-      <p class="text-sm mt-6 text-balance">
-        La página que buscas ha desaparecido, ha sido movida, o simplemente
-        nunca existió. Como tus ganas de leer los Términos y Condiciones.
-      </p>
-    </div>
-  </div>
+        <h1 class="text-4xl font-bold mt-10 md:mt-20">404</h1>
+        <p class="text-xl font-mono bg-green-900/10">
+          Parece que has roto internet. O al menos esta pequeña esquina de mi
+          web.
+        </p>
+        <a
+          href="/"
+          class="text-black bg-white px-6 py-2 border rounded-full transition"
+        >
+          Volver al inicio
+        </a>
+        <p class="text-xl font-mono">
+          La página que buscas ha desaparecido, ha sido movida, o simplemente
+          nunca existió. Como tus ganas de leer los Términos y Condiciones.
+        </p>
 
-  <script type="module" src="/src/utils/matrix.js"></script>
-</div>
+        <div class="hidden sm:block mt-8 space-y-4">
+          <h2 class="text-3xl font-bold">¿Y ahora qué?</h2>
+          <p class="text-lg font-mono">
+            Puedes volver al inicio y fingir que esto nunca pasó.
+          </p>
+          <p class="text-lg font-mono">
+            O puedes contactarme si crees que esto es un error, una conspiración
+            o un mensaje del más allá.
+          </p>
+          <p class="text-lg font-mono">
+            También puedes quedarte aquí y contemplar la matrix. No te juzgaré.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/utils/matrix.js"></script>
+  </div>
+</MatrixLayout>

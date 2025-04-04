@@ -5,13 +5,12 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // letras que se van a mostrar
-const letters = "BAUMANNZONE.DEV</©†❖> $#? JavaScript DEVELOPER♥︎♦︎♣︎♠︎".split(
+const letters = "BAUMANNZONE.DEV </©†❖> $#? JavaScript DEVELOPER♥︎♦︎♣︎♠︎".split(
   "",
 );
 const fontSize = 15;
 const spacing = fontSize * 1.5;
 const columns = Math.floor(canvas.width / spacing);
-// +2 para que haya mas columnas y se cubra toda la pantalla
 const drops = Array(columns + 2).fill(1);
 
 // funcion para dibujar
