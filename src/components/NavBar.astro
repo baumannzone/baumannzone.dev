@@ -4,6 +4,7 @@ const currentPath = Astro.url.pathname;
 const links = [
   // { href: "/", text: "Inicio" },
   { href: "/blog", text: "Blog" },
+  { href: "/tags", text: "Tags" },
   { href: "/talks", text: "Charlas" },
   { href: "/uses", text: "Setup", showDot: true },
   { href: "/sobre-mi", text: "Sobre mí" },
@@ -40,7 +41,7 @@ const links = [
           >
         </a>
 
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8" id="desktop-menu">
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-5" id="desktop-menu">
           {
             links.map((link) => (
               <a
