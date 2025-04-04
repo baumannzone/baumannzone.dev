@@ -2,13 +2,13 @@
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-import HeroSection from "../components/SobreMiPage/HeroSection.astro";
-import ContentSection from "../components/SobreMiPage/ContentSection.astro";
-import ImageSection from "../components/SobreMiPage/ImageSection.astro";
-import ValuesSection from "../components/SobreMiPage/ValuesSection.astro";
-import LogoCloud from "../components/SobreMiPage/LogoCloud.astro";
-import BlogSection from "../components/SobreMiPage/BlogSection.astro";
-import TeamSection from "../components/SobreMiPage/TeamSection.astro";
+import HeroSection from "../components/AboutMePage/HeroSection.astro";
+import ContentSection from "../components/AboutMePage/ContentSection.astro";
+import ImageSection from "../components/AboutMePage/ImageSection.astro";
+import ValuesSection from "../components/AboutMePage/ValuesSection.astro";
+import LogoCloud from "../components/AboutMePage/LogoCloud.astro";
+import BlogSection from "../components/AboutMePage/BlogSection.astro";
+import TeamSection from "../components/AboutMePage/TeamSection.astro";
 
 // Get the blog posts
 const posts = (await getCollection("blog"))
