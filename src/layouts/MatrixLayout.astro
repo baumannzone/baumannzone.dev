@@ -5,11 +5,11 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="overflow-x-hidden">
   <head>
     <BaseHead title={title} description="404 - Página no encontrada" />
   </head>
-  <body class="bg-black">
+  <body>
     <slot />
   </body>
 </html>
