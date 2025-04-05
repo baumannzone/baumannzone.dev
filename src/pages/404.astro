@@ -16,23 +16,33 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
       <section class="grid place-items-center space-y-12">
         <div class="parallax-layer" data-speed="0.5">
           <h1 class="text-7xl font-bold mt-5 md:mt-10">
-            <span id="typewriter"></span><span class="animate-blink">|</span>
+            <span id="typewriter">404</span>
+            <span class="animate-blink">|</span>
           </h1>
         </div>
+
         <div class="parallax-layer" data-speed="0.3">
           <p class="text-xl font-mono text-balance">
             La página que buscas no existe. O al menos… no en esta realidad.
           </p>
         </div>
 
-        <div class="parallax-layer" data-speed="0.34">
-          <a
-            href="/"
-            class="matrix-pill-button text-black bg-white px-6 py-3 rounded-full transition select-none hover:text-white relative overflow-hidden"
-          >
-            <span class="relative z-10">Volver al inicio</span>
-          </a>
-        </div>
+        <a
+          href="/"
+          class="relative group overflow-hidden px-6 py-2 rounded-full bg-lime-400 border-4 border-black text-black transition-colors hover:shadow-2xl hover:shadow-lime-500 hover:text-white"
+        >
+          <span class="relative z-10">Volver al inicio</span>
+          <div class="absolute inset-0 flex">
+            <div
+              class="w-1/2 bg-red-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-150 ease-out"
+            >
+            </div>
+            <div
+              class="w-1/2 bg-blue-600 translate-x-[100%] group-hover:translate-x-0 transition-transform duration-150 ease-out"
+            >
+            </div>
+          </div>
+        </a>
 
         <div class="parallax-layer" data-speed="0.15">
           <p class="text-xl font-mono text-balance">
@@ -82,37 +92,24 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
   </div>
 
   <style>
-    .matrix-pill-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      background-color: #0066cc; /* Azul Matrix */
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 1;
+    .matrix-pill-button {
+      position: relative;
+      overflow: hidden;
     }
 
-    .matrix-pill-button::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
+    #red-box {
       background-color: #cc0000; /* Rojo Matrix */
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      z-index: 1;
     }
 
-    .matrix-pill-button:hover::before {
+    #blue-box {
+      background-color: #0066cc; /* Azul Matrix */
+    }
+
+    .matrix-pill-button:hover #red-box {
       transform: translateX(0);
     }
 
-    .matrix-pill-button:hover::after {
+    .matrix-pill-button:hover #blue-box {
       transform: translateX(0);
     }
   </style>

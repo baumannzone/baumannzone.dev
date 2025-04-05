@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const typewriter = document.getElementById("typewriter");
-  const text = "404 - Has salido de la Matrix";
+  const text = " - Has salido de la Matrix";
   let index = 0;
 
   function type() {
