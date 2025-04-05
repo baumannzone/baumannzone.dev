@@ -26,7 +26,7 @@ function draw() {
     if (drops[i] * spacing > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;
     }
-    drops[i]++;
+    drops[i] += 1.1;
   }
 }
 

@@ -29,16 +29,16 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
 
         <a
           href="/"
-          class="relative group overflow-hidden px-6 py-2 rounded-full bg-lime-400 border-4 border-black text-black transition-colors hover:shadow-2xl hover:shadow-lime-500 hover:text-white"
+          class="relative group overflow-hidden px-6 py-2 rounded-full bg-lime-400 border-4 border-black text-black transition-colors hover:shadow-2xl hover:shadow-lime-500 hover:text-white focus:shadow-2xl focus:shadow-lime-500 focus:text-white focus:outline-none"
         >
           <span class="relative z-10">Volver al inicio</span>
           <div class="absolute inset-0 flex">
             <div
-              class="w-1/2 bg-red-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-150 ease-out"
+              class="w-1/2 bg-red-600 translate-x-[-100%] group-hover:translate-x-0 group-focus:translate-x-0 transition-transform duration-150 ease-out"
             >
             </div>
             <div
-              class="w-1/2 bg-blue-600 translate-x-[100%] group-hover:translate-x-0 transition-transform duration-150 ease-out"
+              class="w-1/2 bg-blue-600 translate-x-[100%] group-hover:translate-x-0 group-focus:translate-x-0 transition-transform duration-150 ease-out"
             >
             </div>
           </div>
@@ -90,31 +90,8 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
       </section>
     </div>
   </div>
-
-  <style>
-    .matrix-pill-button {
-      position: relative;
-      overflow: hidden;
-    }
-
-    #red-box {
-      background-color: #cc0000; /* Rojo Matrix */
-    }
-
-    #blue-box {
-      background-color: #0066cc; /* Azul Matrix */
-    }
-
-    .matrix-pill-button:hover #red-box {
-      transform: translateX(0);
-    }
-
-    .matrix-pill-button:hover #blue-box {
-      transform: translateX(0);
-    }
-  </style>
-
-  <script type="module" src="/src/utils/matrix.js"></script>
-  <script type="module" src="/src/utils/parallax.js"></script>
-  <script type="module" src="/src/utils/typewritter.js"></script>
 </MatrixLayout>
+
+<script type="module" src="/src/utils/matrix.js"></script>
+<script type="module" src="/src/utils/parallax.js"></script>
+<script type="module" src="/src/utils/typewritter.js"></script>
