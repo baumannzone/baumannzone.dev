@@ -4,109 +4,120 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
 
 <MatrixLayout title="😵‍💫 404 - Página perdida en el multiverso">
   <div
-    class="h-full w-screen text-white selection:text-white selection:bg-lime-500"
+    class="h-full w-screen text-white selection:text-white selection:bg-lime-500 cursor-crosshair"
   >
     <canvas
       id="matrixCanvas"
       class="bg-green-950 fixed top-0 left-0 w-full h-full"></canvas>
     <div
       id="parallaxContainer"
-      class="relative grid place-items-center h-full p-2 sm:p-10 md:p-20 space-y-10 text-center transform-3d"
+      class="relative h-screen p-2 sm:p-10 md:p-20 text-center transform-3d"
     >
-      <div class="parallax-layer" data-speed="0.5">
-        <h1 class="text-7xl font-bold mt-5 md:mt-10">404</h1>
-      </div>
-      <div class="parallax-layer" data-speed="0.3">
-        <p class="text-xl font-mono text-balance">
-          Parece que has roto internet. O al menos esta pequeña esquina de mi
-          web.
-        </p>
-      </div>
-      <div
-        class="parallax-layer [perspective:200px] transform-3d"
-        data-speed="0.8"
-      >
-        <a
-          href="/"
-          class="text-black bg-white px-6 py-2 border rounded-full transition select-none"
-        >
-          Volver al inicio
-        </a>
-      </div>
-      <div class="parallax-layer" data-speed="0.15">
-        <p class="text-xl font-mono text-balance">
-          La página que buscas ha desaparecido, ha sido movida, o simplemente
-          nunca existió. Como tus ganas de leer los Términos y Condiciones.
-        </p>
-      </div>
+      <section class="grid place-items-center space-y-12">
+        <div class="parallax-layer" data-speed="0.5">
+          <h1 class="text-7xl font-bold mt-5 md:mt-10">
+            <span id="typewriter"></span><span class="animate-blink">|</span>
+          </h1>
+        </div>
+        <div class="parallax-layer" data-speed="0.3">
+          <p class="text-xl font-mono text-balance">
+            La página que buscas no existe. O al menos… no en esta realidad.
+          </p>
+        </div>
 
-      <div class="mt-8 space-y-4 parallax-layer" data-speed="0.25">
-        <h2 class="text-3xl font-bold">¿Y ahora qué?</h2>
-        <p class="text-lg font-mono text-balance">
-          Puedes volver al inicio y fingir que esto nunca pasó.
-        </p>
-        <p class="text-lg font-mono text-balance">
-          O puedes <a
-            href="https://instagram.com/baumannzone"
-            class="underline font-bold hover:text-purple-400 transition"
-            >contactarme</a
-          > si crees que esto es un error, una conspiración o un mensaje del más
-          allá.
-        </p>
-        <p class="text-lg font-mono text-balance">
-          También puedes quedarte aquí y contemplar la matrix. No te juzgaré.
-        </p>
-      </div>
+        <div class="parallax-layer" data-speed="0.34">
+          <a
+            href="/"
+            class="matrix-pill-button text-black bg-white px-6 py-3 rounded-full transition select-none hover:text-white relative overflow-hidden"
+          >
+            <span class="relative z-10">Volver al inicio</span>
+          </a>
+        </div>
+
+        <div class="parallax-layer" data-speed="0.15">
+          <p class="text-xl font-mono text-balance">
+            Tal vez fue borrada.<br />
+            Tal vez nunca estuvo aquí.<br />
+            Tal vez elegiste la pastilla equivocada.
+          </p>
+        </div>
+
+        <div class="parallax-layer" data-speed="0.25">
+          <h2 class="text-3xl font-bold">
+            Opciones disponibles en este plano de existencia:
+          </h2>
+        </div>
+
+        <div class="parallax-layer" data-speed="0.2">
+          <p class="text-lg font-mono text-balance">
+            👉 <a
+              href="/"
+              class="underline font-bold hover:text-fuchsia-600 transition"
+            >
+              Volver al inicio
+            </a>
+            y seguir fingiendo que todo está bajo control.
+          </p>
+        </div>
+
+        <div class="parallax-layer" data-speed="0.3">
+          <p class="text-lg font-mono text-balance">
+            🧑‍💻 <a
+              href="https://instagram.com/baumannzone"
+              class="underline font-bold hover:text-fuchsia-600 transition"
+            >
+              Contactarme
+            </a>, si sospechas que esto es un error en la simulación.
+          </p>
+        </div>
+
+        <div class="parallax-layer" data-speed="0.15">
+          <p class="text-lg font-mono text-balance">
+            O simplemente quedarte, mirar el fondo, y preguntarte si todo esto
+            ha ocurrido antes.
+          </p>
+        </div>
+      </section>
     </div>
   </div>
 
+  <style>
+    .matrix-pill-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #0066cc; /* Azul Matrix */
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .matrix-pill-button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #cc0000; /* Rojo Matrix */
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .matrix-pill-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .matrix-pill-button:hover::after {
+      transform: translateX(0);
+    }
+  </style>
+
   <script type="module" src="/src/utils/matrix.js"></script>
-  <!-- Efecto parallax -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const MOUSE_SENSITIVITY = 25; // Divisor para la sensibilidad del mouse
-      const ROTATION_FACTOR = 2; // Factor de rotación 3D
-
-      const container = document.getElementById(
-        "parallaxContainer",
-      ) as HTMLElement;
-      const layers = document.querySelectorAll<HTMLElement>(".parallax-layer");
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let containerRect = container.getBoundingClientRect();
-
-      function updateParallax(e) {
-        mouseX =
-          (e.clientX - containerRect.left - containerRect.width / 2) /
-          MOUSE_SENSITIVITY;
-        mouseY =
-          (e.clientY - containerRect.top - containerRect.height / 2) /
-          MOUSE_SENSITIVITY;
-
-        layers.forEach((layer) => {
-          const speed = parseFloat(layer.dataset.speed || "0");
-          const x = mouseX * speed;
-          const y = mouseY * speed;
-          const rotateX = -y * ROTATION_FACTOR;
-          const rotateY = x * ROTATION_FACTOR;
-
-          layer.style.transform = `translate3d(${x}px, ${y}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-      }
-
-      container.addEventListener("mousemove", updateParallax);
-
-      container.addEventListener("mouseleave", () => {
-        layers.forEach((layer) => {
-          layer.style.transform =
-            "translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)";
-        });
-      });
-
-      window.addEventListener("resize", () => {
-        containerRect = container.getBoundingClientRect();
-      });
-    });
-  </script>
+  <script type="module" src="/src/utils/parallax.js"></script>
+  <script type="module" src="/src/utils/typewritter.js"></script>
 </MatrixLayout>

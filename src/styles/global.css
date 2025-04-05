@@ -54,35 +54,49 @@
   }
 }
 
-
 /* Underlined - Effect */
 .underlined {
-	position: relative;
-	text-decoration: none !important;
-	white-space: nowrap;
+  position: relative;
+  text-decoration: none !important;
+  white-space: nowrap;
 }
 
 .underlined:focus {
-	outline: none;
-	text-decoration: none !important;
+  outline: none;
+  text-decoration: none !important;
 }
 
 .underlined:after {
-	content: '';
-	height: 2px;
-	transform: scaleX(0);
-	transition: transform 0.25s ease;
-	transform-origin: left;
-	left: 0;
-	bottom: -4px;
-	width: 100%;
-	display: block;
-	position: absolute;
+  content: "";
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: left;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  display: block;
+  position: absolute;
 }
 
 .underlined:hover:after,
 .underlined:focus:after,
 .active.underlined:after {
-	background-color: currentColor;
-	transform: scaleX(1);
+  background-color: currentColor;
+  transform: scaleX(1);
+}
+
+/* Typewriter cursor animation - Used for the blinking cursor effect in the 404 page */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }
