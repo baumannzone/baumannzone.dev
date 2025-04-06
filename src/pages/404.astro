@@ -14,21 +14,21 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
       class="relative h-screen p-2 sm:p-10 md:p-20 text-center transform-3d"
     >
       <section class="grid place-items-center space-y-12">
-        <div class="parallax-layer" data-speed="0.5">
-          <h1 class="text-7xl font-bold mt-5 md:mt-10">
+        <div class="parallax-layer" data-speed="0.22">
+          <h1 class="text-4xl sm:text-7xl font-bold mt-5 md:mt-10">
             <span id="typewriter">404</span>
             <span class="animate-blink">|</span>
           </h1>
         </div>
 
-        <div class="parallax-layer" data-speed="0.3">
+        <div class="parallax-layer" data-speed="0.31">
           <p class="text-xl font-mono text-balance">
             La página que buscas no existe. O al menos… no en esta realidad.
           </p>
         </div>
 
         <a
-          href="/"
+          href="/?ref=404"
           class="relative group overflow-hidden px-6 py-2 rounded-full bg-lime-400 border-4 border-black text-black transition-colors hover:shadow-2xl hover:shadow-lime-500 hover:text-white focus:shadow-2xl focus:shadow-lime-500 focus:text-white focus:outline-none"
         >
           <span class="relative z-10">Volver al inicio</span>
@@ -86,31 +86,31 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
       <div class="fixed bottom-4 left-0 right-0 z-10">
         <div class="parallax-layer" data-speed="0.1">
           <nav
-            class="flex justify-center space-x-4 font-mono text-xs font-bold"
+            class="flex justify-center space-x-1 sm:space-x-4 font-mono text-xs font-bold"
           >
             <a
-              href="/blog"
-              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-3 py-1 rounded"
+              href="/blog?ref=404"
+              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-2 py-1 rounded"
             >
               Blog
             </a>
             <a
-              href="/tags"
-              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-3 py-1 rounded"
+              href="/tags?ref=404"
+              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-2 py-1 rounded"
             >
               Tags
             </a>
             <a
-              href="/about"
-              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-3 py-1 rounded"
+              href="/uses?ref=404"
+              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-2 py-1 rounded"
             >
-              About
+              Setup
             </a>
             <a
-              href="/patrocinio"
-              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-3 py-1 rounded"
+              href="/about?ref=404"
+              class="text-lime-500 hover:text-fuchsia-400 transition-colors bg-black/70 px-2 py-1 rounded"
             >
-              Patrocinio
+              Sobre mí
             </a>
           </nav>
         </div>
@@ -119,6 +119,6 @@ import MatrixLayout from "../layouts/MatrixLayout.astro";
   </div>
 </MatrixLayout>
 
-<script type="module" src="/src/utils/matrix.js"></script>
-<script type="module" src="/src/utils/parallax.js"></script>
-<script type="module" src="/src/utils/typewritter.js"></script>
+<script src="../utils/matrix.js"></script>
+<script src="../utils/parallax.js"></script>
+<script src="../utils/typewritter.js"></script>
