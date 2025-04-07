@@ -32,7 +32,16 @@ function draw() {
 
 setInterval(draw, 50);
 
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
+// Usar visualViewport para manejar el resize de manera más precisa
+if (window.visualViewport) {
+  window.visualViewport.addEventListener("resize", () => {
+    canvas.width = window.visualViewport.width;
+    canvas.height = window.visualViewport.height;
+  });
+} else {
+  // Fallback para navegadores que no soportan visualViewport
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+}
