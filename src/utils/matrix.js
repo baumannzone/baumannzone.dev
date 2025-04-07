@@ -32,14 +32,13 @@ function draw() {
 
 setInterval(draw, 50);
 
-// Usar visualViewport para manejar el resize de manera más precisa
-if (window.visualViewport) {
-  window.visualViewport.addEventListener("resize", () => {
-    canvas.width = window.visualViewport.width;
-    canvas.height = window.visualViewport.height;
-  });
-} else {
-  // Fallback para navegadores que no soportan visualViewport
+// Función para verificar si es un dispositivo móvil
+function isMobileDevice() {
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+
+// Solo aplicar el evento de resize en dispositivos más grandes
+if (!isMobileDevice()) {
   window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
