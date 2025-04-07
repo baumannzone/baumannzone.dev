@@ -2,7 +2,7 @@
 title: "Personalizar cómo se ven los objetos en las DevTools"
 description: "Aprende a usar Custom Object Formatters para hacer que tus objetos en la consola de DevTools se vean más bonitos, útiles y fáciles de entender."
 pubDate: 2025-04-07
-published: false
+published: true
 tags: ["DevTools", "JavaScript"]
 author: Jorge Baumann
 type: blog
@@ -22,7 +22,7 @@ Bienvenido a los `Custom Object Formatters`, una función no tan conocida que te
 
 Para poder hacer esto, primero necesitas activar el soporte para esta característica en el navegador.
 
-![Activar soporte para Custom Object Formatters](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/settings.png)
+![Activar soporte para Custom Object Formatters en Chrome](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/settings.png)
 
 ## ¿Cómo se hace la magia?
 
@@ -73,14 +73,16 @@ const userBadgeFormatter = {
           background-color: #f0f0f0;
           color: #333;
           border-left: 4px solid ${
-            object.level === "Admin" ? "#e11d48" : "#3b82f6"
+            object.level === "Admin" ? "#7c3aed" : "#ffeb00"
           };
           padding: 0.25rem 0.5rem;
           font-weight: bold;
           font-family: sans-serif;
         `,
       },
-      `👤 ${object.name} (${object.level})`,
+      `${object.level === "Admin" ? "👑" : "👤"} ${object.name} (${
+        object.level
+      })`,
     ];
   },
 
@@ -90,15 +92,30 @@ const userBadgeFormatter = {
 
   body: function (object) {
     return [
-      "ul",
-      ["li", `Nombre: ${object.name}`],
-      ["li", `Nivel: ${object.level}`],
+      "div",
+      {
+        style:
+          "margin-top: 0.5rem; font-family: sans-serif; font-size: 0.9rem;",
+      },
       [
-        "li",
+        "div",
+        {},
+        ["span", { style: "font-weight: bold; color: #333;" }, "Nombre: "],
+        ["span", {}, object.name],
+      ],
+      [
+        "div",
+        {},
+        ["span", { style: "font-weight: bold; color: #333;" }, "Nivel: "],
+        ["span", {}, object.level],
+      ],
+      [
+        "div",
+        { style: "margin-top: 0.5rem;" },
         [
           "span",
-          { style: "opacity: 0.7; font-size: 0.9rem;" },
-          "Mostrado con estilo cortesía de DevTools + Custom Formatter ✨",
+          { style: "opacity: 0.9;" },
+          "🚀 Mira este log. Bien chido. Copado. Estéticamente inmejorable.",
         ],
       ],
     ];
@@ -109,11 +126,7 @@ const userBadgeFormatter = {
 Añade tu objeto formateador al array global `window.devtoolsFormatters`:
 
 ```javascript
-// Puedes crear un nuevo array
-window.devtoolsFormatters = [myCoolFormatter];
-
-// O añadir a la lista de formateadores existentes
-window.devtoolsFormatters.push(myCoolFormatter);
+window.devtoolsFormatters = [userBadgeFormatter];
 ```
 
 Eso es todo, no necesitas hacer nada más. Ahora, cada vez que los objetos `UserBadge` se muestren en las DevTools (por ejemplo, cuando uses `console.log(object)`), se mostrarán usando el formateador personalizado que has definido.
@@ -122,5 +135,11 @@ Eso es todo, no necesitas hacer nada más. Ahora, cada vez que los objetos `User
 
 En esta imagen puedes ver el resultado de usar el formateador personalizado, primero sin expandir el objeto y luego expandido:
 
-![Resultado de usar el formateador personalizado](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/result-1.png)
-![Resultado de usar el formateador personalizado](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/result-2.png)
+![Resultado de usar el formateador personalizado](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/log-1.png)
+![Resultado de usar el formateador personalizado](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/log-2.png)
+
+## Conclusión
+
+Personalizar cómo se muestran tus objetos en las DevTools no va a resolver todos tus bugs, pero al menos lo harás con algo de dignidad visual.
+
+Los **Custom Object Formatters** no son solo una curiosidad, son una herramienta para mejorar tu productividad, tu comprensión de la aplicación, y por qué no, tu autoestima como developer.
