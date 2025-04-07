@@ -25,7 +25,9 @@ const years = Object.keys(talksByYear)
 ---
 
 <Layout title="Talks | baumannzone.dev">
-  <main class="bmn-container mx-auto pt-16 bg-gray-50">
+  <main
+    class="max-w-7xl mx-auto pt-16 px-0 bg-gray-50 border-x border-zinc-200"
+  >
     <header class="text-center mx-auto max-w-3xl">
       <p class="text-base font-semibold leading-7 text-violet-600">/talks</p>
       <h1 class="text-4xl font-semibold mb-8">Charlas</h1>
@@ -35,231 +37,48 @@ const years = Object.keys(talksByYear)
       </p>
     </header>
 
-    <!-- 
-    <div class="">
-      <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="text-center text-base/7 font-semibold text-indigo-600">
-          /talks
-        </h2>
-        <p
-          class="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl"
-        >
-          Charlas, entrevistas, conferencias
-        </p>
-        <p
-          class="mx-auto max-w-2xl text-center mt-6 mb-12 text-lg/8 text-gray-600 text-balance"
-        >
-          Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts
-          y conferencias a lo largo de mi carrera como ingeniero de software.
-        </p>
-        <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-          <div class="relative lg:row-span-2">
-            <div
-              class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"
-            >
+    <section
+      class="bg-white m-2 px-4 sm:px-6 lg:px-8 rounded-xl border border-zinc-200"
+    >
+      {
+        years.map((year) => (
+          <div class="pb-12">
+            <div class="sticky top-0 z-10 bg-white/50 backdrop-blur-sm pt-4 pb-3 mb-1">
+              <h2 class="text-xl font-bold flex gap-[2px] items-center">
+                {/* <span class="flex h-2 w-2 translate-y-1 rounded-full bg-violet-500 relative top-[-2px]" /> */}
+                {/* <span class="text-violet-500">/</span> */}
+                {year}
+              </h2>
             </div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]"
-            >
-              <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                <p
-                  class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
-                >
-                  Core friendly
-                </p>
-                <p
-                  class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
-                >
-                  Mi charla no es responsive. Es explosiva. ¿Flexiones mientras
-                  explico las tripas de JavaScript? Claro. ¿En traje? Obvio.
-                </p>
-              </div>
-              <div
-                class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm"
-              >
-                <div
-                  class="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl"
-                >
-                  <img
-                    class="size-full object-cover object-top"
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"
-            >
-            </div>
-          </div>
-          <div class="relative max-lg:row-start-1">
-            <div
-              class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"
-            >
-            </div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]"
-            >
-              <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p
-                  class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
-                >
-                  Performance
-                </p>
-                <p
-                  class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
-                >
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit
-                  maiores impedit.
-                </p>
-              </div>
-              <div
-                class="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2"
-              >
-                <img
-                  class="w-full max-lg:max-w-xs"
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"
-            >
-            </div>
-          </div>
-          <div
-            class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2"
-          >
-            <div class="absolute inset-px rounded-lg bg-white"></div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]"
-            >
-              <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p
-                  class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
-                >
-                  Después de la charla, charlamos
-                </p>
-                <p
-                  class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
-                >
-                  Lo mejor de los eventos no es el escenario: es la gente. Me
-                  encanta hablar de Angular.js (el bueno).
-                </p>
-              </div>
-              <div
-                class="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2"
-              >
-                <img
-                  class="h-[min(152px,40cqw)] object-cover"
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"
-            >
-            </div>
-          </div>
-          <div class="relative lg:row-span-2">
-            <div
-              class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"
-            >
-            </div>
-            <div
-              class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]"
-            >
-              <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                <p
-                  class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center"
-                >
-                  La parte educativa es opcional, el caos es garantizado
-                </p>
-                <p
-                  class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center"
-                >
-                  ¿Meetups, podcasts, conferencias? Sí. ¿Guiones? No. Hablo de
-                  desarrollo, comunidad, memes y CSS como forma de expresión
-                  artística. La audiencia aprende, pero sobre todo, se acuerda.
-                </p>
-              </div>
-              <div class="relative min-h-[30rem] w-full grow">
-                <div
-                  class="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl"
-                >
-                  <div class="flex bg-gray-800/40 ring-1 ring-white/5">
-                    <div
-                      class="-mb-px flex text-sm/6 font-medium text-gray-400"
-                    >
-                      <div
-                        class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white"
-                      >
-                        NotificationSetting.jsx
-                      </div>
-                      <div class="border-r border-gray-600/10 px-4 py-2">
-                        App.jsx
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-6 pb-14 pt-6">
-                    asd
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"
-            >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-     -->
-
-    {
-      years.map((year) => (
-        <div class="pb-12">
-          <div class="sticky top-0 z-10 bg-gray-50/60 backdrop-blur-sm py-4">
-            <h2 class="text-xl font-bold text-violet-600">{year}</h2>
-          </div>
-          <div class="space-y-6">
-            {talksByYear[year].map((talk) => (
-              <a href={`/talks/${talk.slug}`} class="block group">
-                <article class="bg-gray-100 border-2 border-gray-200 rounded-lg p-6 transition-all duration-200 hover:border-violet-300 hover:bg-violet-50">
-                  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                      <h3 class="text-lg text-gray-700 font-semibold mb-2 hover:text-violet-600">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch mb-2">
+              {talksByYear[year].map((talk) => (
+                <a
+                  href={`/talks/${talk.slug}`}
+                  class="block hover:bg-gray-100/50 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                >
+                  <div class="rounded-xl border h-full">
+                    <div class="flex flex-col space-y-1.5 p-6 relative">
+                      <div class="text-sm text-zinc-500">{talk.data.event}</div>
+                      <div class="tracking-tight @[250px]/card:text-3xl text-2xl font-semibold tabular-nums text-zinc-950">
                         {talk.data.title}
-                      </h3>
-                      <p class="text-gray-700">{talk.data.event}</p>
-                    </div>
-                    <div class="text-right">
-                      <span class="inline-block px-3 py-1 text-sm font-medium text-violet-900 bg-violet-100 rounded-full mb-2">
-                        {talk.data.type}
-                      </span>
-                      <p class="text-gray-500 text-sm">
-                        {new Date(talk.data.date).toLocaleDateString("es-ES", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </p>
+                      </div>
+                      <div class="absolute right-4 top-4 bg-white rounded-lg">
+                        <div class="border px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-gray-200 transition-colors">
+                          {talk.data.type}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </article>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </section>
 
-    <div class="bg-white mt-12 rounded-t-xl">
+    <div class="bg-white px-4 sm:px-6 lg:px-8 mt-12 rounded-t-xl">
       <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <h2

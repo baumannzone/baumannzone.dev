@@ -1,7 +1,7 @@
 ---
 title: "WR 184: Dibujando con CSS"
 date: 2021-03-23
-event: "Web Reactiva (Podcast)"
+event: "Web Reactiva"
 type: "podcast"
 description: "Episodio del podcast Web Reactiva donde hablamos sobre cómo crear ilustraciones y arte utilizando CSS"
 links:

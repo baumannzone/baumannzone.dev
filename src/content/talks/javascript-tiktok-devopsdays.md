@@ -1,7 +1,7 @@
 ---
 title: "JavaScript 🤝 TikTok"
 date: 2024-10-03
-event: "DevOpsDays Cáceres 2024"
+event: "DevOpsDays Cáceres"
 type: "conferencia"
 description: "Una charla sobre cómo JavaScript y TikTok pueden trabajar juntos para crear experiencias únicas"
 links:

@@ -1,7 +1,7 @@
 ---
 title: "JavaScript 🤝 TikTok"
 date: 2024-10-05
-event: "MorcillaConf 2024"
+event: "MorcillaConf"
 type: "conferencia"
 description: "Una charla sobre cómo JavaScript y TikTok pueden trabajar juntos para crear experiencias únicas"
 links:

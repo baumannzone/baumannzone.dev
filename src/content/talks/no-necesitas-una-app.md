@@ -1,7 +1,7 @@
 ---
 title: "No necesitas una APP para hacer eso"
 date: 2024-05-22
-event: "Codemotion Madrid 2024"
+event: "Codemotion Madrid"
 type: "conferencia"
 description: "¿Apps nativas? ¿En serio? En mi charla te demostraré cómo tu humilde navegador es en realidad un superhéroe disfrazado."
 links:

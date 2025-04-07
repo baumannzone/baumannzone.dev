@@ -1,5 +1,5 @@
 ---
-title: "CSS Battle contra Dorian Designs"
+title: "CSS Battle"
 date: 2021-04-01
 event: "Dorian Designs"
 type: "social"
