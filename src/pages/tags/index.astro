@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import { slugifyTag } from "../utils/tagUtils";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { slugifyTag } from "../../utils/tagUtils";
 
 const allPosts = await getCollection("blog");
 
@@ -32,7 +32,7 @@ const postsByTag = tags.reduce((acc, tag) => {
       {
         tags.map((tag) => (
           <a
-            href={`/tags/${slugifyTag(tag)}`}
+            href={`/tag/${slugifyTag(tag)}`}
             class="p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
           >
             <h2 class="font-semibold text-sm text-zinc-800">
@@ -75,4 +75,3 @@ const postsByTag = tags.reduce((acc, tag) => {
     </div>
   </section>
 </DefaultLayout>
-

@@ -5,7 +5,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // letras que se van a mostrar
-const letters = "RAMBITO.DEV </©☣︎❖> 2$#?6 JavaScript ♥︎♦︎♣︎♠︎".split("");
+const letters = "".split("");
 const fontSize = 15;
 const spacing = fontSize * 1.5;
 const columns = Math.floor(canvas.width / spacing);

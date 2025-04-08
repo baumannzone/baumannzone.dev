@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { deslugifyTag } from "../../utils/tagUtils";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
+
+  return tags.map((tag) => ({
+    params: { tag: tag.toLowerCase().replace(/[^a-z0-9]+/g, "-") },
+    props: {
+      tag,
+      posts: allPosts.filter((post) => post.data.tags?.includes(tag)),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<DefaultLayout
+  title={`${tag} | Baumannzone.dev`}
+  description={`Artículos etiquetados con ${tag}`}
+>
+  <section class="bmn-container mx-auto mt-16 mb-32">
+    <header class="text-center">
+      <p class="text-base font-semibold leading-7 text-violet-600">/tags</p>
+      <h1 class="text-4xl font-bold mb-8">{tag}</h1>
+    </header>
+
+    <div class="space-y-4">
+      <ul class="space-y-2">
+        {
+          posts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.slug}`}
+                class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
+              >
+                <span class="text-zinc-800">{post.data.title}</span>
+                <span class="text-sm text-zinc-400">
+                  <FormattedDate date={post.data.pubDate} type="pubDate" />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</DefaultLayout>
