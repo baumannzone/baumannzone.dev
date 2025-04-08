@@ -3,7 +3,7 @@ title: "Personalizar cómo se ven los objetos en las DevTools"
 description: "Aprende a usar Custom Object Formatters para hacer que tus objetos en la consola de DevTools se vean más bonitos, útiles y fáciles de entender."
 pubDate: 2025-04-07
 published: true
-tags: ["DevTools", "JavaScript"]
+tags: ["DevTools", "JavaScript", "TIL"]
 author: Jorge Baumann
 type: blog
 ---
