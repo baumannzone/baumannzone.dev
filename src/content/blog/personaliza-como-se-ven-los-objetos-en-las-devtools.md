@@ -16,7 +16,8 @@ Veamos algunos ejemplos de cómo se ven diferentes tipos de datos en la consola:
 
 ![Ejemplo de cómo se ven diferentes tipos de datos en la consola](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/console.png)
 
-Pero... ¿y si tú quieres algo más? Algo que diga: "_este objeto es especial_"
+Pero... ¿y si tú quieres algo más? Algo que diga: "_este objeto es el MVP de mi aplicación_"
+![Ejemplo de cómo se ven diferentes tipos de datos en la consola](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/mvp.png)
 
 Bienvenido a los `Custom Object Formatters`, una función no tan conocida que te deja customizar cómo se muestran tus objetos en las DevTools. Puedes hacer que tus objetos aparezcan con estilos personalizados, colores, e incluso con emojis.
 
@@ -59,7 +60,17 @@ class UserBadge {
 }
 ```
 
-Ahora quieres que al hacer `console.log(miUsuario)` en las DevTools, no salga esa cosa gris deprimente, sino algo que tenga estilo. Entonces haces tu custom formatter:
+Y quieres crear un nuevo usuario:
+
+```javascript
+const admin = new UserBadge("Baumannzone", "Admin");
+```
+
+Si lo imprimimos en la consola, se verá así _(de triste)_:
+
+![Ejemplo de cómo se ven diferentes tipos de datos en la consola](../../assets/blog/personaliza-como-se-ven-los-objetos-en-las-devtools/no-format.png)
+
+Ahora quieres que al hacer `console.log(admin)` en las DevTools, no salga esa cosa gris y roja deprimente, sino algo que tenga estilo. Entonces haces tu custom formatter:
 
 ```javascript
 const userBadgeFormatter = {
