@@ -6,7 +6,6 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
-  - Design Patterns
 ---
 
 Cuando estás desarrollando con JavaScript, existe la posibilidad de que haya una función o variable con el mismo nombre en otros archivos JavaScript escritos por otros desarrolladores o en librerías de terceros. Si incluyes estos archivos en una sola página web, puede ser que se contamine el _scope global_ teniendo varias funciones o variables con el mismo nombre.
@@ -15,7 +14,7 @@ Tomemos como ejemplo dos archivos JavaScript que contienen una función con el m
 
 ```js
 // file-1.js
-const name = 'Baumann';
+const name = "Baumann";
 function sayHello() {
   console.log(`Hello, ${name}!`);
 }
@@ -24,7 +23,7 @@ sayHello();
 
 ```js
 // file-2.js
-const name = 'Rambito.js 🐶';
+const name = "Rambito.js 🐶";
 function sayHello() {
   console.log(`Hello, ${name}!`);
 }
@@ -58,7 +57,6 @@ Esto sucede porque la última función que se ejecuta es la que está en el arch
 
 Las IIFE solucionan este problema ya que tienen su propio scope y evitan que las variables y funciones sean globales. En este artículo veremos cómo funcionan y cómo podemos usarlas.
 
-
 ## ¿Qué es una IIFE?
 
 Una **IIFE** o **Immediately Invoked Function Expression** es una expresión de función que se ejecuta inmediatamente después de ser creada. Es un patrón de diseño muy utilizado en JavaScript. También se las conoce como _funciones autoejecutables_, _funciones autoinvocadas_ o _funciones anónimas autoejecutables_.
@@ -67,14 +65,13 @@ La principal característica de este patrón de diseño es que las funciones se 
 
 ```js
 (function () {
-  const name = 'Baumann';
+  const name = "Baumann";
   console.log(`Hello, ${name}!`);
-})(); 
+})();
 
 // Llama a la función inmediatamente después de definirla
 // con los paréntesis del final.
 ```
-
 
 Cuando declaras una variable dentro de una función sólo podrás acceder a su valor dentro de esa función, independientemente de si la función es autoejecutable o no. Esto es una característica de JavaScript que se conoce como _scope_, alcance o ámbito.
 
@@ -97,15 +94,14 @@ Los paréntesis `()` juegan un papel importante en el patrón IIFE. En JavaScrip
 
 Una IIFE se compone de dos partes:
 
-  1. Una expresión de función anónima con paréntesis alrededor de ella ([el operador de agrupación](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping)).
-  2. Los paréntesis alrededor de la expresión de función anónima para invocarla inmediatamente.
-
+1. Una expresión de función anónima con paréntesis alrededor de ella ([el operador de agrupación](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping)).
+2. Los paréntesis alrededor de la expresión de función anónima para invocarla inmediatamente.
 
 Para crear una IIFE, lo primero que vas a hacer es crear una expresión de función, como sueles hacerlo normalmente:
 
 ```js
 const myFunction = function () {
-  console.log('Hello, Developer! 👋');
+  console.log("Hello, Developer! 👋");
 };
 ```
 
@@ -113,7 +109,7 @@ Luego, envuelves la expresión de función en paréntesis. Los paréntesis no pu
 
 ```js
 (function () {
-  console.log('Hello, Developer! 👋');
+  console.log("Hello, Developer! 👋");
 });
 ```
 
@@ -121,7 +117,7 @@ Por último debes agregar el operador paréntesis `()` al final de la expresión
 
 ```js
 (function () {
-  console.log('Hello, Developer! 👋');
+  console.log("Hello, Developer! 👋");
 })();
 ```
 
@@ -134,11 +130,12 @@ Además se resuelve el problema que teníamos antes con los archivos `file-1.js`
 Estos son algunas de las ventajas y usos comunes que tienen las IIFE en JavaScript:
 
 ### Proteger el alcance de variables y funciones
+
 Las IIFE se utilizan a menudo en JavaScript para crear un scope local y evitar contaminar el ámbito scope global, es decir, para crear un ámbito de ejecución aislado y evitar la contaminación del ámbito global. Al crear una IIFE y definir variables y funciones dentro de ella, esas variables y funciones solo estarán disponibles dentro de la función (como en cualquier otra función normal) y no se agregarán al scope global.
 
 ```js
 (function () {
-  const name = 'Baumann';
+  const name = "Baumann";
   function sayHello() {
     console.log(`Hello, ${name}!`);
   }
@@ -149,11 +146,12 @@ sayHello(); // ✕ ReferenceError: sayHello is not defined
 ```
 
 ### Evitar conflictos de nombres
+
 Evitar conflictos de nombres y mejorar la organización del código o para evitar que las variables se sobreescriban o se modifiquen por accidente. Sobre todo si tienes varias bibliotecas o fragmentos de código que usan el mismo nombre para sus variables o funciones.
 
 ```js
 (function () {
-  const name = 'Baumann';
+  const name = "Baumann";
   function sayHello() {
     console.log(`Hello, ${name}!`);
   }
@@ -161,7 +159,7 @@ Evitar conflictos de nombres y mejorar la organización del código o para evita
 })();
 
 (function () {
-  const name = 'Rambito.js 🐶';
+  const name = "Rambito.js 🐶";
   function sayHello() {
     console.log(`Hello, ${name}!`);
   }
@@ -173,8 +171,8 @@ Evitar conflictos de nombres y mejorar la organización del código o para evita
 ```
 
 ### Mejorar la organización del código.
-Al agrupar código relacionado dentro de una IIFE, puedes mejorar la legibilidad y mantenibilidad de tu código.
 
+Al agrupar código relacionado dentro de una IIFE, puedes mejorar la legibilidad y mantenibilidad de tu código.
 
 ¿Conoces alguna otra ventaja de usar IIFE en JavaScript? ¡Cuéntamelo en los comentarios! 👇
 
@@ -192,7 +190,6 @@ Las IIFE son útiles en diversos casos, pero hay algunas situaciones en las que 
 
 Es importante tener en cuenta que las IIFE son una herramienta más en el arsenal de un programador JavaScript, y deben utilizarse cuando se ajusten a las necesidades del código en cuestión.
 
-
 ## Curiosidades sobre las IIFE
 
 Esta información es interesante para profundizar en el tema, pero no es necesaria para entender el concepto de IIFE en JavaScript.
@@ -202,7 +199,7 @@ Las IIFE soportan parámetros y retornos:
 ```js
 (function (name) {
   console.log(`Hello, ${name}!`);
-})('Baumann');
+})("Baumann");
 
 // Hello, Baumann!
 ```
@@ -224,39 +221,39 @@ Las IIFE también pueden ser escritas de la siguiente manera:
 ```js
 // Paréntesis internos (recomendada por Crockford)
 (function () {
-  console.log('Hello, Developer! 👋');
-}());
+  console.log("Hello, Developer! 👋");
+})();
 
 // Arrow functions
 (() => {
-  console.log('Hello, Developer! 👋');
+  console.log("Hello, Developer! 👋");
 })();
 
 // Operador negación
-!function () {
-  console.log('Hello, Developer! 👋');
-}();
+!(function () {
+  console.log("Hello, Developer! 👋");
+})();
 ```
 
 - Si no te importa el valor de retorno
 
 ```js
-~function (){}(); // -1
-+function (){}(); // NaN
--function (){}(); // NaN
+~(function () {})(); // -1
++(function () {})(); // NaN
+-(function () {})(); // NaN
 ```
 
 - Otras formas menos habituales y más rebuscadas:
 
 ```js
 // Operador void
-void function (){}();
+void (function () {})();
 
 // Operador new
-new function (){}();
+new (function () {})();
 
-true && function (){}();
-42,function (){}();
+true && (function () {})();
+42, (function () {})();
 
 // etc
 ```
@@ -265,8 +262,8 @@ Podríamos seguir con más formas de escribir una IIFE, pero con estas ya tienes
 
 La mayoría de formas alternativas no las vas a usar, ya que son formas de escribir código bastante confusas, pero usadas a menudo cuando haces **code golfing** o para minificar código.
 
-
 ## ¿Quieres seguir aprendiendo?
+
 Ahora que sabes qué son las expresiones de función inmediatamente invocadas en JavaScript, es momento de seguir aprendiendo. Sígueme en [Instagram](https://www.instagram.com/baumannzone/) y comparte este artículo para que más personas puedan aprender JavaScript.
 
 ¿Conocías las IIFE? ¿Las has usado alguna vez? ¡Cuéntamelo en los comentarios! 👇
