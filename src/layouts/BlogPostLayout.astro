@@ -6,6 +6,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 import SharePostBar from "../components/SharePostBar.astro";
 import NavBar from "../components/NavBar.astro";
 import { stringToKebabCase } from "../utils/main";
+import { slugifyTag } from "../utils/tagUtils";
 
 type Props = CollectionEntry<"blog">["data"] & {
   id: string;
@@ -51,11 +52,11 @@ const showComments = !import.meta.env.DEV;
             <ul class="flex gap-x-4 text-xs mt-4 mb-8">
               {tags.map((tag) => (
                 <li>
-                  {/* <a href={`/tags/${stringToKebabCase(tag)}`}> */}
-                  <span class="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500">
-                    {tag}
-                  </span>
-                  {/* </a> */}
+                  <a href={`/tags/${slugifyTag(tag)}`}>
+                    <span class="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500">
+                      {tag}
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
