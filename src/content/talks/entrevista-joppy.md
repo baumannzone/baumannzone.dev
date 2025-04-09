@@ -1,7 +1,7 @@
 ---
 title: "Entrevista con Jorge Baumann"
 date: 2024-11-29
-event: "Entrevista Joppy"
+event: "Joppy"
 type: "artículo"
 description: "Una entrevista personal sobre mi trayectoria en el desarrollo web y el crecimiento profesional"
 links:
