@@ -22,12 +22,17 @@ const talksByYear = talks.reduce(
 const years = Object.keys(talksByYear)
   .map(Number)
   .sort((a, b) => b - a);
+
+// Sort talks within each year by date (newest first)
+Object.keys(talksByYear).forEach((year) => {
+  talksByYear[Number(year)].sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  );
+});
 ---
 
 <Layout title="Talks | baumannzone.dev">
-  <main
-    class="max-w-7xl mx-auto pt-16 px-0 bg-gray-50 border-x border-zinc-200"
-  >
+  <main class="bmn-container mx-auto pt-16 pb-24">
     <header class="text-center mx-auto max-w-3xl">
       <p class="text-base font-semibold leading-7 text-violet-600">/talks</p>
       <h1 class="text-4xl font-semibold mb-8">Charlas</h1>
@@ -37,16 +42,13 @@ const years = Object.keys(talksByYear)
       </p>
     </header>
 
-    <section
-      class="bg-white m-2 px-4 sm:px-6 lg:px-8 rounded-xl border border-zinc-200"
-    >
+    <section class="bg-white m-2 px-4 sm:px-6 lg:px-8">
       {
         years.map((year) => (
           <div class="pb-12">
-            <div class="sticky top-0 z-10 bg-white/50 backdrop-blur-sm pt-4 pb-3 mb-1">
-              <h2 class="text-xl font-bold flex gap-[2px] items-center">
-                {/* <span class="flex h-2 w-2 translate-y-1 rounded-full bg-violet-500 relative top-[-2px]" /> */}
-                {/* <span class="text-violet-500">/</span> */}
+            <div class="sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1">
+              <h2 class="text-lg tracking-tighter font-bold flex gap-[2px]">
+                <span class="font-mono text-violet-500/50">/</span>
                 {year}
               </h2>
             </div>
@@ -60,7 +62,7 @@ const years = Object.keys(talksByYear)
                   <div class="rounded-xl border h-full">
                     <div class="flex flex-col space-y-1.5 p-6 relative">
                       <div class="text-sm text-zinc-500">{talk.data.event}</div>
-                      <div class="tracking-tight @[250px]/card:text-3xl text-2xl font-semibold tabular-nums text-zinc-950">
+                      <div class="text-2xl font-semibold tabular-nums text-zinc-950">
                         {talk.data.title}
                       </div>
                       <div class="absolute right-4 top-4 bg-white rounded-lg">
@@ -78,7 +80,7 @@ const years = Object.keys(talksByYear)
       }
     </section>
 
-    <div class="bg-white px-4 sm:px-6 lg:px-8 mt-12 rounded-t-xl">
+    <section class="bg-gray-50 px-4 sm:px-6 lg:px-8 mt-12 rounded-t-xl">
       <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <h2
@@ -113,6 +115,6 @@ const years = Object.keys(talksByYear)
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </Layout>

@@ -13,4 +13,10 @@ links:
     url: "https://www.youtube.com/watch?v=n7E5Go0I2fs"
 ---
 
+En este workshop, construimos un clon de Hacker News utilizando Alpine.js y Tailwind CSS desde cero.
+
+<!-- /src/content/blog/creando-un-clon-de-hacker-news-con-alpinejs-y-tailwind-css.md -->
+
+Puedes leer el artículo completo en mi blog: [Creando un clon de Hacker News con Alpine.js y Tailwind CSS](https://baumannzone.dev/blog/creando-un-clon-de-hacker-news-con-alpinejs-y-tailwind-css).
+
 ![Workshop Alpine.js - Campsite Academy](../../assets/talks/alpine-hacker-news/main.png)
