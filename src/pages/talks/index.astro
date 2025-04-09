@@ -57,16 +57,21 @@ Object.keys(talksByYear).forEach((year) => {
               {talksByYear[year].map((talk) => (
                 <a
                   href={`/talks/${talk.slug}`}
-                  class="block hover:bg-gray-100/50 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                  class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
                 >
-                  <div class="rounded-xl border h-full">
+                  <div class="rounded-xl border-2 border-zinc-200 h-full">
                     <div class="flex flex-col space-y-1.5 p-6 relative">
                       <div class="text-sm text-zinc-500">{talk.data.event}</div>
                       <div class="text-2xl font-semibold tabular-nums text-zinc-950">
                         {talk.data.title}
                       </div>
-                      <div class="absolute right-4 top-4 bg-white rounded-lg">
-                        <div class="border px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-gray-200 transition-colors">
+                      <div class="text-xs text-zinc-500">
+                        {talk.data.date.toLocaleDateString("es-ES", {
+                          month: "long",
+                        })}
+                      </div>
+                      <div class="absolute right-4 top-4 bg-zinc-200 rounded-lg">
+                        <div class="px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors">
                           {talk.data.type}
                         </div>
                       </div>
