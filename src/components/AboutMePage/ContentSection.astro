@@ -1,12 +1,17 @@
 ---
-import { calculateCoffees } from '../../utils/main';
+import { calculateCoffees } from "../../utils/main";
+import { getCollection } from "astro:content";
 
 // Calcular el número de cafés consumidos
 const totalCoffees = calculateCoffees();
 // const totalCoffees = 0;
 
+// Get total talks
+const talks = await getCollection("talks");
+const totalTalks = talks.length;
+
 // Calcular la edad en milisegundos
-const birthDate = new Date('1988-01-21');
+const birthDate = new Date("1988-01-21");
 const currentDate = new Date();
 const ageInMilliseconds = currentDate.getTime() - birthDate.getTime();
 
@@ -16,7 +21,7 @@ if (import.meta.env.DEV) {
   githubPublicRepos = 123;
 } else {
   // Calcular el numero de repositorios de GitHub
-  const githubUsername = 'baumannzone';
+  const githubUsername = "baumannzone";
   const githubToken = import.meta.env.GITHUB_TOKEN;
 
   const githubResponse = await fetch(
@@ -32,95 +37,108 @@ const { totalPosts } = Astro.props;
 ---
 
 <!-- Content section -->
-<div class='mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8'>
-  <div class='mx-auto max-w-2xl lg:mx-0 lg:max-w-none'>
-    <h2 class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+<div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+  <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
       Más sobre mí
     </h2>
-    <div class='mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row'>
-      <div class='lg:w-full lg:max-w-2xl lg:flex-auto'>
-        <p class='text-xl leading-8 text-gray-600 text-balance'>
+    <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
+      <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+        <p class="text-xl leading-8 text-gray-600 text-balance">
           Soy un full stack developer con más de 10 años de experiencia. Hago
           dibujos con <span
-            class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+            class="font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
             >CSS</span
           >, disfruto dando charlas y siendo speaker, y me encanta compartir lo
           que aprendo con la comunidad.
         </p>
-        <div class='mt-10 max-w-xl text-base leading-7 text-gray-700'>
+        <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
           <p>
             Nací hace
-            <span class='tabular-nums' id='milliseconds' title='1988'>
+            <span class="tabular-nums" id="milliseconds" title="1988">
               {ageInMilliseconds}
             </span>
             milisegundos. Me crié en <span
-              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500'
+              class="font-medium bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500"
               >Madrid</span
             >, ciudad en la que actualmente resido. Despues de finalizar un
             grado superior en sistemas informaticos, estuve trabajando como
             administrador de sistemas. Un par de años después me matriculé en la
             universidad rey Juan Carlos para estudiar ingeniería informática.
           </p>
-          <p class='mt-6'>
+          <p class="mt-6">
             Soy un web developer y creador de contenido con más de una década de
             experiencia. Trabajo principalmente con tecnologías web como HTML,
             CSS y JavaScript. Me considero un <span
-              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'
+              class="font-medium bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
               >hacker</span
             > en el sentido de que siempre estoy utilizando la tecnología para resolver
             mis problemas y necesidades diarias o para experimentar con nuevas ideas.
           </p>
-          <p class='mt-6'>
+          <p class="mt-6">
             Tengo varios hobbies. Además del mundo tech, soy un apasionado del
             <span
-              class='font-medium bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-violet-500'
+              class="font-medium bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-violet-500"
               >fitness</span
             >. También me encantan los <a
-              href='https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B/'
-              class='font-medium text-violet-800 underline underline-offset-1 hover:text-violet-600 transition-all duration-200 ease-in-out hover:underline-offset-2'
+              href="https://www.amazon.es/hz/wishlist/ls/30ZEY7KGVYF0B/"
+              class="font-medium text-violet-800 underline underline-offset-1 hover:text-violet-600 transition-all duration-200 ease-in-out hover:underline-offset-2"
               >juegos de mesa</a
-            > y los videojuegos. Tengo una larga <span title='sin usar 😂'
+            > y los videojuegos. Tengo una larga <span title="sin usar 😂"
               >lista</span
             > de ambos.
           </p>
         </div>
       </div>
-      <div class='lg:flex lg:flex-auto lg:justify-center'>
-        <dl class='w-64 space-y-8 xl:w-80'>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
+
+      <!-- Stats -->
+      <div class="lg:flex lg:flex-auto lg:justify-center">
+        <dl class="w-64 space-y-8 xl:w-80">
+          <div class="flex flex-col-reverse gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">
               Artículos publicados
             </dt>
             <dd
-              id='totalPosts'
+              id="totalPosts"
               data-value={totalPosts}
-              class='text-5xl font-semibold tracking-tight text-gray-900'
+              class="text-5xl font-semibold tracking-tight text-gray-900"
             >
               {totalPosts}
             </dd>
           </div>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
-              Repositorios en GitHub <span class='text-gray-400'
-                >(públicos)</span
-              >
+          <div class="flex flex-col-reverse gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">
+              Repositorios en GitHub
+              <span class="text-gray-400">(públicos)</span>
             </dt>
             <dd
-              id='totalRepos'
+              id="totalRepos"
               data-value={githubPublicRepos}
-              class='text-5xl font-semibold tracking-tight text-gray-900'
+              class="text-5xl font-semibold tracking-tight text-gray-900"
             >
               {githubPublicRepos}
             </dd>
           </div>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
+          <div class="flex flex-col-reverse gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">
               Cafés consumidos desde 2015
             </dt>
-            <dd class='text-5xl font-semibold tracking-tight text-gray-900'>
-              ± <span id='totalCoffees' data-value={totalCoffees}
+            <dd class="text-5xl font-semibold tracking-tight text-gray-900">
+              ± <span id="totalCoffees" data-value={totalCoffees}
                 >{totalCoffees}</span
               >
+            </dd>
+          </div>
+          <div class="flex flex-col-reverse gap-y-4">
+            <dt class="text-base leading-7 text-gray-600">
+              Charlas <span class="text-gray-400">(o conferencias)</span>
+            </dt>
+            <dd
+              id="totalTalks"
+              data-value={totalTalks}
+              class="text-5xl font-semibold tracking-tight text-gray-900"
+            >
+              {totalTalks}
             </dd>
           </div>
         </dl>
@@ -132,8 +150,8 @@ const { totalPosts } = Astro.props;
 <script>
   // Update the age in milliseconds every 100ms
   // ------------------------------------------
-  const birthDate = new Date('1988-01-21');
-  const ms = document.getElementById('milliseconds') as HTMLSpanElement;
+  const birthDate = new Date("1988-01-21");
+  const ms = document.getElementById("milliseconds") as HTMLSpanElement;
 
   function updateAgeInMilliseconds() {
     const currentDate = new Date();
@@ -172,7 +190,7 @@ const { totalPosts } = Astro.props;
     requestAnimationFrame(run);
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const observerCallback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -194,8 +212,9 @@ const { totalPosts } = Astro.props;
       observerOptions,
     );
 
-    observer.observe(document.getElementById('totalPosts') as HTMLElement);
-    observer.observe(document.getElementById('totalRepos') as HTMLElement);
-    observer.observe(document.getElementById('totalCoffees') as HTMLElement);
+    observer.observe(document.getElementById("totalPosts") as HTMLElement);
+    observer.observe(document.getElementById("totalRepos") as HTMLElement);
+    observer.observe(document.getElementById("totalCoffees") as HTMLElement);
+    observer.observe(document.getElementById("totalTalks") as HTMLElement);
   });
 </script>
