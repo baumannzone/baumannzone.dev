@@ -30,7 +30,12 @@ const { Content } = await talk.render();
             })
           }
         </time>
-        <h1 class="text-4xl font-bold mb-4">{talk.data.title}</h1>
+        <h1
+          class="text-4xl font-bold mb-4"
+          style={`view-transition-name: talk-${talk.slug}`}
+        >
+          {talk.data.title}
+        </h1>
         <div class="flex justify-between gap-4 text-gray-600">
           <span>{talk.data.event}</span>
         </div>

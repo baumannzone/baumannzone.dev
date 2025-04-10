@@ -32,7 +32,10 @@ const { tag, posts } = Astro.props;
   <section class="bmn-container mx-auto mt-16 mb-32">
     <header class="text-center mb-8">
       <p class="text-base font-semibold leading-7 text-violet-600">/tags</p>
-      <h1 class="text-4xl font-bold">
+      <h1
+        class="text-4xl font-bold"
+        style={`view-transition-name: tag-${getTagUrl(tag)}`}
+      >
         {tag === TIL ? "Today I Learned" : tag}
         <span class="text-2xl text-gray-500">
           ({posts.length})
@@ -54,7 +57,10 @@ const { tag, posts } = Astro.props;
               >
                 <div class="rounded-xl border-2 border-zinc-200">
                   <div class="flex justify-between gap-4 items-start px-6 py-4">
-                    <span class="font-medium text-zinc-800">
+                    <span
+                      class="font-medium text-zinc-800"
+                      style={`view-transition-name: post-${post.slug}`}
+                    >
                       {post.data.title}
                     </span>
                     <span class="text-sm text-zinc-400 tabular-nums whitespace-nowrap">
