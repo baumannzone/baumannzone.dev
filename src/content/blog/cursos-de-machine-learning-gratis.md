@@ -5,7 +5,7 @@ pubDate: 2022-12-13
 type: blog
 author: Jorge Baumann
 tags:
-  - Machine Learning
+  - IA
   - Python
 ---
 
@@ -74,6 +74,4 @@ Este curso cubre los conceptos básicos de aprendizaje automático que una perso
 
 En este post de inteligencia artificial y machine learning, te he compartido mis 4 cursos (favoritos) online gratuitos para estudiar a fondo esta materia. Cada curso cubre diversos aspectos del campo, lo que actúa como una introducción perfecta al ML. Además, te dará unas bases muy sólidas para poder continuar con cursos avanzados.
 
-Si tienes alguna pregunta, déjamela en los comentarios. Si te ha gustado este post, compártelo con tus amigos en las redes sociales. Si quieres aprender más sobre inteligencia artificial, machine learning o programación, te invito a que conectemos en [Instagram](https://www.instagram.com/baumannzone/).
-
-¡Happy Artificial Learning! 🤖
+Si tienes alguna pregunta, déjamela en los comentarios. Si quieres aprender más sobre inteligencia artificial, machine learning o programación, te invito a que conectemos en [Instagram](https://www.instagram.com/baumannzone/).

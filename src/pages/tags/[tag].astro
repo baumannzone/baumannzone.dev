@@ -2,17 +2,22 @@
 import { getCollection } from "astro:content";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { deslugifyTag } from "../../utils/tagUtils";
+import { getTagUrl } from "../../utils/tags";
+import { Tags } from "../../types/tags";
+
+const TIL = Tags.TIL;
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
   const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
 
   return tags.map((tag) => ({
-    params: { tag: tag.toLowerCase().replace(/[^a-z0-9]+/g, "-") },
+    params: { tag: getTagUrl(tag) },
     props: {
       tag,
-      posts: allPosts.filter((post) => post.data.tags?.includes(tag)),
+      posts: allPosts
+        .filter((post) => post.data.tags?.includes(tag))
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()),
     },
   }));
 }
@@ -25,9 +30,17 @@ const { tag, posts } = Astro.props;
   description={`Artículos etiquetados con ${tag}`}
 >
   <section class="bmn-container mx-auto mt-16 mb-32">
-    <header class="text-center">
+    <header class="text-center mb-8">
       <p class="text-base font-semibold leading-7 text-violet-600">/tags</p>
-      <h1 class="text-4xl font-bold mb-8">{tag}</h1>
+      <h1 class="text-4xl font-bold">
+        {tag === TIL ? "Today I Learned" : tag}
+        <span class="text-2xl text-gray-500">
+          ({posts.length})
+        </span>
+      </h1>
+      <p class="text-zinc-500">
+        {tag === TIL ? "Artículos sobre cosas que aprendí hoy" : null}
+      </p>
     </header>
 
     <div class="space-y-4">
@@ -37,12 +50,18 @@ const { tag, posts } = Astro.props;
             <li>
               <a
                 href={`/blog/${post.slug}`}
-                class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
+                class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
               >
-                <span class="text-zinc-800">{post.data.title}</span>
-                <span class="text-sm text-zinc-400">
-                  <FormattedDate date={post.data.pubDate} type="pubDate" />
-                </span>
+                <div class="rounded-xl border-2 border-zinc-200">
+                  <div class="flex justify-between gap-4 items-start px-6 py-4">
+                    <span class="font-medium text-zinc-800">
+                      {post.data.title}
+                    </span>
+                    <span class="text-sm text-zinc-400 tabular-nums whitespace-nowrap">
+                      <FormattedDate date={post.data.pubDate} type="pubDate" />
+                    </span>
+                  </div>
+                </div>
               </a>
             </li>
           ))
