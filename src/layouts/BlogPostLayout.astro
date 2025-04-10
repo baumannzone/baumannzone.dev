@@ -5,8 +5,7 @@ import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import SharePostBar from "../components/SharePostBar.astro";
 import NavBar from "../components/NavBar.astro";
-import { stringToKebabCase } from "../utils/main";
-import { slugifyTag } from "../utils/tagUtils";
+import { getTagUrl } from "../utils/tags";
 
 type Props = CollectionEntry<"blog">["data"] & {
   id: string;
@@ -52,7 +51,7 @@ const showComments = !import.meta.env.DEV;
             <ul class="flex gap-x-4 text-xs mt-4 mb-8">
               {tags.map((tag) => (
                 <li>
-                  <a href={`/tags/${slugifyTag(tag)}`}>
+                  <a href={`/tags/${getTagUrl(tag)}`}>
                     <span class="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500">
                       {tag}
                     </span>
@@ -64,7 +63,7 @@ const showComments = !import.meta.env.DEV;
         }
       </header>
       <article
-        class="prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-600"
+        class="prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600"
         itemprop="articleBody"
       >
         <slot />

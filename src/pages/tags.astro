@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import { slugifyTag } from "../utils/tagUtils";
+import { getTagUrl } from "../utils/tags";
 
 const allPosts = await getCollection("blog");
 
@@ -13,7 +13,9 @@ const tags = [
 
 // Group posts by tag
 const postsByTag = tags.reduce((acc, tag) => {
-  acc[tag] = allPosts.filter((post) => post.data.tags?.includes(tag));
+  acc[tag] = allPosts
+    .filter((post) => post.data.tags?.includes(tag))
+    .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   return acc;
 }, {});
 ---
@@ -28,16 +30,16 @@ const postsByTag = tags.reduce((acc, tag) => {
       <h1 class="text-4xl font-bold mb-8">Tags</h1>
     </header>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+    <div class="flex flex-wrap gap-x-2 gap-y-2 mb-12">
       {
         tags.map((tag) => (
           <a
-            href={`/tags/${slugifyTag(tag)}`}
-            class="p-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+            href={`/tags/${getTagUrl(tag)}`}
+            class="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
           >
-            <h2 class="font-semibold text-sm text-zinc-800">
+            <h2 class="font-medium text-sm text-zinc-800 whitespace-nowrap">
               {tag}
-              <span class="text-sm text-gray-500 ml-2">
+              <span class="text-xs font-semibold font-mono text-gray-500 ml-2">
                 ({postsByTag[tag].length})
               </span>
             </h2>
@@ -46,25 +48,54 @@ const postsByTag = tags.reduce((acc, tag) => {
       }
     </div>
 
+    <div class="mx-auto mt-20 mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Listado de posts por tag
+      </h2>
+      <p class="mt-2 text-lg leading-8 text-gray-600">
+        Desde lo más leído hasta lo más ignorado, todos los artículos agrupados
+        por etiqueta.
+      </p>
+    </div>
+
     {/* Segunda sección: Listado de posts por tag */}
-    <div class="space-y-16">
+    <div class="border-t border-zinc-200 pt-16 space-y-16">
       {
         tags.map((tag) => (
-          <section id={slugifyTag(tag)} class="space-y-4">
-            <h2 class="text-2xl font-semibold text-zinc-800">
-              {tag} ({postsByTag[tag].length})
-            </h2>
+          <section id={getTagUrl(tag)} class="space-y-4">
+            <div class="sticky top-0 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1">
+              <h2 class="text-lg font-bold flex gap-[2px] items-center">
+                <span class="font-mono text-violet-500/50">/</span>
+                {tag}
+                <span class="text-sm font-mono text-gray-500 ml-2">
+                  ({postsByTag[tag].length})
+                </span>
+              </h2>
+            </div>
+
             <ul class="space-y-2">
               {postsByTag[tag].map((post) => (
                 <li>
                   <a
                     href={`/blog/${post.slug}`}
-                    class="flex justify-between items-center py-2 hover:bg-zinc-50 rounded-lg px-2 transition-colors"
+                    class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
                   >
-                    <span class="text-zinc-800">{post.data.title}</span>
-                    <span class="text-sm text-zinc-400">
-                      <FormattedDate date={post.data.pubDate} type="pubDate" />
-                    </span>
+                    <div class="rounded-xl border-2 border-zinc-200">
+                      <div class="flex justify-between gap-4 items-start px-6 py-4">
+                        <span class="font-medium text-zinc-800">
+                          {post.data.title}
+                        </span>
+                        <span class="text-sm text-zinc-400 tabular-nums whitespace-nowrap">
+                          <time datetime={post.data.pubDate}>
+                            {post.data.pubDate.toLocaleDateString("es-ES", {
+                              month: "short",
+                              day: "2-digit",
+                              year: "numeric",
+                            })}
+                          </time>
+                        </span>
+                      </div>
+                    </div>
                   </a>
                 </li>
               ))}
@@ -75,4 +106,3 @@ const postsByTag = tags.reduce((acc, tag) => {
     </div>
   </section>
 </DefaultLayout>
-

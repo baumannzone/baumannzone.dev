@@ -1,7 +1,7 @@
 ---
 import ArticleCard from "../ArticleCard.astro";
 
-const { recentPosts } = Astro.props;
+const { recentPosts, randomPost } = Astro.props;
 const firstPost = recentPosts[0];
 const otherPosts = recentPosts.slice(1);
 ---
@@ -16,18 +16,25 @@ const otherPosts = recentPosts.slice(1);
         Mejora en tu carrera profesional como developer y sube de nivel
       </p>
     </div>
-    <div
-      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:grid-cols-2"
-    >
-      <ArticleCard isFeatured post={firstPost} />
 
-      <div
-        class="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0"
-      >
-        <div class="-my-12 divide-y divide-gray-900/10">
-          {otherPosts.map((post) => <ArticleCard post={post} />)}
-        </div>
-      </div>
+    <div
+      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-16"
+      itemscope
+      itemtype="https://schema.org/Blog"
+    >
+      <meta itemprop="name" content="Baumannzone.dev Blog" />
+      <meta
+        itemprop="description"
+        content="Blog sobre desarrollo web, JavaScript, CSS y más"
+      />
+      <meta itemprop="author" content="Jorge Baumann" />
+      <meta itemprop="publisher" content="Jorge Baumann" />
+      <meta itemprop="inLanguage" content="es-ES" />
+
+      <ArticleCard post={firstPost} isNew={true} />
+      <ArticleCard post={otherPosts[0]} />
+      <ArticleCard post={otherPosts[1]} />
+      <ArticleCard post={randomPost} isRandom={true} />
     </div>
   </div>
 </div>
