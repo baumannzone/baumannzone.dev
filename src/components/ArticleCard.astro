@@ -44,6 +44,7 @@ const articleUrl = `/blog/${post.slug}`;
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       itemprop="headline"
+      style={`view-transition-name: post-${post.slug}`}
     >
       {post.data.title}
     </h2>
