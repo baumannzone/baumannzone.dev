@@ -28,14 +28,14 @@ const articleUrl = `/blog/${post.slug}`;
       />
       {
         isNew ? (
-          <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+          <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
             New
           </span>
         ) : null
       }
       {
         isRandom ? (
-          <span class="bg-violet-100 text-violet-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+          <span class="bg-violet-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
             Random
           </span>
         ) : null
@@ -47,7 +47,7 @@ const articleUrl = `/blog/${post.slug}`;
     >
       {post.data.title}
     </h2>
-    <p class="mt-4 text-sm leading-6 text-gray-600" itemprop="description">
+    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600" itemprop="description">
       {post.data.description}
     </p>
 
