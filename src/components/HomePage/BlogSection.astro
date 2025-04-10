@@ -1,9 +1,7 @@
 ---
 import ArticleCard from "../ArticleCard.astro";
 
-const { recentPosts, randomPost } = Astro.props;
-const firstPost = recentPosts[0];
-const otherPosts = recentPosts.slice(1);
+const { posts } = Astro.props;
 ---
 
 <div class="bg-white py-24 sm:py-32">
@@ -34,10 +32,71 @@ const otherPosts = recentPosts.slice(1);
       <meta itemprop="publisher" content="Jorge Baumann" />
       <meta itemprop="inLanguage" content="es-ES" />
 
-      <ArticleCard post={firstPost} isNew={true} />
-      <ArticleCard post={otherPosts[0]} />
-      <ArticleCard post={otherPosts[1]} />
-      <ArticleCard post={randomPost} isRandom={true} />
+      <ArticleCard post={posts[0]} isNew={true} />
+      <ArticleCard post={posts[1]} />
+      <ArticleCard post={posts[2]} />
+      <div id="random-post-container"></div>
     </div>
   </div>
 </div>
+
+<!-- Get all posts to get a random one -->
+<script define:vars={{ posts }}>
+  // Random post
+  const randomIndex = Math.floor(Math.random() * posts.length);
+  const randomPost = posts[randomIndex];
+
+  // Convert pubDate string to Date object
+  const pubDate = new Date(randomPost.data.pubDate);
+
+  // ADD random post to the DOM
+  const randomPostContainer = document.getElementById("random-post-container");
+  randomPostContainer.innerHTML = `
+<article itemscope itemtype="https://schema.org/Article">
+  <div class="group relative">
+    <div class="flex items-center gap-x-4 text-xs">
+      <time
+        class="text-gray-500"
+        datetime=${pubDate.toISOString()}
+      >
+        ${pubDate.toLocaleDateString("es-ES", {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+        })}
+      </time>
+      <span class="bg-violet-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
+        Random
+      </span>
+    </div>
+    <h2
+      class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
+      itemprop="headline"
+    >
+      ${randomPost.data.title}
+    </h2>
+    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600" itemprop="description">
+      ${randomPost.data.description}
+    </p>
+
+    <a
+      href=${`/blog/${randomPost.slug}`}
+      class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
+      itemprop="url"
+    >
+      <span class="absolute inset-0"></span>
+      Ver más
+      <span
+        class="inline-block ms-0 transition-transform group-hover:translate-x-1"
+      >
+        →
+      </span>
+    </a>
+
+    <meta itemprop="datePublished" content=${pubDate.toISOString()} />
+    <meta itemprop="url" content=${new URL(`/blog/${randomPost.slug}`, window.location.origin).toString()} />
+    <meta itemprop="author" content=${randomPost.data.author} />
+  </div>
+</article>
+  `;
+</script>

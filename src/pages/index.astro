@@ -7,16 +7,9 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.published !== false)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-// Seleccionar los tres primeros artículos
-const recentPosts = posts.slice(0, 3);
-
-// Seleccionar un artículo aleatorio de todos los posts
-const randomIndex = Math.floor(Math.random() * posts.length);
-const randomPost = posts[randomIndex];
 ---
 
 <DefaultLayout>
   <ProfileSection />
-  <BlogSection recentPosts={recentPosts} randomPost={randomPost} />
+  <BlogSection posts={posts} />
 </DefaultLayout>
