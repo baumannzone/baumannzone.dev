@@ -72,6 +72,7 @@ const { posts } = Astro.props;
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       itemprop="headline"
+      style="${`view-transition-name: post-${randomPost.slug}`}"
     >
       ${randomPost.data.title}
     </h2>

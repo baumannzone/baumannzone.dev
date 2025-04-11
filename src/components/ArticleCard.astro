@@ -3,18 +3,16 @@ import FormattedDate from "./FormattedDate.astro";
 
 // isBlog: blog post in the blog page
 // isNew: newest post with green label
-// isRandom: random post from all posts
 // Otherwise, blog post in the home page
 interface Props {
   isNew?: boolean;
-  isRandom?: boolean;
   post: {
     slug: string;
     data: any;
   };
 }
 
-const { post, isNew = false, isRandom = false } = Astro.props;
+const { post, isNew = false } = Astro.props;
 const articleUrl = `/blog/${post.slug}`;
 ---
 
@@ -29,14 +27,7 @@ const articleUrl = `/blog/${post.slug}`;
       {
         isNew ? (
           <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
-            New
-          </span>
-        ) : null
-      }
-      {
-        isRandom ? (
-          <span class="bg-violet-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
-            Random
+            🔥 New
           </span>
         ) : null
       }
