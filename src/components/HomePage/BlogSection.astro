@@ -2,6 +2,8 @@
 import ArticleCard from "../ArticleCard.astro";
 
 const { posts } = Astro.props;
+// Todos los post menos los 3 primeros
+const otherPosts = posts.slice(3);
 ---
 
 <div class="bg-white py-24 sm:py-32">
@@ -41,10 +43,10 @@ const { posts } = Astro.props;
 </div>
 
 <!-- Get all posts to get a random one -->
-<script define:vars={{ posts }}>
+<script define:vars={{ otherPosts }}>
   // Random post
-  const randomIndex = Math.floor(Math.random() * posts.length);
-  const randomPost = posts[randomIndex];
+  const randomIndex = Math.floor(Math.random() * otherPosts.length);
+  const randomPost = otherPosts[randomIndex];
 
   // Convert pubDate string to Date object
   const pubDate = new Date(randomPost.data.pubDate);
