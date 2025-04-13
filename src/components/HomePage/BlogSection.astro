@@ -53,6 +53,7 @@ const otherPosts = posts.slice(3);
 
   // ADD random post to the DOM
   const randomPostContainer = document.getElementById("random-post-container");
+  // Article card with random post
   randomPostContainer.innerHTML = `
 <article itemscope itemtype="https://schema.org/Article">
   <div class="group relative">
@@ -68,7 +69,7 @@ const otherPosts = posts.slice(3);
         })}
       </time>
       <span class="bg-violet-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
-        Random
+        ✨ Random
       </span>
     </div>
     <h2

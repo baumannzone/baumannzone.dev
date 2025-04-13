@@ -20,16 +20,16 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
 <div class="max-w-[760px] mx-auto">
   <!-- Share -->
   <div
-    class="mb-12 flex flex-col flex-wrap justify-between gap-2 border-b border-gray-200 pb-12 text-base text-slate-500 md:flex-row lg:pb-6"
+    class="mb-12 flex flex-col flex-wrap justify-between gap-4 border-b border-gray-200 pb-12 text-base text-slate-500 sm:flex-row lg:pb-6"
   >
-    <div class="flex">
+    <div class="grid grid-cols-2 gap-4 md:flex md:flex-row md:items-center">
       <a
         class="underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white"
         target="_blank"
         rel="noreferrer noopener"
         href={twitterShareUrl}>Compartir en 𝕏</a
       >
-      <span class="mx-3 self-center text-xs">•</span>
+      <span class="hidden md:inline-block mx-3 self-center text-xs">•</span>
       <a
         class="underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white"
         target="_blank"
@@ -37,7 +37,6 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
         href={threadsShareUrl}
       >
         Compartir en
-
         <svg
           role="img"
           viewBox="0 0 24 24"
@@ -52,7 +51,7 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
           </path>
         </svg>
       </a>
-      <span class="mx-3 self-center text-xs">•</span>
+      <span class="hidden md:inline-block mx-3 self-center text-xs">•</span>
       <a
         class="underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white"
         target="_blank"
@@ -77,7 +76,8 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
         </svg>
       </a>
     </div>
-    <div class="flex">
+
+    <div class="flex mt-4 md:mt-0">
       <a
         class="underlined hover:text-black focus:text-black focus:outline-none dark:text-white dark:hover:text-white dark:focus:text-white"
         target="_blank"
@@ -112,7 +112,7 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
 
       <a
         href="/about"
-        class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
+        class="text-sm leading-6 text-gray-700 hover:text-white focus:text-white underlined"
       >
         Sobre mí
       </a>
