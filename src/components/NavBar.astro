@@ -2,12 +2,12 @@
 const currentPath = Astro.url.pathname;
 
 const links = [
-  // { href: "/", text: "Inicio" },
-  { href: "/blog", text: "Blog" },
-  { href: "/tags", text: "Tags" },
-  { href: "/talks", text: "Charlas" },
-  { href: "/uses", text: "Setup", showDot: true },
-  { href: "/about", text: "Sobre mí" },
+  { href: "/", text: "Inicio", showInDesktop: false },
+  { href: "/blog", text: "Blog", showInDesktop: true },
+  { href: "/tags", text: "Tags", showInDesktop: true },
+  { href: "/talks", text: "Charlas", showInDesktop: true },
+  { href: "/uses", text: "Setup", showDot: true, showInDesktop: true },
+  { href: "/about", text: "Sobre mí", showInDesktop: true },
 ];
 ---
 
@@ -43,17 +43,19 @@ const links = [
 
         <div class="hidden sm:ml-6 sm:flex sm:space-x-5" id="desktop-menu">
           {
-            links.map((link) => (
-              <a
-                href={link.href}
-                class="relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white"
-              >
-                {link.text}
-                {/* {link.showDot && (
+            links
+              .filter((link) => link.showInDesktop)
+              .map((link) => (
+                <a
+                  href={link.href}
+                  class="relative inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white"
+                >
+                  {link.text}
+                  {/* {link.showDot && (
                   <span class='absolute right-0 top-[25px] block h-[5px] w-[5px] rounded-full bg-green-400 ring-2 ring-white' />
                 )} */}
-              </a>
-            ))
+                </a>
+              ))
           }
         </div>
       </div>
@@ -100,7 +102,11 @@ const links = [
     </div>
   </div>
 
-  <div class="hidden sm:hidden" id="mobile-menu">
+  <div
+    class="hidden sm:hidden overflow-hidden transition-all duration-300 ease-in-out h-0 border-t border-gray-200/50"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
     <div class="space-y-1 pb-3 pt-2">
       {
         links.map((link) => (
@@ -122,7 +128,26 @@ const links = [
   const mobileMenu = document.getElementById("mobile-menu");
 
   mobileMenuButton?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
+    const isHidden = mobileMenu?.classList.contains("hidden");
+    const isExpanded =
+      mobileMenuButton?.getAttribute("aria-expanded") === "true";
+
+    if (isHidden) {
+      mobileMenu?.classList.remove("hidden");
+      // Force a reflow to ensure the transition works
+      mobileMenu?.offsetHeight;
+      mobileMenu?.classList.add("h-[280px]");
+      mobileMenuButton?.setAttribute("aria-expanded", "true");
+      mobileMenu?.setAttribute("aria-hidden", "false");
+    } else {
+      mobileMenu?.classList.remove("h-[280px]");
+      mobileMenuButton?.setAttribute("aria-expanded", "false");
+      mobileMenu?.setAttribute("aria-hidden", "true");
+      // Wait for the transition to complete before hiding
+      setTimeout(() => {
+        mobileMenu?.classList.add("hidden");
+      }, 300);
+    }
   });
 
   // Add active class to current link
