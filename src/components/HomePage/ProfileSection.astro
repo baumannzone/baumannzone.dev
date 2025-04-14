@@ -171,6 +171,7 @@ import baumannzoneImg from "./baumannzone.webp";
   } from "matter-js";
 
   import astro from "./logos/astro.png";
+  import astroDark from "./logos/astro-dark.png";
   import css from "./logos/css.png";
   import html5 from "./logos/html5.webp";
   import js from "./logos/js.webp";
@@ -196,6 +197,9 @@ import baumannzoneImg from "./baumannzone.webp";
 
   // Add mouse control
   const mouse = Mouse.create(render.canvas);
+  // Enable scroll back to normal
+  mouse.element.removeEventListener("wheel", mouse.mousewheel);
+
   const mouseConstraint = MouseConstraint.create(engine, {
     mouse: mouse,
     constraint: {
@@ -227,7 +231,14 @@ import baumannzoneImg from "./baumannzone.webp";
   Render.run(render);
 
   function createImageBody(x, y) {
-    const texture = [astro, css, html5, js, tailwind];
+    const isDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    // If dark mode, use the white logo
+    const texture = isDarkMode ? [astro] : [astroDark];
+    // Add the rest of the logos
+    texture.push(css, html5, js, tailwind);
 
     const randomTexture = texture[Math.floor(Math.random() * texture.length)];
 
