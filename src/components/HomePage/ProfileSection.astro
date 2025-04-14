@@ -216,6 +216,7 @@ import baumannzoneImg from "./baumannzone.webp";
   const mouse = Mouse.create(render.canvas);
   // Enable scroll back to normal
   mouse.element.removeEventListener("wheel", mouse.mousewheel);
+  mouse.element.removeEventListener("touchmove", mouse.mousemove);
 
   const mouseConstraint = MouseConstraint.create(engine, {
     mouse: mouse,
