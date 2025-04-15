@@ -85,14 +85,22 @@ Object.keys(talksByYear).forEach((year) => {
                 >
                   <div class="rounded-xl border-2 border-zinc-200 h-full">
                     <div class="flex flex-col space-y-1.5 p-6 relative">
-                      <div
-                        class="text-sm text-zinc-500"
-                        itemprop="location"
-                        itemscope
-                        itemtype="https://schema.org/Place"
-                      >
-                        <span itemprop="name">{talk.data.event}</span>
-                      </div>
+                      {talk.data.type === "conferencia" ||
+                      talk.data.type === "meetup" ||
+                      talk.data.type === "social" ? (
+                        <div
+                          class="text-sm text-zinc-500"
+                          itemprop="location"
+                          itemscope
+                          itemtype="https://schema.org/Place"
+                        >
+                          <span itemprop="name">{talk.data.event}</span>
+                        </div>
+                      ) : (
+                        <div class="text-sm text-zinc-500">
+                          {talk.data.event}
+                        </div>
+                      )}
                       <div
                         class="text-2xl font-semibold tabular-nums text-zinc-950"
                         style={`view-transition-name: talk-${talk.slug}`}
@@ -102,32 +110,39 @@ Object.keys(talksByYear).forEach((year) => {
                       >
                         {talk.data.title}
                       </div>
-                      {/* <div class="text-xs text-zinc-500">
-                        {talk.data.date.toLocaleDateString("es-ES", {
-                          month: "long",
-                        })}
-                      </div> */}
                       <div class="absolute right-4 top-4 bg-zinc-200 rounded-lg">
                         <div class="px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors">
                           {talk.data.type}
                         </div>
                       </div>
-                      <meta
-                        itemprop={
-                          talk.data.type === "artículo"
-                            ? "datePublished"
-                            : "startDate"
-                        }
-                        content={talk.data.date.toISOString()}
-                      />
+                      {talk.data.type === "artículo" && (
+                        <meta
+                          itemprop="datePublished"
+                          content={talk.data.date.toISOString()}
+                        />
+                      )}
+                      {(talk.data.type === "conferencia" ||
+                        talk.data.type === "meetup" ||
+                        talk.data.type === "social") && (
+                        <meta
+                          itemprop="startDate"
+                          content={talk.data.date.toISOString()}
+                        />
+                      )}
                       {talk.data.type === "podcast" && (
-                        <div
-                          itemprop="partOfSeries"
-                          itemscope
-                          itemtype="https://schema.org/PodcastSeries"
-                        >
-                          <meta itemprop="name" content={talk.data.event} />
-                        </div>
+                        <>
+                          <meta
+                            itemprop="datePublished"
+                            content={talk.data.date.toISOString()}
+                          />
+                          <div
+                            itemprop="partOfSeries"
+                            itemscope
+                            itemtype="https://schema.org/PodcastSeries"
+                          >
+                            <meta itemprop="name" content={talk.data.event} />
+                          </div>
+                        </>
                       )}
                       {talk.data.type === "artículo" && (
                         <div
