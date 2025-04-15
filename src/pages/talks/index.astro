@@ -32,17 +32,29 @@ Object.keys(talksByYear).forEach((year) => {
 ---
 
 <Layout title="Talks | baumannzone.dev">
-  <main class="bmn-container mx-auto pt-16 pb-24">
+  <main
+    class="bmn-container mx-auto pt-16 pb-24"
+    itemscope
+    itemtype="https://schema.org/CollectionPage"
+  >
     <header class="text-center mx-auto max-w-3xl">
       <p class="text-base font-semibold leading-7 text-violet-600">/talks</p>
-      <h1 class="text-4xl font-semibold mb-8">Charlas</h1>
-      <p class="mt-6 mb-12 text-lg/8 text-gray-600 text-balance">
+      <h1 class="text-4xl font-semibold mb-8" itemprop="name">Charlas</h1>
+      <p
+        class="mt-6 mb-12 text-lg/8 text-gray-600 text-balance"
+        itemprop="description"
+      >
         Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts y
         conferencias a lo largo de mi carrera como ingeniero de software.
       </p>
     </header>
 
-    <section class="bg-white m-2 px-4 sm:px-6 lg:px-8">
+    <section
+      class="bg-white m-2 px-4 sm:px-6 lg:px-8"
+      itemprop="mainEntity"
+      itemscope
+      itemtype="https://schema.org/ItemList"
+    >
       {
         years.map((year) => (
           <div class="pb-12">
@@ -58,13 +70,35 @@ Object.keys(talksByYear).forEach((year) => {
                 <a
                   href={`/talks/${talk.slug}`}
                   class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                  itemscope
+                  itemtype={
+                    talk.data.type === "conferencia" ||
+                    talk.data.type === "meetup" ||
+                    talk.data.type === "social"
+                      ? "https://schema.org/Event"
+                      : talk.data.type === "podcast"
+                        ? "https://schema.org/PodcastEpisode"
+                        : talk.data.type === "artículo"
+                          ? "https://schema.org/Article"
+                          : "https://schema.org/Course"
+                  }
                 >
                   <div class="rounded-xl border-2 border-zinc-200 h-full">
                     <div class="flex flex-col space-y-1.5 p-6 relative">
-                      <div class="text-sm text-zinc-500">{talk.data.event}</div>
+                      <div
+                        class="text-sm text-zinc-500"
+                        itemprop="location"
+                        itemscope
+                        itemtype="https://schema.org/Place"
+                      >
+                        <span itemprop="name">{talk.data.event}</span>
+                      </div>
                       <div
                         class="text-2xl font-semibold tabular-nums text-zinc-950"
                         style={`view-transition-name: talk-${talk.slug}`}
+                        itemprop={
+                          talk.data.type === "artículo" ? "headline" : "name"
+                        }
                       >
                         {talk.data.title}
                       </div>
@@ -78,6 +112,41 @@ Object.keys(talksByYear).forEach((year) => {
                           {talk.data.type}
                         </div>
                       </div>
+                      <meta
+                        itemprop={
+                          talk.data.type === "artículo"
+                            ? "datePublished"
+                            : "startDate"
+                        }
+                        content={talk.data.date.toISOString()}
+                      />
+                      {talk.data.type === "podcast" && (
+                        <div
+                          itemprop="partOfSeries"
+                          itemscope
+                          itemtype="https://schema.org/PodcastSeries"
+                        >
+                          <meta itemprop="name" content={talk.data.event} />
+                        </div>
+                      )}
+                      {talk.data.type === "artículo" && (
+                        <div
+                          itemprop="publisher"
+                          itemscope
+                          itemtype="https://schema.org/Organization"
+                        >
+                          <meta itemprop="name" content={talk.data.event} />
+                        </div>
+                      )}
+                      {talk.data.type === "curso" && (
+                        <div
+                          itemprop="provider"
+                          itemscope
+                          itemtype="https://schema.org/Organization"
+                        >
+                          <meta itemprop="name" content={talk.data.event} />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </a>
@@ -125,136 +194,4 @@ Object.keys(talksByYear).forEach((year) => {
       </div>
     </section>
   </main>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Charlas de Jorge Baumann",
-      "description": "Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts y conferencias a lo largo de mi carrera como ingeniero de software.",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ItemList",
-            "name": "Conferencias",
-            "description": "Charlas y presentaciones en eventos y conferencias",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "conferencia")
-                .map((talk, index) => ({
-                  "@type": "Event",
-                  "position": index + 1,
-                  "name": talk.data.title,
-                  "startDate": talk.data.date.toISOString(),
-                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                  "eventStatus": "https://schema.org/EventScheduled",
-                  "location": {
-                    "@type": "Place",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          },
-          {
-            "@type": "ItemList",
-            "name": "Podcasts",
-            "description": "Apariciones en podcasts y entrevistas",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "podcast")
-                .map((talk, index) => ({
-                  "@type": "PodcastEpisode",
-                  "position": index + 1,
-                  "name": talk.data.title,
-                  "datePublished": talk.data.date.toISOString(),
-                  "partOfSeries": {
-                    "@type": "PodcastSeries",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          },
-          {
-            "@type": "ItemList",
-            "name": "Artículos",
-            "description": "Artículos y publicaciones",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "artículo")
-                .map((talk, index) => ({
-                  "@type": "Article",
-                  "position": index + 1,
-                  "headline": talk.data.title,
-                  "datePublished": talk.data.date.toISOString(),
-                  "publisher": {
-                    "@type": "Organization",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          },
-          {
-            "@type": "ItemList",
-            "name": "Meetups",
-            "description": "Talleres y meetups",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "meetup")
-                .map((talk, index) => ({
-                  "@type": "Event",
-                  "position": index + 1,
-                  "name": talk.data.title,
-                  "startDate": talk.data.date.toISOString(),
-                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                  "eventStatus": "https://schema.org/EventScheduled",
-                  "location": {
-                    "@type": "Place",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          },
-          {
-            "@type": "ItemList",
-            "name": "Cursos",
-            "description": "Cursos y formaciones",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "curso")
-                .map((talk, index) => ({
-                  "@type": "Course",
-                  "position": index + 1,
-                  "name": talk.data.title,
-                  "provider": {
-                    "@type": "Organization",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          },
-          {
-            "@type": "ItemList",
-            "name": "Social",
-            "description": "Eventos sociales y otros",
-            "itemListElement": ${JSON.stringify(
-              talks
-                .filter((talk) => talk.data.type === "social")
-                .map((talk, index) => ({
-                  "@type": "Event",
-                  "position": index + 1,
-                  "name": talk.data.title,
-                  "startDate": talk.data.date.toISOString(),
-                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                  "eventStatus": "https://schema.org/EventScheduled",
-                  "location": {
-                    "@type": "Place",
-                    "name": talk.data.event
-                  }
-                }))
-            )}
-          }
-        ]
-      }
-    }
-  </script>
 </Layout>
