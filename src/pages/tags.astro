@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import { getTagUrl } from "../utils/tags";
 
 const allPosts = await getCollection("blog");
@@ -106,4 +105,34 @@ const postsByTag = tags.reduce((acc, tag) => {
       }
     </div>
   </section>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Tags | Baumannzone.dev",
+      "description": "Todos los tags disponibles en el blog",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ItemList",
+            "name": "Tags",
+            "numberOfItems": ${tags.length},
+            "itemListElement": [
+              ${tags.map((tag, index) => `{
+                "@type": "ListItem",
+                "position": ${index + 1},
+                "item": {
+                  "@type": "Thing",
+                  "name": "${tag}",
+                  "description": "Artículos etiquetados con ${tag}",
+                  "url": "https://baumannzone.dev/tags/${getTagUrl(tag)}"
+                }
+              }`).join(',')}
+            ]
+          }
+        ]
+      }
+    }
+  </script>
 </DefaultLayout>
