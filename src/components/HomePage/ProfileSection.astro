@@ -10,10 +10,7 @@ import baumannzoneImg from "./baumannzone.webp";
 >
   <div class="bg-gradient-to-r from-violet-800 to-violet-700 h-44"></div>
   <div class="px-2 sm:px-4 lg:px-8">
-    <div
-      id="parent-parent"
-      class="bg-red-500 max-w-[90rem] mx-auto pb-16 relative"
-    >
+    <div id="parent-parent" class="max-w-[90rem] mx-auto pb-16 relative">
       <div
         id="party-container"
         class="absolute bottom-0 left-0 max-w-full overflow-hidden"
@@ -220,7 +217,7 @@ import baumannzoneImg from "./baumannzone.webp";
   // Add mouse control
   const mouse = Mouse.create(render.canvas);
   // Enable scroll back to normal
-  // mouse.element.removeEventListener("wheel", mouse.mousewheel);
+  mouse.element.removeEventListener("wheel", mouse.mousewheel);
   // mouse.element.removeEventListener("touchmove", mouse.mousemove);
 
   const mouseConstraint = MouseConstraint.create(engine, {
@@ -238,14 +235,25 @@ import baumannzoneImg from "./baumannzone.webp";
   // The ground where the boxes will fall
   const ground = Bodies.rectangle(720, 345, 1440, 10, {
     isStatic: true,
-    render: { fillStyle: "black" },
+    render: { fillStyle: "transparent" },
     friction: 0.3,
     restitution: 0.2,
   });
 
+  // Left wall
+  const leftWall = Bodies.rectangle(0, 170, 10, 340, {
+    isStatic: true,
+    render: { fillStyle: "transparent" },
+  });
+
+  // Right wall
+  const rightWall = Bodies.rectangle(1440, 170, 10, 340, {
+    isStatic: true,
+    render: { fillStyle: "transparent" },
+  });
+
   // Add all of the bodies to the world
-  // World.add(engine.world, [boxA, boxB, ground]);
-  World.add(engine.world, [ground]);
+  World.add(engine.world, [ground, leftWall, rightWall]);
 
   // Run the engine
   const runner = Runner.create();
@@ -284,14 +292,25 @@ import baumannzoneImg from "./baumannzone.webp";
   ) as HTMLButtonElement;
 
   profileImg.addEventListener("click", () => {
-    // Add box to the world
-    const x = Math.random() * 1200 + 50; // Random x position
-    const y = 50; // Fixed y position at the top
+    const parent = document.getElementById("parent-parent") as HTMLDivElement;
+    // Get the width of the parent
+    const parentWidth = parent?.clientWidth;
+
+    // Add box to the world at the center of the parent
+    const x = parentWidth / 2;
+    const y = 0; // Fixed y position at the top
+
+    // Función para devolver aleatoriamente +1 o -1
+    function randomSign() {
+      return Math.random() < 0.5 ? -1 : 1;
+    }
 
     const newImageBody = createImageBody(x, y);
     World.add(engine.world, newImageBody);
 
-    // Add a force to the box
-    Body.applyForce(newImageBody, { x: 0, y: 0 }, { x: 0.01, y: 0 });
+    // Add a force a la caja, randomizando la dirección en x
+    const forceX = 0.005 * randomSign();
+    const forceY = 0.005;
+    Body.applyForce(newImageBody, { x: 0, y: 0 }, { x: forceX, y: forceY });
   });
 </script>
