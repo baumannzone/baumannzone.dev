@@ -13,8 +13,17 @@ type Props = CollectionEntry<"blog">["data"] & {
   collection: string;
 };
 
-const { title, description, pubDate, updatedDate, tags, id, slug, collection } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  tags,
+  id,
+  slug,
+  collection,
+  author,
+} = Astro.props;
 
 // Dont show comments in dev mode
 const showComments = !import.meta.env.DEV;
@@ -28,6 +37,17 @@ const showComments = !import.meta.env.DEV;
   <body class="dark:bg-gray-700">
     <NavBar />
     <main class="px-4 py-8" itemscope itemtype="https://schema.org/Article">
+      <meta itemprop="url" content={`https://baumannzone.dev/blog/${slug}`} />
+      <meta itemprop="description" content={description} />
+      <meta itemprop="keywords" content={tags?.join(", ")} />
+      <meta itemprop="author" content={author} />
+      <meta itemprop="publisher" content="Jorge Baumann" />
+      <meta itemprop="datePublished" content={pubDate.toISOString()} />
+      {
+        updatedDate && (
+          <meta itemprop="dateModified" content={updatedDate.toISOString()} />
+        )
+      }
       <header class="max-w-prose mx-auto">
         <div class="text-gray-500 text-xs dark:text-gray-400">
           <FormattedDate date={pubDate} type="pubDate" />

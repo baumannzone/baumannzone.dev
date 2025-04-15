@@ -1,12 +1,34 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Requisitos para Charlas y Talleres",
+  description:
+    "Conoce los requisitos y condiciones para invitar a Jorge Baumann @baumannzone a dar una charla o taller en tu evento.",
+  mainEntity: {
+    "@type": "Article",
+    headline: "Requisitos para charlas y talleres",
+    description:
+      "Información detallada sobre los requisitos y condiciones para invitar a Jorge Baumann a dar charlas y talleres en eventos tecnológicos.",
+    articleBody:
+      "Antes de aceptar dar una charla, taller o similar, me gusta investigar un poco sobre el evento. No es paranoia, es simplemente asegurarme de que se alinea con mis valores, sobre todo en temas de inclusión y diversidad dentro de la comunidad tecnológica.",
+    author: {
+      "@type": "Person",
+      name: "Jorge Baumann",
+      alternateName: "baumannzone",
+      url: "https://baumannzone.dev",
+    },
+  },
+};
 ---
 
 <DefaultLayout
   title="Requisitos para Charlas y Talleres | Baumannzone.dev"
-  description="Conoce los requisitos y condiciones para invitar a Jorge Baumann a dar una charla o taller en tu evento."
+  description="Conoce los requisitos y condiciones para invitar a Jorge Baumann @baumannzone a dar una charla o taller en tu evento."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <main class="max-w-3xl mx-auto px-4 py-8 mt-4 mb-20">
     <h1 class="text-4xl font-bold mb-8">Requisitos para charlas y talleres</h1>
 

@@ -34,7 +34,7 @@ const FancyButton = styled.button`
 `;
 ```
 
-```html
+```jsx
 <FancyButton primary>Click me</FancyButton>
 ```
 

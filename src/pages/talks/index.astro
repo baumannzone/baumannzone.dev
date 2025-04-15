@@ -125,4 +125,136 @@ Object.keys(talksByYear).forEach((year) => {
       </div>
     </section>
   </main>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Charlas de Jorge Baumann",
+      "description": "Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts y conferencias a lo largo de mi carrera como ingeniero de software.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ItemList",
+            "name": "Conferencias",
+            "description": "Charlas y presentaciones en eventos y conferencias",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "conferencia")
+                .map((talk, index) => ({
+                  "@type": "Event",
+                  "position": index + 1,
+                  "name": talk.data.title,
+                  "startDate": talk.data.date.toISOString(),
+                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                  "eventStatus": "https://schema.org/EventScheduled",
+                  "location": {
+                    "@type": "Place",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          },
+          {
+            "@type": "ItemList",
+            "name": "Podcasts",
+            "description": "Apariciones en podcasts y entrevistas",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "podcast")
+                .map((talk, index) => ({
+                  "@type": "PodcastEpisode",
+                  "position": index + 1,
+                  "name": talk.data.title,
+                  "datePublished": talk.data.date.toISOString(),
+                  "partOfSeries": {
+                    "@type": "PodcastSeries",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          },
+          {
+            "@type": "ItemList",
+            "name": "Artículos",
+            "description": "Artículos y publicaciones",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "artículo")
+                .map((talk, index) => ({
+                  "@type": "Article",
+                  "position": index + 1,
+                  "headline": talk.data.title,
+                  "datePublished": talk.data.date.toISOString(),
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          },
+          {
+            "@type": "ItemList",
+            "name": "Meetups",
+            "description": "Talleres y meetups",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "meetup")
+                .map((talk, index) => ({
+                  "@type": "Event",
+                  "position": index + 1,
+                  "name": talk.data.title,
+                  "startDate": talk.data.date.toISOString(),
+                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                  "eventStatus": "https://schema.org/EventScheduled",
+                  "location": {
+                    "@type": "Place",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          },
+          {
+            "@type": "ItemList",
+            "name": "Cursos",
+            "description": "Cursos y formaciones",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "curso")
+                .map((talk, index) => ({
+                  "@type": "Course",
+                  "position": index + 1,
+                  "name": talk.data.title,
+                  "provider": {
+                    "@type": "Organization",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          },
+          {
+            "@type": "ItemList",
+            "name": "Social",
+            "description": "Eventos sociales y otros",
+            "itemListElement": ${JSON.stringify(
+              talks
+                .filter((talk) => talk.data.type === "social")
+                .map((talk, index) => ({
+                  "@type": "Event",
+                  "position": index + 1,
+                  "name": talk.data.title,
+                  "startDate": talk.data.date.toISOString(),
+                  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                  "eventStatus": "https://schema.org/EventScheduled",
+                  "location": {
+                    "@type": "Place",
+                    "name": talk.data.event
+                  }
+                }))
+            )}
+          }
+        ]
+      }
+    }
+  </script>
 </Layout>
