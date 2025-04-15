@@ -7,7 +7,7 @@ tags:
   - Tools
 ---
 
-**Styled-components**, esa pequeña gran herramienta que alguna vez se sintió como magia en React, ha sido oficialmente enviada al _modo maintenance_.
+**Styled-components**, esa pequeña gran herramienta que alguna vez se sintió como magia en React, ha sido oficialmente enviada al _modo maintenance_ (el 17 de marzo de 2025).
 
 Fin del soporte. No del todo inesperado. Algunos lo usaron, otros lo amaron. Yo solo lo toleré.
 
@@ -16,7 +16,7 @@ Sin anuncios rimbombantes ni despedidas grandilocuentes. Solo una [nota](https:/
 ## ¿Por qué murió?
 
 - React cambió las reglas del juego y dejó a styled-components sin terreno donde jugar.
-- La moda `CSS-in-JS` se fue con la misma velocidad con la que llegó. Tailwind, PostCSS y los CSS modules dijeron "hola" mientras los demás cerraban el telón.
+- La moda `CSS-in-JS` se fue con la misma velocidad con la que llegó. Tailwind, PostCSS y los CSS modules dijeron "hola" con gran acogida.
 - El maintainer principal (Evan Jacobs) lleva años sin usarlo en producción: sin uso activo, no hay contexto real, ni urgencia, ni ganas. Y eso se nota.
 
 No hay odio aquí. Tal vez fue útil en su momento, pero ese momento ya pasó.
@@ -38,7 +38,7 @@ const FancyButton = styled.button`
 <FancyButton primary>Click me</FancyButton>
 ```
 
-Eso sí, fue el uso más creativo de las `template literals` que existió en el momento. Convirtieron un simple `string` multi-línea en un pequeño motor de estilos dinámicos, donde podías interpolar props, condiciones y CSS (y estaba lleno de ternarios).
+✨ Eso sí, fue el uso más creativo de las `template literals` que existió en el momento. Convirtieron un simple `string` multi-línea en un pequeño motor de estilos dinámicos, donde podías interpolar props, condiciones y CSS (y estaba lleno de ternarios).
 
 ## Cuando mantener deja de tener sentido
 
