@@ -4,7 +4,10 @@ description: "Este artículo te guía a través de los conceptos fundamentales d
 pubDate: "2024-09-23"
 author: "Jorge Baumann"
 type: "blog"
-tags: ["JavaScript", "Node.js"]
+tags:
+  - JavaScript
+  - Node.js
+  - Fundamentals
 ---
 
 En el ecosistema de JavaScript y Node.js, el archivo `package.json` juega un papel fundamental.
@@ -57,7 +60,7 @@ Ahora, echemos un vistazo a las partes más interesantes de un `package.json`:
 }
 ```
 
-El nombre de tu proyecto debe ser único, ya que (si lo publicas) se usa para identificar tu proyecto en el registro de paquetes de npm. 
+El nombre de tu proyecto debe ser único, ya que (si lo publicas) se usa para identificar tu proyecto en el registro de paquetes de npm.
 
 La versión sigue el formato de _SemVer_ (Semantic Versioning), que consta de tres números: `MAJOR.MINOR.PATCH`.
 
@@ -68,7 +71,7 @@ La versión sigue el formato de _SemVer_ (Semantic Versioning), que consta de tr
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build"
   }
 }
 ```
@@ -92,7 +95,7 @@ npm run dev
     "react": "^18.3.1"
   },
   "devDependencies": {
-    "vitest": "^2.1.1",
+    "vitest": "^2.1.1"
   }
 }
 ```
@@ -116,7 +119,6 @@ Las versiones de las librerías siguen el formato de _SemVer_, pero puedes usar 
 ```
 
 Si quieres saber más sobre las licencias de software, puedes leer <a href="https://choosealicense.com/" target="_blank" rel="noopener noreferrer">este artículo</a>.
-
 
 - `repository`: Aquí puedes especificar la URL de tu repositorio de código. No es obligatorio, pero es útil si quieres que otros desarrolladores puedan encontrar tu código fuente.
 
@@ -171,18 +173,23 @@ Existen muchas más propiedades (como `homepage`, `engines`, `peerDependencies`,
 Ahora, hablemos de algo un poco más controversial: los gestores de paquetes. Es como la guerra de las consolas, pero para developers.
 
 ### npm
+
 npm (_node package manager_) es el gestor de paquetes por defecto en Node.js, y aunque otros han surgido, sigue siendo el más utilizado en la comunidad. Tiene sus defectos, pero lo conoces bien y sabes cómo funciona.
 
 ### Yarn
+
 Yarn fue desarrollado por Facebook como una alternativa a npm, con el objetivo de resolver problemas de consistencia, seguridad y rendimiento. Fue muy popular en su lanzamiento, pero ha perdido algo de tracción en los últimos años.
 
 ### pnpm
+
 `pnpm` (_performant npm_) es otra alternativa que se centra en la eficiencia del almacenamiento y la velocidad de instalación. En lugar de instalar paquetes en carpetas separadas, pnpm crea enlaces simbólicos a los paquetes compartidos. Es lo que podrías llamar "el chico nuevo del barrio".
 
 ### bun
+
 Bun es una herramienta todo en uno que incluye un runtime de JavaScript, un bundler, un test runner y un gestor de paquetes. Lanzado más recientemente que Yarn y pnpm, Bun se ha ganado rápidamente popularidad debido a su enfoque en el rendimiento y por su velocidad. Si lo usas a día de hoy en producción, es porque eres un hipster profesional.
 
 ## ¿Cuál elegir?
+
 Depende. Por lo general, cualquiera de estas herramientas hará el trabajo que necesitas. **npm** es el más común, **Yarn** vino con fuerza pero ahora nadie lo usa, **pnpm** es el que uso actualmente, y **Bun** acaba de salir y parece prometedor.
 
 ¿Mi consejo? **pruébalos todos**. Usa el que te resulte más cómodo y que mejor se adapte a tu flujo de trabajo. No hay una respuesta correcta, solo la que funcione mejor para ti.

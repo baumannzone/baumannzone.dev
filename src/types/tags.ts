@@ -20,6 +20,7 @@ export enum Tags {
   Tools = "Tools",
   UXUI = "UX/UI",
   Web = "Web",
+  Fundamentals = "Fundamentals",
 }
 
 /**
@@ -49,6 +50,7 @@ export const tagUrlMap: Record<string, string> = {
   [Tags.Tools]: "tools",
   [Tags.UXUI]: "ux-ui",
   [Tags.Web]: "web",
+  [Tags.Fundamentals]: "fundamentals",
 };
 
 /**
