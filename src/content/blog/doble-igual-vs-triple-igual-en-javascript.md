@@ -106,7 +106,7 @@ Esto puede dar lugar a resultados inesperados, especialmente si no entiendes bie
 
 Por lo tanto, en el ejemplo anterior ("1" == 1) el motor de JavaScript convierte la cadena `"1"` al número `1`, lo que luego se evalúa como `1 == 1`, y eso da `true`. Lo mismo pasa si uno es booleano, convierte el booleano a número (true = 1, false = 0).
 
-Es esa etapa de coerción de tipos la que hace que el operador de igualdad (`==`) sea tan impredecible como tus decisiones de diseño.
+Es esa etapa de coerción de tipos la que hace que el operador de igualdad (`==`) sea tan impredecible como tus decisiones de UX.
 
 Aquí tienes la misma tabla de igualdad que vimos antes, pero ahora bajo el operador de igualdad (`==`):
 
