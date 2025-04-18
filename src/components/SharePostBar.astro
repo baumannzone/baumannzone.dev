@@ -14,12 +14,12 @@ const encodedBlogPostUrl = encodeURIComponent(blogPostUrl);
 const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodedBlogPostUrl}&text=Acabo+de+leer+%22${encodedTitle}%22+por+%40baumannzone%0A%0A`;
 const threadsShareUrl = `https://threads.net/intent/post?url=${encodedBlogPostUrl}&text=Acabo+de+leer+%22${encodedTitle}%22+por+%40baumannzone%0A%0A`;
 const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22${encodedTitle}%22+por+%40baumannzone.bsky.social+%F0%9F%A6%8B%0A${encodedBlogPostUrl}`;
+const linkedinShareUrl = `https://www.linkedin.com/feed/?shareActive=true&text=Acabo+de+leer+%22${encodedTitle}%22+por+%40baumannzone+%0A%0A${encodedBlogPostUrl}`;
 ---
 
-<!-- 760 = prose lg -->
+<!-- 760 = prose lg --><!-- Share -->
 <div class="max-w-[760px] mx-auto">
-  <!-- Share -->
-  <div
+  <!-- <div
     class="mb-12 flex flex-col flex-wrap justify-between gap-4 border-b border-gray-200 pb-12 text-base text-slate-500 sm:flex-row lg:pb-6"
   >
     <div class="grid grid-cols-2 gap-4 md:flex md:flex-row md:items-center">
@@ -87,7 +87,118 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
         Editar en GitHub
       </a>
     </div>
+  </div> -->
+
+  <div
+    class="mx-auto flex w-full flex-wrap items-center justify-center gap-5 py-16"
+  >
+    <strong class="text-lg font-medium dark:text-white">Comparte</strong>
+    <div
+      class="hover:[&_a]:bg-zinc-500/5 dark:hover:[&_a]:bg-zinc-500/50 hover:[&_button]:bg-zinc-500/5 dark:hover:[&_button]:bg-zinc-500/50 relative items-stretch [&_a]:flex [&_a]:aspect-square [&_a]:w-full [&_a]:max-w-14 [&_a]:items-center [&_a]:justify-center [&_a]:border-r [&_a]:p-3 first-of-type:[&_a]:rounded-l [&_button]:flex [&_button]:items-center [&_button]:p-3 [&_button]:px-5 inline-flex rounded-md border"
+    >
+      <div
+        class="via-violet-500/40 dark:via-violet-500/70 absolute -top-px left-0 h-px w-full bg-gradient-to-r from-transparent to-transparent"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="via-purple-500/30 dark:via-pink-500/60 absolute -bottom-px left-0 h-px w-2/3 bg-gradient-to-r from-transparent to-transparent"
+        aria-hidden="true"
+      >
+      </div>
+      <a
+        href={blueskyShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dark:text-white"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 64 57"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="currentColor"
+            d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
+          ></path>
+        </svg>
+      </a>
+
+      <a
+        href={twitterShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dark:text-white"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.52373 6.77569L15.4811 0H14.0699L8.89493 5.88203L4.7648 0H0L6.24693 8.89552L0 16H1.4112L6.87253 9.78704L11.2352 16H16M1.92053 1.04127H4.08853L14.0688 15.0099H11.9003"
+            fill="currentColor"></path>
+        </svg>
+      </a>
+
+      <a
+        href={threadsShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dark:text-white"
+      >
+        <svg
+          role="img"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="inline-block size-4"
+          fill="currentColor"
+        >
+          <title>Threads</title>
+          <path
+            d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"
+          >
+          </path>
+        </svg>
+      </a>
+
+      <!-- https://www.linkedin.com/feed/?shareActive=true&text=This is my text! https://ogp.me/ %23NewPost -->
+      <!-- https://linkedin.com/shareArticle?mini=true&url=https://www.epicai.pro/how-llms-change-user-onboarding-5ha1t?author=Kent C. Dodds -->
+      <a
+        href={linkedinShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dark:text-white"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 2.99134C1 2.41413 1.20271 1.93794 1.60811 1.56277C2.01351 1.18758 2.54055 1 3.18919 1C3.82626 1 4.34169 1.18469 4.73552 1.55411C5.14092 1.93506 5.34363 2.43145 5.34363 3.04329C5.34363 3.5974 5.14672 4.05915 4.7529 4.42857C4.3475 4.80952 3.81467 5 3.15444 5H3.13707C2.49999 5 1.98456 4.80952 1.59073 4.42857C1.19691 4.04762 1 3.56854 1 2.99134ZM1.22587 18.1429V6.57576H5.08301V18.1429H1.22587ZM7.22008 18.1429H11.0772V11.684C11.0772 11.2799 11.1236 10.9682 11.2162 10.7489C11.3784 10.3564 11.6245 10.0245 11.9546 9.75324C12.2847 9.48195 12.6988 9.34632 13.1969 9.34632C14.4942 9.34632 15.1429 10.2179 15.1429 11.961V18.1429H19V11.5108C19 9.8023 18.5946 8.50649 17.7838 7.62337C16.973 6.74026 15.9015 6.2987 14.5695 6.2987C13.0753 6.2987 11.9112 6.93939 11.0772 8.22078V8.25541H11.0598L11.0772 8.22078V6.57576H7.22008C7.24324 6.94516 7.25483 8.09378 7.25483 10.0216C7.25483 11.9495 7.24324 14.6565 7.22008 18.1429Z"
+            fill="currentColor"
+          >
+          </path>
+        </svg>
+      </a>
+      <button
+        id="copy-url-button"
+        type="button"
+        class="text-nowrap dark:text-white"
+      >
+        Copiar URL
+      </button>
+    </div>
   </div>
+
+  <hr class="my-12 border-gray-200 dark:border-gray-600" />
 
   <!-- Author -->
   <div
@@ -105,17 +216,46 @@ const blueskyShareUrl = `https://bsky.app/intent/compose?text=Acabo+de+leer+%22$
         Escrito por J. Baumann
       </div>
       <p class="max-w-full text-secondary mb-12 mt-3 prose dark:prose-invert">
-        Jorge Baumann es JavaScript senior software engineer, creador de
-        contenido y speaker. Vive en Madrid, le encanta el testing, dibujar con
-        CSS y tiene un perro que se llama Rambo.
+        Jorge Baumann es Senior Software Engineer, especializado en JavaScript.
+        También es creador de contenido y speaker. Vive en Madrid, le encanta el
+        testing, dibujar con CSS y tiene un perro que se llama Rambo.
       </p>
 
       <a
         href="/about"
-        class="text-sm leading-6 text-gray-700 dark:text-gray-300 hover:text-white focus:text-white underlined"
+        class="text-sm leading-6 text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white focus:text-white dark:focus:text-white underlined"
       >
         Saber más sobre J. Baumann
       </a>
     </div>
   </div>
+
+  <!-- <div class="relative mb-3 flex w-full items-center justify-center gap-3">
+    <div class="flex w-full items-center justify-center gap-8">
+      <div class="flex items-center gap-2 font-normal">
+        <Image
+          src={baumannzone}
+          alt="Jorge Baumann"
+          width="40"
+          height="40"
+          class="bg-muted rounded-full"
+        />
+        <span class="dark:text-white text-foreground">Jorge Baumann</span>
+      </div>
+    </div>
+  </div> -->
 </div>
+
+<script>
+  const copyUrlButton = document.getElementById(
+    "copy-url-button",
+  ) as HTMLButtonElement;
+
+  const copyUrl = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
+  copyUrlButton.addEventListener("click", copyUrl);
+
+  // Si se ha copiado la URL, mostrar un toast minimalista
+</script>
