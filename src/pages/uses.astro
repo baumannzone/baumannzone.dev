@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import { Content as MyUses } from "../components/UsesPage/uses.md";
+// import myUses from "../components/UsesPage/uses.js";
 import desktopImage from "../assets/desktop.avif";
 import { Image } from "astro:assets";
 ---
@@ -90,8 +91,83 @@ import { Image } from "astro:assets";
               como Software Engineer: desde gadgets que realmente uso hasta
               caprichos tecnológicos.
             </p>
-            <div class="mx-auto mt-12 prose">
+            <div class="mx-auto mt-12 prose prose-lg prose-violet">
               <MyUses />
+              <!-- {
+                myUses.map((section) => (
+                  <div class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4">{section.title}</h2>
+                    {section.children.map((item) => (
+                      <div class="mb-4">
+                        {item.type === "h3" ? (
+                          <>
+                            <h3 class="text-xl font-semibold mb-2">
+                              {item.title}
+                            </h3>
+
+                            {item.children.map((subItem) => (
+                              <div class="mb-2">
+                                {subItem.link ? (
+                                  <a
+                                    href={subItem.link}
+                                    class="text-violet-600 hover:text-violet-800"
+                                  >
+                                    {subItem.title}
+                                  </a>
+                                ) : (
+                                  <span class="font-semibold">
+                                    {subItem.title}
+                                  </span>
+                                )}
+                                {subItem.description && (
+                                  <span class="text-gray-600">
+                                    {" "}
+                                    - {subItem.description}
+                                  </span>
+                                )}
+                                {subItem.specs && (
+                                  <ul class="ml-6 mt-1 list-disc">
+                                    {subItem.specs.map((spec) => (
+                                      <li class="text-gray-600">{spec}</li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </div>
+                            ))}
+                          </>
+                        ) : (
+                          <>
+                            {item.link ? (
+                              <a
+                                href={item.link}
+                                class="text-violet-600 hover:text-violet-800"
+                              >
+                                {item.title}
+                              </a>
+                            ) : (
+                              <span class="font-semibold">{item.title}</span>
+                            )}
+
+                            {item.description && (
+                              <span class="text-gray-600">
+                                {" "}
+                                - {item.description}
+                              </span>
+                            )}
+                            {item.specs && (
+                              <ul class="ml-6 mt-1 list-disc">
+                                {item.specs.map((spec) => (
+                                  <li class="text-gray-600">{spec}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ))
+              } -->
             </div>
           </div>
         </div>
