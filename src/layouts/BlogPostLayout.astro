@@ -37,6 +37,10 @@ const showComments = !import.meta.env.DEV;
   <body class="dark:bg-gray-700">
     <NavBar />
     <main class="px-4 py-8" itemscope itemtype="https://schema.org/Article">
+      <div
+        class="absolute inset-x-0 -top-6 -z-10 h-12 -rotate-3 bg-gradient-to-r from-violet-300 via-pink-300 to-sky-300 blur-3xl dark:from-violet-500/90 dark:via-pink-500/70 dark:to-sky-500/80"
+      >
+      </div>
       <meta itemprop="url" content={`https://baumannzone.dev/blog/${slug}`} />
       <meta itemprop="description" content={description} />
       <meta itemprop="keywords" content={tags?.join(", ")} />

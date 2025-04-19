@@ -19,7 +19,7 @@ const links = [
       <div class="flex">
         <a
           href="/"
-          class="flex flex-shrink-0 items-center text-violet-500 dark:text-violet-400"
+          class="flex flex-shrink-0 items-center text-violet-500 dark:text-violet-400 group"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const links = [
             viewBox="0 0 24 24"
             stroke-width="1.85"
             stroke="currentColor"
-            class="size-6"
+            class="size-6 group-hover:text-violet-600 transition-all ease-in-out group-hover:scale-125"
           >
             <path
               stroke-linecap="round"
@@ -37,8 +37,9 @@ const links = [
           </svg>
           <span
             class="ml-2 text-xl font-medium text-violet-600 dark:text-violet-400"
-            >Baumannzone</span
           >
+            Baumannzone
+          </span>
         </a>
 
         <div class="hidden sm:ml-6 sm:flex sm:space-x-5" id="desktop-menu">
