@@ -99,12 +99,11 @@ const showComments = !import.meta.env.DEV;
       {
         showComments && (
           <script
-            type="application/javascript"
+            data-repo="baumannzone/baumannzonedev-comments"
             src="https://utteranc.es/client.js"
-            repo="baumannzone/baumannzonedev-comments"
-            issue-term="pathname"
-            label="comment"
-            theme="preferred-color-scheme"
+            data-issue-term="pathname"
+            data-label="comment"
+            data-theme="preferred-color-scheme"
             crossorigin="anonymous"
             async
           />
