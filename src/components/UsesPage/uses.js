@@ -38,7 +38,7 @@ const myUses = [
       {
         title: "Brazo para monitor",
         description:
-          'Brazo para monitor de 34". Soporta hasta 10kg. Es robusto y estable.',
+          '¿Todavía tienes el monitor apoyado sobre una pila de libros? Qué vintage. Este brazo para monitores de hasta 34" (aguanta 10kg sin sudar) convierte cualquier setup en un escritorio digno.',
         link: "https://amzn.to/3Vl9NDF",
       },
       {
@@ -55,7 +55,7 @@ const myUses = [
       {
         title: "Logitech MX Master 3",
         description:
-          "Ratón inalámbrico de última generación. Me gusta el diseño y que puedes personalizar los botones.",
+          "No es un simple ratón. Es el ratón. El alfa del escritorio. Inalámbrico, elegante, con curvas que se adaptan a tu mano. Es tan cómodo que tu mano no va a querer tocar otro periférico jamás. Puedes personalizar los botones.",
         link: "https://amzn.to/4bVhmXc",
       },
     ],
@@ -96,7 +96,7 @@ const myUses = [
       {
         title: "Blue Snowball Ice",
         description:
-          "Micrófono de condensador USB para streaming y grabación. Lo enchufas y listo.",
+          "Micrófono de condensador USB para cuando decides que tu voz merece ser escuchada… con dignidad. Lo enchufas y listo.",
         link: "https://amzn.to/4edF2aq",
       },
     ],
@@ -108,7 +108,7 @@ const myUses = [
       {
         title: "Beats Fit Pro",
         description:
-          "Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Imprescindibles para ir al gym.",
+          "Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Básicamente, si no los llevo al gimnasio, me doy la vuelta y vuelvo a casa.",
         link: "https://amzn.to/3x3nTQH",
       },
       {
@@ -132,7 +132,7 @@ const myUses = [
       {
         title: "Logitech Z130",
         description:
-          "Los uso con el PC de sobremesa. Son pequeños y compactos y tienen un sonido aceptable.",
+          "Los altavoces que uso con el PC de sobremesa. Son pequeños y compactos y tienen un sonido aceptable.",
         link: "https://amzn.to/3yH17yL",
       },
     ],
@@ -185,7 +185,7 @@ const myUses = [
       {
         title: "Tira de luces LED",
         description:
-          "Tira LED multi color de 3m. Tienen mando a distancia. Las uso para dar ambiente a la habitación.",
+          "Tira LED multi color de 3m para darle glow a tu cueva. Ideal para convertir una habitación triste en un lugar estético digno de stories.",
         link: "https://amzn.to/3KiZM3I",
       },
     ],
@@ -197,13 +197,13 @@ const myUses = [
       {
         title: "Adaptador multipuerto de USB-C",
         description:
-          "El adaptador oficial de USB de Apple. Es pequeño y tiene lo mínimo imprescindible. Por eso, es el que uso cuando estoy trabajando fuera de casa.",
+          "Sí, es el oficial de Apple. Sí, cuesta como si viniera con acciones de la empresa. Pero funciona. Es pequeño, discreto y trae lo justo para sobrevivir fuera de casa.",
         link: "https://amzn.to/3UZBOzn",
       },
       {
         title: "HUB USB C (8 en 1)",
         description:
-          "Es el que uso para poder conectar varios cables USB y el cable de red ethernet.",
+          "Es el que uso para poder conectar varios cables USB y el cable de red ethernet. Ya no tienes que elegir entre cargar el portátil o conectar el ratón.",
         link: "https://amzn.to/3wXnXSa",
       },
     ],
@@ -302,7 +302,7 @@ const myUses = [
       {
         title: "Warp",
         description:
-          "La mejor terminal con IA integrada para autocompletar comandos y más.",
+          "Warp es una terminal moderna con IA integrada que te autocompleta comandos, te explica lo que estás escribiendo y hace que parezca que dominas la línea de comandos aunque sigas copiando desde ChatGPT.",
         link: "https://app.warp.dev/referral/2EJGKR",
       },
     ],
@@ -332,14 +332,16 @@ const myUses = [
     title: "Móvil",
     children: [
       {
-        title: "Brave",
-        description: "Lo uso principalmente desde el móvil.",
-        link: "https://brave.com/es/",
+        title: "Safari",
+        description:
+          "El navegador por defecto en el iPhone. No lo elegiste, pero ahora es parte de tu vida.",
+        link: "https://www.apple.com/es/safari/",
       },
       {
-        title: "Safari",
-        description: "El navegador por defecto en el iPhone.",
-        link: "https://www.apple.com/es/safari/",
+        title: "Brave",
+        description:
+          "Lo uso en el móvil y mi pantalla ya no es una fiesta de pop-ups y banners enfurecidos. Adiós anuncios.",
+        link: "https://brave.com/es/",
       },
     ],
   },
@@ -378,40 +380,44 @@ const myUses = [
       },
       {
         title: "Mini Dron Tello",
-        description: "Un mini dron de DJI. Se puede programar con JavaScript.",
+        description:
+          "Pequeño, y ligero. Este mini dron de DJI no solo vuela like a boss, también se puede programar con JavaScript. Sí, puedes hacer que vuele según tu código.",
         link: "https://amzn.to/3ldFr4l",
       },
       {
         title: "Amazon Kindle eBook",
-        description: "",
+        description:
+          "Super recomendado si te gusta leer. Pesa poco y es fácil llevarlo a cualquier lado.",
         link: "https://amzn.to/3xkVSys",
       },
       {
         title: "DJI OM 5",
         description:
-          "Estabilizador para móviles DJI OM 5 de 3 ejes. Color athen gray. Si te mola grabar vídeos con el móvil, este es tu gadget.",
+          "Estabilizador para móviles DJI OM 5 de 3 ejes. Plegable, ligero y gris elegante. Vídeos estables aunque corras, saltes o persigas palomas.",
         link: "https://amzn.to/2XF7UGz",
       },
       {
         title: "Fidget Cube",
         description:
-          "Cubo antiestrés. Un vicio. Tiene botones, ruedas, interruptores y bolitas para jugar.",
+          "Cubo antiestrés. Un vicio. Tiene botones, ruedas, interruptores y bolitas para jugar. No resuelve tus problemas, pero los hace más entretenidos.",
         link: "https://amzn.to/3RgkwwV",
       },
       {
         title: "Power Ball",
-        description: "Bola giratoria para mover un poco las muñecas.",
+        description:
+          "Esto no es una bola cualquiera. Es una centrífuga de muñecas. Fortalece muñecas, antebrazos.",
         link: "https://amzn.to/4bYITH4",
       },
       {
         title: "DYMO Label Maker",
-        description: "Impresora de etiquetas para tener todo bien organizado.",
+        description:
+          "Impresora de etiquetas con pegatina para tener todo bien organizado. Rápida y fácil de usar. Imprime etiquetas nítidas en segundos.",
         link: "https://amzn.to/4dX1OUB",
       },
       {
         title: "Raspberry Pi 3 B",
         description:
-          "Es un mini ordenador, y la uso para hacer pruebas y experimentos. Actualmente tiene instalado Retropie.",
+          "Es un mini ordenador. Perfecta para experimentos raros, automatizaciones caseras o jugar a ser hacker. Actualmente tiene instalado Retropie.",
         link: "https://amzn.to/3x4XkL6",
       },
       {
@@ -429,7 +435,7 @@ const myUses = [
       {
         title: "Cable Ethernet CAT 6 20m",
         description:
-          "Cable de red de 20 metros que sale de la caja de fibra óptica y llega hasta el estudio. Necesario para gaming y streaming.",
+          "Cable de red de 20 metros que sale de la caja de fibra óptica y llega hasta el estudio. Necesario para trabajar, gaming y streaming.",
         link: "https://amzn.to/3yZKoqg",
       },
       {
@@ -449,6 +455,18 @@ const myUses = [
         description:
           "Para tener conexión a internet en la otra punta de la casa. Funciona a través de la red eléctrica.",
         link: "https://amzn.to/3ATGall",
+      },
+    ],
+  },
+  {
+    type: "h2",
+    title: "Eventos y miscelánea",
+    children: [
+      {
+        title: "Traje Super Mario",
+        description:
+          "It's-a-me-Mario! Traje de Super Mario para ir a los eventos de la comunidad, no apto para tímidos. Todos los ojos estarán en ti. Le he cosido los bajos a mano para un ajuste perfecto.",
+        link: "https://amzn.to/4iIXaLn",
       },
     ],
   },

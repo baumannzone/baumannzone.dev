@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BlogSection from "../components/HomePage/BlogSection.astro";
 import ProfileSection from "../components/HomePage/ProfileSection.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import RandomSetupItem from "../components/HomePage/RandomSetupItem.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.published !== false)
@@ -12,4 +13,5 @@ const posts = (await getCollection("blog"))
 <DefaultLayout>
   <ProfileSection />
   <BlogSection posts={posts} />
+  <RandomSetupItem />
 </DefaultLayout>
