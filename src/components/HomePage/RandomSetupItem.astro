@@ -13,7 +13,10 @@ const randomItem = amazonItems[Math.floor(Math.random() * amazonItems.length)];
 
 <div class="bg-violet-100/80 py-24 px-6 relative">
   <div class="bmn-container mx-auto">
-    <span class="px-8 text-sm text-gray-500">Random Setup Item</span>
+    <div class="px-8 text-sm text-gray-500 mb-1">
+      <span class="text-xs">🎲</span>
+      Random Setup Item
+    </div>
     <div class="p-8 bg-white rounded-xl">
       <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
         <div class="col-span-1 md:col-span-4">
@@ -52,6 +55,14 @@ const randomItem = amazonItems[Math.floor(Math.random() * amazonItems.length)];
                 </p>
               )
             }
+
+            <a
+              href={randomItem.link}
+              rel="noopener noreferrer"
+              class="mt-4 inline-block bg-purple-600 text-white font-semibold px-4 py-2 rounded hover:bg-purple-500 transition"
+            >
+              Ver en Amazon
+            </a>
           </div>
         </div>
         <div class="col-span-1 md:col-span-2">
