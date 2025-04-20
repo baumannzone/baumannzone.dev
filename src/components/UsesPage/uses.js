@@ -222,77 +222,76 @@ const myUses = [
         description: "Editor de código de Microsoft.",
         link: "https://code.visualstudio.com/",
       },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Plugins Editor",
+    children: [
       {
-        type: "h3",
-        title: "Plugins Editor",
-        children: [
-          {
-            title: "GitHub Copilot",
-            description: "Ya no sé programar sin esto.",
-            link: "https://copilot.github.com/",
-          },
-          {
-            title: "Turboconsolelog",
-            description: "Para hacer console.log's como un mapache enfurecido.",
-            link: "https://www.turboconsolelog.io/",
-          },
-          {
-            title: "Prettier",
-            description: "Formateador de código.",
-            link: "https://prettier.io/",
-          },
-          {
-            title: "Tailwind CSS IntelliSense",
-            description: "Intellisense para Tailwind CSS.",
-            link: "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
-          },
-          {
-            title: "Live Share",
-            description:
-              "Para colaborar en tiempo real con tus compis de trabajo.",
-            link: "https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare",
-          },
-          {
-            title: "Live Server",
-            description: "Para ver tu código en vivo en el navegador.",
-            link: "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
-          },
-          {
-            title: "Image Preview",
-            description: "Para ver las imágenes en el editor.",
-            link: "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
-          },
-        ],
+        title: "GitHub Copilot",
+        description: "Ya no sé programar sin esto.",
+        link: "https://copilot.github.com/",
       },
       {
-        type: "h3",
-        title: "Fuentes o Tipografías para programar",
-        children: [
-          {
-            title: "Operator Mono",
-            description:
-              "Es la que más me gusta para el editor. ¿Has visto qué divertida es la cursiva? Es de pago, pero a mí me merece la pena.",
-            link: "https://www.typography.com/fonts/operator/overview",
-          },
-          {
-            title: "Monaspace",
-            description:
-              "Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.",
-            link: "https://monaspace.githubnext.com/",
-          },
-          {
-            title: "Geist Mono",
-            description:
-              "Fuente monoespaciada de Vercel. Es gratuita y open source.",
-            link: "https://vercel.com/font",
-          },
-          {
-            title: "JetBrains Mono",
-            description:
-              "Esta tipografía también me gusta mucho, del equipo de JetBrains. Es gratuita y open source.",
-            link: "https://www.jetbrains.com/es-es/lp/mono/",
-          },
-        ],
+        title: "Turbo Console Log",
+        description: "Para hacer `console.log` como un mapache enfurecido.",
+        link: "https://www.turboconsolelog.io/",
+      },
+      {
+        title: "Prettier",
+        description: "Formateador de código.",
+        link: "https://prettier.io/",
+      },
+      {
+        title: "Tailwind CSS IntelliSense",
+        description: "Intellisense para Tailwind CSS.",
+        link: "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
+      },
+      {
+        title: "Live Share",
+        description: "Para colaborar en tiempo real con tus compis de trabajo.",
+        link: "https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare",
+      },
+      {
+        title: "Live Server",
+        description: "Para ver tu código en vivo en el navegador.",
+        link: "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
+      },
+      {
+        title: "Image Preview",
+        description: "Para ver las imágenes en el editor.",
+        link: "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
+      },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Fuentes o Tipografías para programar",
+    children: [
+      {
+        title: "Operator Mono",
+        description:
+          "Es la que más me gusta para el editor. ¿Has visto qué divertida es la cursiva? Es de pago, pero a mí me merece la pena.",
+        link: "https://www.typography.com/fonts/operator/overview",
+      },
+      {
+        title: "Monaspace",
+        description:
+          "Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.",
+        link: "https://monaspace.githubnext.com/",
+      },
+      {
+        title: "Geist Mono",
+        description:
+          "Fuente monoespaciada de Vercel. Es gratuita y open source.",
+        link: "https://vercel.com/font",
+      },
+      {
+        title: "JetBrains Mono",
+        description:
+          "Esta tipografía también me gusta mucho, del equipo de JetBrains. Es gratuita y open source.",
+        link: "https://www.jetbrains.com/es-es/lp/mono/",
       },
     ],
   },
@@ -303,7 +302,7 @@ const myUses = [
       {
         title: "Warp",
         description:
-          "Tremenda terminal con IA integrada para autocompletar comandos. Es la que uso actualmente.",
+          "La mejor terminal con IA integrada para autocompletar comandos y más.",
         link: "https://app.warp.dev/referral/2EJGKR",
       },
     ],
@@ -311,61 +310,59 @@ const myUses = [
   {
     type: "h2",
     title: "Navegador",
+  },
+  {
+    type: "h3",
+    title: "Desktop",
     children: [
       {
-        type: "h3",
-        title: "Desktop",
-        children: [
-          {
-            title: "Google Chrome",
-            description: "Mi navegador principal como developer.",
-            link: "https://www.google.com/chrome/",
-          },
-          {
-            title: "Brave",
-            description: "Adiós anuncios.",
-            link: "https://brave.com/es/",
-          },
-        ],
+        title: "Google Chrome",
+        description: "Mi navegador principal como developer.",
+        link: "https://www.google.com/chrome/",
       },
       {
-        type: "h3",
-        title: "Móvil",
-        children: [
-          {
-            title: "Brave",
-            description: "Lo uso principalmente desde el móvil.",
-            link: "https://brave.com/es/",
-          },
-          {
-            title: "Safari",
-            description: "El navegador por defecto en el iPhone.",
-            link: "https://www.apple.com/es/safari/",
-          },
-        ],
+        title: "Brave",
+        description: "Adiós anuncios.",
+        link: "https://brave.com/es/",
+      },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Móvil",
+    children: [
+      {
+        title: "Brave",
+        description: "Lo uso principalmente desde el móvil.",
+        link: "https://brave.com/es/",
       },
       {
-        type: "h3",
-        title: "Extensiones Navegador",
-        children: [
-          {
-            title: "GIFs for GitHub",
-            description:
-              "Si solo puedes elegir una, esta es la única extensión que deberías tener instalada.",
-            link: "https://chromewebstore.google.com/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep",
-          },
-          {
-            title: "Dark Reader",
-            description:
-              "Para poner en modo oscuro cualquier página web y no quemarte los ojos por la noche.",
-            link: "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
-          },
-          {
-            title: "Color Tab",
-            description: "Nueva pestaña con colorines.",
-            link: "https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es",
-          },
-        ],
+        title: "Safari",
+        description: "El navegador por defecto en el iPhone.",
+        link: "https://www.apple.com/es/safari/",
+      },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Extensiones Navegador",
+    children: [
+      {
+        title: "GIFs for GitHub",
+        description:
+          "Si solo puedes elegir una, esta es la única extensión que deberías tener instalada.",
+        link: "https://chromewebstore.google.com/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep",
+      },
+      {
+        title: "Dark Reader",
+        description:
+          "Para poner en modo oscuro cualquier página web y no quemarte los ojos por la noche.",
+        link: "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
+      },
+      {
+        title: "Color Tab",
+        description: "Nueva pestaña con colorines.",
+        link: "https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es",
       },
     ],
   },

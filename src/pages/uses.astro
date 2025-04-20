@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import { Content as MyUses } from "../components/UsesPage/uses.md";
-// import myUses from "../components/UsesPage/uses.js";
+// import { Content as MyUses } from "../components/UsesPage/uses.md";
+import myUses from "../components/UsesPage/uses.js";
 import desktopImage from "../assets/desktop.avif";
 import { Image } from "astro:assets";
 ---
@@ -92,8 +92,72 @@ import { Image } from "astro:assets";
               caprichos tecnológicos.
             </p>
             <div class="mx-auto mt-12 prose prose-lg prose-violet">
-              <MyUses />
+              {
+                myUses.map((section) => (
+                  <div>
+                    {section.type === "h2" ? (
+                      <h2>
+                        {section.title}
+                      </h2>
+                    ) : (
+                      <h3>
+                        {section.title}
+                      </h3>
+                    )}
+                    {section.children && (
+                      <ul>
+                        {section.children.map((item) => (
+                          <li>
+                            <p>
+                              {item.link ? (
+                                <a
+                                  href={item.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  class="text-violet-600 hover:text-violet-800"
+                                >
+                                  {item.title}
+                                </a>
+                              ) : (
+                                <span>{item.title}</span>
+                              )}
+                              {item.description && (
+                                <br />
+                                <>
+                                  {item.description}
+                                </>
+                              )}
+                            </p>
+                            {item.specs && (
+                              <ul>
+                                {item.specs.map((spec) => (
+                                  <li>{spec}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))
+              }
             </div>
+
+            <hr class="my-12" /> 
+
+            <p class="text-lg text-balance">
+              ¿Quieres ver cómo ha evolucionado mi setup a lo largo del tiempo? 👉
+              <a
+                href="https://github.com/baumannzone/baumannzone.dev/blob/c94f6a1450065f5ab37c72c9720e347e9f20af2b/src/components/UsesPage/uses.md?plain=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-violet-600 hover:text-violet-800"
+              >
+                Mira el historial de cambios
+              </a>
+            </p>
+
           </div>
         </div>
       </div>
