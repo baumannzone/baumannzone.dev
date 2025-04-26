@@ -1,6 +1,7 @@
 ---
 import { calculateCoffees } from "../../utils/main";
 import { getCollection } from "astro:content";
+import StravaStats from "../StravaStats.astro";
 
 // Calcular el número de cafés consumidos
 const totalCoffees = calculateCoffees();
@@ -159,6 +160,7 @@ const { totalPosts } = Astro.props;
               {totalTalks}
             </dd>
           </div>
+          <StravaStats />
         </dl>
       </div>
     </div>
@@ -234,5 +236,8 @@ const { totalPosts } = Astro.props;
     observer.observe(document.getElementById("totalRepos") as HTMLElement);
     observer.observe(document.getElementById("totalCoffees") as HTMLElement);
     observer.observe(document.getElementById("totalTalks") as HTMLElement);
+    observer.observe(
+      document.getElementById("strava-biking-stats") as HTMLElement,
+    );
   });
 </script>
