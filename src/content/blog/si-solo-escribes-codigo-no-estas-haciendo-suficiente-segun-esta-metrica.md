@@ -33,17 +33,21 @@ Un reducido grupo de developers utiliza activamente cada PR para mejorar proacti
 
 ---
 
-La "métrica de la mejora" es una forma de evaluar nuestro impacto: ¿Somos capaces de identificar áreas de mejora y actuar sin que nadie nos lo pida?
+## La métrica de la PR
 
-A veces cuesta imaginar cómo puedes mejorar algo en tu trabajo.
+La "métrica de la PR" es una forma de evaluar nuestro impacto: ¿Somos capaces de identificar áreas de mejora y actuar sin que nadie nos lo pida?
 
-- **Grupo A**: (por debajo de las expectativas): cumplen únicamente con sus tareas inmediatas, dejando deuda técnica acumulada.
+A veces cuesta imaginar cómo se puede mejorar algo en tu trabajo. Pero si te fijas bien, hay muchas cosas que se pueden mejorar.
 
-- **Grupo B**: (cumple expectativas): realizan sus tareas asegurándose de no empeorar el código existente.
+Aquí te propongo una forma de evaluar tu impacto:
 
-- **Grupo C**: (cumple expectativas): mejoran el código, pero solo cuando les afecta directamente.
+- **Grupo 1**: (por debajo de las expectativas): cumple únicamente con sus tareas inmediatas, dejando deuda técnica acumulada.
 
-- **Grupo D**: (supera expectativas): buscan activamente mejorar constantemente el sistema para beneficio colectivo, incluso cuando no es directamente su responsabilidad o beneficio inmediato.
+- **Grupo 2**: (cumple expectativas): realiza sus tareas asegurándose de no empeorar el código existente.
+
+- **Grupo 3**: (cumple expectativas): mejora el código, pero solo cuando le afecta directamente.
+
+- **Grupo 4**: (supera expectativas): busca activamente mejorar el sistema para beneficio colectivo, incluso cuando no es directamente su responsabilidad o beneficio inmediato.
 
 Hazte esta pregunta en cualquier situación de tu trabajo.
 
