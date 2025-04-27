@@ -3,17 +3,16 @@ title: "Si solo escribes código, no estás haciendo suficiente (según esta mé
 description: "¿Estás aportando o solo 'pasando la bola'? Una reflexión práctica sobre cómo pequeñas acciones proactivas pueden marcar la diferencia en la calidad del código y en la eficiencia de tu equipo."
 pubDate: 2025-04-25
 type: blog
-published: false
 author: Jorge Baumann
 tags:
   - Career
 ---
 
-Cuando trabajas en un repositorio de código compartido, existe un momento interesante al revisar código ajeno antes de aprobar una **pull request** (PR). Este es un buen momento para reflexionar sobre cómo actúan las demás personas en esta situación.
+Cuando trabajamos en repositorios compartidos, siempre llega ese momento obligatorio: revisar código ajeno antes de aprobar una **pull request** (PR).
 
-Cada una está revisando su PR sin distracciones. Van entrando PRs y cada persona decide cómo gestionarlas. No existe una persona específica asignada a refactorizar o mejorar continuamente el código.
+En esos momentos se nota mucho cómo reaccionamos cada uno. Algunos revisan el código rápidamente, otros se detienen más. No suele haber alguien específico encargado de mejorar continuamente el código, así que cada persona decide cómo actuar.
 
-En mi experiencia, podemos distinguir cuatro grupos según cómo gestionan estas situaciones:
+Según mi experiencia, podemos distinguir cuatro tipos de personas según cómo gestionan esta situación:
 
 ## Grupo 1 🙄
 
@@ -49,6 +48,10 @@ Aquí te propongo una forma de evaluar tu impacto:
 
 - **Grupo 4**: (supera expectativas): busca activamente mejorar el sistema para beneficio colectivo, incluso cuando no es directamente su responsabilidad o beneficio inmediato.
 
-Hazte esta pregunta en cualquier situación de tu trabajo.
+---
 
-> ¿A qué grupo quieres pertenecer tú?
+Ahora piensa en tu día a día y pregúntate:
+
+> ¿En qué grupo encajo yo?
+
+Déjame abajo un comentario diciendo con qué grupo te identificas. 👇
