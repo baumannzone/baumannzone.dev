@@ -22,17 +22,11 @@ const response = await fetch(
 
 const stats = await response.json();
 
-console.log(stats.ytd_ride_totals);
-
-const movingTime = stats.ytd_ride_totals.moving_time; // in seconds
+const movingTime = stats?.ytd_ride_totals?.moving_time; // in seconds
 const movingTimeInHours = Math.round(movingTime / 3600);
 
-console.log("🚀 ~ movingTimeInHours:", movingTimeInHours);
-
-const distance = stats.ytd_ride_totals.distance; // in meters
+const distance = stats?.ytd_ride_totals?.distance; // in meters
 const distanceInKm = Math.round(distance / 1000);
-
-console.log("🚀 ~ distanceInKm:", distanceInKm);
 
 const currentYear = new Date().getFullYear();
 
@@ -44,13 +38,16 @@ const label = randomChoice
   : `Kilómetros en bici en ${currentYear}`;
 ---
 
-<div class="flex flex-col-reverse gap-y-4">
-  <dt class="text-base leading-7 text-gray-600">
-    {label}
-  </dt>
-  <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-    + <span data-value={value} id="strava-biking-stats">
-      {value}
-    </span>
-  </dd>
-</div>
+{
+  movingTimeInHours > 0 || distanceInKm > 0 ? (
+    <div class="flex flex-col-reverse gap-y-4">
+      <dt class="text-base leading-7 text-gray-600">{label}</dt>
+      <dd class="text-5xl font-semibold tracking-tight text-gray-900">
+        +{" "}
+        <span data-value={value} id="strava-biking-stats">
+          {value}
+        </span>
+      </dd>
+    </div>
+  ) : null
+}
