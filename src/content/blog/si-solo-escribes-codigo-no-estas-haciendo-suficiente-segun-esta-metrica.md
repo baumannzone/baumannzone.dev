@@ -6,6 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - Career
+  - Git
 ---
 
 Cuando trabajamos en repositorios compartidos, siempre llega ese momento obligatorio: revisar código ajeno antes de aprobar una **pull request** (PR).
@@ -30,15 +31,13 @@ Un grupo más pequeño aprovecha la PR para arreglar problemas técnicos, pero s
 
 Un reducido grupo de developers utiliza activamente cada PR para mejorar proactivamente la calidad global del código, refactorizando o sugiriendo mejoras incluso cuando no son estrictamente necesarias para su trabajo a corto plazo o cuando no les afectan directamente.
 
----
+## ¿Qué impacto tienes como desarrollador?
 
-## La métrica de la PR
+![Métrica de la PR](../../assets/blog/si-solo-escribes-codigo-no-estas-haciendo-suficiente-segun-esta-metrica/image.png)
 
-La "métrica de la PR" es una forma de evaluar nuestro impacto: ¿Somos capaces de identificar áreas de mejora y actuar sin que nadie nos lo pida?
+La calidad de nuestro trabajo no solo se mide en el código que escribimos, sino en nuestra capacidad de ver más allá de las tareas inmediatas. La "**métrica de la PR**" es una herramienta útil para autoevaluar nuestro impacto real en el equipo y el proyecto:
 
-A veces cuesta imaginar cómo se puede mejorar algo en tu trabajo. Pero si te fijas bien, hay muchas cosas que se pueden mejorar.
-
-Aquí te propongo una forma de evaluar tu impacto:
+### ¿En qué grupo estás?
 
 - **Grupo 1**: (por debajo de las expectativas): cumple únicamente con sus tareas inmediatas, dejando deuda técnica acumulada.
 
@@ -50,8 +49,8 @@ Aquí te propongo una forma de evaluar tu impacto:
 
 ---
 
-Ahora piensa en tu día a día y pregúntate:
+Ahora pregúntate con sinceridad:
 
 > ¿En qué grupo encajo yo?
 
-Déjame abajo un comentario diciendo con qué grupo te identificas. 👇
+👇 Déjame un comentario y cuéntame con qué grupo te identificas.
