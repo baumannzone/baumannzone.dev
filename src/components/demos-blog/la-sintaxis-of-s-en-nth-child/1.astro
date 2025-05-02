@@ -1,0 +1,25 @@
+<div
+  class="demo-container not-prose border-4 border-violet-500/50 p-4 rounded-lg relative hover:border-violet-500/70 transition-colors duration-300"
+>
+  <span class="text-gray-500 absolute top-2 right-2 text-xs">demo</span>
+  <ol class="pl-4 list-disc space-y-2">
+    <li>Elemento 1️⃣</li>
+    <li hidden>Elemento 2️⃣</li>
+    <li>Elemento 3️⃣</li>
+    <li>Elemento 4️⃣</li>
+    <li hidden>Elemento 5️⃣</li>
+    <li>Elemento 6️⃣</li>
+  </ol>
+</div>
+
+<style>
+  li:nth-child(even) {
+    background-color: violet;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    li:nth-child(even) {
+      background-color: blueviolet;
+    }
+  }
+</style>

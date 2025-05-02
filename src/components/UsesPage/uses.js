@@ -6,7 +6,7 @@ const myUses = [
       {
         title: "MacBook Pro (13-inch, M1, 2020)",
         description: "El portátil que uso diariamente para trabajar.",
-        link: "https://www.apple.com/macbook-pro-13/",
+        link: "https://amzn.to/4k0Q4CI",
         specs: [
           "Procesador: Apple M1 chip",
           "Memoria: 16 GB",
