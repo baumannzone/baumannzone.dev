@@ -375,8 +375,14 @@ const myUses = [
       {
         title: "iPhone 12 Mini Púrpura",
         description:
-          "Mi primer móvil de Apple. Me encanta que sea tan pequeño. Más portable y manejable.",
-        link: "https://www.apple.com/es/iphone-12/key-features/",
+          "Mi primer juguetito Apple. Tan pequeño que cabe en cualquier bolsillo, incluso en los más ajustaditos. Ligero, discreto y siempre listo.",
+        link: "https://amzn.to/44lJFh7",
+      },
+      {
+        title: "Apple Watch Series 10",
+        description:
+          "El reloj de Apple. Lo compré para medir mi actividad física... y ahora se cree mi entrenador personal. Me vibra si estoy quieto, me felicita si subo escaleras",
+        link: "https://amzn.to/42UuEAv",
       },
       {
         title: "Mini Dron Tello",

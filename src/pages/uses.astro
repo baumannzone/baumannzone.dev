@@ -1,6 +1,5 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-// import { Content as MyUses } from "../components/UsesPage/uses.md";
 import myUses from "../components/UsesPage/uses.js";
 import desktopImage from "../assets/desktop.avif";
 import { Image } from "astro:assets";
@@ -119,7 +118,7 @@ import { Image } from "astro:assets";
                                   {item.title}
                                 </a>
                               ) : (
-                                <span>{item.title}</span>
+                                <span class="font-medium">{item.title}</span>
                               )}
                               {item.description && (
                                 <br />
