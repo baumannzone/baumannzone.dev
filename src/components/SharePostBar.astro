@@ -90,12 +90,12 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
     </div>
   </div> -->
 
+  <p class="text-lg font-medium dark:text-white text-center">Comparte</p>
   <div
-    class="mx-auto flex w-full flex-wrap items-center justify-center gap-5 py-16"
+    class="mx-auto flex w-full flex-wrap items-center justify-center gap-5 pb-16 pt-8"
   >
-    <strong class="text-lg font-medium dark:text-white">Comparte</strong>
     <div
-      class="hover:[&_a]:bg-zinc-500/5 dark:hover:[&_a]:bg-zinc-500/50 hover:[&_button]:bg-zinc-500/5 dark:hover:[&_button]:bg-zinc-500/50 relative items-stretch [&_a]:flex [&_a]:aspect-square [&_a]:w-full [&_a]:max-w-14 [&_a]:items-center [&_a]:justify-center [&_a]:border-r [&_a]:p-3 first-of-type:[&_a]:rounded-l [&_button]:flex [&_button]:items-center [&_button]:p-3 [&_button]:px-5 inline-flex rounded-md border"
+      class="hover:[&_a]:bg-zinc-500/5 dark:hover:[&_a]:bg-zinc-500/50 relative items-stretch [&_a]:flex [&_a]:aspect-square [&_a]:w-full [&_a]:max-w-14 [&_a]:items-center [&_a]:justify-center [&_a:not(:last-child)]:border-r [&_a]:p-3 first-of-type:[&_a]:rounded-l inline-flex rounded-md border"
     >
       <div
         class="via-violet-500/40 dark:via-violet-500/70 absolute -top-px left-0 h-px w-full bg-gradient-to-r from-transparent to-transparent"
@@ -167,8 +167,6 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         </svg>
       </a>
 
-      <!-- https://www.linkedin.com/feed/?shareActive=true&text=This is my text! https://ogp.me/ %23NewPost -->
-      <!-- https://linkedin.com/shareArticle?mini=true&url=https://www.epicai.pro/how-llms-change-user-onboarding-5ha1t?author=Kent C. Dodds -->
       <a
         href={linkedinShareUrl}
         target="_blank"
@@ -209,6 +207,21 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
           ></path>
         </svg>
       </a>
+    </div>
+
+    <div
+      class="hover:[&_button]:bg-zinc-500/5 dark:hover:[&_button]:bg-zinc-500/50 relative items-stretch [&_button]:flex [&_button]:items-center [&_button]:p-3 [&_button]:px-5 inline-flex rounded-md border h-[47px]"
+    >
+      <div
+        class="via-violet-500/40 dark:via-violet-500/70 absolute -top-px left-0 h-px w-full bg-gradient-to-r from-transparent to-transparent"
+        aria-hidden="true"
+      >
+      </div>
+      <div
+        class="via-purple-500/30 dark:via-pink-500/60 absolute -bottom-px left-0 h-px w-2/3 bg-gradient-to-r from-transparent to-transparent"
+        aria-hidden="true"
+      >
+      </div>
 
       <button
         id="copy-url-button"
