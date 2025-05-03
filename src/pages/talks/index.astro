@@ -3,6 +3,7 @@ import Layout from "../../layouts/DefaultLayout.astro";
 import { getCollection } from "astro:content";
 
 const talks = await getCollection("talks");
+const currentDate = new Date();
 talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 // Group talks by year
@@ -111,8 +112,16 @@ Object.keys(talksByYear).forEach((year) => {
                         {talk.data.title}
                       </div>
                       <div class="absolute right-4 top-4 bg-zinc-200 rounded-lg">
-                        <div class="px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors">
-                          {talk.data.type}
+                        <div class="px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors flex items-center">
+                          <span class="mr-1">{talk.data.type}</span>
+                          <div
+                            class={`size-[6px] rounded-full ${talk.data.date > currentDate ? "bg-green-500" : "bg-gray-400"}`}
+                            title={
+                              talk.data.date > currentDate
+                                ? "Próxima charla"
+                                : "Charla pasada"
+                            }
+                          />
                         </div>
                       </div>
                       {talk.data.type === "artículo" && (
