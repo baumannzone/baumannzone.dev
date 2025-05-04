@@ -1,13 +1,13 @@
 ---
 title: "Personaliza ::marker en CSS sin romper la accesibilidad"
 description: "Personaliza ::marker en CSS sin afectar la accesibilidad. Aprende a separar contenido visual y lectura de pantalla fácilmente."
-pubDate: "2025-05-06"
+pubDate: "2025-05-08"
 author: "Jorge Baumann"
 published: false
-tags: ["CSS"]
+tags: ["CSS", "a11y"]
 ---
 
-Añadir un emoji o ícono bonito a tus listas puede parecer una mejora visual inofensiva... hasta que lo pruebas con un lector de pantalla. ¿Sabías que el contenido de ::marker también se lee en voz alta?
+Añadir un emoji o ícono bonito a tus listas puede parecer una mejora visual inofensiva... hasta que lo pruebas con un lector de pantalla. ¿Sabías que el contenido de `::marker` también se lee en voz alta?
 
 Eso que tú ves como un simple adorno puede convertirse en ruido innecesario para quien navega con tecnología asistiva.
 
@@ -51,4 +51,4 @@ En este caso, el lector de pantalla solo leerá "_Playlist_", ignorando el emoji
 
 ![Ejemplo de personalización de markers en CSS](../../assets/blog/personaliza-marker-en-css-sin-romper-la-accesibilidad/image.png)
 
-Pruébalo tú mismo con VoiceOver (`CMD` + `F5`) en macOS usando Chrome.
+Si tienes macOS, puedes probarlo tú mismo con **VoiceOver**.
