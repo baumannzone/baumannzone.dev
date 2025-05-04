@@ -35,22 +35,29 @@
 
 /* Screen Saver */
 #screen-saver {
-  background-image: linear-gradient(
-    45deg,
-    hsl(300deg 100% 57%) 0%,
-    hsl(298deg 100% 56%) 50%,
-    hsl(254deg 100% 50%) 100%
-  );
-  background-size: 300% 200%;
-  animation: moveGradient 6s linear infinite alternate;
+  background-color: rgba(100, 20, 200, 0.4);
+  backdrop-filter: blur(10px);
+  /* animation: psychedelic 5s linear infinite; */
 }
 
-@keyframes moveGradient {
+@keyframes psychedelic {
   0% {
-    background-position: 0% 0%;
+    background-color: rgba(255, 0, 255, 0.4); /* Magenta */
+  }
+  20% {
+    background-color: rgba(0, 255, 255, 0.4); /* Cyan */
+  }
+  40% {
+    background-color: rgba(255, 255, 0, 0.4); /* Yellow */
+  }
+  60% {
+    background-color: rgba(255, 0, 0, 0.4); /* Red */
+  }
+  80% {
+    background-color: rgba(0, 255, 0, 0.4); /* Green */
   }
   100% {
-    background-position: 100% 100%;
+    background-color: rgba(255, 0, 255, 0.4); /* Magenta */
   }
 }
 
