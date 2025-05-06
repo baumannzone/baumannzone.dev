@@ -1,7 +1,7 @@
 ---
 import myUses from "../UsesPage/uses.js";
 import { Image } from "astro:assets";
-import setupImage from "../../assets/desktop-mini.webp";
+import setupImage from "../../assets/baumannzone-desktop-origami.webp";
 
 const amazonItems = myUses.flatMap(
   (section) =>
@@ -60,13 +60,13 @@ const randomItem = amazonItems[Math.floor(Math.random() * amazonItems.length)];
               <a
                 href={randomItem.link}
                 rel="noopener noreferrer"
-                class="inline-block w-full md:w-auto bg-purple-600 text-white font-semibold px-4 py-2 rounded hover:bg-purple-500 transition"
+                class="inline-block w-full md:w-auto bg-violet-600 text-white font-semibold px-4 py-2 rounded hover:bg-violet-500 transition"
               >
                 Ver detalles
               </a>
               <a
                 href="/uses"
-                class="inline-block w-full md:w-auto border border-purple-600 text-purple-600 font-semibold px-4 py-2 rounded hover:bg-purple-50 transition"
+                class="inline-block w-full md:w-auto border border-violet-600 text-violet-600 font-semibold px-4 py-2 rounded hover:bg-violet-50 transition"
               >
                 Ver setup
               </a>

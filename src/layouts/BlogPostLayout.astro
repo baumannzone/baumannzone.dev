@@ -11,6 +11,10 @@ type Props = CollectionEntry<"blog">["data"] & {
   id: string;
   slug: string;
   collection: string;
+  ogImage: string;
+  twitterImage: string;
+  ogTitle: string;
+  ogDescription: string;
 };
 
 const {
@@ -23,6 +27,10 @@ const {
   slug,
   collection,
   author,
+  ogImage,
+  twitterImage,
+  ogTitle,
+  ogDescription,
 } = Astro.props;
 
 // Dont show comments in dev mode
@@ -31,7 +39,14 @@ const showComments = !import.meta.env.DEV;
 
 <html lang="es">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      twitterImage={twitterImage}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+    />
   </head>
 
   <body class="dark:bg-gray-700">
