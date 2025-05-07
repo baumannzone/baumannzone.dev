@@ -7,6 +7,7 @@ author: Jorge Baumann
 tags:
   - IA
   - Python
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=4%20cursos%20de%20Machine%20Learning%20gratis&tags=IA,Python"
 ---
 
 Hay muchas formas de empezar a aprender Machine Learning. Tan solo con una búsqueda por la internet puedes encontrar una gran cantidad de recursos gratuitos.

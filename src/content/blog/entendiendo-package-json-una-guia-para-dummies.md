@@ -8,6 +8,7 @@ tags:
   - JavaScript
   - Node.js
   - Fundamentals
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Entendiendo%20package.json%3A%20una%20gu%C3%ADa%20para%20dummies&tags=JavaScript,Node.js,Fundamentals"
 ---
 
 En el ecosistema de JavaScript y Node.js, el archivo `package.json` juega un papel fundamental.

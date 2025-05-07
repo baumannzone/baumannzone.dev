@@ -7,19 +7,9 @@ interface Props {
   title: string;
   description: string;
   ogImage?: string;
-  twitterImage?: string;
-  ogTitle?: string;
-  ogDescription?: string;
 }
 
-const {
-  title,
-  description,
-  ogImage = "/opengraph.png",
-  twitterImage = "/opengraph.png",
-  ogTitle = title,
-  ogDescription = description,
-} = Astro.props;
+const { title, description, ogImage = "/opengraph.png" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -36,16 +26,16 @@ const {
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={ogTitle} />
-<meta property="og:description" content={ogDescription} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={ogTitle} />
-<meta property="twitter:description" content={ogDescription} />
-<meta property="twitter:image" content={twitterImage} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
 <meta property="twitter:site" content="@baumannzone" />
 <meta property="twitter:creator" content="@baumannzone" />
 

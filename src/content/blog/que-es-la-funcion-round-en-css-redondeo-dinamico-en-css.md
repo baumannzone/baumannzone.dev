@@ -6,6 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - CSS
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Qu%C3%A9%20es%20la%20funci%C3%B3n%20round()%20en%20CSS%3A%20redondeo%20din%C3%A1mico&tags=CSS"
 ---
 
 Desde mayo de 2024, podemos utilizar la función `round()` para redondear valores en CSS. Esta función se une a otras funciones matemáticas como `calc()` o `min()`, permitiendo cálculos más precisos sin hacks de JavaScript.

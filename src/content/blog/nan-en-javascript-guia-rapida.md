@@ -5,6 +5,7 @@ pubDate: 2024-08-20
 type: blog
 author: Jorge Baumann
 tags: ["JavaScript", "Cheatsheet"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=NaN%20en%20JavaScript%3A%20gu%C3%ADa%20r%C3%A1pida%20para%20desarrolladores&tags=JavaScript,Cheatsheet"
 ---
 
 Una chuleta (_cheatsheet_) sobre `NaN` (_Not a Number_) en JavaScript.

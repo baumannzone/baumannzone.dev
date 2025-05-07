@@ -9,6 +9,7 @@ tags:
   - HTML
   - CSS
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=%F0%9F%91%BE%20Pure%20CSS%20Game%20Boy&tags=HTML,CSS,JavaScript"
 ---
 
 En esta publicación vamos a dibujar con CSS, la mítica Game Boy Original que tan buenos recuerdos nos trae a algunos, ¡mi primera consola!

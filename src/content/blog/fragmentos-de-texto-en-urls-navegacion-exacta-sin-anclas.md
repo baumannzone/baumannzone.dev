@@ -5,6 +5,7 @@ pubDate: 2024-11-05
 type: blog
 author: Jorge Baumann
 tags: ["Web"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Fragmentos%20de%20texto%20en%20URLs%3A%20navegaci%C3%B3n%20exacta%20sin%20anclas&tags=Web"
 ---
 
 ¿Alguna vez has querido compartir un enlace a un artículo o página web y dirigir a tus amigos directamente al fragmento de texto que te parece más interesante? Con los Fragmentos de Texto (Text Fragments) puedes hacerlo.

@@ -5,6 +5,7 @@ pubDate: 2024-10-10
 type: "blog"
 tags: ["JavaScript"]
 author: Jorge Baumann
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Qu%C3%A9%20son%20y%20c%C3%B3mo%20crear%20identificadores%20%C3%BAnicos%20(UUIDs)%20con%20JavaScript%20plano&tags=JavaScript"
 ---
 
 ¿Sabías que puedes generar identificadores únicos en JavaScript con solo una línea de código? Con el método `window.crypto.randomUUID()`, es posible crear UUIDs (Identificadores Únicos Universales) de versión 4 de manera sencilla y segura.
@@ -62,7 +63,6 @@ En esta estructura:
 
 - La posición **M** indica la versión del UUID (en este caso, la versión 4).
 - La posición **N** indica la variante, que especifica el formato y la codificación del UUID.
-
 
 ## Colisión de UUIDs
 

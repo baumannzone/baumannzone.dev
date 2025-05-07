@@ -8,14 +8,16 @@ author: Jorge Baumann
 tags:
   - TIL
   - CSS
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=La%20gran%20mentira%20de%20letter-spacing%20en%20CSS%20que%20no%20sab%C3%ADas&tags=TIL,CSS"
 ---
+
 El espaciado de letras o letter-spacing en CSS parece una propiedad sencilla, ¿verdad? Ajustar el espacio entre letras no debería ser un problema. Pero te han mentido. Lo que parece inofensivo puede estar desmoronando la estética de tus diseños sin que lo notes.
 
 Es probable que hayas estado usando mal el espaciado de letras todo este tiempo. Y lo peor es que este error pasa desapercibido para la mayoría de los desarrolladores y diseñadores. Sus efectos se manifiestan en la alineación y el ritmo visual de tus textos.
 
 Pero no te preocupes, hoy entenderás por qué `letter-spacing` está roto en CSS.
 
-## ¿Qué es `letter-spacing` en CSS? 
+## ¿Qué es `letter-spacing` en CSS?
 
 La pregunta es obvia, pero vale la pena responderla. `letter-spacing` es una propiedad de CSS que te permite ajustar el espacio entre las letras de un texto. Puedes usar valores positivos o negativos para aumentar o disminuir el espacio entre las letras.
 
@@ -35,7 +37,7 @@ h1 {
 
 ## ¿Por qué `letter-spacing` está roto?
 
-La especificación dice lo siguiente: "_This property specifies additional spacing between adjacent typographic character units._" (traducido: "Esta propiedad especifica el espaciado adicional entre unidades de caracteres tipográficos adyacentes"). 
+La especificación dice lo siguiente: "_This property specifies additional spacing between adjacent typographic character units._" (traducido: "Esta propiedad especifica el espaciado adicional entre unidades de caracteres tipográficos adyacentes").
 
 Por lo tanto, que si tienes este código HTML:
 
@@ -46,9 +48,13 @@ Por lo tanto, que si tienes este código HTML:
 y este código CSS:
 
 ```css
-p { letter-spacing: 1rem; }
+p {
+  letter-spacing: 1rem;
+}
 
-span { letter-spacing: 2rem; }
+span {
+  letter-spacing: 2rem;
+}
 ```
 
 El resultado debería ser algo así:

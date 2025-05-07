@@ -8,6 +8,7 @@ author: Jorge Baumann
 tags:
   - Web
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=%C2%BFSab%C3%ADas%20que%20tu%20navegador%20puede%20hablar%3F&tags=Web,JavaScript"
 ---
 
 La **Web Speech API** permite añadir voz a tus aplicaciones web directamente desde el navegador.
@@ -107,69 +108,4 @@ Según la especificación, el tono puede ir de `0` (más grave) a `2` (más agud
 
 ### `rate`: valores permitidos
 
-La velocidad (rate) puede ir de `0.1` a `10`. El valor por defecto también es `1`.
-
----
-
-## ¡Cambia la voz!
-
-En esta sección vas a ver cómo cambiar la **voz** que usa el navegador al hablar, usando JavaScript.
-
-Para hacerlo, primero necesitas obtener el listado de voces disponibles con `getVoices()`.
-
-```javascript
-speechSynthesis.onvoiceschanged = () => {
-  const text = "Puedes seguirme en Bluesky @baumannzone";
-  const synth = speechSynthesis;
-  const voices = synth.getVoices();
-  const utterThis = new SpeechSynthesisUtterance(text);
-
-  utterThis.voice = voices.find((voice) => voice.name === "Jorge");
-
-  synth.speak(utterThis);
-};
-```
-
-### Hot tip 🌶️
-
-La lista de voces se carga de forma **asíncrona**, así que necesitas esperar a que se dispare el evento `onvoiceschanged` antes de acceder a `getVoices()`.
-
-Dato curioso: una de las voces en español se llama **Jorge**. Venga, ¡vamos a usarla!
-
-El ejemplo con el evento `onvoiceschanged` y seleccionando la voz de `Jorge` quedaría así:
-
-```javascript
-speechSynthesis.onvoiceschanged = () => {
-  const text = "Soy Jorge Baumann, @baumannzone en Instagram.";
-  const synth = speechSynthesis;
-  const voices = synth.getVoices();
-  const utterThis = new SpeechSynthesisUtterance(text);
-
-  utterThis.voice = voices.find((voice) => voice.name === "Jorge");
-
-  synth.speak(utterThis);
-};
-```
-
-Y aquí tienes un listado con algunas voces disponibles en **Chrome** en un **MacBook Pro** en el momento de escribir este artículo (2018):
-
-![Lista de voces disponibles en el Macbook Pro](../../assets/blog/sabias-que-tu-navegador-puede-hablar/voices-list.png)
-
-## Notas finales
-
-- Algunos motores de voz ajustan sus propios límites. Por ejemplo, aunque el tono (`pitch`) suele llegar hasta `2`, en algunos casos solo llega a `1.8`.
-- Si asignas un valor fuera del rango soportado, se usará el valor por defecto. Por ejemplo, si el máximo es `1.8` y le pones 2, usará `1`.
-- ¿Sabías que también puede leer emojis? Prueba con 🦄 😂 👌 🐶 y verás.
-- Algunos símbolos raros como `⍾` o `⌘` no se reproducen correctamente.
-- Si has llegado hasta aquí y has trasteado con la [demo](https://web-speech-api-js.netlify.app/), ya sabes por qué en la práctica los valores útiles de velocidad suelen estar entre 0.46 y 3.6, aunque la spec diga 0.1 a 10.
-
----
-
-Eso es todo.
-
-Ahora ya sabes cómo hacer que tu navegador hable, controle el tono, la velocidad y hasta cambie de voz.
-Una API del navegador curiosa, divertida y con más potencial del que parece a simple vista.
-
-Ideal para proyectos accesibles, experimentos creativos o simplemente para fardar un poco.
-
-¿Te mola? Enséñame lo que has hecho. Búscame en [Instagram](https://www.instagram.com/baumannzone/) como `@baumannzone`.
+La velocidad (rate) puede ir de `0.1` a `10`. El valor por defecto también es `

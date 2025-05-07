@@ -5,6 +5,7 @@ pubDate: "2025-05-08"
 author: "Jorge Baumann"
 published: false
 tags: ["CSS", "a11y"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Personaliza%20%3A%3Amarker%20en%20CSS%20sin%20romper%20la%20accesibilidad&tags=CSS,a11y"
 ---
 
 Añadir un emoji o ícono bonito a tus listas puede parecer una mejora visual inofensiva... hasta que lo pruebas con un lector de pantalla. ¿Sabías que el contenido de `::marker` también se lee en voz alta?

@@ -6,6 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=%C2%BFQu%C3%A9%20son%20las%20IIFE%20en%20JavaScript%20y%20c%C3%B3mo%20funcionan%3F&tags=JavaScript"
 ---
 
 Cuando estás desarrollando con JavaScript, existe la posibilidad de que haya una función o variable con el mismo nombre en otros archivos JavaScript escritos por otros desarrolladores o en librerías de terceros. Si incluyes estos archivos en una sola página web, puede ser que se contamine el _scope global_ teniendo varias funciones o variables con el mismo nombre.

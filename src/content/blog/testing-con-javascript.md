@@ -2,12 +2,13 @@
 title: Testing con Javascript
 pubDate: 2019-09-02
 updatedDate: 2024-06-01
-description: 'Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript'
+description: "Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript"
 type: blog
 author: Jorge Baumann
 tags:
   - Testing
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Testing%20con%20JavaScript&tags=JavaScript,Testing"
 ---
 
 Introducción práctica a los tests con JavaScript (a través de Node.js) guiada por ejemplos progresivos: “_de 0 a framework_”.
@@ -35,10 +36,10 @@ Ahí están las dos funciones (función `suma` y función `resta`) que iremos te
 ```javascript
 // funcionesMatematicas.js
 
-const suma = ( num1, num2 ) => num1 + num2
-const resta = ( num1, num2 ) => num1 - num2
+const suma = (num1, num2) => num1 + num2;
+const resta = (num1, num2) => num1 - num2;
 
-module.exports = { suma, resta }
+module.exports = { suma, resta };
 ```
 
 Podemos empezar. Sabemos lo que hay que hacer y tenemos código que listo para ser testeado.
@@ -50,14 +51,14 @@ Podemos empezar. Sabemos lo que hay que hacer y tenemos código que listo para s
 ```javascript
 // test0.js
 
-const resultado = 1
-const esperado = 2
+const resultado = 1;
+const esperado = 2;
 
-if ( resultado !== esperado ) {
-  throw new Error( `${ resultado } es distinto de ${ esperado }` )
+if (resultado !== esperado) {
+  throw new Error(`${resultado} es distinto de ${esperado}`);
 }
 
-console.log( '¡Todo OK! 👌' )
+console.log("¡Todo OK! 👌");
 ```
 
 Puedes ejecutar este test corriendo `node test-0.js` desde la terminal. Y ya lo tienes, ¡tu primer test con JavaScript! 🎉
@@ -93,14 +94,14 @@ Con un ejemplo lo entenderás mejor:
 
 ```javascript
 // Es función pura
-const suma = (num1, num2) => num1 + num2
-suma(2, 2) // => 4
-suma(2, 2) // => 4
+const suma = (num1, num2) => num1 + num2;
+suma(2, 2); // => 4
+suma(2, 2); // => 4
 
 // No es función pura
-const tiempoMilisegundos = () => Date.now()
-tiempoMilisegundos() // => 1566762448192
-tiempoMilisegundos() // => 1566762450684
+const tiempoMilisegundos = () => Date.now();
+tiempoMilisegundos(); // => 1566762448192
+tiempoMilisegundos(); // => 1566762450684
 ```
 
 Ya sabemos cómo testear con JavaScript y tenemos una función pura deseosa de ser testeada. Me imagino que ya sabes cuál es el siguiente paso, ¿verdad?
@@ -112,25 +113,25 @@ Vamos a crear el test más simple posible para nuestras funciones aritméticas.
 ```javascript
 // test-1.js
 
-const { suma, resta } = require( './funcionesMatematicas' )
+const { suma, resta } = require("./funcionesMatematicas");
 
-let resultado, esperado
+let resultado, esperado;
 
 // Probar suma ( 2 + 3 )
-resultado = suma( 2, 3 )
-esperado = 5
-if ( resultado !== esperado ) {
-  throw new Error( `${ resultado } es distinto de ${ esperado }` )
+resultado = suma(2, 3);
+esperado = 5;
+if (resultado !== esperado) {
+  throw new Error(`${resultado} es distinto de ${esperado}`);
 }
 
 // Probar resta ( 8 - 3 )
-resultado = resta( 8, 3 )
-esperado = 5
-if ( resultado !== esperado ) {
-  throw new Error( `${ resultado } es distinto de ${ esperado }` )
+resultado = resta(8, 3);
+esperado = 5;
+if (resultado !== esperado) {
+  throw new Error(`${resultado} es distinto de ${esperado}`);
 }
 
-console.log( '¡Test1 OK! 👌' )
+console.log("¡Test1 OK! 👌");
 ```
 
 Ejecutamos el test desde la terminal con `node test-1.js` y podemos ver que la ejecución ha terminado con éxito.
@@ -169,20 +170,20 @@ Vamos a refactorizar nuestro test haciendo uso de dicho módulo, con el método 
 ```javascript
 // test-2.js
 
-const assert = require( 'assert' )
-const { suma, resta } = require( './funcionesMatematicas' )
+const assert = require("assert");
+const { suma, resta } = require("./funcionesMatematicas");
 
-let resultado, esperado
+let resultado, esperado;
 
-resultado = suma( 2, 3 )
-esperado = 5
-assert.strictEqual( resultado, esperado )
+resultado = suma(2, 3);
+esperado = 5;
+assert.strictEqual(resultado, esperado);
 
-resultado = resta( 8, 3 )
-esperado = 5
-assert.strictEqual( resultado, esperado )
+resultado = resta(8, 3);
+esperado = 5;
+assert.strictEqual(resultado, esperado);
 
-console.log( '¡Test2 OK! 👌' )
+console.log("¡Test2 OK! 👌");
 ```
 
 Estupendo, el test sigue funcionando igual que antes, lo único que ha cambiado es el mensaje de error.
@@ -224,13 +225,13 @@ const esperoQue = (dato) => {
   return {
     seaIgualQue: (esperado) => {
       if (dato !== esperado) {
-        throw new Error(`${dato} es distinto que ${esperado}`)
+        throw new Error(`${dato} es distinto que ${esperado}`);
       }
     },
-  }
-}
+  };
+};
 
-module.exports = { esperoQue }
+module.exports = { esperoQue };
 ```
 
 Vamos a reestructurar nuestros tests. En vez de usar el módulo de aserción de Node.js, vamos a utilizar la funcionalidad que acabamos de crear. Quedaría algo como esto:
@@ -238,20 +239,20 @@ Vamos a reestructurar nuestros tests. En vez de usar el módulo de aserción de 
 ```javascript
 // test-3.js
 
-const { suma, resta } = require( './funcionesMatematicas' )
-const { esperoQue } = require( './funcionesTesting' )
+const { suma, resta } = require("./funcionesMatematicas");
+const { esperoQue } = require("./funcionesTesting");
 
-let resultado, esperado
+let resultado, esperado;
 
-resultado = suma( 2, 3 )
-esperado = 5
-esperoQue( resultado ).seaIgualQue( esperado )
+resultado = suma(2, 3);
+esperado = 5;
+esperoQue(resultado).seaIgualQue(esperado);
 
-resultado = resta( 8, 3 )
-esperado = 5
-esperoQue( resultado ).seaIgualQue( esperado )
+resultado = resta(8, 3);
+esperado = 5;
+esperoQue(resultado).seaIgualQue(esperado);
 
-console.log( '¡Test3 OK! 👌' )
+console.log("¡Test3 OK! 👌");
 ```
 
 Vamos a repetir el procedimiento que hicimos anteriormente. Rompemos la función `suma` cambiando el `+` por el `-` y ejecutamos el test 3 con el siguiente comando `node test-3.js`.
@@ -268,7 +269,7 @@ Actualmente, cuando ejecutamos las pruebas y nos informan de un error, no tenemo
 Sabemos que está fallando la función `suma`, pero podría ser perfectamente la función `resta`.
 Nuestro mensaje de error no es tan descriptivo como debería ser.
 
-Asimismo, nos hemos dado cuenta de que nuestras pruebas no están completamente aisladas unas de otras. 
+Asimismo, nos hemos dado cuenta de que nuestras pruebas no están completamente aisladas unas de otras.
 
 ## Paso 4
 
@@ -277,27 +278,27 @@ Vamos a escribir una nueva función que nos permita mantener las pruebas **aisla
 ```javascript
 // funcionesTesting.js
 
-const esperoQue = ( dato ) => {
+const esperoQue = (dato) => {
   return {
-    seaIgualQue: ( esperado ) => {
-      if ( dato !== esperado ) {
-        throw new Error( `${ dato } es distinto que ${ esperado }` )
+    seaIgualQue: (esperado) => {
+      if (dato !== esperado) {
+        throw new Error(`${dato} es distinto que ${esperado}`);
       }
-    }
-  }
-}
+    },
+  };
+};
 
-const prueba = ( titulo, funcion ) => {
+const prueba = (titulo, funcion) => {
   try {
-    funcion()
-    console.log( `✅  · ${ titulo }` )
-  } catch ( error ) {
-    console.error( `❌  · ${ titulo }` )
-    console.error( error )
+    funcion();
+    console.log(`✅  · ${titulo}`);
+  } catch (error) {
+    console.error(`❌  · ${titulo}`);
+    console.error(error);
   }
-}
+};
 
-module.exports = { esperoQue, prueba }
+module.exports = { esperoQue, prueba };
 ```
 
 Acabamos de crear la función `prueba`, que nos va a resolver dichos problemas.
@@ -310,7 +311,6 @@ Hemos logrado aislar el código de nuestras pruebas y, además, tenemos mensajes
 Ejecutemos el test `test-4.js` y veamos cómo queda.
 
 ![test 4](../../assets/blog/testing-con-javascript/test-4.png)
-
 
 Tenemos un [listado](../../assets/blog/testing-con-javascript/test-4.mp4) de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.
 
@@ -341,19 +341,19 @@ Casualmente, las funciones de Jest son muy similares a las nuestras. Lo único q
 ```javascript
 // test-5.js
 
-const { suma, resta } = require( './funcionesMatematicas' )
+const { suma, resta } = require("./funcionesMatematicas");
 
-test( 'Suma 2 números positivos correctamente', () => {
-  const resultado = suma( 2, 3 )
-  const esperado = 5
-  expect( resultado ).toBe( esperado )
-} )
+test("Suma 2 números positivos correctamente", () => {
+  const resultado = suma(2, 3);
+  const esperado = 5;
+  expect(resultado).toBe(esperado);
+});
 
-test( 'Resta 2 números positivos correctamente', () => {
-  const resultado = resta( 8, 3 )
-  const esperado = 5
-  expect( resultado ).toBe( esperado )
-} )
+test("Resta 2 números positivos correctamente", () => {
+  const resultado = resta(8, 3);
+  const esperado = 5;
+  expect(resultado).toBe(esperado);
+});
 ```
 
 Ejecutamos nuestra quinta prueba con Jest: `npm run jest`, y si está todo correcto, deberíamos ver algo como esto:
@@ -367,7 +367,7 @@ PASS  ./test-5.js
 
   ✓ Suma 2 números positivos correctamente (3ms)
   ✓ Resta 2 números positivos correctamente
-  
+
 Test Suites: 1 passed, 1 total
 
 Tests:       2 passed, 2 total

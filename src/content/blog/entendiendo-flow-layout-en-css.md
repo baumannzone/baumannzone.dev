@@ -5,6 +5,7 @@ pubDate: 2024-06-10
 type: blog
 author: Jorge Baumann
 tags: ["CSS"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Entendiendo%20Flow%20Layout%20en%20CSS&tags=CSS"
 ---
 
 En el ámbito del diseño web, CSS funciona más como un conjunto de herramientas flexibles que como un lenguaje monolítico. En su núcleo se encuentra un concepto fundamental, el modo de diseño o flow layout.

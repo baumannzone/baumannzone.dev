@@ -1,12 +1,13 @@
 ---
 title: Añadiendo comentarios al blog
-description: 'Añade comentarios a tu blog de forma sencilla y segura con una herramienta basada en la API de las issues de GitHub.'
+description: "Añade comentarios a tu blog de forma sencilla y segura con una herramienta basada en la API de las issues de GitHub."
 pubDate: 2022-04-13
 type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
   - Tools
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=A%C3%B1adiendo%20comentarios%20al%20blog&tags=JavaScript,Tools"
 ---
 
 Los comentarios aportan mucho valor a los artículos de un blog. Son una forma de generar debate, de comunicar ideas y compartir conocimiento entre developers.

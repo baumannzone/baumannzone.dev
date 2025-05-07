@@ -6,6 +6,7 @@ author: Jorge Baumann
 tags:
   - JavaScript
   - TIL
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Una%20d%C3%A9cada%20con%20JavaScript%20y%20no%20sab%C3%ADa%20esto%20sobre%20los%20bucles&tags=JavaScript,TIL"
 ---
 
 Las etiquetas en JavaScript son identificadores seguidos de dos puntos (`:`) que se pueden asociar a bucles o bloques de código.

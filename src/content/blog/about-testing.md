@@ -1,11 +1,12 @@
 ---
 title: About Testing
-description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? Testing es un tema que no deberías pasar por alto. 
+description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? Testing es un tema que no deberías pasar por alto.
 pubDate: 2019-07-13
 updatedDate: 2024-05-30
 type: blog
 author: Jorge Baumann
 tags: ["Testing", "JavaScript"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=About%20Testing&tags=Testing,JavaScript"
 ---
 
 ¿Tienes tests en tus desarrollos de software?
@@ -17,7 +18,6 @@ Como developer, cuando entregas un proyecto, quieres que el código entregado se
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera. Has estado 3 días con tu aplicación rota y no te has dado cuenta 💀.
 
 ![Friday push to production](../../assets/blog/about-testing/friday-push.jpg)
-
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, testeando tu código.
 
@@ -53,7 +53,7 @@ Tu proyecto ha crecido tanto que necesitas un equipo que se dedique exclusivamen
 
 ![Testing Meme](../../assets/blog/about-testing/testing-meme.jpg)
 
-Incluso con un equipo que se dedique exclusivamente a testear, no tienes la garantía de que se vayan a detectar todos los posibles errores que pueda tener tu aplicación.  
+Incluso con un equipo que se dedique exclusivamente a testear, no tienes la garantía de que se vayan a detectar todos los posibles errores que pueda tener tu aplicación.
 
 ¿Sabes por qué? Porque las pruebas manuales requieren mucha concentración y es fácil despistarse. Lo que es probable que tu código no esté funcionando como es debido y tu equipo de testing no se haya dado cuenta.
 
@@ -62,6 +62,7 @@ Llegados a este momento, seguramente pases más tiempo probando las funcionalida
 Espero que ahora entiendas la **necesidad** de tener pruebas automáticas. 🙌
 
 ## Pruebas Automáticas
+
 Entendamos por pruebas automáticas el proceso de escribir código que realice dichas comprobaciones por ti. Aunque suene raro.
 
 > De ahora en adelante, cuando hablemos de pruebas, nos estaremos refiriendo a pruebas automáticas.
@@ -94,7 +95,7 @@ Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](h
 
 ![No test, no fail](../../assets/blog/about-testing/no-test-no-fail.jpg)
 
---- 
+---
 
 Existe un gigantesco mundo alrededor del testing: librerías, frameworks, test runners, herramientas, plugins... En futuras publicaciones seguiremos hablando de testing.
 
@@ -102,4 +103,4 @@ Espero que leer esto te haya motivado a hacer tests, que te hayas convencido de 
 
 Dime qué te pareció por [Instagram](https://instagram.com/baumannzone) y compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
-¡Happy testing! 👋 
+¡Happy testing! 👋

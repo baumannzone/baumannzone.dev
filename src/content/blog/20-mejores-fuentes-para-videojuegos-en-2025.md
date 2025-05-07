@@ -4,6 +4,7 @@ description: "Descubre las 20 fuentes más épicas para videojuegos en 2025. Des
 pubDate: 2025-03-29
 author: "Jorge Baumann"
 tags: ["UX/UI", "Design"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Las%2020%20mejores%20fuentes%20para%20videojuegos%20en%202025&tags=UX/UI,Design"
 ---
 
 Elegir la fuente o tipografía adecuada en un videojuego es super importante para definir su estética y mejorar la experiencia del jugador.

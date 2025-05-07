@@ -5,6 +5,7 @@ pubDate: 2024-09-01
 type: blog
 author: Jorge Baumann
 tags: ["DevTools", "JavaScript"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20detectar%20el%20elemento%20con%20el%20foco%20en%20tiempo%20real&tags=DevTools,JavaScript"
 ---
 
 Saber qué elemento HTML tiene el foco (`focus`) en tu navegador puede ser un poco complicado, ya que si quieres usar JavaScript para detectarlo, tendrías que estar constantemente revisando si el foco cambió con un evento de escucha.

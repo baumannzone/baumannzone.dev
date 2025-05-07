@@ -8,13 +8,14 @@ author: Jorge Baumann
 tags:
   - Testing
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=La%20falacia%20del%20100%25%20Code%20Coverage&tags=Testing,JavaScript"
 ---
 
 En este escrito te hablo de la cobertura de código (más conocida como _Code Coverage_) y de por qué es tan importante.
 
 ## Code Coverage, ¿qué es?
 
-La cobertura de código es una medida del porcentaje de líneas de código ejecutadas, es decir, cubiertas, durante la ejecución de las pruebas o tests. 
+La cobertura de código es una medida del porcentaje de líneas de código ejecutadas, es decir, cubiertas, durante la ejecución de las pruebas o tests.
 
 Simplificando, te indica cuántas líneas de tu código están cubiertas por sus pruebas. Lo más habitual es que el code coverage se mida en porcentaje, donde `100%` de code coverage significa que todo tu código está cubierto cuando ejecutas los tests y `0%` de code coverage significa que ninguna línea de tu código se ejecuta cuando corres los tests.
 
@@ -26,11 +27,11 @@ Y si estás ahí, persiguiendo esa perfección del 100% de cobertura, segurament
 
 ## Testing para ganar velocidad
 
-Seguro que cuando eras joven e inocente y empezaste a escribir tests, con brillo en los ojos, lo querías testear todo. Tienes que tener en cuenta que escribes tests para ganar velocidad y tener confianza. 
+Seguro que cuando eras joven e inocente y empezaste a escribir tests, con brillo en los ojos, lo querías testear todo. Tienes que tener en cuenta que escribes tests para ganar velocidad y tener confianza.
 
 Por lo tanto, **es importante saber qué testear** ya que no todo es igual de importante. Aunque no será fácil al principio, el tiempo y la experiencia te darán ese conocimiento, independientemente de la metodología que sigas o del tipo de tests que estés escribiendo.
 
-Esto nos lleva a la siguiente premisa: 
+Esto nos lleva a la siguiente premisa:
 
 > El testing puede ralentizar tus desarrollos
 
@@ -41,7 +42,6 @@ Si tus tests tardan más en escribirse y en mantenerse que el tiempo que te ahor
 Sin embargo, en proyectos estables, grandes y de larga duración, tener pruebas automáticas da sus frutos. Aunque seguramente no necesites tantos tests como crees.
 
 ![Bugs have feelings too](../../assets/blog/la-falacia-del-100-code-coverage/feelings.jpg)
-
 
 ## El mito del 100% Code Coverage
 
@@ -79,13 +79,14 @@ Si has revisa a fondo el código y el informe de cobertura, puede que hayas nota
 
 Hay un pequeño error en el código, tan hábilmente escondido que podría pasar desapercibido para las herramientas, pero no para un developer con ojo de águila. Observa la función `isGreaterThanFive` (puedes verla en el archivo `isGreaterThanFive.js`). Se supone que debería decirnos si el número que recibe como argumento es mayor que cinco. Sin embargo, como un traidor en nuestras filas, ¡realiza una comparación de mayor o igual que cinco!
 
-¡Toma ya! ¿Un 100% de cobertura y todavía hay errores? ¿¡Cómo puede ser esto!? Esto nos lleva a otra importante premisa: 
+¡Toma ya! ¿Un 100% de cobertura y todavía hay errores? ¿¡Cómo puede ser esto!? Esto nos lleva a otra importante premisa:
 
-> 100% de code coverage no significa que tu código esté libre de errores. 
+> 100% de code coverage no significa que tu código esté libre de errores.
 
 Resulta que este porcentaje no es más que una distracción para que bajemos la guardia y nos olvidemos de que los errores pueden seguir acechando en la sombra.
 
 ## Máquinas vs Humanos
+
 Aquí es donde tratamos el eterno debate de las máquinas versus los humanos.
 
 Uno de los problemas con la cobertura de código es que para una herramienta automatizada, todas las líneas de código cubiertas son igual de importantes. Es como si el sistema se pusiera unas gafas de sol y viera todo en el mismo tono de gris. No importa si estás probando el corazón de tu aplicación, el "carrito de compras", o si estás revisando la sección de "preguntas frecuentes".
@@ -103,8 +104,8 @@ Por lo tanto, aunque las máquinas pueden acelerar nuestra capacidad para comple
 - Code coverage puede darte falsa sensación de seguridad y confianza.
 
 Y la última, al contrario de lo tal vez estés pensando:
-> La cobertura de código es realmente útil. Pero no deberías confiar en ella a ciegas.
 
+> La cobertura de código es realmente útil. Pero no deberías confiar en ella a ciegas.
 
 ## Conclusión
 

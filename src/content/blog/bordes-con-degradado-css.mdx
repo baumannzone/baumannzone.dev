@@ -8,12 +8,13 @@ author: Jorge Baumann
 tags:
   - HTML
   - CSS
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Bordes%20con%20degradado%20en%20CSS&tags=HTML,CSS"
 ---
 
-import BorderWithImage from '../../components/demos-blog/bordes-con-degradado-css/1.astro'
-import BorderWithLinearGradient from '../../components/demos-blog/bordes-con-degradado-css/2.astro'
-import BorderWithRadialGradient from '../../components/demos-blog/bordes-con-degradado-css/3.astro'
-import BorderWithConicGradient from '../../components/demos-blog/bordes-con-degradado-css/4.astro'
+import BorderWithImage from "../../components/demos-blog/bordes-con-degradado-css/1.astro";
+import BorderWithLinearGradient from "../../components/demos-blog/bordes-con-degradado-css/2.astro";
+import BorderWithRadialGradient from "../../components/demos-blog/bordes-con-degradado-css/3.astro";
+import BorderWithConicGradient from "../../components/demos-blog/bordes-con-degradado-css/4.astro";
 
 ## Bordes con degradados e imágenes en CSS
 
@@ -59,6 +60,7 @@ Lo primero que hay que hacer es crear otra clase CSS y luego usarla en el elemen
 ```
 
 El resultado es el siguiente:
+
 <BorderWithImage />
 
 Te muestro también la imagen que se está usando para que entiendas mejor el funcionamiento de la propiedad CSS `border-image`.
@@ -71,9 +73,10 @@ Hay 3 formas de crear bordes con degradados de colores en CSS: usando `linear-gr
 
 Creamos la nueva clase de CSS y después la usamos nuestro elemento HTML.
 
-En este caso concreto, podemos indicar el ángulo que queremos que tenga el degradado. Por defecto, el degradado en CSS tiene un ángulo de 0 grados.  
+En este caso concreto, podemos indicar el ángulo que queremos que tenga el degradado. Por defecto, el degradado en CSS tiene un ángulo de 0 grados.
 
 Para este ejemplo, usamos un ángulo de 45 grados. Con el segundo cuadrado se ve mejor el ángulo y se entiende mejor el concepto de borde degradado.
+
 ```css
 .linear-gradient {
   border-image: linear-gradient(45deg, red, lime, blue) 1;
@@ -85,6 +88,7 @@ Para este ejemplo, usamos un ángulo de 45 grados. Con el segundo cuadrado se ve
 ```
 
 Se verá así:
+
 <BorderWithLinearGradient />
 
 Ya tienes un `div` con el borde degradado usando `linear-gradient`.
@@ -104,11 +108,13 @@ Lo mismo que el anterior, pero usamos `radial-gradient` en vez de `linear-gradie
 ```
 
 El resultado sería el siguiente:
-<BorderWithRadialGradient />
-  
-El motivo por el que se ve así es que el degradado empieza en el centro del `div` y en las esquinas casi no se ve el degradado del rojo. Lo que más se ve es el color azul `cyan`. 
 
-Esta es la segunda forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `radial-gradient`. 
+<BorderWithRadialGradient />
+El motivo por el que se ve así es que el degradado empieza en el centro del `div`
+y en las esquinas casi no se ve el degradado del rojo. Lo que más se ve es el color
+azul `cyan`.{" "}
+
+Esta es la segunda forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `radial-gradient`.
 
 ### Conic gradient
 
@@ -125,6 +131,7 @@ Es muy parecido al anterior, pero usamos `conic-gradient` en vez de `radial-grad
 ```
 
 El resultado sería el siguiente:
+
 <BorderWithConicGradient />
 
 Esta es la tercera forma de crear un borde con degradado. Ya tienes otro `div` con el borde degradado usando `conic-gradient`. Te dejo los 2 ejemplos con `border` y con `background`, para que entiendas mejor el concepto.

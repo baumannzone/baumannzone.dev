@@ -8,6 +8,7 @@ tags:
   - HTML
   - CSS
   - UX/UI
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Mejora%20la%20UX%3A%20cursores%20en%20CSS&tags=HTML,CSS,UX/UI"
 ---
 
 ## El cursor en CSS

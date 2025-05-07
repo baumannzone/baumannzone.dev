@@ -6,6 +6,7 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Evita%20que%20la%20pantalla%20se%20duerma%20con%20JavaScript%3A%20domina%20la%20Screen%20Wake%20Lock%20API&tags=JavaScript"
 ---
 
 ¿Alguna vez has estado cocinando una receta y la pantalla de tu dispositivo se apaga justo cuando estás a punto de leer el siguiente paso? O tal vez estás viendo un video y la pantalla se oscurece un poco porque no has tocado el dispositivo en un rato. La Screen Wake Lock API es la solución a estos problemas.

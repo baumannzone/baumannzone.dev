@@ -5,6 +5,7 @@ pubDate: 2025-04-14
 tags:
   - JavaScript
   - Tools
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=RIP%20styled-components%3A%202016%E2%80%932025%20%F0%9F%92%85&tags=JavaScript,Tools"
 ---
 
 **Styled-components**, esa pequeña gran herramienta que alguna vez se sintió como magia en React, ha sido oficialmente enviada al _modo maintenance_ (el 17 de marzo de 2025).

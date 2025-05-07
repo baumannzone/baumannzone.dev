@@ -7,6 +7,7 @@ author: Jorge Baumann
 tags:
   - Career
   - Git
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Si%20solo%20escribes%20c%C3%B3digo%2C%20no%20est%C3%A1s%20haciendo%20suficiente%20(seg%C3%BAn%20esta%20m%C3%A9trica)&tags=Career,Git"
 ---
 
 Cuando trabajamos en repositorios compartidos, siempre llega ese momento obligatorio: revisar código ajeno antes de aprobar una **pull request** (PR).

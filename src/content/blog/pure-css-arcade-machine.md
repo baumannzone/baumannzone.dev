@@ -7,6 +7,7 @@ author: Jorge Baumann
 tags:
   - HTML
   - CSS
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Pure%20CSS%20Arcade%20Machine%20%F0%9F%95%B9%EF%B8%8F&tags=HTML,CSS"
 ---
 
 Tengo algo especial para compartir contigo. Por un momento, deja a un lado las herramientas gráficas y las técnicas de dibujo modernas. Acompáñame, vamos a retroceder en el tiempo y dar un paseo por los pasillos de las salas de juegos de los años 80. ¿Lo mejor? Todo esto es posible gracias a nuestro querido y versátil lenguaje: **CSS**. ✨
@@ -24,14 +25,16 @@ Aunque el camino no fue fácil, el resultado final fue muy satisfactorio. ¡Mira
 ![Máquina arcade CSS](../../assets/blog/pure-css-arcade-machine/arcade.gif)
 
 ## Enlaces de interés
+
 - Código fuente en Codepen de la [máquina arcade CSS](https://codepen.io/baumannzone/pen/OJWddaa)
 - Publicación en Instagram: https://www.instagram.com/p/CQ9Z3Y7o9Zo/
 - Ilustración original en Dribbble: https://dribbble.com/shots/3394419-Pacman/
 
 ## ¿Por qué haces dibujos con CSS?
+
 Si quieres saber por qué hago dibujos con CSS, te lo explico en este [artículo](../../assets/blog/dibujar-con-css/).
 
---- 
+---
 
 ¿Tú también disfrutas dibujando con CSS? ¿Has intentado hacer algo similar? ¡Cuéntame en los comentarios!
 

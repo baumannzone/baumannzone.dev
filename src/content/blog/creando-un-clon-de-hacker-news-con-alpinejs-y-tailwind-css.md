@@ -7,6 +7,7 @@ author: Jorge Baumann
 tags:
   - CSS
   - JavaScript
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Creando%20un%20clon%20de%20Hacker%20News%20con%20Alpine.js%20y%20Tailwind%20CSS&tags=CSS,JavaScript"
 ---
 
 En este artículo, te contaré cómo creé un clon de **Hacker News** utilizando **Alpine.js** y **Tailwind CSS**. ¡Vamos a ello!

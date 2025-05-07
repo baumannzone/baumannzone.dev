@@ -5,6 +5,7 @@ pubDate: 2024-07-22
 type: blog
 author: Jorge Baumann
 tags: ["Privacy", "Tools"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=No%20uses%20Google%20Analytics%20nunca%20m%C3%A1s&tags=Privacy,Tools"
 ---
 
 Durante años, Google Analytics ha sido mi herramienta favorita para analizar el tráfico de mis webs. Sin embargo, he decidido abandonarla en favor de una alternativa más respetuosa con la privacidad: **Fathom Analytics**. Aquí te cuento por qué.

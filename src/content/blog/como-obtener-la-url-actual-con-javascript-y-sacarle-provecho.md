@@ -5,6 +5,7 @@ pubDate: 2025-03-25
 tags: [JavaScript]
 type: blog
 author: Jorge Baumann
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20obtener%20la%20URL%20actual%20con%20JavaScript%20(y%20sacarle%20provecho)&tags=JavaScript"
 ---
 
 Cuando estás construyendo una app frontend, ya sea con React, Vue, o vanilla JS, es bastante común necesitar acceder a la URL actual. Quizás para:
@@ -34,7 +35,7 @@ https://www.baumannzone.dev:8080/blog/post?tag=js#comments
 Puedes extraer sus partes así:
 
 ```js
-const { 
+const {
   host,       // "www.baumannzone.dev:8080"
   hostname,   // "www.baumannzone.dev"
   href,       // (URL completa)
@@ -51,7 +52,6 @@ const {
 
 ![Cómo obtener la URL actual con JavaScript en imagen](../../assets/blog/como-obtener-la-url-actual-con-javascript-y-sacarle-provecho/main.png)
 
-
 ## Ejemplos útiles y reales
 
 Dada esta URL, `https://www.baumannzone.dev:8080/blog/post?tag=js#comments`, aquí van algunos ejemplos:
@@ -59,33 +59,33 @@ Dada esta URL, `https://www.baumannzone.dev:8080/blog/post?tag=js#comments`, aqu
 1. Obtener un parámetro de búsqueda
 
 ```js
-const params = new URLSearchParams(window.location.search)
-const tag = params.get('tag')
+const params = new URLSearchParams(window.location.search);
+const tag = params.get("tag");
 
-console.log(tag) // => "js"
+console.log(tag); // => "js"
 ```
 
 ### Pro Tip
+
 ```js
 // Obtener un parámetro
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id'); // => Devuelve `null` si no existe
+const id = urlParams.get("id"); // => Devuelve `null` si no existe
 
 // Comprobar si el parámetro existe
-const hasId = urlParams.has('id'); // => Devuelve `true` o `false`
+const hasId = urlParams.has("id"); // => Devuelve `true` o `false`
 ```
-
 
 2. Redirigir a otro dominio
 
 ```js
-if (window.location.hostname !== 'www.baumannzone.dev') {
-  window.location.href = 'https://www.baumannzone.dev'
+if (window.location.hostname !== "www.baumannzone.dev") {
+  window.location.href = "https://www.baumannzone.dev";
 }
 
 // 🛡️ Por seguridad, siempre sanitiza
 const safeRedirect = (path) => {
-  const allowedPaths = ['/home', '/blog'];
+  const allowedPaths = ["/home", "/blog"];
   if (allowedPaths.includes(path)) {
     window.location.href = path;
   }
@@ -95,29 +95,32 @@ const safeRedirect = (path) => {
 3. Navegar a otra ruta
 
 ```js
-window.location.href = '/uses' 
+window.location.href = "/uses";
 // redirige a https://www.baumannzone.dev/uses
 ```
 
 4. Detectar si estás en localhost
 
 ```js
-const isLocalhost = window.location.hostname === 'localhost' || 
-                    window.location.hostname === '127.0.0.1';
+const isLocalhost =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1";
 ```
 
 5. Construir y modificar una URL
+
 ```js
-const url = new URL(window.location.href)
+const url = new URL(window.location.href);
 
-url.pathname = '/patrocinio'
-url.searchParams.set('from', 'blog')
+url.pathname = "/patrocinio";
+url.searchParams.set("from", "blog");
 
-console.log(url.toString())
+console.log(url.toString());
 // => https://www.baumannzone.dev/patrocinio?from=blog
 ```
 
 ### Extra para frameworks modernos:
+
 - En React puedes usar `useLocation()` de React Router
 - En Vue puedes usar `useRoute()` de Vue Router
 - Recuerda, `window.location` funciona siempre en todos

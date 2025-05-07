@@ -6,6 +6,7 @@ published: true
 tags: ["DevTools", "JavaScript", "TIL"]
 author: Jorge Baumann
 type: blog
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Personaliza%20c%C3%B3mo%20se%20ven%20los%20objetos%20en%20las%20DevTools&tags=DevTools,JavaScript,TIL"
 ---
 
 Los objetos aparecen en muchos lugares en las **Developer Tools**. Más comúnmente en la herramienta **Console**, pero también aparecen cuando estás en modo detective dentro de **Sources** (o Debugger) cuando depuras código JavaScript.

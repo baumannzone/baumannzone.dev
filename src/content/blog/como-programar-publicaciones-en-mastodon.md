@@ -5,6 +5,7 @@ pubDate: 2022-11-21
 type: blog
 author: Jorge Baumann
 tags: ["Social Media"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20programar%20publicaciones%20en%20Mastodon&tags=Social%20Media"
 ---
 
 Una de las cosas que más extraño en Mastodon, que sí tiene Twitter, es la funcionalidad de programar publicaciones de manera nativa, es decir, publicaciones que se publiquen automáticamente en una fecha determinada.
@@ -16,7 +17,7 @@ Programar el contenido de tus redes sociales es algo que deberías hacer si crea
 En este artículo te voy a explicar **cómo configurar Mastodon** para poder programar publicaciones automáticas.
 
 Para programar publicaciones en Mastodon, hay que utilizar una aplicación de terceros llamada _Mastodon Scheduler_.
-Mastodon Scheduler no es tan user friendly como otras herramientas de programación de contenido, pero si sigues los pasos que te muestro a continuación, lo tendrás configurado en 2 minutos. 
+Mastodon Scheduler no es tan user friendly como otras herramientas de programación de contenido, pero si sigues los pasos que te muestro a continuación, lo tendrás configurado en 2 minutos.
 
 ## Crear la aplicación en Mastodon
 
@@ -30,14 +31,14 @@ Una vez en la sección de desarrollo, haz clic en **Nueva aplicación**.
 
 Rellena el campo **Nombre de aplicación** con el nombre que quieras. Yo he puesto "_Publicaciones-Automaticas_".
 
-En el campo **Sitio web** pon la dirección del servidor de Mastodon con el que te has registrado. En mi caso `https://techhub.social`.  
+En el campo **Sitio web** pon la dirección del servidor de Mastodon con el que te has registrado. En mi caso `https://techhub.social`.
 
 El campo **URI para redirección** déjalo como está. Baja y dale al botón de **Envíar**.
 
 ![Rellenar formulario de nueva aplicación en Mastodon](../../assets/blog/como-programar-publicaciones-en-mastodon/3.png)
 
 Una vez creada la aplicación, verás el siguiente mensaje: "_La aplicación se ha creado correctamente_".  
-Haz clic en el nombre de la aplicación que acabas de crear para entrar y ver los detalles. 
+Haz clic en el nombre de la aplicación que acabas de crear para entrar y ver los detalles.
 
 ## Obtener el token de acceso
 
@@ -47,7 +48,7 @@ En la página de detalles de la aplicación, verás un campo llamado **Token de 
 
 ## Configurar Mastodon Scheduler
 
-Entra en la aplicación online [Mastodon Scheduler](https://www.scheduler.mastodon.tools/). Este es el servicio que utilizaremos para programar todos nuestros futuros posts en Mastodon. 
+Entra en la aplicación online [Mastodon Scheduler](https://www.scheduler.mastodon.tools/). Este es el servicio que utilizaremos para programar todos nuestros futuros posts en Mastodon.
 
 En la página de inicio, verás un formulario con los siguientes campos:
 

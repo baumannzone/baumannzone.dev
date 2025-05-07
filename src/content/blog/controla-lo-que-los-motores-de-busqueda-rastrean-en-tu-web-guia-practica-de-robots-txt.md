@@ -8,6 +8,7 @@ author: Jorge Baumann
 tags:
   - SEO
   - Web
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Controla%20lo%20que%20los%20motores%20de%20b%C3%BAsqueda%20rastrean%20en%20tu%20web%3A%20gu%C3%ADa%20pr%C3%A1ctica%20de%20robots.txt&tags=SEO,Web"
 ---
 
 Vamos al grano: si tienes un sitio web, seguro que te interesa aparecer en Google. Pero ¿y si te digo que puedes decidir qué páginas pueden ver los motores de búsqueda y cuáles no? Sí, estoy hablando del `robots.txt`, ese archivo que quizá no terminas de entender pero que puede hacer tu sitio más visible (o completamente invisible) y te ayuda a controlar qué contenido se indexa. Hoy vas a aprender a usarlo _like a boss_.

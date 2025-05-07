@@ -6,6 +6,7 @@ updatedDate: 2025-04-15
 type: blog
 author: Jorge Baumann
 tags: ["CSS", "Personal"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Dibujar%20con%20CSS&tags=CSS,Personal"
 ---
 
 Dibujar con CSS, sí! Esa grandiosa idea de hacer que tu navegador se parezca más a un lienzo de Picasso que a un sitio web. Es como coger un martillo para ajustar un reloj. Puede funcionar, pero ¿es realmente la herramienta correcta para el trabajo?

@@ -7,6 +7,7 @@ author: Jorge Baumann
 tags:
   - JavaScript
   - Fundamentals
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Doble%20igual%20(%3D%3D)%20vs%20triple%20igual%20(%3D%3D%3D)%20en%20JavaScript&tags=JavaScript,Fundamentals"
 ---
 
 Cuando trabajamos con JavaScript, una de las decisiones más importantes que debemos tomar es qué operador de igualdad usar: `==` o `===`. Aunque ambos sirven para comparar valores, tienen comportamientos muy diferentes que pueden afectar significativamente a nuestro código. En este artículo, te voy a explicar la diferencia entre ambos y cuándo usar cada uno.
