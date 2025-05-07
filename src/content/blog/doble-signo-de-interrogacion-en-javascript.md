@@ -6,7 +6,8 @@ type: blog
 author: Jorge Baumann
 tags:
   - JavaScript
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Operador%20de%20doble%20signo%20de%20interrogaci%C3%B3n%20(??)%20en%20JavaScript&tags=JavaScript
+
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Operador%20de%20doble%20signo%20de%20interrogaci%C3%B3n%20(??)%20en%20JavaScript&tags=JavaScript"
 ---
 
 Si quieres saber cómo funciona el operador de doble signo de interrogación `??` (también conocido como operador de **Fusión Nula** o **Nullish Coalescing** operator) en JavaScript, esta guía es para ti.
