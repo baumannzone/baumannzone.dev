@@ -9,7 +9,11 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description, ogImage = "/opengraph.png" } = Astro.props;
+const {
+  title,
+  description,
+  ogImage = "https://baumannzone-dev-og.vercel.app/",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
