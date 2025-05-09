@@ -1,0 +1,73 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout>
+  <section class="space-y-2 select-none">
+    <details name="emojis">
+      <summary class="cursor-pointer font-semibold text-lg"> Libros </summary>
+      <div class="mt-2">
+        <ul class="list-disc list-inside">
+          <li class="hover:underline">
+            <a href="https://amzn.to/4jR72E5" target="_blank"
+              >El nombre del viento (Crónica del asesino de reyes 1)</a
+            >
+          </li>
+          <li class="hover:underline">
+            <a href="https://amzn.to/4iXeeNK" target="_blank"
+              >El nombre del viento (Crónica del asesino de reyes 1)</a
+            >
+          </li>
+          <li class="hover:underline">
+            <a href="https://amzn.to/44Pvm4H" target="_blank"
+              >Dont make me think, Revisited</a
+            >
+          </li>
+        </ul>
+      </div>
+    </details>
+
+    <details name="emojis">
+      <summary class="cursor-pointer font-semibold text-lg" data-icon="lock">
+        No te preocupes, es seguro
+      </summary>
+      <div class="mt-2">
+        Todo está en HTTPS. También almacenamos contraseñas en texto plano y
+        tenemos un <code class="bg-gray-100/20 px-1 rounded">admin:admin</code>
+        por si acaso, pero shhh...
+      </div>
+    </details>
+
+    <details name="emojis">
+      <summary class="cursor-pointer font-semibold text-lg" data-icon="cam">
+        ¿Noche?
+      </summary>
+      <div class="mt-2">
+        Si me abres, es de día. Si me cierras, es de noche.
+      </div>
+    </details>
+  </section>
+
+  <style>
+    summary::marker {
+      content: "📘 ";
+    }
+    [open] summary::marker {
+      content: "📖 ";
+    }
+
+    summary[data-icon="lock"]::marker {
+      content: "🔒 ";
+    }
+    details[open] summary[data-icon="lock"]::marker {
+      content: "🔓 ";
+    }
+
+    summary[data-icon="cam"]::marker {
+      content: "🌙 ";
+    }
+    details[open] summary[data-icon="cam"]::marker {
+      content: "🌞 ";
+    }
+  </style>
+</DemoLayout>

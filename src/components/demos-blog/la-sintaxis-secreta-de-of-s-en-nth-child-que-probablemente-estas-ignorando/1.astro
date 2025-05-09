@@ -1,7 +1,8 @@
-<div
-  class="demo-container not-prose border-4 border-dashed border-violet-500/50 p-4 rounded-lg relative hover:border-violet-500/70 transition-colors duration-300"
->
-  <span class="text-gray-500 absolute top-2 right-2 text-xs">demo</span>
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout>
   <ol class="pl-4 list-disc space-y-2">
     <li>Elemento 1️⃣</li>
     <li hidden>Elemento 2️⃣</li>
@@ -10,7 +11,7 @@
     <li hidden>Elemento 5️⃣</li>
     <li>Elemento 6️⃣</li>
   </ol>
-</div>
+</DemoLayout>
 
 <style>
   li:nth-child(even) {

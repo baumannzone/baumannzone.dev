@@ -1,0 +1,130 @@
+---
+title: "Acordeones nativos en HTML sin una línea de JavaScript"
+description: "Aprende a crear acordeones accesibles y funcionales utilizando solo HTML, sin necesidad de JavaScript"
+pubDate: 2025-05-08
+author: "Jorge Baumann"
+type: "blog"
+tags: ["HTML", "a11y"]
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Acordeones%20nativos%20en%20HTML%20sin%20una%20línea%20de%20JavaScript&tags=HTML,A11y"
+---
+
+import Demo1 from "../../components/demos-blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/1.astro";
+import Demo2 from "../../components/demos-blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/2.astro";
+import Demo3 from "../../components/demos-blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/3.astro";
+import Demo4 from "../../components/demos-blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/4.astro";
+
+Los elementos `<details>` y `<summary>` de HTML son una joya oculta para crear interfaces tipo acordeón o "ver más / ver menos", de forma nativa, accesible y sin dependencias externas.
+
+Nada de instalar otro paquete de npm que te rompa el proyecto en dos meses.
+
+## Uso básico
+
+Por defecto, cada `<details>` se puede abrir de forma independiente. Esto es genial si quieres permitir que se expandan múltiples secciones a la vez:
+
+```html
+<details>
+  <summary>HTML</summary>
+  <p>Es el lenguaje de marcado base para cualquier página web.</p>
+</details>
+<details>
+  <summary>CSS</summary>
+  <p>
+    Sirve para dar estilo a los elementos, desde colores hasta layouts
+    complejos.
+  </p>
+</details>
+<details>
+  <summary>JavaScript</summary>
+  <p>Permite añadir interactividad, lógica y manipulación del DOM.</p>
+</details>
+```
+
+Este código genera un acordeón con tres secciones y cada una se despliga de forma independiente, sin afectar a las demás.
+
+<Demo1 />
+
+Esto funciona genial y es la mejor manera de hacer un componente de acordeón con HTML nativo. Pero en algunos casos, vas a necesitar que solo una sección esté abierta a la vez.
+
+## Comportamiento exclusivo
+
+Si quieres que solo una sección esté abierta a la vez, tenemos dos opciones:
+
+1. **Usar JavaScript** (meh): Puedes usar JavaScript para cerrar otros `<details>` cuando uno se abre.
+2. **Usar HTML** (opción nativa): Puedes usar un atributo HTML para controlar el estado de los acordeones. 🏆
+
+### Opción JavaScript
+
+Si necesitas un control más granular (animaciones, persistencia en `localStorage`, etc.), puedes usar JavaScript. Aquí tienes un ejemplo sencillo:
+
+```js
+document.querySelectorAll("details").forEach((targetDetail) => {
+  targetDetail.addEventListener("click", () => {
+    document.querySelectorAll("details").forEach((detail) => {
+      if (detail !== targetDetail) detail.removeAttribute("open");
+    });
+  });
+});
+```
+
+### Opción HTML
+
+La solución nativa (y poco conocida) es usar el atributo `name`. Si todos los `<details>` tienen el mismo `name`, solo uno puede estar abierto a la vez. Así:
+
+```html
+<details name="faq">
+  <summary>¿Cómo reinicio mi contraseña?</summary>
+  <p>Haz clic en “olvidé mi contraseña” como todo el mundo.</p>
+</details>
+
+<details name="faq">
+  <summary>¿Puedo usar mi cuenta en varios dispositivos?</summary>
+  <p>Sí, aunque tu gato probablemente también lo está usando sin que sepas.</p>
+</details>
+
+<details name="faq">
+  <summary>¿Qué pasa si borro mi cuenta?</summary>
+  <p>Pasas al siguiente plano existencial digital. No hay vuelta atrás.</p>
+</details>
+```
+
+<Demo2 />
+
+> 🧭 Safari solo permite cambiar color y tamaño del `::marker`, no su contenido. ~~Otro ejemplo más de Safari convirtiéndose en el nuevo IE~~.
+
+## Dale estilo a tus `<summary>`
+
+Ahora que tus `<details>` se comportan como tu quieres, puedes ir un paso más allá y darles un toque visual simpático.
+
+CSS te permite modificar los íconos que aparecen al lado de `<summary>` usando el pseudo-elemento `::marker`.
+
+Por defecto, el ícono es un triángulo (⏵), pero puedes cambiarlo a cualquier cosa que te guste.
+
+```css
+summary::marker {
+  content: "🙈";
+}
+
+[open] summary::marker {
+  content: "🙉";
+}
+```
+
+¿No te parece gracioso? Mira este ejemplo:
+
+<Demo3 />
+
+Y ahora, una muestra de lo que pasa cuando le das a los acordeones una pizca de humor y personalidad con emojis. Todo lo aprendido, en acción. Ábrelos y verás.
+
+<Demo4 />
+
+## Accesibilidad
+
+Los elementos `<details>` y `<summary>` son semánticamente accesibles por defecto. No necesitas hacer nada especial con JavaScript.
+
+El elemento `<summary>` es focusable y se puede activar con `Enter` o `Space`.
+
+Como siempre: **testea**. Con teclado, con lectores de pantalla, y si tienes amigos, con alguien que no tenga tus mismos privilegios visuales o de motricidad. El HTML hace mucho por ti, pero tú tienes que poner algo también.
+
+## Conclusión
+
+Los elementos `<details>` y `<summary>` son herramientas potentes, accesibles y que deberías considerar más a menudo. Para acordeones simples, no necesitas nada más. Y si quieres limitar su comportamiento a uno abierto a la vez, usa el atributo `name` para una solución elegante sin JavaScript.
