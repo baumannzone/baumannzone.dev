@@ -39,7 +39,7 @@ import DemoLayout from "../demo-layout.astro";
     </details>
 
     <details name="emojis">
-      <summary class="cursor-pointer font-semibold text-lg" data-icon="cam">
+      <summary class="cursor-pointer font-semibold text-lg" data-icon="moon">
         ¿Noche?
       </summary>
       <div class="mt-2">
@@ -63,10 +63,10 @@ import DemoLayout from "../demo-layout.astro";
       content: "🔓 ";
     }
 
-    summary[data-icon="cam"]::marker {
+    summary[data-icon="moon"]::marker {
       content: "🌙 ";
     }
-    details[open] summary[data-icon="cam"]::marker {
+    details[open] summary[data-icon="moon"]::marker {
       content: "🌞 ";
     }
   </style>
