@@ -68,7 +68,11 @@ document.querySelectorAll("details").forEach((targetDetail) => {
 
 ### Opción HTML
 
-La solución nativa (y poco conocida) es usar el atributo `name`. Si todos los `<details>` tienen el mismo `name`, solo uno puede estar abierto a la vez. Así:
+La solución nativa (y poco conocida) es usar el atributo `name`. Si todos los `<details>` tienen el mismo `name`, solo uno puede estar abierto a la vez.
+
+Este comportamiento recuerda al de los `<input type="radio">`, que solo uno puede estar activo a la vez.
+
+El ejemplo anterior se puede reescribir así:
 
 ```html
 <details name="faq">
