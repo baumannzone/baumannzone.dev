@@ -31,6 +31,20 @@
   .active-link-mobile {
     @apply border-violet-500 bg-violet-50 text-violet-700 dark:text-white dark:bg-gray-900 !important;
   }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 /* Screen Saver */
