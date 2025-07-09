@@ -1,32 +1,37 @@
 ---
 import Layout from '../layouts/DefaultLayout.astro';
 
-import { bookList as books } from '../utils/book-list.js';
+import { bookList as books } from '../utils/book-list.ts';
 
 const bookBasePath = '../src/assets/books/';
 
-// Group books by category
-const booksByCategory = books.reduce(
-  (acc, book) => {
-    if (!acc[book.category]) {
-      acc[book.category] = [];
-    }
-    acc[book.category].push(book);
-    return acc;
-  },
-  {} as Record<string, typeof books>,
-);
+// Group books by category (excluding pending books)
+const booksByCategory = books
+  .filter((book) => book.status !== 'pending')
+  .reduce(
+    (acc, book) => {
+      if (!acc[book.category]) {
+        acc[book.category] = [];
+      }
+      acc[book.category].push(book);
+      return acc;
+    },
+    {} as Record<string, typeof books>,
+  );
 
 // Sort categories in desired order
-const categoryOrder = ['software', 'growth', 'reading'];
+const categoryOrder = ['software', 'growth', 'literature'];
 const categories = categoryOrder.filter((cat) => booksByCategory[cat]);
 
 // Category display names
 const categoryNames = {
   software: 'Software & Tecnología',
   growth: 'Desarrollo Personal',
-  reading: 'Novelas & Ficción',
+  literature: 'Novelas & Ficción',
 };
+
+// Filter pending books (regardless of category)
+const pendingBooks = books.filter((book) => book.status === 'pending');
 ---
 
 <Layout title='Books | baumannzone.dev'>
@@ -135,13 +140,11 @@ const categoryNames = {
                               href={book.link}
                               target='_blank'
                               rel='noopener noreferrer'
-                              class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-lg px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
+                              class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-md px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
                             >
-                              {book.link.includes('amazon')
-                                ? 'Ver en Amazon'
-                                : book.link.includes('github')
-                                  ? 'Ver en GitHub'
-                                  : 'Ver libro'}
+                              {book.link.includes('github')
+                                ? 'Ver en GitHub'
+                                : 'Ver libro'}
                               <span aria-hidden='true' class='ml-1'>
                                 →
                               </span>
@@ -158,5 +161,89 @@ const categoryNames = {
         ))
       }
     </section>
+
+    <!-- Pending Books Section -->
+    {
+      pendingBooks.length > 0 && (
+        <section class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'>
+          <div class='pb-12'>
+            <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
+                <span class='font-mono text-violet-500/50'>/</span>
+                Pendientes de leer
+              </h2>
+            </div>
+
+            <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
+              {pendingBooks.map((book) => (
+                <div
+                  class='block hover:bg-zinc-50 rounded-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
+                  itemscope
+                  itemtype='https://schema.org/Book'
+                >
+                  <div class='rounded-xl border border-zinc-200 h-full hover:border-zinc-300 transition-colors'>
+                    <div class='flex flex-col p-4 relative h-full'>
+                      <div class='aspect-[3/4] w-full overflow-hidden rounded-lg bg-zinc-50 mb-4 relative max-w-48 mx-auto'>
+                        <img
+                          src={`${bookBasePath}${book.image}`}
+                          alt={`Portada de ${book.title}`}
+                          class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
+                          itemprop='image'
+                        />
+                      </div>
+
+                      <div class='flex-1 flex flex-col space-y-2'>
+                        <div
+                          class='text-sm text-zinc-500 font-medium'
+                          itemprop='author'
+                        >
+                          {Array.isArray(book.author)
+                            ? book.author.join(', ')
+                            : book.author}
+                        </div>
+                        <div
+                          class='text-lg font-semibold text-zinc-950 line-clamp-2'
+                          itemprop='name'
+                        >
+                          {book.title}
+                        </div>
+                        {book.description && (
+                          <div
+                            class='text-sm text-zinc-600 line-clamp-3'
+                            itemprop='description'
+                          >
+                            {book.description}
+                          </div>
+                        )}
+
+                        <div class='flex-1' />
+
+                        <div class='pt-2 mt-auto'>
+                          {book.link && (
+                            <a
+                              href={book.link}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-md px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
+                            >
+                              {book.link.includes('github')
+                                ? 'Ver en GitHub'
+                                : 'Ver libro'}
+                              <span aria-hidden='true' class='ml-1'>
+                                →
+                              </span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
   </main>
 </Layout>

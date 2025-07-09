@@ -1,12 +1,23 @@
-const bookList = [
+type Book = {
+  title: string;
+  author: string | string[];
+  description?: string;
+  image: string;
+  link?: string;
+  category: "literature" | "growth" | "software";
+  status?: "read" | "reading" | "pending";
+  readAt?: { month?: number; year: number };
+};
+
+const bookList: Book[] = [
   {
     title: "El nombre del viento",
     author: "Patrick Rothfuss",
     description: "",
     image: "el-nombre-del-viento.jpg",
     link: "https://amzn.to/4lDjZlj",
-    category: "reading",
-    readAt: "2024-06",
+    category: "literature",
+    readAt: { month: 6, year: 2024 },
   },
   {
     title: "El temor de un hombre sabio",
@@ -14,8 +25,8 @@ const bookList = [
     description: "",
     image: "el-temor-de-un-hombre-sabio.jpg",
     link: "https://amzn.to/3G8Affb",
-    category: "reading",
-    readAt: "2025-07",
+    category: "literature",
+    readAt: { month: 7, year: 2025 },
   },
   {
     title: "El manual del manager",
@@ -23,7 +34,7 @@ const bookList = [
     description: "",
     image: "manual-del-manager.png",
     category: "growth",
-    readAt: "2022-03",
+    readAt: { month: 3, year: 2022 },
   },
   {
     title: "La fortaleza digital",
@@ -31,8 +42,8 @@ const bookList = [
     description: "",
     image: "la-fortaleza-digital.jpg",
     link: "https://amzn.to/3I80keZ",
-    category: "reading",
-    readAt: "2024-08",
+    category: "literature",
+    readAt: { month: 8, year: 2024 },
   },
   {
     title: "La conspiración",
@@ -40,8 +51,8 @@ const bookList = [
     description: "",
     image: "la-conspiracion.jpg",
     link: "https://amzn.to/3GwLX38",
-    category: "reading",
-    readAt: "2012-01",
+    category: "literature",
+    readAt: { month: 1, year: 2012 },
   },
   {
     title: "Blackwater - La riada",
@@ -49,8 +60,8 @@ const bookList = [
     description: "",
     image: "blackwater-la-riada.jpg",
     link: "https://amzn.to/4khS7lG",
-    category: "reading",
-    readAt: "2024-01",
+    category: "literature",
+    readAt: { month: 1, year: 2024 },
   },
   {
     title: "Rompe la barrera del no",
@@ -59,7 +70,7 @@ const bookList = [
     image: "rompe-la-barrera-del-no.jpg",
     link: "https://amzn.to/4kmiOWr",
     category: "growth",
-    readAt: "2024-02",
+    readAt: { month: 2, year: 2024 },
   },
   {
     title: "HTML & CSS: The Good Parts",
@@ -68,7 +79,7 @@ const bookList = [
     image: "html-css-the-good-parts.jpg",
     link: "https://amzn.to/402dDUd",
     category: "software",
-    readAt: "2017-11",
+    readAt: { month: 11, year: 2017 },
   },
   {
     title: "Cicatriz",
@@ -76,8 +87,8 @@ const bookList = [
     description: "",
     image: "cicatriz.jpg",
     link: "https://amzn.to/4nqXO3H",
-    category: "reading",
-    readAt: "2022-09",
+    category: "literature",
+    readAt: { month: 9, year: 2022 },
   },
   {
     title: "El paciente",
@@ -85,8 +96,8 @@ const bookList = [
     description: "",
     image: "el-paciente.jpg",
     link: "https://amzn.to/4ezDyc7",
-    category: "reading",
-    readAt: "2022-08",
+    category: "literature",
+    readAt: { month: 8, year: 2022 },
   },
   {
     title: "Reina Roja",
@@ -94,8 +105,8 @@ const bookList = [
     description: "",
     image: "reina-roja.jpg",
     link: "https://amzn.to/4lGKPct",
-    category: "reading",
-    readAt: "2022-10",
+    category: "literature",
+    readAt: { month: 10, year: 2022 },
   },
   {
     title: "Loba Negra",
@@ -103,8 +114,8 @@ const bookList = [
     description: "",
     image: "loba-negra.jpg",
     link: "https://amzn.to/44sHKWp",
-    category: "reading",
-    readAt: "2023-01",
+    category: "literature",
+    readAt: { month: 1, year: 2023 },
   },
   {
     title: "La historia secreta del señor White",
@@ -112,8 +123,8 @@ const bookList = [
     description: "",
     image: "la-historia-secreta-del-senor-white.jpg",
     link: "https://amzn.to/40CrPn5",
-    category: "reading",
-    readAt: "2022-12",
+    category: "literature",
+    readAt: { month: 12, year: 2022 },
   },
   {
     title: "Frontend Testing",
@@ -122,6 +133,7 @@ const bookList = [
     image: "frontend-testing.png",
     link: "https://amzn.to/3TheaxU",
     category: "software",
+    readAt: { month: 3, year: 2022 },
   },
   {
     title: "Eloquent JavaScript",
@@ -138,7 +150,7 @@ const bookList = [
     image: "the-art-of-deception.jpg",
     link: "https://amzn.to/4lu5lg8",
     category: "growth",
-    readAt: "2024-05",
+    readAt: { month: 5, year: 2024 },
   },
   {
     title: "Un lugar llamado libertad",
@@ -146,8 +158,8 @@ const bookList = [
     description: "",
     image: "un-lugar-llamado-libertad.jpg",
     link: "https://amzn.to/3ZYGHft",
-    category: "reading",
-    readAt: "2010-10",
+    category: "literature",
+    readAt: { month: 10, year: 2010 },
   },
   {
     title: "Los pilares de la tierra",
@@ -155,8 +167,8 @@ const bookList = [
     description: "",
     image: "los-pilares-de-la-tierra.jpg",
     link: "https://amzn.to/4lghpSG",
-    category: "reading",
-    readAt: "2012-03",
+    category: "literature",
+    readAt: { month: 3, year: 2012 },
   },
   {
     title: "It",
@@ -164,8 +176,8 @@ const bookList = [
     description: "",
     image: "it.jpg",
     link: "https://amzn.to/3Ti6knI",
-    category: "reading",
-    readAt: "2005-05",
+    category: "literature",
+    readAt: { month: 5, year: 2005 },
   },
   {
     title: "La cúpula",
@@ -173,7 +185,7 @@ const bookList = [
     description: "",
     image: "la-cupula.jpg",
     link: "https://amzn.to/3ZYKtpc",
-    category: "reading",
+    category: "literature",
   },
   {
     title: "Cell",
@@ -181,8 +193,8 @@ const bookList = [
     description: "",
     image: "cell.jpg",
     link: "https://amzn.to/3TmBzhy",
-    category: "reading",
-    readAt: "2004-01",
+    category: "literature",
+    readAt: { month: 1, year: 2004 },
   },
   {
     title: "Blockade Billy",
@@ -190,8 +202,8 @@ const bookList = [
     description: "",
     image: "blockade-billy.jpg",
     link: "https://amzn.to/4lB5iiA",
-    category: "reading",
-    readAt: "2005-06",
+    category: "literature",
+    readAt: { month: 6, year: 2005 },
   },
   {
     title: "La historia de lisey",
@@ -199,8 +211,8 @@ const bookList = [
     description: "",
     image: "la-historia-de-lisey.jpg",
     link: "https://amzn.to/44KXGED",
-    category: "reading",
-    readAt: "2008-09",
+    category: "literature",
+    readAt: { month: 9, year: 2008 },
   },
   {
     title: "Hackers 4",
@@ -209,7 +221,7 @@ const bookList = [
     image: "hackers-4.jpg",
     link: "https://www.casadellibro.com/libro-ibd-hackers-4-con-cd-rom/9788448139797/922038?srsltid=AfmBOopvpZn4fSUvP-iDp2EU_u_wcZesqzYxzAJmZ5lpDTGMVRbu7N7Y",
     category: "software",
-    readAt: "2009",
+    readAt: { year: 2009 },
   },
   {
     title: "Desarrollo web con PHP y MySQL",
@@ -273,7 +285,11 @@ const bookList = [
     description: "",
     image: "el-senor-de-los-anillos-trilogia.jpg",
     link: "https://amzn.to/4knjcEe",
-    category: "reading",
+    category: "literature",
+    readAt: {
+      month: 4,
+      year: 2003,
+    },
   },
   {
     title: "El Hobbit",
@@ -281,8 +297,8 @@ const bookList = [
     description: "",
     image: "el-hobbit.jpg",
     link: "https://amzn.to/3ZYTPkO",
-    category: "reading",
-    readAt: "2006-01",
+    category: "literature",
+    readAt: { month: 1, year: 2006 },
   },
   {
     title: "El médico",
@@ -290,8 +306,8 @@ const bookList = [
     description: "",
     image: "el-medico.jpg",
     link: "https://amzn.to/4kqWXx9",
-    category: "reading",
-    readAt: "2004-06",
+    category: "literature",
+    readAt: { month: 6, year: 2004 },
   },
   {
     title: "Chaman",
@@ -299,7 +315,8 @@ const bookList = [
     description: "",
     image: "chaman.jpg",
     link: "https://amzn.to/4lGo8VL",
-    category: "reading",
+    category: "literature",
+    status: "reading",
   },
   {
     title: "Habitos atomicos",
@@ -308,16 +325,16 @@ const bookList = [
     image: "habitos-atomicos.jpg",
     link: "https://amzn.to/3IcK6Ba",
     category: "growth",
-    readAt: "2022-07",
+    readAt: { month: 7, year: 2022 },
   },
   {
     title: "Falcó",
-    author: "Arturo Perez Reverte",
+    author: "Arturo Pérez-Reverte",
     description: "",
     image: "falco.jpg",
     link: "https://amzn.to/45TbFt5",
-    category: "reading",
-    readAt: "2020-06",
+    category: "literature",
+    readAt: { month: 6, year: 2020 },
   },
   {
     title: "Corazones en la Atlántida",
@@ -325,8 +342,8 @@ const bookList = [
     description: "",
     image: "corazones-en-la-atlantida.jpg",
     link: "https://www.casadellibro.com/libro-corazones-en-la-atlantida/9788497592956/873686",
-    category: "reading",
-    readAt: "2003-06",
+    category: "literature",
+    readAt: { month: 6, year: 2003 },
   },
   {
     title: "Los secretos que jamás te contaron",
@@ -335,7 +352,7 @@ const bookList = [
     image: "los-secretos-que-jamas-te-contaron.jpg",
     link: "https://amzn.to/4kjexmA",
     category: "growth",
-    readAt: "2025-06",
+    readAt: { month: 6, year: 2025 },
   },
   {
     title: "El último trabajo del señor Luna",
@@ -343,8 +360,8 @@ const bookList = [
     description: "",
     image: "el-ultimo-trabajo-del-senor-luna.jpg",
     link: "https://amzn.to/3IgJWZy",
-    category: "reading",
-    readAt: "2003-02",
+    category: "literature",
+    readAt: { month: 2, year: 2003 },
   },
   {
     title: "Radical focus",
@@ -353,7 +370,16 @@ const bookList = [
     image: "radical-focus.jpg",
     link: "https://amzn.to/3G8z1a2",
     category: "growth",
-    readAt: "2021-02",
+    readAt: { month: 4, year: 2021 },
+  },
+  {
+    title: "Eva",
+    author: "Arturo Pérez-Reverte",
+    description: "",
+    image: "eva.jpg",
+    link: "https://amzn.to/4lbRQ4Y",
+    category: "literature",
+    status: "pending",
   },
 ];
 
