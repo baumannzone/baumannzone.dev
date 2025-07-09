@@ -1,3 +1,5 @@
+type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 type Book = {
   title: string;
   author: string | string[];
@@ -6,19 +8,10 @@ type Book = {
   link?: string;
   category: "literature" | "growth" | "software";
   status?: "read" | "reading" | "pending";
-  readAt?: { month?: number; year: number };
+  readAt?: { month?: Month; year: number };
 };
 
-const bookList: Book[] = [
-  {
-    title: "El nombre del viento",
-    author: "Patrick Rothfuss",
-    description: "",
-    image: "el-nombre-del-viento.jpg",
-    link: "https://amzn.to/4lDjZlj",
-    category: "literature",
-    readAt: { month: 6, year: 2024 },
-  },
+const literatureBooks: Book[] = [
   {
     title: "El temor de un hombre sabio",
     author: "Patrick Rothfuss",
@@ -29,12 +22,13 @@ const bookList: Book[] = [
     readAt: { month: 7, year: 2025 },
   },
   {
-    title: "El manual del manager",
-    author: "",
+    title: "El nombre del viento",
+    author: "Patrick Rothfuss",
     description: "",
-    image: "manual-del-manager.png",
-    category: "growth",
-    readAt: { month: 3, year: 2022 },
+    image: "el-nombre-del-viento.jpg",
+    link: "https://amzn.to/4lDjZlj",
+    category: "literature",
+    readAt: { month: 6, year: 2024 },
   },
   {
     title: "La fortaleza digital",
@@ -62,24 +56,6 @@ const bookList: Book[] = [
     link: "https://amzn.to/4khS7lG",
     category: "literature",
     readAt: { month: 1, year: 2024 },
-  },
-  {
-    title: "Rompe la barrera del no",
-    author: "Chris Voss",
-    description: "",
-    image: "rompe-la-barrera-del-no.jpg",
-    link: "https://amzn.to/4kmiOWr",
-    category: "growth",
-    readAt: { month: 2, year: 2024 },
-  },
-  {
-    title: "HTML & CSS: The Good Parts",
-    author: "Ben Henick",
-    description: "",
-    image: "html-css-the-good-parts.jpg",
-    link: "https://amzn.to/402dDUd",
-    category: "software",
-    readAt: { month: 11, year: 2017 },
   },
   {
     title: "Cicatriz",
@@ -125,32 +101,6 @@ const bookList: Book[] = [
     link: "https://amzn.to/40CrPn5",
     category: "literature",
     readAt: { month: 12, year: 2022 },
-  },
-  {
-    title: "Frontend Testing",
-    author: "Iago Lastra",
-    description: "",
-    image: "frontend-testing.png",
-    link: "https://amzn.to/3TheaxU",
-    category: "software",
-    readAt: { month: 3, year: 2022 },
-  },
-  {
-    title: "Eloquent JavaScript",
-    author: "Marijn Haverbeke",
-    description: "",
-    image: "eloquent-javascript.jpg",
-    link: "https://eloquentjavascript.net/",
-    category: "software",
-  },
-  {
-    title: "The art of deception",
-    author: "Kevin Mitnick",
-    description: "",
-    image: "the-art-of-deception.jpg",
-    link: "https://amzn.to/4lu5lg8",
-    category: "growth",
-    readAt: { month: 5, year: 2024 },
   },
   {
     title: "Un lugar llamado libertad",
@@ -215,71 +165,6 @@ const bookList: Book[] = [
     readAt: { month: 9, year: 2008 },
   },
   {
-    title: "Hackers 4",
-    author: ["Stuart McClure", "Joel Scambray", "George Kurtz"],
-    description: "",
-    image: "hackers-4.jpg",
-    link: "https://www.casadellibro.com/libro-ibd-hackers-4-con-cd-rom/9788448139797/922038?srsltid=AfmBOopvpZn4fSUvP-iDp2EU_u_wcZesqzYxzAJmZ5lpDTGMVRbu7N7Y",
-    category: "software",
-    readAt: { year: 2009 },
-  },
-  {
-    title: "Desarrollo web con PHP y MySQL",
-    author: ["Luke Welling", "Laura Thomson"],
-    description: "",
-    image: "desarrollo-web-con-php-y-mysql.jpg",
-    link: "https://amzn.to/4laSu2F",
-    category: "software",
-  },
-  {
-    title: "Windows XP Los mejores trucos",
-    author: "Preston Gralla",
-    description: "",
-    image: "windows-xp-los-mejores-trucos.jpg",
-    link: "",
-    category: "software",
-  },
-  {
-    title: "Bill Gates, una biografía no autorizada",
-    author: "Riccardo Staglianò",
-    description: "",
-    image: "bill-gates-una-biografia-no-autorizada.jpg",
-    link: "https://amzn.to/3Tp0Mb3",
-    category: "growth",
-  },
-  {
-    title: "Don't make me think",
-    author: "Steve Krug",
-    description: "",
-    image: "dont-make-me-think.jpg",
-    link: "https://amzn.to/4lu6S5K",
-    category: "software",
-  },
-  {
-    title: "JavaScript: The good parts",
-    author: "Douglas Crockford",
-    description: "",
-    image: "javascript-the-good-parts.jpg",
-    link: "https://amzn.to/4ewwMUl",
-    category: "software",
-  },
-  {
-    title: "You don't know JS",
-    author: "Kyle Simpson",
-    description: "",
-    image: "you-dont-know-js.jpg",
-    link: "https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md",
-    category: "software",
-  },
-  {
-    title: "Aprendiendo JavaScript",
-    author: "Carlos Azaustre",
-    description: "",
-    image: "aprendiendo-javascript.jpg",
-    link: "https://amzn.to/3GvViZ3",
-    category: "software",
-  },
-  {
     title: "El señor de los anillos (Trilogía)",
     author: "J.R.R. Tolkien",
     description: "",
@@ -319,15 +204,6 @@ const bookList: Book[] = [
     status: "reading",
   },
   {
-    title: "Habitos atomicos",
-    author: "James Clear",
-    description: "",
-    image: "habitos-atomicos.jpg",
-    link: "https://amzn.to/3IcK6Ba",
-    category: "growth",
-    readAt: { month: 7, year: 2022 },
-  },
-  {
     title: "Falcó",
     author: "Arturo Pérez-Reverte",
     description: "",
@@ -346,15 +222,6 @@ const bookList: Book[] = [
     readAt: { month: 6, year: 2003 },
   },
   {
-    title: "Los secretos que jamás te contaron",
-    author: "Albert Espinosa",
-    description: "",
-    image: "los-secretos-que-jamas-te-contaron.jpg",
-    link: "https://amzn.to/4kjexmA",
-    category: "growth",
-    readAt: { month: 6, year: 2025 },
-  },
-  {
     title: "El último trabajo del señor Luna",
     author: "César Mallorquí",
     description: "",
@@ -362,15 +229,6 @@ const bookList: Book[] = [
     link: "https://amzn.to/3IgJWZy",
     category: "literature",
     readAt: { month: 2, year: 2003 },
-  },
-  {
-    title: "Radical focus",
-    author: "Christina Wodtke",
-    description: "",
-    image: "radical-focus.jpg",
-    link: "https://amzn.to/3G8z1a2",
-    category: "growth",
-    readAt: { month: 4, year: 2021 },
   },
   {
     title: "Eva",
@@ -382,5 +240,157 @@ const bookList: Book[] = [
     status: "pending",
   },
 ];
+
+const growthBooks: Book[] = [
+  {
+    title: "El manual del manager",
+    author: "",
+    description: "",
+    image: "manual-del-manager.png",
+    category: "growth",
+    readAt: { month: 3, year: 2022 },
+  },
+  {
+    title: "Rompe la barrera del no",
+    author: "Chris Voss",
+    description: "",
+    image: "rompe-la-barrera-del-no.jpg",
+    link: "https://amzn.to/4kmiOWr",
+    category: "growth",
+    readAt: { month: 2, year: 2024 },
+  },
+  {
+    title: "The art of deception",
+    author: "Kevin Mitnick",
+    description: "",
+    image: "the-art-of-deception.jpg",
+    link: "https://amzn.to/4lu5lg8",
+    category: "growth",
+    readAt: { month: 5, year: 2024 },
+  },
+  {
+    title: "Habitos atomicos",
+    author: "James Clear",
+    description: "",
+    image: "habitos-atomicos.jpg",
+    link: "https://amzn.to/3IcK6Ba",
+    category: "growth",
+    readAt: { month: 7, year: 2022 },
+  },
+  {
+    title: "Los secretos que jamás te contaron",
+    author: "Albert Espinosa",
+    description: "",
+    image: "los-secretos-que-jamas-te-contaron.jpg",
+    link: "https://amzn.to/4kjexmA",
+    category: "growth",
+    readAt: { month: 6, year: 2025 },
+  },
+  {
+    title: "Radical focus",
+    author: "Christina Wodtke",
+    description: "",
+    image: "radical-focus.jpg",
+    link: "https://amzn.to/3G8z1a2",
+    category: "growth",
+    readAt: { month: 4, year: 2021 },
+  },
+  {
+    title: "Bill Gates, una biografía no autorizada",
+    author: "Riccardo Staglianò",
+    description: "",
+    image: "bill-gates-una-biografia-no-autorizada.jpg",
+    link: "https://amzn.to/3Tp0Mb3",
+    category: "growth",
+  },
+];
+
+const softwareBooks: Book[] = [
+  {
+    title: "HTML & CSS: The Good Parts",
+    author: "Ben Henick",
+    description: "",
+    image: "html-css-the-good-parts.jpg",
+    link: "https://amzn.to/402dDUd",
+    category: "software",
+    readAt: { month: 11, year: 2017 },
+  },
+  {
+    title: "Frontend Testing",
+    author: "Iago Lastra",
+    description: "",
+    image: "frontend-testing.png",
+    link: "https://amzn.to/3TheaxU",
+    category: "software",
+    readAt: { month: 3, year: 2022 },
+  },
+  {
+    title: "Eloquent JavaScript",
+    author: "Marijn Haverbeke",
+    description: "",
+    image: "eloquent-javascript.jpg",
+    link: "https://eloquentjavascript.net/",
+    category: "software",
+  },
+  {
+    title: "Hackers 4",
+    author: ["Stuart McClure", "Joel Scambray", "George Kurtz"],
+    description: "",
+    image: "hackers-4.jpg",
+    link: "https://www.casadellibro.com/libro-ibd-hackers-4-con-cd-rom/9788448139797/922038?srsltid=AfmBOopvpZn4fSUvP-iDp2EU_u_wcZesqzYxzAJmZ5lpDTGMVRbu7N7Y",
+    category: "software",
+    readAt: { year: 2009 },
+  },
+  {
+    title: "Desarrollo web con PHP y MySQL",
+    author: ["Luke Welling", "Laura Thomson"],
+    description: "",
+    image: "desarrollo-web-con-php-y-mysql.jpg",
+    link: "https://amzn.to/4laSu2F",
+    category: "software",
+  },
+  {
+    title: "Windows XP Los mejores trucos",
+    author: "Preston Gralla",
+    description: "",
+    image: "windows-xp-los-mejores-trucos.jpg",
+    link: "",
+    category: "software",
+  },
+  {
+    title: "Don't make me think",
+    author: "Steve Krug",
+    description: "",
+    image: "dont-make-me-think.jpg",
+    link: "https://amzn.to/4lu6S5K",
+    category: "software",
+  },
+  {
+    title: "JavaScript: The good parts",
+    author: "Douglas Crockford",
+    description: "",
+    image: "javascript-the-good-parts.jpg",
+    link: "https://amzn.to/4ewwMUl",
+    category: "software",
+  },
+  {
+    title: "You don't know JS",
+    author: "Kyle Simpson",
+    description: "",
+    image: "you-dont-know-js.jpg",
+    link: "https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md",
+    category: "software",
+  },
+  {
+    title: "Aprendiendo JavaScript",
+    author: "Carlos Azaustre",
+    description: "",
+    image: "aprendiendo-javascript.jpg",
+    link: "https://amzn.to/3GvViZ3",
+    category: "software",
+  },
+];
+
+const bookList: Book[] = [...literatureBooks, ...growthBooks, ...softwareBooks];
 
 export { bookList };
