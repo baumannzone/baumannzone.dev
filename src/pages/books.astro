@@ -5,6 +5,15 @@ import { bookList as books } from '../utils/book-list.ts';
 
 const bookBasePath = '../src/assets/books/';
 
+// Function to format readAt date
+function formatReadAtDate(readAt: { month?: number; year: number }): string {
+  if (readAt.month) {
+    const month = readAt.month.toString().padStart(2, '0');
+    return `${month}/${readAt.year}`;
+  }
+  return readAt.year.toString();
+}
+
 // Group books by category (excluding pending books)
 const booksByCategory = books
   .filter((book) => book.status !== 'pending')
@@ -87,7 +96,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
                         {book.readAt && (
                           <div
                             class='flex opacity-0 absolute bottom-2 right-2 bg-zinc-100 text-violet-300 text-xs px-2 py-1 rounded-md group-hover:opacity-100 transition-transform duration-300'
-                            title={`Fecha de lectura: ${book.readAt}`}
+                            title={`Fecha de lectura: ${formatReadAtDate(book.readAt)}`}
                           >
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
@@ -96,6 +105,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
                               stroke-width='1.5'
                               stroke='currentColor'
                               class='size-4'
+                              aria-label={`Leído en ${formatReadAtDate(book.readAt)}`}
                             >
                               <path
                                 stroke-linecap='round'
@@ -103,7 +113,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
                                 d='M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25'
                               />
                             </svg>
-                            <span class='ml-1'>{book.readAt}</span>
+                            <span class='ml-1'>{formatReadAtDate(book.readAt)}</span>
                           </div>
                         )}
                       </div>
