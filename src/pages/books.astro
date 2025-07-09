@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/DefaultLayout.astro';
 import BookCard from '../components/BookCard.astro';
+import CategoryNavigation from '../components/CategoryNavigation.astro';
 
 import {
   bookList as books,
@@ -27,6 +28,14 @@ const categoryNames = {
 
 // Filter pending books (regardless of category)
 const pendingBooks = books.filter((book) => book.status === 'pending');
+
+// Create categories array for navigation
+const categories = [
+  ...(readSoftwareBooks.length > 0 ? [{ id: 'software', name: categoryNames.software, count: readSoftwareBooks.length }] : []),
+  ...(readGrowthBooks.length > 0 ? [{ id: 'growth', name: categoryNames.growth, count: readGrowthBooks.length }] : []),
+  ...(readLiteratureBooks.length > 0 ? [{ id: 'literature', name: categoryNames.literature, count: readLiteratureBooks.length }] : []),
+  ...(pendingBooks.length > 0 ? [{ id: 'pending', name: 'Pendientes de leer', count: pendingBooks.length }] : []),
+];
 ---
 
 <Layout
@@ -50,6 +59,8 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
       </p>
     </header>
 
+    <CategoryNavigation categories={categories} />
+
     <section
       class='bg-white m-2 px-4 sm:px-6 lg:px-8'
       itemprop='mainEntity'
@@ -59,7 +70,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
       {/* Software & Tecnología */}
       {
         readSoftwareBooks.length > 0 && (
-          <div class='pb-12'>
+          <div id='software' class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
               <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
                 <span class='font-mono text-violet-500/50'>/</span>
@@ -79,7 +90,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
       {/* Desarrollo Personal */}
       {
         readGrowthBooks.length > 0 && (
-          <div class='pb-12'>
+          <div id='growth' class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
               <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
                 <span class='font-mono text-violet-500/50'>/</span>
@@ -99,7 +110,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
       {/* Novelas & Ficción */}
       {
         readLiteratureBooks.length > 0 && (
-          <div class='pb-12'>
+          <div id='literature' class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
               <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
                 <span class='font-mono text-violet-500/50'>/</span>
@@ -120,7 +131,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
     <!-- Pending Books Section -->
     {
       pendingBooks.length > 0 && (
-        <section class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'>
+        <section id='pending' class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'>
           <div class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
               <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
@@ -140,3 +151,9 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
     }
   </main>
 </Layout>
+
+<style scoped>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

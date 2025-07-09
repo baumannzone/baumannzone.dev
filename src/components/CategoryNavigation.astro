@@ -1,0 +1,31 @@
+---
+export interface Props {
+  categories: Array<{
+    id: string;
+    name: string;
+    count: number;
+  }>;
+}
+
+const { categories } = Astro.props;
+---
+
+<nav class='mb-8 px-4 sm:px-6 lg:px-8'>
+  <div
+    class='flex flex-wrap justify-center gap-4 p-6 bg-zinc-50 backdrop-blur-sm rounded-md'
+  >
+    {
+      categories.map((category) => (
+        <a
+          href={`#${category.id}`}
+          class='inline-flex items-center px-3 py-1 text-sm text-zinc-600 bg-white hover:bg-zinc-50 border border-zinc-200 rounded-md transition-colors hover:border-zinc-300 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2'
+        >
+          {category.name}
+          <span class='ml-2 text-xs font-normal bg-zinc-100 text-zinc-600 px-2 py-1 rounded-md'>
+            {category.count}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</nav>
