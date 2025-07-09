@@ -1,36 +1,22 @@
 ---
 import Layout from '../layouts/DefaultLayout.astro';
+import BookCard from '../components/BookCard.astro';
 
-import { bookList as books } from '../utils/book-list.ts';
+import {
+  bookList as books,
+  literatureBooks,
+  growthBooks,
+  softwareBooks,
+} from '../utils/book-list.ts';
 
-const bookBasePath = '../src/assets/books/';
-
-// Function to format readAt date
-function formatReadAtDate(readAt: { month?: number; year: number }): string {
-  if (readAt.month) {
-    const month = readAt.month.toString().padStart(2, '0');
-    return `${month}/${readAt.year}`;
-  }
-  return readAt.year.toString();
-}
-
-// Group books by category (excluding pending books)
-const booksByCategory = books
-  .filter((book) => book.status !== 'pending')
-  .reduce(
-    (acc, book) => {
-      if (!acc[book.category]) {
-        acc[book.category] = [];
-      }
-      acc[book.category].push(book);
-      return acc;
-    },
-    {} as Record<string, typeof books>,
-  );
-
-// Sort categories in desired order
-const categoryOrder = ['software', 'growth', 'literature'];
-const categories = categoryOrder.filter((cat) => booksByCategory[cat]);
+// Filter read books from each category
+const readLiteratureBooks = literatureBooks.filter(
+  (book) => book.status !== 'pending',
+);
+const readGrowthBooks = growthBooks.filter((book) => book.status !== 'pending');
+const readSoftwareBooks = softwareBooks.filter(
+  (book) => book.status !== 'pending',
+);
 
 // Category display names
 const categoryNames = {
@@ -43,7 +29,10 @@ const categoryNames = {
 const pendingBooks = books.filter((book) => book.status === 'pending');
 ---
 
-<Layout title='Books | baumannzone.dev'>
+<Layout
+  title='Books | baumannzone.dev'
+  description='Listado de libros que me han gustado sobre ingeniería de software, desarrollo personal y novelas.'
+>
   <main
     class='bmn-container mx-auto pt-16 pb-24'
     itemscope
@@ -67,108 +56,64 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
       itemscope
       itemtype='https://schema.org/ItemList'
     >
+      {/* Software & Tecnología */}
       {
-        categories.map((category) => (
+        readSoftwareBooks.length > 0 && (
           <div class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
               <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
                 <span class='font-mono text-violet-500/50'>/</span>
-                {categoryNames[category]}
+                {categoryNames.software}
               </h2>
             </div>
 
             <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
-              {booksByCategory[category].map((book) => (
-                <div
-                  class='block hover:bg-zinc-50 rounded-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                  itemscope
-                  itemtype='https://schema.org/Book'
-                >
-                  <div class='rounded-xl border border-zinc-200 h-full hover:border-zinc-300 transition-colors'>
-                    <div class='flex flex-col p-4 relative h-full'>
-                      <div class='aspect-[3/4] w-full overflow-hidden rounded-lg bg-zinc-50 mb-4 relative max-w-48 mx-auto'>
-                        <img
-                          src={`${bookBasePath}${book.image}`}
-                          alt={`Portada de ${book.title}`}
-                          class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
-                          itemprop='image'
-                        />
-                        {book.readAt && (
-                          <div
-                            class='flex opacity-0 absolute bottom-2 right-2 bg-zinc-100 text-violet-300 text-xs px-2 py-1 rounded-md group-hover:opacity-100 transition-transform duration-300'
-                            title={`Fecha de lectura: ${formatReadAtDate(book.readAt)}`}
-                          >
-                            <svg
-                              xmlns='http://www.w3.org/2000/svg'
-                              fill='none'
-                              viewBox='0 0 24 24'
-                              stroke-width='1.5'
-                              stroke='currentColor'
-                              class='size-4'
-                              aria-label={`Leído en ${formatReadAtDate(book.readAt)}`}
-                            >
-                              <path
-                                stroke-linecap='round'
-                                stroke-linejoin='round'
-                                d='M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25'
-                              />
-                            </svg>
-                            <span class='ml-1'>{formatReadAtDate(book.readAt)}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      <div class='flex-1 flex flex-col space-y-2'>
-                        <div
-                          class='text-sm text-zinc-500 font-medium'
-                          itemprop='author'
-                        >
-                          {Array.isArray(book.author)
-                            ? book.author.join(', ')
-                            : book.author}
-                        </div>
-                        <div
-                          class='text-lg font-semibold text-zinc-950 line-clamp-2'
-                          itemprop='name'
-                        >
-                          {book.title}
-                        </div>
-                        {book.description && (
-                          <div
-                            class='text-sm text-zinc-600 line-clamp-3'
-                            itemprop='description'
-                          >
-                            {book.description}
-                          </div>
-                        )}
-
-                        <div class='flex-1' />
-
-                        <div class='pt-2 mt-auto'>
-                          {book.link && (
-                            <a
-                              href={book.link}
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-md px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                            >
-                              {book.link.includes('github')
-                                ? 'Ver en GitHub'
-                                : 'Ver libro'}
-                              <span aria-hidden='true' class='ml-1'>
-                                →
-                              </span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {readSoftwareBooks.map((book) => (
+                <BookCard book={book} />
               ))}
             </div>
           </div>
-        ))
+        )
+      }
+
+      {/* Desarrollo Personal */}
+      {
+        readGrowthBooks.length > 0 && (
+          <div class='pb-12'>
+            <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
+                <span class='font-mono text-violet-500/50'>/</span>
+                {categoryNames.growth}
+              </h2>
+            </div>
+
+            <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
+              {readGrowthBooks.map((book) => (
+                <BookCard book={book} />
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      {/* Novelas & Ficción */}
+      {
+        readLiteratureBooks.length > 0 && (
+          <div class='pb-12'>
+            <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
+                <span class='font-mono text-violet-500/50'>/</span>
+                {categoryNames.literature}
+              </h2>
+            </div>
+
+            <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
+              {readLiteratureBooks.map((book) => (
+                <BookCard book={book} />
+              ))}
+            </div>
+          </div>
+        )
       }
     </section>
 
@@ -186,69 +131,7 @@ const pendingBooks = books.filter((book) => book.status === 'pending');
 
             <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
               {pendingBooks.map((book) => (
-                <div
-                  class='block hover:bg-zinc-50 rounded-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                  itemscope
-                  itemtype='https://schema.org/Book'
-                >
-                  <div class='rounded-xl border border-zinc-200 h-full hover:border-zinc-300 transition-colors'>
-                    <div class='flex flex-col p-4 relative h-full'>
-                      <div class='aspect-[3/4] w-full overflow-hidden rounded-lg bg-zinc-50 mb-4 relative max-w-48 mx-auto'>
-                        <img
-                          src={`${bookBasePath}${book.image}`}
-                          alt={`Portada de ${book.title}`}
-                          class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
-                          itemprop='image'
-                        />
-                      </div>
-
-                      <div class='flex-1 flex flex-col space-y-2'>
-                        <div
-                          class='text-sm text-zinc-500 font-medium'
-                          itemprop='author'
-                        >
-                          {Array.isArray(book.author)
-                            ? book.author.join(', ')
-                            : book.author}
-                        </div>
-                        <div
-                          class='text-lg font-semibold text-zinc-950 line-clamp-2'
-                          itemprop='name'
-                        >
-                          {book.title}
-                        </div>
-                        {book.description && (
-                          <div
-                            class='text-sm text-zinc-600 line-clamp-3'
-                            itemprop='description'
-                          >
-                            {book.description}
-                          </div>
-                        )}
-
-                        <div class='flex-1' />
-
-                        <div class='pt-2 mt-auto'>
-                          {book.link && (
-                            <a
-                              href={book.link}
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-md px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                            >
-                              {book.link.includes('github')
-                                ? 'Ver en GitHub'
-                                : 'Ver libro'}
-                              <span aria-hidden='true' class='ml-1'>
-                                →
-                              </span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <BookCard book={book} />
               ))}
             </div>
           </div>

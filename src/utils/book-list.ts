@@ -307,6 +307,7 @@ const growthBooks: Book[] = [
     image: "bill-gates-una-biografia-no-autorizada.jpg",
     link: "https://amzn.to/3Tp0Mb3",
     category: "growth",
+    readAt: { year: 2007 },
   },
 ];
 
@@ -415,4 +416,4 @@ const softwareBooks: Book[] = [
 
 const bookList: Book[] = [...literatureBooks, ...growthBooks, ...softwareBooks];
 
-export { bookList };
+export { bookList, literatureBooks, growthBooks, softwareBooks };
