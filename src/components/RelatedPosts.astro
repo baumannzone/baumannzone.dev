@@ -1,0 +1,144 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  relatedSlugs?: string[];
+}
+
+const { relatedSlugs = [] } = Astro.props;
+
+if (!relatedSlugs || relatedSlugs.length === 0) {
+  return null;
+}
+
+let relatedPosts: CollectionEntry<'blog'>[] = [];
+
+try {
+  const allBlogPosts = await getCollection('blog');
+  relatedPosts = allBlogPosts.filter((post) => {
+    try {
+      return (
+        post &&
+        post.slug &&
+        post.data &&
+        post.data.title &&
+        relatedSlugs.includes(post.slug) &&
+        post.data.published !== false
+      );
+    } catch (e) {
+      console.error(`Error processing post ${post?.slug}:`, e);
+      return false;
+    }
+  });
+} catch (error) {
+  console.error('Error fetching related posts:', error);
+  relatedPosts = [];
+}
+
+if (relatedPosts.length === 0) {
+  return null;
+}
+---
+
+<section
+  class='mt-12 mb-8 max-w-prose mx-auto relative'
+  itemscope
+  itemtype='https://schema.org/ItemList'
+>
+  <!-- Degradado de fondo -->
+  <div
+    class='absolute inset-0 -mx-8 -my-4 bg-gradient-to-r from-violet-300/10 via-pink-300/10 to-sky-300/10 dark:from-violet-500/10 dark:via-pink-500/10 dark:to-sky-500/10 rounded-2xl blur-xl'
+  >
+  </div>
+
+  <!-- Bordes degradado superior e inferior -->
+  <div
+    class='absolute -top-px left-0 h-px w-full bg-gradient-to-r from-transparent via-violet-500/40 to-transparent dark:via-violet-500/70'
+  >
+  </div>
+  <div
+    class='absolute -bottom-px left-0 h-px w-full bg-gradient-to-r from-transparent via-purple-500/30 to-transparent dark:via-purple-500/60'
+  >
+  </div>
+
+  <div class='relative z-10 py-6'>
+    <h2
+      class='text-2xl font-bold text-gray-900 dark:text-white mb-6'
+      itemprop='name'
+    >
+      Artículos relacionados
+    </h2>
+
+    <!-- Metadatos schema.org -->
+    <meta itemprop='numberOfItems' content={relatedPosts.length.toString()} />
+    <meta
+      itemprop='itemListOrder'
+      content='https://schema.org/ItemListUnordered'
+    />
+
+    <div
+      class={`grid gap-6 ${
+        relatedPosts.length === 1
+          ? ''
+          : relatedPosts.length === 2
+            ? 'grid-cols-2'
+            : 'sm:grid-cols-2 lg:grid-cols-3'
+      }`}
+    >
+      {
+        relatedPosts.map((post, index) => (
+          <article
+            class='group relative bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-600 hover:shadow-md transition-shadow'
+            itemscope
+            itemtype='https://schema.org/Article'
+            itemprop='itemListElement'
+          >
+            {/*  Metadatos schema.org del artículo */}
+            <meta itemprop='position' content={(index + 1).toString()} />
+            <meta
+              itemprop='datePublished'
+              content={post.data.pubDate.toISOString()}
+            />
+            <meta
+              itemprop='author'
+              content={post.data.author || 'Jorge Baumann'}
+            />
+            <meta
+              itemprop='url'
+              content={`https://baumannzone.dev/blog/${post.slug}`}
+            />
+            {post.data.tags && (
+              <meta itemprop='keywords' content={post.data.tags.join(', ')} />
+            )}
+
+            <h3
+              class='text-lg font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors mb-2 line-clamp-2'
+              itemprop='headline'
+            >
+              {post.data.title}
+            </h3>
+
+            <p
+              class='text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2'
+              itemprop='description'
+            >
+              {post.data.description}
+            </p>
+
+            <a
+              href={`/blog/${post.slug}`}
+              class='text-sm font-semibold text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors'
+              itemprop='mainEntityOfPage'
+            >
+              <span class='absolute inset-0' />
+              Leer artículo
+              <span class='inline-block ml-1 transition-transform group-hover:translate-x-1'>
+                →
+              </span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

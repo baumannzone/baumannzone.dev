@@ -1,13 +1,14 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import SharePostBar from "../components/SharePostBar.astro";
-import NavBar from "../components/NavBar.astro";
-import { getTagUrl } from "../utils/tags";
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import SharePostBar from '../components/SharePostBar.astro';
+import NavBar from '../components/NavBar.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import { getTagUrl } from '../utils/tags';
 
-type Props = CollectionEntry<"blog">["data"] & {
+type Props = CollectionEntry<'blog'>['data'] & {
   id: string;
   slug: string;
   collection: string;
@@ -24,63 +25,64 @@ const {
   collection,
   author,
   ogImage,
+  relatedPosts,
 } = Astro.props;
 
 // Dont show comments in dev mode
 const showComments = !import.meta.env.DEV;
 ---
 
-<html lang="es">
+<html lang='es'>
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
 
-  <body class="dark:bg-gray-700">
+  <body class='dark:bg-gray-700'>
     <NavBar />
-    <main class="px-4 py-8" itemscope itemtype="https://schema.org/Article">
+    <main class='px-4 py-8' itemscope itemtype='https://schema.org/Article'>
       <div
-        class="absolute inset-x-0 -top-6 -z-10 h-12 -rotate-3 bg-gradient-to-r from-violet-300 via-pink-300 to-sky-300 blur-3xl dark:from-violet-500/90 dark:via-pink-500/70 dark:to-sky-500/80"
+        class='absolute inset-x-0 -top-6 -z-10 h-12 -rotate-3 bg-gradient-to-r from-violet-300 via-pink-300 to-sky-300 blur-3xl dark:from-violet-500/90 dark:via-pink-500/70 dark:to-sky-500/80'
       >
       </div>
-      <meta itemprop="url" content={`https://baumannzone.dev/blog/${slug}`} />
-      <meta itemprop="description" content={description} />
-      <meta itemprop="keywords" content={tags?.join(", ")} />
-      <meta itemprop="author" content={author} />
-      <meta itemprop="publisher" content="Jorge Baumann" />
-      <meta itemprop="datePublished" content={pubDate.toISOString()} />
+      <meta itemprop='url' content={`https://baumannzone.dev/blog/${slug}`} />
+      <meta itemprop='description' content={description} />
+      <meta itemprop='keywords' content={tags?.join(', ')} />
+      <meta itemprop='author' content={author} />
+      <meta itemprop='publisher' content='Jorge Baumann' />
+      <meta itemprop='datePublished' content={pubDate.toISOString()} />
       {
         updatedDate && (
-          <meta itemprop="dateModified" content={updatedDate.toISOString()} />
+          <meta itemprop='dateModified' content={updatedDate.toISOString()} />
         )
       }
-      <header class="max-w-prose mx-auto">
-        <div class="text-gray-500 text-xs dark:text-gray-400">
-          <FormattedDate date={pubDate} type="pubDate" />
+      <header class='max-w-prose mx-auto'>
+        <div class='text-gray-500 text-xs dark:text-gray-400'>
+          <FormattedDate date={pubDate} type='pubDate' />
           {
             updatedDate && (
               <div>
-                Actualizado el{" "}
-                <FormattedDate date={updatedDate} type="updatedDate" />
+                Actualizado el{' '}
+                <FormattedDate date={updatedDate} type='updatedDate' />
               </div>
             )
           }
         </div>
         <h1
           style={`view-transition-name: post-${slug}`}
-          itemprop="headline"
-          class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white"
+          itemprop='headline'
+          class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white'
         >
           {title}
         </h1>
         {
           tags && (
-            <ul class="flex gap-x-4 text-xs mt-4 mb-8">
+            <ul class='flex gap-x-4 text-xs mt-4 mb-8'>
               {tags.map((tag) => (
                 <li>
                   <a href={`/tags/${getTagUrl(tag)}`}>
                     <span
-                      class="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500"
-                      translate="no"
+                      class='relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:text-gray-300 dark:bg-gray-600 hover:bg-gray-100 dark:hover:bg-gray-500'
+                      translate='no'
                     >
                       {tag}
                     </span>
@@ -92,27 +94,29 @@ const showComments = !import.meta.env.DEV;
         }
       </header>
       <article
-        class="prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600"
-        itemprop="articleBody"
+        class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600'
+        itemprop='articleBody'
       >
         <slot />
       </article>
 
       <hr
-        class="bg-violet-500 h-[100px] w-[4px] mx-auto my-[80px] rounded-full border-none"
+        class='bg-violet-500 h-[100px] w-[4px] mx-auto my-[80px] rounded-full border-none'
       />
 
       <SharePostBar id={id} slug={slug} collection={collection} title={title} />
 
+      {relatedPosts && relatedPosts.length > 0 && <RelatedPosts relatedSlugs={relatedPosts} />}
+
       {
         showComments && (
           <script
-            data-repo="baumannzone/baumannzonedev-comments"
-            src="https://utteranc.es/client.js"
-            data-issue-term="pathname"
-            data-label="comment"
-            data-theme="preferred-color-scheme"
-            crossorigin="anonymous"
+            data-repo='baumannzone/baumannzonedev-comments'
+            src='https://utteranc.es/client.js'
+            data-issue-term='pathname'
+            data-label='comment'
+            data-theme='preferred-color-scheme'
+            crossorigin='anonymous'
             async
           />
         )
@@ -120,6 +124,6 @@ const showComments = !import.meta.env.DEV;
     </main>
 
     <Footer />
-    <script src="/src/utils/screensaver.js"></script>
+    <script src='/src/utils/screensaver.js'></script>
   </body>
 </html>

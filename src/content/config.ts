@@ -14,6 +14,7 @@ const blog = defineCollection({
     authorImage: z.string().optional(),
     type: z.enum(["blog", "css-art"]).default("blog"),
     ogImage: z.string().optional(),
+    relatedPosts: z.array(z.string()).optional(),
   }),
 });
 

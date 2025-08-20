@@ -90,10 +90,19 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
     </div>
   </div> -->
 
+  <div itemscope itemtype='https://schema.org/WebPage' itemid={blogPostUrl}>
+    <meta itemprop='name' content={title} />
+    <meta itemprop='url' content={blogPostUrl} />
+    <meta itemprop='author' content='Jorge Baumann' />
+  </div>
+
   <p class='text-lg font-medium dark:text-white text-center'>Comparte</p>
   <div
     class='mx-auto flex w-full flex-wrap items-center justify-center gap-5 pb-16 pt-8'
+    itemscope
+    itemtype='https://schema.org/ShareAction'
   >
+    <meta itemprop='object' content={blogPostUrl} />
     <div
       class='hover:[&_a]:bg-zinc-500/5 dark:hover:[&_a]:bg-zinc-500/50 relative items-stretch [&_a]:flex [&_a]:aspect-square [&_a]:w-full [&_a]:max-w-14 [&_a]:items-center [&_a]:justify-center [&_a:not(:last-child)]:border-r [&_a]:p-3 first-of-type:[&_a]:rounded-l inline-flex rounded-md border'
     >
@@ -112,7 +121,13 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         target='_blank'
         rel='noopener noreferrer'
         class='dark:text-white'
+        itemprop='target'
+        itemscope
+        itemtype='https://schema.org/EntryPoint'
+        title='Compartir en Bluesky'
       >
+        <meta itemprop='name' content='Bluesky' />
+        <meta itemprop='url' content={blueskyShareUrl} />
         <svg
           width='20'
           height='20'
@@ -132,7 +147,13 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         target='_blank'
         rel='noopener noreferrer'
         class='dark:text-white'
+        itemprop='target'
+        itemscope
+        itemtype='https://schema.org/EntryPoint'
+        title='Compartir en X (Twitter)'
       >
+        <meta itemprop='name' content='X (Twitter)' />
+        <meta itemprop='url' content={twitterShareUrl} />
         <svg
           width='16'
           height='16'
@@ -151,7 +172,13 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         target='_blank'
         rel='noopener noreferrer'
         class='dark:text-white'
+        itemprop='target'
+        itemscope
+        itemtype='https://schema.org/EntryPoint'
+        title='Compartir en Threads'
       >
+        <meta itemprop='name' content='Threads' />
+        <meta itemprop='url' content={threadsShareUrl} />
         <svg
           role='img'
           viewBox='0 0 24 24'
@@ -172,7 +199,13 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         target='_blank'
         rel='noopener noreferrer'
         class='dark:text-white'
+        itemprop='target'
+        itemscope
+        itemtype='https://schema.org/EntryPoint'
+        title='Compartir en LinkedIn'
       >
+        <meta itemprop='name' content='LinkedIn' />
+        <meta itemprop='url' content={linkedinShareUrl} />
         <svg
           width='20'
           height='20'
@@ -193,7 +226,13 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
         target='_blank'
         rel='noopener noreferrer'
         class='dark:text-white'
+        itemprop='target'
+        itemscope
+        itemtype='https://schema.org/EntryPoint'
+        title='Compartir en Reddit'
       >
+        <meta itemprop='name' content='Reddit' />
+        <meta itemprop='url' content={redditShareUrl} />
         <svg
           role='img'
           viewBox='0 0 24 24'
@@ -238,23 +277,41 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
   <!-- Author -->
   <div
     class='mb-20 relative grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-6'
+    itemscope
+    itemtype='https://schema.org/Person'
+    itemprop='author'
   >
     <div class='col-span-full lg:col-span-3'>
       <Image
         src={baumannzone}
         class='mb-8 size-32 aspect-radio-1/1 rounded-full hover:cursor-none'
         alt='Jorge Baumann aka Baumannzone'
+        itemprop='image'
       />
+      <meta itemprop='name' content='Jorge Baumann' />
+      <meta itemprop='alternateName' content='Baumannzone' />
+      <meta itemprop='jobTitle' content='Senior Software Engineer' />
+      <meta itemprop='url' content='https://baumannzone.dev/about' />
     </div>
     <div class='col-start:5 col-span-9'>
       <div class='font-medium text-black dark:text-white'>
         Escrito por Jorge Baumann
       </div>
-      <p class='max-w-full text-secondary mb-12 mt-3 prose dark:prose-invert'>
+      <p
+        class='max-w-full text-secondary mb-12 mt-3 prose dark:prose-invert'
+        itemprop='description'
+      >
         Jorge Baumann es Senior Software Engineer, especializado en JavaScript.
         También es creador de contenido y speaker. Vive en Madrid, le encanta el
         testing, dibujar con CSS y tiene un perro que se llama Rambo.
       </p>
+
+      <!-- Schema adicional para ubicación y especialidades -->
+      <meta itemprop='address' content='Madrid, España' />
+      <meta
+        itemprop='knowsAbout'
+        content='JavaScript, Testing, CSS, Frontend Development'
+      />
 
       <a
         href='/about'
@@ -266,21 +323,6 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
       </a>
     </div>
   </div>
-
-  <!-- <div class="relative mb-3 flex w-full items-center justify-center gap-3">
-    <div class="flex w-full items-center justify-center gap-8">
-      <div class="flex items-center gap-2 font-normal">
-        <Image
-          src={baumannzone}
-          alt="Jorge Baumann"
-          width="40"
-          height="40"
-          class="bg-muted rounded-full"
-        />
-        <span class="dark:text-white text-foreground">Jorge Baumann</span>
-      </div>
-    </div>
-  </div> -->
 </div>
 
 <script>

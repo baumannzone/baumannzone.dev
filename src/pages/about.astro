@@ -12,7 +12,7 @@ import TeamSection from "../components/AboutMePage/TeamSection.astro";
 
 // Get the blog posts
 const posts = (await getCollection("blog"))
-  .filter((post) => post.data.published)
+  .filter((post) => post.data.published !== false)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Get the last 3 posts

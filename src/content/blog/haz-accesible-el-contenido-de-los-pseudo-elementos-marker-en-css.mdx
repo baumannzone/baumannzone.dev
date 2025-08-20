@@ -1,0 +1,125 @@
+---
+title: "Haz accesible el contenido de los pseudo-elementos ::marker en CSS"
+description: "Cómo personalizar ::marker en <summary> sin romper la accesibilidad. Descubre cómo usar content con texto alternativo o incluso ocultarlo a los lectores de pantalla."
+pubDate: 2025-08-20
+type: blog
+tags:
+  - CSS
+  - a11y
+author: "Jorge Baumann"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Haz%20accesible%20el%20contenido%20de%20los%20pseudo-elementos%20::marker&tags=CSS,a11y"
+relatedPosts:
+  - "acordeones-nativos-en-html-sin-una-linea-de-javascript"
+---
+
+En mi [post anterior sobre acordeones nativos en HTML](/blog/acordeones-nativos-en-html-sin-una-linea-de-javascript) vimos cómo usar `<details>` y `<summary>` para crear interacciones sin nada de JavaScript.
+
+Pues bien, hace poco me puse a experimentar con `::marker` para personalizar los iconos que aparecen en `<summary>`... y descubrí un detalle importante de accesibilidad:
+
+👉 Algunos lectores de pantalla también leen el `content` que añadimos desde CSS.
+
+## El problema: screen readers y el pseudo-elemento ::marker
+
+Imagina que añades un emoji como marcador:
+
+```css
+summary::marker {
+  content: "😊";
+}
+```
+
+A nivel visual, queda simpático. Pero en un lector de pantalla el resultado puede ser algo así:
+
+> Cara sonriente con los ojos sonrientes y las mejillas coloradas
+
+En lugar de un simple "Galería de fotos", el usuario recibe una descripción larga y confusa del emoji. No es la experiencia que queremos.
+
+## La solución: texto alternativo para screen readers
+
+La buena noticia es que CSS permite añadir un segundo valor pensado justamente para los lectores de pantalla:
+
+```css
+/* Con texto alternativo personalizado */
+summary::marker {
+  content: "📸" / "Ver fotos";
+}
+
+/* O directamente omitirlo para screen readers */
+summary::marker {
+  content: "📸" / "";
+}
+```
+
+El segundo valor puede dejarse vacío, lo que instruye al lector de pantalla a ignorar por completo el marcador.
+De esta forma consigues personalización visual sin romper la accesibilidad. ✅
+
+## Ejemplo completo
+
+Veamos un ejemplo práctico con HTML y CSS:
+
+```html
+<details>
+  <summary>Galería de fotos</summary>
+  <p>Aquí irían las fotos...</p>
+</details>
+```
+
+```css
+summary::marker {
+  content: "📸" / "Ver";
+}
+```
+
+**Resultado visual:** 📸 Galería de fotos  
+**Lo que lee el screen reader:** _"Ver Galería de fotos"_
+
+De esta forma puedes decorar visualmente el summary sin añadir ruido innecesario a usuarios de tecnologías asistivas.
+
+## Compatibilidad de navegadores
+
+La sintaxis con texto alternativo (content: "icono" / "texto";) todavía no tiene un soporte uniforme en todos los entornos.
+
+- ✅ Chrome, Firefox y Edge (Windows + NVDA/JAWS): soportan tanto el icono como el texto alternativo.
+- ⚠️ Chrome y Firefox en macOS con VoiceOver: muestran el emoji visual, pero el lector de pantalla ignora el texto alternativo.
+- ❌ Safari + VoiceOver en macOS: directamente roto → no se ve ni el emoji ni se lee el texto.
+
+Traducido para la gen Z: úsalo para decoración, pero no confíes en `::marker` como única fuente de información importante.
+
+## Casos de uso comunes
+
+- **Iconos decorativos**:
+
+  ```css
+  summary::marker {
+    content: "✨" / "";
+  }
+  ```
+
+- **Iconos informativos**:
+
+  ```css
+  summary::marker {
+    content: "⚠️" / "Advertencia";
+  }
+  ```
+
+- **Estados**:
+
+  ```css
+  summary::marker {
+    content: "🔽" / "Expandir"; /* o "🔼" / "Contraer" */
+  }
+  ```
+
+## Conclusión
+
+Un detalle minúsculo, pero que marca la diferencia entre un acordeón bonito y uno realmente inclusivo.
+Así que ya sabes: si juegas con `::marker`, no olvides también jugar con la accesibilidad.
+
+## ℹ️ Extra: lectores de pantalla en Windows
+
+**NVDA** (_NonVisual Desktop Access_) → Lector de pantalla gratuito y open source, muy popular en Windows.
+Lo usan tanto personas con discapacidad visual como desarrolladores para testear accesibilidad.
+
+**JAWS** (_Job Access With Speech_) → Lector de pantalla comercial (de pago, bastante caro).
+Es muy potente y está muy extendido en entornos corporativos.
