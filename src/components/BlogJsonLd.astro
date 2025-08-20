@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  slug: string;
+  ogImage?: string;
+}
+
+const { title, description, pubDate, updatedDate, slug, ogImage } = Astro.props;
+
+const url = `https://baumannzone.dev/blog/${slug}`;
+const publishedDate = pubDate.toISOString();
+const modifiedDate = updatedDate ? updatedDate.toISOString() : publishedDate;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description,
+  image: ogImage,
+  author: {
+    '@type': 'Person',
+    name: 'Jorge Baumann',
+  },
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Baumannzone',
+  },
+};
+---
+
+<script type='application/ld+json' set:html={JSON.stringify(jsonLd)} />
