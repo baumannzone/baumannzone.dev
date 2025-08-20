@@ -1,4 +1,6 @@
 ---
+import type { Tags } from '../types/tags';
+
 interface Props {
   title: string;
   description: string;
@@ -6,9 +8,20 @@ interface Props {
   updatedDate?: Date;
   slug: string;
   ogImage?: string;
+  tags?: Tags[];
+  author?: string;
 }
 
-const { title, description, pubDate, updatedDate, slug, ogImage } = Astro.props;
+const { 
+  title, 
+  description, 
+  pubDate, 
+  updatedDate, 
+  slug, 
+  ogImage,
+  tags,
+  author = 'Jorge Baumann'
+} = Astro.props;
 
 const url = `https://baumannzone.dev/blog/${slug}`;
 const publishedDate = pubDate.toISOString();
@@ -20,21 +33,37 @@ const jsonLd = {
   headline: title,
   description: description,
   image: ogImage,
-  author: {
-    '@type': 'Person',
-    name: 'Jorge Baumann',
-  },
+  url: url,
   datePublished: publishedDate,
   dateModified: modifiedDate,
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': url,
+  inLanguage: 'es-ES',
+  ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
+  author: {
+    '@type': 'Person',
+    name: author,
+    url: 'https://baumannzone.dev',
+    sameAs: [
+      'https://twitter.com/baumannzone',
+      'https://github.com/baumannzone',
+      'https://linkedin.com/in/baumannzone'
+    ]
   },
   publisher: {
     '@type': 'Organization',
     name: 'Baumannzone',
+    url: 'https://baumannzone.dev',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://baumannzone.dev/favicon.svg'
+    }
   },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+  articleSection: 'Technology',
+  articleBody: description
 };
 ---
 
-<script type='application/ld+json' set:html={JSON.stringify(jsonLd)} />
+<script type='application/ld+json' is:inline set:html={JSON.stringify(jsonLd)} />
