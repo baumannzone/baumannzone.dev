@@ -1,8 +1,10 @@
 ---
-import Layout from "../../layouts/DefaultLayout.astro";
-import { getCollection } from "astro:content";
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/DefaultLayout.astro';
+import { getCollection } from 'astro:content';
+import horseImage from '../../assets/talks/horse.jpeg';
 
-const talks = await getCollection("talks");
+const talks = await getCollection('talks');
 const currentDate = new Date();
 talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
@@ -32,18 +34,18 @@ Object.keys(talksByYear).forEach((year) => {
 });
 ---
 
-<Layout title="Talks | baumannzone.dev">
+<Layout title='Talks | baumannzone.dev'>
   <main
-    class="bmn-container mx-auto pt-16 pb-24"
+    class='bmn-container mx-auto pt-16 pb-24'
     itemscope
-    itemtype="https://schema.org/CollectionPage"
+    itemtype='https://schema.org/CollectionPage'
   >
-    <header class="text-center mx-auto max-w-3xl">
-      <p class="text-base font-semibold leading-7 text-violet-600">/talks</p>
-      <h1 class="text-4xl font-semibold mb-8" itemprop="name">Charlas</h1>
+    <header class='text-center mx-auto max-w-3xl'>
+      <p class='text-base font-semibold leading-7 text-violet-600'>/talks</p>
+      <h1 class='text-4xl font-semibold mb-8' itemprop='name'>Charlas</h1>
       <p
-        class="mt-6 mb-12 text-lg/8 text-gray-600 text-balance"
-        itemprop="description"
+        class='mt-6 mb-12 text-lg/8 text-gray-600 text-balance'
+        itemprop='description'
       >
         Listado de todas mis charlas, entrevistas, artículos, cursos, podcasts y
         conferencias a lo largo de mi carrera como ingeniero de software.
@@ -51,124 +53,124 @@ Object.keys(talksByYear).forEach((year) => {
     </header>
 
     <section
-      class="bg-white m-2 px-4 sm:px-6 lg:px-8"
-      itemprop="mainEntity"
+      class='bg-white m-2 px-4 sm:px-6 lg:px-8'
+      itemprop='mainEntity'
       itemscope
-      itemtype="https://schema.org/ItemList"
+      itemtype='https://schema.org/ItemList'
     >
       {
         years.map((year) => (
-          <div class="pb-12">
-            <div class="sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1">
-              <h2 class="text-lg tracking-tighter font-bold flex gap-[2px]">
-                <span class="font-mono text-violet-500/50">/</span>
+          <div class='pb-12'>
+            <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
+                <span class='font-mono text-violet-500/50'>/</span>
                 {year}
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch mb-2">
+            <div class='grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch mb-2'>
               {talksByYear[year].map((talk) => (
                 <a
                   href={`/talks/${talk.slug}`}
-                  class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                  class='block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
                   itemscope
                   itemtype={
-                    talk.data.type === "conferencia" ||
-                    talk.data.type === "meetup" ||
-                    talk.data.type === "social"
-                      ? "https://schema.org/Event"
-                      : talk.data.type === "podcast"
-                        ? "https://schema.org/PodcastEpisode"
-                        : talk.data.type === "artículo"
-                          ? "https://schema.org/Article"
-                          : "https://schema.org/Course"
+                    talk.data.type === 'conferencia' ||
+                    talk.data.type === 'meetup' ||
+                    talk.data.type === 'social'
+                      ? 'https://schema.org/Event'
+                      : talk.data.type === 'podcast'
+                        ? 'https://schema.org/PodcastEpisode'
+                        : talk.data.type === 'artículo'
+                          ? 'https://schema.org/Article'
+                          : 'https://schema.org/Course'
                   }
                 >
-                  <div class="rounded-xl border-2 border-zinc-200 h-full">
-                    <div class="flex flex-col space-y-1.5 p-6 relative">
-                      {talk.data.type === "conferencia" ||
-                      talk.data.type === "meetup" ||
-                      talk.data.type === "social" ? (
+                  <div class='rounded-xl border-2 border-zinc-200 h-full'>
+                    <div class='flex flex-col space-y-1.5 p-6 relative'>
+                      {talk.data.type === 'conferencia' ||
+                      talk.data.type === 'meetup' ||
+                      talk.data.type === 'social' ? (
                         <div
-                          class="text-sm text-zinc-500"
-                          itemprop="location"
+                          class='text-sm text-zinc-500'
+                          itemprop='location'
                           itemscope
-                          itemtype="https://schema.org/Place"
+                          itemtype='https://schema.org/Place'
                         >
-                          <span itemprop="name">{talk.data.event}</span>
+                          <span itemprop='name'>{talk.data.event}</span>
                         </div>
                       ) : (
-                        <div class="text-sm text-zinc-500">
+                        <div class='text-sm text-zinc-500'>
                           {talk.data.event}
                         </div>
                       )}
                       <div
-                        class="text-2xl font-semibold tabular-nums text-zinc-950"
+                        class='text-2xl font-semibold tabular-nums text-zinc-950'
                         style={`view-transition-name: talk-${talk.slug}`}
                         itemprop={
-                          talk.data.type === "artículo" ? "headline" : "name"
+                          talk.data.type === 'artículo' ? 'headline' : 'name'
                         }
                       >
                         {talk.data.title}
                       </div>
-                      <div class="absolute right-4 top-4 bg-zinc-200 rounded-lg">
-                        <div class="px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors flex items-center">
-                          <span class="mr-1">{talk.data.type}</span>
+                      <div class='absolute right-4 top-4 bg-zinc-200 rounded-lg'>
+                        <div class='px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors flex items-center'>
+                          <span class='mr-1'>{talk.data.type}</span>
                           <div
-                            class={`size-[6px] rounded-full ${talk.data.date > currentDate ? "bg-green-500" : "bg-gray-400"}`}
+                            class={`size-[6px] rounded-full ${talk.data.date > currentDate ? 'bg-green-500' : 'bg-gray-400'}`}
                             title={
                               talk.data.date > currentDate
-                                ? "Próxima charla"
-                                : "Charla pasada"
+                                ? 'Próxima charla'
+                                : 'Charla pasada'
                             }
                           />
                         </div>
                       </div>
-                      {talk.data.type === "artículo" && (
+                      {talk.data.type === 'artículo' && (
                         <meta
-                          itemprop="datePublished"
+                          itemprop='datePublished'
                           content={talk.data.date.toISOString()}
                         />
                       )}
-                      {(talk.data.type === "conferencia" ||
-                        talk.data.type === "meetup" ||
-                        talk.data.type === "social") && (
+                      {(talk.data.type === 'conferencia' ||
+                        talk.data.type === 'meetup' ||
+                        talk.data.type === 'social') && (
                         <meta
-                          itemprop="startDate"
+                          itemprop='startDate'
                           content={talk.data.date.toISOString()}
                         />
                       )}
-                      {talk.data.type === "podcast" && (
+                      {talk.data.type === 'podcast' && (
                         <>
                           <meta
-                            itemprop="datePublished"
+                            itemprop='datePublished'
                             content={talk.data.date.toISOString()}
                           />
                           <div
-                            itemprop="partOfSeries"
+                            itemprop='partOfSeries'
                             itemscope
-                            itemtype="https://schema.org/PodcastSeries"
+                            itemtype='https://schema.org/PodcastSeries'
                           >
-                            <meta itemprop="name" content={talk.data.event} />
+                            <meta itemprop='name' content={talk.data.event} />
                           </div>
                         </>
                       )}
-                      {talk.data.type === "artículo" && (
+                      {talk.data.type === 'artículo' && (
                         <div
-                          itemprop="publisher"
+                          itemprop='publisher'
                           itemscope
-                          itemtype="https://schema.org/Organization"
+                          itemtype='https://schema.org/Organization'
                         >
-                          <meta itemprop="name" content={talk.data.event} />
+                          <meta itemprop='name' content={talk.data.event} />
                         </div>
                       )}
-                      {talk.data.type === "curso" && (
+                      {talk.data.type === 'curso' && (
                         <div
-                          itemprop="provider"
+                          itemprop='provider'
                           itemscope
-                          itemtype="https://schema.org/Organization"
+                          itemtype='https://schema.org/Organization'
                         >
-                          <meta itemprop="name" content={talk.data.event} />
+                          <meta itemprop='name' content={talk.data.event} />
                         </div>
                       )}
                     </div>
@@ -181,23 +183,31 @@ Object.keys(talksByYear).forEach((year) => {
       }
     </section>
 
-    <section class="bg-gray-50 px-4 sm:px-6 lg:px-8 mt-12 rounded-t-xl">
-      <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center">
+    <section
+      class='bg-gray-50 px-4 sm:px-6 lg:px-8 mt-12 rounded-t-xl relative isolate overflow-hidden'
+    >
+      <Image
+        src={horseImage}
+        class='absolute inset-0 -z-10 w-full h-full object-cover opacity-20'
+        alt='Jorge Baumann (@baumannzone) subido a un caballo en una conferencia con el traje de Mario Bros'
+      />
+
+      <div class='px-6 py-24 sm:px-6 sm:py-32 lg:px-8 relative z-10'>
+        <div class='mx-auto max-w-3xl text-center'>
           <h2
-            class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
+            class='text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl'
           >
             ¿Quieres que dé una charla en tu evento?
           </h2>
-          <p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600">
+          <p class='mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600'>
             Con o sin caballo, lo hablamos. Trabajo temas de desarrollo web,
             comunidad, salud mental en tech, humor y CSS como forma de expresión
             artística.
           </p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
+          <div class='mt-10 flex items-center justify-center gap-x-6'>
             <a
-              href="mailto:jorge.baumann.aguilar@gmail.com"
-              class="rounded-md bg-violet-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+              href='mailto:jorge.baumann.aguilar@gmail.com'
+              class='rounded-md bg-violet-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
             >
               Invítame a tu evento
             </a>
@@ -208,11 +218,11 @@ Object.keys(talksByYear).forEach((year) => {
             >
             </a> -->
             <a
-              href="/talks/about"
-              class="text-sm/6 font-semibold text-gray-900"
+              href='/talks/about'
+              class='text-sm/6 font-semibold text-gray-900'
             >
               Saber más
-              <span aria-hidden="true">→</span>
+              <span aria-hidden='true'>→</span>
             </a>
           </div>
         </div>
