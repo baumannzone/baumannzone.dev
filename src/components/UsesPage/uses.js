@@ -13,16 +13,6 @@ const myUses = [
           "Almacenamiento: 512 GB SSD",
         ],
       },
-      {
-        title: "MacBook Pro (13-inch, i5, 2015)",
-        description: "Mi portátil personal.",
-        link: "https://www.apple.com/macbook-pro-13/",
-        specs: [
-          "Procesador: Intel i5 2,7 GHz",
-          "Memoria: 8 GB",
-          "Almacenamiento: 256 GB SSD",
-        ],
-      },
     ],
   },
   {
@@ -212,11 +202,6 @@ const myUses = [
     type: "h2",
     title: "Editor",
     children: [
-      {
-        title: "Cursor",
-        description: "Editor de código con IA integrada.",
-        link: "https://www.cursor.com/",
-      },
       {
         title: "VS Code",
         description: "Editor de código de Microsoft.",
@@ -436,6 +421,30 @@ const myUses = [
   },
   {
     type: "h2",
+    title: "Inteligencia Artificial",
+    children: [
+      {
+        title: "Claude Code",
+        description:
+          "CLI especialmente bueno para tareas de programación y análisis de código.",
+        link: "https://claude.ai/",
+      },
+      {
+        title: "Gemini",
+        description:
+          "La IA de Google en modo CLI. Útil para generar y analizar contenido variado.",
+        link: "https://gemini.google.com/",
+      },
+      {
+        title: "ChatGPT",
+        description:
+          "El asistente conversacional de OpenAI. Perfecto para resolver dudas, generar ideas y ayudar con tareas de programación.",
+        link: "https://chat.openai.com/",
+      },
+    ],
+  },
+  {
+    type: "h2",
     title: "Cables y conexiones",
     children: [
       {
@@ -473,6 +482,11 @@ const myUses = [
         description:
           "It's-a-me-Mario! Traje de Super Mario para ir a los eventos de la comunidad, no apto para tímidos. Todos los ojos estarán en ti. Le he cosido los bajos a mano para un ajuste perfecto.",
         link: "https://amzn.to/4iIXaLn",
+      },
+      {
+        title: "Máscara de caballo 🐴",
+        description: "Máscara de caballo para eventos.",
+        link: "https://amzn.to/3JTCXXt",
       },
     ],
   },

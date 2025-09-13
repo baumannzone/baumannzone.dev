@@ -1,7 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -12,41 +12,44 @@ interface Props {
 const {
   title,
   description,
-  ogImage = "https://baumannzone-dev-og.vercel.app/",
+  ogImage = 'https://baumannzone-dev-og.vercel.app/',
 } = Astro.props;
 ---
 
+<link rel='preconnect' href='https://cdn.usefathom.com' crossorigin />
+
 <!-- Global Metadata -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<meta name='generator' content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<meta name='title' content={title} />
+<meta name='description' content={description} />
+<link rel='canonical' href={Astro.url.toString()} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
+<meta property='og:type' content='website' />
+<meta property='og:url' content={Astro.url} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:image' content={ogImage} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImage} />
-<meta property="twitter:site" content="@baumannzone" />
-<meta property="twitter:creator" content="@baumannzone" />
+<meta property='twitter:card' content='summary_large_image' />
+<meta property='twitter:url' content={Astro.url} />
+<meta property='twitter:title' content={title} />
+<meta property='twitter:description' content={description} />
+<meta property='twitter:image' content={ogImage} />
+<meta property='twitter:site' content='@baumannzone' />
+<meta property='twitter:creator' content='@baumannzone' />
 
 <meta
-  name="impact-site-verification"
-  content="de743d22-454b-4c26-8dfb-610c0b0a3831"
+  name='impact-site-verification'
+  content='de743d22-454b-4c26-8dfb-610c0b0a3831'
 />
 
-<script src="https://cdn.usefathom.com/script.js" data-site="IMNYHNZI" defer
+<script src='https://cdn.usefathom.com/script.js' data-site='IMNYHNZI' defer
 ></script>
