@@ -3,8 +3,9 @@ title: "Enlaces de afiliados bien etiquetados con 'sponsored'"
 description: "Mejora tu SEO marcando enlaces de afiliados como patrocinados. Google te lo agradecerá."
 pubDate: 2025-09-14
 tags:
-  - SEO
   - TIL
+  - SEO
+  - HTML
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Enlaces%20de%20afiliados%20bien%20etiquetados%20con%20'sponsored'&tags=SEO,TIL"
 ---
 
