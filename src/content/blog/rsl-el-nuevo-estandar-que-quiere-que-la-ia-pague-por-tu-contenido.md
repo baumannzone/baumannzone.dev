@@ -16,6 +16,8 @@ La pelea por los datos acaba de subir de nivel. Hasta ahora, los modelos de IA s
 
 Grandes nombres como **Reddit**, **Yahoo** o **Medium** ya han dicho que se unen al movimiento. Y la cosa parece que va en serio.
 
+![RSL: el nuevo estándar que busca que las empresas de IA paguen por entrenar con contenido](../../assets/blog/rsl-el-nuevo-estandar-que-quiere-que-la-ia-pague-por-tu-contenido/image.png)
+
 ## ¿Qué es RSL (Really Simple Licensing)?
 
 **RSL** es un nuevo estándar de licencias pensado para el mundo de la inteligencia artificial. Su objetivo es simple: que los creadores y editores puedan decidir **cómo se usa su contenido en el entrenamiento de modelos de IA** y, sobre todo, bajo qué condiciones económicas.
