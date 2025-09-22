@@ -8,6 +8,8 @@ author: Jorge Baumann
 tags:
   - SEO
   - Web
+relatedPosts:
+  - "rsl-el-nuevo-estandar-que-quiere-que-la-ia-pague-por-tu-contenido"
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Controla%20lo%20que%20los%20motores%20de%20b%C3%BAsqueda%20rastrean%20en%20tu%20web%3A%20gu%C3%ADa%20pr%C3%A1ctica%20de%20robots.txt&tags=SEO,Web"
 ---
 
