@@ -41,9 +41,9 @@ Un estudio publicado en *Communications of the ACM* enfatiza la importancia de l
 
 Más allá de las ventajas profesionales, hablar en público contribuye significativamente al crecimiento personal:
 
-*   **Aumenta la Confianza:** Hablar regularmente frente a una audiencia ayuda a superar la ansiedad y construye autoconfianza.
-*   **Mejora la Articulación:** Los desarrolladores aprenden a transmitir conceptos técnicos complejos de manera accesible, mejorando las habilidades generales de comunicación.
-*   **Fomenta el Aprendizaje Continuo:** Prepararse para charlas a menudo requiere mantenerse actualizado con las últimas tendencias de la industria, fomentando un hábito de aprendizaje de por vida.
+* **Aumenta la Confianza:** Hablar regularmente frente a una audiencia ayuda a superar la ansiedad y construye autoconfianza.
+* **Mejora la Articulación:** Los desarrolladores aprenden a transmitir conceptos técnicos complejos de manera accesible, mejorando las habilidades generales de comunicación.
+* **Fomenta el Aprendizaje Continuo:** Prepararse para charlas a menudo requiere mantenerse actualizado con las últimas tendencias de la industria, fomentando un hábito de aprendizaje de por vida.
 
 Un informe de experiencia del Simposio Técnico ACM sobre Educación en Ciencias de la Computación destacó que integrar entrenamiento en comunicación oral en un curso final de informática llevó a una mejora significativa en la confianza de los estudiantes y el dominio de habilidades de comunicación oral técnicas y no técnicas. ([dl.acm.org](https://dl.acm.org/doi/abs/10.1145/3626252.3630776?utm_source=openai))
 

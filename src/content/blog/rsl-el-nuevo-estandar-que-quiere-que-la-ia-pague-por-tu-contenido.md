@@ -9,6 +9,7 @@ tags:
   - SEO
 relatedPosts:
   - "controla-lo-que-los-motores-de-busqueda-rastrean-en-tu-web-guia-practica-de-robots-txt"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=RSL%3A%20el%20nuevo%20est%C3%A1ndar%20que%20quiere%20que%20la%20IA%20pague%20por%20tu%20contenido&tags=IA,Web,SEO"
 
 ---
 
