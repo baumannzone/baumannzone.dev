@@ -8,60 +8,62 @@ author: Jorge Baumann
 tags:
   - Career
   - Inspiration
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Carrera,Comunicaci%C3%B3n,Comunidad"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
 ---
 
 ![Photo by hiiitsskylar on Unsplash](https://images.unsplash.com/flagged/photo-1568187113326-974ff6d0c6b6?attr_photographer=hiiitsskylar&attr_photographer_url=https%3A%2F%2Funsplash.com%2F%40hiiitsskylar&attr_provider=unsplash&attr_provider_name=Unsplash)
 
-Imagina cautivar a una audiencia con tus conocimientos técnicos, transformando tu carrera de la noche a la mañana. Muchos desarrolladores pierden oportunidades profesionales debido al miedo a hablar en público. Sin embargo, integrar la comunicación pública en tu conjunto de habilidades puede mejorar significativamente tu trayectoria profesional. Los estudios han demostrado que los estudiantes de informática que reciben entrenamiento en comunicación oral muestran mejoras notables en confianza y dominio de habilidades de comunicación tanto técnicas como no técnicas. ([dl.acm.org](https://dl.acm.org/doi/abs/10.1145/3626252.3630776?utm_source=openai)) Además, la capacidad de comunicar eficazmente ideas complejas es muy valorada en la industria tecnológica, ya que facilita la colaboración y la innovación. ([dl.acm.org](https://dl.acm.org/doi/10.1145/3218430?utm_source=openai)) Este artículo revelará el poder transformador de hablar en público y cómo los desarrolladores pueden dominarlo, presentando testimonios de expertos e historias de éxito de la vida real de desarrolladores experimentados.
+Muchos desarrolladores pierden oportunidades profesionales debido al miedo a hablar en público, cuando precisamente desarrollar esa habilidad puede transformar su carrera. La evidencia lo respalda: estudiantes de informática que mejoran su comunicación oral ganan confianza y mejoran tanto su comunicación técnica como no ténica. 
+En la industria, además, se valora muchísimo poder explicar ideas complejas con claridad porque facilita la colaboración y acelera la innovación
+Este artículo revelará el poder transformador de hablar en público y cómo los desarrolladores pueden dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
 ## Tabla de Contenidos
 
-*   [El Poder Transformador de Hablar en Público para Desarrolladores](#el-poder-transformador-de-hablar-en-publico-para-desarrolladores)
-*   [Cómo Prepararse Eficazmente para una Charla Técnica](#como-prepararse-eficazmente-para-una-charla-tecnica)
-*   [Aprovechando la Comunicación Pública para Construir Comunidad y Hacer Networking](#aprovechando-la-comunicacion-publica-para-construir-comunidad-y-hacer-networking)
-*   [Preguntas Frecuentes](#preguntas-frecuentes)
-*   [Conclusión](#conclusion)
+* [El poder transformador de hablar en público para desarrolladores](#el-poder-transformador-de-hablar-en-publico-para-desarrolladores)
+* [Cómo prepararse eficazmente para una charla técnica](#como-prepararse-eficazmente-para-una-charla-tecnica)
+* [Aprovechando la comunicación pública para construir comunidad y hacer networking](#aprovechando-la-comunicacion-publica-para-construir-comunidad-y-hacer-networking)
+* [Preguntas Frecuentes](#preguntas-frecuentes)
+* [Conclusión](#conclusion)
 
-## El Poder Transformador de Hablar en Público para Desarrolladores
+## El poder transformador de hablar en público para desarrolladores
 
-Hablar en público a menudo se percibe como una habilidad reservada para aquellos en roles de liderazgo o de cara al cliente. Sin embargo, para los desarrolladores, dominar este arte puede ser un cambio radical, ofreciendo beneficios profundos que se extienden más allá del podio. Participar en la comunicación pública no solo mejora las perspectivas profesionales sino que también fomenta el crecimiento personal, convirtiéndose en una herramienta invaluable en el arsenal de un desarrollador.
+¿Piensas que hablar en público es solo para managers o gente de marketing? **Error**. Como developer, mejorar la oratoria o dar charlas puede transformar tu carrera de formas que ni imaginas. 
 
-### Crecimiento Profesional: Mejorando las Oportunidades de Carrera
+No solo te abre puertas profesionales, también te ayuda a crecer como persona y te convierte en alguien que otros developers quieren conocer. Es, sin duda alguna, una herramienta invaluable en el arsenal de un desarrollador.
 
-En la industria tecnológica, la destreza técnica es esencial, pero la capacidad de comunicar ideas complejas eficazmente distingue a las personas. Los desarrolladores que sobresalen en hablar en público pueden:
+### Crecimiento profesional: mejorando las oportunidades de carrera
 
-*   **Mostrar Experiencia:** Presentar en conferencias o talleres permite a los desarrolladores demostrar su conocimiento, posicionándolos como líderes de pensamiento en su campo.
-*   **Expandir Redes Profesionales:** Interactuar con audiencias abre puertas a colaboraciones, mentorías y oportunidades laborales que de otro modo no surgirían.
-*   **Mejorar la Colaboración en Equipo:** La comunicación clara es vital para el trabajo en equipo. Los desarrolladores que articulan bien sus ideas pueden liderar proyectos más eficazmente y fomentar un ambiente colaborativo.
+Dominar la programación es lo mínimo, pero saber comunicar tus ideas técnicamente te diferencia del resto. Los developers que hablan bien en público pueden:
 
-Un estudio publicado en *Communications of the ACM* enfatiza la importancia de las habilidades de comunicación en computación, afirmando que "la informática es mucho más que programación y hardware. Es una forma de mirar y resolver problemas", destacando la necesidad de comunicación efectiva en el campo. ([dl.acm.org](https://dl.acm.org/doi/fullHtml/10.1145/3588899?utm_source=openai))
+* **Mostrar experiencia:** Dar charlas, conferencias o talleres permite a los desarrolladores demostrar su conocimiento, posicionándolos como líderes de pensamiento en su campo.
+* **Expandir redes profesionales:** Interactuar con audiencias abre puertas a colaboraciones, mentorías y oportunidades laborales que de otro modo no surgirían.
+* **Mejorar la colaboración en equipo:** La comunicación clara es super importante para el trabajo en equipo. Los developers que exponen bien sus ideas pueden liderar proyectos más eficazmente y fomentar un ambiente colaborativo.
 
-### Desarrollo Personal: Construyendo Confianza y Habilidades de Comunicación
+### Desarrollo personal: construyendo confianza y habilidades de comunicación
 
 Más allá de las ventajas profesionales, hablar en público contribuye significativamente al crecimiento personal:
 
-* **Aumenta la Confianza:** Hablar regularmente frente a una audiencia ayuda a superar la ansiedad y construye autoconfianza.
-* **Mejora la Articulación:** Los desarrolladores aprenden a transmitir conceptos técnicos complejos de manera accesible, mejorando las habilidades generales de comunicación.
-* **Fomenta el Aprendizaje Continuo:** Prepararse para charlas a menudo requiere mantenerse actualizado con las últimas tendencias de la industria, fomentando un hábito de aprendizaje de por vida.
+* **Aumenta la confianza:** Cada vez que das una charla, los nervios van desapareciendo y te vuelves más seguro de ti mismo.
+* **Mejora la articulación:** Los desarrolladores aprenden a transmitir conceptos técnicos complejos de manera accesible, mejorando las habilidades generales de comunicación.
+* **Aprendes a explicar mejor**: Te obligas a explicar cosas complicadas de forma simple. Esa habilidad te va a servir en cualquier faceta de tu vida, personal o profesional.
+* **Fomenta el aprendizaje continuo:** Para dar una buena charla necesitas investigar, leer documentación nueva y estar al tanto de lo último. Esto fomenta un hábito de aprendizaje de por vida.
 
-Un informe de experiencia del Simposio Técnico ACM sobre Educación en Ciencias de la Computación destacó que integrar entrenamiento en comunicación oral en un curso final de informática llevó a una mejora significativa en la confianza de los estudiantes y el dominio de habilidades de comunicación oral técnicas y no técnicas. ([dl.acm.org](https://dl.acm.org/doi/abs/10.1145/3626252.3630776?utm_source=openai))
-
-> **Consejo:** Comienza pequeño presentando a tu equipo o meetups locales antes de progresar a audiencias más grandes. Este enfoque gradual ayuda a construir confianza y refinar tus habilidades de comunicación.
+> **Pro tip**: No te tires a la piscina olímpica de una. Empieza presentando a tu equipo o liderando alguna reunión en tu trabajo. Prueba a hablar en meetups pequeños. Ir paso a paso te ayuda a coger confianza sin morir de los nervios.
 
 [![youtube](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
 
-Abrazar la comunicación pública puede transformar la trayectoria profesional y el desarrollo personal de un desarrollador. Al salir de la zona de confort y compartir conocimiento, los desarrolladores no solo contribuyen a la comunidad tecnológica sino que también desbloquean nuevas oportunidades para sí mismos.
+En resumen: hablar en público transforma tu carrera. Compartes conocimiento, ayudas a la comunidad y de paso, te llueven oportunidades que nunca imaginaste.
 
-## Cómo Prepararse Eficazmente para una Charla Técnica
+## Cómo prepararse eficazmente para una charla técnica
 
-Ofrecer una charla técnica convincente requiere una preparación meticulosa, desde una investigación exhaustiva hasta una presentación pulida. Esta guía ofrece estrategias detalladas para ayudarte a crear y presentar una presentación técnica atractiva.
+Vale, ya te convencí de que dar charlas mola. Ahora viene lo importante: ¿cómo preparas una charla técnica que no sea un tostón? Esta guía ofrece estrategias detalladas para ayudarte a crear y presentar una presentación técnica atractiva.
 
-### Investigación y Estructuración de tu Charla
+### Investigación y estructuración de tu charla
 
-**Entiende a tu Audiencia**
+**Conoce a tu público**
 
-Comienza identificando el trasfondo y expectativas de tu audiencia. Adaptar tu contenido a su nivel de conocimiento garantiza relevancia y compromiso. Por ejemplo, una presentación para profesionales de la industria puede profundizar en especificidades técnicas, mientras que una para audiencia general debe simplificar conceptos complejos.
+  Antes que nada, averigua quién va a estar escuchándote. Si hablas con otros developers, puedes meterte en detalles técnicos sin problema. 
+  Pero si tu audiencia son managers o gente menos técnica, mejor explica las cosas de forma más simple. Es la diferencia entre que te entiendan o que se duerman.
 
 **Define Objetivos Claros**
 
@@ -171,3 +173,5 @@ Para superar la ansiedad al hablar en público, es útil practicar regularmente,
 Dar charlas como developer no solo impulsa el crecimiento profesional, sino que también fortalece habilidades personales clave. La evidencia académica muestra que la comunicación efectiva y la exposición pública aceleran el desarrollo de competencias como el liderazgo y la resolución de problemas, factores esenciales para avanzar en la carrera tecnológica [según la Universidad de Harvard](https://hbr.org/2019/07/the-science-of-communicating-effectively). Preparar una charla requiere investigación estratégica y práctica deliberada, lo que fomenta el aprendizaje profundo y la autoconfianza. Además, compartir conocimientos en eventos técnicos contribuye a la construcción de comunidades sólidas y expande las redes de contacto, abriendo puertas a nuevas oportunidades de colaboración y mentoría, como destaca la importancia del networking en entornos STEM [de acuerdo con la National Science Foundation](https://www.nsf.gov/statistics/2018/nsb20181/report/sections/academic-research-and-development).
 
 El siguiente paso es aprovechar los recursos disponibles y comenzar a planificar tu primera charla. Inicia hoy mismo la preparación de tu tech talk y da el primer paso para convertirte en un referente dentro de la comunidad tecnológica.
+
+- ([dl.acm.org](https://dl.acm.org/doi/abs/10.1145/3626252.3630776))
