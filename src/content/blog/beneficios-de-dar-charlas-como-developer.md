@@ -11,11 +11,14 @@ tags:
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
 ---
 
-![Photo by hiiitsskylar on Unsplash](https://images.unsplash.com/flagged/photo-1568187113326-974ff6d0c6b6?attr_photographer=hiiitsskylar&attr_photographer_url=https%3A%2F%2Funsplash.com%2F%40hiiitsskylar&attr_provider=unsplash&attr_provider_name=Unsplash)
+![En un escenario de conferencia, aparece Jorge Baumann con un traje colorido estampado de Super Mario sonriendo mientras va a caballito sobre otra persona (su padre) que lleva una máscara de caballo. Detrás se ven luces verticales azules y un atril con un portátil con pegatinas.](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
+> Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
 
-Muchos desarrolladores pierden oportunidades profesionales debido al miedo a hablar en público, cuando precisamente desarrollar esa habilidad puede transformar su carrera. La evidencia lo respalda: estudiantes de informática que mejoran su comunicación oral ganan confianza y mejoran tanto su comunicación técnica como no ténica. 
-En la industria, además, se valora muchísimo poder explicar ideas complejas con claridad porque facilita la colaboración y acelera la innovación
-Este artículo revelará el poder transformador de hablar en público y cómo los desarrolladores pueden dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
+Muchos developers pierden oportunidades profesionales sin darse cuenta. El motivo casi siempre es el mismo: el miedo a hablar en público. Paradójicamente, justo esa habilidad que evitamos es la que puede marcar un antes y un después en nuestra carrera.
+
+La evidencia cientfíca lo demuestra una y otra vez: cuando alguien de ciencias de la computación trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado, porque ser capaz de transmitir ideas complejas con claridad acelera la colaboración, evita malentendidos y abre la puerta a proyectos mucho más grandes.
+
+Hablar en público no es un lujo, es una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
 ## Tabla de Contenidos
 
@@ -27,38 +30,40 @@ Este artículo revelará el poder transformador de hablar en público y cómo lo
 
 ## El poder transformador de hablar en público para desarrolladores
 
-¿Piensas que hablar en público es solo para managers o gente de marketing? **ERROR**. Como developer, mejorar la oratoria o dar charlas puede transformar tu carrera de formas que ni imaginas. 
+¿Crees que hablar en público es solo cosa de managers o de marketing? **ERROR**. Como developer, trabajar tu oratoria o lanzarte a dar charlas puede darle un giro brutal a tu carrera.
 
-No solo te abre puertas profesionales (a mí me pasó), también te ayuda a crecer como persona y hace que otros developers quieran hablar contigo, o incluso mejor, trabajar contigo. Es como tener un superpoder que casi nadie se molesta en desarrollar.
+No hablo solo de **oportunidades laborales** (que también, y lo digo por experiencia propia), sino de crecimiento personal. Te cambia la forma en la que te relacionas con otros humanos: de repente quieren charlar contigo, colaborar en proyectos o directamente trabajar a tu lado.
 
-### Crecimiento profesional: mejorando las oportunidades de carrera
+Es como desbloquear un superpoder que casi nadie se molesta en entrenar. Y justo por eso, marca tanta diferencia.
 
-Dominar la programación es lo mínimo, pero saber comunicar tus ideas técnicamente te diferencia del resto. Los developers que hablan bien en público pueden:
+### Crecimiento profesional: más alla del código
 
-* **Mostrar experiencia:** Dar charlas, conferencias o talleres permite a los desarrolladores demostrar su conocimiento, posicionándolos como líderes de pensamiento en su campo.
-* **Expandir redes profesionales:** Interactuar con audiencias abre puertas a colaboraciones, mentorías y oportunidades laborales que de otro modo no surgirían.
-* **Mejorar la colaboración en equipo:** La comunicación clara es super importante para el trabajo en equipo. Los developers que exponen bien sus ideas pueden liderar proyectos más eficazmente y fomentar un ambiente colaborativo.
+Saber programar es la base, pero lo que realmente te diferencia es cómo cuentas tus ideas. Un developer que expone bien sus ideas juega en otra liga.
 
-### Desarrollo personal: construyendo confianza y habilidades de comunicación
+- **Demuestra experiencia**. Dar una charla, un taller o subirte a un escenario no es solo compartir conocimiento: es enseñar al mundo lo que sabes y posicionarte como alguien de referencia en tu campo.
+- **Amplía tu red**. Hablar en público te conecta con gente que de otra forma nunca conocerías: posibles colaboradores, mentores, incluso futuros empleadores.
+- **Mejora el trabajo en equipo**. Cuando eres claro explicando ideas complejas, los proyectos avanzan mejor, se evitan malentendidos y hasta es más fácil liderar un equipo.
 
-Más allá de las ventajas profesionales, hablar en público contribuye significativamente al crecimiento personal:
+Hablar en público no es solo "_una soft skill más_". Es una ventaja competitiva que puede abrirte puertas que el código, por sí solo, no te va a dar.
 
-* **Aumenta tu confianza:** Cada vez que das una charla, los nervios van desapareciendo y te vuelves más seguro de ti mismo.
-* **Mejora la articulación:** Los desarrolladores aprenden a transmitir conceptos técnicos complejos de manera accesible, mejorando las habilidades generales de comunicación.
-* **Aprendes a explicar mejor**: Te obligas a explicar cosas complicadas de forma simple. Esa habilidad te va a servir en cualquier faceta de tu vida, personal o profesional.
-* **Fomenta el aprendizaje continuo:** Para dar una buena charla necesitas investigar, leer documentación nueva y estar al tanto de lo último. Esto fomenta un hábito de aprendizaje de por vida.
+### Desarrollo personal: confianza++ 
 
-> **Pro tip**: No te tires a la piscina olímpica de una. Empieza presentando a tu equipo o liderando alguna reunión en tu trabajo. Prueba a hablar en meetups pequeños. Ir paso a paso te ayuda a coger confianza sin morir de los nervios.
+Hablar en público no solo impulsa tu carrera, también te hace crecer como persona.
+
+- **Confianza al máximo**. Cada charla es un pequeño entrenamiento: los nervios bajan, tu seguridad sube.
+- **Comunicación más clara**. Aprendes a contar lo técnico de forma accesible, y eso mejora cómo te expresas en cualquier contexto.
+- **Aprendes a explicar mejor**. Te obligas a explicar cosas complicadas de forma simple. Esa habilidad te va a servir en cualquier faceta de tu vida, personal o profesional.
+- **Aprendizaje constante**. Preparar una charla te obliga a leer, investigar y mantenerte al día. Es el mejor hack para no quedarte atrás.
+
+> **Pro tip**: no hace falta empezar en un auditorio con 5000 personas. Arranca en petit comité: presenta algo a tu equipo, lidera una daily o apúntate a un meetup pequeño. Paso a paso la confianza llega sola.
 
 [![youtube](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
 
-En resumen: hablar en público transforma tu carrera. Compartes conocimiento, ayudas a la comunidad y de paso, te llueven oportunidades que nunca imaginaste.
+En resumen: hablar en público no es solo compartir conocimiento. Es crecer tú, ayudar a la comunidad y, de rebote, atraer oportunidades que ni soñabas.
 
 ## Cómo prepararse eficazmente para una charla técnica
 
 Vale, ya te convencí de que dar charlas mola. Ahora viene lo importante: ¿cómo preparas una charla técnica que no sea un tostón? Esta guía ofrece estrategias detalladas para ayudarte a crear y presentar una presentación técnica atractiva.
-
-### Investigación y estructuración de tu charla
 
 ### Conoce a tu público
 
@@ -68,8 +73,9 @@ Pero si tu audiencia son managers o gente menos técnica, mejor explica las cosa
 
 ### Define objetivos claros
 
-Antes de ponerte a preparar diapositivas como un loco, piensa: ¿qué quieres que la gente se lleve de tu charla? ¿Vas a enseñar una tecnología nueva? 
-¿Compartir algo que aprendiste? ¿Contar cómo resolviste un problema? Tenerlo claro desde el principio te ahorra un montón de tiempo después.
+Antes de ponerte a preparar diapositivas como un loco, piensa: **¿qué quieres que la gente se lleve de tu charla?** 
+
+¿Vas a enseñar una tecnología nueva? ¿Compartir algo que aprendiste? ¿Contar cómo resolviste un problema? Tenerlo claro desde el principio te ahorra un montón de tiempo después.
 
 ### Estructura tu presentación
 
@@ -100,38 +106,39 @@ Por ejemplo, en mi charla "**JavaScript 🤝 TikTok**" arranco con la historia d
 
 ### Practicando tu presentación: desde casa hasta el escenario
 
-> TL;DR: practica, practica, practica, practica y practica.
+> TL;DR: practica, practica, practica, practica, practica y practica.
 #### Ensaya absolutamente todo
 
-La práctica es fundamental para dar una presentación en condiciones. Ensaya múltiples veces, enfocándote en:
+La práctica es fundamental para dar una presentación en condiciones. Ensaya muchas veces, enfocándote en:
 
-* **Tiempo**: Asegura que no te pasas del tiempo asignado.
-* **Claridad**: Articula palabras y modula tu voz para mantener el interés.
-* **Lenguaje Corporal**: Usa gestos y movimiento para enfatizar puntos. Nada de manos en los bolsillos.
-* **Feedback**: Practica en frente de amigos o compañeros de trabajo para recibir feedback constructivo instantáneo.
+- **Tiempo**: Asegura que no te pasas del tiempo asignado.
+- **Claridad**: Articula palabras y modula tu voz para mantener el interés.
+- **Pausas**: Usa pausas para enfatizar puntos clave y dar tiempo a la audiencia para procesar la información.
+- **Lenguaje Corporal**: Usa gestos y movimiento para enfatizar puntos. Nada de manos en los bolsillos.
+- **Feedback**: Practica en frente de amigos o compañeros de trabajo para recibir feedback constructivo instantáneo.
 
 Practica hasta el cansancio. Sí, te vas a sentir como un payaso hablándole a tu perro o a la pared. Da igual, hazlo. Ensaya la charla completa una y otra vez (mejor si lo haces frente a un espejo). No existe el "_he practicado demasiado_". Ese concepto no existe.
 
 https://www.sfedit.net/engaging-presentation-tips-for-researchers-elevating-your-academic-talks
 
-#### Prepárate para aspectos técnicos
+### Prepárate para aspectos técnicos
 
 Asegura que todo el equipo funcione correctamente:
 
-* **Diapositivas**: Prueba si funcionan online y offline.
-* **Conexiones**: Lleva tus cables y adaptadores por si acaso.
+* **Diapositivas**: Lleva la version offline por si te quedas sin WiFi.
+* **Conexiones**: Lleva todos tus cables y adaptadores.
 * **Audio/Visual**: Avisa al equipo técnico de la sala sobre tus necesidades.
-* **Planes de respaldo**: Ten un plan B por si tu demo no funciona o te quedas sin internet.
+* **Planes de respaldo**: Ten un plan B por si tu demo no funciona (por ejemplo, un video pregrabado).
 
-**Interactúa con la Audiencia**
+### Interactúa con la Audiencia
 
 Mantén contacto visual y sé receptivo a las señales de la audiencia. Fomentar preguntas o discusiones puede crear una sesión más interactiva y atractiva.
 
-En mi caso, suelo preparar alguna app de votos o encuestas rápidas para que la gente participe en vivo. Ahora con el vibe-coding es mucho mas accesible hacer esto.
+En mi caso, suelo preparar alguna app de votos o encuestas rápidas para que la gente vote en vivo. Ahora con todas las herramientas de vibe-coding es mucho mas accesible hacer esto.
 
 ![Poll de ejemplo usando Vibe Coding](../../assets/blog/beneficios-de-dar-charlas-como-developer/poll.png)
 
-Si quieres saber más sobre oratoria, mira el siguiente video:
+Si quieres saber más sobre oratoria, revisa el siguiente video:
 
 [![youtube](https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg)](https://www.youtube.com/watch?v=PiNN-HmHu7A)
 
@@ -145,7 +152,7 @@ Compartes algo que sabes, alguien del público piensa "_este tío/a sabe de lo s
 
 ## Conclusión
 
-Dar charlas como developer no solo impulsa tu crecimiento profesional, sino que también fortalece habilidades personales blandas (soft skills). 
+Dar charlas como developer no solo impulsa tu crecimiento profesional, sino que también fortalece habilidades personales blandas (__soft skills__). 
 
 La evidencia académica muestra que la comunicación efectiva y la exposición pública aceleran el desarrollo de competencias como el liderazgo y la resolución de problemas, factores esenciales para avanzar en la carrera tecnológica [según la Universidad de Harvard](https://hbr.org/2019/07/the-science-of-communicating-effectively).
 

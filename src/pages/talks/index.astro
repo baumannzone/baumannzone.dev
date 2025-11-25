@@ -2,7 +2,9 @@
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/DefaultLayout.astro';
 import { getCollection } from 'astro:content';
-import horseImage from '../../assets/talks/horse.jpeg';
+
+// import horseImage from '../../assets/talks/horse.jpeg';
+import horseImage from '../../assets/talks/horse2.png';
 
 const talks = await getCollection('talks');
 const currentDate = new Date();
