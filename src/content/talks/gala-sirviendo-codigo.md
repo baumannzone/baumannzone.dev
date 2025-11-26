@@ -11,11 +11,9 @@ links:
     url: "https://www.youtube.com/live/g8-9nlxe8a0"
 ---
 
-La gala de Sirviendo Código fue un evento especial donde se celebró por y para la comunidad de desarrolladores y donde pudimos ver los logros destacados en el mundo del desarrollo y la tecnología.
+En octubre de 2025 tuve el honor de presentar la Gala de Sirviendo Código junto con Rafa Gómez, de Codely. Un evento especial creado por y para la comunidad de desarrolladores, donde se reconocieron los logros más destacados del sector tech.
 
-En esta primera edición de 2025, tuve el honor de ser uno de los presentadores junto con Rafa Gómez, de Codely. Fue una experiencia increíble poder compartir el escenario con Rafa y contribuir a hacer de esta gala un evento memorable para todos los asistentes.
-
-Tuvimos tiempo para nervios, chistes malos (algunos más malos que otros, aunque a mí me encantan 😂) y momentos de caos controlado, pero sobre todo, fue una oportunidad para conectar con la comunidad y celebrar juntos los éxitos de los compañeros y compañeras del sector.
+Fue una experiencia increíble compartir el escenario con Rafa y contribuir a hacer de esta gala un evento memorable para todos los asistentes. Entre nervios, chistes malos (aunque a mí me encantan 😂) y momentos de caos controlado, lo más importante fue conectar con la comunidad y celebrar juntos los éxitos de nuestros compañeros y compañeras.
 
 Aquí algunas fotos del evento:
 
