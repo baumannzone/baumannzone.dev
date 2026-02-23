@@ -19,13 +19,6 @@ La evidencia científica lo demuestra una y otra vez: cuando alguien del mundill
 
 Hablar en público no es un detalle menor, es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
-<!-- ## Tabla de Contenidos
-
-* [El poder transformador de hablar en público para desarrolladores](#el-poder-transformador-de-hablar-en-publico-para-desarrolladores)
-* [Cómo prepararse eficazmente para una charla técnica](#como-prepararse-eficazmente-para-una-charla-tecnica)
-* [Aprovechando la comunicación pública para construir comunidad y hacer networking](#aprovechando-la-comunicacion-publica-para-construir-comunidad-y-hacer-networking)
-* [Preguntas Frecuentes](#preguntas-frecuentes)
-* [Conclusión](#conclusion) -->
 
 ## El poder transformador de hablar en público para software developers
 
