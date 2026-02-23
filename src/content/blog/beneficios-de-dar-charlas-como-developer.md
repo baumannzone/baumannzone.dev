@@ -1,7 +1,7 @@
 ---
 title: "Beneficios de dar charlas como developer"
 description: "Descubre cómo dar charlas técnicas puede transformar tu carrera como desarrollador, mejorando tus habilidades de comunicación, ampliando tu red profesional y posicionándote como líder de opinión en la comunidad tech."
-pubDate: 2026-02-23
+pubDate: 2025-11-23
 type: blog
 author: Jorge Baumann
 tags:
