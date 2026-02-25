@@ -10,14 +10,14 @@ tags:
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
 ---
 
-Mucha gente pierde oportunidades profesionales sin darse cuenta. El motivo casi siempre es el mismo: el miedo a hablar en público. Paradójicamente, justo esa habilidad que evitamos es la que puede marcar un antes y un después en nuestra carrera.
-
-![En un escenario de conferencia, aparece Jorge Baumann con un traje colorido estampado de Super Mario sonriendo mientras va a caballito sobre otra persona (su padre) que lleva una máscara de caballo. Detrás se ven luces verticales azules y un atril con un portátil con pegatinas.](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
-> Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
+El miedo a hablar en público te está costando oportunidades profesionales.Es duro, pero es así. La habilidad que más evitamos suele ser la que más cambia una carrera.
 
 La evidencia científica lo demuestra una y otra vez: cuando alguien del mundillo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
 
 Hablar en público no es un detalle menor, es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
+
+![En un escenario de conferencia, aparece Jorge Baumann con un traje colorido estampado de Super Mario sonriendo mientras va a caballito sobre otra persona (su padre) que lleva una máscara de caballo. Detrás se ven luces verticales azules y un atril con un portátil con pegatinas.](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
+> Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
 
 
 ## El poder transformador de hablar en público para software developers
