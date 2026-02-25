@@ -10,7 +10,7 @@ tags:
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
 ---
 
-El miedo a hablar en público te está costando oportunidades profesionales.Es duro, pero es así. La habilidad que más evitamos suele ser la que más cambia una carrera.
+El miedo a hablar en público te está costando oportunidades profesionales. Es duro, pero es así. La habilidad que más evitamos suele ser la que más cambia una carrera.
 
 La evidencia científica lo demuestra una y otra vez: cuando alguien del mundillo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
 
@@ -22,7 +22,7 @@ Hablar en público no es un detalle menor, es realmente una palanca de crecimien
 
 ## El poder transformador de hablar en público para software developers
 
-¿Crees que hablar en público es solo cosa de managers o de marketing? **ERROR**. Como software engineer, mejorar tu oratoria o dar charlas puede darle un giro brutal a tu carrera.
+¿Crees que saber hablar bien en público es solo cosa de managers o de marketing? **ERROR**. Como software engineer, mejorar tu oratoria o dar charlas puede darle un giro brutal a tu carrera.
 
 No hablo solo de **oportunidades laborales** (que también, y esto lo digo por experiencia propia), sino de crecimiento personal. Te cambia la forma en la que te relacionas con otros humanos: de repente quieren charlar contigo, colaborar en proyectos o directamente trabajar a tu lado.
 
@@ -46,11 +46,12 @@ Mejorar tu comunicación también te hace crecer como persona.
 - **Comunicación más clara**. Aprendes a traducir lo técnico en ideas accesibles para cualquier contexto.
 - **Aprendizaje constante**. Preparar charlas te obliga a investigar, ordenar ideas y mantenerte al día.
 
-> **Pro tip**: no empieces en un auditorio gigante. Arranca en petit comité: presenta algo en tu equipo, lidera una daily o súmate a un meetup pequeño. La confianza se construye charla a charla.
+#### PRO TIP 😉 
+No empieces a lo grande. Hazlo en pequeño: una demo en tu equipo, una daily bien llevada o un meetup corto. La confianza se construye charla a charla.
 
-[![youtube](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
+---
 
-En resumen: hablar en público no va solo de compartir conocimiento; te ayuda a crecer, aportar a la comunidad y abrir oportunidades reales.
+Si te quedas con una idea, que sea esta: hablar en público no es un extra, es una palanca real para crecer como developer. Vamos ahora con cómo prepararte para hacerlo bien.
 
 ## Cómo prepararse eficazmente para una charla técnica
 
@@ -125,7 +126,7 @@ En mi caso, suelo preparar una app de votos o encuestas rápidas para que la gen
 
 ![Poll de ejemplo usando Vibe Coding](../../assets/blog/beneficios-de-dar-charlas-como-developer/poll.png)
 
-Si quieres saber más sobre oratoria, revisa el siguiente video de _Vinh Giang_ (me encanta este notas):
+Si quieres saber más sobre oratoria, revisa el siguiente video de _Vinh Giang_ (me encanta este tío):
 
 [![youtube](https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg)](https://www.youtube.com/watch?v=PiNN-HmHu7A)
 
@@ -144,3 +145,11 @@ Dar charlas como developer no va solo de hablar bien. Va de aprender mejor, comu
 Además, compartir conocimientos en eventos tech contribuye a la construcción de comunidades y expande las redes de contacto, abriendo puertas a nuevas oportunidades de colaboración y crecimiento profesional.
 
 Si estás empezando, no busques perfección: elige un tema que te guste, prepara una versión corta y pruébala en un entorno pequeño. A partir de ahí, itera con feedback y vuelve a subirte al escenario.
+
+### Recurso final (muy recomendado)
+
+Si quieres cerrar este artículo con una idea práctica y aplicable desde hoy, este video merece muchísimo la pena:
+
+[![Video recomendado sobre oratoria](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
+
+Si tienes algún recurso que te haya ayudado con la oratoria, compártelo en comentarios.
