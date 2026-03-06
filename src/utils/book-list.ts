@@ -12,6 +12,25 @@ type Book = {
 };
 
 const literatureBooks: Book[] = [
+  // 2026
+  {
+    title: "Club Sigma",
+    author: "Lord Draugr",
+    description: "",
+    image: "sigma.jpg",
+    link: "https://amzn.to/4aSezjX",
+    category: "literature",
+    status: "read",
+    readAt: { month: 2, year: 2026 },
+  },
+  {
+    title: "Roma soy yo",
+    author: "Santiago Posteguillo",
+    description: "Serie Julio César - Libro 1",
+    image: "roma1.jpg",
+    category: "literature",
+    status: "reading",
+  },
   {
     title: "Eva",
     author: "Arturo Pérez-Reverte",
