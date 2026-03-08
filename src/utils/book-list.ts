@@ -14,6 +14,14 @@ type Book = {
 const literatureBooks: Book[] = [
   // 2026
   {
+    title: "Roma soy yo",
+    author: "Santiago Posteguillo",
+    description: "Serie Julio César - Libro 1",
+    image: "roma1.jpg",
+    category: "literature",
+    status: "reading",
+  },
+  {
     title: "Club Sigma",
     author: "Lord Draugr",
     description: "",
@@ -22,14 +30,6 @@ const literatureBooks: Book[] = [
     category: "literature",
     status: "read",
     readAt: { month: 2, year: 2026 },
-  },
-  {
-    title: "Roma soy yo",
-    author: "Santiago Posteguillo",
-    description: "Serie Julio César - Libro 1",
-    image: "roma1.jpg",
-    category: "literature",
-    status: "reading",
   },
   {
     title: "Eva",
