@@ -18,6 +18,7 @@ const literatureBooks: Book[] = [
     author: "Santiago Posteguillo",
     description: "Serie Julio César - Libro 1",
     image: "roma1.jpg",
+    link: "https://tidd.ly/3P9BD58",
     category: "literature",
     status: "reading",
   },
