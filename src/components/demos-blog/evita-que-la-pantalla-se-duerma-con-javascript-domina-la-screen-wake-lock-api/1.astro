@@ -1,0 +1,233 @@
+---
+import DemoLayout from '../demo-layout.astro';
+---
+
+<DemoLayout>
+  <section
+    data-wake-lock-demo
+    class='space-y-4 rounded-md border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-500/30 dark:bg-gray-800/40'
+  >
+    <p class='m-0 text-sm text-gray-700 dark:text-gray-200'>
+      Estado del wake lock:
+      <strong
+        data-status
+        data-tone='neutral'
+        class='text-gray-700 dark:text-gray-200'
+      >
+        comprobando...
+      </strong>
+    </p>
+
+    <div class='flex flex-wrap gap-3'>
+      <button
+        type='button'
+        data-action='acquire'
+        class='rounded-md bg-violet-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-50'
+      >
+        Activar wake lock
+      </button>
+
+      <button
+        type='button'
+        data-action='release'
+        class='rounded-md border border-violet-300 bg-white px-4 py-2 text-sm font-semibold text-violet-700 transition-colors hover:bg-violet-100 disabled:cursor-not-allowed disabled:opacity-50 dark:border-violet-400/40 dark:bg-gray-700 dark:text-violet-200 dark:hover:bg-gray-600'
+      >
+        Liberar wake lock
+      </button>
+    </div>
+
+    <label
+      class='flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200'
+    >
+      <input
+        type='checkbox'
+        data-auto-reactivate
+        class='h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-500'
+      />
+      Reactivar al volver a la pestaña
+    </label>
+    <p class='m-0 text-xs text-gray-600 dark:text-gray-300'>
+      Si está marcado, el wake lock se volverá a pedir automáticamente al
+      regresar.
+    </p>
+  </section>
+</DemoLayout>
+
+<script>
+  const getErrorMessage = (error) => {
+    if (error instanceof Error && error.message) {
+      return error.message;
+    }
+
+    return 'No se pudo completar la operación';
+  };
+
+  const initWakeLockDemo = (root) => {
+    const statusElement = root.querySelector('[data-status]');
+    const acquireButton = root.querySelector('[data-action="acquire"]');
+    const releaseButton = root.querySelector('[data-action="release"]');
+    const autoReactivateInput = root.querySelector('[data-auto-reactivate]');
+
+    if (
+      !statusElement ||
+      !acquireButton ||
+      !releaseButton ||
+      !autoReactivateInput
+    ) {
+      return;
+    }
+
+    const isSupported =
+      'wakeLock' in navigator &&
+      navigator.wakeLock &&
+      typeof navigator.wakeLock.request === 'function';
+
+    let wakeLock = null;
+
+    const setStatus = (status, tone = 'neutral') => {
+      statusElement.classList.remove(
+        'text-gray-700',
+        'dark:text-gray-200',
+        'text-green-700',
+        'dark:text-green-400',
+        'text-amber-700',
+        'dark:text-amber-400',
+        'text-red-700',
+        'dark:text-red-400',
+      );
+
+      const statusToneClasses = {
+        neutral: ['text-gray-700', 'dark:text-gray-200'],
+        success: ['text-green-700', 'dark:text-green-400'],
+        warning: ['text-amber-700', 'dark:text-amber-400'],
+        error: ['text-red-700', 'dark:text-red-400'],
+      };
+
+      statusElement.classList.add(
+        ...(statusToneClasses[tone] ?? statusToneClasses.neutral),
+      );
+      statusElement.textContent = status;
+      statusElement.dataset.tone = tone;
+    };
+
+    const syncButtons = () => {
+      const isActive = Boolean(wakeLock && !wakeLock.released);
+      acquireButton.disabled = !isSupported || isActive;
+      releaseButton.disabled = !isSupported || !isActive;
+    };
+
+    const attachReleaseListener = (sentinel) => {
+      sentinel.addEventListener(
+        'release',
+        () => {
+          // Ignore sentinel events from manual release.
+          if (wakeLock !== sentinel) return;
+
+          wakeLock = null;
+          syncButtons();
+          if (document.visibilityState === 'hidden') {
+            setStatus('liberado', 'warning');
+            return;
+          }
+
+          setStatus('liberado', 'neutral');
+        },
+        { once: true },
+      );
+    };
+
+    const requestWakeLock = async () => {
+      if (!isSupported) return;
+
+      // Some browsers can keep a stale sentinel reference.
+      if (wakeLock?.released) {
+        wakeLock = null;
+      }
+
+      if (wakeLock) return;
+
+      try {
+        const sentinel = await navigator.wakeLock.request('screen');
+        wakeLock = sentinel;
+        attachReleaseListener(sentinel);
+        setStatus('activo', 'success');
+      } catch (error) {
+        setStatus(`error: ${getErrorMessage(error)}`, 'error');
+      } finally {
+        syncButtons();
+      }
+    };
+
+    const releaseWakeLock = async () => {
+      if (!wakeLock) return;
+
+      const sentinel = wakeLock;
+      wakeLock = null;
+      syncButtons();
+
+      try {
+        await sentinel.release();
+        setStatus('liberado', 'neutral');
+      } catch (error) {
+        setStatus(`error: ${getErrorMessage(error)}`, 'error');
+      }
+    };
+
+    const onVisibilityChange = async () => {
+      if (document.visibilityState === 'hidden') {
+        if (wakeLock) {
+          const sentinel = wakeLock;
+          wakeLock = null;
+          syncButtons();
+          setStatus('liberado', 'warning');
+
+          try {
+            await sentinel.release();
+          } catch (_) {
+            // If the browser already released it, no extra action is needed.
+          }
+        }
+        return;
+      }
+
+      if (wakeLock?.released) {
+        wakeLock = null;
+        syncButtons();
+      }
+
+      if (autoReactivateInput.checked && !wakeLock) {
+        await requestWakeLock();
+      }
+    };
+
+    acquireButton.addEventListener('click', async () => {
+      await requestWakeLock();
+    });
+
+    releaseButton.addEventListener('click', releaseWakeLock);
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    if (!isSupported) {
+      setStatus('no soportado', 'warning');
+      syncButtons();
+      return;
+    }
+
+    setStatus('liberado', 'neutral');
+    syncButtons();
+  };
+
+  const bootWakeLockDemos = () => {
+    document
+      .querySelectorAll('[data-wake-lock-demo]')
+      .forEach((demo) => initWakeLockDemo(demo));
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootWakeLockDemos, {
+      once: true,
+    });
+  } else {
+    bootWakeLockDemos();
+  }
+</script>
