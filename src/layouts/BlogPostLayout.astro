@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import BlogJsonLd from '../components/BlogJsonLd.astro';
+import AiSummaryLinks from '../components/AiSummaryLinks.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import SharePostBar from '../components/SharePostBar.astro';
@@ -31,6 +32,7 @@ const {
 
 // Dont show comments in dev mode
 const showComments = !import.meta.env.DEV;
+const postUrl = `https://baumannzone.dev/blog/${slug}`;
 ---
 
 <html lang='es'>
@@ -55,7 +57,7 @@ const showComments = !import.meta.env.DEV;
         class='absolute inset-x-0 -top-6 -z-10 h-12 -rotate-3 bg-gradient-to-r from-violet-300 via-pink-300 to-sky-300 blur-3xl dark:from-violet-500/90 dark:via-pink-500/70 dark:to-sky-500/80'
       >
       </div>
-      <meta itemprop='url' content={`https://baumannzone.dev/blog/${slug}`} />
+      <meta itemprop='url' content={postUrl} />
       <meta itemprop='description' content={description} />
       <meta itemprop='keywords' content={tags?.join(', ')} />
       <meta itemprop='author' content={author} />
@@ -113,6 +115,9 @@ const showComments = !import.meta.env.DEV;
           )
         }
       </header>
+      <div class='max-w-prose mx-auto'>
+        <AiSummaryLinks title={title} url={postUrl} />
+      </div>
       <article
         class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600'
         itemprop='articleBody'
