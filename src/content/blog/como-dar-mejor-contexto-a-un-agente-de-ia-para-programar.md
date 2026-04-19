@@ -1,7 +1,7 @@
 ---
 title: "Cómo dar mejor contexto a un agente de IA para programar"
 description: "Una guía práctica para dar mejor contexto a un agente de IA al programar, reducir errores y conseguir respuestas más útiles desde el primer intento."
-pubDate: 2026-03-16
+pubDate: 2026-03-17
 # published: false
 author: "Jorge Baumann"
 type: "blog"
@@ -33,12 +33,10 @@ Para tareas complejas, darle al modelo un plan paso a paso (o pedirle que genere
 
 ---
 
-Hoy en día, este tipo de prácticas aplican a herramientas avanzadas como **Cursor**, **Codex** o **Claude Code**. Todas estas soluciones comparten una misma base: su rendimiento depende directamente del contexto que reciben. Entender cómo alimentar correctamente ese contexto es lo que marca la diferencia entre obtener resultados mediocres o soluciones realmente útiles desde el primer intento.
+Hoy en día, este tipo de prácticas aplican a herramientas avanzadas como **Cursor**, **Codex** o **Claude Code**. 
 
-Recuerda: la calidad del prompt importa, pero la gestión del contexto importa más.
+Todas estas soluciones comparten una misma base: su rendimiento depende directamente del contexto que reciben. Entender cómo alimentar correctamente ese contexto es lo que marca la diferencia entre obtener resultados mediocres o soluciones realmente útiles desde el primer intento.
 
 En otras palabras: no estás "hablando con una IA", estás **definiendo el entorno en el que piensa**.
 
 Si mejoras esto, no necesitas mejores prompts. Necesitas menos intentos.
-
-Y eso, a escala, lo cambia todo.
