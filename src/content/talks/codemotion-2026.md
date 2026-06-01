@@ -6,6 +6,8 @@ type: "conferencia"
 links:
   - title: "Codemotion Madrid"
     url: "https://conferences.codemotion.com/madrid/"
+  - title: "Vídeo de la charla"
+    url: "https://youtu.be/oPZmh8l1f6U?si=UomdOhbb26iuX2tZ"
   - title: "Codemotion Magazine — primeros ponentes Madrid 2026"
     url: "https://www.codemotion.com/magazine/es/dev-life-es/eventos/primeros-nombres-que-revolucionaran-codemotion-madrid-2026"
   - title: "Publicación en Instagram por Codemotion"
