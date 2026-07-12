@@ -6,6 +6,7 @@ tags:
   - CSS
   - TIL
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Dos%20variables%20para%20el%20mismo%20rojo&tags=CSS,TIL"
+published: false
 ---
 
 Estaba revisando un PR y frené en estas dos líneas de un componente de React:
