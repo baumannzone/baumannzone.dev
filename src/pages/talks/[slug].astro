@@ -1,17 +1,17 @@
 ---
 import Layout from "../../layouts/DefaultLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const talks = await getCollection("talks");
   return talks.map((talk) => ({
-    params: { slug: talk.slug },
+    params: { slug: talk.id },
     props: { talk },
   }));
 }
 
 const { talk } = Astro.props;
-const { Content } = await talk.render();
+const { Content } = await render(talk);
 ---
 
 <Layout title={`${talk.data.title} | baumannzone.dev`}>
@@ -32,7 +32,7 @@ const { Content } = await talk.render();
         </time>
         <h1
           class="text-4xl font-bold mb-4"
-          style={`view-transition-name: talk-${talk.slug}`}
+          style={`view-transition-name: talk-${talk.id}`}
         >
           {talk.data.title}
         </h1>

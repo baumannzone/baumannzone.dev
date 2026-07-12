@@ -52,14 +52,14 @@ const { tag, posts } = Astro.props;
           posts.map((post) => (
             <li>
               <a
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.id}`}
                 class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
               >
                 <div class="rounded-xl border-2 border-zinc-200">
                   <div class="flex justify-between gap-4 items-start px-6 py-4">
                     <span
                       class="font-medium text-zinc-800"
-                      style={`view-transition-name: post-${post.slug}`}
+                      style={`view-transition-name: post-${post.id}`}
                     >
                       {post.data.title}
                     </span>

@@ -75,7 +75,7 @@ const otherPosts = posts.slice(3);
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       itemprop="headline"
-      style="${`view-transition-name: post-${randomPost.slug}`}"
+      style="${`view-transition-name: post-${randomPost.id}`}"
     >
       ${randomPost.data.title}
     </h2>
@@ -84,7 +84,7 @@ const otherPosts = posts.slice(3);
     </p>
 
     <a
-      href=${`/blog/${randomPost.slug}`}
+      href=${`/blog/${randomPost.id}`}
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
       itemprop="url"
     >
@@ -98,7 +98,7 @@ const otherPosts = posts.slice(3);
     </a>
 
     <meta itemprop="datePublished" content=${pubDate.toISOString()} />
-    <meta itemprop="url" content=${new URL(`/blog/${randomPost.slug}`, window.location.origin).toString()} />
+    <meta itemprop="url" content=${new URL(`/blog/${randomPost.id}`, window.location.origin).toString()} />
     <meta itemprop="author" content=${randomPost.data.author} />
   </div>
 </article>

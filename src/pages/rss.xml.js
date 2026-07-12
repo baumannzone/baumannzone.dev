@@ -11,7 +11,7 @@ export async function GET(context) {
     items: posts
       .map((post) => ({
         ...post.data,
-        link: `/blog/${post.slug}/`,
+        link: `/blog/${post.id}/`,
       }))
       // Only include published posts
       .filter((post) => post.published),

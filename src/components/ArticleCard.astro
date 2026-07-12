@@ -7,13 +7,13 @@ import FormattedDate from "./FormattedDate.astro";
 interface Props {
   isNew?: boolean;
   post: {
-    slug: string;
+    id: string;
     data: any;
   };
 }
 
 const { post, isNew = false } = Astro.props;
-const articleUrl = `/blog/${post.slug}`;
+const articleUrl = `/blog/${post.id}`;
 ---
 
 <article itemscope itemtype="https://schema.org/Article">
@@ -35,7 +35,7 @@ const articleUrl = `/blog/${post.slug}`;
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       itemprop="headline"
-      style={`view-transition-name: post-${post.slug}`}
+      style={`view-transition-name: post-${post.id}`}
     >
       {post.data.title}
     </h2>

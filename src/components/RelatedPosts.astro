@@ -19,14 +19,14 @@ try {
     try {
       return (
         post &&
-        post.slug &&
+        post.id &&
         post.data &&
         post.data.title &&
-        relatedSlugs.includes(post.slug) &&
+        relatedSlugs.includes(post.id) &&
         post.data.published !== false
       );
     } catch (e) {
-      console.error(`Error processing post ${post?.slug}:`, e);
+      console.error(`Error processing post ${post?.id}:`, e);
       return false;
     }
   });
@@ -105,7 +105,7 @@ if (relatedPosts.length === 0) {
             />
             <meta
               itemprop='url'
-              content={`https://baumannzone.dev/blog/${post.slug}`}
+              content={`https://baumannzone.dev/blog/${post.id}`}
             />
             {post.data.tags && (
               <meta itemprop='keywords' content={post.data.tags.join(', ')} />
@@ -126,7 +126,7 @@ if (relatedPosts.length === 0) {
             </p>
 
             <a
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.id}`}
               class='text-sm font-semibold text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors'
               itemprop='mainEntityOfPage'
             >
