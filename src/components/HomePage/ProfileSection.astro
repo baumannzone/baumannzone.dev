@@ -197,6 +197,8 @@ import baumannzoneImg from './baumannzone.webp';
   import tailwind from './logos/tailwind.png';
   import claude from './logos/claude.svg';
   import claudeCode from './logos/claudecode.svg';
+  import openai from './logos/openai.svg';
+  import codex from './logos/codex-color.svg';
 
   // Create an engine
   const engine = Engine.create({
@@ -272,7 +274,7 @@ import baumannzoneImg from './baumannzone.webp';
     // If dark mode, use the white logo
     const texture = isDarkMode ? [astro] : [astroDark];
     // Add the rest of the logos
-    texture.push(css, html5, js, tailwind, claude, claudeCode);
+    texture.push(css, html5, js, tailwind, claude, claudeCode, openai, codex);
 
     const randomTexture = texture[Math.floor(Math.random() * texture.length)];
 
