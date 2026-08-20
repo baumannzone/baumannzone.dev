@@ -1,7 +1,7 @@
 ---
 title: "`main` vs `mainChannel` en MUI: mismo color, distinto formato"
 description: "Por qué MUI genera main y mainChannel para un mismo color, y cuándo usar cada variable CSS para aplicar transparencia sin JavaScript."
-pubDate: 2026-07-13
+pubDate: 2026-08-20
 tags:
   - CSS
   - TIL
