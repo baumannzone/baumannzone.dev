@@ -28,6 +28,8 @@ Muchas de estas herramientas de IA admiten archivos adjuntos de imagen. Si tiene
 ## Mantén las conversaciones organizadas
 Cada mensaje en una conversación, tanto los tuyos como las respuestas de la IA, se acumula en la **ventana de contexto**. Las conversaciones largas y dispersas hacen que al modelo le cueste más mantenerse en el buen camino. Empieza una conversación nueva cuando cambies a una tarea distinta.
 
+![Diagrama que muestra cómo un modelo de IA reutiliza las respuestas de turnos anteriores dentro de la ventana de contexto para generar nuevas respuestas](../../assets/blog/como-dar-mejor-contexto-a-un-agente-de-ia-para-programar/context-window.png)
+
 ## Vigila tus límites de contexto 
 Los modelos tienen una longitud máxima de contexto. A medida que las conversaciones se alargan, la información más antigua puede quedarse fuera de la ventana. Si notas que el modelo pierde el hilo de decisiones anteriores, plantéate resumir el estado actual y empezar de nuevo.
 

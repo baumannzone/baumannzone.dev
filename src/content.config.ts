@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 import { Tags } from "./types/tags";
 
 const blog = defineCollection({
@@ -10,7 +11,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     published: z.boolean().optional().default(true),
-    tags: z.array(z.nativeEnum(Tags)).optional(),
+    tags: z.array(z.enum(Tags)).optional(),
     author: z.string().default("Jorge Baumann"),
     authorImage: z.string().optional(),
     type: z.enum(["blog", "css-art"]).default("blog"),
@@ -32,7 +33,7 @@ const talks = defineCollection({
       .array(
         z.object({
           title: z.string(),
-          url: z.string().url(),
+          url: z.url(),
         }),
       )
       .optional(),
