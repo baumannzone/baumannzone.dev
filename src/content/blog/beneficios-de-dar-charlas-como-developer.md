@@ -10,9 +10,9 @@ tags:
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
 ---
 
-El miedo a hablar en público te está costando oportunidades profesionales. Es duro, pero es así. La habilidad que más evitamos suele ser la que más cambia una carrera.
+Hablar en publico impone. Pero evitarlo también tiene un coste: oportunidades que no llegan y una carrera que avanza menos de lo que podría.
 
-La evidencia científica lo demuestra una y otra vez: cuando alguien del mundillo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
+La evidencia científica lo demuestra una y otra vez: cuando alguien del mundo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
 
 Hablar en público no es un detalle menor: es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
@@ -22,7 +22,7 @@ Hablar en público no es un detalle menor: es realmente una palanca de crecimien
 
 ## El poder transformador de hablar en público para software developers
 
-¿Crees que saber hablar bien en público es solo cosa de managers o de marketing? **ERROR**. Como software engineer, mejorar tu oratoria o dar charlas puede darle un giro brutal a tu carrera.
+¿Crees que saber hablar bien en público es solo cosa de managers o la gente de ventas? **Error**. Como software engineer, mejorar tu oratoria o dar charlas puede darle un giro brutal a tu carrera.
 
 No hablo solo de **oportunidades laborales** (que también, y esto lo digo por experiencia propia), sino de crecimiento personal. Te cambia la forma en la que te relacionas con otros humanos: de repente quieren charlar contigo, colaborar en proyectos o directamente trabajar a tu lado.
 
