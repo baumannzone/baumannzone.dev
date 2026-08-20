@@ -14,7 +14,7 @@ El miedo a hablar en público te está costando oportunidades profesionales. Es 
 
 La evidencia científica lo demuestra una y otra vez: cuando alguien del mundillo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
 
-Hablar en público no es un detalle menor, es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
+Hablar en público no es un detalle menor: es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
 ![En un escenario de conferencia, aparece Jorge Baumann con un traje colorido estampado de Super Mario sonriendo mientras va a caballito sobre otra persona (su padre) que lleva una máscara de caballo. Detrás se ven luces verticales azules y un atril con un portátil con pegatinas.](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
 > Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
@@ -92,7 +92,7 @@ Las slides están para reforzar tu mensaje, no para reemplazarte. Si las haces b
 
 Una charla técnica sin narrativa se siente como documentación leída en voz alta. Si armas un hilo, la gente conecta y entiende mejor.
 
-Por ejemplo, en mi charla "**JavaScript 🤝 TikTok**" arranco con el gancho de "salvar TikTok del ban en EEUU" y desde ahí aterrizo cómo funciona JavaScript en el navegador. Primero captas atención, luego profundizas en lo técnico.
+Por ejemplo, en mi charla "**JavaScript 🤝 TikTok**" arranco con el gancho de "salvar TikTok del ban en EE. UU." y desde ahí aterrizo cómo funciona JavaScript en el navegador. Primero captas la atención, luego profundizas en lo técnico.
 
 ### Practicando tu presentación: desde casa hasta el escenario
 
@@ -101,10 +101,10 @@ Por ejemplo, en mi charla "**JavaScript 🤝 TikTok**" arranco con el gancho de 
 
 La diferencia entre una charla floja y una charla sólida suele estar en el ensayo. Practica varias veces como si ya estuvieras en el escenario y fíjate en:
 
-- **Tiempo**: Asegura que no te pasas del tiempo asignado.
+- **Tiempo**: Asegúrate de no pasarte del tiempo asignado.
 - **Claridad**: Articula bien y modula la voz para mantener la atención.
 - **Pausas**: Usa pausas para enfatizar puntos clave y dar tiempo a la audiencia para procesar la información.
-- **Lenguaje Corporal**: Usa gestos y movimiento para enfatizar puntos. Nada de manos en los bolsillos.
+- **Lenguaje corporal**: Usa gestos y movimiento para enfatizar puntos. Nada de manos en los bolsillos.
 - **Feedback**: Practica frente a amigos o compañeros para recibir feedback real.
 
 Repite la charla completa hasta que te salga natural. Sí, al principio se siente raro hablarle al espejo, al perro o grabarte. Hazlo igual. No existe el "_he practicado demasiado_" cuando quieres dar una buena charla. Ese concepto no existe.
@@ -113,12 +113,12 @@ Repite la charla completa hasta que te salga natural. Sí, al principio se sient
 
 Antes de subir al escenario, haz un checklist técnico:
 
-* **Diapositivas**: Lleva versión offline por si te quedas sin WiFi.
+* **Diapositivas**: Lleva una versión offline por si te quedas sin WiFi.
 * **Conexiones**: Lleva cables, adaptadores y lo que necesites para tu portátil.
 * **Audio/Visual**: Revisa con el equipo técnico micro, pantalla y sonido.
-* **Plan B**: Si la demo falla, tira de video pregrabado o capturas.
+* **Plan B**: Si la demo falla, tira de un vídeo pregrabado o capturas.
 
-### Interactúa con la Audiencia
+### Interactúa con la audiencia
 
 Mantén contacto visual y sé receptivo a las señales de la audiencia. Fomentar preguntas o discusiones puede crear una sesión más interactiva y atractiva.
 
@@ -152,4 +152,4 @@ Si quieres cerrar este artículo con una idea práctica y aplicable desde hoy, e
 
 [![Video recomendado sobre oratoria](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
 
-Si tienes algún recurso que te haya ayudado con la oratoria, compártelo en comentarios.
+Si tienes algún recurso que te haya ayudado con la oratoria, compártelo en los comentarios.
