@@ -1,5 +1,5 @@
 ---
-title: "git history: el nuevo comando experimental para reescribir commits de git"
+title: "git history: el nuevo comando experimental de Git para reescribir commits"
 description: "Descubre cómo usar git history para corregir, renombrar y dividir commits sin recurrir siempre a un rebase interactivo."
 pubDate: 2026-08-19
 published: true
@@ -85,7 +85,7 @@ Además, por defecto actualiza todas las ramas locales que descienden del commit
 git history fixup 3b7e910 --update-refs=head
 ```
 
-> **Importante:** evita reescribir commits que ya hayas compartido o subido a una rama utilizada por otras personas. Los hashes cambiarán y probablemente necesitarás hacer un force push, lo que puede romper el historial local de otros colaboradores.
+> **Importante:** evita reescribir commits que ya hayas compartido o subido a una rama utilizada por otras personas. Los hashes cambiarán y probablemente necesitarás hacer un force push, lo que puede romper el historial local de tus compañeros.
 
 ## ¿Qué versión de Git necesitas?
 
