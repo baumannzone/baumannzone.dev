@@ -1,108 +1,101 @@
 ---
 title: "git history: el nuevo comando experimental de Git para reescribir commits"
-description: "Descubre cómo usar git history para corregir, renombrar y dividir commits sin recurrir siempre a un rebase interactivo."
+description: "Aprende a corregir, renombrar, dividir y eliminar commits concretos con git history, el comando experimental de Git."
 pubDate: 2026-08-19
+updatedDate: 2026-09-29
 published: true
 tags:
   - Git
   - TIL
 author: Jorge Baumann
 type: blog
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=git%20history%3A%20el%20nuevo%20comando%20experimental%20de%20Git%20para%20reescribir%20commits&tags=Git,TIL"
+relatedPosts:
+  - "git-tower-el-gui-de-git-mas-potente-para-macos-y-windows"
 ---
 
-Git está probando una forma nueva de reescribir el historial. Se llama `git history` y permite corregir, renombrar o dividir commits sin recurrir siempre a un rebase interactivo. Suena bien, aunque todavía es experimental y tiene limitaciones importantes.
+Si alguna vez has abierto un rebase interactivo solo para cambiar un commit, `git history` te puede ahorrar pasos. Es un comando experimental que actúa directamente sobre un commit concreto: le dices qué quieres hacer y Git se encarga del resto.
 
-Reescribir el historial no significa modificar los archivos actuales, sino reemplazar commits que ya existen por otros nuevos. Hasta ahora, operaciones como corregir un commit anterior, cambiar su mensaje o dividirlo suelen pasar por un rebase interactivo. Es una herramienta potente, pero también una de esas partes de Git que muchos developers prefieren no tocar si pueden evitarlo.
+El rebase interactivo es potente, pero también una de esas partes de Git que muchos developers prefieren no tocar si pueden evitarlo. Por eso este comando me llamó la atención.
 
-## ¿Qué es `git history`?
+## Qué versión necesitas
 
-`git history` ofrece una interfaz más directa y opinionada para modificar commits concretos. No pretende sustituir todos los usos de `git rebase`, sino simplificar algunas operaciones frecuentes sobre el historial:
+`git history` llegó en Git 2.54 con `reword` y `split`. Git 2.55 añadió `fixup` y Git 2.56 incorporó `drop`. Para probar **todos** los ejemplos de este artículo necesitas Git 2.56 o posterior:
 
-- `git history fixup <commit>` incorpora los cambios del staging al commit indicado.
-- `git history reword <commit>` permite cambiar el mensaje de un commit.
-- `git history split <commit>` divide un commit seleccionando interactivamente qué cambios deben separarse.
+```bash
+git --version
+```
 
 ## Corregir un commit anterior con `fixup`
 
-Imagina que tienes este historial:
+Imagina este historial:
 
-```bash
+```text
 8d4c2a1 Añade validación al formulario
 3b7e910 Crea el formulario de registro
 ```
 
-Después descubres un cambio que debería formar parte de `3b7e910`. Primero añades ese cambio al staging y después indicas qué commit quieres corregir:
+Si un cambio pertenece al commit `3b7e910`, prepáralo en el staging y aplícalo a ese commit:
 
 ```bash
 git add src/register-form.js
 git history fixup 3b7e910
 ```
 
-Git incorpora los cambios preparados al commit seleccionado y vuelve a crear los commits posteriores sobre el nuevo historial. Como consecuencia, tanto el commit corregido como sus descendientes reciben hashes nuevos.
+Git incorpora el cambio al commit elegido y vuelve a crear los posteriores. El mensaje y la autoría del commit corregido se conservan por defecto. Si la operación provoca un conflicto, se cancela.
 
-Si la operación produce un conflicto, `git history fixup` aborta en lugar de dejar el repositorio en un estado intermedio que tengas que resolver manualmente.
+## Cambiar el mensaje con `reword`
 
-## Cambiar el mensaje de un commit con `reword`
-
-Si el contenido de un commit es correcto, pero su mensaje no explica bien el cambio, puedes modificarlo indicando su hash:
+Si el contenido es correcto pero el mensaje no, usa:
 
 ```bash
 git history reword 3b7e910
 ```
 
-Git abrirá el editor configurado para que escribas el nuevo mensaje. El contenido, la autoría y el resto de los datos del commit se conservan, aunque su hash y los de los commits posteriores cambiarán al reescribir el historial.
+Git abre el editor con el mensaje actual. El contenido y la autoría del commit no cambian.
 
 ## Dividir un commit con `split`
 
-A veces un commit termina mezclando dos cambios que deberían vivir por separado. `split` permite dividirlo seleccionando interactivamente los bloques de código que quieres extraer:
+Si un commit mezcla dos cambios independientes, puedes separarlos:
 
 ```bash
 git history split 8d4c2a1
 ```
 
-Git mostrará cada hunk del commit y preguntará si debe pasar al nuevo commit. Cuando termine la selección, solicitará los mensajes de los dos commits resultantes.
+Git te enseña cada hunk y te pregunta si debe pasar al nuevo commit. Al terminar, te pide los mensajes de los dos commits resultantes. Tienes que elegir al menos un hunk y dejar al menos otro en el original; si no, uno de los dos quedaría vacío.
 
-No puedes seleccionar todos los cambios ni dejar la selección vacía, porque una de las dos partes quedaría sin contenido. También puedes limitar la operación a determinados archivos mediante un pathspec:
+También puedes limitar la selección a ciertos archivos:
 
 ```bash
 git history split 8d4c2a1 -- src/register-form.js
 ```
 
-Los archivos que no coincidan con el pathspec permanecerán en el commit original.
+Los archivos que no coincidan con esa ruta permanecen en el commit original.
 
-## Limitaciones y precauciones
+## Eliminar un commit con `drop`
 
-Antes de probar `git history`, conviene recordar que todavía es experimental:
+Desde Git 2.56 puedes quitar un commit del historial y reaplicar sus descendientes sobre el padre:
 
-- Su comportamiento puede cambiar en futuras versiones de Git.
-- No funciona con historiales que contienen merges.
-- Las operaciones que producirían conflictos se cancelan.
-- Actualmente no ejecuta los hooks de Git.
+```bash
+git history drop 8d4c2a1
+```
 
-Además, por defecto actualiza todas las ramas locales que descienden del commit original. Si solo quieres modificar la rama actual, puedes utilizar `--update-refs=head`:
+No puedes eliminar el commit raíz ni un commit de merge. Si reaplicar los descendientes produce un conflicto, la operación se cancela.
+
+## Antes de usarlo
+
+El comando sigue siendo experimental y la [documentación oficial](https://git-scm.com/docs/git-history) avisa de que su comportamiento puede cambiar.
+
+Todas estas operaciones reescriben el historial: el commit que tocas y todos sus descendientes reciben hashes nuevos.
+
+`git history` no funciona con historiales que contienen merges y, de momento, no ejecuta hooks. Para mover una serie de commits a otra base o editar varios de una vez, sigue usando `git rebase`.
+
+Por defecto, `git history` actualiza todas las ramas locales descendientes del commit original. Si solo quieres actualizar la rama actual, añade `--update-refs=head`:
 
 ```bash
 git history fixup 3b7e910 --update-refs=head
 ```
 
-> **Importante:** evita reescribir commits que ya hayas compartido o subido a una rama utilizada por otras personas. Los hashes cambiarán y probablemente necesitarás hacer un force push, lo que puede romper el historial local de tus compañeros.
+Evita reescribir commits que ya hayas compartido: como cambian los hashes, necesitarías un push forzado y romperías el historial local de tus compañeros. Para empezar, pruébalo en una rama local.
 
-## ¿Qué versión de Git necesitas?
-
-`git history` apareció en Git 2.54 con los subcomandos `reword` y `split`. El subcomando `fixup` llegó después, en Git 2.55.
-
-Puedes comprobar tu versión instalada con:
-
-```bash
-git --version
-```
-
-Para reproducir todos los ejemplos de este artículo necesitas Git 2.55 o una versión posterior. La sintaxis y las limitaciones actuales están disponibles en la [documentación oficial de `git history`](https://git-scm.com/docs/git-history).
-
-## ¿Sustituye `git history` a `git rebase`?
-
-No. `git rebase` sigue siendo la herramienta adecuada cuando quieres reaplicar un conjunto de commits sobre otra base o editar varios commits a la vez. `git history` tiene un objetivo más limitado: realizar una operación concreta sobre un commit determinado.
-
-Precisamente ahí está su atractivo. En lugar de abrir una lista interactiva y recordar qué acción debes indicar en cada línea, expresas directamente lo que quieres hacer: corregir, renombrar o dividir.
-
-Por ahora conviene probarlo en ramas locales o repositorios desechables. Sigue siendo experimental y sus limitaciones son importantes, pero apunta en una dirección interesante: conseguir que reescribir el historial de Git resulte un poco menos intimidante.
+Aun con sus limitaciones, me gusta la dirección: en lugar de editar una lista de `pick` y recordar qué palabra va en cada línea, dices directamente lo que quieres (corregir, renombrar, dividir o eliminar). Reescribir el historial de Git da un poco menos de miedo.
