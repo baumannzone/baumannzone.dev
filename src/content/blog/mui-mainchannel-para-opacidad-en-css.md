@@ -1,63 +1,53 @@
 ---
-title: "`main` vs `mainChannel` en MUI: mismo color, distinto formato"
-description: "Por qué MUI genera main y mainChannel para un mismo color, y cuándo usar cada variable CSS para aplicar transparencia sin JavaScript."
-pubDate: 2026-08-20
+title: "main vs mainChannel en MUI: mismo color, distinto formato"
+description: "Al revisar código generado por IA en un proyecto React con MUI, descubrí por qué main y mainChannel usan formatos distintos."
+pubDate: 2026-10-02
 tags:
   - CSS
   - TIL
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=main%20vs%20mainChannel%20en%20MUI&tags=CSS,TIL"
-published: false
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=main%20vs%20mainChannel%20en%20MUI%3A%20mismo%20color%2C%20distinto%20formato&tags=CSS,TIL"
+published: true
 relatedPosts:
   - "la-gran-mentira-de-letter-spacing-en-css-que-no-sabias"
   - "la-sintaxis-secreta-de-of-s-en-nth-child-que-probablemente-estas-ignorando"
   - "personaliza-como-se-ven-los-objetos-en-las-devtools"
 ---
 
-Estaba revisando los cambios que me habia hecho la IA de un componente de React construido con MUI cuando encontré estas dos líneas:
+Estaba trabajando en un proyecto de React con Material UI (MUI) y, como siempre, revisé el código que me había generado la IA. Ahí me encontré con estas dos líneas:
 
 ```css
 border-top: 2px solid var(--mui-palette-error-main);
 background-color: rgb(var(--mui-palette-error-mainChannel) / 0.2);
 ```
 
-El borde y el fondo usaban el mismo rojo, pero mediante dos variables diferentes. Parecía una duplicación innecesaria, así que sustituí `mainChannel` por `main`.
+Me olieron raro: el borde usaba `main` y el fondo `mainChannel` para lo que parecía el mismo rojo. Una duplicación innecesaria, pensé. Así que sustituí `mainChannel` por `main`.
 
 El borde siguió funcionando. El fondo no.
 
 Cambiar una palabra acababa de romper el color. Tocaba abrir DevTools.
 
-## Mismo rojo, distinto formato
+## El mismo rojo en dos formatos
 
-Con el inspector del navegador pude ver qué contenía realmente cada variable:
+En mi tema, las variables contenían estos valores:
 
 ```css
 --mui-palette-error-main: #e81010;
 --mui-palette-error-mainChannel: 232 16 16;
 ```
 
-El misterio estaba en la representación. Las dos variables describían el mismo rojo, pero en formatos distintos. La pregunta es, ¿por qué?
+`main` era un color completo en hexadecimal. `mainChannel` contenía solo los canales RGB separados por espacios, sin alfa.
 
-`main` contiene un color completo expresado en hexadecimal. `mainChannel` contiene únicamente sus canales RGB (rojo, verde y azul) separados por espacios y sin el canal alfa.
-
-No son dos tonos parecidos ni dos valores que MUI mantenga duplicados porque sí. Uno es el color completo y el otro solo contiene sus ingredientes.
-
-## `var()` sustituye, no transforma
-
-Una variable CSS no conoce el significado de su contenido. `var()` se limita a colocar ese contenido en el punto donde la utilizas.
-
-Al sustituir `mainChannel` por `main`, el navegador terminaba evaluando algo equivalente a esto:
+`var()` no convierte un formato en otro: inserta el valor de la variable tal cual. Al cambiar `mainChannel` por `main`, el navegador recibía esto:
 
 ```css
-/* ❌ Un hexadecimal no funciona con RGB */
+/* No válido: rgb() espera canales, no un color completo */
 background-color: rgb(#e81010 / 0.2);
 
-/* ✅ Tres canales RGB seguidos de un valor alfa sí */
+/* Válido: canales RGB y alfa */
 background-color: rgb(232 16 16 / 0.2);
 ```
 
-La sintaxis de `rgb()` espera los canales numéricos antes de la barra y la opacidad después. Un hexadecimal ya representa un color completo, así que no encaja en el lugar reservado para esos canales.
-
-El borde puede usar `main` porque `border-color` espera un color completo. El fondo necesita `mainChannel` porque queremos construir otro color con los mismos canales y un alfa de `0.2`.
+El borde podía usar `main` directamente. Para dar transparencia al fondo con `rgb()`, necesitaba los canales de `mainChannel` y un alfa de `0.2`.
 
 ## Por qué MUI genera `Channel`
 
@@ -75,18 +65,19 @@ Estos tokens terminan en `Channel` y contienen los canales del espacio de color 
 background-color: rgba(var(--mui-palette-error-mainChannel) / 0.2);
 ```
 
+MUI usa `rgba()` en sus ejemplos y yo `rgb()`, pero da igual: en CSS moderno las dos funciones son equivalentes y aceptan el alfa después de la barra.
+
 Como `main` y `mainChannel` nacen del mismo color del tema, permanecen sincronizados cuando cambia la paleta o el esquema de color.
 
 No necesitas repetir el hexadecimal ni calcular la transparencia con JavaScript. El tema proporciona los canales y el navegador compone el resultado.
 
-## Conclusión
+> **Nota:** con `cssVariables: { nativeColor: true }`, MUI advierte que `*Channel` puede dejar de contener canales numéricos. En ese modo, recomienda usar `theme.alpha()` sobre el color completo.
 
-- Usa `main` cuando necesites aplicar el color sólido.
-- Usa `mainChannel` dentro de `rgb()` o `rgba()` cuando quieras controlar su opacidad.
+## Lo que me llevo
 
-Ahora me parece obvio, pero descubrirlo me llevó un buen rato y un paseo por las DevTools.
+- Usa `main` cuando necesites el color sólido.
+- Usa `mainChannel` dentro de `rgb()` cuando quieras controlar su opacidad.
 
-Dos variables de un mismo color pero con responsabilidades diferentes.
+Son el mismo rojo con dos trabajos distintos. Ahora me parece obvio, pero descubrirlo me costó un buen rato en las DevTools.
 
-
-Puedes consultar más detalles en la [documentación de los color channel tokens de MUI](https://mui.com/material-ui/customization/css-theme-variables/usage/#color-channel-tokens).
+Puedes consultar más detalles en la [documentación de los tokens de canal de MUI](https://mui.com/material-ui/customization/css-theme-variables/usage/#color-channel-tokens) y en su [guía de color nativo](https://mui.com/material-ui/migration/upgrade-to-native-color/#remove-usage-of-channel-tokens).
