@@ -1,0 +1,60 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout name="text-box-trim" tag="Resultado" columns>
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box">
+        <span class="label">HOLA</span>
+      </div>
+    </div>
+    <figcaption class="demo__caption">Sin <code>text-box</code></figcaption>
+  </figure>
+
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box">
+        <span class="label trimmed">HOLA</span>
+      </div>
+    </div>
+    <figcaption class="demo__caption">
+      Con <code>text-box: trim-both cap alphabetic</code>
+    </figcaption>
+  </figure>
+
+  <p class="unsupported text-center text-sm text-amber-700 dark:text-amber-400">
+    Tu navegador no soporta <code>text-box</code>, así que verás las dos cajas iguales.
+  </p>
+</DemoLayout>
+
+<style>
+  .box {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgb(139 92 246 / 0.15);
+  }
+
+  .label {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    outline: 2px dashed rgb(139 92 246);
+  }
+
+  .trimmed {
+    text-box: trim-both cap alphabetic;
+  }
+
+  .unsupported {
+    display: none;
+    grid-column: 1 / -1;
+  }
+
+  @supports not (text-box: trim-both cap alphabetic) {
+    .unsupported {
+      display: block;
+    }
+  }
+</style>

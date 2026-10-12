@@ -1,0 +1,109 @@
+---
+title: "text-box en CSS: recorta el espacio sobrante del texto"
+description: "No conocía text-box ni de lejos. Una línea de CSS que elimina el espacio invisible sobre y bajo el texto para que tus botones queden centrados de verdad."
+pubDate: 2026-10-12
+tags:
+  - CSS
+  - TIL
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=text-box%20en%20CSS%3A%20recorta%20el%20espacio%20sobrante%20del%20texto&tags=CSS,TIL"
+published: true
+relatedPosts:
+  - "la-gran-mentira-de-letter-spacing-en-css-que-no-sabias"
+  - "la-sintaxis-secreta-de-of-s-en-nth-child-que-probablemente-estas-ignorando"
+---
+
+import Demo1 from "../../components/demos-blog/text-box-en-css-recorta-el-espacio-sobrante-del-texto/1.astro";
+
+Hoy me he cruzado con esta línea de CSS:
+
+```css
+text-box: trim-both cap alphabetic;
+```
+
+No la conocía ni de lejos. Y resulta que resuelve un problema que llevo años arreglando a ojo.
+
+## El problema: el espacio fantasma del texto
+
+Haz un botón con el mismo `padding` arriba y abajo:
+
+```css
+.button {
+  padding: 12px 24px;
+}
+```
+
+En teoría el texto queda centrado. En la práctica, muchas veces parece que hay más aire arriba que abajo, o al revés.
+
+El motivo es que la caja de una línea de texto no termina donde terminan las letras. Incluye:
+
+- El espacio que reserva la fuente para acentos y letras altas (por encima).
+- El espacio para letras con descendentes, como `g`, `p` o `y` (por debajo).
+- La mitad del interlineado (`line-height`) repartida arriba y abajo.
+
+El `padding` se suma a todo ese espacio invisible, así que el centrado visual depende de cómo esté diseñada cada fuente. Por eso acabamos haciendo cosas como `padding-top: 13px; padding-bottom: 11px;` hasta que "parece que está bien".
+
+## La solución: `text-box`
+
+`text-box` es un atajo de dos propiedades:
+
+- `text-box-trim`: qué lados recortar. Acepta `none`, `trim-start`, `trim-end` o `trim-both`.
+- `text-box-edge`: hasta dónde recortar. El primer valor es el borde superior y el segundo, el inferior.
+
+Así que esta línea:
+
+```css
+text-box: trim-both cap alphabetic;
+```
+
+Significa: recorta arriba y abajo, deja el borde superior a la altura de las mayúsculas (`cap`) y el inferior en la línea base (`alphabetic`), donde se apoyan las letras.
+
+El resultado es una caja que se ajusta a las letras. Ahora el `padding` sí es el espacio que ves:
+
+```css
+.button {
+  padding: 12px 24px;
+  text-box: trim-both cap alphabetic;
+}
+```
+
+Míralo en acción. Las dos cajas tienen el mismo `padding` y la línea discontinua marca la caja del texto:
+
+<Demo1 />
+
+Sin `text-box`, la caja del texto deja aire por encima y por debajo de las letras. Con `text-box`, se pega a las mayúsculas y el `padding` queda igual por los cuatro lados.
+
+## Otros valores útiles
+
+Para el borde superior, además de `cap`, puedes usar `ex`, que recorta a la altura de las minúsculas (la altura de la `x`). Viene bien si el texto va todo en minúsculas:
+
+```css
+.tag {
+  text-box: trim-both ex alphabetic;
+}
+```
+
+Y si solo te molesta el espacio de arriba, por ejemplo en un título pegado al borde superior de una tarjeta, recorta un solo lado:
+
+```css
+.card h2 {
+  text-box: trim-start cap alphabetic;
+}
+```
+
+## Ojo con los descendentes
+
+Al recortar hasta la línea base, las letras como `g`, `p` o `y` sobresalen por debajo de la caja. No se cortan, se siguen viendo, pero invaden el `padding`. En botones y etiquetas cortas no suele notarse. En párrafos largos no tiene mucho sentido usarlo.
+
+## ¿Puedo usarlo ya?
+
+Funciona en Chrome y Edge desde la versión 133 y en Safari desde la 18.2. En Firefox, consulta [Can I Use](https://caniuse.com/css-text-box-trim) para ver su estado actual.
+
+Lo bueno es que funciona como mejora progresiva: si el navegador no lo entiende, ignora la línea y el texto se ve como siempre. No se rompe nada.
+
+## Conclusión
+
+- La caja de una línea de texto es más grande que las letras que contiene.
+- `text-box: trim-both cap alphabetic` la ajusta a la altura de las mayúsculas y a la línea base.
+- Con eso, el mismo `padding` arriba y abajo por fin parece el mismo.
+
+Una línea de CSS que me habría ahorrado muchos píxeles a ojo. Tienes más detalles en [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-box) y en el [artículo de Chrome sobre text-box-trim](https://developer.chrome.com/blog/css-text-box-trim).
