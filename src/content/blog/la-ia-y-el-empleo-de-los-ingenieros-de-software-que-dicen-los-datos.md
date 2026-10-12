@@ -1,6 +1,6 @@
 ---
 title: "La IA y el empleo de los ingenieros de software: qué dicen los datos"
-description: "Más código generado no equivale a más software entregado ni demuestra que desaparezcan los puestos de ingeniería. Una lectura de los datos con matices."
+description: "¿La IA nos va a quitar el trabajo? Despidos que no siempre eran por IA, un 180 % más de commits y solo un 30 % más de releases. Mi lectura de los datos."
 pubDate: 2026-09-21
 updatedDate: 2026-09-29
 author: "Jorge Baumann"

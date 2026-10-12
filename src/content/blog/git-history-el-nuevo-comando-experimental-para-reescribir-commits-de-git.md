@@ -1,6 +1,6 @@
 ---
 title: "git history: el nuevo comando experimental de Git para reescribir commits"
-description: "Aprende a corregir, renombrar, dividir y eliminar commits concretos con git history, el comando experimental de Git."
+description: "Corrige, renombra, divide o elimina un commit concreto sin abrir un rebase interactivo. Así funciona git history, el nuevo comando experimental de Git."
 pubDate: 2026-08-19
 updatedDate: 2026-09-29
 published: true
