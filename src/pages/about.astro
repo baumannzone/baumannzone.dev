@@ -1,6 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import JsonLd from "../components/JsonLd.astro";
+import {
+  breadcrumbSchema,
+  personSchema,
+  websiteId,
+} from "../utils/schema";
 
 import HeroSection from "../components/AboutMePage/HeroSection.astro";
 import ContentSection from "../components/AboutMePage/ContentSection.astro";
@@ -17,12 +23,36 @@ const posts = (await getCollection("blog"))
 
 // Get the last 3 posts
 const recentPosts = posts.slice(0, 3);
+
+const title = "Sobre mí | Baumannzone.dev";
+const description =
+  "Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido.";
+const aboutUrl = new URL("/about/", Astro.site).href;
+const person = personSchema(Astro.site);
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${aboutUrl}#webpage`,
+      url: aboutUrl,
+      name: title,
+      description,
+      inLanguage: "es",
+      isPartOf: { "@id": websiteId(Astro.site) },
+      mainEntity: { "@id": person["@id"] },
+    },
+    person,
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Sobre mí", path: "/about/" },
+    ]),
+  ],
+};
 ---
 
-<DefaultLayout
-  title="Baumannzone.dev - Sobre mí"
-  description="Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido."
->
+<DefaultLayout title={title} description={description} ogType="profile">
+  <JsonLd slot="head" data={jsonLd} />
   <div class="bg-white">
     <div class="isolate">
       <HeroSection />

@@ -4,6 +4,8 @@ import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import { getTagUrl } from "../../utils/tags";
 import { Tags } from "../../types/tags";
+import JsonLd from "../../components/JsonLd.astro";
+import { breadcrumbSchema, websiteId } from "../../utils/schema";
 
 const TIL = Tags.TIL;
 
@@ -23,12 +25,45 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props;
+
+const title = `${tag} | Baumannzone.dev`;
+const description = `Artículos etiquetados con ${tag}`;
+const tagUrl = new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href;
+// A tag with a single post only duplicates that post, so keep it out of the index.
+const isThinTag = posts.length < 2;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${tagUrl}#webpage`,
+      url: tagUrl,
+      name: title,
+      description,
+      inLanguage: "es",
+      isPartOf: { "@id": websiteId(Astro.site) },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: posts.length,
+        itemListElement: posts.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: post.data.title,
+          url: new URL(`/blog/${post.id}/`, Astro.site).href,
+        })),
+      },
+    },
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Tags", path: "/tags/" },
+      { name: tag, path: `/tags/${getTagUrl(tag)}/` },
+    ]),
+  ],
+};
 ---
 
-<DefaultLayout
-  title={`${tag} | Baumannzone.dev`}
-  description={`Artículos etiquetados con ${tag}`}
->
+<DefaultLayout title={title} description={description} noindex={isThinTag}>
+  <JsonLd slot="head" data={jsonLd} />
   <section class="bmn-container mx-auto mt-16 mb-32">
     <header class="text-center mb-8">
       <p class="text-base font-semibold leading-7 text-violet-600">/tags</p>

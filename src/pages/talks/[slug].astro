@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/DefaultLayout.astro";
 import { getCollection, render } from "astro:content";
+import JsonLd from "../../components/JsonLd.astro";
+import { breadcrumbSchema, personId } from "../../utils/schema";
 
 export async function getStaticPaths() {
   const talks = await getCollection("talks");
@@ -12,9 +14,79 @@ export async function getStaticPaths() {
 
 const { talk } = Astro.props;
 const { Content } = await render(talk);
+
+const typeLabels = {
+  conferencia: "Charla",
+  podcast: "Podcast",
+  artículo: "Artículo",
+  meetup: "Meetup",
+  curso: "Curso",
+  social: "Participación",
+};
+const description =
+  talk.data.description ??
+  `${typeLabels[talk.data.type]} «${talk.data.title}» de Jorge Baumann (@baumannzone) en ${talk.data.event} (${talk.data.date.getFullYear()}).`;
+
+const talkUrl = new URL(`/talks/${talk.id}/`, Astro.site).href;
+const { title: talkTitle, type, event, date } = talk.data;
+const common = {
+  "@id": `${talkUrl}#main`,
+  name: talkTitle,
+  description,
+  url: talkUrl,
+  inLanguage: "es",
+};
+// Same type mapping as the microdata in the talks index.
+const mainEntity =
+  type === "conferencia" || type === "meetup" || type === "social"
+    ? {
+        "@type": "Event",
+        ...common,
+        startDate: date.toISOString().slice(0, 10),
+        location: { "@type": "Place", name: event },
+        performer: { "@id": personId(Astro.site) },
+      }
+    : type === "podcast"
+      ? {
+          "@type": "PodcastEpisode",
+          ...common,
+          datePublished: date.toISOString().slice(0, 10),
+          partOfSeries: { "@type": "PodcastSeries", name: event },
+          actor: { "@id": personId(Astro.site) },
+        }
+      : type === "artículo"
+        ? {
+            "@type": "Article",
+            ...common,
+            headline: talkTitle,
+            datePublished: date.toISOString().slice(0, 10),
+            author: { "@id": personId(Astro.site) },
+            publisher: { "@type": "Organization", name: event },
+          }
+        : {
+            "@type": "Course",
+            ...common,
+            provider: { "@type": "Organization", name: event },
+            instructor: { "@id": personId(Astro.site) },
+          };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    mainEntity,
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Charlas", path: "/talks/" },
+      { name: talkTitle, path: `/talks/${talk.id}/` },
+    ]),
+  ],
+};
 ---
 
-<Layout title={`${talk.data.title} | baumannzone.dev`}>
+<Layout
+  title={`${talk.data.title} | Baumannzone.dev`}
+  description={description}
+>
+  <JsonLd slot="head" data={jsonLd} />
   <main class="container mx-auto px-4 py-8">
     <article class="prose prose-lg mx-auto prose-img:shadow-lg">
       <header class="mb-8">

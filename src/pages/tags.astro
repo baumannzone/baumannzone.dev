@@ -17,11 +17,35 @@ const postsByTag = tags.reduce((acc, tag) => {
     .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   return acc;
 }, {});
+
+const pageTitle = "Tags | Baumannzone.dev";
+const pageDescription = "Todos los tags disponibles en el blog";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: pageTitle,
+  description: pageDescription,
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Tags",
+    numberOfItems: tags.length,
+    itemListElement: tags.map((tag, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Thing",
+        name: tag,
+        description: `Artículos etiquetados con ${tag}`,
+        url: new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href,
+      },
+    })),
+  },
+};
 ---
 
 <DefaultLayout
-  title="Tags | Baumannzone.dev"
-  description="Todos los tags disponibles en el blog"
+  title={pageTitle}
+  description={pageDescription}
 >
   <section class="bmn-container mx-auto mt-16 mb-32">
     <header class="text-center">
@@ -106,34 +130,9 @@ const postsByTag = tags.reduce((acc, tag) => {
       }
     </div>
   </section>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Tags | Baumannzone.dev",
-      "description": "Todos los tags disponibles en el blog",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ItemList",
-            "name": "Tags",
-            "numberOfItems": ${tags.length},
-            "itemListElement": [
-              ${tags.map((tag, index) => `{
-                "@type": "ListItem",
-                "position": ${index + 1},
-                "item": {
-                  "@type": "Thing",
-                  "name": "${tag}",
-                  "description": "Artículos etiquetados con ${tag}",
-                  "url": "https://baumannzone.dev/tags/${getTagUrl(tag)}"
-                }
-              }`).join(',')}
-            ]
-          }
-        ]
-      }
-    }
-  </script>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
+  />
 </DefaultLayout>

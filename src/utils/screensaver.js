@@ -89,7 +89,7 @@ function disableScreenSaver() {
       "%cScreen saver activated",
       "padding:1em; border-radius: 4px; background: rgb(221,0,255); background: linear-gradient(90deg, rgba(221,0,255,1) 25%, rgba(253,29,132,1) 75%); color: white; font-weight: bold; font-size: 20px; font-style: italic; text-shadow: 1px 1px 3px #444;",
     );
-    console.log("💻 Mi setup: https://baumannzone.dev/uses");
+    console.log("💻 Mi setup: https://www.baumannzone.dev/uses");
 
     // Start the title update interval with "zzz"
     titleInterval = setInterval(updateTitle, 1000);

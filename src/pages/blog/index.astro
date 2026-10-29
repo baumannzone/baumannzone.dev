@@ -2,13 +2,54 @@
 import { getCollection } from "astro:content";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import {
+  breadcrumbSchema,
+  personId,
+  websiteId,
+} from "../../utils/schema";
 
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.published !== false)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const title = "Blog | Baumannzone.dev";
+const description =
+  "Artículos, tutoriales y demos sobre JavaScript, HTML, CSS, testing y herramientas de desarrollo web, escritos por Jorge Baumann.";
+const blogUrl = new URL("/blog/", Astro.site).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${blogUrl}#webpage`,
+      url: blogUrl,
+      name: title,
+      description,
+      inLanguage: "es",
+      isPartOf: { "@id": websiteId(Astro.site) },
+      about: { "@id": personId(Astro.site) },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: posts.length,
+        itemListElement: posts.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: post.data.title,
+          url: new URL(`/blog/${post.id}/`, Astro.site).href,
+        })),
+      },
+    },
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Blog", path: "/blog/" },
+    ]),
+  ],
+};
 ---
 
-<DefaultLayout>
+<DefaultLayout title={title} description={description}>
+  <JsonLd slot="head" data={jsonLd} />
   <section class="bmn-container mx-auto mt-16 mb-32">
     <header class="text-center">
       <p class="text-base font-semibold leading-7 text-violet-600">/blog</p>

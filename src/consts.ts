@@ -14,6 +14,7 @@ export const SITE_OWNER = {
   jobTitle: "Senior Full Stack Developer",
   description:
     "Ingeniero de software y divulgador de contenido. Speaker. Apasionado del desarrollo web y del fitness.",
+  knowsAbout: ["JavaScript", "HTML", "CSS", "Testing", "Desarrollo web", "IA"],
   profiles: {
     github: "https://github.com/baumannzone",
     linkedin: "https://www.linkedin.com/in/baumannzone/",

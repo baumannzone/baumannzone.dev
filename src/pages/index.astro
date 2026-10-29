@@ -6,36 +6,17 @@ import ProfileSection from "../components/HomePage/ProfileSection.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import RandomSetupItem from "../components/HomePage/RandomSetupItem.astro";
 import profileImage from "../components/HomePage/baumannzone.webp";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_OWNER, SITE_TITLE } from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { personSchema, websiteId, websiteSchema } from "../utils/schema";
 
 const homeUrl = new URL("/", Astro.site).href;
-const personId = `${homeUrl}#person`;
-const websiteId = `${homeUrl}#website`;
 const image = await getImage({ src: profileImage, width: 140, height: 140 });
+const person = personSchema(Astro.site);
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Person",
-      "@id": personId,
-      name: SITE_OWNER.name,
-      alternateName: SITE_OWNER.alternateName,
-      jobTitle: SITE_OWNER.jobTitle,
-      description: SITE_OWNER.description,
-      url: homeUrl,
-      image: new URL(image.src, homeUrl).href,
-      sameAs: Object.values(SITE_OWNER.profiles),
-    },
-    {
-      "@type": "WebSite",
-      "@id": websiteId,
-      name: SITE_NAME,
-      alternateName: new URL(homeUrl).hostname,
-      url: homeUrl,
-      description: SITE_DESCRIPTION,
-      inLanguage: "es",
-      publisher: { "@id": personId },
-    },
+    { ...person, image: new URL(image.src, homeUrl).href },
+    websiteSchema(Astro.site, SITE_DESCRIPTION),
     {
       "@type": "WebPage",
       "@id": `${homeUrl}#webpage`,
@@ -43,8 +24,8 @@ const jsonLd = {
       name: SITE_TITLE,
       description: SITE_DESCRIPTION,
       inLanguage: "es",
-      isPartOf: { "@id": websiteId },
-      mainEntity: { "@id": personId },
+      isPartOf: { "@id": websiteId(Astro.site) },
+      mainEntity: { "@id": person["@id"] },
     },
   ],
 };

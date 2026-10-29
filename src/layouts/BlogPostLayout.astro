@@ -32,12 +32,17 @@ const {
 
 // Dont show comments in dev mode
 const showComments = !import.meta.env.DEV;
-const postUrl = `https://baumannzone.dev/blog/${slug}`;
+const postUrl = new URL(`/blog/${slug}`, Astro.site).href;
 ---
 
 <html lang='es'>
   <head>
-    <BaseHead title={title} description={description} ogImage={ogImage} />
+    <BaseHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogType='article'
+    />
     <BlogJsonLd
       title={title}
       description={description}

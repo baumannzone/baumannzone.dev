@@ -5,13 +5,13 @@ import NavBar from "../components/NavBar.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 // Get Title and description from the astro props
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, ogImage } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, ogImage, noindex, ogType } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <BaseHead title={title} description={description} ogImage={ogImage} />
+    <BaseHead title={title} description={description} ogImage={ogImage} noindex={noindex} ogType={ogType} />
     <slot name="head" />
   </head>
   <body>

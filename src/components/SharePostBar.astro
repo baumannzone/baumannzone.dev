@@ -4,7 +4,7 @@ import baumannzone from '../assets/jorge-baumann.avif';
 
 const { id, slug, collection, title } = Astro.props;
 
-const blogPostUrl = `https://baumannzone.dev/${collection}/${slug}`;
+const blogPostUrl = new URL(`/${collection}/${slug}`, Astro.site).href;
 const githubEditUrl = `https://github.com/baumannzone/baumannzone.dev/edit/main/src/content/${collection}/${id}`;
 
 const encodedTitle = encodeURIComponent(title);
@@ -291,7 +291,7 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
       <meta itemprop='name' content='Jorge Baumann' />
       <meta itemprop='alternateName' content='Baumannzone' />
       <meta itemprop='jobTitle' content='Senior Software Engineer' />
-      <meta itemprop='url' content='https://baumannzone.dev/about' />
+      <meta itemprop='url' content={new URL('/about', Astro.site).href} />
     </div>
     <div class='col-start:5 col-span-9'>
       <div class='font-medium text-black dark:text-white'>

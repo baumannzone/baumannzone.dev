@@ -10,7 +10,7 @@ links:
   - title: "Directo en YouTube"
     url: "https://www.youtube.com/live/SewBHElK2t8"
   - title: "Slides de la presentación"
-    url: "https://baumannzone.dev/talks/madrid-js-mercadona-javascript/madrid-js-mercadona-2026.pdf"
+    url: "https://www.baumannzone.dev/talks/madrid-js-mercadona-javascript/madrid-js-mercadona-2026.pdf"
 ---
 
 ![Cartel de la charla «Crea tu propio Mercadona con JavaScript» en Madrid JS](../../assets/talks/madrid-js-mercadona-javascript/main.png)
