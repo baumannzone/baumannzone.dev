@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 export interface Props {
   book: {
     title: string;
@@ -13,7 +16,19 @@ export interface Props {
 }
 
 const { book } = Astro.props;
-const bookBasePath = '../src/assets/books/';
+const authors = (Array.isArray(book.author) ? book.author : [book.author])
+  .filter((author) => author.trim());
+const linkHost = book.link ? new URL(book.link).hostname : undefined;
+const isAffiliateLink = linkHost === 'amzn.to' || linkHost === 'tidd.ly';
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/books/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+const cover = covers[`../assets/books/${book.image}`]?.default;
+
+if (!cover) {
+  throw new Error(`No se encuentra la portada de "${book.title}": ${book.image}`);
+}
 
 // Function to format readAt date
 function formatReadAtDate(readAt: { month?: number; year: number }): string {
@@ -25,17 +40,21 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
 }
 ---
 
-<div
+<article
   class='block hover:bg-zinc-50 rounded-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
+  itemprop='itemListElement'
   itemscope
   itemtype='https://schema.org/Book'
 >
   <div class='rounded-xl border border-zinc-200 h-full hover:border-zinc-300 transition-colors'>
     <div class='flex flex-col p-4 relative h-full'>
       <div class='aspect-[3/4] w-full overflow-hidden rounded-lg bg-zinc-50 mb-4 relative max-w-48 mx-auto'>
-        <img
-          src={`${bookBasePath}${book.image}`}
+        <Image
+          src={cover}
           alt={`Portada de ${book.title}`}
+          width={192}
+          widths={[192, 384]}
+          sizes='192px'
           class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
           itemprop='image'
         />
@@ -67,18 +86,25 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
       <div class='flex-1 flex flex-col space-y-2'>
         <div
           class='text-sm text-zinc-500 font-medium'
-          itemprop='author'
         >
-          {Array.isArray(book.author)
-            ? book.author.join(', ')
-            : book.author}
+          {authors.map((author, index) => (
+            <>
+              {index > 0 && ', '}
+              <span itemprop='author' itemscope itemtype='https://schema.org/Person'>
+                <span itemprop='name'>{author}</span>
+              </span>
+            </>
+          ))}
         </div>
-        <div
+        <h3
           class='text-lg font-semibold text-zinc-950 line-clamp-2'
           itemprop='name'
         >
           {book.title}
-        </div>
+        </h3>
+        {book.status === 'reading' && (
+          <p class='text-sm font-medium text-violet-600'>Leyendo</p>
+        )}
         {book.description && (
           <div
             class='text-sm text-zinc-600 line-clamp-3'
@@ -95,12 +121,13 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
             <a
               href={book.link}
               target='_blank'
-              rel='noopener noreferrer'
+              rel={isAffiliateLink ? 'sponsored noopener noreferrer' : 'noopener noreferrer'}
               class='inline-flex items-center text-sm font-medium text-violet-600 hover:text-white transition-colors border border-violet-500 rounded-md px-3 py-2 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
             >
               {book.link.includes('github')
                 ? 'Ver en GitHub'
                 : 'Ver libro'}
+              <span class='sr-only'>: {book.title}</span>
               <span aria-hidden='true' class='ml-1'>
                 →
               </span>
@@ -110,4 +137,4 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
       </div>
     </div>
   </div>
-</div>
+</article>

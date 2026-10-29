@@ -10,7 +10,13 @@ import {
   softwareBooks,
 } from '../utils/book-list.ts';
 
-// Filter read books from each category
+const pageTitle = 'Libros de programación y otras lecturas';
+const description = 'Libros de programación, tecnología, desarrollo personal y novelas que he leído, estoy leyendo o tengo pendientes, con sus autores y portadas.';
+const ogImage = new URL('https://baumannzone-dev-og.vercel.app/api/og');
+ogImage.searchParams.set('title', pageTitle);
+ogImage.searchParams.set('tags', 'Programación,Desarrollo personal,Novelas');
+
+// Include finished books and current reads; pending books have their own list.
 const readLiteratureBooks = literatureBooks.filter(
   (book) => book.status !== 'pending',
 );
@@ -21,9 +27,9 @@ const readSoftwareBooks = softwareBooks.filter(
 
 // Category display names
 const categoryNames = {
-  software: 'Software & Tecnología',
-  growth: 'Desarrollo Personal',
-  literature: 'Novelas & Ficción',
+  software: 'Programación y tecnología',
+  growth: 'Desarrollo personal',
+  literature: 'Novelas y ficción',
 };
 
 // Filter pending books (regardless of category)
@@ -39,23 +45,26 @@ const categories = [
 ---
 
 <Layout
-  title='Books | baumannzone.dev'
-  description='Listado de libros que me han gustado sobre ingeniería de software, desarrollo personal y novelas.'
+  title={`${pageTitle} | Baumannzone`}
+  description={description}
+  ogImage={ogImage.toString()}
 >
-  <main
+  <div
     class='bmn-container mx-auto pt-16 pb-24'
     itemscope
     itemtype='https://schema.org/CollectionPage'
   >
+    <meta itemprop='inLanguage' content='es' />
     <header class='text-center mx-auto max-w-3xl'>
       <p class='text-base font-semibold leading-7 text-violet-600'>/books</p>
-      <h1 class='text-4xl font-semibold mb-8' itemprop='name'>Libros</h1>
+      <h1 class='text-4xl font-semibold mb-8 text-balance' itemprop='name'>{pageTitle}</h1>
       <p
         class='mt-6 mb-12 text-lg/8 text-gray-600 text-balance'
         itemprop='description'
       >
-        Listado de libros que he leído sobre tecnología, desarrollo y otras
-        novelas que me han gustado.
+        Mi biblioteca personal: libros de programación, tecnología, desarrollo
+        personal y novelas. Aquí reúno lo que he leído, lo que estoy leyendo y
+        los libros que tengo pendientes.
       </p>
     </header>
 
@@ -67,6 +76,9 @@ const categories = [
       itemscope
       itemtype='https://schema.org/ItemList'
     >
+      <meta itemprop='name' content='Libros leídos y en lectura' />
+      <meta itemprop='numberOfItems' content={readSoftwareBooks.length + readGrowthBooks.length + readLiteratureBooks.length} />
+      <meta itemprop='itemListOrder' content='https://schema.org/ItemListUnordered' />
       {/* Software & Tecnología */}
       {
         readSoftwareBooks.length > 0 && (
@@ -131,10 +143,18 @@ const categories = [
     <!-- Pending Books Section -->
     {
       pendingBooks.length > 0 && (
-        <section id='pending' class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'>
+        <section
+          id='pending'
+          class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'
+          itemprop='mainEntity'
+          itemscope
+          itemtype='https://schema.org/ItemList'
+        >
+          <meta itemprop='numberOfItems' content={pendingBooks.length} />
+          <meta itemprop='itemListOrder' content='https://schema.org/ItemListUnordered' />
           <div class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
-              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]' itemprop='name'>
                 <span class='font-mono text-violet-500/50'>/</span>
                 Pendientes de leer
               </h2>
@@ -149,7 +169,7 @@ const categories = [
         </section>
       )
     }
-  </main>
+  </div>
 </Layout>
 
 <style scoped>
