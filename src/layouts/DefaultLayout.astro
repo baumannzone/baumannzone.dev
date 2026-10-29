@@ -12,6 +12,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, ogImage } = Astro.pr
 <html lang="es">
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
+    <slot name="head" />
   </head>
   <body>
     <NavBar />

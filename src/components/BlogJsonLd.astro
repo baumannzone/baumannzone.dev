@@ -1,5 +1,6 @@
 ---
 import type { Tags } from '../types/tags';
+import { SITE_OWNER } from '../consts';
 
 interface Props {
   title: string;
@@ -20,10 +21,18 @@ const {
   slug, 
   ogImage,
   tags,
-  author = 'Jorge Baumann'
+  author = SITE_OWNER.name
 } = Astro.props;
 
-const url = `https://baumannzone.dev/blog/${slug}`;
+const homeUrl = new URL('/', Astro.site).href;
+const url = new URL(`/blog/${slug}`, homeUrl).href;
+const publisher = {
+  '@type': 'Person',
+  '@id': `${homeUrl}#person`,
+  name: SITE_OWNER.name,
+  url: homeUrl,
+  sameAs: Object.values(SITE_OWNER.profiles),
+};
 const publishedDate = pubDate.toISOString();
 const modifiedDate = updatedDate ? updatedDate.toISOString() : publishedDate;
 
@@ -38,25 +47,10 @@ const jsonLd = {
   dateModified: modifiedDate,
   inLanguage: 'es-ES',
   ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
-  author: {
-    '@type': 'Person',
-    name: author,
-    url: 'https://baumannzone.dev',
-    sameAs: [
-      'https://twitter.com/baumannzone',
-      'https://github.com/baumannzone',
-      'https://linkedin.com/in/baumannzone'
-    ]
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Baumannzone',
-    url: 'https://baumannzone.dev',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://baumannzone.dev/favicon.svg'
-    }
-  },
+  author: author === SITE_OWNER.name
+    ? publisher
+    : { '@type': 'Person', name: author },
+  publisher,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': url,
@@ -66,4 +60,4 @@ const jsonLd = {
 };
 ---
 
-<script type='application/ld+json' is:inline set:html={JSON.stringify(jsonLd)} />
+<script type='application/ld+json' is:inline set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
