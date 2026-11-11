@@ -28,6 +28,7 @@ const {
   author,
   ogImage,
   relatedPosts,
+  intro,
 } = Astro.props;
 
 // Dont show comments in dev mode
@@ -124,7 +125,11 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
         <AiSummaryLinks title={title} url={postUrl} />
       </div>
       <article
-        class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600 max-sm:prose-table:block max-sm:prose-table:overflow-x-auto'
+        class:list={[
+          'prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600 max-sm:prose-table:block max-sm:prose-table:overflow-x-auto',
+          intro &&
+            '[&>p:first-child]:border-l-[3px] [&>p:first-child]:border-violet-500 [&>p:first-child]:pl-5 [&>p:first-child]:text-xl/[1.65] [&>p:first-child]:text-gray-900 dark:[&>p:first-child]:text-gray-50',
+        ]}
         itemprop='articleBody'
       >
         <slot />
