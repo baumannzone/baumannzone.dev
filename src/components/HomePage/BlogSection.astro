@@ -2,8 +2,18 @@
 import ArticleCard from "../ArticleCard.astro";
 
 const { posts } = Astro.props;
-// Todos los post menos los 3 primeros
-const otherPosts = posts.slice(3);
+// Todos los post menos los 3 primeros.
+// Solo los campos que usa la tarjeta: define:vars serializa lo que reciba
+// dentro del HTML, y el post completo incluye el cuerpo entero del artículo.
+const otherPosts = posts.slice(3).map(({ id, data }) => ({
+  id,
+  data: {
+    title: data.title,
+    description: data.description,
+    pubDate: data.pubDate,
+    author: data.author,
+  },
+}));
 ---
 
 <div class="bg-white py-24 sm:py-32">
