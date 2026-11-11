@@ -94,7 +94,7 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
     </p>
 
     <a
-      href=${`/blog/${randomPost.id}`}
+      href=${`/blog/${randomPost.id}/`}
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
       itemprop="url"
     >
@@ -108,7 +108,7 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
     </a>
 
     <meta itemprop="datePublished" content=${pubDate.toISOString()} />
-    <meta itemprop="url" content=${new URL(`/blog/${randomPost.id}`, window.location.origin).toString()} />
+    <meta itemprop="url" content=${new URL(`/blog/${randomPost.id}/`, window.location.origin).toString()} />
     <meta itemprop="author" content=${randomPost.data.author} />
   </div>
 </article>

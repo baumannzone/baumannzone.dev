@@ -75,7 +75,7 @@ Los datos van en la misma línea. En [SWE-chat](https://arxiv.org/abs/2604.20779
 - Los commits hechos con vibe coding introducen **9 veces más vulnerabilidades** que los hechos solo por humanos.
 - Lo que más pide la gente al agente **no es generar código nuevo, sino entender el existente**.
 
-Esto conecta con algo que ya conté en [cómo dar mejor contexto a un agente de IA](/blog/como-dar-mejor-contexto-a-un-agente-de-ia-para-programar): el trabajo real con un agente no es escribir el prompt y esperar. Es **definir el entorno en el que piensa**, revisar lo que hace y saber cuándo se está equivocando. Eso es ingeniería. Y para hacerlo bien tienes que entender el código que estás supervisando.
+Esto conecta con algo que ya conté en [cómo dar mejor contexto a un agente de IA](/blog/como-dar-mejor-contexto-a-un-agente-de-ia-para-programar/): el trabajo real con un agente no es escribir el prompt y esperar. Es **definir el entorno en el que piensa**, revisar lo que hace y saber cuándo se está equivocando. Eso es ingeniería. Y para hacerlo bien tienes que entender el código que estás supervisando.
 
 La conclusión práctica para el debate del empleo es simple: **no puedes sacar software a producción contratando vibe coders en lugar de ingenieros**.
 

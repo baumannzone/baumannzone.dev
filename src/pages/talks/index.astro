@@ -76,7 +76,7 @@ Object.keys(talksByYear).forEach((year) => {
             <div class='grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch mb-2'>
               {talksByYear[year].map((talk) => (
                 <a
-                  href={`/talks/${talk.id}`}
+                  href={`/talks/${talk.id}/`}
                   class='block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
                   itemscope
                   itemtype={
@@ -223,7 +223,7 @@ Object.keys(talksByYear).forEach((year) => {
             >
             </a> -->
             <a
-              href='/talks/about'
+              href='/talks/about/'
               class='text-sm/6 font-semibold text-gray-900'
             >
               Saber más

@@ -39,7 +39,7 @@ Por ejemplo, si queremos enlazar a un artículo sobre la Game Boy con CSS puro y
 baumannzone.dev/blog/pure-css-gameboy#:~:text=Empezaremos%20con%20la%20estructura%20del%20documento%20HTML
 ```
 
-En este caso, el fragmento de texto resaltado es "_Empezaremos con la estructura del documento HTML_" (codificado). Si sigues [el enlace](https://www.baumannzone.dev/blog/pure-css-gameboy#:~:text=Empezaremos%20con%20la%20estructura%20del%20documento%20HTML), el navegador buscará ese texto en la página y lo resaltará. Así es como se ve en **Chrome**:
+En este caso, el fragmento de texto resaltado es "_Empezaremos con la estructura del documento HTML_" (codificado). Si sigues [el enlace](https://www.baumannzone.dev/blog/pure-css-gameboy/#:~:text=Empezaremos%20con%20la%20estructura%20del%20documento%20HTML), el navegador buscará ese texto en la página y lo resaltará. Así es como se ve en **Chrome**:
 
 ![Ejemplo text fragment](../../assets/blog/fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas/text.png)
 
@@ -53,7 +53,7 @@ baumannzone.dev/blog/pure-css-gameboy#:~:text=Empezaremos%20con%20la,los%20boton
 
 Aquí el fragmento resaltado va desde "_Empezaremos con la_" hasta "_los botones, etc._".
 
-Si sigues [este link](https://www.baumannzone.dev/blog/pure-css-gameboy#:~:text=Empezaremos%20con%20la,los%20botones%2C%20etc.), deberías ver algo como esto:
+Si sigues [este link](https://www.baumannzone.dev/blog/pure-css-gameboy/#:~:text=Empezaremos%20con%20la,los%20botones%2C%20etc.), deberías ver algo como esto:
 
 ![Ejemplo text fragment](../../assets/blog/fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas/range.png)
 
@@ -65,7 +65,7 @@ Si quieres resaltar múltiples fragmentos de texto, puedes hacerlo usando el amp
 baumannzone.dev/blog/pure-css-gameboy#:~:text=Puedes%20ver%20el%20c%C3%B3digo%20completo&text=Esto%20es%20todo%2c%20developers
 ```
 
-En este caso, se resaltarán dos fragmentos de texto: "_Puedes ver el código completo_" y "_Esto es todo, developers_". En [este enlace](https://www.baumannzone.dev/blog/pure-css-gameboy#:~:text=Puedes%20ver%20el%20c%C3%B3digo%20completo&text=Esto%20es%20todo%2c%20developers) se ve así:
+En este caso, se resaltarán dos fragmentos de texto: "_Puedes ver el código completo_" y "_Esto es todo, developers_". En [este enlace](https://www.baumannzone.dev/blog/pure-css-gameboy/#:~:text=Puedes%20ver%20el%20c%C3%B3digo%20completo&text=Esto%20es%20todo%2c%20developers) se ve así:
 
 ![Ejemplo de multiples text fragments](../../assets/blog/fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas/multiple.png)
 

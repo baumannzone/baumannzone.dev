@@ -21,7 +21,7 @@ Hola de nuevo, querido developer.
 
 Existen muchas y variadas razones por las que considero que los tests son útiles e importantes.
 
-No las vamos a mencionar ahora, pero si has leído este [artículo](/blog/about-testing) con anterioridad, ya sabrás lo importante que son los tests en el desarrollo de software en general.
+No las vamos a mencionar ahora, pero si has leído este [artículo](/blog/about-testing/) con anterioridad, ya sabrás lo importante que son los tests en el desarrollo de software en general.
 
 Recuerda, cuando hablemos de pruebas (o tests), nos estamos refiriendo a **pruebas automáticas**, entendiendo como tales el proceso de escribir código que compruebe que nuestra aplicación funciona correctamente.
 

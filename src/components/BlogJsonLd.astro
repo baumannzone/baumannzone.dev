@@ -25,7 +25,7 @@ const {
 } = Astro.props;
 
 const homeUrl = new URL('/', Astro.site).href;
-const url = new URL(`/blog/${slug}`, homeUrl).href;
+const url = new URL(`/blog/${slug}/`, homeUrl).href;
 const publisher = {
   '@type': 'Person',
   '@id': `${homeUrl}#person`,

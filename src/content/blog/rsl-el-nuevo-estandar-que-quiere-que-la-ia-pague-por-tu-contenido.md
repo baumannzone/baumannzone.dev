@@ -50,7 +50,7 @@ En un ecosistema donde Google y OpenAI ya han cerrado acuerdos millonarios con m
 Pues... no es tan simple:
 
 - **Base legal débil**. Poner condiciones en un `robots.txt` no tiene tanta fuerza legal si un bot decide ignorarlo.  
-(Si quieres saber más sobre robots.txt, [mira esta guía](/blog/controla-lo-que-los-motores-de-busqueda-rastrean-en-tu-web-guia-practica-de-robots-txt))
+(Si quieres saber más sobre robots.txt, [mira esta guía](/blog/controla-lo-que-los-motores-de-busqueda-rastrean-en-tu-web-guia-practica-de-robots-txt/))
 - **Adopción desigual**. Para que funcione, tanto los sitios como las empresas de IA tienen que aceptarlo.
 - **Riesgo de fragmentación**. Si algunos usan RSL y otros inventan sus propios estándares, la movida no funciona.
 
