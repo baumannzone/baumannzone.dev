@@ -1,7 +1,7 @@
 ---
 title: "Enlaces sms: el mailto: de los mensajes de texto"
 description: "El esquema de URL sms: abre la app de mensajes del móvil con el destinatario y el texto ya escritos. Cómo funciona según la RFC 5724 y qué cambia en iPhone."
-pubDate: 2026-10-17
+pubDate: 2026-11-10
 tags:
   - HTML
   - Web
@@ -12,9 +12,9 @@ relatedPosts:
   - "fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas"
 ---
 
-Pulsas un enlace en una web desde el móvil y se abre la aplicación de mensajes con el número del destinatario y el texto ya escritos, listos para darle a enviar. Sin pasar por WhatsApp, sin copiar el teléfono al portapapeles y sin una línea de JavaScript.
+Pulsas un enlace en una web desde el móvil y se abre la aplicación de mensajes con el número del destinatario y el texto ya escritos, listos para darle a enviar. Sin pasar por WhatsApp, sin copiar el teléfono al portapapeles y [sin una línea de JavaScript](/blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/).
 
-Eso es lo que hace el esquema de URL `sms:`, el equivalente a `mailto:` o `tel:` para mensajes de texto, estandarizado en la [RFC 5724](https://www.rfc-editor.org/rfc/rfc5724.html).
+Eso es lo que hace el [esquema de URL](/blog/http-http-http-es-una-url-valida/) `sms:`, el equivalente a `mailto:` o `tel:` para mensajes de texto, estandarizado en la [RFC 5724](https://www.rfc-editor.org/rfc/rfc5724.html).
 
 ## Cómo funciona
 
@@ -55,7 +55,7 @@ Si estás leyendo esto desde el móvil, puedes comprobar la diferencia entre los
 - [Formato estándar RFC 5724 (Android)](sms:+34600000001,+34600000002,+34600000003?body=Hola%20equipo!)
 - [Formato propietario de Apple (iPhone)](sms://open?addresses=+34600000001,+34600000002,+34600000003&body=Hola%20equipo!)
 
-El origen de esta incompatibilidad está en cómo implementó Apple el esquema en las primeras versiones de iPhone OS. En su [documentación archivada](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/SMSLinks/SMSLinks.html), Apple ni siquiera contempla el parámetro `body` ni varios destinatarios; cuando añadieron soporte más adelante en la app Mensajes, lo hicieron con su propia sintaxis interna y nunca actualizaron el documento.
+La documentación de Apple no ayuda a entender el porqué. Su [referencia archivada sobre enlaces SMS](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/SMSLinks/SMSLinks.html) solo describe el formato básico con un número de teléfono: no contempla el parámetro `body` ni varios destinatarios, y `sms://open?addresses=` no aparece en ella.
 
 Si solo necesitas un destinatario, el problema no te afecta: `sms:+34600000000?body=...` funciona igual en Android y en iOS.
 
@@ -80,6 +80,8 @@ function smsHref(numbers = [], body = "") {
 
 smsHref(["+34600000001", "+34600000002"], "¿Entrenamos a las 8?");
 ```
+
+Esta expresión regular solo detecta iPhone y iPod touch. Desde iPadOS 13, Safari en el iPad se identifica como `Macintosh`, igual que un Mac, así que ambos reciben el formato estándar aunque también abran la app Mensajes de Apple. Para distinguir un iPad de un Mac se suele combinar `Macintosh` con `navigator.maxTouchPoints > 1`.
 
 ## Cuándo resulta útil
 
