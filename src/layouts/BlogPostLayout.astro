@@ -124,7 +124,7 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
         <AiSummaryLinks title={title} url={postUrl} />
       </div>
       <article
-        class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600'
+        class='prose dark:prose-invert prose-lg mx-auto mb-12 prose-hr:border-gray-200 dark:prose-hr:border-gray-600 max-sm:prose-table:block max-sm:prose-table:overflow-x-auto'
         itemprop='articleBody'
       >
         <slot />
