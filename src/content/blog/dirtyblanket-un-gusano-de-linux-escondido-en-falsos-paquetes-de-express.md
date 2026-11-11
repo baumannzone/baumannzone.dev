@@ -1,7 +1,8 @@
 ---
 title: "DirtyBlanket: un gusano de Linux escondido en falsos paquetes de Express"
-description: "Nueve paquetes de npm que imitan a Express y React instalan una puerta trasera en Linux y se propagan solos por SSH, AUR y npm. Qué ha pasado, cómo funciona y cómo comprobar si te afecta."
+description: "Nueve paquetes de npm que imitan a Express y React instalan una puerta trasera en Linux y se propagan solos por SSH, AUR y npm. Cómo comprobar si te afecta."
 pubDate: 2026-10-09
+updatedDate: 2026-11-12
 tags: ["Node.js", "Tools"]
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=DirtyBlanket%3A%20un%20gusano%20de%20Linux%20escondido%20en%20falsos%20paquetes%20de%20Express&tags=Node.js,Tools"
 relatedPosts:
@@ -14,7 +15,7 @@ Eso es, resumido, lo que hace **DirtyBlanket**, una campaña descubierta por [Sa
 
 ## Qué ha pasado
 
-El 29 de septiembre de 2026, una cuenta de npm llamada `dirtyblanket` publicó nueve paquetes en 33 minutos. Ocho copian a Express y uno a React: mismo código, mismos metadatos y la misma versión que el paquete original. Lo único que cambia es una línea añadida en el `package.json`.
+El 29 de septiembre de 2026, una cuenta de npm llamada `dirtyblanket` publicó nueve paquetes en 33 minutos. Ocho copian a Express y uno a React: mismo código, mismos metadatos y la misma versión que el paquete original. Lo único que cambia es una línea añadida en el [`package.json`](/blog/entendiendo-package-json-una-guia-para-dummies/).
 
 | Paquete | Versión | Imita a |
 | --- | --- | --- |
@@ -29,6 +30,8 @@ El 29 de septiembre de 2026, una cuenta de npm llamada `dirtyblanket` publicó n
 | `react-nodejs` | 19.3.0 | React |
 
 Es typosquatting de manual: nombres que salen de un error de tecleo (`exptred`) o que suenan a paquete oficial (`express-nodejs`, `react-nodejs`).
+
+npm ya ha retirado los nueve paquetes del registro. Eso corta las instalaciones nuevas, pero no limpia las máquinas donde ya se ejecutaron.
 
 ## Cómo funciona
 
@@ -108,6 +111,7 @@ No basta con desinstalar el paquete. La recomendación de SafeDep es tratar la m
 Porque habrá siguiente.
 
 - **Desactiva los scripts de instalación por defecto.** Con `ignore-scripts=true` en tu `.npmrc`, los hooks como `preinstall` no se ejecutan. Algún paquete con binarios nativos se quejará, y ahí decides tú a cuál le das permiso.
+- **Si usas pnpm 10 o posterior, ya lo tienes.** Desde [esa versión](https://github.com/pnpm/pnpm/releases/tag/v10.0.0), pnpm no ejecuta los scripts de instalación de las dependencias salvo que se lo permitas de forma explícita.
 - **Pon passphrase a tus claves SSH.** Este gusano no puede usar las que la tienen.
 - **Hashea tu `known_hosts`** con `HashKnownHosts yes` en la configuración de SSH.
 - **Usa tokens de npm con el mínimo alcance posible** y activa 2FA para publicar.
