@@ -10,7 +10,9 @@ import { breadcrumbSchema, websiteId } from "../../utils/schema";
 const TIL = Tags.TIL;
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("blog");
+  const allPosts = (await getCollection("blog")).filter(
+    (post) => post.data.published !== false,
+  );
   const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))];
 
   return tags.map((tag) => ({

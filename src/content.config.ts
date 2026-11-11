@@ -17,6 +17,8 @@ const blog = defineCollection({
     type: z.enum(["blog", "css-art"]).default("blog"),
     ogImage: z.string().optional(),
     relatedPosts: z.array(z.string()).optional(),
+    // Styles the first paragraph of the post as a highlighted intro.
+    intro: z.boolean().default(false),
   }),
 });
 

@@ -59,7 +59,11 @@ const newest = (dates) =>
 const tagSlug = (tag) => tag.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 export function getSitemapMeta(root = process.cwd()) {
-  const posts = readCollection(join(root, "src/content/blog"), [".md", ".mdx"]);
+  // Drafts (published: false) are not built, so keep them out of the metadata.
+  const posts = readCollection(join(root, "src/content/blog"), [
+    ".md",
+    ".mdx",
+  ]).filter((post) => post.data.published !== "false");
   const talks = readCollection(join(root, "src/content/talks"), [".md"]);
 
   const lastmod = new Map();
@@ -79,9 +83,7 @@ export function getSitemapMeta(root = process.cwd()) {
     lastmod.set(`/talks/${talk.id}/`, talkDates[index]),
   );
 
-  const published = posts
-    .filter((post) => post.data.published !== "false")
-    .map((post) => lastmod.get(`/blog/${post.id}/`));
+  const published = posts.map((post) => lastmod.get(`/blog/${post.id}/`));
   lastmod.set("/", newest(published));
   lastmod.set("/blog/", newest(published));
   lastmod.set("/tags/", newest(published));

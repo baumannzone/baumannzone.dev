@@ -2,11 +2,15 @@
 title: Cómo obtener la URL actual con JavaScript (y sacarle provecho)
 description: Aprende a usar window.location para leer, descomponer y manipular URLs en el navegador sin dependencias externas.
 pubDate: 2025-03-25
+updatedDate: 2026-11-11
 tags: [JavaScript]
 type: blog
 author: Jorge Baumann
+intro: true
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20obtener%20la%20URL%20actual%20con%20JavaScript%20(y%20sacarle%20provecho)&tags=JavaScript"
 ---
+
+Para obtener la URL actual con JavaScript, usa `window.location.href`: devuelve la URL completa de la página como texto. El mismo objeto, `window.location`, te da además cada parte por separado (dominio, ruta, parámetros y fragmento).
 
 Cuando estás construyendo una app frontend, ya sea con React, Vue, o vanilla JS, es bastante común necesitar acceder a la URL actual. Quizás para:
 
@@ -43,10 +47,22 @@ const {
   pathname,   // "/blog/post"
   port,       // "8080"
   protocol,   // "https:"
-  search      // "?tag=js"
+  search,     // "?tag=js"
   hash,       // "#comments"
 } = window.location;
 ```
+
+| Propiedad  | Valor en el ejemplo                                        | Qué contiene                    |
+| ---------- | ---------------------------------------------------------- | ------------------------------- |
+| `href`     | `https://www.baumannzone.dev:8080/blog/post?tag=js#comments` | La URL completa                 |
+| `protocol` | `https:`                                                   | El esquema, con los dos puntos  |
+| `host`     | `www.baumannzone.dev:8080`                                 | Dominio y puerto                |
+| `hostname` | `www.baumannzone.dev`                                      | Solo el dominio                 |
+| `port`     | `8080`                                                     | El puerto, como texto           |
+| `origin`   | `https://www.baumannzone.dev:8080`                         | Protocolo, dominio y puerto     |
+| `pathname` | `/blog/post`                                               | La ruta                         |
+| `search`   | `?tag=js`                                                  | La query string, con el `?`     |
+| `hash`     | `#comments`                                                | El fragmento, con el `#`        |
 
 ⚠️ **Ojo**: `host` incluye el puerto, `hostname` no. ¡Detalles como este pueden causar bugs!
 
@@ -116,7 +132,7 @@ url.pathname = "/patrocinio";
 url.searchParams.set("from", "blog");
 
 console.log(url.toString());
-// => https://www.baumannzone.dev/patrocinio?from=blog
+// => https://www.baumannzone.dev:8080/patrocinio?tag=js&from=blog#comments
 ```
 
 ### Extra para frameworks modernos:
@@ -136,6 +152,11 @@ console.log(url.toString());
 - Generar URLs desde cero
 
 Sin dependencias, sin magia. Solo JavaScript.
+
+## Fuentes
+
+- [`Location`](https://developer.mozilla.org/es/docs/Web/API/Location), [`URLSearchParams`](https://developer.mozilla.org/es/docs/Web/API/URLSearchParams) y [`URL`](https://developer.mozilla.org/es/docs/Web/API/URL), en MDN.
+- [The `Location` interface](https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-location-interface), la definición en el estándar HTML.
 
 ---
 

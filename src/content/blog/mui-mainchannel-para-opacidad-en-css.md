@@ -1,7 +1,8 @@
 ---
 title: "main vs mainChannel en MUI: mismo color, distinto formato"
-description: "Al revisar código generado por IA en un proyecto React con MUI, descubrí por qué main y mainChannel usan formatos distintos."
+description: "Al revisar código generado por IA en un proyecto React con MUI, descubrí por qué main y mainChannel usan formatos distintos y cuándo usar cada uno."
 pubDate: 2026-10-02
+updatedDate: 2026-11-12
 tags:
   - CSS
   - TIL
@@ -13,7 +14,7 @@ relatedPosts:
   - "personaliza-como-se-ven-los-objetos-en-las-devtools"
 ---
 
-Estaba trabajando en un proyecto de React con Material UI (MUI) y, como siempre, revisé el código que me había generado la IA. Ahí me encontré con estas dos líneas:
+Estaba trabajando en un proyecto de React con Material UI (MUI) y, como siempre, [revisé el código que me había generado la IA](/blog/la-ia-y-el-empleo-de-los-ingenieros-de-software-que-dicen-los-datos/). Ahí me encontré con estas dos líneas:
 
 ```css
 border-top: 2px solid var(--mui-palette-error-main);
@@ -72,6 +73,16 @@ Como `main` y `mainChannel` nacen del mismo color del tema, permanecen sincroniz
 No necesitas repetir el hexadecimal ni calcular la transparencia con JavaScript. El tema proporciona los canales y el navegador compone el resultado.
 
 > **Nota:** con `cssVariables: { nativeColor: true }`, MUI advierte que `*Channel` puede dejar de contener canales numéricos. En ese modo, recomienda usar `theme.alpha()` sobre el color completo.
+
+## ¿Y con `main` no se puede?
+
+Sí, pero no metiéndolo tal cual dentro de `rgb()`. CSS tiene [colores relativos](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors): partes de un color completo con `from` y te quedas con sus canales.
+
+```css
+background-color: rgb(from var(--mui-palette-error-main) r g b / 0.2);
+```
+
+Funciona en los navegadores actuales y no depende de los tokens `Channel`. Aun así, en un tema de MUI sin `nativeColor`, `mainChannel` es el camino que documenta la librería.
 
 ## Lo que me llevo
 

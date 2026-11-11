@@ -2,12 +2,15 @@
 title: "El bloque finally en JavaScript no es lo que parece"
 description: "¿Realmente sabes qué hace el bloque finally en un try catch? Descubre cómo funciona el bloque finally en JavaScript y por qué puede ser que lo estés usando mal."
 pubDate: 2024-10-13
-updatedDate: 2024-10-14
+updatedDate: 2026-11-11
 tags: ["JavaScript", "TIL"]
 author: "Jorge Baumann"
+intro: true
 type: "blog"
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=El%20bloque%20finally%20en%20JavaScript%20no%20es%20lo%20que%20parece&tags=JavaScript,TIL"
 ---
+
+En JavaScript, un `return` dentro de un bloque `finally` sustituye a cualquier `return` o error de los bloques `try` y `catch`: la función devuelve el valor de `finally` y la excepción se pierde sin avisar.
 
 Cuando pensamos en manejo de errores en JavaScript, lo primero que se nos viene a la cabeza es el clásico `try/catch`. Pero hay un tercer componente en este duo que pasamos por alto: el bloque `finally`.
 
@@ -41,7 +44,7 @@ function ejemplo1() {
 // => 'Segundo'
 ```
 
-Se supone que el código debería devolver 'Primero', ya que esa es la instrucción dentro del bloque `try`. Sin embargo, el bloque `finally` toma el control y devuelve 'Segundo'. Esto ocurre porque JavaScript permite que el valor de retorno de `finally` sobrescriba cualquier otro retorno previo.
+Se supone que el código debería devolver 'Primero', ya que esa es la instrucción dentro del bloque `try`. Sin embargo, el bloque `finally` toma el control y devuelve 'Segundo'. Esto ocurre porque JavaScript permite que el valor de retorno de `finally` sobrescriba cualquier otro retorno previo. MDN lo documenta en el apartado sobre retornar desde un bloque `finally` de [`try...catch`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch).
 
 ## ¿Qué pasa con los errores?
 
@@ -106,4 +109,12 @@ En este ejemplo, aunque estamos lanzando un segundo error dentro del bloque `cat
 
 El bloque `finally` en JavaScript es útil para asegurarse de que ciertos pasos se ejecuten, pero también tiene el poder de modificar el flujo de la función, ignorar errores y sobrescribir valores de retorno. Este comportamiento puede ser peligroso si no se utiliza correctamente, ya que podríamos perder información importante.
 
+Si usas ESLint, la regla [`no-unsafe-finally`](https://eslint.org/docs/latest/rules/no-unsafe-finally) detecta justo esto: un `return`, `throw`, `break` o `continue` dentro de `finally`.
+
 Bueno saberlo, ¿no crees?
+
+## Fuentes
+
+- [`try...catch`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch), en MDN.
+- [The `try` Statement](https://tc39.es/ecma262/#sec-try-statement), la sección de la especificación de ECMAScript que define cómo se evalúa `finally`.
+- [`no-unsafe-finally`](https://eslint.org/docs/latest/rules/no-unsafe-finally), la regla de ESLint.
