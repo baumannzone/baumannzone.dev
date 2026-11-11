@@ -1,7 +1,7 @@
 ---
 title: "http://http://http://@http://http://?http://#http:// es una URL válida"
 description: "Una URL formada por siete http:// seguidos que el navegador acepta como válida. Cómo la descompone new URL() y por qué no todos los parsers coinciden."
-pubDate: 2026-10-17
+pubDate: 2026-11-11
 tags:
   - JavaScript
   - Web
@@ -22,12 +22,14 @@ Parece una cadena rota por un error de concatenación, pero es **una URL complet
 
 ## Cómo la lee el navegador
 
-Si la pasas por la API estándar de JavaScript en el navegador o en Node.js, puedes ver qué papel juega cada bloque:
+Si la pasas por [`new URL()`](/blog/como-obtener-la-url-actual-con-javascript-y-sacarle-provecho/), la API estándar de JavaScript en el navegador y en Node.js, puedes ver qué papel juega cada bloque:
 
 ```js
-const url = new URL("http://http://http://@http://http://?http://#http://");
+const input = "http://http://http://@http://http://?http://#http://";
 
-URL.canParse(url.href); // true
+URL.canParse(input); // true
+
+const url = new URL(input);
 ```
 
 El objeto resultante descompone la cadena así:
@@ -45,15 +47,15 @@ El objeto resultante descompone la cadena así:
 }
 ```
 
-Cada uno de los siete `http://` cae en una parte distinta de la gramática:
+Los siete `http://` se reparten entre los cinco componentes de la URL, y tres de ellos acaban dentro de la ruta:
 
 | Fragmento | Componente | Por qué es válido |
 | --- | --- | --- |
-| `http:` | Protocolo (`scheme`) | Define el esquema de la URL |
+| `http:` | Protocolo (`scheme`) | Define el esquema de la URL, igual que `mailto:` o [`sms:`](/blog/enlaces-sms-el-mailto-de-los-mensajes-de-texto/) |
 | `//http:` | Autoridad (`host` + puerto vacío) | El host se llama `http`; los dos puntos sin número detrás indican el puerto por defecto (`80`) |
 | `//http://@http://http://` | Ruta (`pathname`) | Dentro del path se permiten varias barras seguidas, dos puntos y el carácter `@` |
 | `?http://` | Query string (`search`) | El primer `?` abre la consulta; tanto `:` como `/` son caracteres válidos ahí |
-| `#http://` | Fragmento (`hash`) | Todo lo que va tras `#` pertenece al fragmento |
+| `#http://` | Fragmento (`hash`) | Todo lo que va tras `#` pertenece al fragmento, la misma parte que aprovechan los [fragmentos de texto](/blog/fragmentos-de-texto-en-urls-navegacion-exacta-sin-anclas/) |
 
 La clave está en la primera `/` que aparece después del segundo `http:`. Según las reglas de parsing, la autoridad (donde viven el usuario, la contraseña, el host y el puerto) termina en cuanto aparece una `/`, un `?` o un `#`. Como la `@` aparece **después** de esa barra, ya no actúa como separador de credenciales: es un carácter más dentro del path.
 
@@ -75,7 +77,7 @@ https://https://https://@https://https://?https://#https://
 
 ## Qué cambia entre un parser y otro
 
-Cuando Daniel Stenberg publicó esta URL en septiembre de 2022, ni siquiera su propia herramienta la leía igual que el navegador. En aquel momento, `curl` (hasta la versión 7.85.0) la descomponía de otra forma:
+Que sea válida no significa que todos los parsers la lean igual. Hace 4 años, `curl` la descomponía de una forma muy distinta a la del navegador:
 
 | Fragmento | Navegador / WHATWG | `curl` (en 2022) |
 | --- | --- | --- |
@@ -88,7 +90,7 @@ Cuando Daniel Stenberg publicó esta URL en septiembre de 2022, ni siquiera su p
 
 El motivo era que el parser de `curl` buscaba la `@` para separar usuario y contraseña antes de comprobar si había aparecido una `/` que cerrara la autoridad. Para `curl`, todo lo que había entre el primer `http://` y la `@` eran credenciales, aun teniendo barras de por medio, algo que la [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) no permite sin codificar (`%2F`).
 
-Tras documentar el caso, el propio Stenberg ajustó el parser de `curl`. Si haces la prueba hoy con una versión actual (`curl 8.x`) usando `-w` para inspeccionar cómo trocea la URL, verás que ya coincide con el navegador:
+Las versiones actuales de `curl` ya no la leen así. Si haces la prueba con una reciente (aquí, `curl 8.7.1`) usando `-w` para inspeccionar cómo trocea la URL, verás que coincide con el navegador:
 
 ```bash
 curl -w "user: %{url.user}\nhost: %{url.host}\npath: %{url.path}\nquery: %{url.query}\n" \
