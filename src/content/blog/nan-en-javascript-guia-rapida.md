@@ -2,13 +2,17 @@
 title: "NaN en JavaScript: guía rápida para desarrolladores"
 description: ¿Qué es NaN en JavaScript? En esta cheatsheet te explico todo lo que necesitas saber sobre NaN en JavaScript y cómo se generan los valores NaN en JavaScript.
 pubDate: 2024-08-20
+updatedDate: 2026-11-11
 type: blog
 author: Jorge Baumann
+intro: true
 tags: ["JavaScript", "Cheatsheet"]
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=NaN%20en%20JavaScript%3A%20gu%C3%ADa%20r%C3%A1pida%20para%20desarrolladores&tags=JavaScript,Cheatsheet"
 ---
 
-Una chuleta (_cheatsheet_) sobre `NaN` (_Not a Number_) en JavaScript.
+`NaN` (_Not a Number_) es el valor que JavaScript devuelve cuando una operación numérica no puede producir un número válido, como `0 / 0` o `Number("WTF")`. Es de tipo `number` y es el único valor que no es igual a sí mismo, así que para detectarlo se usa `Number.isNaN()` y no `===`.
+
+Esta es una chuleta (_cheatsheet_) con todo lo que hay que saber sobre NaN en JavaScript.
 
 ## Propiedades y funciones
 
@@ -34,6 +38,21 @@ JavaScript tiene la propiedad global `NaN` y dos funciones para verificar valore
 - Sin convertir el valor a un número, verifica si el valor es `NaN`
 - Devuelve `true` si el valor es `NaN`
 - Devuelve `false` para el resto de los valores
+
+### `isNaN()` frente a `Number.isNaN()`
+
+La diferencia está en la conversión previa: [`isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/isNaN) convierte el valor a número antes de comprobarlo y [`Number.isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN) no.
+
+| Valor       | `isNaN()` | `Number.isNaN()` |
+| ----------- | --------- | ---------------- |
+| `NaN`       | `true`         | `true`                |
+| `"Baumann"` | `true`         | `false`               |
+| `undefined` | `true`         | `false`               |
+| `{}`        | `true`         | `false`               |
+| `"36"`      | `false`        | `false`               |
+| `36`        | `false`        | `false`               |
+| `""`        | `false`        | `false`               |
+| `null`      | `false`        | `false`               |
 
 ## Generando NaN
 
@@ -123,3 +142,8 @@ Hace algunos años, Siri respondía con esta brillante respuesta:
 > Imaginas que tienes 0 galletas y las repartes entre 0 amigos. ¿Cuántas galletas le tocan a cada amigo? No tiene sentido, ¿lo ves? <br/><br/> Así que el monstruo de las galletas está triste porqué no tiene galletas y tu estás triste porque no tienes amigos.
 
 </details>
+
+## Fuentes
+
+- [`NaN`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/NaN), [`isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/isNaN) y [`Number.isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN), en MDN.
+- [`isNaN ( number )`](https://tc39.es/ecma262/#sec-isnan-number) y [`Number.isNaN ( number )`](https://tc39.es/ecma262/#sec-number.isnan), las definiciones de la especificación de ECMAScript.
