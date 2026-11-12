@@ -41,7 +41,7 @@ JavaScript tiene la propiedad global `NaN` y dos funciones para verificar valore
 
 ### `isNaN()` frente a `Number.isNaN()`
 
-La diferencia está en la conversión previa: [`isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/isNaN) convierte el valor a número antes de comprobarlo y [`Number.isNaN()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN) no.
+La diferencia está en la conversión previa: `isNaN()` convierte el valor a número antes de comprobarlo y `Number.isNaN()` no.
 
 | Valor       | `isNaN()` | `Number.isNaN()` |
 | ----------- | --------- | ---------------- |

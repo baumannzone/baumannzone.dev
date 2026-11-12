@@ -40,7 +40,7 @@ Desde mi punto de vista, el operador de nullish coalescing es más útil que el 
 
 Se diferencia del operador lógico _OR_ `||` en que los resultados _falsy_ son ignorados, excepto los recién mencionados valores `null` y `undefined`.
 
-Los valores [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) son:
+Los valores _falsy_ son:
 
 - `0`, `-0`
 - `''`, `""` (cualquier cadena vacía)

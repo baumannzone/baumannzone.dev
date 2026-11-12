@@ -109,7 +109,7 @@ En este ejemplo, aunque estamos lanzando un segundo error dentro del bloque `cat
 
 El bloque `finally` en JavaScript es útil para asegurarse de que ciertos pasos se ejecuten, pero también tiene el poder de modificar el flujo de la función, ignorar errores y sobrescribir valores de retorno. Este comportamiento puede ser peligroso si no se utiliza correctamente, ya que podríamos perder información importante.
 
-Si usas ESLint, la regla [`no-unsafe-finally`](https://eslint.org/docs/latest/rules/no-unsafe-finally) detecta justo esto: un `return`, `throw`, `break` o `continue` dentro de `finally`.
+Si usas ESLint, la regla `no-unsafe-finally` detecta justo esto: un `return`, `throw`, `break` o `continue` dentro de `finally`.
 
 Bueno saberlo, ¿no crees?
 

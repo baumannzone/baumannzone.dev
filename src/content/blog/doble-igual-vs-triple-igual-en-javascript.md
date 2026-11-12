@@ -126,7 +126,7 @@ Los mismos ejemplos con los dos operadores:
 | `"0"` y `false`      | `true`   | `false`   |
 | `[1]` y `true`       | `true`   | `false`   |
 
-Las reglas exactas de esa conversión están en el algoritmo [IsLooselyEqual](https://tc39.es/ecma262/#sec-islooselyequal) de la especificación de ECMAScript.
+Las reglas exactas de esa conversión están en el algoritmo `IsLooselyEqual` de la especificación de ECMAScript.
 
 Aquí tienes la misma tabla de igualdad que vimos antes, pero ahora bajo el operador de igualdad (`==`):
 
