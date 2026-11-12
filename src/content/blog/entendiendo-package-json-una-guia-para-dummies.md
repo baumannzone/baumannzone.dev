@@ -4,6 +4,7 @@ description: "Este artículo te guía a través de los conceptos fundamentales d
 pubDate: "2024-09-23"
 updatedDate: 2026-11-12
 author: "Jorge Baumann"
+intro: true
 type: "blog"
 tags:
   - JavaScript
@@ -14,7 +15,7 @@ ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Entendiendo%20packa
 
 El `package.json` es el archivo JSON que hay en la raíz de cualquier proyecto de JavaScript o Node.js y que describe ese proyecto: cómo se llama, qué versión es, qué dependencias necesita y qué comandos (_scripts_) se pueden ejecutar. Lo leen npm, pnpm, Yarn y Bun para saber qué instalar, y el propio Node.js para saber cómo cargar tu código.
 
-Piensa en `package.json` como el corazón de tu proyecto. Es donde guardas toda la info importante: qué hace tu proyecto, qué versión es, qué librerías necesita para funcionar... básicamente, es el manual de instrucciones de tu aplicación.
+En el ecosistema de JavaScript y Node.js, el archivo `package.json` juega un papel fundamental. Piensa en él como el corazón de tu proyecto. Es donde guardas toda la info importante: qué hace tu proyecto, qué versión es, qué librerías necesita para funcionar... básicamente, es el manual de instrucciones de tu aplicación.
 
 ## Inicializar un proyecto
 

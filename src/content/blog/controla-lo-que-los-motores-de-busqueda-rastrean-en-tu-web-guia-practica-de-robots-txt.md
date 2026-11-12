@@ -5,6 +5,7 @@ pubDate: 2024-10-22
 updatedDate: 2026-11-12
 type: blog
 author: Jorge Baumann
+intro: true
 tags:
   - SEO
   - Web
@@ -15,7 +16,7 @@ ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Controla%20lo%20que
 
 El `robots.txt` es un archivo de texto que se coloca en la raíz de un sitio web para decirles a los rastreadores (los de Google, Bing o los de las IA) qué URLs pueden visitar y cuáles no. Controla el rastreo, no la indexación: una página bloqueada en `robots.txt` puede seguir apareciendo en Google si otras webs la enlazan. Para sacarla de los resultados hace falta `noindex`.
 
-Es ese archivo que quizá no terminas de entender pero que puede hacer tu sitio más visible (o completamente invisible). Hoy vas a aprender a usarlo _like a boss_.
+Vamos al grano: si tienes un sitio web, seguro que te interesa aparecer en Google. Pero ¿y si te digo que puedes decidir qué páginas pueden visitar los motores de búsqueda y cuáles no? Sí, estoy hablando del `robots.txt`, ese archivo que quizá no terminas de entender pero que puede hacer tu sitio más visible (o completamente invisible) y te ayuda a controlar qué contenido rastrean los buscadores y los bots de IA. Hoy vas a aprender a usarlo _like a boss_.
 
 ## ¿Qué es el archivo robots.txt?
 
@@ -363,5 +364,3 @@ Si tienes preguntas o necesitas ayuda para configurar tu archivo robots.txt, no 
 - [Rastreadores habituales de Google](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers?hl=es), donde se explica `Google-Extended`.
 - [Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots), la documentación de OpenAI sobre `GPTBot`, `OAI-SearchBot` y `ChatGPT-User` (en inglés).
 - [Does Anthropic crawl data from the web?](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler), la documentación de Anthropic sobre sus tres bots (en inglés).
-- [Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers), la documentación de Perplexity (en inglés).
-- [Acerca de Applebot](https://support.apple.com/es-es/119829), en el soporte técnico de Apple.
