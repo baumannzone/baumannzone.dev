@@ -104,7 +104,7 @@ Los paréntesis `()` juegan un papel importante en el patrón IIFE. En JavaScrip
 (alert('baumannzone.dev'));
 ```
 
-![IIFE](../../assets/blog/que-son-las-iife-en-javascript-y-como-funcionan/1.png)
+![Consola de Chrome: (const sum = 2 + 2) lanza SyntaxError y (2 + 2) devuelve 4](../../assets/blog/que-son-las-iife-en-javascript-y-como-funcionan/1.png)
 
 Una IIFE se compone de dos partes:
 

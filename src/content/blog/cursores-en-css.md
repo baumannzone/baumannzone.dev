@@ -23,7 +23,7 @@ Sin embargo, podrías hacer que el cursor se convierta en una mano cuando pasas 
 
 En [este sitio web](https://baumannzone.github.io/cursores-css/) tienes una guía de referencia completa y puedes ver todos los cursores disponibles que hay en CSS.
 
-[![Cursores en CSS por Baumannzone](https://raw.githubusercontent.com/baumannzone/cursores-css/main/img/og.png)](https://baumannzone.github.io/cursores-css/)
+[<img src="https://raw.githubusercontent.com/baumannzone/cursores-css/main/img/og.png" alt="Cursores en CSS por Baumannzone" width="1600" height="900" loading="lazy" decoding="async" />](https://baumannzone.github.io/cursores-css/)
 
 ## Por diversión 🤡
 

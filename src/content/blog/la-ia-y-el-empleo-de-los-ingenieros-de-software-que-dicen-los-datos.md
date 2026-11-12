@@ -51,7 +51,7 @@ Y todo eso apoyado en una cuarta cosa que atraviesa las tres: entender profundam
 
 La IA ha comprimido brutalmente la capa del medio. Pero las otras dos siguen ahí, casi intactas.
 
-![Dos sándwiches comparan el desarrollo antes y con IA: la capa de ejecutar se reduce, mientras que decidir y entregar mantienen su tamaño.](../../assets/blog/la-ia-y-el-empleo-de-los-ingenieros-de-software-que-dicen-los-datos/sandwich-antes-con-ia.png)
+![Dos sándwiches comparan el desarrollo antes y con IA: ejecutar se reduce; decidir y entregar mantienen su tamaño](../../assets/blog/la-ia-y-el-empleo-de-los-ingenieros-de-software-que-dicen-los-datos/sandwich-antes-con-ia.png)
 
 Hay un dato que lo demuestra de forma bastante clara: [un estudio con más de 100.000 desarrolladores en GitHub](https://cepr.org/voxeu/columns/writing-code-versus-shipping-code-productivity-effects-across-generations-ai-coding) encontró que, sumando autocompletado, agentes interactivos y agentes autónomos, los commits subieron un **180 %** pero las releases solo un **30 %**. Casi el triple de commits, un 30 % más de software entregado. La [revisión del paper](https://www.nber.org/papers/w35275) de septiembre de 2026, ya con más de 500.000 desarrolladores, sube los commits al 240 % y deja las releases en el mismo 30 %. Ahí tienes el sándwich: el medio se ha aplastado, pero el pan de arriba y el de abajo siguen siendo humanos.
 

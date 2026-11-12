@@ -14,7 +14,7 @@ Usar Git desde la terminal es algo que deberías dominar si quieres progresar co
 
 ## ¿Qué es Git Tower?
 
-[![Git Tower](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/logo.png)](https://www.git-tower.com/?via=baumannzone)
+[![Logo de Git Tower](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/logo.png)](https://www.git-tower.com/?via=baumannzone)
 
 Git Tower no es simplemente otro cliente Git con interfaz gráfica. Se trata de una herramienta profesional que revoluciona la manera de trabajar con Git. Llevo años utilizándolo y, gracias a esta experiencia, puedo afirmar que ha transformado mi flujo de trabajo y, sobre todo, mi comprensión de Git.
 
@@ -75,7 +75,7 @@ Una vez que ejecutes ese comando, entrarás en el **modo interactivo** y Git te 
 - `e` para editar manualmente qué líneas se incluyen
 - y más opciones que puedes ver en la ayuda (`?`)
 
-[![Git Tower](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/git-add.png)](https://www.git-tower.com/?via=baumannzone)
+[![Modo interactivo de git add -p con sus subcomandos y significados](../../assets/blog/git-tower-el-gui-de-git-mas-potente-para-macos-y-windows/git-add.png)](https://www.git-tower.com/?via=baumannzone)
 
 En la imagen se puede ver la accion que puedes realizar (`Stage this hunk`) y el listado de subcomandos disponibles para cada hunk: `[y, n, q, a, d, s, e, ?]`.
 

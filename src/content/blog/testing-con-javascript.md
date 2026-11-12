@@ -258,7 +258,7 @@ console.log("¡Test3 OK! 👌");
 Vamos a repetir el procedimiento que hicimos anteriormente. Rompemos la función `suma` cambiando el `+` por el `-` y ejecutamos el test 3 con el siguiente comando `node test-3.js`.
 Si todo va bien, deberíamos seguir viendo que el test nos alerta de que algo anda mal.
 
-![error-3](../../assets/blog/testing-con-javascript/test-3-error.png)
+![Error en la terminal al ejecutar el test 3 con la función suma rota](../../assets/blog/testing-con-javascript/test-3-error.png)
 
 ¡Fantástico! Podemos añadir algunas aserciones más (como por ejemplo `seaMayorQue` o `seaMenorQue`, etc).
 Las puedes ver en el fichero [funcionesTesting.js](https://github.com/baumannzone/javascript-testing/blob/master/funcionesTesting.js) del repositorio, en GitHub.
@@ -310,7 +310,7 @@ Hemos logrado aislar el código de nuestras pruebas y, además, tenemos mensajes
 
 Ejecutemos el test `test-4.js` y veamos cómo queda.
 
-![test 4](../../assets/blog/testing-con-javascript/test-4.png)
+![Resultado en la terminal al ejecutar test-4.js](../../assets/blog/testing-con-javascript/test-4.png)
 
 Tenemos un [listado](../../assets/blog/testing-con-javascript/test-4.mp4) de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.
 

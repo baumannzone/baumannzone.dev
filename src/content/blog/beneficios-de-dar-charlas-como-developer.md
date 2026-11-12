@@ -16,7 +16,7 @@ La evidencia científica lo demuestra una y otra vez: cuando alguien del mundo t
 
 Hablar en público no es un detalle menor: es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
 
-![En un escenario de conferencia, aparece Jorge Baumann con un traje colorido estampado de Super Mario sonriendo mientras va a caballito sobre otra persona (su padre) que lleva una máscara de caballo. Detrás se ven luces verticales azules y un atril con un portátil con pegatinas.](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
+![Jorge Baumann con un traje de Super Mario, a caballito sobre su padre con máscara de caballo, en una conferencia](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
 > Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
 
 
@@ -128,7 +128,7 @@ En mi caso, suelo preparar una app de votos o encuestas rápidas para que la gen
 
 Si quieres saber más sobre oratoria, revisa el siguiente video de _Vinh Giang_ (me encanta este tío):
 
-[![youtube](https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg)](https://www.youtube.com/watch?v=PiNN-HmHu7A)
+[<img src="https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg" alt="Vídeo de Vinh Giang sobre oratoria en YouTube" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=PiNN-HmHu7A)
 
 ## Networking
 
@@ -150,6 +150,6 @@ Si estás empezando, no busques perfección: elige un tema que te guste, prepara
 
 Si quieres cerrar este artículo con una idea práctica y aplicable desde hoy, este video merece muchísimo la pena:
 
-[![Video recomendado sobre oratoria](https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg)](https://www.youtube.com/watch?v=962eYqe--Yc)
+[<img src="https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg" alt="Vídeo recomendado sobre oratoria en YouTube" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=962eYqe--Yc)
 
 Si tienes algún recurso que te haya ayudado con la oratoria, compártelo en los comentarios.

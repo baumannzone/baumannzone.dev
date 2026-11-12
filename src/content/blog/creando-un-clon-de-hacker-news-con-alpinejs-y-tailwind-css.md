@@ -32,7 +32,7 @@ Su principal ventaja es que es muy fácil de aprender y de utilizar. Su sintaxis
 
 🔗 https://alpinejs.dev/
 
-![Alpine.js](../../assets/blog/creando-un-clon-de-hacker-news-con-alpinejs-y-tailwind-css/alpine.png)
+![Página de inicio de Alpine.js en el navegador](../../assets/blog/creando-un-clon-de-hacker-news-con-alpinejs-y-tailwind-css/alpine.png)
 
 ## Tailwind CSS
 

@@ -77,7 +77,7 @@ Aquí tienes algunos ejemplos de dibujos con CSS que he hecho a lo largo de los 
   ![Pure CSS Baby Yoda](../../assets/blog/dibujar-con-css/baby-yoda.png)
 
 - Pure CSS Baby Groot: https://www.instagram.com/p/CMMFY6rI7XB/
-  ![Pure CSS Baby Root](../../assets/blog/dibujar-con-css/baby-groot.gif)
+  ![Pure CSS Baby Groot](../../assets/blog/dibujar-con-css/baby-groot.gif)
 
 - Pure CSS Deadpool: https://www.instagram.com/p/CMvH7xsqubq/
   ![Pure CSS Deadpool](../../assets/blog/dibujar-con-css/deadpool.png)

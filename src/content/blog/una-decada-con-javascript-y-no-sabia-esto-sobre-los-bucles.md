@@ -15,7 +15,7 @@ En JavaScript puedes salir de dos bucles anidados a la vez poniéndole una etiqu
 
 ## TL;DR
 
-![Un bloque de código con la etiqueta dramaBlock: la sentencia break dramaBlock sale del bloque y la línea siguiente no se ejecuta](../../assets/blog/una-decada-con-javascript-y-no-sabia-esto-sobre-los-bucles/code.png)
+![Bloque de código con la etiqueta dramaBlock: break dramaBlock sale del bloque y la línea siguiente no se ejecuta](../../assets/blog/una-decada-con-javascript-y-no-sabia-esto-sobre-los-bucles/code.png)
 
 Su principal función es proporcionar un punto de referencia para las instrucciones `break` y `continue`, permitiendo un control más preciso sobre el flujo de ejecución en estructuras anidadas.
 
