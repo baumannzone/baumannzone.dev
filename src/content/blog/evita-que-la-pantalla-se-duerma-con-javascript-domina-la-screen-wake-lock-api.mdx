@@ -2,6 +2,7 @@
 title: "Evita que la pantalla se duerma con JavaScript: domina la Screen Wake Lock API"
 description: "JavaScript te permite mantener la pantalla despierta con la Screen Wake Lock API. Descubre cómo funciona y cómo puedes usarla en tus aplicaciones web. Mejora la UX con este sencillo truco."
 pubDate: 2024-10-20
+updatedDate: 2026-11-12
 type: blog
 author: Jorge Baumann
 tags:
@@ -13,6 +14,8 @@ ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Evita%20que%20la%20
 ---
 
 import Demo1 from "../../components/demos-blog/evita-que-la-pantalla-se-duerma-con-javascript-domina-la-screen-wake-lock-api/1.astro";
+
+Para evitar que la pantalla se apague desde JavaScript se usa la Screen Wake Lock API: `await navigator.wakeLock.request("screen")` mantiene la pantalla encendida mientras la página esté visible. Funciona en Chrome, Edge, Firefox y Safari, solo en páginas servidas por HTTPS, y el navegador retira el bloqueo automáticamente cuando cambias de pestaña.
 
 ¿Alguna vez has estado cocinando una receta y la pantalla de tu dispositivo se apaga justo cuando estás a punto de leer el siguiente paso? O tal vez estás viendo un video y la pantalla se oscurece un poco porque no has tocado el dispositivo en un rato. La Screen Wake Lock API es la solución a estos problemas.
 
@@ -30,11 +33,22 @@ Perfecto para esas apps que no se pueden dar el lujo de que la pantalla se apagu
 
 ¿Y qué pasa si tienes una app que funciona con control de voz? Pues te viene de lujo, porque no querrás depender de tocar la pantalla cada dos por tres para que no se duerma.
 
-A día de hoy el soporte es bastante bueno. Tiene soporte para Chrome, Edge, Firefox, Safari. También en sus versiones móviles.
+## Soporte en navegadores
+
+A día de hoy el soporte es bastante bueno: está en los tres motores principales, también en sus versiones móviles.
+
+| Navegador     | Disponible desde                                                        |
+| :------------ | :---------------------------------------------------------------------- |
+| Chrome y Edge | Versión 84                                                              |
+| Safari        | Versión 16.4                                                            |
+| Firefox       | Versión 126                                                             |
+| Safari en iOS | Versión 16.4; en apps web añadidas a la pantalla de inicio, desde 18.4  |
+
+Solo funciona en contextos seguros, es decir, en páginas servidas por HTTPS o en `localhost`.
 
 ## Ejemplo de uso de la Screen Wake Lock API
 
-Para activar el `WakeLockSentinel`, solo tienes que llamar al método `navigator.wakeLock.request()`, que es una **promesa** que se resuelve si el sistema lo permite.
+Para activar el bloqueo solo tienes que llamar al método `navigator.wakeLock.request()`, que devuelve una **promesa**. Si el sistema lo permite, la promesa se resuelve con un objeto `WakeLockSentinel`, el _centinela_ que representa ese bloqueo.
 
 Cuidado con esto, la petición puede ser rechazada por varias razones, como ajustes del sistema (modo ahorro de energía o batería baja) o si el documento no está activo o visible. Una buena práctica es guardar una referencia al objeto _centinela_ para poder soltarlo más tarde si hace falta.
 
@@ -63,7 +77,7 @@ const requestWakeLock = async () => {
 
   try {
     // Request a wake lock
-    wakeLock = await navigator.wakeLock.request();
+    wakeLock = await navigator.wakeLock.request("screen");
     console.log("Screen Wake Lock locked:", !wakeLock.released);
   } catch (err) {
     // The wake lock request was rejected, usually due to system settings
@@ -74,13 +88,17 @@ const requestWakeLock = async () => {
 await requestWakeLock();
 ```
 
+El argumento `"screen"` es el único tipo de bloqueo que existe y también es el valor por defecto, así que `request()` sin argumentos hace lo mismo.
+
 ### Liberar el bloqueo de la pantalla
 
-Cuando ya no necesites que la pantalla siga encendida, puedes liberar el bloqueo fácilmente con la función `release()`. Esto es útil si tu aplicación web ha terminado de mostrar contenido relevante y quieres volver a permitir que la pantalla se apague.
+Cuando ya no necesites que la pantalla siga encendida, puedes liberar el bloqueo fácilmente con el método `release()`, que también devuelve una promesa. Esto es útil si tu aplicación web ha terminado de mostrar contenido relevante y quieres volver a permitir que la pantalla se apague.
 
 ```javascript
-const releaseWakeState = () => {
-  wakeLock.release();
+const releaseWakeLock = async () => {
+  if (!wakeLock) return;
+
+  await wakeLock.release();
   wakeLock = null;
 };
 ```
@@ -94,7 +112,7 @@ let wakeLock = null;
 
 const requestWakeLock = async () => {
   try {
-    wakeLock = await navigator.wakeLock.request();
+    wakeLock = await navigator.wakeLock.request("screen");
 
     wakeLock.addEventListener("release", () => {
       console.log("Screen Wake Lock released:", wakeLock.released);
@@ -112,6 +130,30 @@ await requestWakeLock();
 // Si cambio de pestaña en el navegador (es decir, la pestaña ya no está activa)
 // => Screen Wake Lock released: true
 ```
+
+### Recuperar el bloqueo al volver a la pestaña
+
+Este es el detalle que más se olvida. Cuando el usuario cambia de pestaña o minimiza la ventana, el navegador libera el bloqueo y **no lo recupera solo** cuando vuelve. Si quieres que la pantalla siga despierta, tienes que pedirlo otra vez escuchando el evento `visibilitychange`:
+
+```javascript
+document.addEventListener("visibilitychange", async () => {
+  if (wakeLock !== null && document.visibilityState === "visible") {
+    await requestWakeLock();
+  }
+});
+```
+
+La comprobación `wakeLock !== null` sirve para pedirlo de nuevo solo si el bloqueo estaba activo antes de salir, y no si el usuario lo había desactivado a propósito.
+
+### Cuándo se pierde o se rechaza el bloqueo
+
+| Situación                                         | Qué ocurre                                                     |
+| :------------------------------------------------ | :------------------------------------------------------------- |
+| La pestaña deja de estar visible                  | El bloqueo se libera y se dispara el evento `release`          |
+| Llamas a `release()`                              | El bloqueo se libera y se dispara el evento `release`          |
+| Batería baja o modo de ahorro de energía          | `request()` se rechaza con un error `NotAllowedError`          |
+| La página no está visible al pedirlo              | `request()` se rechaza con un error `NotAllowedError`          |
+| Una _Permissions Policy_ lo prohíbe               | `request()` se rechaza con un error `NotAllowedError`          |
 
 ## Seguridad y permisos
 
@@ -145,12 +187,19 @@ Aquí tienes una demo funcional para probar la API en tiempo real. Activa el _wa
 
 La Screen Wake Lock API se debe usar para mantener la pantalla encendida y mejorar la experiencia del usuario. Un buen detalle sería mostrar algún tipo de feedback visual en la interfaz para indicar si el wake lock está activo, y de paso ofrecerle al usuario una forma de desactivarlo si le da la gana.
 
-Tambien puede ser interesante usar esta API con un temporizador (`setTimeout`) para liberar el _wake lock_ después de un tiempo determinado, por ejemplo, si el usuario no ha interactuado con la página durante un tiempo.
+También puede ser interesante usar esta API con un temporizador (`setTimeout`) para liberar el _wake lock_ después de un tiempo determinado, por ejemplo, si el usuario no ha interactuado con la página durante un tiempo.
 
 Otra opción interesante puede ser activar el _wake lock_ hasta que el usuario llegue a un punto concreto de la página (`Intersection Observer API`), como la sección de comentarios que viene después de un artículo.
 
 ## Conclusión
 
-Ya has visto que usar la Screen Wake Lock API es súper sencilla implementar. No necesitas permisos especiales ni configuraciones avanzadas para probarla. Solo asegúrate de que estás en una pestaña activa y visible, porque la API no funciona si la página está en segundo plano.
+Ya has visto que la Screen Wake Lock API es súper sencilla de implementar. El navegador no le pide permiso al usuario y no hacen falta configuraciones avanzadas para probarla. Solo asegúrate de que la página se sirve por HTTPS y de que estás en una pestaña activa y visible, porque la API no funciona si la página está en segundo plano.
 
 Así que, la próxima vez que quieras mejorar la experiencia de usuario en tus web apps, asegúrate de que la pantalla no se duerma cuando más se necesita. ¡Pon la Screen Wake Lock API a trabajar!
+
+## Fuentes
+
+- [Screen Wake Lock API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API), en MDN (en inglés), con la tabla de compatibilidad de navegadores.
+- [Screen Wake Lock API](https://www.w3.org/TR/screen-wake-lock/), la especificación del W3C (en inglés).
+- [Permissions-Policy: screen-wake-lock](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/screen-wake-lock), en MDN (en inglés).
+- [Stay awake with the Screen Wake Lock API](https://developer.chrome.com/docs/capabilities/web-apis/wake-lock), la guía de Chrome for Developers (en inglés).
