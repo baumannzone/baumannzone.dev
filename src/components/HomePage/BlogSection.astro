@@ -11,7 +11,6 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
     title: data.title,
     description: data.description,
     pubDate: data.pubDate,
-    author: data.author,
   },
 }));
 ---
@@ -32,18 +31,7 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
 
     <div
       class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-16"
-      itemscope
-      itemtype="https://schema.org/Blog"
     >
-      <meta itemprop="name" content="Baumannzone.dev Blog" />
-      <meta
-        itemprop="description"
-        content="Blog sobre desarrollo web, JavaScript, CSS y más"
-      />
-      <meta itemprop="author" content="Jorge Baumann" />
-      <meta itemprop="publisher" content="Jorge Baumann" />
-      <meta itemprop="inLanguage" content="es-ES" />
-
       <ArticleCard post={posts[0]} isNew={true} />
       <ArticleCard post={posts[1]} />
       <ArticleCard post={posts[2]} />
@@ -65,7 +53,7 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
   const randomPostContainer = document.getElementById("random-post-container");
   // Article card with random post
   randomPostContainer.innerHTML = `
-<article itemscope itemtype="https://schema.org/Article">
+<article>
   <div class="group relative">
     <div class="flex items-center gap-x-4 text-xs">
       <time
@@ -84,19 +72,17 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
     </div>
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
-      itemprop="headline"
       style="${`view-transition-name: post-${randomPost.id}`}"
     >
       ${randomPost.data.title}
     </h2>
-    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600" itemprop="description">
+    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
       ${randomPost.data.description}
     </p>
 
     <a
       href=${`/blog/${randomPost.id}/`}
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
-      itemprop="url"
     >
       <span class="absolute inset-0"></span>
       Ver más
@@ -106,10 +92,6 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
         →
       </span>
     </a>
-
-    <meta itemprop="datePublished" content=${pubDate.toISOString()} />
-    <meta itemprop="url" content=${new URL(`/blog/${randomPost.id}/`, window.location.origin).toString()} />
-    <meta itemprop="author" content=${randomPost.data.author} />
   </div>
 </article>
   `;

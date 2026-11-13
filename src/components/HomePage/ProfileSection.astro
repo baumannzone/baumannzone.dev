@@ -4,12 +4,7 @@ import baumannzoneImg from './baumannzone.webp';
 import { SITE_OWNER } from '../../consts';
 ---
 
-<section
-  class='d-block bg-gray-100 dark:bg-gray-800'
-  itemscope
-  itemtype='https://schema.org/Person'
-  itemid={new URL('/#person', Astro.site).href}
->
+<section class='d-block bg-gray-100 dark:bg-gray-800'>
   <div class='bg-gradient-to-r from-violet-800 to-violet-700 h-44'></div>
   <div class='px-2 sm:px-4 lg:px-8'>
     <div id='parent-parent' class='max-w-[90rem] mx-auto pb-16 relative'>
@@ -31,24 +26,20 @@ import { SITE_OWNER } from '../../consts';
               class='-mt-20 rounded-full ring-8 ring-violet-700 ring-opacity-100 bg-purple-300'
               width='140'
               height='140'
-              itemprop='image'
               priority
             />
           </button>
         </div>
         <header class='text-center p-4'>
-          <h1 class='font-bold text-3xl' title={SITE_OWNER.alternateName} itemprop='name'>
+          <h1 class='font-bold text-3xl' title={SITE_OWNER.alternateName}>
             {SITE_OWNER.name}
           </h1>
           <p class='text-gray-500 dark:text-gray-400 font-light'>
-            <span itemprop='jobTitle'>{SITE_OWNER.jobTitle}</span>
+            {SITE_OWNER.jobTitle}
             <span class='select-none'>·</span>
-            <span itemprop='alternateName'>{SITE_OWNER.alternateName}</span>
+            {SITE_OWNER.alternateName}
           </p>
-          <p
-            class='font-light text-xl mt-4 mx-8 md:mx-16 text-balance'
-            itemprop='description'
-          >
+          <p class='font-light text-xl mt-4 mx-8 md:mx-16 text-balance'>
             {SITE_OWNER.description}
           </p>
         </header>
@@ -59,7 +50,6 @@ import { SITE_OWNER } from '../../consts';
               target='_blank'
               rel='noopener noreferrer'
               class='text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 mx-2'
-              itemprop='sameAs'
               ><span class='sr-only'>instagram</span>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -82,7 +72,6 @@ import { SITE_OWNER } from '../../consts';
               target='_blank'
               rel='noreferrer noopener'
               href={SITE_OWNER.profiles.threads}
-              itemprop='sameAs'
             >
               <svg
                 role='img'
@@ -104,7 +93,6 @@ import { SITE_OWNER } from '../../consts';
               target='_blank'
               rel='noopener noreferrer'
               class='text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 mx-2'
-              itemprop='sameAs'
             >
               <span class='sr-only'>bluesky</span>
               <svg
@@ -129,7 +117,6 @@ import { SITE_OWNER } from '../../consts';
               target='_blank'
               rel='noopener noreferrer'
               class='text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 mx-2'
-              itemprop='sameAs'
             >
               <span class='sr-only'>x</span>
               <svg
@@ -155,7 +142,6 @@ import { SITE_OWNER } from '../../consts';
               target='_blank'
               rel='noopener noreferrer'
               class='text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-400 mx-2'
-              itemprop='sameAs'
               ><span class='sr-only'>youtube</span>
               <svg
                 xmlns='http://www.w3.org/2000/svg'

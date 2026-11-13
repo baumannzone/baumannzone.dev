@@ -2,17 +2,12 @@
 interface Props {
   date: Date;
   className?: string;
-  type?: "pubDate" | "updatedDate";
 }
 
-const { date, className, type = "pubDate" } = Astro.props;
+const { date, className } = Astro.props;
 ---
 
-<time
-  datetime={date.toISOString()}
-  class={className}
-  itemprop={type === "pubDate" ? "datePublished" : "dateModified"}
->
+<time datetime={date.toISOString()} class={className}>
   {
     date.toLocaleDateString("es-ES", {
       year: "numeric",

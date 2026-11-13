@@ -58,17 +58,11 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
 
   <body class='dark:bg-gray-700'>
     <NavBar />
-    <main class='px-4 py-8' itemscope itemtype='https://schema.org/Article'>
+    <main class='px-4 py-8'>
       <div
         class='absolute inset-x-2 -top-6 -z-10 h-12 -rotate-3 bg-gradient-to-r from-violet-300 via-pink-300 to-sky-300 blur-3xl dark:from-violet-500/90 dark:via-pink-500/70 dark:to-sky-500/80'
       >
       </div>
-      <meta itemprop='url' content={postUrl} />
-      <meta itemprop='description' content={description} />
-      <meta itemprop='keywords' content={tags?.join(', ')} />
-      <meta itemprop='author' content={author} />
-      <meta itemprop='publisher' content='Jorge Baumann' />
-      <meta itemprop='datePublished' content={pubDate.toISOString()} />
       <meta property='article:published_time' content={pubDate.toISOString()} />
       {
         updatedDate && (
@@ -78,26 +72,19 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
           />
         )
       }
-      {
-        updatedDate && (
-          <meta itemprop='dateModified' content={updatedDate.toISOString()} />
-        )
-      }
       <header class='max-w-prose mx-auto'>
         <div class='text-gray-500 text-xs dark:text-gray-400'>
-          <FormattedDate date={pubDate} type='pubDate' />
+          <FormattedDate date={pubDate} />
           {
             updatedDate && (
               <div>
-                Actualizado el{' '}
-                <FormattedDate date={updatedDate} type='updatedDate' />
+                Actualizado el <FormattedDate date={updatedDate} />
               </div>
             )
           }
         </div>
         <h1
           style={`view-transition-name: post-${slug}`}
-          itemprop='headline'
           class='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white'
         >
           {title}
@@ -130,7 +117,6 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
           intro &&
             '[&>p:first-child]:border-l-[3px] [&>p:first-child]:border-violet-500 [&>p:first-child]:pl-5 [&>p:first-child]:text-xl/[1.65] [&>p:first-child]:text-gray-900 dark:[&>p:first-child]:text-gray-50',
         ]}
-        itemprop='articleBody'
       >
         <slot />
       </article>

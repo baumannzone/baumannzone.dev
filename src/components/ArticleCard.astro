@@ -16,14 +16,10 @@ const { post, isNew = false } = Astro.props;
 const articleUrl = `/blog/${post.id}/`;
 ---
 
-<article itemscope itemtype="https://schema.org/Article">
+<article>
   <div class="group relative">
     <div class="flex items-center gap-x-4 text-xs">
-      <FormattedDate
-        date={post.data.pubDate}
-        className="text-gray-500"
-        type="pubDate"
-      />
+      <FormattedDate date={post.data.pubDate} className="text-gray-500" />
       {
         isNew ? (
           <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
@@ -34,19 +30,17 @@ const articleUrl = `/blog/${post.id}/`;
     </div>
     <h2
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
-      itemprop="headline"
       style={`view-transition-name: post-${post.id}`}
     >
       {post.data.title}
     </h2>
-    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600" itemprop="description">
+    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
       {post.data.description}
     </p>
 
     <a
       href={articleUrl}
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
-      itemprop="url"
     >
       <span class="absolute inset-0"></span>
       Ver más
@@ -56,9 +50,5 @@ const articleUrl = `/blog/${post.id}/`;
         →
       </span>
     </a>
-
-    <meta itemprop="datePublished" content={post.data.pubDate.toISOString()} />
-    <meta itemprop="url" content={new URL(articleUrl, Astro.url).toString()} />
-    <meta itemprop="author" content={post.data.author} />
   </div>
 </article>
