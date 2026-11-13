@@ -16,7 +16,7 @@ export const SITE_OWNER = {
   alternateName: "@baumannzone",
   jobTitle: "Senior Software Engineer",
   description:
-    "Ingeniero de software y divulgador de contenido. Speaker. Apasionado del desarrollo web y del fitness.",
+    "Ingeniero de software y divulgador de contenido. Speaker. Apasionado del desarrollo web y del BJJ.",
   knowsAbout: ["JavaScript", "HTML", "CSS", "Testing", "Desarrollo web", "IA"],
   profiles: {
     github: "https://github.com/baumannzone",
