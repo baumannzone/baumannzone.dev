@@ -1,11 +1,15 @@
 ---
 import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
+import profileImage from "../components/HomePage/baumannzone.webp";
+import { SITE_DESCRIPTION } from "../consts";
 import {
   breadcrumbSchema,
   personSchema,
   websiteId,
+  websiteSchema,
 } from "../utils/schema";
 
 import HeroSection from "../components/AboutMePage/HeroSection.astro";
@@ -28,7 +32,12 @@ const title = "Sobre mí | Baumannzone.dev";
 const description =
   "Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido.";
 const aboutUrl = new URL("/about/", Astro.site).href;
-const person = personSchema(Astro.site);
+const homeUrl = new URL("/", Astro.site).href;
+const image = await getImage({ src: profileImage, width: 140, height: 140 });
+const person = {
+  ...personSchema(Astro.site),
+  image: new URL(image.src, homeUrl).href,
+};
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -43,6 +52,7 @@ const jsonLd = {
       mainEntity: { "@id": person["@id"] },
     },
     person,
+    websiteSchema(Astro.site, SITE_DESCRIPTION),
     breadcrumbSchema(Astro.site, [
       { name: "Inicio", path: "/" },
       { name: "Sobre mí", path: "/about/" },
