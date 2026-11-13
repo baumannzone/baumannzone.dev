@@ -1,34 +1,48 @@
 ---
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import JsonLd from "../../components/JsonLd.astro";
+import { SITE_DESCRIPTION } from "../../consts";
+import {
+  breadcrumbSchema,
+  personSchema,
+  websiteId,
+  websiteSchema,
+} from "../../utils/schema";
 
-const schema = {
+const title = "Requisitos para Charlas y Talleres";
+const description =
+  "Conoce los requisitos y condiciones para invitar a Jorge Baumann @baumannzone a dar una charla o taller en tu evento.";
+const pageUrl = new URL("/talks/about/", Astro.site).href;
+const person = personSchema(Astro.site);
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Requisitos para Charlas y Talleres",
-  description:
-    "Conoce los requisitos y condiciones para invitar a Jorge Baumann @baumannzone a dar una charla o taller en tu evento.",
-  mainEntity: {
-    "@type": "Article",
-    headline: "Requisitos para charlas y talleres",
-    description:
-      "Información detallada sobre los requisitos y condiciones para invitar a Jorge Baumann a dar charlas y talleres en eventos tecnológicos.",
-    articleBody:
-      "Antes de aceptar dar una charla, taller o similar, me gusta investigar un poco sobre el evento. No es paranoia, es simplemente asegurarme de que se alinea con mis valores, sobre todo en temas de inclusión y diversidad dentro de la comunidad tecnológica.",
-    author: {
-      "@type": "Person",
-      name: "Jorge Baumann",
-      alternateName: "baumannzone",
-      url: "https://www.baumannzone.dev",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: title,
+      description,
+      inLanguage: "es",
+      isPartOf: { "@id": websiteId(Astro.site) },
+      about: { "@id": person["@id"] },
     },
-  },
+    person,
+    websiteSchema(Astro.site, SITE_DESCRIPTION),
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Charlas", path: "/talks/" },
+      { name: "Requisitos para charlas y talleres", path: "/talks/about/" },
+    ]),
+  ],
 };
 ---
 
 <DefaultLayout
   title="Requisitos para Charlas y Talleres | Baumannzone.dev"
-  description="Conoce los requisitos y condiciones para invitar a Jorge Baumann @baumannzone a dar una charla o taller en tu evento."
+  description={description}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <JsonLd slot="head" data={jsonLd} />
   <main class="max-w-3xl mx-auto px-4 py-8 mt-4 mb-20">
     <h1 class="text-4xl font-bold mb-8">Requisitos para charlas y talleres</h1>
 
