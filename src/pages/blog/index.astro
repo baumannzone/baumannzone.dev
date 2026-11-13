@@ -2,16 +2,62 @@
 import { getCollection } from "astro:content";
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import BlogSearch from "../../components/BlogSearch.astro";
 import JsonLd from "../../components/JsonLd.astro";
 import {
   breadcrumbSchema,
   personId,
   websiteId,
 } from "../../utils/schema";
+import { getTagUrl } from "../../utils/tags";
+import {
+  blogResultLabel,
+  buildSearchHaystack,
+  matchesBlogPost,
+} from "../../utils/blog-filter";
+import type { Tags } from "../../types/tags";
 
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.published !== false)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const tagCounts = new Map<Tags, number>();
+for (const post of posts) {
+  for (const tag of post.data.tags ?? []) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+}
+
+const tagStats = [...tagCounts.entries()]
+  .map(([name, count]) => ({
+    name,
+    count,
+    slug: getTagUrl(name),
+  }))
+  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, "es"));
+
+const rawQuery = Astro.url.searchParams.get("q") ?? "";
+const rawTag = Astro.url.searchParams.get("tag") ?? "";
+const activeTag = tagStats.some((tag) => tag.slug === rawTag) ? rawTag : "";
+
+const entries = posts.map((post) => {
+  const tags = post.data.tags ?? [];
+  const slugs = tags.map((tag) => getTagUrl(tag));
+  const haystack = buildSearchHaystack([
+    post.data.title,
+    post.data.description,
+    ...tags,
+  ]);
+
+  return {
+    post,
+    slugs,
+    haystack,
+    visible: matchesBlogPost(haystack, slugs, rawQuery, activeTag),
+  };
+});
+
+const visibleCount = entries.filter((entry) => entry.visible).length;
 
 const title = "Blog | Baumannzone.dev";
 const description =
@@ -50,22 +96,56 @@ const jsonLd = {
 
 <DefaultLayout title={title} description={description}>
   <JsonLd slot="head" data={jsonLd} />
-  <section class="bmn-container mx-auto mt-16 mb-32">
-    <header class="text-center">
-      <p class="text-base font-semibold leading-7 text-violet-600">/blog</p>
-      <h1 class="text-4xl font-bold mb-8">Blog</h1>
-    </header>
-
-    <ul
-      class="mt-6 mb-12 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
-    >
-      {
-        posts.map((post, index) => (
-          <li>
-            <ArticleCard isNew={index === 0} post={post} />
-          </li>
-        ))
+  <script slot="head" is:inline>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      if ((params.get("q") || "").trim() || params.get("tag")) {
+        document.documentElement.classList.add("blog-filter-pending");
       }
-    </ul>
+    })();
+  </script>
+  <style is:global>
+    html.blog-filter-pending #blog-posts {
+      visibility: hidden;
+    }
+  </style>
+  <section class="bg-white pt-16 pb-32">
+    <div class="bmn-container mx-auto">
+      <header class="text-center">
+        <p class="text-base font-semibold leading-7 text-violet-600">/blog</p>
+        <h1 class="text-4xl font-bold">Blog</h1>
+      </header>
+
+      <BlogSearch
+        query={rawQuery}
+        activeTag={activeTag}
+        tags={tagStats}
+        resultLabel={blogResultLabel(visibleCount)}
+      />
+
+      <ul
+        id="blog-posts"
+        class="mt-10 mb-12 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
+      >
+        <li
+          id="blog-empty"
+          class="col-span-full py-16 text-center text-sm text-gray-600"
+          hidden={visibleCount !== 0}
+        >
+          Ningún artículo coincide con esa búsqueda.
+        </li>
+        {
+          entries.map((entry, index) => (
+            <li
+              data-search={entry.haystack}
+              data-tags={entry.slugs.join(" ")}
+              hidden={!entry.visible}
+            >
+              <ArticleCard isNew={index === 0} post={entry.post} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 </DefaultLayout>

@@ -1,0 +1,203 @@
+---
+import { blogFilterSearch } from "../utils/blog-filter";
+
+interface TagStat {
+  name: string;
+  slug: string;
+  count: number;
+}
+
+interface Props {
+  query: string;
+  activeTag: string;
+  tags: TagStat[];
+  resultLabel: string;
+}
+
+const { query, activeTag, tags, resultLabel } = Astro.props;
+
+const chipClass =
+  "group inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-medium text-zinc-800 bg-gray-100 hover:bg-gray-200 transition focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 aria-current:bg-violet-600 aria-current:text-white aria-current:hover:bg-violet-600";
+---
+
+<div class="mx-auto mt-8 max-w-3xl">
+  <form id="blog-filters" action="/blog/" method="get" role="search" class="mx-auto max-w-xl">
+    <label for="blog-search" class="mb-2 block text-sm font-medium text-zinc-800">
+      Buscar artículos
+    </label>
+    <input
+      id="blog-search"
+      type="search"
+      name="q"
+      value={query}
+      placeholder="Título, descripción o tag"
+      autocomplete="off"
+      enterkeyhint="search"
+      aria-controls="blog-posts"
+      class="w-full rounded-lg border border-zinc-200 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-500"
+    />
+    {
+      activeTag && (
+        <input type="hidden" name="tag" value={activeTag} />
+      )
+    }
+  </form>
+
+  <p
+    id="blog-result-count"
+    class="mt-3 text-center text-sm text-gray-500"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    {resultLabel}
+  </p>
+
+  <nav class="mt-6" aria-label="Filtrar por tag">
+    <ul class="flex flex-wrap justify-center gap-2">
+      <li>
+        <a
+          href={`/blog/${blogFilterSearch(query, "")}`}
+          data-filter-tag=""
+          aria-current={activeTag === "" ? "true" : undefined}
+          class={chipClass}
+        >
+          Todos
+        </a>
+      </li>
+      {
+        tags.map((tag) => (
+          <li>
+            <a
+              href={`/blog/${blogFilterSearch(query, tag.slug)}`}
+              data-filter-tag={tag.slug}
+              aria-current={activeTag === tag.slug ? "true" : undefined}
+              class={chipClass}
+              translate="no"
+            >
+              {tag.name}
+              <span class="ml-2 font-mono text-xs font-semibold text-gray-500 group-aria-[current=true]:text-violet-100">
+                {tag.count}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  import {
+    blogFilterSearch,
+    blogResultLabel,
+    matchesBlogPost,
+  } from "../utils/blog-filter";
+
+  const form = document.querySelector<HTMLFormElement>("#blog-filters");
+  const input = document.querySelector<HTMLInputElement>("#blog-search");
+  const list = document.querySelector<HTMLUListElement>("#blog-posts");
+  const count = document.querySelector<HTMLElement>("#blog-result-count");
+  const empty = document.querySelector<HTMLElement>("#blog-empty");
+  const tagLinks = [
+    ...document.querySelectorAll<HTMLAnchorElement>("[data-filter-tag]"),
+  ];
+
+  function selectedTag() {
+    const current = tagLinks.find(
+      (link) => link.getAttribute("aria-current") === "true",
+    );
+    return current?.dataset.filterTag ?? "";
+  }
+
+  function syncHiddenTag(tag: string) {
+    if (!form) return;
+
+    const hidden = form.querySelector<HTMLInputElement>('input[name="tag"]');
+    if (!tag) {
+      hidden?.remove();
+      return;
+    }
+
+    if (hidden) {
+      hidden.value = tag;
+      return;
+    }
+
+    const field = document.createElement("input");
+    field.type = "hidden";
+    field.name = "tag";
+    field.value = tag;
+    form.append(field);
+  }
+
+  function setSelectedTag(tag: string) {
+    for (const link of tagLinks) {
+      const slug = link.dataset.filterTag ?? "";
+      if (slug === tag) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    }
+    syncHiddenTag(tag);
+  }
+
+  function apply() {
+    if (!input || !list || !count || !empty) return;
+
+    const query = input.value;
+    const tag = selectedTag();
+    let visible = 0;
+
+    for (const item of list.querySelectorAll<HTMLLIElement>("[data-search]")) {
+      const tags = (item.dataset.tags ?? "").split(" ").filter(Boolean);
+      const show = matchesBlogPost(item.dataset.search ?? "", tags, query, tag);
+      item.hidden = !show;
+      if (show) visible += 1;
+    }
+
+    count.textContent = blogResultLabel(visible);
+    empty.hidden = visible !== 0;
+
+    for (const link of tagLinks) {
+      const slug = link.dataset.filterTag ?? "";
+      link.href = `/blog/${blogFilterSearch(query, slug)}`;
+    }
+
+    const next = `${window.location.pathname}${blogFilterSearch(query, tag)}`;
+    const current = `${window.location.pathname}${window.location.search}`;
+    if (current !== next) history.replaceState(null, "", next);
+  }
+
+  input?.addEventListener("input", apply);
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    apply();
+  });
+
+  for (const link of tagLinks) {
+    link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      event.preventDefault();
+      const slug = link.dataset.filterTag ?? "";
+      const isCurrent = link.getAttribute("aria-current") === "true";
+      setSelectedTag(isCurrent && slug ? "" : slug);
+      apply();
+    });
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const initialQuery = params.get("q") ?? "";
+  const initialTag = params.get("tag") ?? "";
+  const knownTag = tagLinks.some(
+    (link) => (link.dataset.filterTag ?? "") === initialTag,
+  );
+
+  if (input && initialQuery && input.value !== initialQuery) {
+    input.value = initialQuery;
+  }
+  if (initialTag && knownTag && selectedTag() !== initialTag) {
+    setSelectedTag(initialTag);
+  }
+
+  apply();
+  document.documentElement.classList.remove("blog-filter-pending");
+</script>
