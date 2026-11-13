@@ -42,9 +42,6 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
 
 <article
   class='block hover:bg-zinc-50 rounded-xl transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-  itemprop='itemListElement'
-  itemscope
-  itemtype='https://schema.org/Book'
 >
   <div class='rounded-xl border border-zinc-200 h-full hover:border-zinc-300 transition-colors'>
     <div class='flex flex-col p-4 relative h-full'>
@@ -56,7 +53,6 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
           widths={[192, 384]}
           sizes='192px'
           class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
-          itemprop='image'
         />
         {book.readAt && (
           <div
@@ -90,26 +86,18 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
           {authors.map((author, index) => (
             <>
               {index > 0 && ', '}
-              <span itemprop='author' itemscope itemtype='https://schema.org/Person'>
-                <span itemprop='name'>{author}</span>
-              </span>
+              <span>{author}</span>
             </>
           ))}
         </div>
-        <h3
-          class='text-lg font-semibold text-zinc-950 line-clamp-2'
-          itemprop='name'
-        >
+        <h3 class='text-lg font-semibold text-zinc-950 line-clamp-2'>
           {book.title}
         </h3>
         {book.status === 'reading' && (
           <p class='text-sm font-medium text-violet-600'>Leyendo</p>
         )}
         {book.description && (
-          <div
-            class='text-sm text-zinc-600 line-clamp-3'
-            itemprop='description'
-          >
+          <div class='text-sm text-zinc-600 line-clamp-3'>
             {book.description}
           </div>
         )}

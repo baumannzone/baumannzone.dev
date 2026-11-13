@@ -1,7 +1,18 @@
 ---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Layout from '../layouts/DefaultLayout.astro';
 import BookCard from '../components/BookCard.astro';
 import CategoryNavigation from '../components/CategoryNavigation.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE_DESCRIPTION } from '../consts';
+import {
+  breadcrumbSchema,
+  personId,
+  personSchema,
+  websiteId,
+  websiteSchema,
+} from '../utils/schema';
 
 import {
   bookList as books,
@@ -11,7 +22,10 @@ import {
 } from '../utils/book-list.ts';
 
 const pageTitle = 'Libros de programación y otras lecturas';
-const description = 'Libros de programación, tecnología, desarrollo personal y novelas que he leído, estoy leyendo o tengo pendientes, con sus autores y portadas.';
+const metaDescription =
+  'Libros de programación, tecnología, desarrollo personal y novelas que he leído, estoy leyendo o tengo pendientes, con sus autores y portadas.';
+const description =
+  'Mi biblioteca personal: libros de programación, tecnología, desarrollo personal y novelas. Aquí reúno lo que he leído, lo que estoy leyendo y los libros que tengo pendientes.';
 const ogImage = new URL('https://baumannzone-dev-og.vercel.app/api/og');
 ogImage.searchParams.set('title', pageTitle);
 ogImage.searchParams.set('tags', 'Programación,Desarrollo personal,Novelas');
@@ -42,43 +56,106 @@ const categories = [
   ...(readLiteratureBooks.length > 0 ? [{ id: 'literature', name: categoryNames.literature, count: readLiteratureBooks.length }] : []),
   ...(pendingBooks.length > 0 ? [{ id: 'pending', name: 'Pendientes de leer', count: pendingBooks.length }] : []),
 ];
+
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/books/*.{jpg,jpeg,png,webp}',
+  { eager: true },
+);
+
+async function bookNode(book: (typeof books)[number]) {
+  const cover = covers[`../assets/books/${book.image}`]?.default;
+  if (!cover) {
+    throw new Error(`No se encuentra la portada de "${book.title}": ${book.image}`);
+  }
+  const image = await getImage({ src: cover, width: 192 });
+  const authors = (Array.isArray(book.author) ? book.author : [book.author])
+    .map((author) => author.trim())
+    .filter(Boolean);
+  const node: Record<string, unknown> = {
+    '@type': 'Book',
+    name: book.title,
+    image: new URL(image.src, Astro.site).href,
+  };
+  if (authors.length === 1) {
+    node.author = { '@type': 'Person', name: authors[0] };
+  } else if (authors.length > 1) {
+    node.author = authors.map((name) => ({ '@type': 'Person', name }));
+  }
+  const summary = book.description?.trim();
+  if (summary) node.description = summary;
+  const link = book.link?.trim();
+  if (link) node.url = link;
+  return node;
+}
+
+function bookListSchema(name: string, nodes: Record<string, unknown>[]) {
+  return {
+    '@type': 'ItemList',
+    name,
+    numberOfItems: nodes.length,
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    itemListElement: nodes.map((node, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: node.name,
+      item: node,
+    })),
+  };
+}
+
+const readBooks = [
+  ...readSoftwareBooks,
+  ...readGrowthBooks,
+  ...readLiteratureBooks,
+];
+const readNodes = await Promise.all(readBooks.map(bookNode));
+const pendingNodes = await Promise.all(pendingBooks.map(bookNode));
+const booksUrl = new URL('/books/', Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personSchema(Astro.site),
+    websiteSchema(Astro.site, SITE_DESCRIPTION),
+    {
+      '@type': 'CollectionPage',
+      '@id': `${booksUrl}#webpage`,
+      url: booksUrl,
+      name: `${pageTitle} | Baumannzone.dev`,
+      description,
+      inLanguage: 'es',
+      isPartOf: { '@id': websiteId(Astro.site) },
+      about: { '@id': personId(Astro.site) },
+      mainEntity: bookListSchema('Libros leídos y en lectura', readNodes),
+      ...(pendingNodes.length > 0 && {
+        hasPart: bookListSchema('Pendientes de leer', pendingNodes),
+      }),
+    },
+    breadcrumbSchema(Astro.site, [
+      { name: 'Inicio', path: '/' },
+      { name: 'Libros', path: '/books/' },
+    ]),
+  ],
+};
 ---
 
 <Layout
   title={`${pageTitle} | Baumannzone.dev`}
-  description={description}
+  description={metaDescription}
   ogImage={ogImage.toString()}
 >
-  <div
-    class='bmn-container mx-auto pt-16 pb-24'
-    itemscope
-    itemtype='https://schema.org/CollectionPage'
-  >
-    <meta itemprop='inLanguage' content='es' />
+  <JsonLd slot='head' data={jsonLd} />
+  <div class='bmn-container mx-auto pt-16 pb-24'>
     <header class='text-center mx-auto max-w-3xl'>
       <p class='text-base font-semibold leading-7 text-violet-600'>/books</p>
-      <h1 class='text-4xl font-semibold mb-8 text-balance' itemprop='name'>{pageTitle}</h1>
-      <p
-        class='mt-6 mb-12 text-lg/8 text-gray-600 text-balance'
-        itemprop='description'
-      >
-        Mi biblioteca personal: libros de programación, tecnología, desarrollo
-        personal y novelas. Aquí reúno lo que he leído, lo que estoy leyendo y
-        los libros que tengo pendientes.
+      <h1 class='text-4xl font-semibold mb-8 text-balance'>{pageTitle}</h1>
+      <p class='mt-6 mb-12 text-lg/8 text-gray-600 text-balance'>
+        {description}
       </p>
     </header>
 
     <CategoryNavigation categories={categories} />
 
-    <section
-      class='bg-white m-2 px-4 sm:px-6 lg:px-8'
-      itemprop='mainEntity'
-      itemscope
-      itemtype='https://schema.org/ItemList'
-    >
-      <meta itemprop='name' content='Libros leídos y en lectura' />
-      <meta itemprop='numberOfItems' content={readSoftwareBooks.length + readGrowthBooks.length + readLiteratureBooks.length} />
-      <meta itemprop='itemListOrder' content='https://schema.org/ItemListUnordered' />
+    <section class='bg-white m-2 px-4 sm:px-6 lg:px-8'>
       {/* Software & Tecnología */}
       {
         readSoftwareBooks.length > 0 && (
@@ -143,18 +220,10 @@ const categories = [
     <!-- Pending Books Section -->
     {
       pendingBooks.length > 0 && (
-        <section
-          id='pending'
-          class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'
-          itemprop='mainEntity'
-          itemscope
-          itemtype='https://schema.org/ItemList'
-        >
-          <meta itemprop='numberOfItems' content={pendingBooks.length} />
-          <meta itemprop='itemListOrder' content='https://schema.org/ItemListUnordered' />
+        <section id='pending' class='bg-white m-2 px-4 sm:px-6 lg:px-8 mb-8'>
           <div class='pb-12'>
             <div class='sticky top-0 z-10 bg-white/70 backdrop-blur-sm pt-4 pb-3 mb-1'>
-              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]' itemprop='name'>
+              <h2 class='text-lg tracking-tighter font-bold flex gap-[2px]'>
                 <span class='font-mono text-violet-500/50'>/</span>
                 Pendientes de leer
               </h2>
