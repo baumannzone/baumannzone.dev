@@ -1,6 +1,7 @@
 ---
 import type { Tags } from '../types/tags';
 import { SITE_OWNER } from '../consts';
+import { breadcrumbSchema } from '../utils/schema';
 
 interface Props {
   title: string;
@@ -38,24 +39,33 @@ const modifiedDate = updatedDate ? updatedDate.toISOString() : publishedDate;
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  description: description,
-  image: ogImage,
-  url: url,
-  datePublished: publishedDate,
-  dateModified: modifiedDate,
-  inLanguage: 'es-ES',
-  ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
-  author: author === SITE_OWNER.name
-    ? publisher
-    : { '@type': 'Person', name: author },
-  publisher,
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': url,
-  },
-  articleSection: 'Technology',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: title,
+      description: description,
+      image: ogImage,
+      url: url,
+      datePublished: publishedDate,
+      dateModified: modifiedDate,
+      inLanguage: 'es-ES',
+      ...(tags && tags.length > 0 && { keywords: tags.join(', ') }),
+      author: author === SITE_OWNER.name
+        ? publisher
+        : { '@type': 'Person', name: author },
+      publisher,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+      },
+      articleSection: 'Technology',
+    },
+    breadcrumbSchema(Astro.site, [
+      { name: 'Inicio', path: '/' },
+      { name: 'Blog', path: '/blog/' },
+      { name: title, path: `/blog/${slug}/` },
+    ]),
+  ],
 };
 ---
 
