@@ -2,7 +2,7 @@
 import Layout from "../../layouts/DefaultLayout.astro";
 import { getCollection, render } from "astro:content";
 import JsonLd from "../../components/JsonLd.astro";
-import { breadcrumbSchema } from "../../utils/schema";
+import { breadcrumbSchema, personSchema } from "../../utils/schema";
 import { talkMainEntity, talkPageDescription } from "../../utils/talk-schema";
 
 export async function getStaticPaths() {
@@ -21,6 +21,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     talkMainEntity(talk, Astro.site),
+    // The talk points to the author by @id, so the node must exist in this document.
+    personSchema(Astro.site),
     breadcrumbSchema(Astro.site, [
       { name: "Inicio", path: "/" },
       { name: "Charlas", path: "/talks/" },

@@ -64,7 +64,8 @@ const jsonLd = {
 <DefaultLayout title={title} description={description} ogType="profile">
   <JsonLd slot="head" data={jsonLd} />
   <div class="bg-white">
-    <div class="isolate">
+    {/* overflow-x-clip: the decorative backgrounds are wider than a phone screen */}
+    <div class="isolate overflow-x-clip">
       <HeroSection />
 
       <ContentSection totalPosts={posts.length} />

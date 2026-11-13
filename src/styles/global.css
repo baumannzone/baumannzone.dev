@@ -32,6 +32,11 @@
     @apply border-violet-500 bg-violet-50 text-violet-700 dark:text-white dark:bg-gray-900 !important;
   }
 
+  /* Long URLs used as link text must wrap instead of widening the page on mobile */
+  .prose a {
+    overflow-wrap: anywhere;
+  }
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;

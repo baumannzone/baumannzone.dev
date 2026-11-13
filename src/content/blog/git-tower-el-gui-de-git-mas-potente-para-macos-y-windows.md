@@ -10,6 +10,8 @@ tags:
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Git%20Tower%3A%20el%20GUI%20de%20Git%20m%C3%A1s%20potente%20para%20macOS%20y%20Windows&tags=Git,Tools"
 ---
 
+> **Aviso:** este post contiene enlaces de afiliado. Si compras Git Tower a través de ellos, recibo una comisión sin coste extra para ti.
+
 Usar Git desde la terminal es algo que deberías dominar si quieres progresar como desarrollador. Sin embargo, si prefieres una interfaz gráfica, [Git Tower](https://www.git-tower.com/?via=baumannzone) es una excelente alternativa.
 
 ## ¿Qué es Git Tower?

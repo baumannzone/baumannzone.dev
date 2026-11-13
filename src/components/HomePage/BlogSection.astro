@@ -24,9 +24,9 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
       <p class="mt-2 text-lg leading-8 text-gray-600">
         Aquí tienes mis artículos más recientes y uno aleatorio de regalo
       </p>
-      <!-- <p class="mt-2 text-lg leading-8 text-gray-600">
+      {/* <p class="mt-2 text-lg leading-8 text-gray-600">
         Mejora en tu carrera profesional como developer y sube de nivel
-      </p> -->
+      </p> */}
     </div>
 
     <div
@@ -40,7 +40,7 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
   </div>
 </div>
 
-<!-- Get all posts to get a random one -->
+{/* Get all posts to get a random one */}
 <script define:vars={{ otherPosts }}>
   // Random post
   const randomIndex = Math.floor(Math.random() * otherPosts.length);

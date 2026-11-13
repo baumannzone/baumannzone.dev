@@ -45,6 +45,7 @@ export function talkMainEntity(
       "@type": "Event",
       ...entity,
       startDate: day,
+      eventStatus: "https://schema.org/EventScheduled",
       location: { "@type": "Place", name: event },
       performer,
     };

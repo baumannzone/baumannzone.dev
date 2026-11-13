@@ -9,6 +9,6 @@ links:
     url: "https://blog.joppy.me/es/entrevista-con-jorge-baumann-un-viaje-en-el-desarrollo-web-y-el-crecimiento-profesional/"
 ---
 
-# Entrevista con Jorge Baumann: Un viaje en el desarrollo web y el crecimiento profesional
+## Entrevista con Jorge Baumann: Un viaje en el desarrollo web y el crecimiento profesional
 
 ![Entrevista con Jorge Baumann](../../assets/talks/entrevista-joppy/image.png)

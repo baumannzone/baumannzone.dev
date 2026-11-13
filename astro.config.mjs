@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import { getSitemapMeta } from './src/utils/sitemap-meta.mjs';
 import { satteri } from '@astrojs/markdown-satteri';
 import { markdownImagesPlugin } from './src/utils/markdown-images-plugin.mjs';
+import { markdownSponsoredLinksPlugin } from './src/utils/markdown-sponsored-links-plugin.mjs';
 
 const { lastmod, thinTags } = getSitemapMeta();
 
@@ -16,7 +17,11 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const { pathname } = new URL(page);
-        return !pathname.startsWith("/rickroll") && !thinTags.has(pathname);
+        return (
+          !pathname.startsWith("/rickroll") &&
+          !pathname.startsWith("/dominios") &&
+          !thinTags.has(pathname)
+        );
       },
       serialize: (item) => {
         const date = lastmod.get(new URL(item.url).pathname);
@@ -30,7 +35,7 @@ export default defineConfig({
     layout: "constrained",
   },
   markdown: {
-    processor: satteri({ hastPlugins: [markdownImagesPlugin()] }),
+    processor: satteri({ hastPlugins: [markdownImagesPlugin(), markdownSponsoredLinksPlugin()] }),
     shikiConfig: {
       themes: {
         dark: "catppuccin-frappe",

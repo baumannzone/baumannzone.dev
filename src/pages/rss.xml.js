@@ -14,7 +14,9 @@ export async function GET(context) {
         link: `/blog/${post.id}/`,
       }))
       // Only include published posts
-      .filter((post) => post.published),
+      .filter((post) => post.published)
+      // Newest first, so feed readers show the latest posts on top
+      .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()),
     customData: `<language>es</language>`,
     stylesheet: "/rss-styles.xsl",
   });
