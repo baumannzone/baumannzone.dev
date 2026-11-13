@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import JsonLd from "../components/JsonLd.astro";
+import { breadcrumbSchema, websiteId } from "../utils/schema";
 import { getTagUrl } from "../utils/tags";
 
 const allPosts = (await getCollection("blog")).filter(
@@ -22,26 +24,41 @@ const postsByTag = tags.reduce((acc, tag) => {
 
 const pageTitle = "Tags | Baumannzone.dev";
 const pageDescription = "Todos los tags disponibles en el blog";
+const tagsUrl = new URL("/tags/", Astro.site).href;
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: pageTitle,
-  description: pageDescription,
-  mainEntity: {
-    "@type": "ItemList",
-    name: "Tags",
-    numberOfItems: tags.length,
-    itemListElement: tags.map((tag, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Thing",
-        name: tag,
-        description: `Artículos etiquetados con ${tag}`,
-        url: new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href,
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${tagsUrl}#webpage`,
+      url: tagsUrl,
+      name: pageTitle,
+      description: pageDescription,
+      inLanguage: "es",
+      isPartOf: { "@id": websiteId(Astro.site) },
+      mainEntity: {
+        "@type": "ItemList",
+        name: "Tags",
+        numberOfItems: tags.length,
+        itemListElement: tags.map((tag, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: tag,
+          url: new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href,
+          item: {
+            "@type": "Thing",
+            name: tag,
+            description: `Artículos etiquetados con ${tag}`,
+            url: new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href,
+          },
+        })),
       },
-    })),
-  },
+    },
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Tags", path: "/tags/" },
+    ]),
+  ],
 };
 ---
 
@@ -49,6 +66,7 @@ const jsonLd = {
   title={pageTitle}
   description={pageDescription}
 >
+  <JsonLd slot="head" data={jsonLd} />
   <section class="bmn-container mx-auto mt-16 mb-32">
     <header class="text-center">
       <p class="text-base font-semibold leading-7 text-violet-600">/tags</p>
@@ -132,9 +150,4 @@ const jsonLd = {
       }
     </div>
   </section>
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
-  />
 </DefaultLayout>
