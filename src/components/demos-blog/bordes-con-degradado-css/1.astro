@@ -1,14 +1,22 @@
-<div class='flex -mt-4'>
-  <div>
-    <small>Con borde</small>
-    <div class='box border-image mr-4'></div>
-  </div>
+---
+import DemoLayout from "../demo-layout.astro";
+---
 
-  <div>
-    <small>Imagen original</small>
-    <div class='box img'></div>
-  </div>
-</div>
+<DemoLayout name="border-image con una imagen" tag="Resultado" columns>
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box border-image slice-1"></div>
+    </div>
+    <figcaption class="demo__caption">Como borde, con <code>border-image-slice: 1</code></figcaption>
+  </figure>
+
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box img"></div>
+    </div>
+    <figcaption class="demo__caption">Imagen original</figcaption>
+  </figure>
+</DemoLayout>
 
 <style>
   .box {
@@ -19,12 +27,15 @@
   .border-image {
     border-style: solid;
     border-width: 10px;
-    border-image-source: url('../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg');
+    border-image-source: url("../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg");
+  }
+
+  .slice-1 {
     border-image-slice: 1;
   }
 
   .img {
-    background-image: url('../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg');
+    background-image: url("../../../assets/blog/bordes-con-degradado-css/pexels-magda-ehlers-1279813.jpg");
     background-size: cover;
   }
 </style>

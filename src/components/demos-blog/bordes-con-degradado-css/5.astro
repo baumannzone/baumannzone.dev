@@ -1,0 +1,39 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout name="borde degradado con border-radius" tag="Resultado" columns>
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box border-image"></div>
+    </div>
+    <figcaption class="demo__caption"><code>border-image</code> ignora el radio</figcaption>
+  </figure>
+
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box double-background"></div>
+    </div>
+    <figcaption class="demo__caption">Doble fondo con <code>padding-box</code> y <code>border-box</code></figcaption>
+  </figure>
+</DemoLayout>
+
+<style>
+  .box {
+    width: 140px;
+    height: 100px;
+    border-radius: 16px;
+  }
+
+  .border-image {
+    border: 10px solid;
+    border-image: linear-gradient(45deg, red, lime, blue) 1;
+  }
+
+  .double-background {
+    border: 10px solid transparent;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, red, lime, blue) border-box;
+  }
+</style>

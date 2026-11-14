@@ -1,27 +1,36 @@
-<div class='flex space-x-4 -mt-4'>
-  <div>
-    <small>Con borde</small>
-    <div class='box conic-gradient'></div>
-  </div>
-  <div>
-    <small>Degradado original</small>
-    <div class='box conic-bg'></div>
-  </div>
-</div>
+---
+import DemoLayout from "../demo-layout.astro";
+---
 
-<style scoped>
+<DemoLayout name="conic-gradient" tag="Resultado" columns>
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box with-border"></div>
+    </div>
+    <figcaption class="demo__caption">Como borde</figcaption>
+  </figure>
+
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <div class="box with-background"></div>
+    </div>
+    <figcaption class="demo__caption">Como fondo</figcaption>
+  </figure>
+</DemoLayout>
+
+<style>
   .box {
     width: 100px;
     height: 100px;
   }
 
-  .conic-gradient {
-    border-width: 10px;
+  .with-border {
     border-style: solid;
+    border-width: 10px;
     border-image: conic-gradient(lime, fuchsia, cyan) 1;
   }
 
-  .conic-bg {
+  .with-background {
     background: conic-gradient(lime, fuchsia, cyan);
   }
 </style>
