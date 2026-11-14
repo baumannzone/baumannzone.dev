@@ -10,13 +10,16 @@ ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=La%20IA%20y%20el%20
 relatedPosts:
   - "como-dar-mejor-contexto-a-un-agente-de-ia-para-programar"
   - "si-solo-escribes-codigo-no-estas-haciendo-suficiente-segun-esta-metrica"
+  - "cuatro-agentes-de-ia-se-han-pasado-minecraft-escribiendo-javascript"
 ---
 
-Llevamos un par de años con el mismo runrún: _"la IA va a quitar el trabajo a los programadores"_. Cada semana hay un CEO anunciando despidos "por la IA" y un tuit con el porcentaje de código que ya escribe un modelo.
+¿La IA va a dejar sin trabajo a los programadores? Según los datos, no. Está frenando el crecimiento del empleo, pero no lo está destruyendo. Y muchos de los despidos que se venden como "culpa de la IA" tienen otras causas.
 
-Yo también me lo he preguntado. Y la respuesta que más me ha convencido hasta ahora no viene de un hilo de X, sino de un ensayo con datos publicado en junio de 2026: [Why AI hasn't replaced software engineers, and won't](https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers), de **Arvind Narayanan** y **Sayash Kapoor**, los autores de _AI as Normal Technology_ (Princeton).
+Llevamos un par de años con el mismo runrún. Cada semana hay un CEO anunciando despidos "por la IA" y un tuit con el porcentaje de código que ya escribe un modelo.
 
-Este post es mi lectura de ese ensayo, con mis opiniones. No es una traducción. Si te interesa el tema, lee el original: merece la pena.
+Yo también me lo he preguntado. Lo que más me ha ayudado a ordenar las ideas es un ensayo de junio de 2026: _Why AI hasn't replaced software engineers, and won't_, de **Arvind Narayanan** y **Sayash Kapoor**, los autores de _AI as Normal Technology_ (Princeton).
+
+Este post es mi lectura de ese ensayo, con mis opiniones. No es una traducción. Si te interesa el tema, lee el original (lo tienes enlazado en las fuentes, al final): merece la pena.
 
 ## Los despidos "por la IA" son, muchas veces, _AI washing_
 
@@ -29,11 +32,11 @@ Los autores cogen tres despidos masivos de 2026 que la prensa vendió como "culp
 Y esto no es cosa de tres empresas. Hay datos a nivel de toda la economía:
 
 - El **59 % de los responsables de contratación** en EE. UU. admite en [una encuesta](https://www.resumetemplates.com/the-great-turnover-9-in-10-companies-plan-to-hire-in-2026-yet-6-in-10-will-have-layoffs-2/) que menciona la IA al explicar despidos o congelaciones porque queda mejor que decir "no hay dinero".
-- Nueva York añadió en 2025 una casilla a las notificaciones oficiales de despidos masivos (la ley WARN) para indicar si la causa era la IA o la automatización. En el primer año, más de 160 empresas presentaron notificaciones. **Ninguna marcó la casilla.** Ni una. (Meses después, una: Nespresso).
+- Nueva York añadió en 2025 una casilla a las notificaciones oficiales de despidos masivos (la ley WARN) para indicar si la causa era la IA o la automatización. En el primer año, más de 160 empresas presentaron notificaciones. **Ninguna marcó la casilla.** Ni una. (A finales de mayo de 2026, una: Nespresso).
 
 Hay una idea más de fondo que me parece la clave: **los despidos son una mala señal para medir la productividad de la IA**. Si una herramienta realmente te hace más productivo, lo que haces es contratar más despacio, no despedir a la gente que tiene el conocimiento del sistema. Despedir es caro, destroza la moral y te cargas justo el conocimiento tácito que hace falta para usar bien la IA.
 
-¿Significa esto que la IA no afecta al empleo? No. Un [estudio de la Reserva Federal](https://www.federalreserve.gov/econres/feds/files/2026018pap.pdf) calcula que el empleo de ingenieros de software sigue creciendo, pero unos **3 puntos porcentuales al año más despacio** que en un escenario sin IA. Los propios autores avisan de que no es un efecto causal limpio, pero apunta a un frenazo, no a un colapso.
+¿Significa esto que la IA no afecta al empleo? No. Un [estudio de la Reserva Federal](https://www.federalreserve.gov/econres/feds/files/2026018pap.pdf) calcula que el empleo de los programadores (las profesiones en las que programar pesa mucho) sigue creciendo, pero unos **3 puntos porcentuales al año más despacio** que antes de ChatGPT. Los propios autores avisan de que la estimación tiene varias salvedades, pero apunta a un frenazo, no a un colapso.
 
 ## El sándwich: decidir, ejecutar, entregar
 
@@ -53,7 +56,7 @@ La IA ha comprimido brutalmente la capa del medio. Pero las otras dos siguen ah�
 
 ![Dos sándwiches comparan el desarrollo antes y con IA: ejecutar se reduce; decidir y entregar mantienen su tamaño](../../assets/blog/la-ia-y-el-empleo-de-los-ingenieros-de-software-que-dicen-los-datos/sandwich-antes-con-ia.png)
 
-Hay un dato que lo demuestra de forma bastante clara: [un estudio con más de 100.000 desarrolladores en GitHub](https://cepr.org/voxeu/columns/writing-code-versus-shipping-code-productivity-effects-across-generations-ai-coding) encontró que, sumando autocompletado, agentes interactivos y agentes autónomos, los commits subieron un **180 %** pero las releases solo un **30 %**. Casi el triple de commits, un 30 % más de software entregado. La [revisión del paper](https://www.nber.org/papers/w35275) de septiembre de 2026, ya con más de 500.000 desarrolladores, sube los commits al 240 % y deja las releases en el mismo 30 %. Ahí tienes el sándwich: el medio se ha aplastado, pero el pan de arriba y el de abajo siguen siendo humanos.
+Hay un dato que lo demuestra de forma bastante clara: [un estudio con más de 100.000 desarrolladores en GitHub](https://cepr.org/voxeu/columns/writing-code-versus-shipping-code-productivity-effects-across-generations-ai-coding) encontró que el efecto acumulado de las tres generaciones de herramientas (autocompletado, agentes interactivos y agentes autónomos) subía los commits un **180 %**, pero las releases solo un **30 %**. Casi el triple de commits, un 30 % más de software entregado. La [revisión del paper](https://www.nber.org/papers/w35275) de septiembre de 2026, ya con más de 500.000 desarrolladores, sube ese efecto acumulado al 240 % en commits y deja las releases en el mismo 30 %. Ahí tienes el sándwich: el medio se ha aplastado, pero el pan de arriba y el de abajo siguen siendo humanos.
 
 ¿Y no se puede comprimir más el sándwich con modelos mejores? Los autores creen que no, y yo estoy bastante de acuerdo. Cuando una decisión se puede delegar a la IA, deja de ser una ventaja competitiva y el valor de decidir sube de nivel. Siempre hay una decisión más arriba que sigue siendo tuya. Y en la capa de entregar, alguien tiene que ser responsable de lo que se despliega. Podemos elegir, como sociedad e industria, que ese alguien siga siendo una persona.
 
@@ -73,7 +76,7 @@ Y resulta que supervisar bien a un agente cansa. [Simon Willison cuenta](https:/
 
 Los datos van en la misma línea. En [SWE-chat](https://arxiv.org/abs/2604.20779), un dataset de sesiones reales con agentes que los propios desarrolladores compartieron:
 
-- Solo el **59 % del código generado por agentes sobrevive** hasta el commit final.
+- Solo el **59 % del código generado por agentes sobrevive** en los commits que acaba haciendo el desarrollador.
 - Los commits hechos con vibe coding introducen **casi 4 veces más vulnerabilidades** por línea que los hechos solo por humanos.
 - Lo que más pide la gente al agente no es generar código nuevo, sino entender el existente.
 
@@ -104,3 +107,13 @@ Lo que sube de valor es justo lo que la IA no hace bien: entender el problema, d
 Así que mi consejo es el de siempre, pero con más urgencia: aprende a supervisar agentes como si fuera parte de tu trabajo (porque lo es), y no dejes de entender el código que firmas.
 
 ¿Tú qué ves en tu equipo? ¿Más código, más releases, o solo más ruido? Te leo en los comentarios.
+
+## Fuentes
+
+- [Why AI hasn't replaced software engineers, and won't](https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers), de Arvind Narayanan y Sayash Kapoor (junio de 2026). El ensayo en el que se basa este post.
+- [The Great Turnover](https://www.resumetemplates.com/the-great-turnover-9-in-10-companies-plan-to-hire-in-2026-yet-6-in-10-will-have-layoffs-2/), encuesta de ResumeTemplates a 1.000 responsables de contratación de EE. UU. (abril de 2026).
+- [AI and Coder Employment: Compiling the Evidence](https://www.federalreserve.gov/econres/feds/files/2026018pap.pdf), de Leland D. Crane y Paul E. Soto, Reserva Federal (marzo de 2026).
+- [Today was a Good Day: The Daily Life of Software Developers](https://www.microsoft.com/en-us/research/wp-content/uploads/2019/04/devtime-preprint-TSE19.pdf), de Meyer, Barr, Bird y Zimmermann, Microsoft Research (2019).
+- [Writing Code vs. Shipping Code](https://www.nber.org/papers/w35275), de Demirer, Musolff y Yang, NBER Working Paper 35275 (mayo de 2026, revisado en septiembre de 2026). Hay un [resumen en VoxEU](https://cepr.org/voxeu/columns/writing-code-versus-shipping-code-productivity-effects-across-generations-ai-coding).
+- [SWE-chat: Coding Agent Interactions From Real Users in the Wild](https://arxiv.org/abs/2604.20779), arXiv (abril de 2026, revisado en octubre de 2026).
+- [An AI state of the union](https://www.lennysnewsletter.com/p/an-ai-state-of-the-union), entrevista a Simon Willison en Lenny's Podcast (abril de 2026).
