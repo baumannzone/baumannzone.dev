@@ -7,7 +7,7 @@ type: "blog"
 tags: ["IA", "Fundamentals"]
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20dar%20mejor%20contexto%20a%20un%20agente%20de%20IA%20para%20programar&tags=IA,Fundamentals"
 relatedPosts:
-  - "como-dividir-texto"
+  - "intl-segmenter-como-dividir-texto-en-javascript"
   - "rsl-el-nuevo-estandar-que-quiere-que-la-ia-pague-por-tu-contenido"
 ---
 
