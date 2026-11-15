@@ -135,6 +135,12 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
 
       {
         showComments && (
+          <div class='giscus prose prose-lg mx-auto mb-12' />
+        )
+      }
+
+      {
+        showComments && (
           <script
             src='https://giscus.app/client.js'
             data-repo='baumannzone/baumannzonedev-comments'
