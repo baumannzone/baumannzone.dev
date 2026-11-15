@@ -92,6 +92,28 @@ Algunas de mis _issues_ antiguas no llevan la barra final, como `blog/dibujar-co
 
 Lo único que no encaja es `data-strict="1"`. Las _discussions_ convertidas no tienen el _hash_ del título en el cuerpo, y tendría que añadirlo a mano en cada una. Por eso lo he dejado en `0`.
 
+## Que nadie use tus comentarios en otra web
+
+Al publicar el script con mis identificadores, me entró la duda: ¿y si alguien lo copia?
+
+Los identificadores no son secretos. Están en el código fuente de cualquier página del blog, y giscus.app los saca de cualquier repositorio público. Con ellos nadie puede escribir en tu repositorio ni tocar tu cuenta.
+
+El problema es otro. Si alguien pega tu script en su web, los comentarios de su web acaban como _discussions_ en tu repositorio.
+
+Para evitarlo, Giscus lee un archivo `giscus.json` en la raíz del repositorio de comentarios. Este es el mío:
+
+```json
+{
+  "origins": ["https://www.baumannzone.dev", "https://baumannzone.dev"],
+  "originsRegex": ["http://localhost:[0-9]+"]
+}
+```
+
+- `origins`: los dominios donde se permite cargar los comentarios. Pon las dos versiones, con y sin `www`.
+- `originsRegex`: lo mismo, pero con expresiones regulares. Lo uso para que funcione en `localhost` con cualquier puerto, mientras pruebo en local.
+
+Si el dominio no está en la lista, Giscus no carga el widget. Lo he probado desde otro dominio y no aparece nada.
+
 ## Lo que no cambia
 
 Sigue dependiendo de GitHub. Para comentar hace falta una cuenta, y eso deja fuera a quien no la tenga. Para un blog técnico no es un problema, para uno de recetas sí.
