@@ -82,7 +82,7 @@ Content goes here (no H1 - title from frontmatter is used)
 
 ### Utilities
 - `src/utils/tags.ts`: Tag URL generation and utilities
-- `src/utils/screensaver.js`: Screensaver functionality
+- `src/components/ScreenSaver.astro`: Screensaver (inline script, used in both layouts)
 - `src/consts.ts`: Site-wide constants
 
 ## Styling

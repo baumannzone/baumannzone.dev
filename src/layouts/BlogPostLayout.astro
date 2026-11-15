@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import BlogJsonLd from '../components/BlogJsonLd.astro';
 import AiSummaryLinks from '../components/AiSummaryLinks.astro';
 import Footer from '../components/Footer.astro';
+import ScreenSaver from '../components/ScreenSaver.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import SharePostBar from '../components/SharePostBar.astro';
 import NavBar from '../components/NavBar.astro';
@@ -163,6 +164,6 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
     </main>
 
     <Footer />
-    <script src='/src/utils/screensaver.js'></script>
+    <ScreenSaver />
   </body>
 </html>
