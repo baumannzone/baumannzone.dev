@@ -11,7 +11,6 @@ import {
   websiteId,
   websiteSchema,
 } from '../../utils/schema';
-import { talkMainEntity } from '../../utils/talk-schema';
 
 // import horseImage from '../../assets/talks/horse.jpeg';
 import horseImage from '../../assets/talks/horse2.png';
@@ -68,18 +67,13 @@ const jsonLd = {
         '@type': 'ItemList',
         name: 'Charlas',
         numberOfItems: talks.length,
-        itemListElement: talks.map((talk, index) => {
-          const url = new URL(`/talks/${talk.id}/`, Astro.site).href;
-          return {
-            '@type': 'ListItem',
-            position: index + 1,
-            name: talk.data.title,
-            url,
-            item: talkMainEntity(talk, Astro.site, {
-              includeDescription: false,
-            }),
-          };
-        }),
+        // Summary list: each talk page carries its full Event/PodcastEpisode/… entity.
+        itemListElement: talks.map((talk, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: talk.data.title,
+          url: new URL(`/talks/${talk.id}/`, Astro.site).href,
+        })),
       },
     },
     breadcrumbSchema(Astro.site, [

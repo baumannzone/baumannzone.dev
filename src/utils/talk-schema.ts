@@ -20,31 +20,25 @@ export function talkPageDescription(talk: Talk) {
   );
 }
 
-export function talkMainEntity(
-  talk: Talk,
-  site: URL | undefined,
-  options?: { includeDescription?: boolean },
-) {
+export function talkMainEntity(talk: Talk, site: URL | undefined) {
   const { title, type, event, date } = talk.data;
   const talkUrl = new URL(`/talks/${talk.id}/`, site).href;
   const day = date.toISOString().slice(0, 10);
   const performer = { "@id": personId(site) };
-  const entity: Record<string, unknown> = {
+  const entity = {
     "@id": `${talkUrl}#main`,
     name: title,
     url: talkUrl,
     inLanguage: "es",
+    description: talkPageDescription(talk),
   };
-
-  if (options?.includeDescription !== false) {
-    entity.description = talkPageDescription(talk);
-  }
 
   if (type === "conferencia" || type === "meetup" || type === "social") {
     return {
       "@type": "Event",
       ...entity,
       startDate: day,
+      endDate: day,
       eventStatus: "https://schema.org/EventScheduled",
       location: { "@type": "Place", name: event },
       performer,
