@@ -1,8 +1,8 @@
 ---
 title: "Evita que la pantalla se duerma con JavaScript: domina la Screen Wake Lock API"
-description: "JavaScript te permite mantener la pantalla despierta con la Screen Wake Lock API. Descubre cómo funciona y cómo puedes usarla en tus aplicaciones web. Mejora la UX con este sencillo truco."
+description: "Cómo evitar que la pantalla se apague con JavaScript usando la Screen Wake Lock API: pedir el bloqueo, liberarlo y recuperarlo al volver a la pestaña."
 pubDate: 2024-10-20
-updatedDate: 2026-11-12
+updatedDate: 2026-11-15
 type: blog
 author: Jorge Baumann
 intro: true
@@ -18,19 +18,19 @@ import Demo1 from "../../components/demos-blog/evita-que-la-pantalla-se-duerma-c
 
 Para evitar que la pantalla se apague desde JavaScript se usa la Screen Wake Lock API: `await navigator.wakeLock.request("screen")` mantiene la pantalla encendida mientras la página esté visible. Funciona en Chrome, Edge, Firefox y Safari, solo en páginas servidas por HTTPS, y el navegador retira el bloqueo automáticamente cuando cambias de pestaña.
 
-¿Alguna vez has estado cocinando una receta y la pantalla de tu dispositivo se apaga justo cuando estás a punto de leer el siguiente paso? O tal vez estás viendo un video y la pantalla se oscurece un poco porque no has tocado el dispositivo en un rato. La Screen Wake Lock API es la solución a estos problemas.
+¿Alguna vez has estado cocinando una receta y la pantalla de tu dispositivo se apaga justo cuando estás a punto de leer el siguiente paso? O tal vez estás viendo un vídeo y la pantalla se oscurece un poco porque no has tocado el dispositivo en un rato. La Screen Wake Lock API es la solución a estos problemas.
 
-![Screen Wake Lock API](../../assets/blog/evita-que-la-pantalla-se-duerma-con-javascript-domina-la-screen-wake-lock-api/dirty-hands.webp)
+![Ilustración de una persona en la cocina con las manos manchadas de salsa intentando usar el móvil](../../assets/blog/evita-que-la-pantalla-se-duerma-con-javascript-domina-la-screen-wake-lock-api/dirty-hands.webp)
 
 ## ¿Qué es la Screen Wake Lock API?
 
-La mayoría de los dispositivos, por defecto, apagan la pantalla después de un tiempo para alargar la vida del hardware. Los dispositivos modernos hacen esto también para ahorrar batería. Aunque es una función útil, algunas aplicaciones necesitan que la pantalla siga encendida para ser realmente efectivas.
+La mayoría de los dispositivos, por defecto, apagan la pantalla después de un rato sin usarlos, para ahorrar batería y para bloquear el dispositivo si te lo dejas olvidado. Aunque es una función útil, algunas aplicaciones necesitan que la pantalla siga encendida para ser realmente efectivas.
 
 La Screen Wake Lock API se encarga de que la pantalla **no se apague**, **no se atenúe ni se bloquee**. Te permite mantener la pantalla _despierta_ sin complicaciones.
 
 ## Casos de uso
 
-Perfecto para esas apps que no se pueden dar el lujo de que la pantalla se apague, como cuando estás viendo un video o siguiendo una receta (y no quieres dejar el móvil lleno de churretes). Pero no solo eso, la Screen Wake Lock API también es ideal para cuando estás usando un mapa o incluso cuando estás exponiendo una presentación.
+Perfecto para esas apps que no se pueden dar el lujo de que la pantalla se apague, como cuando estás viendo un vídeo o siguiendo una receta (y no quieres dejar el móvil lleno de churretes). Pero no solo eso, la Screen Wake Lock API también es ideal para cuando estás usando un mapa o incluso cuando estás exponiendo una presentación.
 
 ¿Y qué pasa si tienes una app que funciona con control de voz? Pues te viene de lujo, porque no querrás depender de tocar la pantalla cada dos por tres para que no se duerma.
 
@@ -160,16 +160,18 @@ La comprobación `wakeLock !== null` sirve para pedirlo de nuevo solo si el bloq
 
 El acceso a la Screen Wake Lock API está controlado por la directiva de **Permissions Policy**. Por defecto, solo se permite el uso de esta API para el propio origen de la página (`self`), lo que significa que si tu aplicación tiene iframes del mismo origen, estos podrán usar la API sin problemas. Sin embargo, el contenido de terceros (como iframes de otros dominios) no podrá usar esta funcionalidad, a menos que lo habilites explícitamente.
 
-Aquí te dejo un ejemplo curioso: mi amigo Carlos Azaustre (¡sí, tú, [Carlos](https://x.com/carlosazaustre)!) decidió hackearme amistosamente y colar un iframe en mi web. Si quiero permitir que su página use la Screen Wake Lock API, tengo que configurarlo en mi servidor con el encabezado `Permissions-Policy` de la siguiente manera:
-
-```http
-Permissions-Policy: screen-wake-lock=(self "https://carlosazaustre.es")
-```
-
-Después Carlos tendría que añadir el atributo `allow="screen-wake-lock"` en el iframe correspondiente para que funcione correctamente:
+Aquí te dejo un ejemplo curioso: mi amigo Carlos Azaustre (¡sí, tú, [Carlos](https://x.com/carlosazaustre)!) me pide que meta su web en un iframe dentro de la mía. Si quiero que su página pueda usar la Screen Wake Lock API, basta con que yo añada el atributo `allow="screen-wake-lock"` al iframe:
 
 ```html
 <iframe src="https://carlosazaustre.es" allow="screen-wake-lock"></iframe>
+```
+
+El iframe está en mi página, así que el permiso lo doy yo, no Carlos. No hace falta tocar el servidor: la política por defecto es `self`, y el atributo `allow` le cede el permiso al origen del iframe.
+
+Si además quieres dejarlo fijado desde el servidor, puedes usar la cabecera `Permissions-Policy` con la lista de orígenes permitidos:
+
+```http
+Permissions-Policy: screen-wake-lock=(self "https://carlosazaustre.es")
 ```
 
 Si por el contrario prefieres desactivar completamente el uso de la Screen Wake Lock API en tu sitio web, incluso para ti, puedes hacerlo con este encabezado:
@@ -180,7 +182,7 @@ Permissions-Policy: screen-wake-lock=()
 
 ## Demo
 
-Aquí tienes una demo funcional para probar la API en tiempo real. Activa el _wake lock_, cambia de pestaña y vuelve para ver cómo se libera y se intenta recuperar cuando la página vuelve a estar visible.
+Aquí tienes una demo funcional para probar la API en tiempo real. Activa el _wake lock_, cambia de pestaña y vuelve: verás que se libera al salir. Con la casilla «Reactivar al volver a la pestaña» marcada, se vuelve a pedir solo al regresar.
 
 <Demo1 />
 
@@ -188,15 +190,13 @@ Aquí tienes una demo funcional para probar la API en tiempo real. Activa el _wa
 
 La Screen Wake Lock API se debe usar para mantener la pantalla encendida y mejorar la experiencia del usuario. Un buen detalle sería mostrar algún tipo de feedback visual en la interfaz para indicar si el wake lock está activo, y de paso ofrecerle al usuario una forma de desactivarlo si le da la gana.
 
-También puede ser interesante usar esta API con un temporizador (`setTimeout`) para liberar el _wake lock_ después de un tiempo determinado, por ejemplo, si el usuario no ha interactuado con la página durante un tiempo.
+También puede ser interesante liberar el _wake lock_ si el usuario lleva un rato sin interactuar con la página. Basta con un temporizador (`setTimeout`) que se reinicia con cada clic o scroll.
 
 Otra opción interesante puede ser activar el _wake lock_ hasta que el usuario llegue a un punto concreto de la página (`Intersection Observer API`), como la sección de comentarios que viene después de un artículo.
 
 ## Conclusión
 
-Ya has visto que la Screen Wake Lock API es súper sencilla de implementar. El navegador no le pide permiso al usuario y no hacen falta configuraciones avanzadas para probarla. Solo asegúrate de que la página se sirve por HTTPS y de que estás en una pestaña activa y visible, porque la API no funciona si la página está en segundo plano.
-
-Así que, la próxima vez que quieras mejorar la experiencia de usuario en tus web apps, asegúrate de que la pantalla no se duerma cuando más se necesita. ¡Pon la Screen Wake Lock API a trabajar!
+Ya has visto que la Screen Wake Lock API es supersencilla de implementar. El navegador no le pide permiso al usuario y no hacen falta configuraciones avanzadas para probarla. Solo asegúrate de que la página se sirve por HTTPS y de que estás en una pestaña activa y visible, porque la API no funciona si la página está en segundo plano.
 
 ## Fuentes
 

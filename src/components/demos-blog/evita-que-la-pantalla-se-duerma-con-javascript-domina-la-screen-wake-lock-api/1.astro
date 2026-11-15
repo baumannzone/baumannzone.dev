@@ -2,13 +2,13 @@
 import DemoLayout from '../demo-layout.astro';
 ---
 
-<DemoLayout>
+<DemoLayout name='Screen Wake Lock' tag='Pruébala'>
   <section
     data-wake-lock-demo
-    class='space-y-4 rounded-md border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-500/30 dark:bg-gray-800/40'
+    class='space-y-4'
   >
     <p class='m-0 text-sm text-gray-700 dark:text-gray-200'>
-      Estado del wake lock:
+      Estado del wake lock:{' '}
       <strong
         data-status
         data-tone='neutral'
@@ -42,6 +42,7 @@ import DemoLayout from '../demo-layout.astro';
       <input
         type='checkbox'
         data-auto-reactivate
+        checked
         class='h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-500'
       />
       Reactivar al volver a la pestaña
