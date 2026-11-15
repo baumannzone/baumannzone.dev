@@ -1,0 +1,141 @@
+---
+title: "Cursores en CSS: todos los tipos y cómo crear uno personalizado"
+description: Todos los valores de la propiedad cursor en CSS, qué significa cada uno y cómo crear cursores personalizados con imágenes o emojis sin pasarte de tamaño.
+pubDate: 2021-12-17
+updatedDate: 2026-11-15
+type: blog
+author: Jorge Baumann
+tags:
+  - CSS
+  - UX/UI
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Cursores%20en%20CSS%3A%20todos%20los%20tipos%20y%20c%C3%B3mo%20crear%20uno%20personalizado&tags=CSS,UX/UI"
+relatedPosts:
+  - "bordes-con-degradado-css"
+  - "la-gran-mentira-de-letter-spacing-en-css-que-no-sabias"
+---
+
+import CursorsDemo from "../../components/demos-blog/cursores-en-css/1.astro";
+
+La propiedad `cursor` de CSS cambia cómo se [ve](https://baumannzone.github.io/cursores-css/) el puntero del ratón cuando está encima de un elemento. Puedes elegir uno de los 36 cursores que trae el navegador o usar tu propia imagen.
+
+El cursor es una pista para el usuario. La mano 👆 sobre un enlace le dice que puede pulsar ahí. Si pones esa mano sobre algo que no es clicable, le estás mintiendo. Así que cambia el cursor solo cuando el cambio cuente algo.
+
+Solo se ve en dispositivos con ratón o trackpad. En el móvil no hay cursor, y en el iPad con trackpad el puntero es un círculo que solo cambia con `text`.
+
+## Todos los cursores de CSS
+
+Pasa el ratón por cada casilla para ver el cursor:
+
+<CursorsDemo />
+
+### Generales
+
+| Valor     | Para qué sirve                                                  |
+| :-------- | :-------------------------------------------------------------- |
+| `auto`    | El navegador decide según el contexto. Es el valor por defecto. |
+| `default` | La flecha de siempre.                                           |
+| `none`    | No se muestra ningún cursor.                                    |
+
+### Enlaces y estado
+
+| Valor          | Para qué sirve                                                      |
+| :------------- | :------------------------------------------------------------------ |
+| `pointer`      | Algo clicable, como un enlace o un botón.                           |
+| `context-menu` | Hay un menú contextual disponible.                                  |
+| `help`         | Hay ayuda disponible.                                               |
+| `progress`     | Algo se está cargando, pero puedes seguir usando la página.         |
+| `wait`         | Algo se está cargando y no puedes hacer nada hasta que termine.     |
+
+### Selección
+
+| Valor           | Para qué sirve                                   |
+| :-------------- | :----------------------------------------------- |
+| `text`          | Texto que se puede seleccionar.                  |
+| `vertical-text` | Texto vertical que se puede seleccionar.         |
+| `cell`          | Celdas que se pueden seleccionar, como en una hoja de cálculo. |
+| `crosshair`     | Selección precisa, como en un editor de imágenes. |
+
+### Arrastrar y soltar
+
+| Valor         | Para qué sirve                                          |
+| :------------ | :------------------------------------------------------ |
+| `grab`        | Algo que se puede agarrar y mover.                      |
+| `grabbing`    | Algo que estás arrastrando.                             |
+| `move`        | Algo que se puede mover.                                |
+| `copy`        | Al soltar se creará una copia.                          |
+| `alias`       | Al soltar se creará un acceso directo.                  |
+| `no-drop`     | No puedes soltar aquí.                                  |
+| `not-allowed` | La acción no está permitida, como un botón deshabilitado. |
+
+### Redimensionar y desplazar
+
+| Valor                                         | Para qué sirve                                      |
+| :-------------------------------------------- | :-------------------------------------------------- |
+| `col-resize`, `row-resize`                    | Cambiar el ancho de una columna o el alto de una fila. |
+| `n-resize`, `e-resize`, `s-resize`, `w-resize` | Redimensionar desde un lado (norte, este, sur, oeste). |
+| `ne-resize`, `nw-resize`, `se-resize`, `sw-resize` | Redimensionar desde una esquina.               |
+| `ew-resize`, `ns-resize`, `nesw-resize`, `nwse-resize` | Redimensionar en los dos sentidos de un eje.   |
+| `all-scroll`                                  | Desplazarse en cualquier dirección.                 |
+
+### Zoom
+
+| Valor      | Para qué sirve |
+| :--------- | :------------- |
+| `zoom-in`  | Ampliar.       |
+| `zoom-out` | Reducir.       |
+
+## Por diversión 🤡
+
+Cuando hago una web y quiero gastar una broma a quien la usa, tiro de `none` y de `wait`. Con `none` el ratón desaparece y nadie entiende nada. Con `wait` sale el icono de cargando, y te quedas esperando algo que nunca llega.
+
+Fuera de las bromas, no ocultes el cursor. `none` solo tiene sentido en juegos, presentaciones a pantalla completa o cuando dibujas tu propio cursor con JavaScript.
+
+## Cursores personalizados
+
+Si quieres ir más allá, puedes usar una imagen con la función `url()`. Siempre tienes que terminar con un cursor de los de la lista, que se usará si la imagen no carga.
+
+### Cursor personalizado con imágenes
+
+```css
+.cursor-custom {
+  cursor: url(img/aim.png), auto;
+}
+```
+
+El segundo valor, `auto`, es el cursor de reserva. Es obligatorio: sin él, la regla no es válida y el navegador la ignora. Puedes usar cualquier valor de la lista, no solo `auto`.
+
+Puedes usar PNG, SVG y, en escritorio, el formato `.cur` de Windows. Los GIF se aceptan, pero no se animan: verás solo el primer fotograma.
+
+Si quieres un cursor animado, tienes que simularlo con JavaScript:
+
+- Oculta el ratón con `cursor: none`.
+- Sigue la posición del ratón con el evento `pointermove`.
+- Mueve un elemento animado hasta esa posición.
+
+### Cursor personalizado con emojis
+
+Usar un emoji es tan fácil como esto:
+
+```css
+.cursor-custom {
+  cursor: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px'><text y='20'>🦄</text></svg>")
+      12 12, auto;
+}
+```
+
+Seguramente necesites usar coordenadas (_x_, _y_) para ajustar el cursor. Por ejemplo, si estás usando un cursor personalizado cuyo elemento mide 24x24 píxeles y quieres que el punto de clic esté en el centro, deberías usar _12_ _12_ como valores de coordenadas. De esta forma, el punto de clic estará justo en el medio.
+Si no pones nada, por defecto los valores son `0 0`, es decir, la esquina superior izquierda.
+
+Mira [la demo](https://baumannzone.github.io/cursores-css/) y comprueba cómo funcionan los cursores personalizados.
+
+[<img src="https://raw.githubusercontent.com/baumannzone/cursores-css/main/img/og.png" alt="Cursores en CSS por Baumannzone" width="1600" height="900" loading="lazy" decoding="async" />](https://baumannzone.github.io/cursores-css/)
+
+## Límites de tamaño
+
+La especificación no pone límite al tamaño de la imagen, pero los navegadores sí, para evitar abusos. Firefox y Chromium aceptan hasta **128x128** píxeles, aunque lo recomendable es no pasar de **32x32**.
+
+Si la imagen es más grande que el límite, el navegador no la recorta: la ignora y usa el cursor de reserva. Además, los cursores grandes suelen bloquearse cuando se acercan a la barra del navegador, para que nadie pueda usarlos para tapar la interfaz y engañar al usuario.
+
+## Fuentes
+
+- [cursor](https://developer.mozilla.org/es/docs/Web/CSS/cursor), en MDN, con la lista completa de valores y los límites de cada navegador.

@@ -1,0 +1,58 @@
+---
+import DemoLayout from "../demo-layout.astro";
+
+const cursors = [
+  "auto", "default", "none", "context-menu", "help", "pointer", "progress",
+  "wait", "cell", "crosshair", "text", "vertical-text", "alias", "copy",
+  "move", "no-drop", "not-allowed", "grab", "grabbing", "all-scroll",
+  "col-resize", "row-resize", "n-resize", "e-resize", "s-resize", "w-resize",
+  "ne-resize", "nw-resize", "se-resize", "sw-resize", "ew-resize",
+  "ns-resize", "nesw-resize", "nwse-resize", "zoom-in", "zoom-out",
+];
+---
+
+<DemoLayout name="cursor" tag="Pasa el ratón">
+  <ul class="cursor-grid">
+    {
+      cursors.map((cursor) => (
+        <li class="cursor-cell" style={`cursor: ${cursor}`}>
+          <code>{cursor}</code>
+        </li>
+      ))
+    }
+  </ul>
+</DemoLayout>
+
+<style>
+  .cursor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cursor-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--demo-border);
+    border-radius: 8px;
+    background: var(--demo-bar-bg);
+    transition: border-color 0.15s;
+  }
+
+  .cursor-cell:hover {
+    border-color: var(--demo-accent);
+  }
+
+  .cursor-cell code {
+    font-family: var(--demo-mono);
+    font-size: 12px;
+    color: var(--demo-code);
+  }
+</style>
