@@ -78,9 +78,25 @@ Las paredes de la mazmorra usan `background-image` con SVG para simular los ladr
 
 El juego comienza cuando pones el ratón en el triángulo verde: las paredes empiezan a moverse, [el cursor](https://baumannzone.github.io/cursores-css/) se convierte en un unicornio y se inicia la animación que muestra la pantalla de victoria.
 
-El truco del juego es sencillo. Si tocas las paredes de la mazmorra (`:hover`), se muestra la pantalla de derrota. Si consigues salir de la mazmorra, se muestra la pantalla de victoria. Es así porque la animación de mostrar pantalla de victoria tiene 5 segundos de _delay_, que coincide con la duración del juego.
+### Cómo se pierde
 
-Es decir que cuando llegas al final de la mazmorra ha pasado el tiempo necesario para que se muestre la pantalla de victoria.
+Si tocas una pared, se muestra la pantalla de derrota. Para eso uso `:hover` en las paredes y el combinador de hermanos `~`, que selecciona los elementos que van después en el mismo padre:
+
+```css
+/* Si tocas una pared, aparece la pantalla de derrota */
+.dungeon-wall-left:hover ~ .n00b,
+.dungeon-wall-right:hover ~ .n00b,
+.n00b:hover {
+  display: block;
+  z-index: 10;
+}
+```
+
+Por eso en el HTML `.n00b` va después de las paredes: `~` solo mira hacia delante. Y `.n00b:hover` hace que, una vez muerto el unicornio, la pantalla se quede mientras tengas el ratón encima.
+
+### Cómo se gana
+
+El truco es el tiempo. La animación que muestra la pantalla de victoria tiene 5 segundos de _delay_, lo mismo que tardan las paredes en recorrer la mazmorra. Si aguantas esos 5 segundos sin tocar nada, has llegado al final.
 
 ```css
 /* Mueve las paredes durante 5 segundos */
@@ -95,6 +111,8 @@ Es decir que cuando llegas al final de la mazmorra ha pasado el tiempo necesario
 }
 ```
 
+### El texto de las pantallas
+
 Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece superpotente esta función de CSS!
 
 ```css
@@ -104,8 +122,6 @@ Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) co
   content: attr(data-text);
 }
 ```
-
-Esto es todo lo que necesitas saber para crear un juego con CSS.
 
 Ahora es tu turno. Juega y dime cuántos intentos te llevó salir de la mazmorra.
 
