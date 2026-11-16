@@ -23,7 +23,7 @@ En este artículo me gustaría explorar los límites del lenguaje CSS. Quiero ve
 
 Antonio buscaba una vida llena de alegría y color. Le gustaba explorar el mundo y dar largos paseos por las nubes. Contemplar las estrellas y sentir la brisa en la cara era algo que le encantaba.
 
-En uno de esos paseos, se despistó y se desorientó. De repente no sabía dónde estaba, no entendía que estaba pasando. Cuando se dio cuenta, vio que estaba atrapado en una mazmorra de la que no sabía salir.
+En uno de esos paseos, se despistó y se desorientó. De repente no sabía dónde estaba, no entendía qué estaba pasando. Cuando se dio cuenta, vio que estaba atrapado en una mazmorra de la que no sabía salir.
 
 ## Objetivo del juego
 
@@ -87,13 +87,13 @@ Es decir que cuando llegas al final de la mazmorra ha pasado el tiempo necesario
   animation: move-walls 5s linear;
 }
 
-/* Muestra la pantalla de victoria despues de 5 segundos */
+/* Muestra la pantalla de victoria después de 5 segundos */
 .dungeon:hover .gg {
   animation: show-gg 0s 5s linear forwards;
 }
 ```
 
-Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece super potente esta función de CSS!
+Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) como si pierdes (`.n00b`). El texto lo sacamos del atributo `data-text` de cada capa usando la función CSS `attr()`. Sinceramente, ¡me parece superpotente esta función de CSS!
 
 ```css
 .gg::after,
@@ -105,4 +105,4 @@ Al finalizar la partida verás una pantalla con texto, tanto si ganas (`.gg`) co
 
 Esto es todo lo que necesitas saber para crear un juego con CSS.
 
-Ahora es tu turno. Juega y dime cuantos intentos te llevó salir de la mazmorra.
+Ahora es tu turno. Juega y dime cuántos intentos te llevó salir de la mazmorra.
