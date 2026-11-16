@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Keep anchor targets clear of the sticky mobile navbar (h-16) */
+@media (max-width: 639px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+}
+
 /* Dual theme support for code blocks using Shiki */
 @media (prefers-color-scheme: dark) {
   .astro-code,
