@@ -8,7 +8,11 @@ const latestTalks = (await getCollection("talks"))
   .slice(0, LATEST_COUNT);
 ---
 
-<section class="bg-white pb-24 sm:pb-32">
+<section class="relative isolate overflow-hidden bg-gray-100 py-24 sm:py-32">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 bg-[radial-gradient(theme(colors.gray.300)_1px,transparent_1px)] [background-size:20px_20px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
+  ></div>
   <div class="mx-auto bmn-container">
     <div class="mx-auto max-w-2xl lg:mx-0">
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -20,7 +24,7 @@ const latestTalks = (await getCollection("talks"))
     </div>
 
     <div
-      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
+      class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
     >
       {latestTalks.map((talk) => <TalkCard talk={talk} />)}
     </div>
