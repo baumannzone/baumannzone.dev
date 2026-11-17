@@ -1,26 +1,33 @@
 ---
-title: "Beneficios de dar charlas como developer"
-description: "Descubre cómo dar charlas técnicas puede transformar tu carrera como desarrollador, mejorando tus habilidades de comunicación, ampliando tu red profesional y posicionándote como líder de opinión en la comunidad tech."
+title: "Beneficios de dar charlas como developer (y cómo preparar la tuya)"
+description: "Qué ganas al dar charlas técnicas como developer (oportunidades, contactos y confianza) y cómo preparar la tuya: público, estructura, slides, ensayos y dónde empezar."
+updatedDate: 2026-11-17
+intro: true
+relatedPosts:
+  - "si-solo-escribes-codigo-no-estas-haciendo-suficiente-segun-esta-metrica"
+  - "ejercicio-para-retrospectivas-agile"
 pubDate: 2025-11-23
 type: blog
 author: Jorge Baumann
 tags:
   - Career
   - Inspiration
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer&tags=Career,Inspiration"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Beneficios%20de%20dar%20charlas%20como%20developer%20(y%20c%C3%B3mo%20preparar%20la%20tuya)&tags=Career,Inspiration"
 ---
 
-Hablar en publico impone. Pero evitarlo también tiene un coste: oportunidades que no llegan y una carrera que avanza menos de lo que podría.
+Dar charlas como developer te trae oportunidades laborales, contactos y confianza, y te obliga a entender de verdad lo que explicas. Para preparar una buena charla técnica, piensa en tu público, define qué quieres que se lleve, cuéntalo como una historia y ensaya mucho más de lo que crees necesario.
 
-La evidencia científica lo demuestra una y otra vez: cuando alguien del mundo tech trabaja su comunicación, no solo gana confianza, también mejora la forma en la que explica lo técnico y lo no técnico. Y en nuestra industria eso está muy valorado.
+Hablar en público impone. Pero evitarlo también tiene un coste: oportunidades que no llegan y una carrera que avanza menos de lo que podría.
 
-Hablar en público no es un detalle menor: es realmente una palanca de crecimiento. Este artículo revelará el poder transformador de hablar en público y cómo puedes dominarlo, cómo prepararte y qué beneficios trae a tu desarrollo profesional y personal.
+Lo digo por experiencia: desde 2017 he dado charlas en conferencias y meetups, y he participado en podcasts y entrevistas. Puedes verlas todas en [mi página de charlas](/talks/). Cada una me ha obligado a explicar mejor lo técnico, y en nuestra industria eso está muy valorado.
+
+En este artículo te cuento qué beneficios trae hablar en público y cómo preparar tu charla.
 
 ![Jorge Baumann con un traje de Super Mario, a caballito sobre su padre con máscara de caballo, en una conferencia](../../assets/blog/beneficios-de-dar-charlas-como-developer/baumannzone-horse.png)
+
 > Dar una charla técnica no tiene por qué ser aburrido: a veces hay caballos y trajes de Super Mario 🍄🎤
 
-
-## El poder transformador de hablar en público para software developers
+## Por qué hablar en público ayuda a un developer
 
 ¿Crees que saber hablar bien en público es solo cosa de managers o la gente de ventas? **Error**. Como software engineer, mejorar tu oratoria o dar charlas puede darle un giro brutal a tu carrera.
 
@@ -46,10 +53,9 @@ Mejorar tu comunicación también te hace crecer como persona.
 - **Comunicación más clara**. Aprendes a traducir lo técnico en ideas accesibles para cualquier contexto.
 - **Aprendizaje constante**. Preparar charlas te obliga a investigar, ordenar ideas y mantenerte al día.
 
-#### PRO TIP 😉 
-No empieces a lo grande. Hazlo en pequeño: una demo en tu equipo, una daily bien llevada o un meetup corto. La confianza se construye charla a charla.
+#### PRO TIP 😉
 
----
+No empieces a lo grande. Hazlo en pequeño: una demo en tu equipo, una daily bien llevada o un meetup corto. La confianza se construye charla a charla.
 
 Si te quedas con una idea, que sea esta: hablar en público no es un extra, es una palanca real para crecer como developer. Vamos ahora con cómo prepararte para hacerlo bien.
 
@@ -92,11 +98,12 @@ Las slides están para reforzar tu mensaje, no para reemplazarte. Si las haces b
 
 Una charla técnica sin narrativa se siente como documentación leída en voz alta. Si armas un hilo, la gente conecta y entiende mejor.
 
-Por ejemplo, en mi charla "**JavaScript 🤝 TikTok**" arranco con el gancho de "salvar TikTok del ban en EE. UU." y desde ahí aterrizo cómo funciona JavaScript en el navegador. Primero captas la atención, luego profundizas en lo técnico.
+Por ejemplo, en mi charla [**JavaScript, make TikTok great again**](/talks/javascript-make-tiktok-great-again-t3chfest/) arranco con el gancho de "salvar TikTok del ban en EE. UU." y desde ahí aterrizo cómo funciona JavaScript en el navegador. Primero captas la atención, luego profundizas en lo técnico.
 
 ### Practicando tu presentación: desde casa hasta el escenario
 
 > TL;DR: practica, practica, practica, practica, practica y practica.
+
 #### Ensaya absolutamente todo
 
 La diferencia entre una charla floja y una charla sólida suele estar en el ensayo. Practica varias veces como si ya estuvieras en el escenario y fíjate en:
@@ -122,13 +129,13 @@ Antes de subir al escenario, haz un checklist técnico:
 
 Mantén contacto visual y sé receptivo a las señales de la audiencia. Fomentar preguntas o discusiones puede crear una sesión más interactiva y atractiva.
 
-En mi caso, suelo preparar una app de votos o encuestas rápidas para que la gente participe en vivo. Con las herramientas de vibe-coding, hoy montarlo es mucho más fácil.
+En mi caso, suelo preparar una app de votos o encuestas rápidas para que la gente participe en vivo. Con las herramientas de _vibe coding_, hoy montarlo es mucho más fácil.
 
-![Poll de ejemplo usando Vibe Coding](../../assets/blog/beneficios-de-dar-charlas-como-developer/poll.png)
+![Panel de administración de la app de votaciones de una de mis charlas, con 75 votos y columnas de flexiones, superpoder, maldición, actitud y Tailwind](../../assets/blog/beneficios-de-dar-charlas-como-developer/poll.png)
 
-Si quieres saber más sobre oratoria, revisa el siguiente video de _Vinh Giang_ (me encanta este tío):
+Si quieres saber más sobre oratoria, mira el vídeo "9 Habits for Clearer Speaking" de _Vinh Giang_ (me encanta este tío):
 
-[<img src="https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg" alt="Vídeo de Vinh Giang sobre oratoria en YouTube" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=PiNN-HmHu7A)
+[<img src="https://i.ytimg.com/vi/PiNN-HmHu7A/hqdefault.jpg" alt="Vídeo de Vinh Giang en YouTube: 9 Habits for Clearer Speaking" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=PiNN-HmHu7A)
 
 ## Networking
 
@@ -138,18 +145,27 @@ Ahí empieza el networking de verdad: gente que conecta contigo por lo que acaba
 
 No tienes que forzar conversaciones ni perseguir a nadie. Compartes algo útil, alguien piensa "_esta persona sabe de esto_" y se acerca en el descanso. Conexión natural.
 
+## Dónde dar tu primera charla
+
+No necesitas una conferencia grande para empezar. De menos a más:
+
+1. **Una charla interna en tu empresa.** El público te conoce y el ambiente es seguro.
+2. **Un meetup local.** Casi todos buscan ponentes, y muchos aceptan charlas cortas de 10 o 15 minutos.
+3. **Una _lightning talk_.** Cinco minutos sobre una sola idea. Es la mejor forma de perder el miedo.
+4. **El CFP de una conferencia.** Cuando ya te sientas cómodo, presenta tu propuesta al _call for papers_ (CFP). Una charla que ya has dado en un meetup es una gran candidata.
+
 ## Conclusión
 
-Dar charlas como developer no va solo de hablar bien. Va de aprender mejor, comunicar con claridad y generar impacto con lo que sabes. 
+Dar charlas como developer no va solo de hablar bien. Va de aprender mejor, comunicar con claridad y generar impacto con lo que sabes.
 
-Además, compartir conocimientos en eventos tech contribuye a la construcción de comunidades y expande las redes de contacto, abriendo puertas a nuevas oportunidades de colaboración y crecimiento profesional.
+Además, cada charla te pone delante de gente con tus mismos intereses, y de ahí salen colaboraciones, amistades y, a veces, trabajos.
 
 Si estás empezando, no busques perfección: elige un tema que te guste, prepara una versión corta y pruébala en un entorno pequeño. A partir de ahí, itera con feedback y vuelve a subirte al escenario.
 
 ### Recurso final (muy recomendado)
 
-Si quieres cerrar este artículo con una idea práctica y aplicable desde hoy, este video merece muchísimo la pena:
+Si quieres cerrar este artículo con una idea práctica y aplicable desde hoy, el vídeo "4 Tips To Improve Your Public Speaking" de Motivation2Study merece muchísimo la pena:
 
-[<img src="https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg" alt="Vídeo recomendado sobre oratoria en YouTube" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=962eYqe--Yc)
+[<img src="https://i.ytimg.com/vi/962eYqe--Yc/hqdefault.jpg" alt="Vídeo de Motivation2Study en YouTube: 4 Tips To Improve Your Public Speaking" width="480" height="360" loading="lazy" decoding="async" />](https://www.youtube.com/watch?v=962eYqe--Yc)
 
 Si tienes algún recurso que te haya ayudado con la oratoria, compártelo en los comentarios.
