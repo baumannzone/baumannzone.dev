@@ -168,8 +168,8 @@ const jsonLd = {
             </div>
 
             <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch mb-2'>
-              {readSoftwareBooks.map((book) => (
-                <BookCard book={book} />
+              {readSoftwareBooks.map((book, index) => (
+                <BookCard book={book} eager={index < 4} />
               ))}
             </div>
           </div>

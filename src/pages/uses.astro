@@ -3,12 +3,64 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import myUses from "../components/UsesPage/uses.js";
 import desktopImage from "../assets/desktop.avif";
 import { Image } from "astro:assets";
+import JsonLd from "../components/JsonLd.astro";
+import { SITE_DESCRIPTION } from "../consts";
+import {
+  breadcrumbSchema,
+  personId,
+  personSchema,
+  websiteId,
+  websiteSchema,
+} from "../utils/schema";
+
+const pageTitle = "Mi setup de trabajo como desarrollador web";
+const title = `${pageTitle} | Baumannzone.dev`;
+const description =
+  "Mi setup de trabajo como desarrollador web en remoto: portátil, monitores, teclado, silla, editor, terminal y herramientas de IA que uso a diario.";
+// Bump this when uses.js changes.
+const updatedDate = new Date("2025-09-14");
+const updatedLabel = updatedDate.toLocaleDateString("es-ES", {
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const ogImage = new URL("https://baumannzone-dev-og.vercel.app/api/og");
+ogImage.searchParams.set("title", pageTitle);
+ogImage.searchParams.set("tags", "Setup,Hardware,Herramientas");
+
+const usesUrl = new URL("/uses/", Astro.site).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${usesUrl}#webpage`,
+      url: usesUrl,
+      name: title,
+      description,
+      inLanguage: "es",
+      dateModified: updatedDate.toISOString().slice(0, 10),
+      isPartOf: { "@id": websiteId(Astro.site) },
+      about: { "@id": personId(Astro.site) },
+      author: { "@id": personId(Astro.site) },
+    },
+    personSchema(Astro.site),
+    websiteSchema(Astro.site, SITE_DESCRIPTION),
+    breadcrumbSchema(Astro.site, [
+      { name: "Inicio", path: "/" },
+      { name: "Mi setup", path: "/uses/" },
+    ]),
+  ],
+};
 ---
 
 <DefaultLayout
-  title="Mi setup de trabajo | Baumannzone.dev"
-  description="Conoce todas las herramientas y gadgets que utilizo para trabajar en mi día a día como desarrollador web."
+  title={title}
+  description={description}
+  ogImage={ogImage.toString()}
 >
+  <JsonLd slot="head" data={jsonLd} />
   <div
     class="relative isolate overflow-hidden bg-white px-6 pb-10 pt-24 sm:pt-32 lg:overflow-visible lg:px-0"
   >
@@ -55,12 +107,15 @@ import { Image } from "astro:assets";
             <h1
               class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
             >
-              Mis setup de trabajo como developer
+              {pageTitle}
             </h1>
             <p class="mt-6 text-xl leading-8 text-gray-700">
               Bienvenido a mi madriguera digital. Este es el cuartel general
               desde donde lanzo commits, compilo bugs y trabajo en proyectos que
               probablemente nunca verán la luz.
+            </p>
+            <p class="mt-4 text-sm text-gray-500">
+              Actualizado en <time datetime={updatedDate.toISOString().slice(0, 10)}>{updatedLabel}</time>
             </p>
           </div>
         </div>

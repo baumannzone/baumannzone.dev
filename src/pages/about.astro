@@ -28,9 +28,9 @@ const posts = (await getCollection("blog"))
 // Get the last 3 posts
 const recentPosts = posts.slice(0, 3);
 
-const title = "Sobre mí | Baumannzone.dev";
+const title = "Jorge Baumann, Senior Software Engineer | Baumannzone.dev";
 const description =
-  "Conoce más sobre Jorge Baumann (@baumannzone) y su trabajo como desarrollador web y creador de contenido.";
+  "Soy Jorge Baumann (@baumannzone), Senior Software Engineer, speaker y divulgador de desarrollo web, JavaScript y testing. Mi trayectoria, clientes y proyectos.";
 const aboutUrl = new URL("/about/", Astro.site).href;
 const homeUrl = new URL("/", Astro.site).href;
 const image = await getImage({ src: profileImage, width: 140, height: 140 });

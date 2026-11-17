@@ -13,9 +13,11 @@ export interface Props {
     status?: "read" | "reading" | "pending";
     readAt?: { month?: number; year: number };
   };
+  /** Load the cover eagerly; use for covers visible on first paint. */
+  eager?: boolean;
 }
 
-const { book } = Astro.props;
+const { book, eager = false } = Astro.props;
 const authors = (Array.isArray(book.author) ? book.author : [book.author])
   .filter((author) => author.trim());
 const linkHost = book.link ? new URL(book.link).hostname : undefined;
@@ -52,6 +54,7 @@ function formatReadAtDate(readAt: { month?: number; year: number }): string {
           width={192}
           widths={[192, 384]}
           sizes='192px'
+          loading={eager ? 'eager' : 'lazy'}
           class='h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105'
         />
         {book.readAt && (
