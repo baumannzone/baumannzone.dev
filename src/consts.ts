@@ -26,5 +26,7 @@ export const SITE_OWNER = {
     bluesky: "https://bsky.app/profile/baumannzone.dev",
     x: "https://twitter.com/baumannzone",
     youtube: "https://youtube.com/RambitoJS",
+    devto: "https://dev.to/baumannzone",
+    codepen: "https://codepen.io/baumannzone",
   },
 };
