@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import TalkCard from "../TalkCard.astro";
+
+const LATEST_COUNT = 2;
+const latestTalks = (await getCollection("talks"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, LATEST_COUNT);
+---
+
+<section class="bg-white pb-24 sm:pb-32">
+  <div class="mx-auto bmn-container">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Últimas charlas
+      </h2>
+      <p class="mt-2 text-lg leading-8 text-gray-600">
+        Conferencias, podcasts y meetups en los que he participado
+      </p>
+    </div>
+
+    <div
+      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
+    >
+      {latestTalks.map((talk) => <TalkCard talk={talk} />)}
+    </div>
+
+    <div class="mt-16 text-center">
+      <a
+        href="/talks/"
+        class="group inline-flex items-center gap-1 text-base font-semibold text-violet-700 hover:text-violet-500 transition-colors"
+      >
+        Ver todas las charlas
+        <span
+          aria-hidden="true"
+          class="inline-block transition-transform group-hover:translate-x-1"
+          >→</span
+        >
+      </a>
+    </div>
+  </div>
+</section>

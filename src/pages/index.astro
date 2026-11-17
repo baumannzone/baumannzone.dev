@@ -4,6 +4,7 @@ import { getImage } from "astro:assets";
 import BlogSection from "../components/HomePage/BlogSection.astro";
 import ProfileSection from "../components/HomePage/ProfileSection.astro";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import TalksSection from "../components/HomePage/TalksSection.astro";
 import RandomSetupItem from "../components/HomePage/RandomSetupItem.astro";
 import profileImage from "../components/HomePage/baumannzone.webp";
 import { HOME_TITLE, SITE_DESCRIPTION } from "../consts";
@@ -44,5 +45,6 @@ const posts = (await getCollection("blog"))
   />
   <ProfileSection />
   <BlogSection posts={posts} />
+  <TalksSection />
   <RandomSetupItem />
 </DefaultLayout>
