@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts/DefaultLayout.astro';
 import { getCollection } from 'astro:content';
 import JsonLd from '../../components/JsonLd.astro';
+import TalkCard from '../../components/TalkCard.astro';
 import { SITE_DESCRIPTION } from '../../consts';
 import {
   breadcrumbSchema,
@@ -16,7 +17,6 @@ import {
 import horseImage from '../../assets/talks/horse2.png';
 
 const talks = await getCollection('talks');
-const currentDate = new Date();
 talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 // Group talks by year
@@ -110,39 +110,7 @@ const jsonLd = {
             </div>
 
             <div class='grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch mb-2'>
-              {talksByYear[year].map((talk) => (
-                <a
-                  href={`/talks/${talk.id}/`}
-                  class='block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2'
-                >
-                  <div class='rounded-xl border-2 border-zinc-200 h-full'>
-                    <div class='flex flex-col space-y-1.5 p-6'>
-                      <div class='flex items-start justify-between gap-3'>
-                        <div class='text-sm text-zinc-500 min-w-0'>{talk.data.event}</div>
-                        <div class='shrink-0 bg-zinc-200 rounded-lg'>
-                          <div class='px-2.5 py-0.5 font-semibold text-zinc-950 rounded-lg text-xs group-hover:bg-white transition-colors flex items-center'>
-                            <span class='mr-1'>{talk.data.type}</span>
-                            <div
-                              class={`size-[6px] rounded-full ${talk.data.date > currentDate ? 'bg-green-500' : 'bg-gray-400'}`}
-                              title={
-                                talk.data.date > currentDate
-                                  ? 'Próxima charla'
-                                  : 'Charla pasada'
-                              }
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class='text-2xl font-semibold tabular-nums text-zinc-950'
-                        style={`view-transition-name: talk-${talk.id}`}
-                      >
-                        {talk.data.title}
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              ))}
+              {talksByYear[year].map((talk) => <TalkCard talk={talk} />)}
             </div>
           </div>
         ))
