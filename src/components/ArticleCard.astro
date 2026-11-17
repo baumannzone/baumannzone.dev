@@ -4,16 +4,20 @@ import FormattedDate from "./FormattedDate.astro";
 // isBlog: blog post in the blog page
 // isNew: newest post with green label
 // Otherwise, blog post in the home page
+// headingLevel: 2 in the blog page (under the h1), 3 in the home page
+// (under the section h2)
 interface Props {
   isNew?: boolean;
+  headingLevel?: 2 | 3;
   post: {
     id: string;
     data: any;
   };
 }
 
-const { post, isNew = false } = Astro.props;
+const { post, isNew = false, headingLevel = 2 } = Astro.props;
 const articleUrl = `/blog/${post.id}/`;
+const Heading = `h${headingLevel}`;
 ---
 
 <article>
@@ -28,27 +32,31 @@ const articleUrl = `/blog/${post.id}/`;
         ) : null
       }
     </div>
-    <h2
+    <Heading
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       style={`view-transition-name: post-${post.id}`}
     >
-      {post.data.title}
-    </h2>
+      {/* The title is the link: its text is the anchor text crawlers read.
+          The absolute span stretches it so the whole card stays clickable. */}
+      <a href={articleUrl}>
+        <span class="absolute inset-0"></span>
+        {post.data.title}
+      </a>
+    </Heading>
     <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
       {post.data.description}
     </p>
 
-    <a
-      href={articleUrl}
+    <span
+      aria-hidden="true"
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
     >
-      <span class="absolute inset-0"></span>
       Ver más
       <span
         class="inline-block ms-0 transition-transform group-hover:translate-x-1"
       >
         →
       </span>
-    </a>
+    </span>
   </div>
 </article>

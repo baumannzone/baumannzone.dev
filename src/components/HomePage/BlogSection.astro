@@ -37,7 +37,7 @@ const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
     >
       {
         recentPosts.map((post, index) => (
-          <ArticleCard post={post} isNew={index === 0} />
+          <ArticleCard post={post} isNew={index === 0} headingLevel={3} />
         ))
       }
       <div id="random-post-container"></div>
@@ -75,28 +75,30 @@ const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
         ✨ Random
       </span>
     </div>
-    <h2
+    <h3
       class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
       style="${`view-transition-name: post-${randomPost.id}`}"
     >
-      ${randomPost.data.title}
-    </h2>
+      <a href=${`/blog/${randomPost.id}/`}>
+        <span class="absolute inset-0"></span>
+        ${randomPost.data.title}
+      </a>
+    </h3>
     <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
       ${randomPost.data.description}
     </p>
 
-    <a
-      href=${`/blog/${randomPost.id}/`}
+    <span
+      aria-hidden="true"
       class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
     >
-      <span class="absolute inset-0"></span>
       Ver más
       <span
         class="inline-block ms-0 transition-transform group-hover:translate-x-1"
       >
         →
       </span>
-    </a>
+    </span>
   </div>
 </article>
   `;
