@@ -2,10 +2,13 @@
 import ArticleCard from "../ArticleCard.astro";
 
 const { posts } = Astro.props;
-// Todos los post menos los 3 primeros.
+// Artículos recientes que se muestran fijos; el último hueco es aleatorio.
+const RECENT_COUNT = 5;
+const recentPosts = posts.slice(0, RECENT_COUNT);
+// Todos los post menos los recientes.
 // Solo los campos que usa la tarjeta: define:vars serializa lo que reciba
 // dentro del HTML, y el post completo incluye el cuerpo entero del artículo.
-const otherPosts = posts.slice(3).map(({ id, data }) => ({
+const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
   id,
   data: {
     title: data.title,
@@ -32,9 +35,11 @@ const otherPosts = posts.slice(3).map(({ id, data }) => ({
     <div
       class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-16"
     >
-      <ArticleCard post={posts[0]} isNew={true} />
-      <ArticleCard post={posts[1]} />
-      <ArticleCard post={posts[2]} />
+      {
+        recentPosts.map((post, index) => (
+          <ArticleCard post={post} isNew={index === 0} />
+        ))
+      }
       <div id="random-post-container"></div>
     </div>
   </div>
