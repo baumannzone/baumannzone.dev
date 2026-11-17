@@ -19,7 +19,11 @@ import { SITE_OWNER } from '../../consts';
         class='bmn-container relative bg-white dark:bg-gray-700 dark:text-gray-100 mx-auto -mt-16 rounded-md pb-8'
       >
         <div class='relative flex justify-center'>
-          <button id='profile-img'>
+          <button
+            id='profile-img'
+            type='button'
+            aria-label={`Foto de ${SITE_OWNER.name}: pulsa para lanzar logos`}
+          >
             <Image
               src={baumannzoneImg}
               alt={`Foto de ${SITE_OWNER.name} (${SITE_OWNER.alternateName})`}
