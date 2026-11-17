@@ -3,10 +3,10 @@
 
 export const SITE_TITLE = "Baumannzone.dev - Desarrollo Web Profesional";
 // <title> of the home page: leads with the author's name so searches for it land here.
-export const HOME_TITLE = "Jorge Baumann (@baumannzone) · Desarrollo web y JavaScript";
+export const HOME_TITLE = "Jorge Baumann (@baumannzone) · Desarrollo de software e IA";
 
 export const SITE_DESCRIPTION =
-  "Recursos y guías sobre programación y desarrollo web FullStack: JavaScript, HTML, CSS, testing y más.";
+  "Artículos, charlas y recursos sobre desarrollo de software, web e IA, escritos por un Senior Software Engineer.";
 
 export const SITE_NAME = "Baumannzone";
 
@@ -16,7 +16,7 @@ export const SITE_OWNER = {
   alternateName: "@baumannzone",
   jobTitle: "Senior Software Engineer",
   description:
-    "Ingeniero de software y divulgador de contenido. Speaker. Apasionado del desarrollo web y del BJJ.",
+    "Ingeniero de software y divulgador de contenido. Escribo sobre desarrollo de software, web e IA. Speaker. Apasionado del BJJ.",
   knowsAbout: ["JavaScript", "HTML", "CSS", "Testing", "Desarrollo web", "IA"],
   profiles: {
     github: "https://github.com/baumannzone",
