@@ -13,7 +13,7 @@ links:
     url: "https://www.baumannzone.dev/talks/madrid-js-mercadona-javascript/madrid-js-mercadona-2026.pdf"
 ---
 
-![Cartel de la charla «Crea tu propio Mercadona con JavaScript» en Madrid JS](../../assets/talks/madrid-js-mercadona-javascript/main.png)
+![Cartel de la charla "Crea tu propio Mercadona con JavaScript" en Madrid JS](../../assets/talks/madrid-js-mercadona-javascript/main.png)
 
 La IA te va a quitar el trabajo. O al menos va a hacer que muchas de las tareas que hacemos hoy valgan cada vez menos. Por eso tenemos que buscar alternativas. Yo ya me veo reponiendo yogures.
 

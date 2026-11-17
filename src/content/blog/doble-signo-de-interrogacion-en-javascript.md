@@ -122,5 +122,5 @@ Esto es todo lo que necesitas saber del operador de doble interrogación (`??`) 
 
 - [Operador de coalescencia nula (`??`)](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing), en MDN.
 - [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), la lista completa de valores _falsy_ en MDN (en inglés).
-- [Propuesta de TC39 «Nullish Coalescing for JavaScript»](https://github.com/tc39/proposal-nullish-coalescing), el origen del operador.
+- [Propuesta de TC39 "Nullish Coalescing for JavaScript"](https://github.com/tc39/proposal-nullish-coalescing), el origen del operador.
 - [Binary Logical Operators](https://tc39.es/ecma262/#sec-binary-logical-operators), la sección de la especificación de ECMAScript que define `??` y prohíbe mezclarlo con `||` y `&&` sin paréntesis.

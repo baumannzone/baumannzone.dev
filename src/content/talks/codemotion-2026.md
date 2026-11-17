@@ -16,6 +16,6 @@ links:
     url: "https://www.territoriobitcoin.com/codemotion-madrid-2026-sera-el-epicentro-de-la-revolucion-tech-en-europa/"
 ---
 
-![Cartel de la charla «Crea tu propio Mercadona con JavaScript» en Codemotion Madrid 2026](../../assets/talks/codemotion-2026/banner.png)
+![Cartel de la charla "Crea tu propio Mercadona con JavaScript" en Codemotion Madrid 2026](../../assets/talks/codemotion-2026/banner.png)
 
-El evento de [Codemotion Madrid 2026](https://conferences.codemotion.com/madrid/) será los días **20 y 21 de abril** en [La Nave](https://lanave.io/) (Madrid). Yo estaré dando la charla **«Crea tu propio Mercadona con JavaScript»** el día **20**.
+El evento de [Codemotion Madrid 2026](https://conferences.codemotion.com/madrid/) será los días **20 y 21 de abril** en [La Nave](https://lanave.io/) (Madrid). Yo estaré dando la charla **"Crea tu propio Mercadona con JavaScript"** el día **20**.

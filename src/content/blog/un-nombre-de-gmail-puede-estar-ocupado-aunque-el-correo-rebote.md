@@ -7,9 +7,9 @@ tags: [TIL]
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Un%20nombre%20de%20Gmail%20puede%20estar%20ocupado%20aunque%20el%20correo%20rebote&tags=TIL"
 ---
 
-Hoy he aprendido que **«nombre de usuario ocupado» no siempre significa «buzón activo»** en Gmail.
+Hoy he aprendido que **"nombre de usuario ocupado" no siempre significa "buzón activo"** en Gmail.
 
-La situación es esta: intentas crear una cuenta y Gmail te dice que el nombre ya está ocupado. Escribes a esa dirección para ver si existe y el correo rebota con un «dirección no encontrada». ¿En qué quedamos?
+La situación es esta: intentas crear una cuenta y Gmail te dice que el nombre ya está ocupado. Escribes a esa dirección para ver si existe y el correo rebota con un "dirección no encontrada". ¿En qué quedamos?
 
 ## Por qué Gmail no te deja usar ese nombre
 

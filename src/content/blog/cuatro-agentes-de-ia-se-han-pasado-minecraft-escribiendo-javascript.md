@@ -12,7 +12,7 @@ relatedPosts:
   - "la-ia-y-el-empleo-de-los-ingenieros-de-software-que-dicen-los-datos"
 ---
 
-Imagina juntar a cuatro inteligencias artificiales, meterlas en un servidor de Minecraft y decirles únicamente: **«Derrotad al Ender Dragon»**.
+Imagina juntar a cuatro inteligencias artificiales, meterlas en un servidor de Minecraft y decirles únicamente: **"Derrotad al Ender Dragon"**.
 
 Sin explicarles cómo conseguir diamantes, dónde encontrar el portal o qué estrategia utilizar. Sin asignarles tareas y, sobre todo, sin escribirles el código que necesitan para jugar.
 
