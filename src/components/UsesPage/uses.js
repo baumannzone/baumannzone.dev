@@ -366,11 +366,6 @@ const myUses = [
           "Para poner en modo oscuro cualquier página web y no quemarte los ojos por la noche.",
         link: "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
       },
-      {
-        title: "Color Tab",
-        description: "Nueva pestaña con colorines.",
-        link: "https://chrome.google.com/webstore/detail/color-tab/hchlgfaicmddilenlflajnmomalehbom?hl=es",
-      },
     ],
   },
   {
