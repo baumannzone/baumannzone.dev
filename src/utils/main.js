@@ -7,44 +7,48 @@
 const stringToKebabCase = (str) =>
   str.toLowerCase().replace(/\s+/g, '-');
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+const COFFEE_START = Date.UTC(2015, 0, 1);
+// Training, afternoons and two kids: more coffee from here on.
+const TRAINING_START = Date.UTC(2026, 1, 1);
+const VACATION_SHARE = 44 / 52; // 8 weeks off a year
+
+/**
+ * Average coffees on a given day
+ * @param {Date} date - a UTC midnight
+ * @returns number
+ */
+const coffeesOn = (date) => {
+  const weekday = date.getUTCDay(); // 0 = Sunday
+  const isWeekend = weekday === 0 || weekday === 6;
+
+  // Until February 2026: one coffee from Monday to Thursday.
+  if (date.getTime() < TRAINING_START) {
+    return weekday >= 1 && weekday <= 4 ? VACATION_SHARE : 0;
+  }
+
+  // Since then: three a day from Monday to Friday, three on about half of
+  // the weekends, and half as much in July and August.
+  const perDay = isWeekend ? 3 * 0.5 : 3;
+  const month = date.getUTCMonth();
+  const isSummer = month === 6 || month === 7;
+  return isSummer ? perDay * 0.5 : perDay;
+};
+
 /**
  * Calculate the number of coffees consumed since 2015
  * @returns number
  */
 const calculateCoffees = () => {
-  const startYear = 2015;
-  const endYear = new Date().getFullYear();
-  const month = new Date().getMonth() + 1; // JavaScript months are 0-11
-  const day = new Date().getDate();
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
 
-  const coffeeDaysPerWeek = 4; // Monday to Thursday
-  const weeksInYear = 52;
-  const weeksOff = 8; // 8 weeks of vacation
-  const workingWeeksPerYear = weeksInYear - weeksOff;
-  const coffeeDaysPerYear = workingWeeksPerYear * coffeeDaysPerWeek;
+  let total = 0;
+  for (let time = COFFEE_START; time <= today; time += DAY_MS) {
+    total += coffeesOn(new Date(time));
+  }
 
-  // Calculate full years with coffee from startYear to the year before endYear
-  const fullYears = endYear - startYear - 1;
-  const fullYearsCoffees = fullYears * coffeeDaysPerYear;
-
-  // Calculate coffee days in the current year
-  const currentYearStart = new Date(`${endYear}-01-01`);
-  const currentDate = new Date(`${endYear}-${month}-${day}`);
-  const daysPassedThisYear = Math.floor(
-    (currentDate - currentYearStart) / (1000 * 60 * 60 * 24)
-  );
-
-  const daysPassedThisYearWeeks =
-    Math.floor(daysPassedThisYear / 7) * coffeeDaysPerWeek;
-  const remainingDays = daysPassedThisYear % 7;
-  const extraCoffeeDays = Math.min(remainingDays, coffeeDaysPerWeek);
-
-  const currentYearCoffees = daysPassedThisYearWeeks + extraCoffeeDays;
-
-  // Sum total coffees
-  const totalCoffees = fullYearsCoffees + currentYearCoffees;
-
-  return Math.floor(totalCoffees);
+  return Math.floor(total);
 };
 
 export { stringToKebabCase, calculateCoffees };
