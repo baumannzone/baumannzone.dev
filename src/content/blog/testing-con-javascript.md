@@ -1,8 +1,8 @@
 ---
-title: Testing con Javascript
+title: Testing con JavaScript
 pubDate: 2019-09-02
 updatedDate: 2024-06-01
-description: "Introducción al testing con Javascript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript"
+description: "Introducción al testing con JavaScript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript"
 type: blog
 author: Jorge Baumann
 tags:
@@ -21,7 +21,7 @@ Hola de nuevo, querido developer.
 
 Existen muchas y variadas razones por las que considero que los tests son útiles e importantes.
 
-No las vamos a mencionar ahora, pero si has leído este [artículo](/blog/about-testing/) con anterioridad, ya sabrás lo importante que son los tests en el desarrollo de software en general.
+No las vamos a mencionar ahora, pero si has leído este [artículo](/blog/about-testing/) con anterioridad, ya sabrás lo importantes que son los tests en el desarrollo de software en general.
 
 Recuerda, cuando hablemos de pruebas (o tests), nos estamos refiriendo a **pruebas automáticas**, entendiendo como tales el proceso de escribir código que compruebe que nuestra aplicación funciona correctamente.
 
@@ -42,14 +42,14 @@ const resta = (num1, num2) => num1 - num2;
 module.exports = { suma, resta };
 ```
 
-Podemos empezar. Sabemos lo que hay que hacer y tenemos código que listo para ser testeado.
+Podemos empezar. Sabemos lo que hay que hacer y tenemos código listo para ser testeado.
 
 ## Paso 0
 
 ¿Cuál es el ejemplo de test más básico que podemos crear? Para mí, sería algo como esto:
 
 ```javascript
-// test0.js
+// test-0.js
 
 const resultado = 1;
 const esperado = 2;
@@ -269,7 +269,7 @@ Actualmente, cuando ejecutamos las pruebas y nos informan de un error, no tenemo
 Sabemos que está fallando la función `suma`, pero podría ser perfectamente la función `resta`.
 Nuestro mensaje de error no es tan descriptivo como debería ser.
 
-Asimismo, nos hemos dado cuenta de que nuestras pruebas no están completamente aisladas unas de otras.
+Además, nuestras pruebas no están aisladas unas de otras: si la primera aserción falla, el `throw` detiene el script y el resto de pruebas ni siquiera se ejecutan. Si fallan la suma y la resta a la vez, solo nos enteramos del primer error.
 
 ## Paso 4
 
@@ -312,7 +312,7 @@ Ejecutemos el test `test-4.js` y veamos cómo queda.
 
 ![Resultado en la terminal al ejecutar test-4.js](../../assets/blog/testing-con-javascript/test-4.png)
 
-Tenemos un [listado](../../assets/blog/testing-con-javascript/test-4.mp4) de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.
+Tenemos un listado de todos los tests que hemos ejecutado, los que han finalizado con éxito y los que no.
 
 Antes, en caso de fallo, nos aparecía el mensaje de error pero no sabíamos de dónde provenía el fallo.  
 Ahora, en caso de error, se nos muestra el propio error, por lo tanto sabremos exactamente qué es lo que tenemos que rectificar.
