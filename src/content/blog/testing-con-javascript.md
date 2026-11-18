@@ -336,7 +336,7 @@ Actualmente existen en el “mercado” bastantes frameworks o librerías de est
 En un principio pensé en usar [AVA](https://github.com/avajs/ava) 🚀, que me gusta porque es bastante simple y moderno. Sin embargo, desde mi punto de vista tiene una pequeña deficiencia: la documentación.
 Por lo tanto, la segunda opción, sin duda alguna es [Jest](https://jestjs.io/) 🃏. En el entorno profesional es el framework de testing que más utilizo y su documentación me parece bastante buena y es más intuitiva.
 
-A día de hoy (_mayo de 2024_), si tuviera que hacer la elección, me quedaría con [Vitest](https://vitest.dev/), el framework de testing para gente cool. 😎
+A día de hoy (_noviembre de 2026_), si tuviera que hacer la elección, me quedaría con [Vitest](https://vitest.dev/), el framework de testing para gente cool. 😎
 
 Por lo tanto, en vez de seguir añadiendo funcionalidades a nuestro framework, vamos a refactorizar nuestro código para que funcione con Jest.
 
