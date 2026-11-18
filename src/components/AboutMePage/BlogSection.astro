@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
-const { recentPosts } = Astro.props;
+import ArticleCard from "../ArticleCard.astro";
 
-import img7 from "../../assets/sobre-mi/team/7.avif";
+const { recentPosts } = Astro.props;
 ---
 
 <!-- Blog section -->
@@ -12,33 +11,15 @@ import img7 from "../../assets/sobre-mi/team/7.avif";
       Desde el blog
     </h2>
     <p class="mt-2 text-lg leading-8 text-gray-600">
-      Esto es lo último que hemos escrito en el blog.
+      Esto es lo último que he escrito en el blog.
     </p>
   </div>
   <div
-    class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
   >
     {
-      recentPosts.map((post) => (
-        <a
-          href={`/blog/${post.id}/`}
-          class="block hover:bg-zinc-200 rounded-xl transition group focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
-        >
-          <div class="rounded-xl border-2 border-zinc-200 h-full">
-            <div class="flex flex-col space-y-1.5 p-6">
-              <div class="text-sm text-zinc-500">
-                {post.data.pubDate.toLocaleDateString("es-ES", {
-                  year: "numeric",
-                  month: "short",
-                  day: "2-digit",
-                })}
-              </div>
-              <div class="text-2xl font-semibold tabular-nums text-zinc-950">
-                {post.data.title}
-              </div>
-            </div>
-          </div>
-        </a>
+      recentPosts.map((post, index) => (
+        <ArticleCard post={post} isNew={index === 0} headingLevel={3} />
       ))
     }
   </div>
