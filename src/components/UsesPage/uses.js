@@ -448,6 +448,18 @@ const myUses = [
   },
   {
     type: "h2",
+    title: "Libros",
+    children: [
+      {
+        title: "Libros de programación y otras lecturas",
+        description:
+          "Los libros técnicos que he leído (y algunos que no lo son), con mi opinión de cada uno. Ideal para estrenar el Kindle.",
+        link: "/books/",
+      },
+    ],
+  },
+  {
+    type: "h2",
     title: "Cables y conexiones",
     children: [
       {

@@ -170,8 +170,14 @@ const jsonLd = {
                               {item.link ? (
                                 <a
                                   href={item.link}
-                                  target="_blank"
-                                  rel={isSponsored(item.link) ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+                                  {...(item.link.startsWith("/")
+                                    ? {}
+                                    : {
+                                        target: "_blank",
+                                        rel: isSponsored(item.link)
+                                          ? "sponsored noopener noreferrer"
+                                          : "noopener noreferrer",
+                                      })}
                                   class="text-violet-600 hover:text-violet-800"
                                 >
                                   {item.title}
