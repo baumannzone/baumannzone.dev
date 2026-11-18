@@ -68,110 +68,74 @@ const otherLinks = [
 ---
 
 <footer class="bg-violet-700" aria-labelledby="footer-heading">
-  <h2 id="footer-heading" class="sr-only">Footer</h2>
-  <div class="bmn-container mx-auto pb-8 pt-20 sm:pt-24 lg:pt-32">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="grid grid-cols-2 gap-8 xl:col-span-2">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold leading-6 text-white">
-              Secciones
-            </h3>
-            <ul role="list" class="mt-6 space-y-4">
-              {
-                sectionLinks.map((link) => (
-                  <li>
-                    <a
-                      href={link.url}
-                      class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
-                    >
-                      {link.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <div class="mt-10 md:mt-0">
-            <h3 class="text-sm font-semibold leading-6 text-white">Apóyame</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              {
-                supportMeLinks.map((link) => (
-                  <li>
-                    <a
-                      href={link.url}
-                      class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
-                    >
-                      {link.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold leading-6 text-white">Links</h3>
-            <ul role="list" class="mt-6 space-y-4">
-              {
-                otherLinks.map((link) => (
-                  <li>
-                    <a
-                      href={link.url}
-                      class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
-                    >
-                      {link.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <!-- <div class='mt-10 md:mt-0'>
-            <h3 class='text-sm font-semibold leading-6 text-white'>Legal</h3>
-            <ul role='list' class='mt-6 space-y-4'>
+  <h2 id="footer-heading" class="sr-only">Pie de página</h2>
+  <div class="bmn-container mx-auto pb-8 pt-16 lg:pt-20">
+    <div class="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3">
+      <div>
+        <h3 class="text-sm font-semibold leading-6 text-white">Secciones</h3>
+        <ul role="list" class="mt-6 space-y-4">
+          {
+            sectionLinks.map((link) => (
               <li>
                 <a
-                  href='#'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Claim</a
+                  href={link.url}
+                  class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
                 >
+                  {link.title}
+                </a>
               </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold leading-6 text-white">Apóyame</h3>
+        <ul role="list" class="mt-6 space-y-4">
+          {
+            supportMeLinks.map((link) => (
               <li>
                 <a
-                  href='#'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Privacy</a
+                  href={link.url}
+                  class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
                 >
+                  {link.title}
+                </a>
               </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold leading-6 text-white">Más</h3>
+        <ul role="list" class="mt-6 space-y-4">
+          {
+            otherLinks.map((link) => (
               <li>
                 <a
-                  href='#'
-                  class='text-sm leading-6 text-gray-300 hover:text-white'
-                  >Terms</a
+                  href={link.url}
+                  class="text-sm leading-6 text-gray-300 hover:text-white focus:text-white underlined"
                 >
+                  {link.title}
+                </a>
               </li>
-            </ul>
-          </div> -->
-        </div>
+            ))
+          }
+        </ul>
       </div>
     </div>
 
     <div
-      class="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24"
+      class="mt-12 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between"
     >
       <div
-        class="flex flex-wrap sm:space-x-6 sm:order-2 justify-between sm:justify-end"
+        class="flex flex-wrap justify-center gap-x-6 gap-y-4 md:order-2 md:justify-end"
       >
         <a
           href="https://instagram.com/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">instagram</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">Instagram</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -189,8 +153,8 @@ const otherLinks = [
           href="https://twitch.tv/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">twitch</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">Twitch</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -208,8 +172,8 @@ const otherLinks = [
           href="https://twitter.com/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">twitter</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">X (Twitter)</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -227,8 +191,8 @@ const otherLinks = [
           href="https://dev.to/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">devTo</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">DEV</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -246,8 +210,8 @@ const otherLinks = [
           href="https://youtube.com/RambitoJS"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">youtube</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">YouTube</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -265,8 +229,8 @@ const otherLinks = [
           href="https://github.com/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">github</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">GitHub</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -285,8 +249,8 @@ const otherLinks = [
           href='https://www.facebook.com/Baumannzone-Desarrollo-Full-Stack-Javascript-110550534472293'
           target='_blank'
           rel=' noopener noreferrer'
-          class='text-purple-400 hover:text-purple-300 mb-2'
-          ><span class='sr-only'>facebook</span>
+          class='text-purple-300 hover:text-white'
+          ><span class='sr-only'>Facebook</span>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -305,8 +269,8 @@ const otherLinks = [
           href="https://codepen.com/baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">codepen</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">CodePen</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -324,8 +288,8 @@ const otherLinks = [
           href="https://www.linkedin.com/in/baumannzone/"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">linkedin</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">LinkedIn</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -343,8 +307,8 @@ const otherLinks = [
           href="https://www.tiktok.com/@baumannzone"
           target="_blank"
           rel=" noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">tiktok</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">TikTok</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -363,8 +327,8 @@ const otherLinks = [
           href="https://techhub.social/@baumannzone"
           target="_blank"
           rel="me noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">mastodon</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">Mastodon</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -383,8 +347,8 @@ const otherLinks = [
           href="https://bsky.app/profile/baumannzone.dev"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300 mb-2"
-          ><span class="sr-only">bluesky</span>
+          class="text-purple-300 hover:text-white"
+          ><span class="sr-only">Bluesky</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -400,7 +364,7 @@ const otherLinks = [
           >
         </a>
         <a
-          class="text-purple-400 hover:text-purple-300 mb-2"
+          class="text-purple-300 hover:text-white"
           target="_blank"
           rel="noreferrer noopener"
           href="https://threads.net/baumannzone"
@@ -420,8 +384,8 @@ const otherLinks = [
           </svg>
         </a>
       </div>
-      <p class="mt-8 text-xs leading-5 text-gray-300 md:order-1 md:mt-0">
-        &copy; {today.getFullYear()} Baumannzone · Desarrollo Full Stack JavaScript
+      <p class="mt-8 text-center text-xs leading-5 text-gray-300 md:order-1 md:mt-0 md:text-left">
+        &copy; {today.getFullYear()} Baumannzone · Desarrollo de software e IA
       </p>
     </div>
   </div>

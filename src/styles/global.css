@@ -103,13 +103,18 @@
   content: "";
   height: 2px;
   transform: scaleX(0);
-  transition: transform 0.25s ease;
   transform-origin: left;
   left: 0;
   bottom: -4px;
   width: 100%;
   display: block;
   position: absolute;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .underlined:after {
+    transition: transform 0.25s ease;
+  }
 }
 
 .underlined:hover:after,
