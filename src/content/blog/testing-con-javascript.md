@@ -1,17 +1,21 @@
 ---
-title: Testing con JavaScript
+title: "Testing con JavaScript: de cero a Jest, paso a paso"
 pubDate: 2019-09-02
-updatedDate: 2024-06-01
-description: "Introducción al testing con JavaScript a través de ejemplos progresivos: de 0 a framework. Empieza con JavaScript. Finaliza usando Jest, un framework de testing para JavaScript"
+updatedDate: 2026-11-19
+description: "Aprende testing con JavaScript paso a paso: empieza con un if y un throw, sigue con el módulo assert de Node.js, crea tu propio mini-framework y termina usando Jest."
 type: blog
 author: Jorge Baumann
 tags:
   - Testing
   - JavaScript
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Testing%20con%20JavaScript&tags=JavaScript,Testing"
+intro: true
+relatedPosts:
+  - "about-testing"
+  - "el-arte-del-testing-una-oda-a-las-pruebas-automaticas"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Testing%20con%20JavaScript%3A%20de%20cero%20a%20Jest%2C%20paso%20a%20paso&tags=JavaScript,Testing"
 ---
 
-Introducción práctica a los tests con JavaScript (a través de Node.js) guiada por ejemplos progresivos: “_de 0 a framework_”.
+Un test en JavaScript es código que ejecuta una función y lanza un error si el resultado no es el esperado. En este artículo empezamos con un simple `if` y un `throw`, pasamos al módulo `assert` de Node.js, construimos un mini-framework de testing propio y terminamos con Jest: "_de 0 a framework_".
 
 ![Pollito con fondo rosa](../../assets/blog/testing-con-javascript/header.jpg)
 
@@ -44,7 +48,7 @@ module.exports = { suma, resta };
 
 Podemos empezar. Sabemos lo que hay que hacer y tenemos código listo para ser testeado.
 
-## Paso 0
+## Paso 0: tu primer test con `if` y `throw`
 
 ¿Cuál es el ejemplo de test más básico que podemos crear? Para mí, sería algo como esto:
 
@@ -63,7 +67,7 @@ console.log("¡Todo OK! 👌");
 
 Puedes ejecutar este test corriendo `node test-0.js` desde la terminal. Y ya lo tienes, ¡tu primer test con JavaScript! 🎉
 
-![Test 0 running](../../assets/blog/testing-con-javascript/test-0.png)
+![Terminal con el error "1 es distinto de 2" y su stack trace tras ejecutar node test-0.js](../../assets/blog/testing-con-javascript/test-0.png)
 Resultado de error tras ejecutar el test-0.js
 
 Cuando lo ejecutes, debería saltarte un error. Puedes probar a cambiar las variables `resultado` y `esperado` para dejarlas con el mismo valor.  
@@ -106,7 +110,7 @@ tiempoMilisegundos(); // => 1566762450684
 
 Ya sabemos cómo testear con JavaScript y tenemos una función pura deseosa de ser testeada. Me imagino que ya sabes cuál es el siguiente paso, ¿verdad?
 
-## Paso 1
+## Paso 1: testear las funciones `suma` y `resta`
 
 Vamos a crear el test más simple posible para nuestras funciones aritméticas.
 
@@ -136,7 +140,7 @@ console.log("¡Test1 OK! 👌");
 
 Ejecutamos el test desde la terminal con `node test-1.js` y podemos ver que la ejecución ha terminado con éxito.
 
-![Test 1 running](../../assets/blog/testing-con-javascript/test-1.png)
+![Terminal mostrando el mensaje "¡Test1 OK! 👌" tras ejecutar node test-1.js](../../assets/blog/testing-con-javascript/test-1.png)
 
 Ahora probemos a _romper_ la función `suma`. Quitamos el signo de suma (`+`) y ponemos el de resta (`-`). Al ejecutar el test de nuevo verás un error parecido a este:
 
@@ -161,7 +165,7 @@ Los **mensajes de error** son otro elemento clave de nuestras pruebas.
 Son realmente importantes, pues es lo primero que vemos cuando nuestro test falla y a menudo nos indican **qué** y **dónde** ha fallado.  
 Por lo tanto, querido developer, deberíamos intentar ser lo más específicos posibles a la hora de redactar los mensajes de error y de usar las aserciones correspondientes para cada caso.
 
-## Paso 2
+## Paso 2: el módulo `assert` de Node.js
 
 Node.js tiene un [módulo](https://nodejs.org/api/assert.html#assert_assert) (_assert_) para hacer aserciones. ¡No necesitamos reinventar la rueda!
 
@@ -212,7 +216,7 @@ He truncado parte de la respuesta para que sea más clara la información. Parec
 
 Si miramos la documentación, podemos ver que `strictEqual` soporta 3 argumentos, sin embargo, nosotros le hemos pasado dos. El tercero nos permite personalizar el mensaje de error.
 
-## Paso 3
+## Paso 3: tu propio mini-framework de testing
 
 Llegados a este punto, podríamos empezar a crear nuestro _mini-framework_ o pequeña _librería_ de testing.
 
@@ -271,7 +275,7 @@ Nuestro mensaje de error no es tan descriptivo como debería ser.
 
 Además, nuestras pruebas no están aisladas unas de otras: si la primera aserción falla, el `throw` detiene el script y el resto de pruebas ni siquiera se ejecutan. Si fallan la suma y la resta a la vez, solo nos enteramos del primer error.
 
-## Paso 4
+## Paso 4: aislar las pruebas con la función `prueba`
 
 Vamos a escribir una nueva función que nos permita mantener las pruebas **aisladas** y que, en caso de fallo, nos indique **cuál** es la funcionalidad que está fallando.
 
@@ -317,7 +321,7 @@ Tenemos un listado de todos los tests que hemos ejecutado, los que han finalizad
 Antes, en caso de fallo, nos aparecía el mensaje de error pero no sabíamos de dónde provenía el fallo.  
 Ahora, en caso de error, se nos muestra el propio error, por lo tanto sabremos exactamente qué es lo que tenemos que rectificar.
 
-## Paso 5
+## Paso 5: pasar a Jest
 
 Nuestro framework de testing va cogiendo forma.
 Una buena funcionalidad a implementar sería la creación de una interfaz de línea de comandos (_CLI_). Podríamos usar [vorpal](https://vorpal.js.org/) y tratar que se encargara de buscar todas las pruebas de nuestro proyecto y que las ejecutara.
@@ -327,7 +331,7 @@ Pero incluso después de realizar esta funcionalidad, nos seguiría quedando muc
 
 Actualmente existen en el “mercado” bastantes frameworks o librerías de este tipo, mucho más robustas que la nuestra. Por lo tanto, lo primero que tenemos que hacer es elegir con cuál queremos trabajar.
 
-![Listado de frameworks de testing](../../assets/blog/testing-con-javascript/testing-frameworks.png)
+![Logos de los frameworks de testing para JavaScript Jest, AVA, Jasmine y Mocha](../../assets/blog/testing-con-javascript/testing-frameworks.png)
 
 En un principio pensé en usar [AVA](https://github.com/avajs/ava) 🚀, que me gusta porque es bastante simple y moderno. Sin embargo, desde mi punto de vista tiene una pequeña deficiencia: la documentación.
 Por lo tanto, la segunda opción, sin duda alguna es [Jest](https://jestjs.io/) 🃏. En el entorno profesional es el framework de testing que más utilizo y su documentación me parece bastante buena y es más intuitiva.
@@ -381,25 +385,19 @@ Ran all test suites.
 
 Probemos ahora a romper la función `resta` cambiando el `-` por el `+`. Ejecutemos de nuevo Jest.
 
-![Error de jest](../../assets/blog/testing-con-javascript/error-test.png)
+![Salida de Jest con el test de la resta fallido: esperaba 5 y recibió 11, con la línea del expect marcada](../../assets/blog/testing-con-javascript/error-test.png)
 
 En esta imagen se ve mucho más claro qué está fallando. Tiene colores y además nos dice qué y dónde ha fallado junto con mucha más información de ayuda. ¡Bastante descriptivo!
-
-<!-- # Las encuestas 🍿
-
-Antes de empezar a escribir este artículo lancé en twitter un par de encuestas:
-
-- ¿[Has escrito alguna vez tests para tus aplicaciones JavaScript](https://twitter.com/baumannzone/status/1165178014579273728)?
-
-- [¿Serías capaz de testear una aplicación JavaScript sin usar frameworks?](https://twitter.com/baumannzone/status/1165178021273395200)
-
-Este escrito es el motivo que hay detrás de estas encuestas.
-
-Si después de leer este artículo tuvieras que votar... _¿Qué votarías?_
-Imagino que ahora responderías "sí" a ambas preguntas. -->
 
 Ahora ya sabes cómo testear tus aplicaciones JavaScript de manera progresiva, desde 0 hasta llegar a un framework de testing como Jest.
 
 Y tú, ¿con qué herramientas testeas tus aplicaciones JavaScript?
 
 ¡Happy testing! 🧪
+
+## Fuentes
+
+- [Módulo `assert`](https://nodejs.org/api/assert.html), en la documentación de Node.js.
+- [Documentación de Jest](https://jestjs.io/docs/getting-started).
+- [Documentación de Vitest](https://vitest.dev/guide/).
+- [Repositorio con todos los ejemplos](https://github.com/baumannzone/javascript-testing), en GitHub.
