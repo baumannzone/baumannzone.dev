@@ -242,6 +242,66 @@ const myUses = [
   },
   {
     type: "h2",
+    title: "Inteligencia Artificial",
+    children: [
+      {
+        title: "Claude Code",
+        description:
+          "El agente de programación de Anthropic. Lo uso desde la terminal para tareas largas: refactors, revisar código y entender proyectos que no conozco.",
+        link: "https://www.claude.com/product/claude-code",
+      },
+      {
+        title: "Codex",
+        description:
+          "El agente de programación de OpenAI. Lo uso para tareas de código en paralelo y para tener una segunda opinión cuando otro agente se atasca.",
+        link: "https://openai.com/codex/",
+      },
+      {
+        title: "ChatGPT",
+        description:
+          "Ya no lo uso para programar. Ahora vive en el móvil: dudas rápidas, ideas y preguntas que no pueden esperar a que abra el portátil.",
+        link: "https://chatgpt.com/",
+      },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Skills para agentes",
+    children: [
+      {
+        title: "Superpowers",
+        description:
+          "Un flujo de trabajo completo para agentes: primero pensar y planificar, luego TDD, depuración sistemática y revisión antes de dar nada por terminado.",
+        link: "https://github.com/obra/superpowers",
+      },
+      {
+        title: "Skills de Matt Pocock",
+        description:
+          "Mis favoritas para el día a día: TDD, diagnosticar bugs, diseñar módulos y que el agente me acribille a preguntas antes de escribir una línea.",
+        link: "https://github.com/mattpocock/skills",
+      },
+      {
+        title: "Skills de Jakub Krehel",
+        description:
+          "Las skills better-*: accesibilidad, color, tipografía, layout y pulido de UI. Para que lo que hace el agente no parezca hecho por un agente.",
+        link: "https://github.com/jakubkrehel/skills",
+      },
+      {
+        title: "Agent Skills de Addy Osmani",
+        description:
+          "Buenas prácticas de ingeniería empaquetadas: specs, planificación, code review, rendimiento y seguridad.",
+        link: "https://github.com/addyosmani/agent-skills",
+      },
+      {
+        title: "Claude SEO",
+        description:
+          "Auditorías SEO desde la terminal: técnico, contenido, schema, imágenes y visibilidad en buscadores con IA. Con ella reviso páginas como esta.",
+        link: "https://github.com/AgriciDaniel/claude-seo",
+      },
+    ],
+  },
+  {
+    type: "h2",
     title: "Terminal",
     children: [
       {
@@ -376,66 +436,6 @@ const myUses = [
         description:
           "Versión no original de los mandos de la Super Nintendo. Los uso con la Raspberry Pi para jugar a los juegos de mi infancia.",
         link: "https://amzn.to/3x28pg0",
-      },
-    ],
-  },
-  {
-    type: "h2",
-    title: "Inteligencia Artificial",
-    children: [
-      {
-        title: "Claude Code",
-        description:
-          "El agente de programación de Anthropic. Lo uso desde la terminal para tareas largas: refactors, revisar código y entender proyectos que no conozco.",
-        link: "https://www.claude.com/product/claude-code",
-      },
-      {
-        title: "Codex",
-        description:
-          "El agente de programación de OpenAI. Lo uso para tareas de código en paralelo y para tener una segunda opinión cuando otro agente se atasca.",
-        link: "https://openai.com/codex/",
-      },
-      {
-        title: "ChatGPT",
-        description:
-          "Ya no lo uso para programar. Ahora vive en el móvil: dudas rápidas, ideas y preguntas que no pueden esperar a que abra el portátil.",
-        link: "https://chatgpt.com/",
-      },
-    ],
-  },
-  {
-    type: "h3",
-    title: "Skills para agentes",
-    children: [
-      {
-        title: "Superpowers",
-        description:
-          "Un flujo de trabajo completo para agentes: primero pensar y planificar, luego TDD, depuración sistemática y revisión antes de dar nada por terminado.",
-        link: "https://github.com/obra/superpowers",
-      },
-      {
-        title: "Skills de Matt Pocock",
-        description:
-          "Mis favoritas para el día a día: TDD, diagnosticar bugs, diseñar módulos y que el agente me acribille a preguntas antes de escribir una línea.",
-        link: "https://github.com/mattpocock/skills",
-      },
-      {
-        title: "Skills de Jakub Krehel",
-        description:
-          "Las skills better-*: accesibilidad, color, tipografía, layout y pulido de UI. Para que lo que hace el agente no parezca hecho por un agente.",
-        link: "https://github.com/jakubkrehel/skills",
-      },
-      {
-        title: "Agent Skills de Addy Osmani",
-        description:
-          "Buenas prácticas de ingeniería empaquetadas: specs, planificación, code review, rendimiento y seguridad.",
-        link: "https://github.com/addyosmani/agent-skills",
-      },
-      {
-        title: "Claude SEO",
-        description:
-          "Auditorías SEO desde la terminal: técnico, contenido, schema, imágenes y visibilidad en buscadores con IA. Con ella reviso páginas como esta.",
-        link: "https://github.com/AgriciDaniel/claude-seo",
       },
     ],
   },
