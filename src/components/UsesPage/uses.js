@@ -437,11 +437,6 @@ const myUses = [
           "Auditorías SEO desde la terminal: técnico, contenido, schema, imágenes y visibilidad en buscadores con IA. Con ella reviso páginas como esta.",
         link: "https://github.com/AgriciDaniel/claude-seo",
       },
-      {
-        title: "Skills propias",
-        description:
-          "Tengo alguna hecha a medida, como una que revisa los artículos de este blog antes de publicarlos.",
-      },
     ],
   },
   {
