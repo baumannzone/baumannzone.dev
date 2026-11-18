@@ -203,50 +203,10 @@ const myUses = [
     title: "Editor",
     children: [
       {
-        title: "VS Code",
-        description: "Editor de código de Microsoft.",
-        link: "https://code.visualstudio.com/",
-      },
-    ],
-  },
-  {
-    type: "h3",
-    title: "Plugins Editor",
-    children: [
-      {
-        title: "GitHub Copilot",
-        description: "Ya no sé programar sin esto.",
-        link: "https://copilot.github.com/",
-      },
-      {
-        title: "Turbo Console Log",
-        description: "Para hacer `console.log` como un mapache enfurecido.",
-        link: "https://www.turboconsolelog.io/",
-      },
-      {
-        title: "Prettier",
-        description: "Formateador de código.",
-        link: "https://prettier.io/",
-      },
-      {
-        title: "Tailwind CSS IntelliSense",
-        description: "Intellisense para Tailwind CSS.",
-        link: "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss",
-      },
-      {
-        title: "Live Share",
-        description: "Para colaborar en tiempo real con tus compis de trabajo.",
-        link: "https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare",
-      },
-      {
-        title: "Live Server",
-        description: "Para ver tu código en vivo en el navegador.",
-        link: "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
-      },
-      {
-        title: "Image Preview",
-        description: "Para ver las imágenes en el editor.",
-        link: "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview",
+        title: "Cursor",
+        description:
+          "Mi editor de código. Lo uso casi siempre en modo agente: le explico la tarea, revisa el proyecto, propone los cambios y yo decido qué se queda.",
+        link: "https://cursor.com/",
       },
     ],
   },
@@ -426,20 +386,61 @@ const myUses = [
       {
         title: "Claude Code",
         description:
-          "CLI especialmente bueno para tareas de programación y análisis de código.",
-        link: "https://claude.ai/",
+          "El agente de programación de Anthropic. Lo uso desde la terminal para tareas largas: refactors, revisar código y entender proyectos que no conozco.",
+        link: "https://www.claude.com/product/claude-code",
       },
       {
-        title: "Gemini",
+        title: "Codex",
         description:
-          "La IA de Google en modo CLI. Útil para generar y analizar contenido variado.",
-        link: "https://gemini.google.com/",
+          "El agente de programación de OpenAI. Lo uso para tareas de código en paralelo y para tener una segunda opinión cuando otro agente se atasca.",
+        link: "https://openai.com/codex/",
       },
       {
         title: "ChatGPT",
         description:
-          "El asistente conversacional de OpenAI. Perfecto para resolver dudas, generar ideas y ayudar con tareas de programación.",
-        link: "https://chat.openai.com/",
+          "Ya no lo uso para programar. Ahora vive en el móvil: dudas rápidas, ideas y preguntas que no pueden esperar a que abra el portátil.",
+        link: "https://chatgpt.com/",
+      },
+    ],
+  },
+  {
+    type: "h3",
+    title: "Skills para agentes",
+    children: [
+      {
+        title: "Superpowers",
+        description:
+          "Un flujo de trabajo completo para agentes: primero pensar y planificar, luego TDD, depuración sistemática y revisión antes de dar nada por terminado.",
+        link: "https://github.com/obra/superpowers",
+      },
+      {
+        title: "Skills de Matt Pocock",
+        description:
+          "Mis favoritas para el día a día: TDD, diagnosticar bugs, diseñar módulos y que el agente me acribille a preguntas antes de escribir una línea.",
+        link: "https://github.com/mattpocock/skills",
+      },
+      {
+        title: "Skills de Jakub Krehel",
+        description:
+          "Las skills better-*: accesibilidad, color, tipografía, layout y pulido de UI. Para que lo que hace el agente no parezca hecho por un agente.",
+        link: "https://github.com/jakubkrehel/skills",
+      },
+      {
+        title: "Agent Skills de Addy Osmani",
+        description:
+          "Buenas prácticas de ingeniería empaquetadas: specs, planificación, code review, rendimiento y seguridad.",
+        link: "https://github.com/addyosmani/agent-skills",
+      },
+      {
+        title: "Claude SEO",
+        description:
+          "Auditorías SEO desde la terminal: técnico, contenido, schema, imágenes y visibilidad en buscadores con IA. Con ella reviso páginas como esta.",
+        link: "https://github.com/AgriciDaniel/claude-seo",
+      },
+      {
+        title: "Skills propias",
+        description:
+          "Tengo alguna hecha a medida, como una que revisa los artículos de este blog antes de publicarlos.",
       },
     ],
   },

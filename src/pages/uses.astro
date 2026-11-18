@@ -16,7 +16,7 @@ import {
 const pageTitle = "Mi setup de trabajo como desarrollador web";
 const title = `${pageTitle} | Baumannzone.dev`;
 const description =
-  "Mi setup de trabajo como desarrollador web en remoto: portátil, monitores, teclado, silla, editor, terminal y herramientas de IA que uso a diario.";
+  "Portátil, monitores, teclado, silla, editor y agentes de IA (Cursor, Claude Code, Codex) con los que trabajo en remoto como desarrollador web desde 2015.";
 // Bump this when uses.js changes.
 const updatedDate = new Date("2026-11-18");
 const updatedLabel = updatedDate.toLocaleDateString("es-ES", {
@@ -30,6 +30,9 @@ ogImage.searchParams.set("title", pageTitle);
 ogImage.searchParams.set("tags", "Setup,Hardware,Herramientas");
 
 const usesUrl = new URL("/uses/", Astro.site).href;
+const isSponsored = (link: string) =>
+  /^https:\/\/(amzn\.to|share\.temu\.com)\//.test(link) ||
+  link.includes("/referral/");
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -168,7 +171,7 @@ const jsonLd = {
                                 <a
                                   href={item.link}
                                   target="_blank"
-                                  rel="sponsored noopener noreferrer"
+                                  rel={isSponsored(item.link) ? "sponsored noopener noreferrer" : "noopener noreferrer"}
                                   class="text-violet-600 hover:text-violet-800"
                                 >
                                   {item.title}
