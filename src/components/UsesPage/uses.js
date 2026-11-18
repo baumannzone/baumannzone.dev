@@ -370,6 +370,18 @@ const myUses = [
   },
   {
     type: "h2",
+    title: "Música",
+    children: [
+      {
+        title: "Spotify",
+        description:
+          "La banda sonora de cada commit. El enlace es de invitación de Spotify, por si te quieres apuntar.",
+        link: "https://open.spotify.com/referral/003988b69bca14f23b363871f97cb4346a16d2a063415e543bfdac",
+      },
+    ],
+  },
+  {
+    type: "h2",
     title: "Gadgets & Tools",
     children: [
       {
