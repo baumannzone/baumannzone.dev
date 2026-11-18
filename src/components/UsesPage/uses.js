@@ -484,6 +484,12 @@ const myUses = [
         link: "https://amzn.to/4iIXaLn",
       },
       {
+        title: "Conjunto de verano Super Mario™ de OppoSuits",
+        description:
+          "Camisa de manga corta y pantalón corto a juego, estampados con todo el elenco de Super Mario y sus power-ups. Licencia oficial. Para eventos gamer, festivales y días de piscina en los que el traje completo da demasiado calor. Let's-a-go!",
+        link: "https://www.opposuits.eu/collections/men/products/super-mario-group-summer-set",
+      },
+      {
         title: "Máscara de caballo 🐴",
         description: "Máscara de caballo para eventos.",
         link: "https://amzn.to/3JTCXXt",
