@@ -22,7 +22,7 @@ const myUses = [
       {
         title: 'Samsung C34H890 34" Ultra Wide curvo',
         description:
-          "Mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de video y corriente a la vez. Es decir, un solo cable para las dos cosas.",
+          "Mi monitor principal. Conecto la pantalla al MacBook con un cable USB-C, que me vale para transmitir señal de vídeo y corriente a la vez. Es decir, un solo cable para las dos cosas.",
         link: "https://www.samsung.com/es/monitors/business/ch89-34-inch-ultra-wqhd-curved-usb-c-lc34h890wgrxen/",
       },
       {
@@ -34,7 +34,7 @@ const myUses = [
       {
         title: 'BenQ Gaming 24" RL2460HT',
         description:
-          "La compré en 2011 pero ya está descatalogada. Sin embargo, +10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.",
+          "La compré en 2011 pero ya está descatalogada. Sin embargo, más de 10 años después, funciona como el primer día. Es la que uso con el PC de sobremesa.",
       },
     ],
   },
@@ -57,7 +57,7 @@ const myUses = [
       {
         title: "Alfombrilla de neopreno para el escritorio",
         description:
-          "Alfombrilla de neopreno de 80cm x 40cm con el meme de This is fine 🔥. Bastante sorprendido con la calidad. Es suave y agradable al tacto. La uso para apoyar el teclado, el ratón y el portátil sin que no se raye la mesa.",
+          "Alfombrilla de neopreno de 80cm x 40cm con el meme de This is fine 🔥. Bastante sorprendido con la calidad. Es suave y agradable al tacto. La uso para apoyar el teclado, el ratón y el portátil sin que se raye la mesa.",
         link: "https://share.temu.com/r4qknnc2DQA",
       },
     ],
@@ -69,7 +69,7 @@ const myUses = [
       {
         title: "Keychron K14 inalámbrico",
         description:
-          "Keychron K14 Wireless Mechanical Keyboard. Teclado mecánico inal RGB, 70%, Hot Swappable, Brown. Funciona con cable USB o con Bluetooth, con layout en inglés.",
+          "Teclado mecánico inalámbrico al 70 %, con retroiluminación RGB, switches Brown e intercambiables en caliente (hot-swappable). Funciona por cable USB o por Bluetooth y tiene distribución en inglés.",
         link: "https://www.keychron.com/products/keychron-k14-wireless-mechanical-keyboard?variant=39553083146329",
       },
       {
@@ -110,7 +110,7 @@ const myUses = [
       {
         title: "Jabra Evolve 30 II USB",
         description:
-          "Auriculares con cable USB. Los uso para gaming y streaming. Tiene botones para subir y bajar el volumen y para silenciar el micrófono.",
+          "Auriculares con cable USB. Los uso para gaming y streaming. Tienen botones para subir y bajar el volumen y para silenciar el micrófono.",
         link: "https://amzn.to/3evillN",
       },
     ],
@@ -175,7 +175,7 @@ const myUses = [
       {
         title: "Tira de luces LED",
         description:
-          "Tira LED multi color de 3m para darle glow a tu cueva. Ideal para convertir una habitación triste en un lugar estético digno de stories.",
+          "Tira LED multicolor de 3m para darle glow a tu cueva. Ideal para convertir una habitación triste en un lugar estético digno de stories.",
         link: "https://amzn.to/3KiZM3I",
       },
     ],
@@ -223,7 +223,7 @@ const myUses = [
       {
         title: "Monaspace",
         description:
-          "Una super familia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.",
+          "Una superfamilia con 5 fuentes monoespaciadas de GitHub. Es gratuita y open source.",
         link: "https://monaspace.githubnext.com/",
       },
       {
@@ -393,13 +393,13 @@ const myUses = [
       {
         title: "Apple Watch Series 10",
         description:
-          "El reloj de Apple. Lo compré para medir mi actividad física... y ahora se cree mi entrenador personal. Me vibra si estoy quieto, me felicita si subo escaleras",
+          "El reloj de Apple. Lo compré para medir mi actividad física... y ahora se cree mi entrenador personal. Me vibra si estoy quieto, me felicita si subo escaleras.",
         link: "https://amzn.to/42UuEAv",
       },
       {
         title: "Mini Dron Tello",
         description:
-          "Pequeño, y ligero. Este mini dron de DJI no solo vuela like a boss, también se puede programar con JavaScript. Sí, puedes hacer que vuele según tu código.",
+          "Pequeño y ligero. Este mini dron de DJI no solo vuela like a boss, también se puede programar con JavaScript. Sí, puedes hacer que vuele según tu código.",
         link: "https://amzn.to/3ldFr4l",
       },
       {
@@ -423,7 +423,7 @@ const myUses = [
       {
         title: "Power Ball",
         description:
-          "Esto no es una bola cualquiera. Es una centrífuga de muñecas. Fortalece muñecas, antebrazos.",
+          "Esto no es una bola cualquiera. Es una centrífuga de muñecas. Fortalece muñecas y antebrazos.",
         link: "https://amzn.to/4bYITH4",
       },
       {
@@ -435,7 +435,7 @@ const myUses = [
       {
         title: "Raspberry Pi 3 B",
         description:
-          "Es un mini ordenador. Perfecta para experimentos raros, automatizaciones caseras o jugar a ser hacker. Actualmente tiene instalado Retropie.",
+          "Es un miniordenador. Perfecto para experimentos raros, automatizaciones caseras o jugar a ser hacker. Actualmente tiene instalado Retropie.",
         link: "https://amzn.to/3x4XkL6",
       },
       {
