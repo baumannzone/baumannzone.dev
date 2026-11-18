@@ -1,11 +1,11 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
 
-// isBlog: blog post in the blog page
-// isNew: newest post with green label
-// Otherwise, blog post in the home page
+// isNew: newest post, with the green "Nuevo" label.
 // headingLevel: 2 in the blog page (under the h1), 3 in the home page
-// (under the section h2)
+// (under the section h2).
+// Keep the markup in sync with the random card built in
+// HomePage/BlogSection.astro.
 interface Props {
   isNew?: boolean;
   headingLevel?: 2 | 3;
@@ -18,45 +18,53 @@ interface Props {
 const { post, isNew = false, headingLevel = 2 } = Astro.props;
 const articleUrl = `/blog/${post.id}/`;
 const Heading = `h${headingLevel}`;
+const tagLine = (post.data.tags ?? []).join(" · ");
 ---
 
-<article>
-  <div class="group relative">
-    <div class="flex items-center gap-x-4 text-xs">
-      <FormattedDate date={post.data.pubDate} className="text-gray-500" />
+<article
+  class="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-200 transition-[box-shadow] duration-200 ease-out hover:shadow-md hover:ring-zinc-300 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-violet-500"
+>
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    <div class="flex flex-wrap items-center gap-2 text-xs">
+      <FormattedDate date={post.data.pubDate} className="text-[13px] text-zinc-500" />
       {
-        isNew ? (
-          <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
-            🌶️ New
+        isNew && (
+          <span class="inline-flex items-center gap-1.5 rounded-md bg-green-50 px-2 py-0.5 font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+            <span class="size-1.5 rounded-full bg-green-500" />
+            Nuevo
           </span>
-        ) : null
+        )
       }
     </div>
     <Heading
-      class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
+      class="text-xl font-semibold leading-snug text-zinc-950 text-balance"
       style={`view-transition-name: post-${post.id}`}
     >
       {/* The title is the link: its text is the anchor text crawlers read.
           The absolute span stretches it so the whole card stays clickable. */}
-      <a href={articleUrl}>
+      <a href={articleUrl} class="focus:outline-none">
         <span class="absolute inset-0"></span>
         {post.data.title}
       </a>
     </Heading>
-    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
+    <p class="line-clamp-3 text-sm leading-6 text-zinc-600">
       {post.data.description}
     </p>
+  </div>
 
+  <div
+    class="flex items-center justify-between gap-4 border-t border-zinc-100 bg-zinc-50 px-6 py-3.5"
+  >
+    <span class="text-[13px] font-medium text-zinc-600">{tagLine}</span>
     <span
       aria-hidden="true"
-      class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
+      class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-violet-700"
     >
-      Ver más
+      Leer
       <span
-        class="inline-block ms-0 transition-transform group-hover:translate-x-1"
+        class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none"
+        >→</span
       >
-        →
-      </span>
     </span>
   </div>
 </article>

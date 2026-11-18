@@ -14,6 +14,7 @@ const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
     title: data.title,
     description: data.description,
     pubDate: data.pubDate,
+    tags: data.tags ?? [],
   },
 }));
 ---
@@ -33,7 +34,7 @@ const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
     </div>
 
     <div
-      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-16"
+      class="mt-16 pt-16 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {
         recentPosts.map((post, index) => (
@@ -72,46 +73,38 @@ const otherPosts = posts.slice(RECENT_COUNT).map(({ id, data }) => ({
   const randomPostContainer = document.getElementById("random-post-container");
   // Article card with random post
   randomPostContainer.innerHTML = `
-<article>
-  <div class="group relative">
-    <div class="flex items-center gap-x-4 text-xs">
-      <time
-        class="text-gray-500"
-        datetime=${pubDate.toISOString()}
-      >
+<article class="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-zinc-200 transition-[box-shadow] duration-200 ease-out hover:shadow-md hover:ring-zinc-300 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-violet-500">
+  <div class="flex flex-1 flex-col gap-3 p-6">
+    <div class="flex flex-wrap items-center gap-2 text-xs">
+      <time class="text-[13px] text-zinc-500" datetime="${pubDate.toISOString()}">
         ${pubDate.toLocaleDateString("es-ES", {
           year: "numeric",
           month: "short",
           day: "2-digit",
         })}
       </time>
-      <span class="bg-violet-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
-        ✨ Random
+      <span class="inline-flex items-center rounded-md bg-violet-50 px-2 py-0.5 font-medium text-violet-700 ring-1 ring-inset ring-violet-600/20">
+        Aleatorio
       </span>
     </div>
     <h3
-      class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600 transition-colors"
-      style="${`view-transition-name: post-${randomPost.id}`}"
+      class="text-xl font-semibold leading-snug text-zinc-950 text-balance"
+      style="view-transition-name: post-${randomPost.id}"
     >
-      <a href=${`/blog/${randomPost.id}/`}>
+      <a href="/blog/${randomPost.id}/" class="focus:outline-none">
         <span class="absolute inset-0"></span>
         ${randomPost.data.title}
       </a>
     </h3>
-    <p class="mt-4 mb-4 text-sm leading-6 text-gray-600">
+    <p class="line-clamp-3 text-sm leading-6 text-zinc-600">
       ${randomPost.data.description}
     </p>
-
-    <span
-      aria-hidden="true"
-      class="text-sm font-semibold leading-6 text-violet-700 group-hover:text-violet-500 transition-colors"
-    >
-      Ver más
-      <span
-        class="inline-block ms-0 transition-transform group-hover:translate-x-1"
-      >
-        →
-      </span>
+  </div>
+  <div class="flex items-center justify-between gap-4 border-t border-zinc-100 bg-zinc-50 px-6 py-3.5">
+    <span class="text-[13px] font-medium text-zinc-600">${randomPost.data.tags.join(" · ")}</span>
+    <span aria-hidden="true" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-violet-700">
+      Leer
+      <span class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none">→</span>
     </span>
   </div>
 </article>
