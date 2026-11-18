@@ -234,12 +234,16 @@ const { totalPosts } = Astro.props;
       observerOptions,
     );
 
-    observer.observe(document.getElementById('totalPosts') as HTMLElement);
-    observer.observe(document.getElementById('totalRepos') as HTMLElement);
-    observer.observe(document.getElementById('totalCoffees') as HTMLElement);
-    observer.observe(document.getElementById('totalTalks') as HTMLElement);
-    observer.observe(
-      document.getElementById('strava-biking-stats') as HTMLElement,
-    );
+    // The Strava stat only renders when there is data, so skip missing ids.
+    [
+      'totalPosts',
+      'totalRepos',
+      'totalCoffees',
+      'totalTalks',
+      'strava-biking-stats',
+    ].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   });
 </script>
