@@ -13,6 +13,40 @@ const amazonItems = myUses.flatMap((section) =>
     .filter((item) => item.link?.includes("amzn.to"))
     .map((item) => ({ ...item, category: section.title })),
 );
+
+// The /uses/ sections, grouped for the "Mi setup completo" tiles. A section
+// that is not listed here still counts towards the total.
+const GROUPS = [
+  {
+    label: "Hardware y periféricos",
+    icon: "M4 5h16v11H4zM2 19h20",
+    sections: ["Portátil", "Pantallas", "Ratón", "Alfombrilla", "Teclado", "Micrófono", "Auriculares", "Altavoces"],
+  },
+  {
+    label: "Mesa, silla, luces y cables",
+    icon: "M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5V16h8v-2.5A6 6 0 0 0 12 3z",
+    sections: ["Silla", "Mesa o Escritorio", "Luces", "Adaptadores", "Cables y conexiones"],
+  },
+  {
+    label: "Software, plugins e IA",
+    icon: "M8 6l-6 6 6 6M16 6l6 6-6 6",
+    sections: ["Editor", "Plugins Editor", "Fuentes o Tipografías para programar", "Terminal", "Navegador", "Desktop", "Móvil", "Extensiones Navegador", "Inteligencia Artificial"],
+  },
+  {
+    label: "Gadgets y eventos",
+    icon: "M9 9h6v6H9zM7 7l2 2M17 7l-2 2M7 17l2-2M17 17l-2-2M5 3a2 2 0 1 0 0 4a2 2 0 1 0 0-4M19 3a2 2 0 1 0 0 4a2 2 0 1 0 0-4M5 17a2 2 0 1 0 0 4a2 2 0 1 0 0-4M19 17a2 2 0 1 0 0 4a2 2 0 1 0 0-4",
+    sections: ["Gadgets & Tools", "Eventos y miscelánea"],
+  },
+];
+
+const countOf = (section) => section.children?.length ?? 0;
+const totalItems = myUses.reduce((sum, section) => sum + countOf(section), 0);
+const setupGroups = GROUPS.map((group) => ({
+  ...group,
+  count: myUses
+    .filter((section) => group.sections.includes(section.title))
+    .reduce((sum, section) => sum + countOf(section), 0),
+}));
 ---
 
 <section class="bg-white py-24 sm:py-32">
@@ -99,35 +133,69 @@ const amazonItems = myUses.flatMap((section) =>
 
     <a
       href="/uses/"
-      class="group mt-6 flex flex-col gap-4 rounded-2xl bg-zinc-50 p-4 ring-1 ring-inset ring-zinc-100 transition-colors hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 sm:flex-row sm:items-center sm:gap-6 sm:pr-7"
+      class="group mt-6 grid grid-cols-2 gap-4 rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-4 md:grid-cols-4 md:grid-rows-[156px_156px]"
     >
-      <Image
-        src={setupImage}
-        alt="Mi setup de trabajo como software engineer"
-        width={336}
-        height={224}
-        class="h-28 w-full shrink-0 rounded-xl bg-zinc-200 object-cover sm:w-[168px]"
-      />
-      <div class="flex min-w-0 flex-1 flex-col gap-1">
-        <span class="text-lg font-semibold text-zinc-950">Mi setup completo</span>
-        <span class="text-sm leading-6 text-zinc-600">
-          Portátil, pantallas, periféricos, silla, mesa, gadgets, editor y
-          plugins.
-        </span>
-      </div>
-      <span class="inline-flex shrink-0 items-center gap-1 text-[15px] font-semibold text-violet-700">
-        Ver setup
-        <span
-          aria-hidden="true"
-          class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none"
-          >→</span
+      <div
+        class="relative col-span-2 overflow-hidden rounded-2xl bg-zinc-200 max-md:aspect-[4/3] md:row-span-2"
+      >
+        <Image
+          src={setupImage}
+          alt="Mi setup de trabajo como software engineer"
+          widths={[560, 1120]}
+          sizes="(min-width: 768px) 560px, 100vw"
+          class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transform-none"
+        />
+        <div
+          class="absolute inset-x-3 bottom-3 flex flex-wrap items-center justify-between gap-3 rounded-xl bg-white/55 p-4 shadow-lg ring-1 ring-inset ring-white/60 backdrop-blur-md backdrop-saturate-150 sm:inset-x-4 sm:bottom-4"
         >
-      </span>
-    </a>
+          <div class="flex min-w-0 flex-col">
+            <span class="text-lg font-bold text-zinc-950">Mi setup completo</span>
+            <span class="text-[13px] text-zinc-700">
+              {totalItems} cosas que uso para trabajar, grabar y trastear
+            </span>
+          </div>
+          <span
+            class="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-lg bg-violet-700 px-3.5 text-sm font-semibold text-white"
+          >
+            Ver setup
+            <span
+              aria-hidden="true"
+              class="inline-block transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none"
+              >→</span
+            >
+          </span>
+        </div>
+      </div>
 
-    <p class="mt-4 text-xs text-zinc-500">
-      Los enlaces a Amazon son de afiliado.
-    </p>
+      {
+        setupGroups.map((group) => (
+          <div class="flex flex-col justify-between gap-6 rounded-2xl bg-zinc-50 p-5 ring-1 ring-inset ring-zinc-100">
+            <span class="flex size-10 items-center justify-center rounded-xl bg-white text-violet-700 ring-1 ring-zinc-200">
+              <svg
+                aria-hidden="true"
+                class="size-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d={group.icon} />
+              </svg>
+            </span>
+            <span class="flex flex-col gap-0.5">
+              <span class="text-4xl font-extrabold leading-none tracking-tight tabular-nums text-zinc-950">
+                {group.count}
+              </span>
+              <span class="text-[13px] font-medium text-zinc-600">
+                {group.label}
+              </span>
+            </span>
+          </div>
+        ))
+      }
+    </a>
   </div>
 </section>
 
