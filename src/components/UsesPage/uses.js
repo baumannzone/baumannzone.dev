@@ -98,7 +98,7 @@ const myUses = [
       {
         title: "Beats Fit Pro",
         description:
-          "Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Básicamente, si no los llevo al gimnasio, me doy la vuelta y vuelvo a casa.",
+          "Auriculares Bluetooth. Los uso para escuchar música y hacer llamadas. Son muy cómodos, se adaptan perfectamente a la oreja y tienen una buena calidad de sonido. Básicamente, si salgo de casa sin ellos, me doy la vuelta a por ellos.",
         link: "https://amzn.to/3x3nTQH",
       },
       {
