@@ -133,12 +133,12 @@ const { totalPosts } = Astro.props;
               class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {totalPosts}
+              <a
+                href='/blog/'
+                class='mt-3 flex w-fit text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+              >Ver el blog<span aria-hidden='true' class='ml-1'>→</span></a
+              >
             </dd>
-            <a
-              href='/blog/'
-              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
-            >Ver el blog<span aria-hidden='true' class='ml-1'>→</span></a
-            >
           </div>
           <div class='rounded-xl border border-gray-200 bg-white/80 p-4 transition-colors hover:border-violet-200 sm:p-5'>
             <dt class='text-sm leading-5 text-gray-600'>
@@ -150,14 +150,14 @@ const { totalPosts } = Astro.props;
               class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {githubPublicRepos}
+              <a
+                href='https://github.com/baumannzone'
+                target='_blank'
+                rel='noopener noreferrer'
+                class='mt-3 flex w-fit text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+              >Explorar GitHub<span aria-hidden='true' class='ml-1'>↗</span></a
+              >
             </dd>
-            <a
-              href='https://github.com/baumannzone'
-              target='_blank'
-              rel='noopener noreferrer'
-              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
-            >Explorar GitHub<span aria-hidden='true' class='ml-1'>↗</span></a
-            >
           </div>
           <div class='rounded-xl border border-gray-200 bg-white/80 p-4 transition-colors hover:border-violet-200 sm:p-5'>
             <dt class='text-sm leading-5 text-gray-600'>
@@ -169,12 +169,12 @@ const { totalPosts } = Astro.props;
               class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {totalTalks}
+              <a
+                href='/talks/'
+                class='mt-3 flex w-fit text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+              >Ver charlas<span aria-hidden='true' class='ml-1'>→</span></a
+              >
             </dd>
-            <a
-              href='/talks/'
-              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
-            >Ver charlas<span aria-hidden='true' class='ml-1'>→</span></a
-            >
           </div>
           <div class='rounded-xl border border-gray-200 bg-white/80 p-4 sm:p-5'>
             <dt class='text-sm leading-5 text-gray-600'>Cafés desde 2015</dt>
@@ -182,10 +182,10 @@ const { totalPosts } = Astro.props;
               ± <span id='totalCoffees' data-value={totalCoffees}
                 >{totalCoffees}</span
               >
+              <p class='mt-3 text-xs leading-5 text-gray-500'>
+                Estimación no auditada por la NASA.
+              </p>
             </dd>
-            <p class='mt-3 text-xs leading-5 text-gray-500'>
-              Estimación no auditada por la NASA.
-            </p>
           </div>
           <StravaStats />
         </dl>
