@@ -113,54 +113,79 @@ const { totalPosts } = Astro.props;
       </div>
 
       <!-- Stats -->
-      <div class='lg:flex lg:flex-auto lg:justify-center'>
-        <dl class='w-64 space-y-8 xl:w-80'>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
+      <div class='lg:w-[42%] lg:flex-none'>
+        <div class='mb-5'>
+          <h3 class='text-xl font-semibold tracking-tight text-gray-900'>
+            En números
+          </h3>
+          <p class='mt-1 text-sm leading-6 text-gray-600'>
+            Algunas pistas de lo que comparto con la comunidad.
+          </p>
+        </div>
+        <dl class='grid grid-cols-2 gap-3 sm:gap-4'>
+          <div class='rounded-xl border border-gray-200 bg-white/80 p-4 transition-colors hover:border-violet-200 sm:p-5'>
+            <dt class='text-sm leading-5 text-gray-600'>
               Artículos publicados
             </dt>
             <dd
               id='totalPosts'
               data-value={totalPosts}
-              class='text-5xl font-semibold tracking-tight text-gray-900'
+              class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {totalPosts}
             </dd>
+            <a
+              href='/blog/'
+              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+            >Ver el blog<span aria-hidden='true' class='ml-1'>→</span></a
+            >
           </div>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
-              Repositorios en GitHub{" "}
-              <span class='text-gray-400'>(públicos)</span>
+          <div class='rounded-xl border border-gray-200 bg-white/80 p-4 transition-colors hover:border-violet-200 sm:p-5'>
+            <dt class='text-sm leading-5 text-gray-600'>
+              Repositorios públicos
             </dt>
             <dd
               id='totalRepos'
               data-value={githubPublicRepos}
-              class='text-5xl font-semibold tracking-tight text-gray-900'
+              class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {githubPublicRepos}
             </dd>
+            <a
+              href='https://github.com/baumannzone'
+              target='_blank'
+              rel='noopener noreferrer'
+              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+            >Explorar GitHub<span aria-hidden='true' class='ml-1'>↗</span></a
+            >
           </div>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
-              Cafés consumidos desde 2015
-            </dt>
-            <dd class='text-5xl font-semibold tracking-tight text-gray-900'>
-              ± <span id='totalCoffees' data-value={totalCoffees}
-                >{totalCoffees}</span
-              >
-            </dd>
-          </div>
-          <div class='flex flex-col-reverse gap-y-4'>
-            <dt class='text-base leading-7 text-gray-600'>
-              Charlas <span class='text-gray-400'>(o conferencias)</span>
+          <div class='rounded-xl border border-gray-200 bg-white/80 p-4 transition-colors hover:border-violet-200 sm:p-5'>
+            <dt class='text-sm leading-5 text-gray-600'>
+              Charlas y conferencias
             </dt>
             <dd
               id='totalTalks'
               data-value={totalTalks}
-              class='text-5xl font-semibold tracking-tight text-gray-900'
+              class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'
             >
               {totalTalks}
             </dd>
+            <a
+              href='/talks/'
+              class='mt-3 inline-flex text-sm font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:text-violet-900 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600'
+            >Ver charlas<span aria-hidden='true' class='ml-1'>→</span></a
+            >
+          </div>
+          <div class='rounded-xl border border-gray-200 bg-white/80 p-4 sm:p-5'>
+            <dt class='text-sm leading-5 text-gray-600'>Cafés desde 2015</dt>
+            <dd class='mt-2 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl'>
+              ± <span id='totalCoffees' data-value={totalCoffees}
+                >{totalCoffees}</span
+              >
+            </dd>
+            <p class='mt-3 text-xs leading-5 text-gray-500'>
+              Estimación no auditada por la NASA.
+            </p>
           </div>
           <StravaStats />
         </dl>
