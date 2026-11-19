@@ -1,13 +1,19 @@
 ---
-title: About Testing
-description: ¿Haces pruebas en tus aplicaciones web? ¿Deberías probar tu código de manera automática? Testing es un tema que no deberías pasar por alto.
+title: "Testing automático: qué es, por qué hacerlo y cuándo no"
+description: "Qué es el testing de software, la diferencia entre pruebas manuales y automáticas, los tipos de tests que existen y cuándo no merece la pena escribirlos."
 pubDate: 2019-07-13
-updatedDate: 2024-05-30
+updatedDate: 2026-11-19
 type: blog
 author: Jorge Baumann
 tags: ["Testing", "JavaScript"]
-ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=About%20Testing&tags=Testing,JavaScript"
+intro: true
+relatedPosts:
+  - "testing-con-javascript"
+  - "la-falacia-del-100-code-coverage"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Testing%20autom%C3%A1tico%3A%20qu%C3%A9%20es%2C%20por%20qu%C3%A9%20hacerlo%20y%20cu%C3%A1ndo%20no&tags=Testing,JavaScript"
 ---
+
+Testear una aplicación es comprobar que funciona correctamente. Puedes hacerlo a mano o con pruebas automáticas: código que comprueba tu código cada vez que cambias algo, en segundos. En proyectos pequeños o prototipos puede bastar con probar a mano, pero en cuanto un proyecto crece, los tests automáticos te ahorran tiempo y sustos.
 
 ¿Tienes tests en tus desarrollos de software?
 
@@ -17,7 +23,7 @@ Como developer, cuando entregas un proyecto, quieres que el código entregado se
 
 ¿Qué pasa si haces una subida a producción el viernes a última hora? Llega el lunes y te das cuenta de que los cambios que hiciste el viernes provocaron que la aplicación se rompiera. Has estado 3 días con tu aplicación rota y no te has dado cuenta 💀.
 
-![Friday push to production](../../assets/blog/about-testing/friday-push.jpg)
+![Tira cómica de CommitStrip: un desarrollador talla en una calabaza de Halloween la frase "Friday push to prod" y gana el concurso de calabazas terroríficas](../../assets/blog/about-testing/friday-push.jpg)
 
 Entonces, developer, ¿cómo puedes ayudar a evitar este tipo de situaciones? Exacto, testeando tu código.
 
@@ -49,13 +55,13 @@ Un proyecto donde sea complicado seguir el flujo de la lógica de la aplicación
 
 Tu proyecto ha crecido tanto que necesitas un equipo que se dedique exclusivamente a probar que todo funciona como es debido cada vez que se añade una nueva funcionalidad.
 
-**Toda pieza de software tiene bugs**, esto es un hecho. Bugs que no quieres que lleguen al usuario o al cliente final, bugs que quieres detectar antes de que se desplieguen en pro con la nueva funcionalidad.
+**Toda pieza de software tiene bugs**, esto es un hecho. Bugs que no quieres que lleguen al usuario o al cliente final, bugs que quieres detectar antes de que se desplieguen en producción con la nueva funcionalidad.
 
-![Testing Meme](../../assets/blog/about-testing/testing-meme.jpg)
+![Meme del capitán Picard celebrando con los puños en alto con el texto "Our testers found more bugs than our customers did!"](../../assets/blog/about-testing/testing-meme.jpg)
 
 Incluso con un equipo que se dedique exclusivamente a testear, no tienes la garantía de que se vayan a detectar todos los posibles errores que pueda tener tu aplicación.
 
-¿Sabes por qué? Porque las pruebas manuales requieren mucha concentración y es fácil despistarse. Lo que es probable que tu código no esté funcionando como es debido y tu equipo de testing no se haya dado cuenta.
+¿Sabes por qué? Porque las pruebas manuales requieren mucha concentración y es fácil despistarse. Así que es probable que tu código no esté funcionando como es debido y tu equipo de testing no se haya dado cuenta.
 
 Llegados a este momento, seguramente pases más tiempo probando las funcionalidades antiguas que probando las nuevas. Todo debido a que no tienes un mecanismo que te garantice que la aplicación funciona correctamente con cada cambio que haces.
 
@@ -73,7 +79,17 @@ Hay varias técnicas para automatizar los tests, cada una con sus pros y sus con
 
 Todo el tiempo que se invertía en probar la aplicación anterior, se podría reducir considerablemente con esta práctica.
 
-Hace unos años compartí en Twitter / 𝕏 [este meme](https://twitter.com/baumannzone/status/648826797770043392). Describe a la perfección esa sensación que te invade el cuerpo cuando todos los tests de tu aplicación están en verde.
+Hace unos años compartí en X [este meme](https://x.com/baumannzone/status/648826797770043392). Describe a la perfección esa sensación que te invade el cuerpo cuando todos los tests de tu aplicación están en verde.
+
+## Tipos de pruebas automáticas
+
+No todos los tests son iguales. Los tres tipos más habituales son:
+
+- **Tests unitarios**: prueban una pieza pequeña y aislada, como una función. Son rápidos y baratos de escribir, así que suelen ser la mayoría.
+- **Tests de integración**: prueban que varias piezas funcionan bien juntas, por ejemplo un componente con su llamada a la API.
+- **Tests end-to-end (E2E)**: prueban la aplicación completa como lo haría un usuario, en un navegador real. Son los que más confianza dan, pero también los más lentos y frágiles.
+
+Si quieres ver cómo se escribe un test unitario desde cero, sin frameworks, tienes [este artículo sobre testing con JavaScript](/blog/testing-con-javascript/).
 
 ## Happy developers!
 
@@ -89,11 +105,11 @@ A modo resumen, quédate con esto:
 
 - No siempre hace falta tener pruebas automáticas (_OMG, ¿en qué quedamos?_)
 - No necesitas tests si pasas más tiempo re-escribiendo tests que desarrollando funcionalidades (Ej: prototipos, proyectos inestables y cortos)
-- Tu objetivo no es llegar al 100% de code coverage en tus tests.
+- Tu objetivo no es llegar al 100% de code coverage en tus tests. Te cuento por qué en [la falacia del 100% de code coverage](/blog/la-falacia-del-100-code-coverage/).
 
 Si el testing te da muchos problemas, siempre puedes poner en práctica [esto](https://x.com/baumannzone/status/1796104287543611658).
 
-![No test, no fail](../../assets/blog/about-testing/no-test-no-fail.jpg)
+![Meme del hombre que se señala la sien con el texto "Si no haces tests, el test no falla"](../../assets/blog/about-testing/no-test-no-fail.jpg)
 
 ---
 
@@ -101,6 +117,10 @@ Existe un gigantesco mundo alrededor del testing: librerías, frameworks, test r
 
 Espero que leer esto te haya motivado a hacer tests, que te hayas convencido de que los tests son el bien y que el testing es un mundo fantástico 🧙.
 
-Dime qué te pareció por [Instagram](https://instagram.com/baumannzone) y compártelo si te ha sido útil. Recuerda, _sharing is caring_.
+Dime qué te pareció en los comentarios y compártelo si te ha sido útil. Recuerda, _sharing is caring_.
 
 ¡Happy testing! 👋
+
+## Fuentes
+
+- [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), de Ham Vocke en el blog de Martin Fowler, sobre los tipos de tests y cuántos escribir de cada uno.
