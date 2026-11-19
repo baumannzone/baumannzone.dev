@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía rápida: 100 en Lighthouse · baumannzone.dev</title>
+<meta name="author" content="Jorge Baumann">
+<meta name="description" content="Checklist para sacar 100 en Rendimiento, Accesibilidad, Buenas prácticas y SEO en Lighthouse.">
+<!--
+  Fuente del PDF descargable public/guias/guia-lighthouse-100.pdf
+  Regenerar:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --no-pdf-header-footer \
+    --print-to-pdf=public/guias/guia-lighthouse-100.pdf guias/guia-lighthouse-100.html
+-->
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 9.6pt;
+    line-height: 1.42;
+    color: #1f2937;
+  }
+  code, pre { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.86em; }
+  code { background: #f3f0ff; color: #5b21b6; padding: 0 3px; border-radius: 3px; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 13mm 14mm 11mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Cabecera */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 9mm;
+    padding-bottom: 6mm;
+    border-bottom: 2px solid #8b5cf6;
+    margin-bottom: 6mm;
+  }
+  .gauge {
+    flex: none;
+    width: 27mm;
+    height: 27mm;
+    border-radius: 50%;
+    border: 2.4mm solid #0cce6b;
+    background: #e8faf0;
+    color: #008a42;
+    display: grid;
+    place-items: center;
+    font-size: 25pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .kicker {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #7c3aed;
+  }
+  h1 { font-size: 23pt; line-height: 1.1; color: #111827; margin: 1mm 0 2mm; letter-spacing: -0.4px; }
+  .lead { font-size: 10.5pt; color: #4b5563; max-width: 125mm; }
+
+  /* Secciones */
+  h2 {
+    font-size: 12.5pt;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    margin-bottom: 2.5mm;
+  }
+  h2 .num {
+    flex: none;
+    width: 6.5mm;
+    height: 6.5mm;
+    border-radius: 50%;
+    background: #8b5cf6;
+    color: #fff;
+    font-size: 9pt;
+    display: grid;
+    place-items: center;
+  }
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 3mm;
+    padding: 4.5mm 5mm;
+    break-inside: avoid;
+  }
+  .card + .card { margin-top: 4.5mm; }
+  .intro { color: #4b5563; margin-bottom: 2mm; }
+
+  ul.check { list-style: none; }
+  ul.check li {
+    position: relative;
+    padding-left: 6mm;
+    margin-bottom: 1.6mm;
+  }
+  ul.check li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45mm;
+    width: 3.2mm;
+    height: 3.2mm;
+    border: 1.3px solid #8b5cf6;
+    border-radius: 0.8mm;
+  }
+  ul.check li:last-child { margin-bottom: 0; }
+  strong { color: #111827; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5mm; }
+  .grid .card + .card { margin-top: 0; }
+
+  /* Antes de medir */
+  .before {
+    background: #f5f3ff;
+    border: none;
+  }
+  .before ul.check li::before { background: #fff; }
+
+  /* Métricas */
+  table { width: 100%; border-collapse: collapse; margin-top: 2.5mm; font-size: 8.8pt; }
+  th, td { text-align: left; padding: 1.3mm 2mm; border-bottom: 1px solid #ede9fe; }
+  th { color: #6d28d9; font-weight: 600; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.6px; }
+  td:last-child { white-space: nowrap; font-weight: 600; color: #008a42; }
+  .note { font-size: 8.4pt; color: #6b7280; margin-top: 2mm; }
+
+  pre {
+    background: #1e1b2e;
+    color: #e9e4ff;
+    border-radius: 2.5mm;
+    padding: 3mm 4mm;
+    line-height: 1.45;
+    white-space: pre;
+    margin-top: 2mm;
+  }
+  pre .c { color: #a78bfa; }
+  pre .t { color: #f9a8d4; }
+  pre .a { color: #93c5fd; }
+  pre .s { color: #86efac; }
+
+  .bonus { border-color: #c4b5fd; background: #faf8ff; }
+  .tag {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: #ede9fe;
+    color: #6d28d9;
+    border-radius: 99px;
+    padding: 0.5mm 2.2mm;
+    margin-left: 1mm;
+  }
+
+  footer {
+    margin-top: auto;
+    padding-top: 4mm;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #6b7280;
+  }
+  footer a { color: #7c3aed; text-decoration: none; font-weight: 600; }
+  .spacer { flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- ============ PÁGINA 1 ============ -->
+<section class="page">
+  <header>
+    <div class="gauge">100</div>
+    <div>
+      <p class="kicker">Guía rápida · Checklist</p>
+      <h1>Cómo sacar 100 en Lighthouse</h1>
+      <p class="lead">Todo lo que tienes que revisar para llevar al verde Rendimiento, Accesibilidad, Buenas prácticas y SEO. Ve marcando las casillas a medida que lo arreglas.</p>
+    </div>
+  </header>
+
+  <div class="card before">
+    <h2>Antes de medir</h2>
+    <div class="grid" style="gap: 0 6mm;">
+      <ul class="check">
+        <li>Usa una <strong>ventana de incógnito</strong>: las extensiones del navegador bajan la nota.</li>
+        <li>Mide la <strong>build de producción</strong>, nunca el servidor de desarrollo.</li>
+        <li>Desde la terminal:<br><code style="white-space: nowrap;">npx lighthouse https://tu-web.com --view</code></li>
+      </ul>
+      <ul class="check">
+        <li>Mide en <strong>móvil</strong>: es el modo por defecto y el más exigente.</li>
+        <li>Pásalo <strong>3 veces</strong> y quédate con la mediana: la nota varía entre ejecuciones.</li>
+        <li>Para que no se te caiga el 100, pásalo <strong>en cada despliegue</strong> con <code>npx @lhci/cli autorun</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">1</span>Rendimiento</h2>
+    <p class="intro">Es la categoría más difícil. Casi siempre se juega en las imágenes, las fuentes y el JavaScript.</p>
+    <div class="grid" style="gap: 0 6mm;">
+      <ul class="check">
+        <li><strong>Imágenes en AVIF o WebP</strong>, con <code>width</code> y <code>height</code> y con <code>srcset</code> para servir el tamaño justo.</li>
+        <li><code>loading="lazy"</code> solo en las imágenes que están <strong>fuera de pantalla</strong>.</li>
+        <li>La imagen principal (la del LCP) <strong>sin lazy</strong> y con <code>fetchpriority="high"</code>.</li>
+        <li><strong>Fuentes en WOFF2</strong>, alojadas en tu dominio y con <code>font-display: swap</code>. Precarga solo la que se ve arriba.</li>
+        <li>Reserva espacio a imágenes, vídeos, anuncios y banners (<code>aspect-ratio</code>) para que <strong>nada salte</strong> al cargar.</li>
+      </ul>
+      <ul class="check">
+        <li><strong>Menos JavaScript</strong>: <code>defer</code> o <code>type="module"</code> en los scripts y divide el código por página.</li>
+        <li>Retrasa los <strong>scripts de terceros</strong> (analítica, chats, widgets) hasta después de la carga.</li>
+        <li>Mete en línea el <strong>CSS crítico</strong> y elimina el que no se usa.</li>
+        <li>Evita <strong>tareas largas</strong> (más de 50 ms) en el hilo principal.</li>
+        <li>Servidor rápido: <strong>HTML estático o en caché</strong>, CDN, Brotli y caché larga para los assets con hash.</li>
+      </ul>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Métrica (móvil)</th><th>Qué mide</th><th>Umbral del verde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="color:#111827">LCP · Largest Contentful Paint</td><td>Cuándo se pinta el elemento más grande</td><td>≤ 2,5 s</td></tr>
+        <tr><td style="color:#111827">TBT · Total Blocking Time</td><td>Tiempo que el hilo principal está bloqueado</td><td>≤ 200 ms</td></tr>
+        <tr><td style="color:#111827">CLS · Cumulative Layout Shift</td><td>Cuánto se mueve el contenido al cargar</td><td>≤ 0,1</td></tr>
+        <tr><td style="color:#111827">FCP · First Contentful Paint</td><td>Cuándo aparece el primer contenido</td><td>≤ 1,8 s</td></tr>
+        <tr><td style="color:#111827">SI · Speed Index</td><td>Lo rápido que se completa lo visible</td><td>≤ 3,4 s</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Con esos valores rondas el 90. Para llegar a 100 tienes que quedarte bastante por debajo, sobre todo en TBT, LCP y CLS, que son las que más pesan.</p>
+  </div>
+
+  <div class="spacer"></div>
+  <footer>
+    <span>Guía rápida: 100 en Lighthouse · Jorge Baumann</span>
+    <span>1 / 2</span>
+  </footer>
+</section>
+
+<!-- ============ PÁGINA 2 ============ -->
+<section class="page">
+  <div class="grid">
+    <div>
+    <div class="card">
+      <h2><span class="num">2</span>Accesibilidad</h2>
+      <ul class="check">
+        <li><strong>Contraste</strong> mínimo de 4,5:1 en texto normal y 3:1 en texto grande.</li>
+        <li><code>alt</code> en todas las imágenes. Si son decorativas, <code>alt=""</code>.</li>
+        <li>Cada campo de formulario con su <code>&lt;label&gt;</code>.</li>
+        <li>Botones e iconos con <strong>nombre accesible</strong>: texto visible o <code>aria-label</code>.</li>
+        <li><code>lang="es"</code> en la etiqueta <code>&lt;html&gt;</code>.</li>
+        <li><strong>Encabezados en orden</strong> (h1 → h2 → h3), sin saltarte niveles.</li>
+        <li><strong>No bloquees el zoom</strong>: nada de <code>user-scalable=no</code> ni <code>maximum-scale=1</code>.</li>
+        <li>Zonas táctiles de al menos <strong>24 × 24 px</strong> y separadas entre sí.</li>
+        <li><strong>HTML semántico</strong> (<code>&lt;button&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>) antes que ARIA.</li>
+      </ul>
+      <p class="note">Lighthouse solo detecta parte de los problemas: prueba también con teclado y con lector de pantalla.</p>
+    </div>
+
+    <div class="card bonus" style="margin-top: 4.5mm;">
+      <h2>Extra: Agentic Browsing <span class="tag">Nuevo</span></h2>
+      <p class="intro">Categoría experimental desde Lighthouse 13.3 que mide si los agentes de IA pueden usar tu web. No puntúa sobre 100: cuenta cuántas comprobaciones pasas.</p>
+      <ul class="check">
+        <li>Elementos interactivos con nombre y roles válidos.</li>
+        <li>CLS bajo: un agente no puede pulsar algo que se mueve.</li>
+        <li>Un <code>/llms.txt</code> en la raíz que resuma tu web.</li>
+      </ul>
+    </div>
+    </div>
+
+    <div>
+    <div class="card">
+      <h2><span class="num">3</span>Buenas prácticas</h2>
+      <ul class="check">
+        <li><strong>HTTPS</strong> en todo y sin contenido mixto (nada cargado por <code>http://</code>).</li>
+        <li><strong>Consola limpia</strong>: sin errores de JavaScript ni recursos que den 404.</li>
+        <li>Imágenes con su <strong>proporción real</strong> y con resolución suficiente para pantallas retina.</li>
+        <li><code>&lt;!DOCTYPE html&gt;</code> y <code>&lt;meta charset="utf-8"&gt;</code> al principio del documento.</li>
+        <li>No pidas <strong>permisos al cargar</strong> (notificaciones, ubicación): solo tras una acción del usuario.</li>
+        <li>No uses <strong>APIs obsoletas</strong>: Lighthouse te las lista en el informe.</li>
+        <li>Añade <strong>cabeceras de seguridad</strong>: CSP, HSTS y COOP.</li>
+      </ul>
+
+      <h2 style="margin-top: 5mm;"><span class="num">4</span>SEO</h2>
+      <ul class="check">
+        <li><code>&lt;title&gt;</code> y <code>&lt;meta name="description"&gt;</code> <strong>únicos</strong> en cada página.</li>
+        <li>La página responde con un <strong>200</strong> y no tiene un <code>noindex</code> puesto por error.</li>
+        <li><code>robots.txt</code> válido que no bloquee lo que quieres indexar.</li>
+        <li><code>&lt;link rel="canonical"&gt;</code> con una URL absoluta y correcta.</li>
+        <li>Enlaces reales con <code>&lt;a href&gt;</code> (no <code>onclick</code>) y con <strong>texto descriptivo</strong>, nada de "clic aquí".</li>
+        <li><code>hreflang</code> válido si tienes varios idiomas.</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 4.5mm;">
+    <h2>El <code style="font-size: 0.95em;">&lt;head&gt;</code> mínimo de cualquier página</h2>
+    <p class="intro">Con esto ya resuelves de golpe varias comprobaciones de Accesibilidad, Buenas prácticas y SEO:</p>
+<pre><span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="s">"es"</span><span class="t">&gt;</span>
+<span class="t">&lt;head&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="s">"utf-8"</span><span class="t">&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="s">"viewport"</span> <span class="a">content</span>=<span class="s">"width=device-width, initial-scale=1"</span><span class="t">&gt;</span>
+  <span class="t">&lt;title&gt;</span>Título único de la página<span class="t">&lt;/title&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="s">"description"</span> <span class="a">content</span>=<span class="s">"Resumen de la página en unos 150 caracteres"</span><span class="t">&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="s">"canonical"</span> <span class="a">href</span>=<span class="s">"https://tu-web.com/pagina/"</span><span class="t">&gt;</span>
+<span class="t">&lt;/head&gt;</span></pre>
+  </div>
+
+  <div class="spacer"></div>
+  <footer>
+    <span>Más artículos y recursos sobre desarrollo web en <a href="https://baumannzone.dev/blog">baumannzone.dev</a></span>
+    <span>2 / 2</span>
+  </footer>
+</section>
+
+</body>
+</html>
