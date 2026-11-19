@@ -1,0 +1,189 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { SITE_OWNER } from "../consts";
+
+const title = "Mis redes sociales y comunidades | Baumannzone.dev";
+const description =
+  "Encuéntrame en X, LinkedIn, Instagram, YouTube y otras redes. Desarrollo web, JavaScript, IA, charlas y algún vistazo a mi día a día.";
+
+const groups = [
+  {
+    title: "Conversación y actualidad",
+    description: "Ideas, enlaces y conversaciones sobre tecnología y desarrollo.",
+    profiles: [
+      {
+        name: "X",
+        handle: "@baumannzone",
+        url: SITE_OWNER.profiles.x,
+        description: "Opiniones, actualidad web y conversaciones sin demasiados rodeos.",
+        mark: "𝕏",
+        color: "bg-black text-white",
+      },
+      {
+        name: "Threads",
+        handle: "@baumannzone",
+        url: SITE_OWNER.profiles.threads,
+        description: "Ideas rápidas y charlas con la comunidad, también fuera del código.",
+        mark: "@",
+        color: "bg-gray-900 text-white",
+      },
+      {
+        name: "Bluesky",
+        handle: "baumannzone.dev",
+        url: SITE_OWNER.profiles.bluesky,
+        description: "Desarrollo web, enlaces interesantes y conversación tech.",
+        mark: "🦋",
+        color: "bg-sky-500 text-white",
+      },
+    ],
+  },
+  {
+    title: "Contenido y comunidad",
+    description: "Charlas, publicaciones y cosas que voy creando y compartiendo.",
+    profiles: [
+      {
+        name: "Instagram",
+        handle: "@baumannzone",
+        url: SITE_OWNER.profiles.instagram,
+        description: "Charlas, eventos, proyectos y momentos detrás de las pantallas.",
+        mark: "◎",
+        color: "bg-gradient-to-br from-amber-400 via-pink-500 to-purple-700 text-white",
+      },
+      {
+        name: "LinkedIn",
+        handle: "Jorge Baumann",
+        url: SITE_OWNER.profiles.linkedin,
+        description: "Trayectoria profesional, divulgación, colaboraciones y eventos.",
+        mark: "in",
+        color: "bg-[#0a66c2] text-white",
+      },
+      {
+        name: "YouTube",
+        handle: "RambitoJS",
+        url: SITE_OWNER.profiles.youtube,
+        description: "Charlas y vídeos sobre JavaScript, navegadores y desarrollo web.",
+        mark: "▶",
+        color: "bg-red-600 text-white",
+      },
+      {
+        name: "Twitch",
+        handle: "baumannzone",
+        url: "https://www.twitch.tv/baumannzone",
+        description: "Directos y sesiones en comunidad, cuando toca encender el stream.",
+        mark: "▣",
+        color: "bg-purple-600 text-white",
+      },
+    ],
+  },
+  {
+    title: "Código y experimentos",
+    description: "Repositorios, artículos técnicos y pequeñas pruebas web.",
+    profiles: [
+      {
+        name: "GitHub",
+        handle: "baumannzone",
+        url: SITE_OWNER.profiles.github,
+        description: "Proyectos open source, demos y el código de esta web.",
+        mark: "⌘",
+        color: "bg-gray-900 text-white",
+      },
+      {
+        name: "DEV Community",
+        handle: "@baumannzone",
+        url: SITE_OWNER.profiles.devto,
+        description: "Artículos y notas sobre desarrollo de software y web.",
+        mark: "DEV",
+        color: "bg-gray-900 text-white",
+      },
+      {
+        name: "CodePen",
+        handle: "baumannzone",
+        url: SITE_OWNER.profiles.codepen,
+        description: "Experimentos visuales y demos hechas con código.",
+        mark: "{·}",
+        color: "bg-gray-800 text-white",
+      },
+    ],
+  },
+];
+---
+
+<DefaultLayout title={title} description={description}>
+  <div class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div class="mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:px-8">
+      <header class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-violet-600 dark:text-violet-400">
+          Encuéntrame por ahí
+        </p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+          Mis redes sociales
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+          Comparto desarrollo web, JavaScript, IA y charlas. También asomo la
+          cabeza por otros temas de vez en cuando. Elige tu plataforma favorita;
+          no hace falta seguirlas todas para que nos leamos.
+        </p>
+      </header>
+
+      <div class="mt-14 space-y-14 sm:mt-16">
+        {groups.map((group) => (
+          <section aria-labelledby={`heading-${group.title.toLowerCase().replaceAll(" ", "-")}`}>
+            <div class="mb-5 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+              <h2 id={`heading-${group.title.toLowerCase().replaceAll(" ", "-")}`} class="text-2xl font-bold tracking-tight">
+                {group.title}
+              </h2>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{group.description}</p>
+            </div>
+
+            <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {group.profiles.map((profile) => (
+                <li>
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex h-full min-h-44 flex-col rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-violet-500"
+                  >
+                    <div class="flex items-center gap-4">
+                      <span class={`flex size-12 shrink-0 items-center justify-center rounded-xl text-lg font-bold ${profile.color}`} aria-hidden="true">
+                        {profile.mark}
+                      </span>
+                      <span class="min-w-0">
+                        <span class="block text-lg font-semibold group-hover:text-violet-700 dark:group-hover:text-violet-300">
+                          {profile.name}
+                        </span>
+                        <span class="block truncate text-sm text-gray-500 dark:text-gray-400">
+                          {profile.handle}
+                        </span>
+                      </span>
+                      <svg class="ml-auto size-5 shrink-0 text-gray-400 transition group-hover:translate-x-1 group-hover:text-violet-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.19-7.19v5.16a.75.75 0 001.5 0V5.78a.75.75 0 00-.75-.75H6.78a.75.75 0 000 1.5h5.16l-7.19 7.19a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <span class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                      {profile.description}
+                    </span>
+                    <span class="sr-only"> (se abre en una pestaña nueva)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+
+      <aside class="mt-16 rounded-2xl bg-violet-50 p-6 sm:flex sm:items-center sm:justify-between sm:p-8 dark:bg-violet-950/40">
+        <div>
+          <h2 class="text-xl font-bold">¿Una propuesta profesional?</h2>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">
+            Para colaboraciones, charlas o patrocinio, aquí tienes la información y las formas de contacto.
+          </p>
+        </div>
+        <a href="/patrocinio/" class="mt-5 inline-flex shrink-0 items-center rounded-lg bg-violet-700 px-4 py-2.5 font-semibold text-white transition hover:bg-violet-800 sm:ml-6 sm:mt-0">
+          Ver página de patrocinio
+          <span class="ml-2" aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </div>
+  </div>
+</DefaultLayout>
