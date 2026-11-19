@@ -2,6 +2,8 @@
 title: "Haz accesible el contenido de los pseudo-elementos ::marker en CSS"
 description: "Cómo personalizar ::marker en <summary> sin romper la accesibilidad. Descubre cómo usar content con texto alternativo o incluso ocultarlo a los lectores de pantalla."
 pubDate: 2025-08-20
+updatedDate: 2026-11-19
+intro: true
 type: blog
 tags:
   - CSS
@@ -10,7 +12,10 @@ author: "Jorge Baumann"
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Haz%20accesible%20el%20contenido%20de%20los%20pseudo-elementos%20::marker&tags=CSS,a11y"
 relatedPosts:
   - "acordeones-nativos-en-html-sin-una-linea-de-javascript"
+  - "entendiendo-flow-layout-en-css"
 ---
+
+Los lectores de pantalla leen el contenido que pones en `::marker` con CSS, emojis incluidos. Para evitarlo, usa el texto alternativo de `content`: con `content: "📸" / "Ver fotos"` el lector anuncia "Ver fotos", y con `content: "📸" / ""` no anuncia nada.
 
 En mi [post anterior sobre acordeones nativos en HTML](/blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/) vimos cómo usar `<details>` y `<summary>` para crear interacciones sin nada de JavaScript.
 
@@ -32,7 +37,9 @@ A nivel visual, queda simpático. Pero en un lector de pantalla el resultado pue
 
 > Cara sonriente con los ojos sonrientes y las mejillas coloradas
 
-En lugar de un simple "Galería de fotos", el usuario recibe una descripción larga y confusa del emoji. No es la experiencia que queremos.
+En lugar de un simple "Galería de fotos", el usuario recibe una descripción larga y confusa del emoji. No es la experiencia que queremos. Un elemento decorativo se convierte en ruido para quien navega con tecnologías de asistencia.
+
+![Meme del novio distraído: "tú" mira a "::marker content sin texto alternativo" mientras su pareja, "buenas prácticas de a11y", le mira indignada](../../assets/blog/haz-accesible-el-contenido-de-los-pseudo-elementos-marker-en-css/meme.png)
 
 ## La solución: texto alternativo para screen readers
 
@@ -77,7 +84,7 @@ De esta forma puedes decorar visualmente el summary sin añadir ruido innecesari
 
 ## Compatibilidad de navegadores
 
-La sintaxis con texto alternativo (content: "icono" / "texto";) todavía no tiene un soporte uniforme en todos los entornos.
+La sintaxis con texto alternativo (`content: "icono" / "texto";`) todavía no tiene un soporte uniforme en todos los entornos.
 
 - ✅ Chrome, Firefox y Edge (Windows + NVDA/JAWS): soportan tanto el icono como el texto alternativo.
 - ⚠️ Chrome y Firefox en macOS con VoiceOver: muestran el emoji visual, pero el lector de pantalla ignora el texto alternativo.
@@ -123,3 +130,12 @@ Lo usan tanto personas con discapacidad visual como desarrolladores para testear
 
 **JAWS** (_Job Access With Speech_) → Lector de pantalla comercial (de pago, bastante caro).
 Es muy potente y está muy extendido en entornos corporativos.
+
+Si usas macOS, puedes hacer una primera prueba rápida con **VoiceOver**, que viene integrado en el sistema (`Cmd` + `F5`). Pero, como has visto en la tabla de compatibilidad, no te fíes solo de él.
+
+## Fuentes
+
+- [La propiedad `content`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content), en MDN, con la sintaxis del texto alternativo.
+- [`::marker`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::marker), en MDN.
+- [Texto alternativo en `content`](https://www.w3.org/TR/css-content-3/#alt), en la especificación CSS Generated Content Module Level 3.
+- [NVDA](https://www.nvaccess.org/), el lector de pantalla gratuito para Windows.

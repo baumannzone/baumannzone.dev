@@ -8,7 +8,7 @@ author: Jorge Baumann
 intro: true
 tags: ["CSS"]
 relatedPosts:
-  - personaliza-marker-en-css-sin-romper-la-accesibilidad
+  - haz-accesible-el-contenido-de-los-pseudo-elementos-marker-en-css
 ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Entendiendo%20Flow%20Layout%20en%20CSS&tags=CSS"
 ---
 
@@ -32,7 +32,7 @@ Con esa hoja, entre otras reglas:
 - `li` es `display: list-item`: un bloque en flow más un marcador, el pseudoelemento `::marker`.
 - `button` e `input` son `inline-block`.
 
-Si cambias el contenido de `::marker`, un lector de pantalla también lo lee. En [Personaliza ::marker en CSS sin romper la accesibilidad](/blog/personaliza-marker-en-css-sin-romper-la-accesibilidad/) explico cómo hacer que anuncie otro texto, o que no anuncie nada.
+Si cambias el contenido de `::marker`, un lector de pantalla también lo lee. En [Haz accesible el contenido de los pseudo-elementos ::marker en CSS](/blog/haz-accesible-el-contenido-de-los-pseudo-elementos-marker-en-css/) explico cómo hacer que anuncie otro texto, o que no anuncie nada.
 
 ## Elementos en bloque
 

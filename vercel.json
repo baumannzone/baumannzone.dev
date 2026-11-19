@@ -1,4 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/blog/personaliza-marker-en-css-sin-romper-la-accesibilidad",
+      "destination": "/blog/haz-accesible-el-contenido-de-los-pseudo-elementos-marker-en-css/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/personaliza-marker-en-css-sin-romper-la-accesibilidad/",
+      "destination": "/blog/haz-accesible-el-contenido-de-los-pseudo-elementos-marker-en-css/",
+      "statusCode": 301
+    }
+  ]
 }
