@@ -38,7 +38,7 @@ El blog incluye artículos, tutoriales y demos sobre JavaScript, HTML, CSS, test
 - [GitHub](${SITE_OWNER.profiles.github}): Repositorios y proyectos.
 - [LinkedIn](${SITE_OWNER.profiles.linkedin}): Perfil profesional.
 - [X](${SITE_OWNER.profiles.x}): Perfil de @baumannzone.
-- [YouTube](${SITE_OWNER.profiles.youtube}): Canal RambitoJS.
+- [YouTube](${SITE_OWNER.profiles.youtube}): Canal de @baumannzone.
 
 ## Artículos
 

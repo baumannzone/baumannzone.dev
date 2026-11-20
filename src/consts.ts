@@ -25,7 +25,7 @@ export const SITE_OWNER = {
     threads: "https://threads.net/baumannzone",
     bluesky: "https://bsky.app/profile/baumannzone.dev",
     x: "https://twitter.com/baumannzone",
-    youtube: "https://youtube.com/RambitoJS",
+    youtube: "https://www.youtube.com/@baumannzone",
     devto: "https://dev.to/baumannzone",
     codepen: "https://codepen.io/baumannzone",
   },
