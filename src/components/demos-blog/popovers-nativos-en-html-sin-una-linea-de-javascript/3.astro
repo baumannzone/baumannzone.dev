@@ -1,0 +1,92 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout name="menú anclado y animado">
+  <div class="demo__stage">
+    <button class="pop-btn" popovertarget="demo-pop-menu">Opciones ▾</button>
+  </div>
+
+  <div id="demo-pop-menu" popover class="pop-menu">
+    <button popovertarget="demo-pop-menu" popovertargetaction="hide">✏️ Editar</button>
+    <button popovertarget="demo-pop-menu" popovertargetaction="hide">📋 Duplicar</button>
+    <button popovertarget="demo-pop-menu" popovertargetaction="hide">🗑️ Borrar</button>
+  </div>
+</DemoLayout>
+
+<style is:global>
+  .pop-menu {
+    min-width: 180px;
+    padding: 6px;
+    border: 1px solid rgb(15 18 30 / 0.12);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgb(15 18 30 / 0.18);
+
+    /* Animación de entrada y salida */
+    opacity: 0;
+    translate: 0 -8px;
+    transition:
+      opacity 0.2s,
+      translate 0.2s,
+      overlay 0.2s allow-discrete,
+      display 0.2s allow-discrete;
+  }
+
+  .pop-menu:popover-open {
+    display: grid;
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  @starting-style {
+    .pop-menu:popover-open {
+      opacity: 0;
+      translate: 0 -8px;
+    }
+  }
+
+  /* Pegado debajo del botón que lo abre */
+  @supports (position-area: bottom) {
+    .pop-menu {
+      inset: auto;
+      margin: 8px 0 0;
+      position-area: bottom span-right;
+    }
+  }
+
+  .pop-menu button {
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    color: #3f4354;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .pop-menu button:hover,
+  .pop-menu button:focus-visible {
+    background: rgb(124 58 237 / 0.1);
+    outline: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .pop-menu {
+      background: #2b2f3c;
+      border-color: rgb(255 255 255 / 0.12);
+    }
+
+    .pop-menu button {
+      color: #d6d9e3;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pop-menu {
+      transition: none;
+    }
+  }
+</style>

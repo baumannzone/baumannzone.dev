@@ -1,0 +1,104 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout name="popover básico">
+  <div class="demo__stage">
+    <button class="pop-btn" popovertarget="demo-pop-basico">
+      Abrir popover
+    </button>
+  </div>
+
+  <div id="demo-pop-basico" popover class="pop-card">
+    <p class="pop-card__title">¡Hola! Soy un popover 👋</p>
+    <p>
+      Haz clic fuera o pulsa <kbd>Esc</kbd> para cerrarme. Ni una línea de
+      JavaScript.
+    </p>
+    <button class="pop-btn pop-btn--ghost" popovertarget="demo-pop-basico" popovertargetaction="hide">
+      Cerrar
+    </button>
+  </div>
+</DemoLayout>
+
+<style is:global>
+  .pop-btn {
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    background: #7c3aed;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 18px;
+    cursor: pointer;
+  }
+
+  .pop-btn:hover {
+    background: #6d28d9;
+  }
+
+  .pop-btn:focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 3px;
+  }
+
+  .pop-btn--ghost {
+    color: #6d28d9;
+    background: rgb(124 58 237 / 0.1);
+  }
+
+  .pop-btn--ghost:hover {
+    background: rgb(124 58 237 / 0.18);
+  }
+
+  .pop-card {
+    max-width: min(90vw, 340px);
+    padding: 20px;
+    border: 1px solid rgb(15 18 30 / 0.12);
+    border-radius: 14px;
+    background: #fff;
+    color: #3f4354;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 0 16px 40px rgb(15 18 30 / 0.18);
+  }
+
+  .pop-card p {
+    margin: 0 0 12px;
+  }
+
+  .pop-card__title {
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .pop-card kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    padding: 1px 6px;
+    border: 1px solid rgb(15 18 30 / 0.2);
+    border-radius: 5px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .pop-card {
+      background: #2b2f3c;
+      color: #b8bccb;
+      border-color: rgb(255 255 255 / 0.12);
+    }
+
+    .pop-card__title {
+      color: #fff;
+    }
+
+    .pop-card kbd {
+      border-color: rgb(255 255 255 / 0.25);
+    }
+
+    .pop-btn--ghost {
+      color: #c9c2ff;
+      background: rgb(201 194 255 / 0.12);
+    }
+  }
+</style>

@@ -1,0 +1,214 @@
+---
+title: "Popovers nativos en HTML sin una línea de JavaScript"
+description: "Crea menús, tooltips y avisos con el atributo popover de HTML: tipos auto, manual y hint, botones sin JavaScript, animaciones, anclaje con CSS y accesibilidad."
+pubDate: 2026-11-23
+author: Jorge Baumann
+intro: true
+tags:
+  - HTML
+  - CSS
+  - a11y
+relatedPosts:
+  - "acordeones-nativos-en-html-sin-una-linea-de-javascript"
+  - "como-detectar-el-elemento-con-el-foco-en-tiempo-real"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Popovers%20nativos%20en%20HTML%20sin%20una%20l%C3%ADnea%20de%20JavaScript&tags=HTML,CSS,a11y"
+---
+
+import Demo1 from "../../components/demos-blog/popovers-nativos-en-html-sin-una-linea-de-javascript/1.astro";
+import Demo2 from "../../components/demos-blog/popovers-nativos-en-html-sin-una-linea-de-javascript/2.astro";
+import Demo3 from "../../components/demos-blog/popovers-nativos-en-html-sin-una-linea-de-javascript/3.astro";
+
+Para crear un popover sin JavaScript, añade el atributo `popover` al elemento que quieres mostrar y pon en el botón que lo abre un `popovertarget` con su `id`. El navegador lo pinta por encima de todo, lo cierra al hacer clic fuera o al pulsar `Esc` y se encarga del foco. Funciona en todos los navegadores modernos.
+
+Se acabó pelearte con el `z-index` y escribir otro listener para cerrar el menú cuando haces clic fuera.
+
+## Cómo crear un popover con HTML
+
+Necesitas dos piezas: un elemento con el atributo `popover` y un botón que apunte a su `id` con `popovertarget`.
+
+```html
+<button popovertarget="saludo">Abrir popover</button>
+
+<div id="saludo" popover>
+  <p>¡Hola! Soy un popover 👋</p>
+</div>
+```
+
+Pruébalo:
+
+<Demo1 />
+
+El popover está oculto hasta que lo abres. Cuando se abre, el navegador lo mete en la **capa superior** (_top layer_), la misma que usan los `<dialog>` modales. Eso significa que siempre queda por encima del resto de la página, aunque algún contenedor tenga `overflow: hidden` o un `z-index` imposible.
+
+## `auto`, `manual` y `hint`: los tres tipos de popover
+
+El atributo `popover` admite tres valores, y cada uno se cierra de una forma distinta.
+
+### `popover="auto"`
+
+Es el valor por defecto: escribir solo `popover` es lo mismo que `popover="auto"`. Se cierra solo al hacer clic fuera o al pulsar `Esc`, lo que se conoce como _light dismiss_. Además, al abrir un popover `auto` se cierran los demás `auto` que hubiera abiertos, salvo que estén anidados.
+
+Es el que quieres para menús desplegables, selectores y paneles de opciones.
+
+### `popover="manual"`
+
+No se cierra al hacer clic fuera ni al pulsar `Esc`, ni lo cierra ningún otro popover. Solo se cierra cuando tú lo decides, con un botón o desde JavaScript. Puedes tener varios abiertos a la vez.
+
+Encaja con notificaciones, avisos tipo _toast_ o cualquier cosa que no deba desaparecer por un clic despistado.
+
+Abre los dos y haz clic fuera para ver la diferencia:
+
+<Demo2 />
+
+### `popover="hint"`
+
+Está pensado para tooltips que aparecen al pasar el ratón o al llevar el foco a un elemento. Se cierra con _light dismiss_ como el `auto`, pero no cierra los popovers `auto` que haya abiertos, así que puedes enseñar un tooltip dentro de un menú sin que el menú desaparezca.
+
+Es el más nuevo de los tres: Chrome y Edge lo soportan desde la versión 151 y Firefox desde la 153, pero Safari todavía no. En los navegadores que no lo entienden, `hint` se comporta como `manual`.
+
+## Abrir, cerrar o alternar sin JavaScript
+
+Por defecto, el botón con `popovertarget` alterna el popover: si está cerrado lo abre y si está abierto lo cierra. Puedes cambiarlo con `popovertargetaction`, que acepta `show`, `hide` o `toggle`:
+
+```html
+<div id="aviso" popover="manual">
+  <p>Tu sesión caduca en 5 minutos.</p>
+  <button popovertarget="aviso" popovertargetaction="hide">Cerrar</button>
+</div>
+```
+
+Ese botón de cerrar es imprescindible en los popovers `manual`, porque no hay otra forma de cerrarlos sin JavaScript.
+
+Desde 2025 también existe una alternativa más general: los atributos `commandfor` y `command`. Funcionan igual, pero sirven también para `<dialog>`:
+
+```html
+<button commandfor="aviso" command="toggle-popover">Avisos</button>
+<button commandfor="aviso" command="hide-popover">Cerrar</button>
+<button commandfor="mi-dialog" command="show-modal">Abrir modal</button>
+```
+
+Los valores para popovers son `show-popover`, `hide-popover` y `toggle-popover`. Están en Chrome y Edge desde la 135, en Firefox desde la 144 y en Safari desde la 26.2.
+
+## Controlar un popover con JavaScript
+
+Si lo necesitas, cada popover tiene tres métodos: `showPopover()`, `hidePopover()` y `togglePopover()`. Este último devuelve `true` si el popover queda abierto y `false` si queda cerrado.
+
+También puedes escuchar los eventos `beforetoggle`, justo antes de que cambie, y `toggle`, justo después. Los dos traen `oldState` y `newState`, con los valores `"open"` o `"closed"`:
+
+```js
+const menu = document.getElementById("menu");
+
+menu.addEventListener("toggle", (event) => {
+  if (event.newState === "open") {
+    console.log("Menú abierto");
+  }
+});
+```
+
+Puedes cancelar la apertura con `event.preventDefault()` dentro de `beforetoggle`, pero solo al abrir: el cierre no se puede cancelar.
+
+## Dale estilo: `:popover-open`, `::backdrop` y animaciones
+
+El navegador le pone al popover unos estilos por defecto: centrado en la pantalla, con borde y algo de padding. A partir de ahí, lo estilas como cualquier otro elemento. Tienes dos selectores útiles:
+
+- `:popover-open` selecciona el popover cuando está abierto.
+- `::backdrop` es la capa que queda detrás del popover. Sirve para oscurecer el resto de la página.
+
+```css
+[popover]::backdrop {
+  background: rgb(0 0 0 / 0.3);
+}
+```
+
+Para animar la entrada y la salida necesitas tres piezas:
+
+- `@starting-style`, para definir desde dónde empieza la animación al abrir.
+- `transition-behavior: allow-discrete` en `display`, para que el popover no desaparezca de golpe al cerrarse.
+- `overlay` con `allow-discrete`, para que siga en la capa superior mientras se anima la salida.
+
+```css
+.menu {
+  opacity: 0;
+  translate: 0 -8px;
+  transition:
+    opacity 0.2s,
+    translate 0.2s,
+    overlay 0.2s allow-discrete,
+    display 0.2s allow-discrete;
+}
+
+.menu:popover-open {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@starting-style {
+  .menu:popover-open {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}
+```
+
+La propiedad `overlay` solo existe en Chrome y Edge. En Firefox y Safari la animación funciona igual, solo que el popover puede quedar por debajo de otros elementos durante los 0,2 segundos que dura la salida.
+
+## Pega el popover a su botón con CSS
+
+Centrado en la pantalla está bien para un aviso, pero un menú tiene que salir pegado al botón que lo abre. Aquí entra el **anchor positioning** de CSS.
+
+Cuando abres un popover con `popovertarget`, el botón se convierte automáticamente en su ancla. No necesitas `anchor-name` ni ningún `id` extra, basta con `position-area`:
+
+```css
+@supports (position-area: bottom) {
+  .menu {
+    inset: auto;
+    margin: 8px 0 0;
+    position-area: bottom span-right;
+  }
+}
+```
+
+`inset: auto` y `margin` quitan el centrado por defecto, y `position-area: bottom span-right` coloca el menú debajo del botón, alineado con su borde izquierdo. El `@supports` hace que, en un navegador sin anchor positioning, el popover siga saliendo centrado en vez de en una esquina.
+
+Este es el resultado, con la animación del apartado anterior:
+
+<Demo3 />
+
+El ancla automática funciona en Chrome y Edge desde la 133, en Firefox desde la 147 y en Safari desde la 26.
+
+## ¿Es accesible?
+
+Si lo abres con `popovertarget`, el navegador hace mucho trabajo por ti:
+
+- Relaciona el botón con el popover y anuncia si está expandido o contraído, como si hubieras puesto `aria-expanded` a mano.
+- Coloca el popover justo después del botón en el orden del tabulador, aunque en el HTML esté en otra parte.
+- Al cerrarlo con `Esc`, devuelve el foco al botón.
+
+Si lo abres con `showPopover()` desde JavaScript, el navegador no sabe qué botón lo ha abierto, así que el `aria-expanded` lo tienes que gestionar tú.
+
+Y una cosa importante: **un popover no es un modal**. No bloquea el resto de la página ni atrapa el foco. Si necesitas que el usuario responda antes de seguir, como en una confirmación de borrado, usa un `<dialog>` con `showModal()`. Si quieres comprobar por dónde va el foco mientras pruebas tus popovers, te dejo [este truco para verlo en tiempo real](/blog/como-detectar-el-elemento-con-el-foco-en-tiempo-real/).
+
+## Soporte en navegadores
+
+| Característica | Chrome y Edge | Firefox | Safari |
+| --- | --- | --- | --- |
+| `popover`, `popovertarget` y `:popover-open` | 114 | 125 | 17 |
+| `commandfor` y `command` | 135 | 144 | 26.2 |
+| El botón como ancla automática | 133 | 147 | 26 |
+| `popover="hint"` | 151 | 153 | No |
+
+Lo básico funciona en todos los navegadores modernos desde hace más de dos años, así que puedes usarlo en producción sin miedo.
+
+## Conclusión
+
+Igual que con los [acordeones nativos](/blog/acordeones-nativos-en-html-sin-una-linea-de-javascript/), HTML ya resuelve solo lo que antes nos obligaba a instalar una librería. Un atributo en el popover, otro en el botón, y tienes un menú que se cierra solo, queda por encima de todo y es accesible con teclado.
+
+La próxima vez que vayas a escribir `isOpen` en un `useState` para un desplegable, prueba primero con `popover`.
+
+## Fuentes
+
+- [Native Popover Element with HTML](https://www.trevorlasn.com/blog/native-popover-with-html), de Trevor Lasn (en inglés), el artículo que me dio la idea.
+- [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) y [Using the Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using), en MDN.
+- [El atributo `popover`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover), en MDN.
+- [Los atributos `command` y `commandfor` de `<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button), en MDN.
+- [El evento `beforetoggle`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforetoggle_event), en MDN.

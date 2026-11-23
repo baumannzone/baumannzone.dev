@@ -1,0 +1,42 @@
+---
+import DemoLayout from "../demo-layout.astro";
+---
+
+<DemoLayout name="auto vs manual" columns>
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <button class="pop-btn" popovertarget="demo-pop-auto">Abrir auto</button>
+    </div>
+    <figcaption class="demo__caption"><code>popover="auto"</code></figcaption>
+  </figure>
+
+  <figure class="demo__item">
+    <div class="demo__stage">
+      <button class="pop-btn" popovertarget="demo-pop-manual">
+        Abrir manual
+      </button>
+    </div>
+    <figcaption class="demo__caption"><code>popover="manual"</code></figcaption>
+  </figure>
+
+  <div id="demo-pop-auto" popover="auto" class="pop-card">
+    <p class="pop-card__title">Popover auto</p>
+    <p>Me cierro al hacer clic fuera, al pulsar <kbd>Esc</kbd> o al abrir otro popover auto.</p>
+  </div>
+
+  <div id="demo-pop-manual" popover="manual" class="pop-card pop-card--toast">
+    <p class="pop-card__title">Popover manual</p>
+    <p>Puedes hacer clic donde quieras: de aquí no me muevo hasta que pulses el botón.</p>
+    <button class="pop-btn pop-btn--ghost" popovertarget="demo-pop-manual" popovertargetaction="hide">
+      Cerrar
+    </button>
+  </div>
+</DemoLayout>
+
+<style is:global>
+  /* El manual se queda abajo a la derecha, como una notificación */
+  .pop-card--toast {
+    inset: auto 16px 16px auto;
+    margin: 0;
+  }
+</style>
