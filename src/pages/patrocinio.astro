@@ -9,6 +9,11 @@ import atril from '../assets/patrocinio/caceres-tiktok.webp';
 import escenario from '../assets/patrocinio/caceres-traje.webp';
 import gala from '../assets/talks/gala-sirviendo-codigo/3.jpg';
 
+// La galería ocupa todo el contenedor hasta que comparte fila con el texto en lg.
+const miniaturaSizes = '(min-width: 1280px) 185px, (min-width: 1024px) calc((100vw - 168px) / 6), (min-width: 640px) calc((100vw - 72px) / 3), calc((100vw - 48px) / 3)';
+const galaSizes = '(min-width: 1280px) 383px, (min-width: 1024px) calc((100vw - 132px) / 3), (min-width: 640px) calc((200vw - 108px) / 3), calc((200vw - 72px) / 3)';
+const miniaturaWidths = [120, 192, 240, 320, 400, 480, 640];
+
 const correo = 'jorge.baumann.aguilar@gmail.com';
 const contacto = `mailto:${correo}?subject=Propuesta%20de%20colaboraci%C3%B3n`;
 const cifras = [
@@ -33,9 +38,9 @@ const propuestas = [
           <a class="cta mt-7" href={contacto}>Proponer una colaboración</a>
         </div>
         <div class="grid grid-cols-3 gap-2 sm:gap-3">
-          <Image src={gala} width={800} alt="Jorge con otros participantes en el escenario de la gala de Sirviendo Código" loading="eager" class="photo col-span-2 row-span-2 h-full min-h-0 object-[40%_center]" />
-          <Image src={atril} width={400} alt="Jorge en el atril durante su charla sobre TikTok en Cáceres" class="photo aspect-square object-top" />
-          <Image src={retrato} width={260} alt="Retrato en blanco y negro de Jorge Baumann con los brazos cruzados" class="photo aspect-square object-top" />
+          <Image src={gala} width={800} widths={[240, 384, 480, 640, 800, 960, 1280]} sizes={galaSizes} fetchpriority="high" alt="Jorge con otros participantes en el escenario de la gala de Sirviendo Código" loading="eager" class="photo col-span-2 row-span-2 h-full min-h-0 object-[40%_center]" />
+          <Image src={atril} width={400} height={400} widths={miniaturaWidths} sizes={miniaturaSizes} fit="cover" position="top" alt="Jorge en el atril durante su charla sobre TikTok en Cáceres" class="photo aspect-square object-top" />
+          <Image src={retrato} width={260} height={260} widths={miniaturaWidths} sizes={miniaturaSizes} fit="cover" position="top" alt="Retrato en blanco y negro de Jorge Baumann con los brazos cruzados" class="photo aspect-square object-top" />
         </div>
       </header>
 
@@ -53,7 +58,7 @@ const propuestas = [
         <p class="copy mt-4 max-w-2xl">Estarás apoyando a un software engineer apasionado y también tendrás acceso a una serie de beneficios que no sabías que necesitabas.</p>
 
         <article class="mt-9 grid overflow-hidden rounded-2xl bg-violet-50 md:grid-cols-[2fr_3fr]">
-          <Image src={caballo} width={560} alt="Jorge montando a caballo en un prado" class="mx-auto h-auto max-h-[28rem] w-full bg-[#e5e8d8] object-contain" />
+          <Image src={caballo} width={504} widths={[252, 504, 756]} sizes="min(100vw - 2rem, 252px)" quality={70} alt="Jorge montando a caballo en un prado" class="mx-auto h-auto max-h-[28rem] w-full bg-[#e5e8d8] object-contain" />
           <div class="self-center p-6 sm:p-10">
             <h3 class="text-3xl font-bold tracking-tight">🐴 Entrada a caballo en tu evento</h3>
             <p class="copy mt-4 text-lg">¿Tienes una conferencia aburrida? No te preocupes, yo llego a caballo. <strong>Literalmente.</strong></p>
@@ -71,7 +76,7 @@ const propuestas = [
         <div class="grid gap-9 sm:grid-cols-3 sm:gap-6">
           {propuestas.map(({ titulo, texto, foto, alt }) => (
             <article>
-              <Image src={foto} width={540} alt={alt} class:list={["photo aspect-[3/2]", { "meme": foto === meme, "object-[center_38%]": foto === escenario }]} />
+              <Image src={foto} width={540} widths={[240, 360, 400, 480, 600, 720, 800, 1080, 1200]} sizes="(min-width: 1280px) 389px, (min-width: 1024px) calc((100vw - 112px) / 3), (min-width: 640px) calc((100vw - 96px) / 3), calc(100vw - 32px)" alt={alt} class:list={["photo aspect-[3/2]", { "meme": foto === meme, "object-[center_38%]": foto === escenario }]} />
               <h3 class="mt-4 text-xl font-bold">{titulo}</h3>
               <p class="copy mt-2">{texto}</p>
             </article>
