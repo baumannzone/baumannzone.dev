@@ -121,6 +121,7 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
       >
         <slot />
       </article>
+      <span id="section-copy-status" role="status" class="sr-only"></span>
 
       <hr
         class='bg-violet-500 h-[100px] w-[4px] mx-auto my-[80px] rounded-full border-none'
@@ -167,3 +168,73 @@ const postUrl = new URL(`/blog/${slug}/`, Astro.site).href;
     <ScreenSaver />
   </body>
 </html>
+
+<script>
+  function linkSectionHeadings() {
+    for (const heading of document.querySelectorAll('article.prose h2[id]')) {
+      if (heading.querySelector('.section-copy')) continue;
+
+      const fragment = '#' + encodeURIComponent(heading.id);
+      const section = heading.textContent?.trim();
+      if (!heading.querySelector('a, button')) {
+        const anchor = document.createElement('a');
+        anchor.className = 'section-anchor';
+        anchor.href = fragment;
+        anchor.append(...heading.childNodes);
+        heading.append(anchor);
+      }
+
+      const copy = document.createElement('button');
+      copy.type = 'button';
+      copy.className = 'section-copy';
+      copy.textContent = '#';
+      copy.title = 'Copiar enlace a esta sección';
+      copy.setAttribute('aria-label', `Copiar enlace a la sección «${section}»`);
+      let reset: number;
+      copy.addEventListener('click', async () => {
+        const url = new URL(fragment, window.location.href).href;
+        try {
+          await navigator.clipboard.writeText(url);
+        } catch {
+          window.prompt('Copia el enlace a esta sección', url);
+          return;
+        }
+
+        copy.textContent = '✓';
+        const status = document.getElementById('section-copy-status');
+        if (status) status.textContent = `Enlace a «${section}» copiado`;
+        window.clearTimeout(reset);
+        reset = window.setTimeout(() => { copy.textContent = '#'; }, 1800);
+      });
+      heading.append(' ', copy);
+    }
+  }
+
+  linkSectionHeadings();
+  document.addEventListener('astro:page-load', linkSectionHeadings);
+</script>
+
+<style>
+  article :global(h2 > .section-anchor) {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  article :global(h2 > .section-anchor:is(:hover, :focus-visible)) {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  article :global(.section-copy) {
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    font-size: 0.7em;
+    vertical-align: middle;
+    color: var(--tw-prose-links);
+    opacity: 0.7;
+  }
+
+  article :global(.section-copy:is(:hover, :focus-visible)) {
+    opacity: 1;
+  }
+</style>
