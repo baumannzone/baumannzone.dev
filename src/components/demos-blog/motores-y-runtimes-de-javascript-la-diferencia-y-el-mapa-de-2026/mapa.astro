@@ -169,7 +169,11 @@ const runtimesOf = (engineId: string) =>
     <div class="rtmap__grid">
       <div class="rtmap__col">
         <p class="rtmap__heading" id="rtmap-engines">Motores</p>
-        <ul class="rtmap__list rtmap__list--engines" aria-labelledby="rtmap-engines">
+        <ul
+          class="rtmap__list rtmap__list--engines"
+          role="list"
+          aria-labelledby="rtmap-engines"
+        >
           {
             engines.map((engine) => (
               <li>
@@ -197,7 +201,11 @@ const runtimesOf = (engineId: string) =>
               <p class="rtmap__group-name" id={`rtmap-group-${index}`}>
                 {group}
               </p>
-              <ul class="rtmap__list" aria-labelledby={`rtmap-group-${index}`}>
+              <ul
+                class="rtmap__list"
+                role="list"
+                aria-labelledby={`rtmap-group-${index}`}
+              >
                 {runtimes
                   .filter((runtime) => runtime.group === group)
                   .map((runtime) => (
@@ -361,9 +369,20 @@ const runtimesOf = (engineId: string) =>
     outline-offset: 2px;
   }
 
+  /* Borde del activo con al menos 3:1 de contraste en todos los colores */
+  .rtmap__item {
+    --engine-ring: color-mix(in srgb, var(--engine-color) 70%, #000);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .rtmap__item {
+      --engine-ring: color-mix(in srgb, var(--engine-color) 80%, #fff);
+    }
+  }
+
   .rtmap__item.is-active {
-    border-color: var(--engine-color);
-    box-shadow: inset 0 0 0 1px var(--engine-color);
+    border-color: var(--engine-ring);
+    box-shadow: inset 0 0 0 1px var(--engine-ring);
     background: color-mix(in srgb, var(--engine-color) 14%, var(--demo-bg));
   }
 
