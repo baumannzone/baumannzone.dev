@@ -42,6 +42,14 @@ fetch("https://example.com");
 
 Sí, incluso `console.log`. Ninguna de esas tres líneas está en ECMA-262.
 
+Yo me di cuenta con los estilos de la consola. En el navegador puedes darle CSS a un mensaje con `%c`:
+
+```js
+console.log("%cHola", "color: hotpink; font-size: 24px");
+```
+
+En Chrome sale grande y rosa. En Node sale un "Hola" normal, sin estilos y sin ningún aviso. No es un fallo de Node: `console` lo pone cada entorno, y no todos lo implementan igual.
+
 Cuando dices "JavaScript" estás mezclando, sin darte cuenta, dos cosas: el lenguaje y lo que te da el sitio donde lo ejecutas. Separarlas es justo lo que diferencia a un motor de un runtime.
 
 ## Qué es un motor de JavaScript
@@ -62,9 +70,9 @@ Hay unos cuantos más, y los vas a ver en el mapa.
 
 ## Qué es un runtime de JavaScript
 
-Un runtime es el programa que lleva un motor dentro y le añade APIs para hablar con el mundo exterior. El coche completo, siguiendo con la metáfora.
+Un runtime (o entorno de ejecución) es el programa que lleva un motor dentro y le añade APIs para hablar con el mundo exterior. El coche completo, siguiendo con la metáfora.
 
-- Un **navegador** añade el DOM, `fetch`, `localStorage`, los eventos del ratón y el teclado, y todo lo que necesitas para hacer una web.
+- Un **navegador** añade el DOM, `fetch`, `localStorage`, los eventos del ratón y el teclado, y APIs como [Screen Wake Lock, que evita que la pantalla se apague](/blog/evita-que-la-pantalla-se-duerma-con-javascript-domina-la-screen-wake-lock-api/).
 - **Node.js** añade `fs` para los archivos, `http` para montar servidores, `process` para leer variables de entorno y los módulos de npm (con su famoso [`package.json`](/blog/entendiendo-package-json-una-guia-para-dummies/)).
 
 La forma más rápida de ver la diferencia es preguntarle al entorno qué tiene:
@@ -137,7 +145,7 @@ Y cambia el calendario: a partir de Node 27 habrá una sola versión mayor al a�
 
 ### WinterTC: unas APIs comunes para todos los runtimes de servidor
 
-Los runtimes de servidor llevan años intentando ponerse de acuerdo para que el mismo código funcione en todos. Ese trabajo ahora tiene sitio oficial: WinterTC (el comité TC55 de Ecma) publicó en diciembre de 2025 el estándar **ECMA-429**, "Minimum Common Web API". Es una lista de APIs web que todo runtime de servidor debería ofrecer, como `fetch`, `URL` o los streams.
+Los runtimes de servidor llevan años intentando ponerse de acuerdo para que el mismo código funcione en todos. Ese trabajo ahora tiene sitio oficial: WinterTC (el comité TC55 de Ecma) publicó en diciembre de 2025 el estándar **ECMA-429**, "Minimum Common Web API". Es una lista de APIs web que todo runtime de servidor debería ofrecer, como `fetch`, `URL`, los streams o `crypto`, el que usas para [generar UUIDs sin librerías](/blog/que-son-y-como-crear-identificadores-unicos-uuids-con-javascript-plano/).
 
 Si tu código solo usa esas APIs, debería funcionar igual en Node, Bun o Cloudflare Workers.
 
@@ -163,6 +171,8 @@ Entender esa separación te ahorra muchos "¿por qué esto funciona aquí y all�
 - [Anthropic acquires Bun as Claude Code reaches $1B milestone](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone), el anuncio de Anthropic.
 - [Node.js 26.0.0](https://nodejs.org/en/blog/release/v26.0.0), las notas de la versión.
 - [Modules: TypeScript](https://nodejs.org/api/typescript.html), la documentación de Node sobre ejecutar TypeScript.
+- [Evolving the Node.js Release Schedule](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule), el nuevo calendario de versiones de Node.
 - [React Native 0.84: Hermes V1 by Default](https://reactnative.dev/blog/2026/02/11/react-native-0.84), en el blog de React Native.
+- [This Month in Ladybird, febrero de 2026](https://ladybird.org/newsletter/2026-02-28/), sobre la reescritura de LibJS en Rust.
 - [Anuncio de la alfa de Ladybird](https://ladybird.org/posts/alpha), del 23 de noviembre de 2026.
 - [LLRT](https://github.com/awslabs/llrt), el runtime experimental de AWS sobre QuickJS.
