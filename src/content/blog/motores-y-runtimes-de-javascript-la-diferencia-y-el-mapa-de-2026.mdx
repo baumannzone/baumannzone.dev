@@ -1,0 +1,166 @@
+---
+title: "Motores y runtimes de JavaScript: la diferencia y el mapa de 2026"
+description: "Qué es un motor de JavaScript, qué es un runtime y en qué se diferencian, con un mapa interactivo de V8, Node.js, Deno, Bun y compañía en 2026."
+pubDate: 2026-11-24
+author: Jorge Baumann
+intro: true
+tags:
+  - JavaScript
+  - Fundamentals
+  - Node.js
+relatedPosts:
+  - "entendiendo-package-json-una-guia-para-dummies"
+  - "que-son-las-iife-en-javascript-y-como-funcionan"
+ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=Motores%20y%20runtimes%20de%20JavaScript%3A%20la%20diferencia%20y%20el%20mapa%20de%202026&tags=JavaScript,Fundamentals,Node.js"
+---
+
+import Mapa from "../../components/demos-blog/motores-y-runtimes-de-javascript-la-diferencia-y-el-mapa-de-2026/mapa.astro";
+
+Un motor de JavaScript, como V8, es el programa que entiende el lenguaje: lee tu código, lo ejecuta y gestiona la memoria. Un runtime, como Node.js o el navegador, lleva ese motor dentro y le añade todo lo que el lenguaje no trae de serie: leer archivos, hacer peticiones de red, pintar en pantalla o programar temporizadores. V8 no sabe qué es `fetch`. Node.js, sí.
+
+Parece un matiz, pero explica por qué un script que funciona en Chrome falla en Node, o por qué Node, Deno y Bun leen un archivo cada uno a su manera. Y en 2026 el mapa ha cambiado bastante, así que al final tienes uno interactivo y actualizado.
+
+## ECMAScript no es JavaScript (o no del todo)
+
+Lo que llamamos JavaScript tiene un estándar oficial, y no se llama JavaScript. Se llama **ECMAScript** y lo define la especificación **ECMA-262**, que mantiene el comité TC39 de Ecma International. Sale una edición nueva cada año.
+
+ECMA-262 describe el lenguaje en sí: la sintaxis, los tipos, cómo funcionan las funciones o las clases, y objetos como `Array`, `Map`, `Promise`, `JSON` o `Math`. Y ya. No dice nada de pantallas, archivos, redes ni temporizadores.
+
+```js
+// Esto es ECMAScript: funciona en cualquier motor
+const precios = [12, 5, 30];
+const total = precios.reduce((a, b) => a + b, 0);
+JSON.stringify({ total }); // '{"total":47}'
+
+// Esto no está en ECMA-262: lo pone el entorno
+console.log(total);
+setTimeout(() => {}, 1000);
+fetch("https://example.com");
+```
+
+Sí, incluso `console.log`. Ninguna de esas tres líneas está en ECMA-262.
+
+Cuando dices "JavaScript" estás mezclando, sin darte cuenta, dos cosas: el lenguaje y lo que te da el sitio donde lo ejecutas. Separarlas es justo lo que diferencia a un motor de un runtime.
+
+## Qué es un motor de JavaScript
+
+Un motor es un programa que implementa ECMA-262. Coge tu código, lo analiza, lo convierte en algo que el ordenador puede ejecutar y lo ejecuta. Mientras tanto, va liberando la memoria que ya no usas con el recolector de basura. Los motores grandes, además, compilan sobre la marcha el código que más se repite para que vaya más rápido (lo que se conoce como JIT).
+
+Lo importante es lo que **no** hace: un motor no tiene entrada ni salida. No puede leer un archivo, ni escribir en pantalla, ni esperar a que llegue una respuesta de red.
+
+Es como el motor de un coche: hace el trabajo duro, pero sin ruedas, volante ni carrocería no te lleva a ningún sitio. Por eso casi nunca vas a usar un motor a pelo: siempre va montado en algo más grande.
+
+Los tres grandes son:
+
+- **V8**, de Google.
+- **SpiderMonkey**, de Mozilla.
+- **JavaScriptCore**, de Apple.
+
+Hay unos cuantos más, y los vas a ver en el mapa.
+
+## Qué es un runtime de JavaScript
+
+Un runtime es el programa que lleva un motor dentro y le añade APIs para hablar con el mundo exterior. El coche completo, siguiendo con la metáfora.
+
+- Un **navegador** añade el DOM, `fetch`, `localStorage`, los eventos del ratón y el teclado, y todo lo que necesitas para hacer una web.
+- **Node.js** añade `fs` para los archivos, `http` para montar servidores, `process` para leer variables de entorno y los módulos de npm (con su famoso [`package.json`](/blog/entendiendo-package-json-una-guia-para-dummies/)).
+
+La forma más rápida de ver la diferencia es preguntarle al entorno qué tiene:
+
+```js
+console.log(typeof document); // navegador: "object"    · Node: "undefined"
+console.log(typeof process);  // navegador: "undefined" · Node: "object"
+console.log(typeof Array);    // en los dos: "function"
+```
+
+`Array` existe en todas partes porque es del lenguaje. `document` y `process` dependen de dónde estés.
+
+Y como cada runtime decide qué APIs ofrece, no hay ninguna regla que diga cómo se lee un archivo. Cada uno tiene la suya:
+
+```js
+// Node.js
+import { readFile } from "node:fs/promises";
+const texto = await readFile("notas.txt", "utf8");
+
+// Deno
+const texto = await Deno.readTextFile("notas.txt");
+
+// Bun
+const texto = await Bun.file("notas.txt").text();
+```
+
+Hoy Deno y Bun también entienden `node:fs` para ser compatibles con Node, pero cada uno tiene además su API propia.
+
+## El event loop tampoco es del lenguaje
+
+Otra cosa que sorprende: el event loop no está en ECMA-262.
+
+La especificación define las promesas y en qué orden se resuelven sus callbacks, pero deja en manos del entorno cuándo se ejecuta cada cosa. El bucle que decide cuándo toca un temporizador, cuándo se atiende un clic o cuándo se procesa una respuesta de red lo pone el runtime:
+
+- Los navegadores siguen lo que dice la especificación de HTML.
+- Node.js usa libuv, una librería en C.
+- Deno se apoya en Tokio, de Rust.
+
+Por eso Node tiene APIs como `setImmediate` o `process.nextTick` que no vas a encontrar en los navegadores actuales: son piezas de su event loop, no del lenguaje.
+
+## El mapa de JavaScript en 2026
+
+Pulsa un motor para ver qué runtimes lo llevan dentro, o un runtime para ver qué le añade al lenguaje y, si hay novedades, cómo está este año.
+
+<Mapa />
+
+Fíjate en dos cosas. V8 ocupa medio mapa: el mismo motor acaba en un navegador, en un servidor, en el edge y en una app de escritorio. Y al revés: Safari y Bun no se parecen en nada, pero comparten motor.
+
+## Qué ha cambiado desde 2024
+
+### Bun es de Anthropic
+
+En diciembre de 2025 Anthropic compró Bun. Claude Code se distribuye sobre Bun, y de ahí el interés. Bun sigue siendo de código abierto con licencia MIT y va por la serie 1.4.
+
+### El equipo de Deno se va a Cloudflare
+
+Es la noticia más gorda del año. El 9 de octubre de 2026, el equipo de Deno anunció que se une a Cloudflare para trabajar en workerd, el runtime de Cloudflare Workers.
+
+- **El runtime de Deno** tendrá un año más de versiones mensuales con correcciones y parches de seguridad. Después se acaba su desarrollo, aunque el código sigue abierto para quien quiera continuarlo.
+- **Deno Deploy** cierra en seis meses.
+- **JSR**, su registro de paquetes, sigue funcionando.
+
+Si tienes algo en Deno, es buen momento para pensar a dónde lo mueves.
+
+### Node.js 26 y el nuevo calendario
+
+Node 26 salió en mayo de 2026 con V8 14.6 y la API `Temporal` activada por defecto, la sustituta moderna de `Date`. Ejecutar archivos `.ts` sin compilar es estable desde Node 24.12 y 25.2: Node quita los tipos y ejecuta el resto, siempre que uses sintaxis que se pueda borrar sin más (nada de `enum`, por ejemplo).
+
+Y cambia el calendario: a partir de Node 27 habrá una sola versión mayor al año y todas serán LTS. Se acabó lo de "las pares son LTS y las impares no".
+
+### WinterTC: unas APIs comunes para todos los runtimes de servidor
+
+Los runtimes de servidor llevan años intentando ponerse de acuerdo para que el mismo código funcione en todos. Ese trabajo ahora tiene sitio oficial: WinterTC (el comité TC55 de Ecma) publicó en diciembre de 2025 el estándar **ECMA-429**, "Minimum Common Web API". Es una lista de APIs web que todo runtime de servidor debería ofrecer, como `fetch`, `URL` o los streams.
+
+Si tu código solo usa esas APIs, debería funcionar igual en Node, Bun o Cloudflare Workers.
+
+### Hermes V1 en React Native
+
+Hermes, el motor de Meta pensado para móviles, estrenó versión nueva. Desde React Native 0.84 (febrero de 2026), Hermes V1 es el motor por defecto en iOS y Android.
+
+### Ladybird ya tiene alfa
+
+Ladybird es un navegador nuevo con un motor propio, que no se basa en los de Chrome, Firefox ni Safari. Su motor de JavaScript, LibJS, nació en SerenityOS y en 2026 pasó a Rust su parser y su generador de bytecode. El 23 de noviembre de 2026 publicó su primera alfa para macOS y Linux.
+
+## Conclusión
+
+La próxima vez que alguien te diga que Node.js es un lenguaje: el lenguaje es JavaScript (ECMAScript, si te pones exquisito), el motor es V8 y Node.js es el runtime que lo envuelve.
+
+Entender esa separación te ahorra muchos "¿por qué esto funciona aquí y allí no?". Si algo es del lenguaje, va a estar en todas partes. Si es del runtime, depende de dónde lo ejecutes.
+
+## Fuentes
+
+- [ECMA-262](https://tc39.es/ecma262/), la especificación de ECMAScript.
+- [ECMA-429: Minimum Common Web API](https://ecma-international.org/publications-and-standards/standards/ecma-429/), el estándar de WinterTC.
+- [Deno is joining Cloudflare](https://blog.cloudflare.com/deno-joins-cloudflare), en el blog de Cloudflare, y [el anuncio en el blog de Deno](https://deno.com/blog/cloudflare).
+- [Anthropic acquires Bun as Claude Code reaches $1B milestone](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone), el anuncio de Anthropic.
+- [Node.js 26.0.0](https://nodejs.org/en/blog/release/v26.0.0), las notas de la versión.
+- [Modules: TypeScript](https://nodejs.org/api/typescript.html), la documentación de Node sobre ejecutar TypeScript.
+- [React Native 0.84: Hermes V1 by Default](https://reactnative.dev/blog/2026/02/11/react-native-0.84), en el blog de React Native.
+- [Anuncio de la alfa de Ladybird](https://ladybird.org/posts/alpha), del 23 de noviembre de 2026.
+- [LLRT](https://github.com/awslabs/llrt), el runtime experimental de AWS sobre QuickJS.

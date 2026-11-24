@@ -1,0 +1,562 @@
+---
+import DemoLayout from "../demo-layout.astro";
+
+type Engine = {
+  id: string;
+  name: string;
+  maintainer: string;
+  note: string;
+  color: string;
+};
+
+type Runtime = {
+  id: string;
+  name: string;
+  engine: Engine["id"];
+  group: (typeof groups)[number];
+  adds: string;
+  status?: string;
+};
+
+const groups = ["Navegador", "Servidor", "Edge y serverless", "Apps"] as const;
+
+const engines: Engine[] = [
+  {
+    id: "v8",
+    name: "V8",
+    maintainer: "Google",
+    note: "Escrito en C++. Es el motor más extendido: lo llevan Chrome, Edge y la mayoría de runtimes de servidor.",
+    color: "#3b82f6",
+  },
+  {
+    id: "spidermonkey",
+    name: "SpiderMonkey",
+    maintainer: "Mozilla",
+    note: "Desciende del primer motor de JavaScript, el que Brendan Eich creó en Netscape en 1995.",
+    color: "#f97316",
+  },
+  {
+    id: "jsc",
+    name: "JavaScriptCore",
+    maintainer: "Apple",
+    note: "Forma parte de WebKit, el motor de Safari. Bun lo eligió, entre otras cosas, por lo rápido que arranca.",
+    color: "#14b8a6",
+  },
+  {
+    id: "hermes",
+    name: "Hermes",
+    maintainer: "Meta",
+    note: "Pensado para móviles: compila el JavaScript a bytecode al construir la app para que arranque antes.",
+    color: "#ec4899",
+  },
+  {
+    id: "quickjs",
+    name: "QuickJS",
+    maintainer: "Fabrice Bellard",
+    note: "Diminuto y sin JIT. Cabe casi en cualquier sitio, por eso se usa para embeber JavaScript en otros programas. Tiene un fork muy activo, QuickJS-ng.",
+    color: "#eab308",
+  },
+  {
+    id: "libjs",
+    name: "LibJS",
+    maintainer: "Ladybird",
+    note: "Nació desde cero en SerenityOS y hoy es el motor del navegador Ladybird. En 2026 su parser y su generador de bytecode pasaron a Rust.",
+    color: "#8b5cf6",
+  },
+];
+
+const runtimes: Runtime[] = [
+  {
+    id: "chrome",
+    name: "Chrome",
+    engine: "v8",
+    group: "Navegador",
+    adds: "DOM, fetch, Web Storage, Web Workers y el resto de APIs web.",
+  },
+  {
+    id: "edge",
+    name: "Edge",
+    engine: "v8",
+    group: "Navegador",
+    adds: "Las mismas APIs web que Chrome, porque está construido sobre Chromium.",
+  },
+  {
+    id: "firefox",
+    name: "Firefox",
+    engine: "spidermonkey",
+    group: "Navegador",
+    adds: "DOM y APIs web con su propia implementación, Gecko.",
+  },
+  {
+    id: "safari",
+    name: "Safari",
+    engine: "jsc",
+    group: "Navegador",
+    adds: "DOM y APIs web con WebKit.",
+  },
+  {
+    id: "ladybird",
+    name: "Ladybird",
+    engine: "libjs",
+    group: "Navegador",
+    adds: "DOM y APIs web con un motor propio, que no se basa en Blink, Gecko ni WebKit.",
+    status: "Publicó su primera alfa para macOS y Linux el 23 de noviembre de 2026.",
+  },
+  {
+    id: "node",
+    name: "Node.js",
+    engine: "v8",
+    group: "Servidor",
+    adds: "fs, http, process, los módulos de npm y un event loop basado en libuv.",
+    status: "Node 26 (mayo de 2026) activa Temporal por defecto. Ejecutar TypeScript sin compilar es estable desde la 24.12. Desde Node 27 habrá una versión mayor al año.",
+  },
+  {
+    id: "deno",
+    name: "Deno",
+    engine: "v8",
+    group: "Servidor",
+    adds: "APIs web como fetch, permisos explícitos y compatibilidad con npm.",
+    status: "Su equipo se ha unido a Cloudflare (octubre de 2026). Tendrá un año más de parches y después se acaba su desarrollo.",
+  },
+  {
+    id: "bun",
+    name: "Bun",
+    engine: "jsc",
+    group: "Servidor",
+    adds: "Bun.serve, Bun.file, gestor de paquetes, bundler y test runner en un solo binario.",
+    status: "Es de Anthropic desde diciembre de 2025. Sigue siendo de código abierto (MIT) y va por la versión 1.4.",
+  },
+  {
+    id: "workers",
+    name: "Cloudflare Workers",
+    engine: "v8",
+    group: "Edge y serverless",
+    adds: "APIs web como fetch, Request y Response sobre aislados de V8, en el runtime abierto workerd.",
+    status: "Acaba de recibir al equipo de Deno, que trabajará en hacer fácil autoalojar workerd.",
+  },
+  {
+    id: "llrt",
+    name: "LLRT (AWS)",
+    engine: "quickjs",
+    group: "Edge y serverless",
+    adds: "Arranque muy rápido en AWS Lambda, con el SDK de AWS incluido.",
+    status: "Sigue marcado como experimental.",
+  },
+  {
+    id: "electron",
+    name: "Electron",
+    engine: "v8",
+    group: "Apps",
+    adds: "Chromium y Node.js juntos para apps de escritorio, como VS Code o Slack.",
+  },
+  {
+    id: "react-native",
+    name: "React Native",
+    engine: "hermes",
+    group: "Apps",
+    adds: "Componentes nativos de iOS y Android en lugar del DOM.",
+    status: "Hermes V1 es su motor por defecto desde la versión 0.84 (febrero de 2026).",
+  },
+];
+
+const engineById = Object.fromEntries(engines.map((engine) => [engine.id, engine]));
+const runtimesOf = (engineId: string) =>
+  runtimes.filter((runtime) => runtime.engine === engineId);
+---
+
+<DemoLayout name="motores y runtimes en 2026" tag="@baumannzone">
+  <div class="rtmap" data-runtime-map>
+    <div class="rtmap__grid">
+      <div class="rtmap__col">
+        <p class="rtmap__heading" id="rtmap-engines">Motores</p>
+        <ul class="rtmap__list rtmap__list--engines" aria-labelledby="rtmap-engines">
+          {
+            engines.map((engine) => (
+              <li>
+                <button
+                  type="button"
+                  class="rtmap__item"
+                  data-engine={engine.id}
+                  style={`--engine-color: ${engine.color}`}
+                >
+                  <span class="rtmap__dot" aria-hidden="true" />
+                  <span class="rtmap__name">{engine.name}</span>
+                  <span class="rtmap__meta">{engine.maintainer}</span>
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="rtmap__col">
+        <p class="rtmap__heading">Runtimes</p>
+        {
+          groups.map((group, index) => (
+            <div class="rtmap__group">
+              <p class="rtmap__group-name" id={`rtmap-group-${index}`}>
+                {group}
+              </p>
+              <ul class="rtmap__list" aria-labelledby={`rtmap-group-${index}`}>
+                {runtimes
+                  .filter((runtime) => runtime.group === group)
+                  .map((runtime) => (
+                    <li>
+                      <button
+                        type="button"
+                        class="rtmap__item"
+                        data-engine={runtime.engine}
+                        data-runtime={runtime.id}
+                        style={`--engine-color: ${engineById[runtime.engine].color}`}
+                      >
+                        <span class="rtmap__dot" aria-hidden="true" />
+                        <span class="rtmap__name">{runtime.name}</span>
+                        <span class="rtmap__meta">{engineById[runtime.engine].name}</span>
+                      </button>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="rtmap__cards" aria-live="polite">
+      <p class="rtmap__hint" data-hint hidden>
+        Pulsa un motor para ver qué runtimes lo llevan, o un runtime para ver qué
+        le añade al lenguaje.
+      </p>
+
+      {
+        engines.map((engine) => (
+          <div
+            class="rtmap__card"
+            data-card={`engine:${engine.id}`}
+            style={`--engine-color: ${engine.color}`}
+          >
+            <p class="rtmap__card-title">
+              <span class="rtmap__dot" aria-hidden="true" />
+              {engine.name}
+              <span class="rtmap__card-kicker">Motor · {engine.maintainer}</span>
+            </p>
+            <p>{engine.note}</p>
+            <p>
+              <strong>Lo usan:</strong>{" "}
+              {`${runtimesOf(engine.id)
+                .map((runtime) => runtime.name)
+                .join(", ")}.`}
+            </p>
+          </div>
+        ))
+      }
+
+      {
+        runtimes.map((runtime) => (
+          <div
+            class="rtmap__card"
+            data-card={`runtime:${runtime.id}`}
+            style={`--engine-color: ${engineById[runtime.engine].color}`}
+          >
+            <p class="rtmap__card-title">
+              <span class="rtmap__dot" aria-hidden="true" />
+              {runtime.name}
+              <span class="rtmap__card-kicker">
+                {runtime.group} · motor {engineById[runtime.engine].name}
+              </span>
+            </p>
+            <p>
+              <strong>Qué añade:</strong> {runtime.adds}
+            </p>
+            {runtime.status && (
+              <p>
+                <strong>En 2026:</strong> {runtime.status}
+              </p>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</DemoLayout>
+
+<style is:global>
+  .rtmap {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: var(--demo-text);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .rtmap__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 28px;
+  }
+
+  .rtmap__heading {
+    margin: 0 0 12px;
+    font-family: var(--demo-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--demo-text);
+  }
+
+  .rtmap__group + .rtmap__group {
+    margin-top: 14px;
+  }
+
+  .rtmap__group-name {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--demo-caption);
+  }
+
+  .rtmap__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rtmap__list--engines {
+    flex-direction: column;
+  }
+
+  .rtmap__list--engines .rtmap__item {
+    width: 100%;
+  }
+
+  .rtmap__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    color: var(--demo-text);
+    background: var(--demo-bg);
+    border: 1px solid var(--demo-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .rtmap__item:hover {
+    border-color: var(--engine-color);
+  }
+
+  .rtmap__item:focus-visible {
+    outline: 2px solid var(--demo-accent);
+    outline-offset: 2px;
+  }
+
+  .rtmap__item.is-active {
+    border-color: var(--engine-color);
+    box-shadow: inset 0 0 0 1px var(--engine-color);
+    background: color-mix(in srgb, var(--engine-color) 14%, var(--demo-bg));
+  }
+
+  /* Atenuado sin opacidad para que el texto mantenga el contraste */
+  .rtmap__item.is-dim {
+    color: var(--demo-caption);
+    background: transparent;
+    border-style: dashed;
+  }
+
+  .rtmap__item.is-dim .rtmap__dot {
+    opacity: 0.3;
+  }
+
+  .rtmap__dot {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--engine-color);
+  }
+
+  .rtmap__name {
+    font-weight: 600;
+  }
+
+  .rtmap__meta {
+    margin-left: auto;
+    padding-left: 4px;
+    font-size: 12px;
+    color: var(--demo-caption);
+  }
+
+  .rtmap__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rtmap--js .rtmap__cards {
+    min-height: 140px;
+  }
+
+  .rtmap__hint {
+    margin: 0;
+    padding: 16px;
+    color: var(--demo-caption);
+    border: 1px dashed var(--demo-border);
+    border-radius: 12px;
+  }
+
+  .rtmap__card {
+    padding: 16px;
+    background: var(--demo-bg);
+    border: 1px solid var(--demo-border);
+    border-radius: 12px;
+  }
+
+  .rtmap__card p {
+    margin: 0;
+  }
+
+  .rtmap__card p + p {
+    margin-top: 8px;
+  }
+
+  .rtmap__card strong {
+    color: var(--demo-text);
+    font-weight: 600;
+  }
+
+  .rtmap__card-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .rtmap__card-kicker {
+    font-family: var(--demo-mono);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--demo-caption);
+  }
+
+  .rtmap [hidden] {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .rtmap__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .rtmap__list--engines {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .rtmap__list--engines .rtmap__item {
+      width: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rtmap__item {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const initRuntimeMap = (root: HTMLElement): void => {
+    const buttons = [
+      ...root.querySelectorAll<HTMLButtonElement>("button[data-engine]"),
+    ];
+    const cards = [...root.querySelectorAll<HTMLElement>("[data-card]")];
+    const hint = root.querySelector<HTMLElement>("[data-hint]");
+    let active: HTMLButtonElement | null = null;
+
+    const render = () => {
+      const engine = active?.dataset.engine;
+      const runtime = active?.dataset.runtime;
+
+      buttons.forEach((button) => {
+        const isRuntimeButton = Boolean(button.dataset.runtime);
+        const related =
+          active !== null &&
+          button.dataset.engine === engine &&
+          (runtime === undefined || !isRuntimeButton || button === active);
+
+        button.setAttribute("aria-pressed", String(button === active));
+        button.classList.toggle("is-active", related);
+        button.classList.toggle("is-dim", active !== null && !related);
+      });
+
+      const cardId = active
+        ? runtime
+          ? `runtime:${runtime}`
+          : `engine:${engine}`
+        : null;
+
+      cards.forEach((card) => {
+        card.hidden = card.dataset.card !== cardId;
+      });
+
+      if (hint) {
+        hint.hidden = active !== null;
+      }
+    };
+
+    // En móvil la ficha queda debajo del mapa, fuera de la pantalla
+    const revealCard = () => {
+      const card = cards.find((item) => !item.hidden);
+      if (!card) return;
+
+      const { top, bottom } = card.getBoundingClientRect();
+      if (top >= 0 && bottom <= window.innerHeight) return;
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      card.scrollIntoView({
+        block: "nearest",
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        active = active === button ? null : button;
+        render();
+        revealCard();
+      });
+    });
+
+    root.classList.add("rtmap--js");
+    render();
+  };
+
+  const bootRuntimeMaps = () => {
+    document
+      .querySelectorAll<HTMLElement>("[data-runtime-map]")
+      .forEach((map) => initRuntimeMap(map));
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootRuntimeMaps, {
+      once: true,
+    });
+  } else {
+    bootRuntimeMaps();
+  }
+</script>
