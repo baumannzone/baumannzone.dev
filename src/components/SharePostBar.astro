@@ -235,6 +235,7 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
       >
         Copiar URL
       </button>
+      <p id='copy-url-status' role='status' class='sr-only'></p>
     </div>
   </div>
 
@@ -277,12 +278,40 @@ const redditShareUrl = `https://www.reddit.com/submit?url=${encodedBlogPostUrl}&
   const copyUrlButton = document.getElementById(
     'copy-url-button',
   ) as HTMLButtonElement;
+  const copyUrlStatus = document.getElementById(
+    'copy-url-status',
+  ) as HTMLParagraphElement;
 
-  const copyUrl = () => {
-    navigator.clipboard.writeText(window.location.href);
+  const defaultLabel = copyUrlButton.textContent?.trim() ?? 'Copiar URL';
+  let resetTimer: ReturnType<typeof setTimeout> | undefined;
+
+  const copyText = async (text: string): Promise<boolean> => {
+    // En HTTP o en navegadores muy antiguos, navigator.clipboard no existe
+    if (!navigator.clipboard) return false;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const copyUrl = async () => {
+    const copied = await copyText(window.location.href);
+    const message = copied ? '¡Copiada!' : 'No se pudo copiar';
+
+    copyUrlButton.textContent = message;
+    copyUrlStatus.textContent = copied
+      ? 'URL copiada al portapapeles'
+      : 'No se pudo copiar la URL';
+
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      copyUrlButton.textContent = defaultLabel;
+      copyUrlStatus.textContent = '';
+    }, 2000);
   };
 
   copyUrlButton.addEventListener('click', copyUrl);
-
-  // Si se ha copiado la URL, mostrar un toast minimalista
 </script>
