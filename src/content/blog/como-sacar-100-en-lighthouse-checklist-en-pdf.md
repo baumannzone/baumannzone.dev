@@ -17,7 +17,7 @@ ogImage: "https://baumannzone-dev-og.vercel.app/api/og?title=C%C3%B3mo%20sacar%2
 Para sacar 100 en Lighthouse tienes que llevar al verde sus cuatro categorías con nota: **Rendimiento**, **Accesibilidad**, **Buenas prácticas** y **SEO**. Casi todo se reduce a imágenes bien servidas, poco JavaScript, HTML semántico y un `<head>` completo. Lo he resumido en una checklist de dos páginas en PDF que puedes descargar gratis, imprimir e ir marcando.
 
 <div class="not-prose my-8">
-  <a href="/guias/guia-lighthouse-100.pdf" download class="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-5 py-3 font-semibold text-white hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
+  <a href="/guias/guia-lighthouse-100.pdf" download onclick="window.fathom?.trackEvent('Descarga PDF Lighthouse')" class="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-5 py-3 font-semibold text-white hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600">
     <svg aria-hidden="true" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14"/></svg>
     Descargar la guía (PDF, 380 KB)
   </a>
