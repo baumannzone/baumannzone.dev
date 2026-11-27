@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import JsonLd from "../components/JsonLd.astro";
 import { breadcrumbSchema, websiteId } from "../utils/schema";
-import { getTagUrl } from "../utils/tags";
+import { getTagDescription, getTagUrl } from "../utils/tags";
 
 const allPosts = (await getCollection("blog")).filter(
   (post) => post.data.published !== false,
@@ -48,7 +48,7 @@ const jsonLd = {
           item: {
             "@type": "Thing",
             name: tag,
-            description: `Artículos etiquetados con ${tag}`,
+            description: getTagDescription(tag),
             url: new URL(`/tags/${getTagUrl(tag)}/`, Astro.site).href,
           },
         })),

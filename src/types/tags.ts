@@ -60,6 +60,16 @@ export const tagUrlMap: Record<string, string> = {
 };
 
 /**
+ * Descripción de los tags que necesitan explicar qué son.
+ * Se muestra en la página del tag y se usa como meta description.
+ */
+export const tagDescriptionMap: Partial<Record<Tags, string>> = {
+  [Tags.TIL]: "Artículos sobre cosas que aprendí hoy",
+  [Tags.JavaScriptWTF]:
+    "Una serie sobre las rarezas de JavaScript: código que devuelve justo lo que no esperas, por qué pasa y cómo evitar que te dé un susto en producción.",
+};
+
+/**
  * Mapeo inverso: de URL-friendly a tag original
  * La clave es la versión URL-friendly del tag
  * El valor es el valor del enum Tags
