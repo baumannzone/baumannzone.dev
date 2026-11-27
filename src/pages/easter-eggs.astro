@@ -1,0 +1,169 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+import logosImg from "../assets/easter-eggs/lluvia-de-logos.webp";
+import notFoundImg from "../assets/easter-eggs/pagina-404.webp";
+import screenSaverImg from "../assets/easter-eggs/salvapantallas.webp";
+import rickrollImg from "../assets/easter-eggs/rickroll.webp";
+import millisecondsImg from "../assets/easter-eggs/milisegundos.webp";
+
+const title = "Easter eggs | Baumannzone.dev";
+const description =
+  "Los secretos de baumannzone.dev: una lluvia de logos con física, una 404 estilo Matrix, un salvapantallas, una página oculta y más. Dónde están y cómo activarlos.";
+
+const ogImage = new URL("https://baumannzone-dev-og.vercel.app/api/og");
+ogImage.searchParams.set("title", "Easter eggs de baumannzone.dev");
+ogImage.searchParams.set("tags", "Easter eggs,JavaScript,CSS");
+
+type EasterEgg = {
+  id: string;
+  title: string;
+  where: { label: string; href: string };
+  how: string;
+  description: string[];
+  image: ImageMetadata;
+  alt: string;
+};
+
+const eggs: EasterEgg[] = [
+  {
+    id: "lluvia-de-logos",
+    title: "Lluvia de logos",
+    where: { label: "Inicio", href: "/" },
+    how: "Haz clic en mi foto de perfil.",
+    description: [
+      "Cada clic suelta un logo (HTML, CSS, JavaScript, Astro, Tailwind, Claude, OpenAI…) que cae con física: rebota, choca con los demás y se amontona al fondo. Puedes agarrarlos con el ratón y lanzarlos.",
+      "La física la hace matter-js, que solo se descarga cuando pasas el ratón por encima de la foto.",
+    ],
+    image: logosImg,
+    alt: "Portada de baumannzone.dev con decenas de logos de tecnologías amontonados debajo de la tarjeta de perfil",
+  },
+  {
+    id: "pagina-404",
+    title: "La 404 de Matrix",
+    where: { label: "Cualquier página que no exista", href: "/esta-pagina-no-existe/" },
+    how: "Escribe una URL que no exista.",
+    description: [
+      "El fondo es una lluvia de caracteres verdes dibujada en un canvas. El título se escribe letra a letra hasta formar \"404 - Has salido de la Matrix\".",
+      "Si mueves el ratón, cada bloque de texto se desplaza a una velocidad distinta y la página gana profundidad.",
+    ],
+    image: notFoundImg,
+    alt: "Página 404 con lluvia de caracteres verdes y el título \"404 - Has salido de la Matrix\"",
+  },
+  {
+    id: "salvapantallas",
+    title: "Salvapantallas",
+    where: { label: "Cualquier página", href: "/blog/" },
+    how: "No muevas el ratón, no pulses ninguna tecla y no hagas scroll durante 250 segundos.",
+    description: [
+      "La página se difumina con un velo morado y el texto \"😱 baumannzone.dev\" empieza a rebotar de un borde a otro de la pantalla.",
+      "El título de la pestaña se va llenando de \"ᶻᶻᶻ\", y si tienes la consola del navegador abierta aparece un mensaje. Cualquier movimiento lo desactiva.",
+    ],
+    image: screenSaverImg,
+    alt: "Página del blog difuminada en morado con el texto \"baumannzone.dev\" flotando en el centro",
+  },
+  {
+    id: "rickroll",
+    title: "La página oculta",
+    where: { label: "/rickroll/", href: "/rickroll/" },
+    how: "Entra directamente en /rickroll/.",
+    description: [
+      "No aparece en ningún menú ni en el sitemap, y los buscadores no la indexan. Dentro hay justo lo que anuncia la URL.",
+    ],
+    image: rickrollImg,
+    alt: "Página con el título \"Never gonna give you up\" y un GIF de Rick Astley cantando",
+  },
+  {
+    id: "sobre-mi",
+    title: "Edad en milisegundos",
+    where: { label: "Sobre mí", href: "/about/" },
+    how: "Busca la frase \"Nací hace…\" y pasa el ratón por encima del número.",
+    description: [
+      "Mi edad está en milisegundos y se actualiza cada décima de segundo. El tooltip del número te dice en qué año nací.",
+      "Un poco más abajo digo que tengo una larga lista de juegos de mesa y videojuegos. Pasa el ratón por la palabra \"lista\".",
+    ],
+    image: millisecondsImg,
+    alt: "Párrafo de la página Sobre mí que empieza con \"Nací hace 1,226,094,533,072 milisegundos\"",
+  },
+];
+---
+
+<DefaultLayout title={title} description={description} ogImage={ogImage.href}>
+  <div class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div class="mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:px-8">
+      <header class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-violet-600 dark:text-violet-400">
+          Secretos
+        </p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+          Easter eggs
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 text-balance">
+          Cosas de esta web que no se ven a simple vista. Aquí están todas, con
+          dónde encontrarlas y cómo activarlas.
+        </p>
+      </header>
+
+      <ol class="mt-16 space-y-20 sm:mt-20 sm:space-y-24">
+        {
+          eggs.map((egg, index) => (
+            <li id={egg.id} class="scroll-mt-24">
+              <article class="grid items-center gap-8 lg:grid-cols-5 lg:gap-12">
+                <div class:list={["lg:col-span-2", { "lg:order-last": index % 2 === 1 }]}>
+                  <p class="font-mono text-sm font-semibold text-violet-600 dark:text-violet-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h2 class="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
+                    {egg.title}
+                  </h2>
+                  <dl class="mt-5 space-y-3 text-sm">
+                    <div class="flex gap-2">
+                      <dt class="shrink-0 font-semibold text-gray-900 dark:text-gray-100">Dónde:</dt>
+                      <dd>
+                        <a
+                          href={egg.where.href}
+                          class="font-medium text-violet-700 underline underline-offset-2 hover:text-violet-500 dark:text-violet-300"
+                        >
+                          {egg.where.label}
+                        </a>
+                      </dd>
+                    </div>
+                    <div class="flex gap-2">
+                      <dt class="shrink-0 font-semibold text-gray-900 dark:text-gray-100">Cómo:</dt>
+                      <dd class="text-gray-600 dark:text-gray-300">{egg.how}</dd>
+                    </div>
+                  </dl>
+                  {egg.description.map((paragraph) => (
+                    <p class="mt-4 leading-7 text-gray-600 dark:text-gray-300">{paragraph}</p>
+                  ))}
+                </div>
+                <div class="lg:col-span-3">
+                  <Image
+                    src={egg.image}
+                    alt={egg.alt}
+                    width={1200}
+                    class="w-full rounded-2xl border border-gray-200 shadow-lg dark:border-gray-700"
+                  />
+                </div>
+              </article>
+            </li>
+          ))
+        }
+      </ol>
+
+      <aside class="mt-24 rounded-2xl bg-violet-50 p-6 text-center sm:p-8 dark:bg-violet-950/40">
+        <h2 class="text-xl font-bold">¿Has encontrado otro?</h2>
+        <p class="mt-2 text-gray-600 dark:text-gray-300 text-balance">
+          Si das con algo raro que no está en esta lista, puede que sea un
+          easter egg o puede que sea un bug.{" "}
+          <a
+            href="https://instagram.com/baumannzone"
+            class="font-medium text-violet-700 underline underline-offset-2 hover:text-violet-500 dark:text-violet-300"
+          >Cuéntamelo</a> y salimos de dudas.
+        </p>
+      </aside>
+    </div>
+  </div>
+</DefaultLayout>
