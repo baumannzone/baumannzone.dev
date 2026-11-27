@@ -14,6 +14,15 @@ type Book = {
 const literatureBooks: Book[] = [
   // 2026
   {
+    title: "La asistenta",
+    author: "Freida McFadden",
+    description: "",
+    image: "la-asistenta.jpg",
+    link: "https://link.amazon/B0hm6LCaV",
+    category: "literature",
+    status: "reading",
+  },
+  {
     title: "Roma soy yo",
     author: "Santiago Posteguillo",
     description: "Serie Julio César - Libro 1",

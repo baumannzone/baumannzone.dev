@@ -21,7 +21,7 @@ const { book, eager = false } = Astro.props;
 const authors = (Array.isArray(book.author) ? book.author : [book.author])
   .filter((author) => author.trim());
 const linkHost = book.link ? new URL(book.link).hostname : undefined;
-const isAffiliateLink = linkHost === 'amzn.to' || linkHost === 'tidd.ly';
+const isAffiliateLink = ['amzn.to', 'link.amazon', 'tidd.ly'].includes(linkHost ?? '');
 const covers = import.meta.glob<{ default: ImageMetadata }>(
   '../assets/books/*.{jpg,jpeg,png,webp}',
   { eager: true },
